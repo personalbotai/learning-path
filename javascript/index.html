@@ -278,7 +278,7 @@
         </main>
     </div>
 
-    <script src="modules.js"></script>
+    <script src="modules.js?v=1789638289442"></script>
     <script src="app.js?v=1789637385279"></script>
     <script>
             
@@ -864,6 +864,28 @@
                 navigator.serviceWorker.register('./sw.js').then(r => r.update()).catch(err => console.debug('SW reg skipped:', err));
             });
         }
+    </script>
+
+
+    <!-- Force clear legacy service worker cache -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (let registration of registrations) {
+            registration.unregister().then(function(boolean) {
+              console.log('Old ServiceWorker unregistered:', boolean);
+            });
+          }
+        });
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (let name of names) {
+              caches.delete(name);
+              console.log('Cache cleared:', name);
+            }
+          });
+        }
+      }
     </script>
 
 </body>
