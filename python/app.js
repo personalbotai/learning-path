@@ -1622,11 +1622,41 @@ function checkQuiz() {
 }
   window.app = { MODULES, LESSONS: lessons, lessons, loadLesson, runCode, checkQuiz, renderNav, markComplete, resetProgress };
 }
+
+// Expose global functions for inline HTML onclick handlers
+if (typeof window !== 'undefined') {
+    window.loadLesson = loadLesson;
+    window.renderNav = renderNav;
+    window.toggleModule = toggleModule;
+    window.markComplete = markComplete;
+    window.resetProgress = resetProgress;
+    window.closeSidebar = typeof closeSidebar !== 'undefined' ? closeSidebar : function(){};
+    window.prevLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson - 1); };
+    window.nextLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson + 1); };
+    if (typeof runCode === 'function') window.runCode = runCode;
+    if (typeof checkQuiz === 'function') window.checkQuiz = checkQuiz;
+    if (typeof escapeHtml === 'function') window.escapeHtml = escapeHtml;
+    if (typeof copyCode === 'function') window.copyCode = copyCode;
+    if (typeof resetCode === 'function') window.resetCode = resetCode;
+    if (typeof clearOutput === 'function') window.clearOutput = clearOutput;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    renderNav();
     const savedLast = parseInt(localStorage.getItem('python_last_lesson') || '0', 10);
-    loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
-    updateProgress();
+    
+    function initMain() {
+        renderNav();
+        loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
+        updateProgress();
+    }
+    
+    // Safety delay to ensure external CDN libraries like 'marked' are parsed
+    if (typeof marked === 'undefined') {
+        setTimeout(initMain, 150);
+    } else {
+        initMain();
+    }
+    
     const toggle = document.getElementById('sidebar-toggle');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('sidebar-overlay');

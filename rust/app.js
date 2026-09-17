@@ -1620,6 +1620,25 @@ try {
 }
 
 
+
+// Expose global functions for inline HTML onclick handlers
+if (typeof window !== 'undefined') {
+    window.loadLesson = loadLesson;
+    window.renderNav = renderNav;
+    window.toggleModule = toggleModule;
+    window.markComplete = markComplete;
+    window.resetProgress = resetProgress;
+    window.closeSidebar = typeof closeSidebar !== 'undefined' ? closeSidebar : function(){};
+    window.prevLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson - 1); };
+    window.nextLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson + 1); };
+    if (typeof runCode === 'function') window.runCode = runCode;
+    if (typeof checkQuiz === 'function') window.checkQuiz = checkQuiz;
+    if (typeof escapeHtml === 'function') window.escapeHtml = escapeHtml;
+    if (typeof copyCode === 'function') window.copyCode = copyCode;
+    if (typeof resetCode === 'function') window.resetCode = resetCode;
+    if (typeof clearOutput === 'function') window.clearOutput = clearOutput;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     renderNav();
     const savedLast = parseInt(localStorage.getItem('rust_last_lesson') || '0', 10);
