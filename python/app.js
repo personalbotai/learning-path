@@ -1531,7 +1531,9 @@ async function loadLesson(index) {
     let html = '';
     try {
         // If content exists in the lesson object, use it directly (no fetch needed)
-        if (lesson.content && typeof lesson.content === 'string') {
+        // But first check if it's just a placeholder
+        const isPlaceholder = lesson.content && (lesson.content.includes('Materi Python modern') || lesson.content.length < 50);
+        if (lesson.content && typeof lesson.content === 'string' && !isPlaceholder) {
             if (typeof marked !== 'undefined') {
                 if (typeof marked.setOptions === 'function') marked.setOptions({gfm: true, breaks: true});
                 html = typeof marked === 'function' ? marked(lesson.content) : (typeof marked.parse === 'function' ? marked.parse(lesson.content) : '<pre>'+escapeHtml(lesson.content)+'</pre>');
@@ -1539,9 +1541,29 @@ async function loadLesson(index) {
                 html = `<pre>${escapeHtml(lesson.content)}</pre>`;
             }
         } else {
-            // Fallback: generate simple content
-            html = `<h2>${escapeHtml(lesson.title)}</h2>
-                   <p>Materi Python modern yang menarik. Mulai menulis kode di editor di bawah.</p>`;
+            // Fetch .md file from lessons/ folder
+            // Generate filename based on moduleId and lesson id
+            const moduleId = lesson.moduleId || 1;
+            const lessonId = lesson.id || 1;
+            const filename = `lessons/M${String(moduleId).padStart(2, '0')}-L${String(lessonId).padStart(2, '0')}.md`;
+            
+            try {
+                const res = await fetch(filename);
+                if (res.ok) {
+                    const md = await res.text();
+                    if (typeof marked !== 'undefined') {
+                        html = typeof marked === 'function' ? marked(md) : (typeof marked.parse === 'function' ? marked.parse(md) : '<pre>'+escapeHtml(md)+'</pre>');
+                    } else {
+                        html = `<pre>${escapeHtml(md)}</pre>`;
+                    }
+                } else {
+                    // Fallback: generate simple content if fetch fails
+                    html = `<h2>${escapeHtml(lesson.title)}</h2><p>Gagal memuat file materi: ${filename}</p>`;
+                }
+            } catch (fetchErr) {
+                // Fallback if fetch fails (e.g., offline, 404)
+                html = `<h2>${escapeHtml(lesson.title)}</h2><p>Materi Python modern yang menarik. Mulai menulis kode di editor di bawah.</p>`;
+            }
         }
     } catch (e) {
         html = `<div style="color:var(--text-muted);font-size:.8rem;margin-top:8px">Gagal memuat materi: ${escapeHtml(e.message)}</div>`;
