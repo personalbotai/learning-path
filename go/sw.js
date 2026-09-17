@@ -1,5 +1,5 @@
 // Service Worker for Go Learning Path (v1.2)
-const CACHE_NAME = 'go-lp-cache-v1.2';
+const CACHE_NAME = 'lp-cache-1789637385279';
 const PRECACHE_URLS = [
   './',
   './index.html',

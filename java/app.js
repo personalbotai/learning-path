@@ -1425,6 +1425,23 @@ function renderNav(filter) {
     if (statDone) statDone.textContent = totalDone;
 }
 
+function updateProgress() {
+    const progressFill = document.getElementById('progress-fill');
+    const progressBar = document.getElementById('progress-fill-bar');
+    const progressText = document.getElementById('course-progress');
+    const mobileProgress = document.getElementById('mobile-progress');
+    const statDone = document.getElementById('stat-done');
+    const totalLessons = lessons ? lessons.length : 0;
+    const doneLessons = Object.keys(progress).filter(k => !!progress[k]).length;
+    const percent = totalLessons ? Math.round((doneLessons / totalLessons) * 100) : 0;
+    
+    if (progressFill) progressFill.style.width = percent + '%';
+    if (progressBar) progressBar.style.width = percent + '%';
+    if (progressText) progressText.textContent = percent + '%';
+    if (mobileProgress) mobileProgress.textContent = percent + '%';
+    if (statDone) statDone.textContent = doneLessons + '/' + totalLessons;
+}
+
 function toggleModule(id) {
     const el = document.getElementById('module-' + id);
     if (el) el.classList.toggle('hidden');

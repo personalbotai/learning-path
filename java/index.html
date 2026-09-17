@@ -72,8 +72,7 @@
                 <button id="sidebar-toggle" class="hidden" aria-label="Sidebar toggle"></button>
                 <!-- Logo SB -->
                 <a href="#" class="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0" onclick="loadLesson(0); return false;">
-                    <a href="/" title="Course Catalog" class="flex items-center justify-center w-9 h-9 rounded-xl border border-slate-700/50 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"><i class="fa-solid fa-arrow-left"></i></a>
-<div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center font-extrabold text-xs sm:text-sm text-white shadow-lg shadow-red-600/20 shrink-0">SB</div>
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center font-extrabold text-xs sm:text-sm text-white shadow-lg shadow-red-600/20 shrink-0">SB</div>
                     <div class="hidden sm:block leading-tight">
                         <div class="font-bold text-sm text-white flex items-center gap-2">Java Learning Path</div>
                         <div class="text-[11px] text-slate-500">5 Modul • 30 Pelajaran</div>
@@ -278,7 +277,7 @@
         </main>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=1789637385279"></script>
     <script>
             // Mobile Search Bar Accordion Toggle
     window.toggleMobileSearch = function(force) {
@@ -859,7 +858,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js').catch(err => console.debug('SW reg skipped:', err));
+                navigator.serviceWorker.register('./sw.js').then(r => r.update()).catch(err => console.debug('SW reg skipped:', err));
             });
         }
     </script>

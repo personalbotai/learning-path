@@ -1,5 +1,5 @@
 // Service Worker for TypeScript Learning Path (v1.2)
-const CACHE_NAME = 'typescript-lp-cache-v1.2';
+const CACHE_NAME = 'lp-cache-1789637385279';
 const PRECACHE_URLS = [
   './',
   './index.html',
