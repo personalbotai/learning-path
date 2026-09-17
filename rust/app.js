@@ -1558,8 +1558,8 @@ async function loadLesson(index) {
         // If content exists in the lesson object, use it directly (no fetch needed)
         if (lesson.content && typeof lesson.content === 'string') {
             if (typeof marked !== 'undefined') {
-                marked.setOptions({gfm: true, breaks: true});
-                html = marked.parse(lesson.content);
+                if (typeof marked.setOptions === 'function') marked.setOptions({gfm: true, breaks: true});
+                html = typeof marked === 'function' ? marked(lesson.content) : (typeof marked.parse === 'function' ? marked.parse(lesson.content) : '<pre>'+escapeHtml(lesson.content)+'</pre>');
             } else {
                 html = `<pre>${escapeHtml(lesson.content)}</pre>`;
             }
