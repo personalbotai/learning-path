@@ -6,7 +6,7 @@
 <title>Syamsulbahri Learning Paths — Autonomous Education</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
+tailwind.config = { darkMode: "class", 
   theme: {
     extend: {
       fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] },
@@ -17,7 +17,7 @@ tailwind.config = {
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  body { background: #050811; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { @apply bg-slate-50 dark:bg-[#050811];  color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   .grid-bg {
     background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -50,25 +50,49 @@ tailwind.config = {
   .brand-jv { color: #fb923c; background: rgba(251, 146, 60, 0.1); border-color: rgba(251, 146, 60, 0.2); }
   .brand-rs { color: #f87171; background: rgba(248, 113, 113, 0.1); border-color: rgba(248, 113, 113, 0.2); }
   .brand-cpp { color: #818cf8; background: rgba(129, 140, 248, 0.1); border-color: rgba(129, 140, 248, 0.2); }
+
+  html:not(.dark) body {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+  }
+  html:not(.dark) .course-card {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+  }
+  html:not(.dark) .course-card:hover {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1) !important;
+    background: #ffffff !important;
+  }
+  html:not(.dark) .grid-bg {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+  }
+
 </style>
 </head>
-<body class="relative">
+<body class="bg-slate-50 dark:bg-[#050811] relative">
   <!-- Nav -->
   <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-10">
     <div class="flex items-center gap-3">
       <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-indigo-600 p-[1px]">
-        <div class="w-full h-full bg-[#050811] rounded-[11px] flex items-center justify-center font-extrabold text-white text-sm">SB</div>
+        <div class="w-full h-full bg-slate-50 dark:bg-[#050811] rounded-[11px] flex items-center justify-center font-extrabold text-slate-900 dark:text-white text-sm">SB</div>
       </div>
       <div>
-        <div class="font-bold text-white leading-tight">Syamsul Bahri</div>
+        <div class="font-bold text-slate-900 dark:text-white leading-tight">Syamsul Bahri</div>
         <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Education</div>
       </div>
     </div>
-    <a href="https://hub.syamsulbahri.dev" class="text-sm font-semibold text-slate-400 hover:text-white transition-colors">Return to Hub &rarr;</a>
+    <a href="https://hub.syamsulbahri.dev" class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white transition-colors">Return to Hub &rarr;</a>
+    <button id="theme-toggle" class="p-2 ml-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus:outline-none">
+      <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+      <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+    </button>
+    
   </nav>
 
   <!-- Hero Section -->
-  <header class="relative pt-16 pb-20 overflow-hidden border-b border-slate-800/60">
+  <header class="relative pt-16 pb-20 overflow-hidden border-b border-slate-200 dark:border-slate-800/60">
     <div class="glow"></div>
     <div class="absolute inset-0 grid-bg pointer-events-none"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -76,14 +100,14 @@ tailwind.config = {
         <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
         Sovereign Curriculum
       </div>
-      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15] mb-6">
         Master Software Engineering.<br>
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">Zero Distractions.</span>
       </h1>
-      <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
         Interactive learning paths designed for deep technical mastery. From memory-safe systems programming to cloud-native backends and type-safe frontends.
       </p>
-      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-300">
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-300">
         <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 100% Free</div>
         <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Interactive Environments</div>
         <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Self-Paced</div>
@@ -95,8 +119,8 @@ tailwind.config = {
   <main class="max-w-7xl mx-auto px-6 py-20 relative z-10">
     <div class="flex items-end justify-between mb-10">
       <div>
-        <h2 class="text-2xl font-bold text-white tracking-tight">Available Learning Paths</h2>
-        <p class="text-slate-400 mt-1">Select a track to start your journey.</p>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Available Learning Paths</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-1">Select a track to start your journey.</p>
       </div>
       <div class="hidden sm:block text-sm text-slate-500 font-mono">8 Tracks Active</div>
     </div>
@@ -111,12 +135,12 @@ tailwind.config = {
             <div class="icon-box brand-py">PY</div>
             <div class="badge brand-py">55 Lessons</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">Python Mastery</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Python Mastery</h3>
           <p class="text-xs font-mono text-sky-400/80 mb-3">Beginner to Advanced · Python 3.11+</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Master the core language, OOP, data structures, backend automation, and testing. Complete with an interactive web editor and quizzes.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -130,12 +154,12 @@ tailwind.config = {
             <div class="icon-box brand-js">JS</div>
             <div class="badge brand-js">54 Lessons</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">Modern JavaScript</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Modern JavaScript</h3>
           <p class="text-xs font-mono text-amber-400/80 mb-3">ES6+ · DOM & Async</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Build interactive frontends. Covers the ECMAScript spec, closures, promises, DOM manipulation, and modern web APIs.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -149,12 +173,12 @@ tailwind.config = {
             <div class="icon-box brand-ts">TS</div>
             <div class="badge brand-ts">Intermediate</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">TypeScript Architecture</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">TypeScript Architecture</h3>
           <p class="text-xs font-mono text-blue-400/80 mb-3">Static Typing · Generics</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Elevate your JS. Learn structural typing, advanced generics, utility types, and how to build scalable, bug-free applications.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -168,12 +192,12 @@ tailwind.config = {
             <div class="icon-box brand-go">GO</div>
             <div class="badge brand-go">Cloud-Native</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">Go for Backend</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Go for Backend</h3>
           <p class="text-xs font-mono text-teal-400/80 mb-3">High Performance · Concurrency</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Write fast, compiled binaries. Deep dive into goroutines, channels, interfaces, and building robust microservices.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -187,12 +211,12 @@ tailwind.config = {
             <div class="icon-box brand-jv">JV</div>
             <div class="badge brand-jv">Enterprise</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">Java Enterprise</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Java Enterprise</h3>
           <p class="text-xs font-mono text-orange-400/80 mb-3">Java 21 LTS · Spring Boot</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Master strict OOP, JVM internals, garbage collection, and modern Java features like records and virtual threads.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -206,12 +230,12 @@ tailwind.config = {
             <div class="icon-box brand-rs">RS</div>
             <div class="badge brand-rs">Memory-Safe</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">Rust Systems</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Rust Systems</h3>
           <p class="text-xs font-mono text-red-400/80 mb-3">Zero-Cost Abstractions</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Conquer the borrow checker. Learn ownership, lifetimes, traits, and fearless concurrency without a garbage collector.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -225,12 +249,12 @@ tailwind.config = {
             <div class="icon-box brand-cpp">C++</div>
             <div class="badge brand-cpp">Low-Level</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">Modern C++</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Modern C++</h3>
           <p class="text-xs font-mono text-indigo-400/80 mb-3">C++20 / C++23</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Maximum performance. From raw pointers to RAII, smart pointers, template metaprogramming, and standard library algorithms.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -245,12 +269,12 @@ tailwind.config = {
             <div class="icon-box" style="color: #f472b6; background: rgba(244, 114, 182, 0.1); border-color: rgba(244, 114, 182, 0.2);">SQL</div>
             <div class="badge" style="color: #f472b6; background: rgba(244, 114, 182, 0.1);">Database</div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-1">SQL & Databases</h3>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">SQL & Databases</h3>
           <p class="text-xs font-mono text-pink-400/80 mb-3">Relational Data · PostgreSQL</p>
-          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Master data querying, joins, subqueries, and database design. Essential for backend engineers and data analysts.
           </p>
-          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
             Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </div>
         </div>
@@ -258,8 +282,46 @@ tailwind.config = {
     </div>
   </main>
   
-  <footer class="border-t border-slate-800/80 py-8 text-center text-sm text-slate-500 font-mono">
+  <footer class="border-t border-slate-200 dark:border-slate-800/80 py-8 text-center text-sm text-slate-500 font-mono">
     &copy; 2026 Syamsul Bahri Sovereign Infrastructure
   </footer>
+
+<script>
+  var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+  var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+      document.documentElement.classList.add('dark');
+  } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+      document.documentElement.classList.remove('dark');
+  }
+
+  var themeToggleBtn = document.getElementById('theme-toggle');
+
+  themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      if (localStorage.getItem('color-theme')) {
+          if (localStorage.getItem('color-theme') === 'light') {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          } else {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          }
+      } else {
+          if (document.documentElement.classList.contains('dark')) {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          } else {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          }
+      }
+  });
+</script>
+
 </body>
 </html>
