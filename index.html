@@ -1,31 +1,246 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Learning Paths — Syamsul Bahri</title>
+<title>Syamsulbahri Learning Paths — Autonomous Education</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body { background: #050811; color: #e2e8f0; font-family: system-ui, sans-serif; }
-  .card {
-    background: rgba(10, 15, 29, 0.85); border: 1px solid rgba(148, 163, 184, 0.12);
-    border-radius: 18px; padding: 24px; transition: border-color .28s ease;
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+      colors: { ink: '#050811', panel: '#0a0f1d' }
+    }
   }
-  .card:hover { border-color: rgba(56, 189, 248, 0.45); }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { background: #050811; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .grid-bg {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 30%, transparent 100%);
+  }
+  .glow {
+    position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(168, 85, 247, 0.1) 40%, transparent 70%);
+    pointer-events: none; filter: blur(50px);
+  }
+  .course-card {
+    background: rgba(10, 15, 29, 0.6); border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 20px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; flex-direction: column; overflow: hidden; position: relative;
+  }
+  .course-card:hover {
+    border-color: rgba(255, 255, 255, 0.2); transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5); background: rgba(15, 23, 42, 0.8);
+  }
+  .icon-box {
+    width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; letter-spacing: 1px;
+  }
+  .badge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; border: 1px solid transparent; }
+  
+  /* Brand Colors */
+  .brand-py { color: #38bdf8; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); }
+  .brand-js { color: #fbbf24; background: rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.2); }
+  .brand-ts { color: #60a5fa; background: rgba(96, 165, 250, 0.1); border-color: rgba(96, 165, 250, 0.2); }
+  .brand-go { color: #2dd4bf; background: rgba(45, 212, 191, 0.1); border-color: rgba(45, 212, 191, 0.2); }
+  .brand-jv { color: #fb923c; background: rgba(251, 146, 60, 0.1); border-color: rgba(251, 146, 60, 0.2); }
+  .brand-rs { color: #f87171; background: rgba(248, 113, 113, 0.1); border-color: rgba(248, 113, 113, 0.2); }
+  .brand-cpp { color: #818cf8; background: rgba(129, 140, 248, 0.1); border-color: rgba(129, 140, 248, 0.2); }
 </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6">
-  <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">Learning Paths</h1>
-  <p class="text-slate-400 mb-10 text-center">Pusat pembelajaran open-source. Pilih track untuk memulai.</p>
+<body class="relative">
+  <!-- Nav -->
+  <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-10">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-indigo-600 p-[1px]">
+        <div class="w-full h-full bg-[#050811] rounded-[11px] flex items-center justify-center font-extrabold text-white text-sm">SB</div>
+      </div>
+      <div>
+        <div class="font-bold text-white leading-tight">Syamsul Bahri</div>
+        <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Education</div>
+      </div>
+    </div>
+    <a href="https://hub.syamsulbahri.dev" class="text-sm font-semibold text-slate-400 hover:text-white transition-colors">Return to Hub &rarr;</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative pt-16 pb-20 overflow-hidden border-b border-slate-800/60">
+    <div class="glow"></div>
+    <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-sky-500/20 bg-sky-500/10 text-sky-400 text-xs font-bold uppercase tracking-wider mb-8">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        Sovereign Curriculum
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
+        Master Software Engineering.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">Zero Distractions.</span>
+      </h1>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+        Interactive learning paths designed for deep technical mastery. From memory-safe systems programming to cloud-native backends and type-safe frontends.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-300">
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 100% Free</div>
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Interactive Environments</div>
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Self-Paced</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Courses Grid -->
+  <main class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <h2 class="text-2xl font-bold text-white tracking-tight">Available Learning Paths</h2>
+        <p class="text-slate-400 mt-1">Select a track to start your journey.</p>
+      </div>
+      <div class="hidden sm:block text-sm text-slate-500 font-mono">7 Tracks Active</div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Python -->
+      <a href="/python/" class="course-card group">
+        <div class="h-1 w-full bg-sky-400 opacity-80 group-hover:opacity-100"></div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between mb-5">
+            <div class="icon-box brand-py">PY</div>
+            <div class="badge brand-py">55 Lessons</div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Python Mastery</h3>
+          <p class="text-xs font-mono text-sky-400/80 mb-3">Beginner to Advanced · Python 3.11+</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+            Master the core language, OOP, data structures, backend automation, and testing. Complete with an interactive web editor and quizzes.
+          </p>
+          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- JavaScript -->
+      <a href="/javascript/" class="course-card group">
+        <div class="h-1 w-full bg-amber-400 opacity-80 group-hover:opacity-100"></div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between mb-5">
+            <div class="icon-box brand-js">JS</div>
+            <div class="badge brand-js">54 Lessons</div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Modern JavaScript</h3>
+          <p class="text-xs font-mono text-amber-400/80 mb-3">ES6+ · DOM & Async</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+            Build interactive frontends. Covers the ECMAScript spec, closures, promises, DOM manipulation, and modern web APIs.
+          </p>
+          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TypeScript -->
+      <a href="/typescript/" class="course-card group">
+        <div class="h-1 w-full bg-blue-400 opacity-80 group-hover:opacity-100"></div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between mb-5">
+            <div class="icon-box brand-ts">TS</div>
+            <div class="badge brand-ts">Intermediate</div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">TypeScript Architecture</h3>
+          <p class="text-xs font-mono text-blue-400/80 mb-3">Static Typing · Generics</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+            Elevate your JS. Learn structural typing, advanced generics, utility types, and how to build scalable, bug-free applications.
+          </p>
+          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Go -->
+      <a href="/go/" class="course-card group">
+        <div class="h-1 w-full bg-teal-400 opacity-80 group-hover:opacity-100"></div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between mb-5">
+            <div class="icon-box brand-go">GO</div>
+            <div class="badge brand-go">Cloud-Native</div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Go for Backend</h3>
+          <p class="text-xs font-mono text-teal-400/80 mb-3">High Performance · Concurrency</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+            Write fast, compiled binaries. Deep dive into goroutines, channels, interfaces, and building robust microservices.
+          </p>
+          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Java -->
+      <a href="/java/" class="course-card group">
+        <div class="h-1 w-full bg-orange-400 opacity-80 group-hover:opacity-100"></div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between mb-5">
+            <div class="icon-box brand-jv">JV</div>
+            <div class="badge brand-jv">Enterprise</div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Java Enterprise</h3>
+          <p class="text-xs font-mono text-orange-400/80 mb-3">Java 21 LTS · Spring Boot</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+            Master strict OOP, JVM internals, garbage collection, and modern Java features like records and virtual threads.
+          </p>
+          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Rust -->
+      <a href="/rust/" class="course-card group">
+        <div class="h-1 w-full bg-red-400 opacity-80 group-hover:opacity-100"></div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between mb-5">
+            <div class="icon-box brand-rs">RS</div>
+            <div class="badge brand-rs">Memory-Safe</div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Rust Systems</h3>
+          <p class="text-xs font-mono text-red-400/80 mb-3">Zero-Cost Abstractions</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+            Conquer the borrow checker. Learn ownership, lifetimes, traits, and fearless concurrency without a garbage collector.
+          </p>
+          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- C++ -->
+      <a href="/cpp/" class="course-card group lg:col-start-2">
+        <div class="h-1 w-full bg-indigo-400 opacity-80 group-hover:opacity-100"></div>
+        <div class="p-6 flex-1 flex flex-col">
+          <div class="flex items-start justify-between mb-5">
+            <div class="icon-box brand-cpp">C++</div>
+            <div class="badge brand-cpp">Low-Level</div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Modern C++</h3>
+          <p class="text-xs font-mono text-indigo-400/80 mb-3">C++20 / C++23</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-1">
+            Maximum performance. From raw pointers to RAII, smart pointers, template metaprogramming, and standard library algorithms.
+          </p>
+          <div class="mt-auto border-t border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-300 group-hover:text-white">
+            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
   
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl w-full">
-    <a href="/python/" class="card"><h3 class="font-bold text-white text-lg">Python</h3><p class="text-sm text-slate-400 mt-2">Zero → Advanced (3.11+)</p></a>
-    <a href="/javascript/" class="card"><h3 class="font-bold text-white text-lg">JavaScript</h3><p class="text-sm text-slate-400 mt-2">ES6+, DOM & async</p></a>
-    <a href="/typescript/" class="card"><h3 class="font-bold text-white text-lg">TypeScript</h3><p class="text-sm text-slate-400 mt-2">Static type system & generics</p></a>
-    <a href="/go/" class="card"><h3 class="font-bold text-white text-lg">Go</h3><p class="text-sm text-slate-400 mt-2">Cloud-Native & goroutines</p></a>
-    <a href="/java/" class="card"><h3 class="font-bold text-white text-lg">Java</h3><p class="text-sm text-slate-400 mt-2">Java 21 LTS & Spring</p></a>
-    <a href="/rust/" class="card"><h3 class="font-bold text-white text-lg">Rust</h3><p class="text-sm text-slate-400 mt-2">Memory-Safe & Zero-Cost</p></a>
-    <a href="/cpp/" class="card"><h3 class="font-bold text-white text-lg">C++</h3><p class="text-sm text-slate-400 mt-2">High-Perf C++20/C++23</p></a>
-  </div>
+  <footer class="border-t border-slate-800/80 py-8 text-center text-sm text-slate-500 font-mono">
+    &copy; 2026 Syamsul Bahri Sovereign Infrastructure
+  </footer>
 </body>
 </html>
