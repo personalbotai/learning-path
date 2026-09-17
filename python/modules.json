@@ -1,0 +1,341 @@
+{
+  "course_title": "Python Learning Path: From Fundamentals to Advanced",
+  "course_description": "A comprehensive, structured course for mastering Python from zero to advanced concepts, designed for software engineers and developers.",
+  "modules": [
+    {
+      "module": 1,
+      "title": "Python Fundamentals & Environment Setup",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Installing Python and Setting Up Development Environment",
+          "objectives": "Install Python 3.11+, configure IDE (VS Code/PyCharm), understand virtual environments with venv and pip."
+        },
+        {
+          "lesson": 2,
+          "title": "First Steps: Hello World and Basic Syntax",
+          "objectives": "Write your first Python script, understand indentation rules, comments, and basic program structure."
+        },
+        {
+          "lesson": 3,
+          "title": "Variables, Data Types, and Type System",
+          "objectives": "Learn about dynamic typing, basic types (int, float, str, bool), type conversion, and type hints introduction."
+        },
+        {
+          "lesson": 4,
+          "title": "Basic Input/Output and String Formatting",
+          "objectives": "Use print() and input(), format strings with f-strings, .format(), and % operator."
+        }
+      ]
+    },
+    {
+      "module": 2,
+      "title": "Control Flow and Logic",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Conditional Statements: if, elif, else",
+          "objectives": "Master branching logic, comparison operators, and nested conditionals."
+        },
+        {
+          "lesson": 2,
+          "title": "Loops: while and for",
+          "objectives": "Iterate with while loops and for loops, understand range(), and loop control (break, continue, else)."
+        },
+        {
+          "lesson": 3,
+          "title": "Logical Operators and Boolean Expressions",
+          "objectives": "Combine conditions with and, or, not; understand truthiness and operator precedence."
+        },
+        {
+          "lesson": 4,
+          "title": "Match-Case Statements (Python 3.10+)",
+          "objectives": "Use structural pattern matching for complex conditional logic."
+        }
+      ]
+    },
+    {
+      "module": 3,
+      "title": "Data Structures: Lists, Tuples, Dictionaries, Sets",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Lists: Creation, Indexing, and Basic Operations",
+          "objectives": "Create lists, access elements, slicing, common methods (append, extend, insert, remove, pop)."
+        },
+        {
+          "lesson": 2,
+          "title": "List Comprehensions and Advanced Manipulation",
+          "objectives": "Write concise list comprehensions, filter, map, and sort lists."
+        },
+        {
+          "lesson": 3,
+          "title": "Tuples: Immutable Sequences",
+          "objectives": "Understand tuple immutability, packing/unpacking, and when to use tuples vs lists."
+        },
+        {
+          "lesson": 4,
+          "title": "Dictionaries: Key-Value Mappings",
+          "objectives": "Create dictionaries, access values, iterate over keys/values/items, and common methods."
+        },
+        {
+          "lesson": 5,
+          "title": "Dictionary Comprehensions and Dict Methods",
+          "objectives": "Build dictionaries with comprehensions, use get(), setdefault(), update(), and understand defaultdict."
+        },
+        {
+          "lesson": 6,
+          "title": "Sets: Unordered Unique Collections",
+          "objectives": "Create sets, perform set operations (union, intersection, difference), and understand set comprehensions."
+        }
+      ]
+    },
+    {
+      "module": 4,
+      "title": "Functions and Modular Programming",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Defining and Calling Functions",
+          "objectives": "Write functions with def, understand parameters and return values, scope rules (LEGB)."
+        },
+        {
+          "lesson": 2,
+          "title": "Arguments: Positional, Keyword, Default, and *args/**kwargs",
+          "objectives": "Master flexible function signatures, unpacking arguments, and variable-length parameters."
+        },
+        {
+          "lesson": 3,
+          "title": "Lambda Functions and Higher-Order Functions",
+          "objectives": "Use lambda expressions, pass functions as arguments, and understand map/filter/reduce."
+        },
+        {
+          "lesson": 4,
+          "title": "Docstrings, Type Hints, and Function Annotations",
+          "objectives": "Write professional docstrings (Google/NumPy style), add type hints, and use typing module."
+        },
+        {
+          "lesson": 5,
+          "title": "Modules and Packages",
+          "objectives": "Organize code into modules, create packages with __init__.py, and use import statements correctly."
+        },
+        {
+          "lesson": 6,
+          "title": "The if __name__ == '__main__' Pattern",
+          "objectives": "Make files executable as scripts and importable as modules."
+        }
+      ]
+    },
+    {
+      "module": 5,
+      "title": "Object-Oriented Programming (OOP) in Python",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Classes and Objects: Basics of OOP",
+          "objectives": "Define classes, create objects (instances), understand __init__ and self."
+        },
+        {
+          "lesson": 2,
+          "title": "Instance Variables, Class Variables, and Methods",
+          "objectives": "Distinguish between instance and class attributes, define instance/class/static methods."
+        },
+        {
+          "lesson": 3,
+          "title": "Inheritance and Method Resolution Order (MRO)",
+          "objectives": "Create subclass relationships, use super(), understand multiple inheritance and MRO."
+        },
+        {
+          "lesson": 4,
+          "title": "Encapsulation: Public, Private, and Protected",
+          "objectives": "Use naming conventions (_protected, __private), understand name mangling."
+        },
+        {
+          "lesson": 5,
+          "title": "Properties, Getters, and Setters",
+          "objectives": "Implement computed properties with @property, create getter/setter decorators."
+        },
+        {
+          "lesson": 6,
+          "title": "Special (Dunder) Methods",
+          "objectives": "Implement __str__, __repr__, __len__, __getitem__, __setitem__, and other magic methods."
+        },
+        {
+          "lesson": 7,
+          "title": "Polymorphism and Duck Typing",
+          "objectives": "Understand polymorphism in Python, embrace duck typing, and use abstract base classes (ABC)."
+        }
+      ]
+    },
+    {
+      "module": 6,
+      "title": "Error Handling and Exceptions",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Exceptions: try, except, else, finally",
+          "objectives": "Catch and handle exceptions, understand the exception hierarchy, use else and finally blocks."
+        },
+        {
+          "lesson": 2,
+          "title": "Raising Exceptions and Custom Exceptions",
+          "objectives": "Raise exceptions with raise, define custom exception classes by inheriting from Exception."
+        },
+        {
+          "lesson": 3,
+          "title": "Context Managers and the with Statement",
+          "objectives": "Use with for resource management, create custom context managers with __enter__ and __exit__."
+        },
+        {
+          "lesson": 4,
+          "title": "Exception Chaining and Best Practices",
+          "objectives": "Preserve traceback with raise from, follow Pythonic error handling patterns."
+        }
+      ]
+    },
+    {
+      "module": 7,
+      "title": "File I/O and Serialization",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Reading and Writing Text Files",
+          "objectives": "Open files with open(), use read/write modes, context managers, and encoding parameters."
+        },
+        {
+          "lesson": 2,
+          "title": "Working with CSV and JSON Data",
+          "objectives": "Parse CSV files with csv module, serialize/deserialize JSON with json module."
+        },
+        {
+          "lesson": 3,
+          "title": "Pickle and Binary Serialization",
+          "objectives": "Use pickle for Python object serialization, understand security implications."
+        },
+        {
+          "lesson": 4,
+          "title": "Working with Paths: os.path and pathlib",
+          "objectives": "Manipulate file paths with os.path and the modern pathlib API."
+        },
+        {
+          "lesson": 5,
+          "title": "File System Operations",
+          "objectives": "List directories, check file existence, create/remove files and directories."
+        }
+      ]
+    },
+    {
+      "module": 8,
+      "title": "Advanced Python Concepts",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Iterators and the Iterator Protocol",
+          "objectives": "Understand iter() and next(), create custom iterator classes, use iterators efficiently."
+        },
+        {
+          "lesson": 2,
+          "title": "Generators and yield",
+          "objectives": "Write generator functions, use yield for lazy evaluation, understand generator expressions."
+        },
+        {
+          "lesson": 3,
+          "title": "Decorators: Functions That Wrap Functions",
+          "objectives": "Create function decorators, use @ syntax, understand closure and functools.wraps."
+        },
+        {
+          "lesson": 4,
+          "title": "Contextlib and Advanced Context Managers",
+          "objectives": "Use contextmanager decorator, suppress, redirect_stdout, and other utilities."
+        },
+        {
+          "lesson": 5,
+          "title": "Descriptors and the Descriptor Protocol",
+          "objectives": "Implement __get__, __set__, __delete__ for custom attribute behavior."
+        },
+        {
+          "lesson": 6,
+          "title": "Metaclasses and Class Creation",
+          "objectives": "Understand type(), create custom metaclasses, and know when to use them (rarely)."
+        }
+      ]
+    },
+    {
+      "module": 9,
+      "title": "Concurrency and Parallelism",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Threading: Running Code Concurrently",
+          "objectives": "Create threads with threading.Thread, understand GIL, and use thread synchronization (Lock, RLock, Event)."
+        },
+        {
+          "lesson": 2,
+          "title": "Multiprocessing: True Parallel Execution",
+          "objectives": "Spawn processes with multiprocessing, share data with Queue and Pipe, bypass GIL for CPU-bound tasks."
+        },
+        {
+          "lesson": 3,
+          "title": "Asyncio: Asynchronous I/O",
+          "objectives": "Write async functions with async/await, use Event Loop, understand coroutines and tasks."
+        },
+        {
+          "lesson": 4,
+          "title": "Concurrent Futures: ThreadPoolExecutor and ProcessPoolExecutor",
+          "objectives": "Simplify concurrent code with high-level executors, map tasks to pools."
+        },
+        {
+          "lesson": 5,
+          "title": "Choosing the Right Concurrency Model",
+          "objectives": "Decide between threading, multiprocessing, and asyncio based on I/O vs CPU bound tasks."
+        }
+      ]
+    },
+    {
+      "module": 10,
+      "title": "Testing, Debugging, and Best Practices",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Writing Tests with unittest and pytest",
+          "objectives": "Write unit tests, use assertions, fixtures, and parametrize tests with pytest."
+        },
+        {
+          "lesson": 2,
+          "title": "Test-Driven Development (TDD) Workflow",
+          "objectives": "Follow Red-Green-Refactor cycle, write tests before implementation."
+        },
+        {
+          "lesson": 3,
+          "title": "Debugging with pdb and IDE Debuggers",
+          "objectives": "Set breakpoints, step through code, inspect variables, use post-mortem debugging."
+        },
+        {
+          "lesson": 4,
+          "title": "Logging: The Right Way to Print",
+          "objectives": "Configure logging module, use different log levels, format logs, and file handlers."
+        },
+        {
+          "lesson": 5,
+          "title": "Code Quality: PEP 8, Linters, and Formatters",
+          "objectives": "Follow PEP 8, use flake8/pylint, and auto-format with black and isort."
+        },
+        {
+          "lesson": 6,
+          "title": "Type Checking with mypy",
+          "objectives": "Run static type checking, understand common mypy errors, improve code reliability."
+        },
+        {
+          "lesson": 7,
+          "title": "Profiling and Performance Optimization",
+          "objectives": "Profile code with cProfile, timeit, and line_profiler; identify bottlenecks."
+        },
+        {
+          "lesson": 8,
+          "title": "Packaging and Distributing Python Packages",
+          "objectives": "Create setup.py/pyproject.toml, build distributions, and publish to PyPI (optional)."
+        }
+      ]
+    }
+  ]
+}

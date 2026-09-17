@@ -1,0 +1,93 @@
+{
+  "module": 6,
+  "title": "Quiz: Web Development",
+  "description": "Test your knowledge of DOM manipulation, events, fetch API, and async/await",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Method untuk memilih elemen berdasarkan ID?",
+      "options": ["querySelector()", "getElementById()", "getElementsByClassName()", "querySelectorAll()"],
+      "correct": 1,
+      "explanation": "getElementById() mengembalikan elemen dengan ID tertentu (single element)."
+    },
+    {
+      "id": 2,
+      "question": "Event yang di-trigger saat user click pada element?",
+      "options": ["onmouseover", "onchange", "onclick", "onload"],
+      "correct": 2,
+      "explanation": "onclick event dipanggil saat elemen diklik."
+    },
+    {
+      "id": 3,
+      "question": "Apa async/await gunakan?",
+      "options": [
+        "Membuat synchronous code",
+        "Menulis asynchronous code yang terlihat synchronous",
+        "Menggantikan promises sepenuhnya",
+        "Hanya untuk fetch API"
+      ],
+      "correct": 1,
+      "explanation": "async/await adalah syntactic sugar atas promises untuk menulis async code yang lebih readable."
+    },
+    {
+      "id": 4,
+      "question": "Fetch API method untuk request POST?",
+      "options": ["fetch(url, { method: 'POST' })", "fetch.post(url)", "fetch.send(url)", "None"],
+      "correct": 0,
+      "explanation": "fetch() takes method option in second argument to specify HTTP method."
+    },
+    {
+      "id": 5,
+      "question": "Property untuk mengubah teks elemen?",
+      "options": ["innerHTML", "textContent", "innerText", "Semua benar"],
+      "correct": 3,
+      "explanation": "innerHTML, textContent, dan innerText semua bisa mengubah konten teks (innerHTML juga support HTML)."
+    },
+    {
+      "id": 6,
+      "question": "Apa event delegation?",
+      "options": [
+        "Menambahkan event listener ke parent untuk menangkap event children",
+        "Mengganti event handler",
+        "Membuat event bubbled",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "Event delegation menempatkan listener di parent agar bisa menangani event dari children (baik yang ada maupun yang ditambahkan later)."
+    },
+    {
+      "id": 7,
+      "question": "Method untuk mengubah style CSS via JavaScript?",
+      "options": ["setStyle()", "style.property", "changeStyle()", "css()"],
+      "correct": 1,
+      "explanation": "elemen.style.property = value; (camelCase untuk properti CSS)."
+    },
+    {
+      "id": 8,
+      "question": "Fetch response method untuk parse JSON?",
+      "options": ["response.json()", "response.text()", "response.parse()", "response.body.json()"],
+      "correct": 0,
+      "explanation": "response.json() mengembalikan promise yang resolves ke parsed JSON object."
+    },
+    {
+      "id": 9,
+      "question": "Apa bubbling phase?",
+      "options": [
+        "Event travels dari target ke root",
+        "Event travels dari root ke target",
+        "Tidak ada bubbling",
+        "Hanya capturing"
+      ],
+      "correct": 0,
+      "explanation": "Bubbling: event travels from target up through ancestors."
+    },
+    {
+      "id": 10,
+      "question": "Cara mencegah default behavior dari event (misal submit form)?",
+      "options": ["event.preventDefault()", "event.stop()", "event.cancel()", "return false"],
+      "correct": 0,
+      "explanation": "preventDefault() mencegah aksi default browser dari event tersebut."
+    }
+  ]
+}

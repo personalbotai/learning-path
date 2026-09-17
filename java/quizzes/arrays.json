@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Cara membuat array of int dengan panjang 5?",
+      "options": ["int[5] arr;", "int[] arr = new int[5];", "new int[5];", "int arr = new int[5];"],
+      "answer": 1,
+      "explanation": "Syntax yang benar adalah int[] arr = new int[5];"
+    },
+    {
+      "question": "Bagaimana mendapatkan panjang sebuah array?",
+      "options": ["arr.length()", "arr.size()", "arr.length", "arr.getSize()"],
+      "answer": 2,
+      "explanation": "Array memiliki field length (bukan method)."
+    },
+    {
+      "question": "Apa yang terjadi jika mengakses arr[10] pada array dengan length 5?",
+      "options": ["Mengembalikan null", "ArrayIndexOutOfBoundsException", "IndexOutOfBoundsException", "Tidak ada error"],
+      "answer": 1,
+      "explanation": "ArrayIndexOutOfBoundsException dilempar saat index di luar batas."
+    },
+    {
+      "question": "Cara iterasi array dengan enhanced for loop?",
+      "options": ["for i in arr", "for (int i : arr)", "for each arr as x", "for (int x : arr)"],
+      "answer": 3,
+      "explanation": "Enhanced for loop: for (type var : array) { ... }"
+    },
+    {
+      "question": "Method untuk mengurutkan array primitive int?",
+      "options": ["Arrays.sort(arr)", "arr.sort()", "Collections.sort(arr)", "Array.sort(arr)"],
+      "answer": 0,
+      "explanation": "java.util.Arrays.sort() digunakan untuk sorting array primitif atau objek."
+    }
+  ]
+}

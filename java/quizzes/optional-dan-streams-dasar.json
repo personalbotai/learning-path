@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": "Tujuan Optional?", "options": ["Menyimpan banyak nilai", "Menghindari null checks", "Membuat thread", "Mengganti List"], "answer": 1, "explanation": "Optional berfungsi untuk menangani kemungkinan null dengan lebihExpressif, mengurangi NullPointerException." },
+    { "question": "Method untuk dapat nilai dengan default?", "options": ["get()", "orElse()", "ifPresent()", "map()"], "answer": 1, "explanation": "orElse(default) mengembalikan nilai jika ada, atau default jika kosong." },
+    { "question": "Operasi stream yang masih lazy?", "options": ["forEach()", "collect()", "filter()", "count()"], "answer": 2, "explanation": "filter adalah intermediate operation (lazy); forEach, collect, count adalah terminal." },
+    { "question": "Cara membuat stream dari list?", "options": ["list.stream()", "new Stream(list)", "Stream.of(list)", "list.getStream()"], "answer": 0, "explanation": "list.stream() mengembalikan Stream dari elemen list." },
+    { "question": "Apa yang dilakukan map()?", "options": ["Filter", "Transform", "Reduce", "Sort"], "answer": 1, "explanation": "map(Function) mengubah setiap elemen menjadi bentuk lain." }
+  ]
+}

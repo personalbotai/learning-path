@@ -1,0 +1,128 @@
+{
+  "module": 3,
+  "title": "Quiz: Object-Oriented Programming",
+  "description": "Uji pemahaman mendalam tentang class syntax, private fields (#), static initialization blocks, method overriding, dan prototype hierarchy di ES2022+.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mengapa private field dengan sintaks tanda pagar (contoh: '#balance') di ES2022 memberikan 'hard privacy' dibandingkan konvensi underscore ('_balance')?",
+      "options": [
+        "Karena field tersebut otomatis dienkripsi dengan SHA-256 di memori",
+        "Karena private field tidak dapat diakses, di-inspect, atau dimodifikasi dari luar deklarasi class, bahkan melalui Object.keys() atau Object.getOwnPropertySymbols()",
+        "Karena private field tersimpan di global scope yang terisolasi",
+        "Karena private field hanya bisa dibaca oleh thread Web Worker"
+      ],
+      "correct": 1,
+      "explanation": "Private fields (#) memiliki hard encapsulation di level engine JS. Akses dari luar body class akan memicu SyntaxError saat parsing, dan field tersebut tidak dapat diakses via reflection atau property inspection biasa."
+    },
+    {
+      "id": 2,
+      "question": "Dalam inheritance menggunakan class di JavaScript, mengapa 'super()' wajib dipanggil di dalam constructor turunan sebelum mengakses 'this'?",
+      "options": [
+        "Agar garbage collector membersihkan class induk terlebih dahulu",
+        "Karena binding 'this' pada derived class belum dibuat dan belum diinisialisasi sebelum constructor parent dijalankan",
+        "Hanya sebagai konvensi penulisan dan tidak memengaruhi runtime",
+        "Untuk mendaftarkan method derived class ke prototype chain global"
+      ],
+      "correct": 1,
+      "explanation": "Pada derived class, instance 'this' dibentuk oleh constructor superclass (parent). Mengakses 'this' sebelum 'super()' dipanggil akan melemparkan ReferenceError (TDZ pada this)."
+    },
+    {
+      "id": 3,
+      "question": "Apa fungsi dari 'static initialization blocks' (static { ... }) yang diperkenalkan pada ES2022?",
+      "options": [
+        "Mengeksekusi kode inisialisasi satu kali saat evaluasi class, dengan akses ke private fields class tersebut",
+        "Membuat instance baru secara otomatis saat aplikasi dijalankan",
+        "Mengunci instance agar bersifat immutable (deep freeze)",
+        "Mengubah semua method static menjadi asynchronous secara otomatis"
+      ],
+      "correct": 0,
+      "explanation": "Static initialization blocks memungkinkan evaluasi logika kompleks atau inisialisasi state static saat class pertama kali didefinisikan, dan memiliki hak akses ke private static members dalam class tersebut."
+    },
+    {
+      "id": 4,
+      "question": "Perhatikan kode berikut:\nclass Parent {\n  greet() { return 'Halo dari Parent'; }\n}\nclass Child extends Parent {\n  greet() {\n    return super.greet() + ' dan Child';\n  }\n}\nconst c = new Child();\nconsole.log(c.greet());\nPrinsip OOP apa yang didemonstrasikan kode tersebut?",
+      "options": [
+        "Metaprogramming",
+        "Polymorphism melalui Method Overriding dengan pemanggilan super method",
+        "Abstract Interface",
+        "Multiple Inheritance"
+      ],
+      "correct": 1,
+      "explanation": "Kode tersebut mendemonstrasikan polymorphism melalui method overriding, di mana subclass mengganti implementasi method greet() milik parent class dan menambahkan fungsionalitas sembari tetap memanggil logika dasar parent via super.greet()."
+    },
+    {
+      "id": 5,
+      "question": "Apa output dari pengecekan private field menggunakan keyword 'in' berikut (ES2022):\nclass Account {\n  #pin = 1234;\n  static check(obj) { return #pin in obj; }\n}\nconsole.log(Account.check(new Account()), Account.check({}));",
+      "options": [
+        "true false",
+        "true true",
+        "false false",
+        "TypeError: private identifier not allowed with 'in'"
+      ],
+      "correct": 0,
+      "explanation": "Operator '#brand in obj' (Private field brand checking) mengembalikan true jika objek tersebut adalah instance yang benar-benar memiliki private identifier bersangkutan (#pin), dan false untuk objek luar atau objek biasa."
+    },
+    {
+      "id": 6,
+      "question": "Manakah pernyataan yang benar mengenai static methods pada sebuah class di JavaScript?",
+      "options": [
+        "Static method dapat dipanggil langsung dari instance class (misal: (new MyClass()).staticMethod())",
+        "Static method berada pada constructor function class itu sendiri (bukan pada prototype instance) dan diakses via ClassName.staticMethod()",
+        "Static method tidak dapat diwariskan ke derived class saat menggunakan extends",
+        "Static method selalu memiliki context 'this' yang mengarah ke window/globalThis"
+      ],
+      "correct": 1,
+      "explanation": "Static method menempel langsung pada constructor class (bukan pada ClassName.prototype). Static method juga diwariskan ke subclass melalui rantai prototype constructor (SubClass.__proto__ === SuperClass)."
+    },
+    {
+      "id": 7,
+      "question": "Perhatikan kode berikut:\nclass Counter {\n  #count = 0;\n  get count() { return this.#count; }\n  set count(val) { if (val >= 0) this.#count = val; }\n}\nconst c = new Counter();\nc.count = -5;\nconsole.log(c.count);\nBerapa nilai yang tercetak?",
+      "options": [
+        "-5",
+        "0",
+        "undefined",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "Setter melakukan validasi logika encapsulation (hanya mengubah nilai jika val >= 0). Karena nilai -5 tidak lolos validasi kondisional, #count tetap bernilai inisial 0."
+    },
+    {
+      "id": 8,
+      "question": "Bagaimana representasi class JavaScript di balik layar (under the hood)?",
+      "options": [
+        "Dikompresi menjadi bytecode binary native terisolasi",
+        "Syntactic sugar di atas constructor functions dan prototypal inheritance standar JavaScript",
+        "Struktur data C++ struct yang tidak dapat dimodifikasi secara dinamis",
+        "Virtual method table yang terpisah dari prototype object"
+      ],
+      "correct": 1,
+      "explanation": "Class pada JavaScript pada dasarnya adalah syntactic sugar yang elegan di atas mekanisme prototypal inheritance asli JavaScript (constructor function + prototype object), dengan tambahan aturan khusus seperti strict mode otomatis dan non-callable tanpa 'new'."
+    },
+    {
+      "id": 9,
+      "question": "Apa yang terjadi jika kita mencoba memanggil constructor class JavaScript tanpa menggunakan keyword 'new' (misal: 'Person()')?",
+      "options": [
+        "Constructor dieksekusi normal dengan this mengarah ke global object",
+        "Melemparkan TypeError: Class constructor cannot be invoked without 'new'",
+        "Mengembalikan objek kosong {}",
+        "Secara otomatis bertindak seolah-olah dipanggil dengan 'new'"
+      ],
+      "correct": 1,
+      "explanation": "Spesifikasi ES6+ mewajibkan pemanggilan constructor class menggunakan operator 'new'. Memanggilnya langsung sebagai fungsi reguler akan menghasilkan TypeError."
+    },
+    {
+      "id": 10,
+      "question": "Perhatikan kode polymorphism berikut:\nclass Shape { area() { return 0; } }\nclass Circle extends Shape { constructor(r) { super(); this.r = r; } area() { return Math.PI * this.r ** 2; } }\nclass Square extends Shape { constructor(s) { super(); this.s = s; } area() { return this.s ** 2; } }\nfunction totalArea(shapes) { return shapes.reduce((sum, s) => sum + s.area(), 0); }\nApa peran polymorphism dalam fungsi totalArea?",
+      "options": [
+        "Memaksa semua objek dikonversi menjadi tipe Shape primitif",
+        "Memungkinkan pemanggilan antarmuka/method .area() seragam tanpa perlu memeriksa tipe konkret masing-masing objek (Circle atau Square)",
+        "Membuat thread terpisah untuk menghitung luas tiap bentuk",
+        "Mencegah penambahan subclass bentuk geometri baru"
+      ],
+      "correct": 1,
+      "explanation": "Polymorphism memungkinkan fungsi pemanggil (consumer) memperlakukan berbagai macam objek turunan melalui kontrak antarmuka yang sama (method .area()), sehingga kode fleksibel dan mudah diperluas (open-closed principle)."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": "Method dalam interface secara default modifier-nya?", "options": ["private", "protected", "public abstract", "public"], "answer": 2, "explanation": "Methods dalam interface adalah public abstract (sebelum Java 8)." },
+    { "question": "Sejak Java 8, interface bisa memiliki?", "options": ["Hanya abstract methods", "Default dan static methods", "Hanya static methods", "Bidang instance"], "answer": 1, "explanation": "Java 8 menambahkan default dan static methods ke interface." },
+    { "question": "Class dapat implements berapa banyak interface?", "options": ["Satu", "Dua", "Beberapa (multiple)", "Tidak terbatas"], "answer": 2, "explanation": "Class dapat implements banyak interface." },
+    { "question": "Fields dalam interface secara otomatis?", "options": ["private", "protected", "public static final", "public"], "answer": 2, "explanation": "Fields adalah public static final (constant)." },
+    { "question": "Functional interface memiliki?", "options": ["Banyak abstract methods", "Precisely satu abstract method", "Hanya default methods", "Tidak ada method"], "answer": 1, "explanation": "Functional interface memiliki tepat satu abstract method (SAM)." }
+  ]
+}

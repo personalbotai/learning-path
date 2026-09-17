@@ -1,0 +1,43 @@
+{
+  "quiz": [
+    {
+      "question": "Apa itu Java Collections Framework (JCF)?",
+      "options": [
+        "Kompiler alternatif untuk bahasa Java",
+        "Arsitektur terpadu untuk merepresentasikan dan memanipulasi koleksi objek",
+        "Library untuk membuat GUI di Java",
+        "Database bawaan Java"
+      ],
+      "answer": 1,
+      "explanation": "JCF menyediakan antarmuka (interfaces), implementasi konkret, dan algoritma untuk mengelola kelompok objek."
+    },
+    {
+      "question": "Root interface dari sebagian besar koleksi di Java (kecuali Map) adalah?",
+      "options": ["Iterable", "Collection", "List", "Object"],
+      "answer": 1,
+      "explanation": "java.util.Collection adalah root interface untuk List, Set, dan Queue. Sedangkan Map tidak extends Collection."
+    },
+    {
+      "question": "Mengapa Map tidak mewarisi (extends) dari Collection interface?",
+      "options": [
+        "Karena Map berisi pasangan key-value, sedangkan Collection menampung elemen individual",
+        "Karena bug arsitektur lama Java",
+        "Karena Map hanya bisa menampung String",
+        "Map sebenarnya mewarisi Collection"
+      ],
+      "answer": 0,
+      "explanation": "Map menyimpan pemetaan key ke value (key-value pairs), strukturnya tidak cocok dengan kontrak Collection tunggal."
+    },
+    {
+      "question": "Keuntungan utama menggunakan generic dalam Collections (misal: List<String>) adalah?",
+      "options": [
+        "Program berjalan 100x lebih cepat",
+        "Compile-time type safety dan menghindari type casting manual",
+        "Mengurangi ukuran memori JVM hingga 50%",
+        "Memungkinkan koleksi menyimpan primitive types tanpa auto-boxing"
+      ],
+      "answer": 1,
+      "explanation": "Generics memberikan pemeriksaan tipe pada waktu kompilasi dan menghilangkan kebutuhan type cast eksplisit."
+    }
+  ]
+}

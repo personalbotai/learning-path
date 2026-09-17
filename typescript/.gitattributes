@@ -1,0 +1,5 @@
+# Force language detection
+*.py linguist-language=Python
+*.ts linguist-language=TypeScript
+*.js linguist-language=JavaScript
+*.html linguist-language=HTML

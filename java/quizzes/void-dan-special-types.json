@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa fungsi tipe void?",
+      "options": ["Menyimpan bilangan bulat", "Mengembalikan nilai kosong", "Return type untuk method yang tidak mengembalikan nilai", "Merepresentasikan null"],
+      "answer": 2,
+      "explanation": "void adalah return type yang menandakan method tidak mengembalikan nilai."
+    },
+    {
+      "question": "Apa yang terjadi jika Anda mencoba mengakses field/method dari variabel null?",
+      "options": ["Mengembalikan null", "NullPointerException", "Compile error", "Tidak terjadi apa-apa"],
+      "answer": 1,
+      "explanation": "NullPointerException dilempar saat dereferencing null."
+    },
+    {
+      "question": "Bagaimana cara memeriksa apakah sebuah variabel bertipe double adalah NaN?",
+      "options": ["if (d == NaN)", "if (Double.isNaN(d))", "if (d.isNaN())", "if (Float.isNaN(d))"],
+      "answer": 1,
+      "explanation": "Gunakan Double.isNaN() untuk memeriksa NaN."
+    },
+    {
+      "question": "Apa nilai default untuk tipe boolean?",
+      "options": ["null", "false", "0", "Tidak ada default"],
+      "answer": 1,
+      "explanation": "Primitif boolean memiliki default false selama tidak diinisialisasi."
+    },
+    {
+      "question": "Kelas apa yang merepresentasikan tipe void ketika digunakan sebagai parameter generik?",
+      "options": ["Void", "Void.class", "java.lang.Void", "void.class"],
+      "answer": 2,
+      "explanation": "java.lang.Void adalah kelas wrapper untuk tipe void, sering dipakai dalam generik."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Kata kunci untuk deklarasikan exception pada method signature?",
+      "options": ["throw", "throws", "catch", "finally"],
+      "answer": 1,
+      "explanation": "throws digunakan pada method untuk menyatakan exception yang mungkin dilempar."
+    },
+    {
+      "question": "Checked exception harus dinyatakan dengan?",
+      "options": ["try-catch", "throws atau try-catch", "hanya throws", "hanya try"],
+      "answer": 1,
+      "explanation": "Checked exception harus ditangkap (try-catch) atau dinyatakan (throws)."
+    },
+    {
+      "question": "Apa yang terjadi jika unchecked exception dilempar?",
+      "options": ["Compile error", "Tidak perlu catch/throws", "Harus dicanangkan throws", "Tidak bisa"],
+      "answer": 1,
+      "explanation": "Unchecked exception tidak diperiksa pada compile time, tidak perlu deklarasi throws."
+    },
+    {
+      "question": "Bisakah kita throw class Error?",
+      "options": ["Ya", "Tidak disarankan", "Tidak, compile error", "Hanya di system"],
+      "answer": 0,
+      "explanation": "Secara teknis bisa, tapi Error mewakili condition fatal, tidak untuk dilempar aplikasi."
+    },
+    {
+      "question": "Contoh kode yang tepat untuk melempar IllegalArgumentException?",
+      "options": ["throw IllegalArgumentException()", "throw new IllegalArgumentException()", "new throw IllegalArgumentException", "throw IllegalArgumentException"],
+      "answer": 1,
+      "explanation": "Harus membuat instance dengan new, karena exception adalah object."
+    }
+  ]
+}

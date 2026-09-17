@@ -1,0 +1,128 @@
+{
+  "module": 4,
+  "title": "Quiz: Fungsi dan Scope",
+  "description": "Uji pemahaman mendalam tentang closures, lexical scoping, this binding, arrow functions, prototype chain, dan ES Modules.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Perhatikan kode berikut:\nfunction createCounter() {\n  let count = 0;\n  return () => ++count;\n}\nconst c1 = createCounter();\nconst c2 = createCounter();\nc1();\nconsole.log(c1(), c2());\nBerapa output yang dihasilkan?",
+      "options": [
+        "2 1",
+        "2 0",
+        "1 1",
+        "2 2"
+      ],
+      "correct": 0,
+      "explanation": "Setiap pemanggilan createCounter() membentuk Lexical Environment baru yang terisolasi. c1 mengincrement variabel count-nya sendiri dua kali (1 lalu 2), sedangkan c2 memiliki environment terpisah sehingga pemanggilan pertamanya menghasilkan 1."
+    },
+    {
+      "id": 2,
+      "question": "Bagaimana penentuan nilai 'this' di dalam Arrow Function?",
+      "options": [
+        "Secara dinamis mengacu pada objek pemanggil di sebelah kiri titik saat runtime",
+        "Secara leksikal mewarisi nilai 'this' dari enclosing execution context (lingkup luar) tempat arrow function didefinisikan",
+        "Selalu mengacu pada objek global (window atau globalThis)",
+        "Dapat diubah secara dinamis menggunakan .bind(), .call(), atau .apply()"
+      ],
+      "correct": 1,
+      "explanation": "Arrow function tidak memiliki binding 'this' sendiri (lexical this). Nilai 'this' diambil langsung dari konteks leksikal sekitarnya saat pembuatan, dan tidak dapat di-override oleh call/apply/bind."
+    },
+    {
+      "id": 3,
+      "question": "Perhatikan cuplikan kode berikut:\nconst obj = {\n  val: 42,\n  getVal: function() {\n    return () => this.val;\n  }\n};\nconst fn = obj.getVal();\nconsole.log(fn.call({ val: 100 }));\nBerapa nilai yang dicetak?",
+      "options": [
+        "100",
+        "42",
+        "undefined",
+        "TypeError"
+      ],
+      "correct": 1,
+      "explanation": "Saat obj.getVal() dipanggil, 'this' bernilai objek 'obj'. Arrow function yang dikembalikan menangkap 'this' leksikal tersebut ({ val: 42 }). Mencoba mengubah 'this' arrow function dengan .call() akan diabaikan."
+    },
+    {
+      "id": 4,
+      "question": "Bagaimana mekanisme penelusuran properti (lookup) pada JavaScript Prototype Chain ketika properti tidak ditemukan pada objek bersangkutan?",
+      "options": [
+        "JavaScript langsung melemparkan ReferenceError",
+        "JavaScript menelusuri internal pointer [[Prototype]] (__proto__) ke objek prototipenya berturut-turut hingga mencapai Object.prototype, lalu null",
+        "JavaScript mencari di global execution context",
+        "JavaScript otomatis membuat properti tersebut dengan nilai undefined pada instance"
+      ],
+      "correct": 1,
+      "explanation": "Jika properti tidak ditemukan pada 'own properties' suatu objek, mesin JS menelusuri rantai [[Prototype]] ke atas hingga menemukan properti tersebut atau mencapai puncak rantai yaitu Object.prototype.[[Prototype]] yang bernilai null."
+    },
+    {
+      "id": 5,
+      "question": "Apa output dari kode inheritance berbasis prototype berikut:\nfunction Animal(name) { this.name = name; }\nAnimal.prototype.speak = function() { return `${this.name} bersuara`; };\nconst dog = Object.create(Animal.prototype);\nconsole.log(dog.speak());",
+      "options": [
+        "undefined bersuara",
+        "null bersuara",
+        "TypeError: dog.speak is not a function",
+        "ReferenceError: name is not defined"
+      ],
+      "correct": 0,
+      "explanation": "Object.create(Animal.prototype) membuat objek baru dengan [[Prototype]] mengarah ke Animal.prototype (sehingga method speak() ditemukan), tetapi constructor Animal tidak dipanggil sehingga properti own 'name' adalah undefined. undefined diubah menjadi string dalam template literal."
+    },
+    {
+      "id": 6,
+      "question": "Manakah entitas berikut yang TIDAK dimiliki oleh Arrow Function?",
+      "options": [
+        "this context dan arguments object",
+        "prototype property",
+        "new.target dan kemampuan dipanggil sebagai constructor dengan 'new'",
+        "Semua jawaban di atas benar"
+      ],
+      "correct": 3,
+      "explanation": "Arrow functions tidak memiliki 'this', tidak memiliki 'arguments' object, tidak memiliki properti .prototype, dan tidak dapat digunakan sebagai constructor dengan operator 'new'."
+    },
+    {
+      "id": 7,
+      "question": "Perhatikan kode partial application dengan Function.prototype.bind():\nfunction multiply(a, b) { return a * b; }\nconst double = multiply.bind(null, 2);\nconsole.log(double(5));\nApa fungsi utama dari binding argumen tersebut?",
+      "options": [
+        "Membuat fungsi berjalan secara asynchronous",
+        "Menerapkan konsep currying / partial application dengan mengunci argumen pertama bernilai 2",
+        "Mencegah fungsi menerima lebih dari 1 parameter",
+        "Mengkloning fungsi ke thread terpisah"
+      ],
+      "correct": 1,
+      "explanation": "bind() dapat menerima argumen awal yang akan dipasang (preset) di depan argumen pemanggilan berikutnya. Ini adalah teknik partial application."
+    },
+    {
+      "id": 8,
+      "question": "Apa perbedaan mendasar antara IIFE (Immediately Invoked Function Expression) tradisional dengan ES Modules (ESM)?",
+      "options": [
+        "IIFE dievaluasi secara asynchronous, sedangkan ESM selalu synchronous",
+        "ESM secara bawaan memiliki scope modul terisolasi, selalu berjalan dalam strict mode, dan mendukung top-level await serta static analysis",
+        "IIFE tidak mengizinkan penggunaan closure",
+        "ESM mengekspos semua deklarasi ke objek global window"
+      ],
+      "correct": 1,
+      "explanation": "ES Modules menyediakan isolasi scope tingkat file secara native, otomatis dalam strict mode, mendukung optimasi tree-shaking melalui import/export statis, dan mendukung fitur modern seperti Top-Level Await tanpa membutuhkan IIFE wrapper."
+    },
+    {
+      "id": 9,
+      "question": "Perhatikan kode prototype shadowing berikut:\nconst proto = { x: 10 };\nconst obj = Object.create(proto);\nobj.x = 20;\nconsole.log(obj.x, proto.x);\nBerapa nilai yang dicetak?",
+      "options": [
+        "20 10",
+        "20 20",
+        "10 10",
+        "undefined 10"
+      ],
+      "correct": 0,
+      "explanation": "Penugasan 'obj.x = 20' membuat own property 'x' pada objek 'obj' (shadowing), sehingga saat diakses obj.x mengambil nilai 20 miliknya sendiri tanpa mengubah properti 'x' pada prototype 'proto' yang tetap bernilai 10."
+    },
+    {
+      "id": 10,
+      "question": "Dalam konteks memory management di JavaScript, bagaimana closure dapat berpotensi menyebabkan memory leak?",
+      "options": [
+        "Ketika closure dieksekusi lebih dari 1000 kali per detik",
+        "Ketika inner function mempertahankan referensi ke objek besar dalam outer scope yang sebenarnya tidak lagi dibutuhkan, tetapi closure tersebut tetap aktif (misal pada event listener atau interval)",
+        "Karena closure selalu menduplikasi memori RAM untuk setiap variabel",
+        "Karena variabel dalam closure tidak pernah dialokasikan di Heap memory"
+      ],
+      "correct": 1,
+      "explanation": "Closure menahan seluruh referensi leksikal dalam environment record-nya. Jika inner function tetap hidup (misalnya terpasang pada event listener global), seluruh objek yang tertangkap dalam scope luarnya tidak bisa dibersihkan oleh Garbage Collector."
+    }
+  ]
+}

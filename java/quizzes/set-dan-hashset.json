@@ -1,0 +1,48 @@
+{
+  "quiz": [
+    {
+      "question": "Apa yang terjadi jika Anda menambahkan elemen duplikat ke dalam HashSet?",
+      "options": [
+        "Entry akan ditolak dan tidak ditambahkan",
+        "Entry akan ditambahkan dan HashSet akan berisi duplikat",
+        "HashSet akan mengubahnya menjadi ArrayList",
+        "Program akan crash karena duplikat"
+      ],
+      "answer": 0,
+      "explanation": "HashSet hanya menyimpan elemen unik. Jika elemen duplikat ditambahkan, HashSet akan menolaknya tanpa menandakan kesalahan."
+    },
+    {
+      "question": "Apa yang terjadi jika Anda memanggil remove() pada HashSet dengan elemen yang tidak ada?",
+      "options": [
+        "HashSet akan mengembalikan true",
+        "HashSet akan melempar NullPointerException",
+        "HashSet akan mengembalikan false",
+        "HashSet akan menambahkan elemen tersebut secara otomatis"
+      ],
+      "answer": 2,
+      "explanation": "HashSet.remove() mengembalikan boolean. Jika elemen tidak ditemukan, akan mengembalikan false tanpa mengubah struktur data."
+    },
+    {
+      "question": "Apa yang terjadi jika Anda memanggil clear() pada HashSet?",
+      "options": [
+        "Elemen terakhir akan dihapus",
+        "Semua elemen akan dihapus",
+        "Hanya elemen terdepan yang akan dihapus",
+        "HashSet akan di-reset dengan elemen baru"
+      ],
+      "answer": 1,
+      "explanation": "clear() menghapus semua elemen dari HashSet, membuatnya kosong kembali."
+    },
+    {
+      "question": "Apa yang terjadi jika Anda memanggil `contains()` pada HashSet setelah `add()` elemen?",
+      "options": [
+        "Mungkin mengembalikan false",
+        "Mungkin mengembalikan true",
+        "Mungkin mengembalikan true atau false tergantung pada hash code",
+        "Salah total"
+      ],
+      "answer": 0,
+      "explanation": "HashSet garansi bahwa `contains()` akan mengembalikan true setelah `add()` elemen yang sama, karena HashSet dirancang untuk itu."
+    }
+  ]
+}

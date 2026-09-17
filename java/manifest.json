@@ -1,0 +1,16 @@
+{
+  "name": "Java Learning Path",
+  "short_name": "Java LP",
+  "description": "Belajar Java Modern 21 LTS dari Dasar hingga Mahir",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0f1a",
+  "theme_color": "#ef4444",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>\u2615</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "moduleId": 1,
+  "moduleTitle": "Dasar-Dasar TypeScript",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa yangdimaksud dengan TypeScript?",
+      "options": [
+        "Bahasa pemrograman yang hanya berjalan di browser",
+        "Superset JavaScript dengan type system statis",
+        "Framework untuk React",
+        "Build tool untuk JavaScript"
+      ],
+      "correct": 1,
+      "explanation": "TypeScript adalah superset JavaScript yang menambahkan type system statis. Semua kode JavaScript valid adalah kode TypeScript yang valid.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 2,
+      "question": "Bagaimana cara menginstall TypeScript secara global?",
+      "options": [
+        "npm install -g typescript",
+        "npm install -g ts",
+        "yarn add typescript",
+        "pip install typescript"
+      ],
+      "correct": 0,
+      "explanation": "TypeScript diinstall via npm dengan perintah: npm install -g typescript. Ini akan menginstall tsc (TypeScript compiler) secara global.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 3,
+      "question": "Perintah untuk mengkompilasi file TypeScript ke JavaScript adalah?",
+      "options": [
+        "tsc file.ts",
+        "ts compile file.ts",
+        "node file.ts",
+        "typescript file.ts"
+      ],
+      "correct": 0,
+      "explanation": "TypeScript compiler (tsc) digunakan untuk mengkompilasi .ts ke .js. Contoh: tsc app.ts akan menghasilkan app.js",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 4,
+      "question": "TypeScript dikembangkan oleh?",
+      "options": [
+        "Google",
+        "Facebook",
+        "Microsoft",
+        "Mozilla"
+      ],
+      "correct": 2,
+      "explanation": "TypeScript dikembangkan dan dipelihara oleh Microsoft.开源标准.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 5,
+      "question": "File ekstensi untuk TypeScript adalah?",
+      "options": [
+        ".js",
+        ".ts",
+        ".tsx",
+        ".jsx"
+      ],
+      "correct": 1,
+      "explanation": "File TypeScript menggunakan ekstensi .ts. Untuk file React dengan TypeScript menggunakan .tsx.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 6,
+      "question": "Manakah yang BUKAN keuntungan menggunakan TypeScript?",
+      "options": [
+        "Type checking saat development",
+        "Better IDE support dan autocomplete",
+        "Mencegah runtime errors",
+        "Menjalankan kode lebih cepat di browser"
+      ],
+      "correct": 3,
+      "explanation": "TypeScript tidak membuat kode berjalan lebih cepat di browser karena dikompilasi ke JavaScript standar. Keuntungannya adalah type safety, better tooling, dan error detection saat development.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 7,
+      "question": "Apa yang terjadi saat mengkompilasi TypeScript dengan error?",
+      "options": [
+        "File JavaScript tidak dihasilkan",
+        "File JavaScript dihasilkan meski ada error",
+        "Proses berhenti sepenuhnya",
+        "Error diabaikan"
+      ],
+      "correct": 0,
+      "explanation": "Secara default, tsc akan menghasilkan file JavaScript meskipun ada type errors. Namun, best practice adalah memperbaiki semua error sebelum deployment.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 8,
+      "question": "Perintah untuk menjalankan tsc dalam watch mode adalah?",
+      "options": [
+        "tsc -w",
+        "tsc --watch",
+        "tsc -watch",
+        "tsc --auto"
+      ],
+      "correct": 1,
+      "explanation": "tsc --watch atau tsc -w akan memantau perubahan file dan otomatis mengkompilasi ulang saat ada perubahan.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 9,
+      "question": "TypeScript dapat berjalan di lingkungan apa?",
+      "options": [
+        "Hanya browser modern",
+        "Hanya Node.js",
+        "Browser, Node.js, dan runtime JavaScript lainnya",
+        "Hanya server"
+      ],
+      "correct": 2,
+      "explanation": "TypeScript dikompilasi ke JavaScript, sehingga dapat berjalan di semua environment yang mendukung JavaScript: browser, Node.js, Deno, dll.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": 10,
+      "question": "Apa perbedaan utama TypeScript dan JavaScript?",
+      "options": [
+        "TypeScript memiliki type system statis, JavaScript dinamis",
+        "TypeScript lebih cepat",
+        "JavaScript lebih populer",
+        "Tidak ada perbedaan signifikan"
+      ],
+      "correct": 0,
+      "explanation": "Perbedaan utama: TypeScript menambahkan type system statis yang diverifikasi saat compile time, sedangkan JavaScript menggunakan dynamic typing yang diverifikasi saat runtime.",
+      "type": "multiple-choice"
+    }
+  ]
+}

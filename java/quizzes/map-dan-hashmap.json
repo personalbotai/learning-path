@@ -1,0 +1,38 @@
+{
+  "quiz": [
+    {
+      "question": "Apa karakteristik utama dari Map di Java?",
+      "options": [
+        "Menyimpan elemen tunggal secara berurutan",
+        "Menyimpan pasangan key-value di mana key harus unik",
+        "Mengizinkan key duplikat tapi value harus unik",
+        "Hanya bisa menyimpan tipe data primitif"
+      ],
+      "answer": 1,
+      "explanation": "Map menyimpan pasangan key-value. Setiap key bersifat unik dan memetakan ke paling banyak satu value."
+    },
+    {
+      "question": "Berapa kompleksitas waktu rata-rata operasi get() dan put() pada HashMap?",
+      "options": ["O(n)", "O(log n)", "O(1)", "O(n^2)"],
+      "answer": 2,
+      "explanation": "HashMap menggunakan hashing untuk mencapai waktu operasi konstan O(1) dalam kondisi rata-rata."
+    },
+    {
+      "question": "Apa yang terjadi jika Anda memanggil put(key, newValue) dengan key yang sudah ada di HashMap?",
+      "options": [
+        "Melempar DuplicateKeyException",
+        "Mengabaikan input baru",
+        "Mengganti nilai lama dengan nilai baru dan mengembalikan nilai lama",
+        "Membuat entry baru dengan key yang sama"
+      ],
+      "answer": 2,
+      "explanation": "put() akan menimpa value lama yang diasosiasikan dengan key tersebut dan mengembalikan nilai lama."
+    },
+    {
+      "question": "Implementasi Map apa yang menjamin urutan elemen terurut berdasarkan natural ordering dari key-nya?",
+      "options": ["HashMap", "LinkedHashMap", "TreeMap", "Hashtable"],
+      "answer": 2,
+      "explanation": "TreeMap mengurutkan key berdasarkan natural order (Comparable) atau Comparator khusus."
+    }
+  ]
+}

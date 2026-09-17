@@ -1,46 +1,696 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rust — Learning Path</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] },
-      colors: { ink: '#050811' }
-    }
-  }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  body { background: #050811; margin: 0; overflow: hidden; font-family: 'Inter', sans-serif; }
-  .navbar {
-    height: 56px; background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.12); display: flex; align-items: center; justify-content: space-between;
-    padding: 0 20px; z-index: 50; position: fixed; top: 0; left: 0; right: 0;
-  }
-  .back-btn { display: flex; align-items: center; gap: 8px; color: #94a3b8; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.2s; }
-  .back-btn:hover { color: #fff; }
-  .course-title { font-size: 14px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
-  .course-title .badge { font-size: 10px; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 999px; }
-  iframe { width: 100%; height: calc(100vh - 56px); margin-top: 56px; border: none; display: block; background: #fff; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Learning Path — Master Rust dari Nol ke Tingkat Lanjut 🦀</title>
+    <meta name="description" content="Kuasai bahasa pemrograman sistem Rust secara interaktif: Ownership, Borrowing, Lifetimes, Traits, Concurrency, code editor live, dan quiz teknis.">
+    <meta name="theme-color" content="#ea580c">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter','system-ui','sans-serif'],
+                        mono: ['JetBrains Mono','monospace']
+                    },
+                    colors: {
+                        brand: { 50:'#fff7ed', 100:'#ffedd5', 200:'#fed7aa', 300:'#fdba74', 400:'#fb923c', 500:'#f97316', 600:'#ea580c', 700:'#c2410c', 800:'#9a3412', 900:'#7c2d12' },
+                        surface: { 50:'#f8fafc', 100:'#f1f5f9', 800:'#1e293b', 850:'#172033', 900:'#0f172a', 950:'#0a0f1a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Markdown & Highlight -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- PWA & Mobile Web App -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Rust Learning Path">
+    <!-- Theme Init (Instant Class Application) -->
+    <script>
+        (function(){
+            try {
+                const saved = localStorage.getItem('rust_theme');
+                if (saved === 'light') {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                } else {
+                    document.documentElement.classList.remove('light');
+                    document.documentElement.classList.add('dark');
+                }
+            } catch(e) {}
+        })();
+    </script>
 </head>
-<body>
-  <div class="navbar">
-    <a href="/" class="back-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Course Catalog
-    </a>
-    <div class="course-title">
-      Rust Masterclass <span class="badge">Interactive</span>
+<body class="bg-[#0a0f1a] text-slate-200 font-['Inter',sans-serif] antialiased overflow-hidden">
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 glass-header border-b border-white/5">
+        <div class="px-3 sm:px-4 max-w-[1600px] mx-auto">
+            <div class="flex items-center gap-2 sm:gap-4 h-[52px] sm:h-[56px]">
+                <!-- Hamburger (mobile drawer) -->
+                <button id="menuToggle" class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition shrink-0" aria-label="Toggle menu" type="button">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+                <button id="sidebar-toggle" class="hidden" aria-label="Sidebar toggle"></button>
+                <!-- Logo SB -->
+                <a href="#" class="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0" onclick="loadLesson(0); return false;">
+                    <a href="/" title="Course Catalog" class="flex items-center justify-center w-9 h-9 rounded-xl border border-slate-700/50 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"><i class="fa-solid fa-arrow-left"></i></a>
+<div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center font-extrabold text-xs sm:text-sm text-white shadow-lg shadow-orange-600/20 shrink-0">🦀</div>
+                    <div class="hidden sm:block leading-tight">
+                        <div class="font-bold text-sm text-white flex items-center gap-2">Rust Learning Path</div>
+                        <div class="text-[11px] text-slate-500">5 Modul • 15 Pelajaran</div>
+                    </div>
+                    <span class="sm:hidden font-bold text-sm truncate max-w-[110px] xs:max-w-[150px]">Rust LP</span>
+                </a>
+                <!-- Search (desktop) -->
+                <div class="flex-1 max-w-[420px] relative hidden md:block mx-2">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs pointer-events-none"></i>
+                    <input id="lesson-search" type="text" placeholder="Cari pelajaran… ( / )" autocomplete="off" class="w-full h-9 bg-white/5 border border-white/10 rounded-xl pl-9 pr-10 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-orange-500/40 focus:ring-2 focus:ring-orange-500/20 transition">
+                    <kbd class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0a0f1a] border border-white/10 text-[11px] text-slate-500 px-1.5 py-0.5 rounded font-mono hidden lg:block">/</kbd>
+                </div>
+                <!-- Progress + Actions -->
+                <div class="flex items-center gap-1.5 sm:gap-3 ml-auto shrink-0">
+                    <!-- Mobile search toggle button -->
+                    <button id="mobileSearchBtn" onclick="toggleMobileSearch()" class="md:hidden w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 flex items-center justify-center text-slate-400 hover:text-white transition cursor-pointer" title="Cari pelajaran" type="button">
+                        <i id="mobileSearchIcon" class="fas fa-search text-sm pointer-events-none"></i>
+                    </button>
+                    <!-- Progress (Desktop) -->
+                    <div class="hidden sm:flex items-center gap-3">
+                        <div class="text-right leading-none">
+                            <div class="text-[11px] text-slate-500">Progress</div>
+                            <div class="text-xs font-mono font-semibold text-slate-300" id="course-progress">0%</div>
+                            <div class="hidden" id="progress-text">0%</div>
+                        </div>
+                        <div class="w-20 lg:w-28 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                            <div id="progress-fill" class="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-500" style="width:0%"></div>
+                        </div>
+                    </div>
+                    <span class="sm:hidden text-xs font-mono text-slate-400" id="mobile-progress">0%</span>
+                    <button onclick="openCertificateModal()" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 flex items-center justify-center text-slate-400 hover:text-orange-400 transition cursor-pointer" title="Sertifikat Kelulusan" type="button"><i class="fas fa-award text-sm pointer-events-none"></i></button>
+                    <button id="themeToggle" onclick="toggleAppTheme()" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 flex items-center justify-center text-slate-400 hover:text-white transition cursor-pointer" title="Toggle theme" type="button"><i id="themeToggleIcon" class="fas fa-moon text-sm pointer-events-none"></i></button>
+                    <a href="https://github.com/personalbotai/rust-learning-path" target="_blank" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hidden sm:flex items-center justify-center text-slate-400 hover:text-white transition" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Expandable search row (mobile animated) -->
+            <div id="mobileSearchContainer" class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden">
+                <div class="relative pt-1 pb-2.5">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs pointer-events-none"></i>
+                    <input id="lesson-search-mobile-row" type="text" placeholder="Ketik untuk mencari materi..." autocomplete="off" class="w-full h-9 bg-white/5 border border-white/10 rounded-xl pl-9 pr-9 text-sm text-slate-200 placeholder-slate-500 focus:outline-none transition">
+                    <button onclick="toggleMobileSearch(false)" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 text-xs p-1" title="Tutup">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- thin progress bar under header (mobile accent) -->
+        <div class="h-[2px] w-full bg-transparent"><div id="progress-fill-bar" class="h-full bg-gradient-to-r from-orange-500 to-amber-500 transition-all duration-500" style="width:0%"></div></div>
+    </header>
+
+    <!-- Overlay for mobile drawer -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden" onclick="closeSidebar()"></div>
+    <div id="backdrop" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden" onclick="closeSidebar()"></div>
+
+    <div class="flex h-[calc(100dvh-58px)] lg:h-[calc(100vh-58px)] overflow-hidden">
+        <!-- Sidebar kiri 300px: accordion 5 modul, lesson list, completed checkmarks -->
+        <aside id="sidebar" class="fixed lg:sticky top-[58px] lg:top-0 inset-y-0 left-0 z-50 w-[300px] shrink-0 bg-[#0f172a] lg:bg-[#0f172a] border-r border-white/5 flex flex-col h-[calc(100dvh-58px)] lg:h-[calc(100vh-58px)] transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out overflow-hidden">
+            <!-- Sidebar head -->
+            <div class="p-4 border-b border-white/5">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-[11px] font-bold tracking-widest text-slate-500 uppercase">Kurikulum</span>
+                    <span class="text-[11px] font-mono text-slate-500"><span id="stat-done">0</span>/15 selesai</span>
+                </div>
+                <!-- Mobile search inside sidebar -->
+                <div class="relative md:hidden">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+                    <input id="lesson-search-mobile" type="text" placeholder="Cari pelajaran…" class="w-full h-9 bg-white/5 border border-white/10 rounded-xl pl-9 pr-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-orange-500/40">
+                </div>
+            </div>
+            <!-- Nav accordion -->
+            <nav id="lessons-nav" class="flex-1 overflow-y-auto py-2 scrollbar-thin px-2"></nav>
+            <!-- Footer -->
+            <div class="p-4 border-t border-white/5">
+                <button onclick="resetProgress()" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 text-xs font-medium text-slate-400 hover:text-white transition">
+                    <i class="fas fa-rotate-left"></i> Reset Progress
+                </button>
+                <p class="text-[11px] text-center text-slate-600 mt-2">Progress tersimpan otomatis</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-hidden min-w-0 bg-[#0a0f1a]">
+            <!-- Lesson Header -->
+            <div id="lesson-header" class="sticky top-0 z-20 bg-[#0a0f1a]/90 backdrop-blur-xl border-b border-white/5 px-4 sm:px-8 py-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 text-[11px] font-medium text-orange-400 uppercase tracking-wider mb-1">
+                                <span id="breadcrumb">Pilih pelajaran untuk mulai</span>
+                                <span class="hidden" id="breadcrumb-module">Rust</span>
+                                <span class="hidden" id="breadcrumb-lesson"></span>
+                            </div>
+                            <h1 id="lesson-title" class="text-sm sm:text-xl font-bold text-white leading-snug break-words">Selamat Datang, Rustacean! 🦀</h1>
+                            <div class="flex items-center gap-2 mt-2">
+                                <span id="lesson-duration" class="hidden text-xs px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-400"></span>
+                                <span id="lesson-level" class="hidden text-xs px-2 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-300"></span>
+                                <span id="lesson-id" class="hidden text-xs font-mono text-slate-600"></span>
+                                <span id="lesson-meta" class="text-xs text-slate-500"></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <button id="complete-btn" onclick="markComplete()" class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white text-xs sm:text-sm font-semibold rounded-xl transition shadow-lg shadow-orange-600/20 whitespace-nowrap">
+                                <i class="fas fa-check text-xs"></i> <span class="sm:hidden">Selesai</span><span class="hidden sm:inline">Tandai Selesai</span>
+                            </button>
+                            <button id="completed-btn" style="display:none;" class="items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-emerald-500/10 text-emerald-400 text-xs sm:text-sm font-medium rounded-xl border border-emerald-500/20 whitespace-nowrap">
+                                <i class="fas fa-check-double"></i> Selesai ✓
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="flex-1 overflow-y-auto scroll-smooth scrollbar-thin" id="content-scroll">
+                <div class="max-w-4xl mx-auto px-4 sm:px-8 py-8">
+                    <!-- Markdown prose -->
+                    <article id="lesson-content" class="prose prose-invert max-w-none">
+                        <div class="hero text-center py-10">
+                            <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 mb-6"><i class="fas fa-shield-halved text-orange-400"></i> Interaktif • Memory Safety Tanpa GC • Fearless Concurrency</div>
+                            <div class="text-6xl mb-4">🦀</div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">Kuasai Pemrograman Sistem Rust dari Nol ke Production</h2>
+                            <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">Rust Learning Path menyatukan <b class="text-white">15 pelajaran mendalam</b>, <b class="text-white">live compiler runner</b> (Playground API), <b class="text-white">terminal output</b> & <b class="text-white">quiz teknis</b> — semua jalan di browser. Kuasai Ownership, Borrow Checker, Lifetimes, Traits, dan Concurrency aman.</p>
+                            <div class="flex flex-wrap gap-3 justify-center mt-8">
+                                <button onclick="loadLesson(0)" class="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white font-semibold rounded-xl shadow-lg shadow-orange-600/20 transition"><i class="fas fa-play mr-2"></i>Mulai dari Awal</button>
+                                <button onclick="loadLesson(4)" class="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium rounded-xl transition"><i class="fas fa-shield-halved mr-2"></i>Lompat ke Ownership</button>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 text-center">
+                                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-4"><div class="text-2xl font-extrabold text-white">15</div><div class="text-xs text-slate-500">Pelajaran</div></div>
+                                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-4"><div class="text-2xl font-extrabold text-white">5</div><div class="text-xs text-slate-500">Modul</div></div>
+                                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-4"><div class="text-2xl font-extrabold text-white">2024</div><div class="text-xs text-slate-500">Edition 2021+</div></div>
+                                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-4"><div class="text-2xl font-extrabold text-white">∞</div><div class="text-xs text-slate-500">Bisa diulang</div></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Code Editor Section -->
+                    <div id="code-section" class="mt-8">
+                        <div class="bg-[#111827] rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+                            <div class="flex items-center justify-between px-4 py-3 bg-[#172033] border-b border-white/5">
+                                <div class="flex items-center gap-3">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-3 h-3 rounded-full bg-orange-500/80"></span>
+                                        <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                                        <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                                    </div>
+                                    <span class="text-xs text-slate-400 font-mono flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span> main.rs — Rust 1.75+</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button onclick="copyCode()" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-medium rounded-lg transition"><i class="far fa-copy"></i> Copy</button>
+                                    <button onclick="runCode()" class="flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white text-xs font-bold rounded-lg transition shadow-lg shadow-orange-600/20">
+                                        <i class="fas fa-play text-[10px]"></i> Run <span class="hidden sm:inline font-mono text-[10px] opacity-80">⌘↵</span>
+                                    </button>
+                                    <button onclick="resetCode()" class="px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-400 text-xs rounded-lg transition" title="Reset code"><i class="fas fa-rotate-left"></i></button>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <textarea id="code-editor" class="w-full bg-[#0a0f1a] text-orange-100 font-['JetBrains_Mono',monospace] text-sm p-5 border-none resize-y min-h-[200px] focus:outline-none focus:ring-0 placeholder-slate-600 leading-relaxed" rows="10" spellcheck="false" placeholder="// Tulis kode Rust di sini..."></textarea>
+                            </div>
+                            <div class="border-t border-white/5">
+                                <div class="px-4 py-2 flex items-center justify-between bg-[#172033]">
+                                    <span class="flex items-center gap-2 text-[11px] font-semibold tracking-wider text-slate-400 uppercase"><i class="fas fa-terminal text-[10px]"></i> Output</span>
+                                    <button onclick="clearOutput()" class="text-[11px] text-slate-500 hover:text-white transition">Clear</button>
+                                </div>
+                                <div id="output" class="px-5 py-4 bg-black/40 font-['JetBrains_Mono',monospace] text-sm text-emerald-400 min-h-[80px] max-h-[260px] overflow-auto whitespace-pre-wrap"><span class="text-slate-600">// Tekan Run untuk mengompilasi kode Rust</span></div>
+                            </div>
+                        </div>
+                        <div id="validation-msg" class="mt-3 p-4 rounded-xl hidden text-sm border"></div>
+                    </div>
+
+                    <!-- Quiz Section -->
+                    <div id="quiz-section" class="mt-6 hidden">
+                        <div class="bg-[#111827] rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+                            <div class="flex items-center gap-3 px-6 py-4 bg-[#172033] border-b border-white/5">
+                                <div class="w-9 h-9 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center"><i class="fas fa-brain text-orange-400"></i></div>
+                                <h3 class="font-bold text-white">Quiz — Uji Pemahamanmu</h3>
+                            </div>
+                            <div class="p-6">
+                                <div id="quiz-content" class="space-y-3"></div>
+                                <button onclick="checkQuiz()" class="mt-5 px-6 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white text-sm font-semibold rounded-xl transition shadow-lg shadow-orange-600/20">
+                                    <i class="fas fa-paper-plane mr-2"></i>Submit Jawaban
+                                </button>
+                                <div id="quiz-result" class="mt-4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Footer -->
+                    <div class="flex items-center justify-between gap-3 py-6" id="nav-buttons">
+                        <button id="prev-btn" onclick="prevLesson()" disabled class="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 text-slate-300 text-sm font-medium rounded-xl transition disabled:opacity-30 disabled:cursor-not-allowed border border-white/5">
+                            <i class="fas fa-chevron-left text-xs"></i> Prev
+                        </button>
+                        <button id="next-btn" onclick="nextLesson()" class="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white text-sm font-semibold rounded-xl transition shadow-lg shadow-orange-600/20">
+                            Next <i class="fas fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+
+                    <footer class="text-center text-xs text-slate-600 border-t border-white/5 pt-6 mt-2">
+                        <p>Rust Learning Path — dibuat dengan <i class="fas fa-heart text-orange-500/60"></i> untuk developer Indonesia • Modern Rust Systems</p>
+                        <p class="mt-1">© 2024 personalbotai · <a href="https://github.com/personalbotai/rust-learning-path" class="hover:text-orange-400 transition">GitHub</a> · <a href="https://doc.rust-lang.org/book/" target="_blank" class="hover:text-orange-400 transition">doc.rust-lang.org</a></p>
+                    </footer>
+                </div>
+            </div>
+        </main>
     </div>
-    <div style="width: 100px;"></div> <!-- Spacer for center alignment -->
-  </div>
-  <iframe src="https://rust.syamsulbahri.dev/" loading="lazy"></iframe>
+
+    <script src="app.js"></script>
+    <script>
+    // Mobile Search Bar Toggle
+    window.toggleMobileSearch = function(force) {
+        const c = document.getElementById('mobileSearchContainer');
+        const icon = document.getElementById('mobileSearchIcon');
+        const inp = document.getElementById('lesson-search-mobile-row');
+        if (!c) return;
+        const isHidden = c.classList.contains('max-h-0') || c.style.maxHeight === '0px';
+        const shouldOpen = (typeof force === 'boolean') ? force : isHidden;
+        if (shouldOpen) {
+            c.classList.remove('max-h-0', 'opacity-0');
+            c.classList.add('max-h-16', 'opacity-100');
+            if (icon) icon.className = 'fas fa-times text-sm pointer-events-none text-slate-300';
+            setTimeout(() => inp?.focus(), 150);
+        } else {
+            c.classList.remove('max-h-16', 'opacity-100');
+            c.classList.add('max-h-0', 'opacity-0');
+            if (icon) icon.className = 'fas fa-search text-sm pointer-events-none';
+        }
+    };
+
+    // Global Theme Toggle Function
+    window.toggleAppTheme = function() {
+        const html = document.documentElement;
+        const icon = document.getElementById('themeToggleIcon');
+        const isDark = html.classList.contains('dark');
+        const next = isDark ? 'light' : 'dark';
+        if (next === 'light') {
+            html.classList.remove('dark');
+            html.classList.add('light');
+            if (icon) icon.className = 'fas fa-sun text-sm text-orange-500 pointer-events-none';
+        } else {
+            html.classList.add('dark');
+            html.classList.remove('light');
+            if (icon) icon.className = 'fas fa-moon text-sm text-slate-400 pointer-events-none';
+        }
+        try { localStorage.setItem('rust_theme', next); } catch(e) {}
+    };
+    (function(){
+        const icon = document.getElementById('themeToggleIcon');
+        const html = document.documentElement;
+        const saved = localStorage.getItem('rust_theme') || 'dark';
+        if (saved === 'light') {
+            html.classList.remove('dark');
+            html.classList.add('light');
+            if (icon) icon.className = 'fas fa-sun text-sm text-orange-500 pointer-events-none';
+        } else {
+            html.classList.add('dark');
+            html.classList.remove('light');
+            if (icon) icon.className = 'fas fa-moon text-sm text-slate-400 pointer-events-none';
+        }
+        // Search binding
+        const s=document.getElementById('lesson-search');
+        const sm=document.getElementById('lesson-search-mobile');
+        const smr=document.getElementById('lesson-search-mobile-row');
+        function bindSearch(el){
+            if(!el) return;
+            el.addEventListener('input',()=>{
+                const v=el.value;
+                if(s && el!==s) s.value=v;
+                if(sm && el!==sm) sm.value=v;
+                if(smr && el!==smr) smr.value=v;
+                if(typeof renderNav==='function'){
+                    try{ renderNav(v); }catch(e){ renderNav(); }
+                }
+            });
+            el.addEventListener('keydown',e=>{
+                if(e.key==='Enter'){
+                    e.preventDefault();
+                    const query=(el.value||'').toLowerCase();
+                    if(!query) return;
+                    const idx=lessons.findIndex(l=>l.title.toLowerCase().includes(query));
+                    if(idx>=0) loadLesson(idx);
+                }
+            });
+        }
+        bindSearch(s); bindSearch(sm); bindSearch(smr);
+        document.addEventListener('keydown',e=>{
+            if(e.key==='/' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)){
+                e.preventDefault(); s?.focus();
+            }
+            if((e.metaKey||e.ctrlKey) && e.key==='Enter'){ e.preventDefault(); if(typeof runCode==='function') runCode(); }
+            if(e.key==='Escape'){ if(typeof closeSidebar==='function') closeSidebar(); }
+        });
+        // Mobile drawer toggle
+        const mt=document.getElementById('menuToggle');
+        const st=document.getElementById('sidebar-toggle');
+        const sb=document.getElementById('sidebar');
+        const ov=document.getElementById('sidebar-overlay');
+        const bd=document.getElementById('backdrop');
+        function openSidebar(){
+            sb?.classList.add('sidebar-open'); sb?.classList.remove('-translate-x-full');
+            ov?.classList.remove('hidden'); ov?.classList.add('overlay-open');
+            bd?.classList.remove('hidden'); bd?.classList.add('show');
+        }
+        function closeSidebarFn(){
+            sb?.classList.remove('sidebar-open'); sb?.classList.add('-translate-x-full');
+            if(window.innerWidth>=1024){ sb?.classList.remove('-translate-x-full'); sb?.classList.add('lg:translate-x-0'); }
+            ov?.classList.add('hidden'); ov?.classList.remove('overlay-open');
+            bd?.classList.add('hidden'); bd?.classList.remove('show');
+        }
+        window.closeSidebar=closeSidebarFn;
+        window.openSidebar=openSidebar;
+        if(mt) mt.addEventListener('click',()=>{
+            const isOpen=sb?.classList.contains('sidebar-open');
+            if(isOpen) closeSidebarFn(); else openSidebar();
+        });
+        if(st) st.addEventListener('click',()=>{
+            const isOpen=sb?.classList.contains('sidebar-open');
+            if(isOpen) closeSidebarFn(); else openSidebar();
+        });
+        if(ov) ov.addEventListener('click', closeSidebarFn);
+        if(bd) bd.addEventListener('click', closeSidebarFn);
+    })();
+    function copyCode(){
+        const ta=document.getElementById('code-editor');
+        if(!ta) return;
+        navigator.clipboard.writeText(ta.value).then(()=>{
+            const out=document.getElementById('output');
+            if(out) out.innerHTML='<span class="text-orange-400">✓ Kode disalin ke clipboard</span>';
+        });
+    }
+    function clearOutput(){
+        const o=document.getElementById('output');
+        if(o) o.innerHTML='<span class="text-slate-600">// Output dibersihkan — tekan Run</span>';
+        const v=document.getElementById('validation-msg'); if(v){ v.className='hidden'; v.innerHTML=''; }
+    }
+    </script>
+
+    <!-- Command Palette (⌘K) -->
+    <div id="cmd-palette-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-md z-[100] hidden items-start justify-center pt-[10vh] sm:pt-[15vh] px-4 animate-fadeIn transition-opacity duration-200">
+        <div id="cmd-palette-dialog" class="w-full max-w-xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[70vh] transform transition-all scale-95 opacity-0">
+            <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/5 bg-[#172033]/60">
+                <i class="fas fa-search text-slate-400 text-sm pl-1"></i>
+                <input id="cmd-palette-input" type="text" placeholder="Cari pelajaran, modul, atau perintah… (↑↓ pilih, ↵ buka)" autocomplete="off" spellcheck="false" class="flex-1 bg-transparent text-slate-100 placeholder-slate-500 text-sm focus:outline-none">
+                <kbd class="text-[10px] font-mono font-semibold px-2 py-1 rounded-md bg-white/5 border border-white/10 text-slate-400 hidden sm:inline-block">ESC</kbd>
+            </div>
+            <div id="cmd-palette-results" class="flex-1 overflow-y-auto p-2 space-y-1 scrollbar-thin max-h-[50vh]"></div>
+            <div class="px-4 py-2.5 bg-[#172033]/40 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-500">
+                <div class="flex items-center gap-3">
+                    <span><kbd class="font-mono bg-white/5 px-1.5 py-0.5 rounded border border-white/10 text-slate-400">↑↓</kbd> Navigasi</span>
+                    <span><kbd class="font-mono bg-white/5 px-1.5 py-0.5 rounded border border-white/10 text-slate-400">↵</kbd> Buka</span>
+                    <span><kbd class="font-mono bg-white/5 px-1.5 py-0.5 rounded border border-white/10 text-slate-400">esc</kbd> Tutup</span>
+                </div>
+                <span class="text-slate-500 font-medium">Command Palette</span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    #cmd-palette-dialog.active { transform: scale(1); opacity: 1; }
+    .cmd-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.625rem 0.875rem; border-radius: 0.75rem; cursor: pointer; transition: all 0.15s ease; color: #cbd5e1; }
+    .cmd-item:hover, .cmd-item.selected { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
+    .cmd-item.selected { outline: 1px solid rgba(255, 255, 255, 0.15); }
+    .cmd-item mark { background: transparent; color: #ea580c; font-weight: 700; }
+    </style>
+
+    <script>
+    (function(){
+        const backdrop = document.getElementById('cmd-palette-backdrop');
+        const dialog = document.getElementById('cmd-palette-dialog');
+        const input = document.getElementById('cmd-palette-input');
+        const resultsEl = document.getElementById('cmd-palette-results');
+        let selectedIndex = 0;
+        let currentItems = [];
+
+        function getCatalog() {
+            const items = [];
+            items.push({
+                type: 'action',
+                icon: 'fa-play text-emerald-400',
+                title: 'Mulai Pelajaran Pertama',
+                sub: 'Mulai kurikulum dari Lesson 1',
+                action: () => { if (typeof loadLesson === 'function') loadLesson(0); }
+            });
+            items.push({
+                type: 'action',
+                icon: 'fa-moon text-orange-400',
+                title: 'Toggle Tema (Light / Dark)',
+                sub: 'Ganti tampilan antara mode gelap dan terang',
+                action: () => { const btn = document.getElementById('themeToggle'); if (btn) btn.click(); }
+            });
+            items.push({
+                type: 'action',
+                icon: 'fa-rotate-left text-rose-400',
+                title: 'Reset Progress Belajar',
+                sub: 'Hapus riwayat centang pelajaran yang selesai',
+                action: () => { if (confirm('Yakin ingin reset semua progress belajar?')) { localStorage.clear(); location.reload(); } }
+            });
+            const lessonList = window.lessons || window.LESSONS;
+            if (Array.isArray(lessonList)) {
+                lessonList.forEach((l, idx) => {
+                    items.push({
+                        type: 'lesson',
+                        icon: 'fa-book-open text-orange-400',
+                        title: l.title || l.name,
+                        sub: l.module || (l.duration ? (l.duration + ' • ' + (l.level || '')) : 'Pelajaran'),
+                        action: () => { if (typeof loadLesson === 'function') loadLesson(idx); }
+                    });
+                });
+            }
+            return items;
+        }
+
+        function openPalette() {
+            backdrop.classList.remove('hidden');
+            backdrop.classList.add('flex');
+            requestAnimationFrame(() => {
+                dialog.classList.add('active');
+                input.focus();
+                input.value = '';
+                renderResults('');
+            });
+        }
+
+        function closePalette() {
+            dialog.classList.remove('active');
+            setTimeout(() => {
+                backdrop.classList.add('hidden');
+                backdrop.classList.remove('flex');
+            }, 150);
+        }
+
+        function highlight(text, q) {
+            if (!q) return esc(text);
+            const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+            return esc(text).replace(re, '<mark>$1</mark>');
+        }
+        function esc(s) {
+            return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function renderResults(q) {
+            const catalog = getCatalog();
+            const query = q.trim().toLowerCase();
+            if (!query) {
+                currentItems = catalog.slice(0, 12);
+            } else {
+                currentItems = catalog.filter(it =>
+                    it.title.toLowerCase().includes(query) ||
+                    (it.sub && it.sub.toLowerCase().includes(query))
+                ).slice(0, 15);
+            }
+            selectedIndex = 0;
+
+            if (currentItems.length === 0) {
+                resultsEl.innerHTML = `
+                    <div class="py-8 text-center text-slate-500 text-sm">
+                        <i class="fas fa-search mb-2 text-lg opacity-40"></i>
+                        <p>Tidak ada pelajaran atau aksi yang cocok dengan "<b>${esc(query)}</b>"</p>
+                    </div>`;
+                return;
+            }
+
+            resultsEl.innerHTML = currentItems.map((it, idx) => `
+                <div class="cmd-item ${idx === 0 ? 'selected' : ''}" data-idx="${idx}">
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center shrink-0">
+                        <i class="fas ${it.icon} text-xs"></i>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="text-xs font-semibold truncate leading-tight">${highlight(it.title, query)}</div>
+                        <div class="text-[11px] text-slate-500 truncate mt-0.5">${esc(it.sub)}</div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-600 uppercase px-1.5 py-0.5 rounded bg-white/5">${it.type}</span>
+                </div>
+            `).join('');
+
+            resultsEl.querySelectorAll('.cmd-item').forEach(el => {
+                el.addEventListener('click', () => {
+                    const i = parseInt(el.getAttribute('data-idx'), 10);
+                    const item = currentItems[i];
+                    if (item && item.action) {
+                        closePalette();
+                        item.action();
+                    }
+                });
+            });
+        }
+
+        window.addEventListener('keydown', e => {
+            if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                if (backdrop.classList.contains('hidden')) openPalette(); else closePalette();
+                return;
+            }
+            if (e.key === '/' && !['input','textarea'].includes(document.activeElement.tagName.toLowerCase())) {
+                e.preventDefault(); openPalette(); return;
+            }
+            if (!backdrop.classList.contains('hidden')) {
+                if (e.key === 'Escape') { e.preventDefault(); closePalette(); }
+                else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (currentItems.length > 0) {
+                        selectedIndex = (selectedIndex + 1) % currentItems.length;
+                        const items = resultsEl.querySelectorAll('.cmd-item');
+                        items.forEach((el, i) => { if (i === selectedIndex) { el.classList.add('selected'); el.scrollIntoView({ block: 'nearest' }); } else el.classList.remove('selected'); });
+                    }
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (currentItems.length > 0) {
+                        selectedIndex = (selectedIndex - 1 + currentItems.length) % currentItems.length;
+                        const items = resultsEl.querySelectorAll('.cmd-item');
+                        items.forEach((el, i) => { if (i === selectedIndex) { el.classList.add('selected'); el.scrollIntoView({ block: 'nearest' }); } else el.classList.remove('selected'); });
+                    }
+                } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (currentItems[selectedIndex]?.action) { closePalette(); currentItems[selectedIndex].action(); }
+                }
+            }
+        });
+
+        input.addEventListener('input', () => renderResults(input.value));
+        backdrop.addEventListener('click', e => { if (e.target === backdrop) closePalette(); });
+
+        const headerSearch = document.getElementById('lesson-search');
+        if (headerSearch) {
+            headerSearch.placeholder = 'Cari materi… ( ⌘K / Ctrl+K )';
+            headerSearch.addEventListener('focus', e => { e.preventDefault(); headerSearch.blur(); openPalette(); });
+        }
+        const mobileSearch = document.getElementById('lesson-search-mobile');
+        if (mobileSearch) {
+            mobileSearch.placeholder = 'Cari materi… ( ⌘K )';
+            mobileSearch.addEventListener('focus', e => { e.preventDefault(); mobileSearch.blur(); openPalette(); });
+        }
+    })();
+    </script>
+
+    <!-- Certificate Modal (Gated 100% Completion) -->
+    <div id="certificate-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4">
+        <div class="w-full max-w-2xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#172033]/60">
+                <div class="flex items-center gap-2.5">
+                    <i class="fas fa-award text-orange-400 text-lg"></i>
+                    <h3 class="font-bold text-white text-base">Sertifikat Kelulusan</h3>
+                </div>
+                <button onclick="closeCertificateModal()" class="text-slate-400 hover:text-white transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- View 1: Locked State -->
+            <div id="cert-locked-view" class="p-8 text-center space-y-5 hidden">
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-3xl">
+                    🔒
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-2">Sertifikat Masih Terkunci</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+                        Selesaikan seluruh modul pelajaran, latihan kode, dan kuis pemahaman (100% selesai) untuk membuka dan mengklaim sertifikat kelulusan resmi Anda.
+                    </p>
+                </div>
+                <div class="max-w-sm mx-auto p-4 rounded-xl bg-[#172033]/60 border border-white/5 space-y-2">
+                    <div class="flex items-center justify-between text-xs text-slate-300">
+                        <span>Progres Anda:</span>
+                        <span id="cert-locked-progress-text" class="font-mono font-bold text-orange-400">0%</span>
+                    </div>
+                    <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div id="cert-locked-progress-bar" class="h-full bg-gradient-to-r from-orange-500 to-red-600 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                    <div class="text-[11px] text-slate-500 text-left pt-1" id="cert-locked-remaining-text">
+                        Tersisa beberapa pelajaran lagi.
+                    </div>
+                </div>
+                <div>
+                    <button onclick="closeCertificateModal()" class="px-6 py-2.5 bg-white/10 hover:bg-white/15 text-white text-xs font-semibold rounded-xl transition">
+                        Lanjutkan Belajar Sekarang →
+                    </button>
+                </div>
+            </div>
+
+            <!-- View 2: Unlocked State -->
+            <div id="cert-unlocked-view" class="p-6 overflow-y-auto space-y-4 hidden">
+                <div class="flex items-center gap-2 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs">
+                    <i class="fas fa-check-circle text-base"></i>
+                    <span><b>Selamat!</b> Anda telah menyelesaikan 100% seluruh kurikulum pembelajaran.</span>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 mb-1.5">Nama Lengkap Anda untuk Sertifikat:</label>
+                    <input id="cert-name-input" type="text" oninput="drawCertificate()" placeholder="Masukkan nama lengkap Anda..." class="w-full px-4 py-2.5 bg-black/40 border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-orange-500 transition">
+                </div>
+                <div class="rounded-xl overflow-hidden border border-white/5 bg-black/60 p-2">
+                    <canvas id="cert-canvas" width="1000" height="650" class="w-full h-auto rounded-lg shadow"></canvas>
+                </div>
+            </div>
+
+            <!-- Footer for Unlocked View -->
+            <div id="cert-unlocked-footer" class="px-6 py-4 bg-[#172033]/40 border-t border-white/5 flex items-center justify-between gap-3 hidden">
+                <button onclick="closeCertificateModal()" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-medium rounded-xl transition">
+                    Tutup
+                </button>
+                <div class="flex items-center gap-2">
+                    <button onclick="printCertificate()" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-slate-200 text-xs font-semibold rounded-xl border border-white/10 transition flex items-center gap-1.5">
+                        <i class="fas fa-print"></i> Cetak / PDF
+                    </button>
+                    <button onclick="downloadCertificatePNG()" class="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 shadow-orange-600/20 text-white text-xs font-semibold rounded-xl shadow-lg transition flex items-center gap-1.5">
+                        <i class="fas fa-download"></i> Unduh PNG
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(err => console.debug('SW reg skipped:', err));
+            });
+        }
+    </script>
 </body>
 </html>

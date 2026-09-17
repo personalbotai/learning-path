@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": "Level access paling ketat?", "options": ["private", "protected", "default", "public"], "answer": 0, "explanation": "private hanya bisa diakses dalam class yang sama." },
+    { "question": "Apa akses default (tanpa modifier)?", "options": ["public", "package-private", "protected", "none"], "answer": 1, "explanation": "Default (no modifier) adalah package-private." },
+    { "question": "Protected dapat diakses oleh?", "options": ["Hanya class yang sama", "Package yang sama dan subclass", "Semua class", "Hanya interface"], "answer": 1, "explanation": "Protected bisa diakses di package yang sama dan oleh subclass di package lain." },
+    { "question": "Bisakah top-level class dideklarasikan protected?", "options": ["Ya", "Tidak", "Hanya dalam interface", "Hanya abstract"], "answer": 1, "explanation": "Top-level class hanya bisa public atau package-private." },
+    { "question": "Field interface secara default?", "options": ["private", "protected", "public static final", "public abstract"], "answer": 2, "explanation": "Fields dalam interface adalah public static final." }
+  ]
+}

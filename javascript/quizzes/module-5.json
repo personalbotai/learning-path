@@ -1,0 +1,128 @@
+{
+  "module": 5,
+  "title": "Quiz: Standard Library & Built-in Objects",
+  "description": "Uji pemahaman mendalam tentang manipulasi String modern, Higher-Order Array functions, Number precision, BigInt, RegExp modern (named groups, lookbehind), dan Temporal API.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mengapa operasi floating point '0.1 + 0.2 === 0.3' di JavaScript menghasilkan nilai false?",
+      "options": [
+        "Karena mesin JS membatasi desimal hanya sampai 1 angka di belakang koma",
+        "Karena representasi IEEE 754 double-precision 64-bit biner tidak dapat merepresentasikan pecahan desimal 0.1 dan 0.2 secara presisi eksak",
+        "Karena operator perbandingan === memaksa konversi ke integer",
+        "Karena angka di JavaScript menggunakan basis komputasi heksadesimal"
+      ],
+      "correct": 1,
+      "explanation": "JavaScript menggunakan format IEEE 754 floating-point 64-bit. Angka 0.1 dan 0.2 dalam representasi biner menghasilkan pecahan berulang tanpa ujung, sehingga 0.1 + 0.2 bernilai 0.30000000000000004, bukan 0.3 tepat."
+    },
+    {
+      "id": 2,
+      "question": "Perhatikan ekspresi RegExp modern berikut:\nconst pattern = /(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})/;\nconst match = pattern.exec('2026-09-16');\nBagaimana cara mengakses grup tahun dari hasil regex tersebut?",
+      "options": [
+        "match.groups.year",
+        "match.named('year')",
+        "match.getGroup('year')",
+        "match['year']"
+      ],
+      "correct": 0,
+      "explanation": "Fitur ES2018 Named Capture Groups memungkinkan penamaan grup dengan sintaks (?<name>...). Hasil pencocokan menyertakan objek .groups, sehingga nilai grup tahun dapat diakses langsung melalui match.groups.year."
+    },
+    {
+      "id": 3,
+      "question": "Apa perbedaan utama antara 'String.prototype.replace()' dengan string pattern biasa dan 'String.prototype.replaceAll()'?",
+      "options": [
+        "replace() memodifikasi string asli di memori, sedangkan replaceAll() mengembalikan string baru",
+        "replace() dengan parameter string hanya mengganti kemunculan pertama, sedangkan replaceAll() mengganti seluruh kemunculan substring tersebut",
+        "replaceAll() hanya menerima parameter RegExp dengan flag global /g",
+        "replace() tidak mendukung Unicode, sedangkan replaceAll() mendukung"
+      ],
+      "correct": 1,
+      "explanation": "Ketika diberikan argumen pencarian bertipe string, .replace('a', 'b') hanya mengganti kemunculan substring pertama. Sebaliknya, .replaceAll('a', 'b') mengganti semua kemunculan substring di seluruh teks."
+    },
+    {
+      "id": 4,
+      "question": "Apa perbedaan antara positive lookahead (?=...) dan positive lookbehind (?<=...) pada Regular Expression modern?",
+      "options": [
+        "Lookahead memeriksa karakter sebelumnya, sedangkan lookbehind memeriksa karakter setelahnya",
+        "Lookahead memeriksa kecocokan pola di depan (setelah posisi saat ini), sedangkan lookbehind memeriksa kecocokan pola di belakang (sebelum posisi saat ini) tanpa mengonsumsi karakter tersebut",
+        "Lookbehind hanya didukung untuk angka, sedangkan lookahead untuk huruf",
+        "Keduanya identik dan hanya berbeda di penulisan flag"
+      ],
+      "correct": 1,
+      "explanation": "Lookahead (?=...) memvalidasi pola yang mengikuti ke depan, sedangkan Lookbehind (?<=...) memvalidasi pola yang mendahului di belakang. Keduanya bersifat zero-width assertion (tidak mengonsumsi karakter pencocokan)."
+    },
+    {
+      "id": 5,
+      "question": "Perhatikan operasi Array reduce berikut:\nconst nums = [1, 2, 3, 4];\nconst res = nums.reduce((acc, curr) => acc + curr);\nApa yang menjadi nilai awal (initial value) akumulator 'acc' jika parameter initialValue tidak disediakan?",
+      "options": [
+        "0",
+        "undefined",
+        "Elemen pertama array (nums[0]), dan iterasi dimulai dari indeks ke-1",
+        "null"
+      ],
+      "correct": 2,
+      "explanation": "Jika initialValue tidak diberikan pada reduce(), akumulator akan diinisialisasi dengan elemen pertama array (indeks 0), dan callback fungsi baru mulai dieksekusi dari elemen kedua (indeks 1)."
+    },
+    {
+      "id": 6,
+      "question": "Apa motivasi utama diperkenalkannya 'Temporal API' untuk menggantikan objek 'Date' bawaan JavaScript?",
+      "options": [
+        "Date tidak mendukung milidetik",
+        "Objek Date rentan terhadap mutasi (mutable), memiliki penomoran bulan berbasis 0 (0-indexed months), API time zone yang buruk, dan parsing string yang tidak andal",
+        "Temporal API berjalan di GPU untuk rendering tanggal",
+        "Date dihapus sepenuhnya dari spesifikasi ECMAScript"
+      ],
+      "correct": 1,
+      "explanation": "Objek Date historis memiliki banyak kelemahan desain: mutabilitas bawaan yang memicu bug, indexing bulan aneh (Januari = 0), penanganan timezone terbatas pada UTC/Lokal, dan tidak adanya pemisahan antara tanggal murni, waktu murni, dan timezone-aware datetime seperti yang disediakan Temporal API."
+    },
+    {
+      "id": 7,
+      "question": "Bagaimana cara melakukan konversi dan penelusuran iterator regex hasil dari 'String.prototype.matchAll()'?",
+      "options": [
+        "matchAll() mengembalikan RegExpStringIterator yang dapat ditelusuri dengan for...of atau diubah menjadi array dengan Array.from()",
+        "matchAll() langsung mengembalikan array 1 dimensi berisi semua match",
+        "matchAll() mengembalikan Promise bertipe async iterator",
+        "matchAll() hanya bisa dibaca menggunakan method .json()"
+      ],
+      "correct": 0,
+      "explanation": "matchAll() mengembalikan sebuah iterator dari semua hasil pencocokan (lengkap beserta capture groups). Iterator ini dapat dikonsumsi dengan for...of, spread operator [...result], atau Array.from()."
+    },
+    {
+      "id": 8,
+      "question": "Berapa nilai dari Number.MAX_SAFE_INTEGER di JavaScript dan apa maknanya?",
+      "options": [
+        "2^31 - 1 (2.147.483.647); batas maksimum integer 32-bit",
+        "2^53 - 1 (9.007.199.254.740.991); batas integer tertinggi yang dapat direpresentasikan dan dibandingkan secara presisi eksak tanpa kehilangan presisi",
+        "2^64 - 1; batas floating point double precision",
+        "Infinity"
+      ],
+      "correct": 1,
+      "explanation": "Number.MAX_SAFE_INTEGER adalah 9007199254740991 (2^53 - 1). Di atas angka ini, dua integer berbeda dapat dipetakan ke representasi floating-point biner yang sama, sehingga memerlukan BigInt untuk integer yang lebih besar."
+    },
+    {
+      "id": 9,
+      "question": "Perhatikan kode Higher-Order Function berikut:\nconst words = ['apel', 'belimbing', 'ceri'];\nconst hasLongWord = words.some(w => w.length > 5);\nconst allLongWords = words.every(w => w.length > 3);\nBerapa nilai hasLongWord dan allLongWords?",
+      "options": [
+        "true dan true",
+        "true dan false",
+        "false dan true",
+        "false dan false"
+      ],
+      "correct": 0,
+      "explanation": ".some() mengembalikan true jika MINIMAL satu elemen memenuhi kondisi ('belimbing' panjangnya 9 > 5). .every() mengembalikan true jika SEMUA elemen memenuhi kondisi ('apel'=4, 'belimbing'=9, 'ceri'=4 yang semuanya > 3)."
+    },
+    {
+      "id": 10,
+      "question": "Apa output dari Math.trunc(-4.9) dibandingkan dengan Math.floor(-4.9)?",
+      "options": [
+        "-4 dan -5",
+        "-5 dan -4",
+        "-4 dan -4",
+        "-5 dan -5"
+      ],
+      "correct": 0,
+      "explanation": "Math.trunc() memotong bagian desimal (menuju nol), sehingga -4.9 menjadi -4. Math.floor() membulatkan ke bawah (menuju nilai yang lebih kecil/negatif), sehingga -4.9 menjadi -5."
+    }
+  ]
+}

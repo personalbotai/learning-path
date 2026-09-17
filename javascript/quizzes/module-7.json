@@ -1,0 +1,128 @@
+{
+  "module": 7,
+  "title": "Quiz: Tooling & Ecosystem",
+  "description": "Uji pemahaman mendalam tentang modern JavaScript tooling: ESM vs CJS, Top-Level Await, SWC vs Babel vs esbuild, Vite HMR, package managers (pnpm/bun), dan testing frameworks.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Bagaimana perbedaan arsitektur loading antara ES Modules (ESM) dan CommonJS (CJS)?",
+      "options": [
+        "CJS dimuat secara asynchronous saat runtime, sedangkan ESM synchronous",
+        "ESM memiliki struktur statis yang di-parse dan di-link sebelum runtime (memungkinkan tree-shaking dan static analysis), sedangkan CJS dievaluasi secara dinamis dan synchronous saat runtime (require())",
+        "CJS mendukung live bindings, sedangkan ESM hanya mengekspor copy by value statis",
+        "ESM tidak mendukung pemuatan modul pihak ketiga dari node_modules"
+      ],
+      "correct": 1,
+      "explanation": "ESM memiliki fase parsing, instantiating, dan evaluating statis. Hal ini memungkinkan bundler membuang kode tak terpakai (tree-shaking) dan mendukung live bindings. CJS memuat modul secara synchronous saat eksekusi kode mencapai fungsi require()."
+    },
+    {
+      "id": 2,
+      "question": "Apa syarat dan kegunaan dari fitur 'Top-Level Await' di JavaScript modern?",
+      "options": [
+        "Hanya dapat digunakan di dalam function bertanda 'async'",
+        "Dapat digunakan langsung di tingkat teratas file tanpa async function wrapper, khusus di dalam konteks ES Modules (ESM)",
+        "Hanya bekerja di CommonJS dengan require()",
+        "Membuat seluruh script browser membeku hingga promise selesai"
+      ],
+      "correct": 1,
+      "explanation": "Top-Level Await memungkinkan modul menunda resolusi eksekusi hingga Promise di level root selesai (misal memuat konfigurasi atau koneksi database sebelum modul lain yang mengimpornya dieksekusi), dan ini hanya valid di dalam ES Modules."
+    },
+    {
+      "id": 3,
+      "question": "Mengapa bundler dan compiler modern berbasis Rust/Go (seperti esbuild dan SWC) memiliki kecepatan build jauh melampaui Babel dan Webpack murni?",
+      "options": [
+        "Karena tidak melakukan parsing Abstract Syntax Tree (AST)",
+        "Karena ditulis dalam bahasa native compiled (Go/Rust), paralelisasi multi-threaded yang efisien, dan optimasi pemanfaatan memori tanpa overhead garbage collector V8",
+        "Karena mengabaikan standar ECMAScript",
+        "Karena hanya mendukung TypeScript dan bukan JavaScript murni"
+      ],
+      "correct": 1,
+      "explanation": "esbuild (Go) dan SWC (Rust) dikompilasi langsung ke kode mesin native, memanfaatkan thread paralel secara optimal, dan menghindari overhead GC dan kompilasi JIT JavaScript yang ada pada Babel/Webpack konvensional."
+    },
+    {
+      "id": 4,
+      "question": "Bagaimana mekanisme development server Vite dapat menyajikan halaman hampir instan (instant server start) dibandingkan bundler berbasis bundle konvensional?",
+      "options": [
+        "Vite mem-bundle seluruh aplikasi ke dalam satu file besar di memori saat server start",
+        "Vite memanfaatkan native ES Modules (ESM) di browser, sehingga kode source hanya ditranspilasi sesuai permintaan (on-demand per file) tanpa bundling penuh di awal",
+        "Vite mengabaikan file JavaScript dan hanya menyajikan HTML statis",
+        "Vite menjalankan emulasi browser di server"
+      ],
+      "correct": 1,
+      "explanation": "Di mode development, Vite membiarkan browser menangani pemuatan modul melalui native ESM (<script type=\"module\">) dan hanya mentransformasi file yang diminta oleh browser secara on-demand, didukung pra-bundling dependencies menggunakan esbuild."
+    },
+    {
+      "id": 5,
+      "question": "Apa keunggulan arsitektur 'content-addressable storage' dan hard-link yang digunakan oleh package manager 'pnpm' dibandingkan 'npm' konvensional?",
+      "options": [
+        "Menyimpan semua dependency langsung di RAM sistem",
+        "Menghemat ruang disk secara masif dengan menyimpan satu salinan file fisik di global store dan membuat hard link/symlink di node_modules project, serta mencegah akses ke phantom dependencies",
+        "Mengenkripsi folder node_modules secara lokal",
+        "Menggabungkan seluruh package menjadi satu file binary executable"
+      ],
+      "correct": 1,
+      "explanation": "pnpm menggunakan shared global content-addressable store. Package yang identik hanya diunduh sekali di disk, lalu dihubungkan ke projek melalui symlinks/hard-links, sehingga mencegah disk bloat dan struktur strict-nya mengeliminasi ketergantungan phantom (phantom dependencies)."
+    },
+    {
+      "id": 6,
+      "question": "Apa perbedaan esensial antara 'npm run test' menggunakan Vitest dibandingkan Jest tradisional dalam proyek berbasis Vite?",
+      "options": [
+        "Vitest tidak mendukung assertion expect()",
+        "Vitest berbagi pipeline konfigurasi, plugin, dan modul resolver yang sama langsung dengan Vite, mendukung native ESM dan TypeScript out-of-the-box tanpa konfigurasi transform ganda",
+        "Jest tidak bisa dijalankan di Node.js",
+        "Vitest hanya dapat digunakan untuk integration test di browser fisik"
+      ],
+      "correct": 1,
+      "explanation": "Vitest dirancang menyatu dengan ekosistem Vite. Ia menggunakan konfigurasi, transform, dan plugin vite.config yang sama, sehingga eksekusi test sangat cepat dengan hot module reload untuk file test dan tanpa perlu setup babel-jest terpisah."
+    },
+    {
+      "id": 7,
+      "question": "Bagaimana 'live bindings' bekerja pada ES Module export (contoh: 'export let count = 0; export function inc() { count++; }')?",
+      "options": [
+        "Modul pengimpor menerima salinan nilai statis yang tidak pernah berubah saat count bertambah",
+        "Modul pengimpor terikat langsung ke referensi variabel asli di modul pengekspor, sehingga saat 'inc()' dipanggil, nilai variabel yang diimpor ikut berubah secara real-time",
+        "Modul pengimpor dapat langsung mengubah nilai count dengan penugasan 'count = 10'",
+        "Live bindings hanya berfungsi pada tipe objek referensi"
+      ],
+      "correct": 1,
+      "explanation": "ES Modules menggunakan Live Bindings: modul konsumen memiliki referensi langsung ke nilai yang diekspor. Jika nilai di modul asal dimutasi oleh fungsi internalnya, modul konsumen langsung melihat nilai terbarunya (meskipun modul pengimpor tidak diizinkan mengubah variabel import tersebut secara langsung/read-only view)."
+    },
+    {
+      "id": 8,
+      "question": "Apa fungsi flag '--test' bawaan (Node.js Native Test Runner) yang diperkenalkan pada Node.js modern (>= v18/20)?",
+      "options": [
+        "Menjalankan linter kode secara otomatis",
+        "Menyediakan built-in test runner (node:test) tanpa perlu menginstal dependensi eksternal seperti Jest atau Mocha",
+        "Melakukan stres test jaringan terhadap server",
+        "Mengonversi test suite ke format XML"
+      ],
+      "correct": 1,
+      "explanation": "Node.js kini memiliki modul native 'node:test' dan runner CLI 'node --test' yang menyediakan kapabilitas penulisan unit test, assertion (node:assert), mocking, dan reporting tanpa dependensi pihak ketiga."
+    },
+    {
+      "id": 9,
+      "question": "Apa perbedaan peran antara linter (seperti ESLint/Biome) dan code formatter (seperti Prettier)?",
+      "options": [
+        "Linter menganalisis aturan logika kode, bug potensial, dan best practices (code-quality rules), sedangkan formatter berfokus murni pada konsistensi gaya visual (whitespace, indentation, semicolons, line-wrapping)",
+        "Linter hanya memeriksa file JSON, sedangkan formatter untuk file JS",
+        "Prettier mengompilasi kode ke WebAssembly, sedangkan ESLint mem-bundle assets",
+        "Keduanya adalah tool yang identik tanpa perbedaan fungsi"
+      ],
+      "correct": 0,
+      "explanation": "Linter berfokus pada kualitas kode (analisis bug, variabel tak terpakai, anti-patterns), sedangkan formatter berfokus pada estetika dan formatting teks kode yang konsisten terlepas dari logika kode."
+    },
+    {
+      "id": 10,
+      "question": "Apa fungsi properti 'exports' (package exports field) di dalam file package.json modern?",
+      "options": [
+        "Menentukan lisensi open-source paket",
+        "Mendefinisikan entry point kondisional yang ketat dan membatasi sub-path modul yang boleh diakses publik oleh konsumen package (misal pemisahan modul ESM/CJS, browser/node)",
+        "Menentukan daftar dependencies yang harus di-download",
+        "Menjalankan script otomatis saat git push"
+      ],
+      "correct": 1,
+      "explanation": "Field 'exports' pada package.json modern memungkinkan conditional exports (misal 'import' vs 'require', 'types', 'browser' vs 'node') dan merangkum struktur internal package sehingga file privat tidak bisa di-require langsung dari luar."
+    }
+  ]
+}

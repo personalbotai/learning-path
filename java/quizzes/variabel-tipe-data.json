@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Tipe data primitif untuk bilangan pecahan desimal biasanya?",
+      "options": ["float", "double", "decimal", "real"],
+      "answer": 1,
+      "explanation": "double digunakan untuk bilangan pecahan dengan presisi 2× lebih tinggi daripada float."
+    },
+    {
+      "question": "Range tipe byte adalah?",
+      "options": ["-128 sampai 127", "-256 sampai 255", "0-255", "-32768 sampai 32767"],
+      "answer": 0,
+      "explanation": "byte adalah 8-bit signed integer, range -128..127."
+    },
+    {
+      "question": "Apa hasil dari (int) 3.14?",
+      "options": ["3", "3.0", "4", "Error kompilasi"],
+      "answer": 0,
+      "explanation": "Cast double ke int akan memotong bagian desimal, hasil 3."
+    },
+    {
+      "question": "Kata kunci untuk membuat variabel tidak dapat diubah adalah?",
+      "options": ["static", "final", "const", "immutable"],
+      "answer": 1,
+      "explanation": "final digunakan untuk membuat variabel (atau field) konstan."
+    },
+    {
+      "question": "Manakah yang merupakan tipe reference?",
+      "options": ["int", "boolean", "String", "char"],
+      "answer": 2,
+      "explanation": "String adalah class, termasuk tipe reference."
+    }
+  ]
+}

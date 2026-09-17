@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Wrapper class untuk tipe primitif int adalah?",
+      "options": ["Integer", "Int", "Number", "IntWrapper"],
+      "answer": 0,
+      "explanation": "Integer adalah wrapper class untuk int."
+    },
+    {
+      "question": "Apa yang terjadi saat meng-unbox sebuah Integer yang bernull?",
+      "options": ["Mengembalikan 0", "Melempar NullPointerException", "Mengembalikan null", "Tidak terjadi apa-apa"],
+      "answer": 1,
+      "explanation": "Unboxing null (Integer → int) akan menyebabkan NullPointerException."
+    },
+    {
+      "question": "Method statis untuk mengubah String ke int?",
+      "options": ["Integer.parseInt()", "Integer.toInt()", "Int.parse()", "String.toInt()"],
+      "answer": 0,
+      "explanation": "Integer.parseInt(String) digunakan untuk parsing string ke int."
+    },
+    {
+      "question": "Manakah yang termasuk wrapper class?",
+      "options": ["Double", "Float", "Boolean", "Semua di atas"],
+      "answer": 3,
+      "explanation": "Double, Float, Boolean adalahwrapper class untuk respective primitives."
+    },
+    {
+      "question": "Kapan sebaiknya menggunakan wrapper dibanding primitif?",
+      "options": ["Saat bekerja dengan collections", "Saat butuh performance tinggi", "Sekarang sudah selalu pakai wrapper", "Tidak pernah"],
+      "answer": 0,
+      "explanation": "Wrapper diperlukan ketika bekerja dengan generics/collections yang hanya menerima reference types."
+    }
+  ]
+}

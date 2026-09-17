@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": "Polymorphism runtime disebut juga?", "options": ["Overloading", "Overriding", "Dynamic binding", "Static binding"], "answer": 2, "explanation": "Dynamic binding (atau late binding) adalah polymorphism runtime melalui method overriding." },
+    { "question": "Polymorphism compile-time adalah?", "options": ["Overloading", "Overriding", "Dynamic dispatch", "Method hiding"], "answer": 0, "explanation": "Method overloading dipilih pada compile-time." },
+    { "question": "Reference Animal a = new Dog(); memungkinkan panggilan ke?", "options": ["Hanya Animal methods", "Hanya Dog methods", "Method yang didefinisikan di Animal, runtime akan pilih Dog jika override", "Semua methods"], "answer": 2, "explanation": "Compile-time type Animal membatasi method yang bisa dipanggil; runtime memanggil implementasi Dog jika method overridden." },
+    { "question": "Apakah fields subject to polymorphism?", "options": ["Ya", "Tidak", "Hanya static", "Hanya final"], "answer": 1, "explanation": "Fields tidak polymorphic; field access determined by reference type, not object type." },
+    { "question": "Kapan method overloading terjadi?", "options": ["Dalam satu class", "Antara superclass-subclass", "Hanya interface", "Hanya abstract"], "answer": 0, "explanation": "Overloading occurs within the same class (or subclass) with different parameter lists." }
+  ]
+}

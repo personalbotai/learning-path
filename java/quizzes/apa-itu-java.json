@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa singkatan JVM?",
+      "options": ["Java Virtual Machine", "Java Version Manager", "Joint Virtual Memory", "Java Visual Manager"],
+      "answer": 0,
+      "explanation": "JVM (Java Virtual Machine) adalah mesin virtual yang menjalankan bytecode Java."
+    },
+    {
+      "question": "Tahun rilis pertama Java adalah?",
+      "options": ["1991", "1995", "2000", "1998"],
+      "answer": 1,
+      "explanation": "Java pertama kali dirilis oleh Sun Microsystems pada tahun 1995."
+    },
+    {
+      "question": "Siapa pencipta Java?",
+      "options": ["Bjarne Stroustrup", "James Gosling", "Guido van Rossum", "Yukihiro Matsumoto"],
+      "answer": 1,
+      "explanation": "Java dikembangkan oleh James Gosling dan tim di Sun Microsystems."
+    },
+    {
+      "question": "Prinsip Write Once Run Anywhere dimungkinkan oleh?",
+      "options": ["Compiler", "Interpreter", "JVM", "OS"],
+      "answer": 2,
+      "explanation": "JVM (Java Virtual Machine) memungkinkan program Java berjalan di berbagai platform."
+    },
+    {
+      "question": "Java termasuk paradigma bahasa?",
+      "options": ["Procedural", "Functional only", "Object-oriented", "Markup"],
+      "answer": 2,
+      "explanation": "Java adalah bahasa yang berorientasi objek (object-oriented)."
+    }
+  ]
+}

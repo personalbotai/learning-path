@@ -1,0 +1,444 @@
+{
+  "quizzes": [
+    {
+      "module": 1,
+      "title": "Python Fundamentals Quiz",
+      "description": "Test your understanding of Python basics, environment setup, and first programs.",
+      "questions": [
+        {
+          "question": "What is the correct file extension for Python scripts?",
+          "options": [".py", ".python", ".pyt", ".pt"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "Python scripts use the .py file extension."
+        },
+        {
+          "question": "Which command creates a virtual environment in Python?",
+          "options": ["python -m venv venv", "pip install venv", "python create venv", "virtualenv create"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "The standard way is 'python -m venv venv' (or 'python3 -m venv venv')."
+        },
+        {
+          "question": "What is the output of: print('Hello' + 'World')?",
+          "options": ["HelloWorld", "Hello World", "Hello+World", "Error"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "String concatenation with + joins without spaces."
+        },
+        {
+          "question": "Which of these is a valid variable name in Python?",
+          "options": ["1var", "var-name", "_var", "var name"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "Underscore-starting names are valid; others have syntax errors."
+        },
+        {
+          "question": "What does the 'type()' function do?",
+          "options": ["Returns variable type", "Converts type", "Checks syntax", "Prints type"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "type() returns the data type of an object."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 2,
+      "title": "Control Flow Quiz",
+      "description": "Test your knowledge of conditionals, loops, and logical operators.",
+      "questions": [
+        {
+          "question": "What does 'elif' stand for?",
+          "options": ["Else If", "Else In", "Elastic If", "None"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "'elif' is short for 'else if'."
+        },
+        {
+          "question": "Which loop executes at least once?",
+          "options": ["for", "while", "do-while", "None (Python has no do-while)"],
+          "correct_answer": 3,
+          "points": 1,
+          "explanation": "Python has no built-in do-while; while/for may execute zero times."
+        },
+        {
+          "question": "What does 'break' do?",
+          "options": ["Skips to next iteration", "Exits loop", "Pauses loop", "Restarts loop"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "'break' immediately exits the nearest enclosing loop."
+        },
+        {
+          "question": "What is the result of: True and False?",
+          "options": ["True", "False", "Error", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Logical AND returns False if any operand is False."
+        },
+        {
+          "question": "Which operator is used for identity comparison?",
+          "options": ["==", "=", "is", "in"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "'is' checks if two references point to the same object."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 3,
+      "title": "Data Structures Quiz",
+      "description": "Test your understanding of lists, tuples, dictionaries, and sets.",
+      "questions": [
+        {
+          "question": "Which data structure is mutable?",
+          "options": ["tuple", "list", "str", "frozenset"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Lists are mutable; tuples, strings, and frozensets are immutable."
+        },
+        {
+          "question": "How do you access the last element of a list 'arr'?",
+          "options": ["arr[-1]", "arr.last()", "arr[0]", "arr[end]"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "Negative indices count from the end: -1 is last element."
+        },
+        {
+          "question": "What does a set do?",
+          "options": ["Stores ordered elements", "Stores unique elements", "Stores key-value pairs", "Stores immutable sequence"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Sets store unique, unordered elements."
+        },
+        {
+          "question": "Which method removes and returns the last element of a list?",
+          "options": ["remove()", "pop()", "del", "discard"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "pop() removes and returns the last (or specified) element."
+        },
+        {
+          "question": "What is the output of: dict([('a',1),('b',2)])?",
+          "options": ["[('a',1),('b',2)]", "{'a':1, 'b':2}", "('a',1,'b',2)", "Error"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "dict() constructor creates a dictionary from an iterable of key-value pairs."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 4,
+      "title": "Functions & Modular Programming Quiz",
+      "description": "Test your knowledge of functions, arguments, modules, and packages.",
+      "questions": [
+        {
+          "question": "What keyword defines a function?",
+          "options": ["func", "def", "function", "define"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Python uses 'def' to define functions."
+        },
+        {
+          "question": "What does *args allow?",
+          "options": ["Keyword arguments", "Variable positional arguments", "Variable keyword arguments", "Arbitrary expressions"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "*args collects extra positional arguments as a tuple."
+        },
+        {
+          "question": "What is the purpose of __name__ == '__main__'?",
+          "options": ["Import module", "Define main function", "Check if script is run directly", "None"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "It allows code to run only when the file is executed as a script, not when imported."
+        },
+        {
+          "question": "Which statement imports a specific function from a module?",
+          "options": ["import module", "from module import function", "include module", "use module.function"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "'from module import function' imports just that function."
+        },
+        {
+          "question": "What is a docstring?",
+          "options": ["String literal as first statement in function/class/module", "Comment", "Type hint", "None"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "A docstring is a string literal that appears as the first statement in a function, class, or module."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 5,
+      "title": "Object-Oriented Programming Quiz",
+      "description": "Test your understanding of classes, objects, inheritance, and OOP concepts.",
+      "questions": [
+        {
+          "question": "What is the first parameter of instance methods by convention?",
+          "options": ["self", "this", "obj", "instance"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "Python uses 'self' as the first parameter of instance methods."
+        },
+        {
+          "question": "What does super() do?",
+          "options": ["Calls parent method", "Creates subclass", "Checks inheritance", "None"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "super() returns a temporary object of the parent class to allow method calls."
+        },
+        {
+          "question": "Which method is called when an object is converted to string with str()?",
+          "options": ["__str__", "__repr__", "__toString__", "__string__"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "__str__ is called by str() and print() for user-friendly string representation."
+        },
+        {
+          "question": "What does a property decorator do?",
+          "options": ["Makes method static", "Creates getter/setter for attribute", "Hides attribute", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "@property turns a method into a read-only attribute; can pair with setter."
+        },
+        {
+          "question": "What is duck typing?",
+          "options": ["Type checking at compile time", "Type checking at runtime", "'If it walks like a duck...'", "None"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "Duck typing means object suitability is determined by presence of methods/attributes, not explicit type."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 6,
+      "title": "Error Handling & Exceptions Quiz",
+      "description": "Test your knowledge of try-except, custom exceptions, and error handling strategies.",
+      "questions": [
+        {
+          "question": "Which keyword is used to catch exceptions?",
+          "options": ["catch", "except", "handle", "try"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "'except' is used to catch and handle exceptions."
+        },
+        {
+          "question": "What does 'finally' do in a try-except block?",
+          "options": ["Runs only if no exception", "Runs only if exception occurs", "Always runs regardless", "None"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "'finally' executes whether an exception occurs or not, typically for cleanup."
+        },
+        {
+          "question": "How do you raise a custom exception?",
+          "options": ["throw Exception()", "raise Exception()", "error Exception()", "except Exception()"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Use 'raise' followed by an exception instance or class."
+        },
+        {
+          "question": "What is the base class for all built-in exceptions?",
+          "options": ["BaseException", "Exception", "Error", "RuntimeError"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Most built-in exceptions inherit from 'Exception' (BaseException is the absolute root)."
+        },
+        {
+          "question": "What does 'else' in a try-except block do?",
+          "options": ["Handles else clause", "Runs if no exception was raised", "Runs if exception raised", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "'else' runs only if the try block completed without raising an exception."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 7,
+      "title": "File I/O & Data Handling Quiz",
+      "description": "Test your ability to read/write files, work with CSV/JSON, and manage data persistence.",
+      "questions": [
+        {
+          "question": "Which mode opens a file for reading text?",
+          "options": ["'r'", "'w'", "'a'", "'x'"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "'r' is read mode (default). 'w' write, 'a' append, 'x' exclusive creation."
+        },
+        {
+          "question": "What is the safest way to open a file?",
+          "options": ["open(); close()", "with open() as f:", "try: open(); finally: close()", "Using os.open()"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "'with' statement ensures proper cleanup even if exceptions occur."
+        },
+        {
+          "question": "Which module is used for JSON serialization?",
+          "options": ["csv", "json", "pickle", "yaml"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "The 'json' module provides json.load() and json.dump()."
+        },
+        {
+          "question": "How do you read all lines of a file into a list?",
+          "options": ["f.read()", "f.readlines()", "f.read().splitlines()", "Both B and C"],
+          "correct_answer": 3,
+          "points": 1,
+          "explanation": "readlines() returns list with newlines; read().splitlines() removes newlines. Both are valid."
+        },
+        {
+          "question": "What does 'rb' mode do?",
+          "options": ["Read binary", "Read both", "Read with backup", "None"],
+          "correct_answer": 0,
+          "points": 1,
+          "explanation": "'rb' opens file in binary read mode (for images, etc.)."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 8,
+      "title": "Modules & Packages Quiz",
+      "description": "Test your understanding of Python's module system, imports, and package structure.",
+      "questions": [
+        {
+          "question": "What file marks a directory as a Python package?",
+          "options": ["package.py", "main.py", "__init__.py", "setup.py"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "__init__.py (can be empty) marks a directory as a package."
+        },
+        {
+          "question": "What is the difference between 'import module' and 'from module import *'?",
+          "options": ["No difference", "First imports all, second imports specific", "First keeps namespace, second pollutes", "Second is faster"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "from module import * brings all names into current namespace, which can cause conflicts."
+        },
+        {
+          "question": "How do you import a module from a parent package?",
+          "options": ["import parent.module", "from .. import module", "import ..module", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Relative imports use dots: 'from .. import module' goes up one level."
+        },
+        {
+          "question": "What does sys.path control?",
+          "options": ["System path", "Module search paths", "Executable path", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "sys.path is a list of directories Python searches for modules."
+        },
+        {
+          "question": "What is __all__ used for?",
+          "options": ["Define all modules", "Control 'from module import *' exports", "List all functions", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "__all__ in a module defines which names are exported with 'import *'."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 9,
+      "title": "Virtual Environments & Dependencies Quiz",
+      "description": "Test your knowledge of venv, pip, requirements.txt, and dependency management.",
+      "questions": [
+        {
+          "question": "What command creates a virtual environment?",
+          "options": ["pip install venv", "python -m venv venv", "virtualenv create", "conda create"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Standard library: 'python -m venv venv'. virtualenv is third-party, conda is Anaconda."
+        },
+        {
+          "question": "How do you activate a virtual environment on Linux/macOS?",
+          "options": ["activate", "venv activate", "source venv/bin/activate", "start venv"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "On POSIX systems: 'source venv/bin/activate'. On Windows: 'venv\\Scripts\\activate'."
+        },
+        {
+          "question": "What command installs packages from requirements.txt?",
+          "options": ["pip install requirements.txt", "pip install -r requirements.txt", "pip install all", "pip install ."],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "'pip install -r requirements.txt' installs all listed dependencies."
+        },
+        {
+          "question": "What does 'pip freeze' do?",
+          "options": ["Shows outdated packages", "Lists all installed packages with versions", "Uninstalls packages", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "'pip freeze' outputs installed packages in requirements format."
+        },
+        {
+          "question": "What is the purpose of a virtual environment?",
+          "options": ["Speed up Python", "Isolate project dependencies", "Create new Python version", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Virtual environments isolate dependencies per project, avoiding conflicts."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    },
+    {
+      "module": 10,
+      "title": "Next Steps & Resources Quiz",
+      "description": "Test your awareness of Python ecosystem resources, best practices, and learning pathways.",
+      "questions": [
+        {
+          "question": "Which style guide is the official Python convention?",
+          "options": ["Google Style", "PEP 8", "Airbnb Style", "None"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "PEP 8 is the official Python style guide."
+        },
+        {
+          "question": "What is a good practice for managing project dependencies?",
+          "options": ["Use system Python packages", "Use virtual environments and requirements.txt", "Install globally", "Avoid dependencies"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Isolate dependencies with venv and pin versions in requirements.txt."
+        },
+        {
+          "question": "Which tool is commonly used for Python package publishing?",
+          "options": ["npm", "pip", "twine", "conda"],
+          "correct_answer": 2,
+          "points": 1,
+          "explanation": "twine is used to upload packages to PyPI."
+        },
+        {
+          "question": "What is the recommended way to share a Python script with others?",
+          "options": ["Send .py file", "Create a package with setup.py/pyproject.toml", "Send via email", "Use Google Drive"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "Proper packaging with pyproject.toml or setup.py makes sharing and installation easy."
+        },
+        {
+          "question": "Which community resource is best for Python documentation?",
+          "options": ["Wikipedia", "docs.python.org", "Stack Overflow", "GitHub Issues"],
+          "correct_answer": 1,
+          "points": 1,
+          "explanation": "docs.python.org is the official Python documentation."
+        }
+      ],
+      "passing_score": 4,
+      "time_limit_minutes": 10
+    }
+  ]
+}

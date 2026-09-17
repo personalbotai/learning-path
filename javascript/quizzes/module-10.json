@@ -1,0 +1,128 @@
+{
+  "module": 10,
+  "title": "Quiz: Real-World Projects & Full-Stack Architecture",
+  "description": "Uji pemahaman komprehensif arsitektur aplikasi dunia nyata: state management reaktif, sinkronisasi IndexedDB, WebSocket offline-first, API resilience, dan keamanan produksi.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Dalam membangun Interactive Quiz App berbasis vanilla JS dengan arsitektur State-Driven UI, manakah pola arsitektur yang paling efektif untuk mencegah inkonsistensi rendering?",
+      "options": [
+        "Memanipulasi puluhan elemen DOM secara sporadis dari berbagai event callback terpisah",
+        "Menerapkan Unidirectional Data Flow (Aliran Data Satu Arah): Action memodifikasi Central State terpusat, yang kemudian memicu fungsi render() murni untuk memperbarui UI",
+        "Menyimpan seluruh state di dalam atribut data- HTML tanpa variabel JavaScript",
+        "Menggunakan pemanggilan synchronous alert() di setiap transisi pertanyaan"
+      ],
+      "correct": 1,
+      "explanation": "Pola Unidirectional Data Flow (seperti pada Elm/Redux) memastikan kebenaran state tunggal (single source of truth). Setiap perubahan data mengalir satu arah dan memperbarui UI secara terprediksi tanpa efek samping tersembunyi."
+    },
+    {
+      "id": 2,
+      "question": "Pada aplikasi Expense Tracker dengan kemampuan penyimpanan lokal berkapasitas besar dan terstruktur, mengapa 'IndexedDB' lebih direkomendasikan daripada 'localStorage'?",
+      "options": [
+        "localStorage hanya bisa diakses lewat terminal",
+        "IndexedDB beroperasi secara asynchronous (non-blocking ke main UI thread), mendukung transaksi ACID, indeks query multi-kunci, dan mampu menyimpan data objek biner berkapasitas ratusan megabyte",
+        "localStorage mengenkripsi data secara otomatis sehingga lebih lambat",
+        "IndexedDB hanya tersedia di sistem operasi iOS"
+      ],
+      "correct": 1,
+      "explanation": "localStorage bersifat synchronous dan memblokir UI thread, terbatas hanya ~5MB teks string, serta tidak memiliki fitur indexing atau transaksi. IndexedDB adalah database NoSQL async native berkapasitas tinggi di browser."
+    },
+    {
+      "id": 3,
+      "question": "Pada Real-time Chat App yang menggunakan WebSocket, strategi apa yang paling tepat untuk menangani pemutusan koneksi jaringan secara tiba-tiba (network drop)?",
+      "options": [
+        "Menampilkan alert error dan menghentikan aplikasi secara permanen",
+        "Menerapkan mekanisme Heartbeat (ping/pong) untuk deteksi disconnect dini dan Exponential Backoff Reconnection dengan jitter agar server tidak kewalahan menerima lonjakan koneksi ulang massal",
+        "Membuka 10 koneksi WebSocket baru secara instan setiap milidetik",
+        "Mengabaikan event close pada WebSocket"
+      ],
+      "correct": 1,
+      "explanation": "Exponential backoff dengan jitter mencegah 'thundering herd problem' saat server pulih, sementara heartbeat (ping/pong) mendeteksi koneksi zombie yang terputus di level router tanpa event TCP FIN normal."
+    },
+    {
+      "id": 4,
+      "question": "Pada fitur E-Commerce Product Filter dengan dataset ribuan item dan banyak kriteria simultan (kategori, range harga, rating), teknik optimasi apa yang paling tepat?",
+      "options": [
+        "Mengirim request query baru ke backend database untuk setiap penekanan tombol ketik tanpa debounce",
+        "Menerapkan Pipeline Filter fungsional terindeks di memori lokal (atau Web Worker untuk komputasi berat) yang dikombinasikan dengan Debounce pada input pencarian teks",
+        "Me-render seluruh 100.000 produk langsung ke DOM sekaligus",
+        "Menggunakan perulangan bersarang 4 tingkat synchronous di Main UI thread"
+      ],
+      "correct": 1,
+      "explanation": "Memindahkan penyaringan data berat ke Web Worker atau memfilter memory cache dengan debouncing input teks mencegah UI lag (frame drop) dan menjaga skor First Input Delay (FID) / INP tetap prima."
+    },
+    {
+      "id": 5,
+      "question": "Dalam arsitektur Full-Stack JavaScript (Node.js/Bun backend + Vanilla SPA frontend), bagaimana metode autentikasi yang paling aman untuk menyimpan access/session token?",
+      "options": [
+        "Menyimpan JWT di localStorage atau sessionStorage yang dapat diakses oleh skrip berbahaya lewat XSS",
+        "Menyimpan token di HttpOnly, Secure, SameSite Cookie yang tidak dapat dibaca oleh JavaScript (document.cookie) untuk memitigasi pencurian via XSS",
+        "Menyimpan token sebagai query parameter permanen di URL browser",
+        "Menyimpan token di global window.token variabel tanpa proteksi"
+      ],
+      "correct": 1,
+      "explanation": "Cookie bertanda HttpOnly tidak dapat dibaca oleh skrip sisi klien melalui document.cookie. Dipadukan dengan atribut Secure (HTTPS only) dan SameSite (perlindungan CSRF), ini adalah praktik standar emas penyimpanan token."
+    },
+    {
+      "id": 6,
+      "question": "Apa peran Service Worker dan Cache Storage API dalam arsitektur aplikasi Progressive Web App (PWA) Offline-First?",
+      "options": [
+        "Menjalankan kompilasi TypeScript di browser secara otomatis",
+        "Bertindak sebagai proxy jaringan programmable di sisi klien yang mencegat request fetch dan menyajikan assets/data dari cache saat perangkat offline",
+        "Menggantikan database MongoDB di backend",
+        "Mencegah pengguna membuka developer tools browser"
+      ],
+      "correct": 1,
+      "explanation": "Service Worker mencegat setiap network request melalui event 'fetch', memungkinkan implementasi strategi caching cerdas (seperti Cache First, Network First, atau Stale-While-Revalidate) untuk mendukung fungsionalitas aplikasi tanpa koneksi internet."
+    },
+    {
+      "id": 7,
+      "question": "Bagaimana cara menangani 'Race Condition' pada pencarian live search jika respons request lama tiba lebih lambat daripada respons request baru?",
+      "options": [
+        "Menambah delay setTimeout pada request",
+        "Menggunakan AbortController untuk membatalkan (abort) HTTP request pencarian sebelumnya sebelum meluncurkan request pencarian yang baru, atau memvalidasi timestamp/request ID",
+        "Mematikan fungsi async/await di browser",
+        "Menyimpan seluruh database di file cookies"
+      ],
+      "correct": 1,
+      "explanation": "Ketika pengguna mengetik cepat 'ap' lalu 'apel', request untuk 'ap' mungkin selesai belakangan dan menimpa hasil 'apel'. Membatalkan request sebelumnya dengan abortController.abort() menjamin hanya hasil request terkini yang ditampilkan di UI."
+    },
+    {
+      "id": 8,
+      "question": "Dalam arsitektur micro-frontend atau modular SPA, apa fungsi teknik 'Dynamic Import' (import('./module.js')) dibandingkan static import di awal file?",
+      "options": [
+        "Membuat file menjadi format CommonJS",
+        "Melakukan Code Splitting dan Lazy Loading: modul kode hanya diunduh dari jaringan saat fitur atau rute tersebut benar-benar diakses pengguna, mempercepat waktu muat awal (Initial Load)",
+        "Mengompresi script menjadi format zip",
+        "Menonaktifkan keamanan CORS browser"
+      ],
+      "correct": 1,
+      "explanation": "Dynamic import() mengembalikan Promise dan memungkinkan bundler memecah bundel aplikasi menjadi chunk-chunk kecil yang dimuat secara malas (on-demand), secara signifikan mengurangi ukuran bundel awal (Initial Bundle Size)."
+    },
+    {
+      "id": 9,
+      "question": "Mengapa penerapan Semantic HTML (seperti <nav>, <main>, <article>, <button>) dan ARIA attributes krusial dalam pembuatan web application komersial?",
+      "options": [
+        "Hanya untuk mempercantik tampilan warna di editor VS Code",
+        "Menjamin aksesibilitas (a11y) bagi pengguna perangkat bantu (screen reader), navigasi keyboard penuh, dan meningkatkan SEO serta kejelasan struktur DOM",
+        "Diperlukan agar browser bisa mengeksekusi sintaks ES2024",
+        "Menghilangkan kebutuhan file CSS eksternal"
+      ],
+      "correct": 1,
+      "explanation": "Elemen semantik memiliki semantic roles dan keyboard interaction bawaan yang esensial bagi screen reader, mematuhi standar WCAG (Web Content Accessibility Guidelines), dan memudahkan mesin pencari mengindeks struktur halaman."
+    },
+    {
+      "id": 10,
+      "question": "Dalam pengelolaan siklus hidup rilis aplikasi produksi, apa tujuan utama pembuatan Continuous Integration / Continuous Deployment (CI/CD) pipeline?",
+      "options": [
+        "Menggantikan peran programmer manusia secara total",
+        "Mengotomatiskan verifikasi linting, type-checking, automated unit/E2E testing, security scanning, dan build optimasi sebelum kode di-deploy secara aman ke environment production",
+        "Mendownload dependencies baru tanpa izin",
+        "Menyembunyikan log error server dari tim developer"
+      ],
+      "correct": 1,
+      "explanation": "Pipeline CI/CD menjalankan gerbang kualitas otomatis (quality gates) pada setiap commit/pull request, memastikan kode yang lolos ke production bebas dari regresi, teruji secara komprehensif, dan memenuhi standar keamanan."
+    }
+  ]
+}

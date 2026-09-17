@@ -1,0 +1,118 @@
+{
+  "module": 9,
+  "title": "Quiz: Advanced Topics",
+  "description": "Test your knowledge of generators, proxies, reflection, web workers, and design patterns",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa generator function?",
+      "options": [
+        "Function yang mengembalikan nilai sekali",
+        "Function yang bisa di-pause dan resume menggunakan yield",
+        "Function asynchronous",
+        "Arrow function"
+      ],
+      "correct": 1,
+      "explanation": "Generator function didefinisikan dengan function* dan menggunakan yield untuk pause/resume eksekusi."
+    },
+    {
+      "id": 2,
+      "question": "Proxy API untuk?",
+      "options": [
+        "HTTP proxy",
+        "Membuat wrapper object untuk menangkap dan menyesuaikan operasi fundamental (get, set, dll)",
+        "Reflection",
+        "Memory management"
+      ],
+      "correct": 1,
+      "explanation": "Proxy membungkus objek target dan bisa menangkap/menyisipkan custom logic untuk fundamental traps (get, set, has, dll)."
+    },
+    {
+      "id": 3,
+      "question": "Reflection API contoh?",
+      "options": [
+        "Object.keys()",
+        "Reflect.get()",
+        "Both A and B",
+        "None"
+      ],
+      "correct": 2,
+      "explanation": "Reflect API (Reflect.get, Reflect.set, etc.) menyediakan methods untuk operasi object yang bisa di-reflection."
+    },
+    {
+      "id": 4,
+      "question": "Apa Web Workers gunakan?",
+      "options": [
+        "Multi-threading di browser (background script)",
+        "Membuat UI",
+        "DOM manipulation",
+        "Server-side JavaScript"
+      ],
+      "correct": 0,
+      "explanation": "Web Workers memungkinkan eksekusi script di background thread terpisah dari main thread."
+    },
+    {
+      "id": 5,
+      "question": "Design pattern yang memungkinkan satu-to-many dependency?",
+      "options": ["Singleton", "Observer", "Factory", "Decorator"],
+      "correct": 1,
+      "explanation": "Observer pattern: subject maintains list of observers dan notifikasi saat state berubah."
+    },
+    {
+      "id": 6,
+      "question": "What is a Singleton?",
+      "options": [
+        "Class dengan satu instance saja",
+        "Class dengan banyak instance",
+        "Abstract class",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "Singleton memastikan sebuah class hanya memiliki satu instance dan menyediakan global access point."
+    },
+    {
+      "id": 7,
+      "question": "Decorator pattern?",
+      "options": [
+        "Menambah fungsi ke object tanpa modifikasi class asli",
+        "Menyembunyikan object",
+        "Membuat object immutable",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "Decorator pattern menambahkan tanggung jawab baru ke object secara dinamis (wrap)."
+    },
+    {
+      "id": 8,
+      "question": "Apa iterator protocol?",
+      "options": [
+        "Object dengan next() method yang mengembalikan {value, done}",
+        "Array method",
+        "Generator only",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "Iterator object harus memiliki next() yang mengembalikan object dengan value dan done properties."
+    },
+    {
+      "id": 9,
+      "question": "Worker communication via?",
+      "options": ["DOM events", "postMessage() dan onmessage", "global variables", "fetch()"],
+      "correct": 1,
+      "explanation": "Main thread dan worker berkomunikasi lewat postMessage() dan event onmessage."
+    },
+    {
+      "id": 10,
+      "question": "Proxy use case untuk validation?",
+      "options": [
+        "Validate sebelum set property",
+        "Cache property access",
+        "Logging",
+        "All of the above"
+      ],
+      "correct": 3,
+      "explanation": "Proxy traps (set, get) bisa digunakan untuk validation, caching, logging, dll."
+    }
+  ]
+}

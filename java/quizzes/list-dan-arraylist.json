@@ -1,0 +1,48 @@
+{
+  "quiz": [
+    {
+      "question": "Apa fungsi primary method di Java?",
+      "options": [
+        "Metode yang dijalankan saat objek baru di-instanciasikan",
+        "Metode yang dijalankan saat object di-objektifikasi",
+        "Metode yang dijalankan saat object di-klonkan",
+        "Metode yang mengatur state object"
+      ],
+      "answer": 0,
+      "explanation": "Primary method adalah method yang dijalankan saat object baru dibuat (constructors). Ia tidak bisa di-override oleh subclass."
+    },
+    {
+      "question": "Kapan method `equals()` harus diimplementasikan di class custom?",
+      "options": [
+        "Selalu, untuk semua object",
+        "Hanya jika class harus di-equals",
+        "Hanya jika class harus di-hash",
+        "Hanya jika class harus di-sort"
+      ],
+      "answer": 1,
+      "explanation": "Method equals() harus diimplementasikan jika class ingin mendukung operator == (equality comparison). Tanpa implementasinya, == akan melakukan reference equality."
+    },
+    {
+      "question": "Apa perbedaan antara `ArrayList` dan `LinkedList`?",
+      "options": [
+        "ArrayList lebih cepat untuk insertion di tengah",
+        "LinkedList lebih cepat untuk insertion di tengah",
+        "Tidak ada perbedaan signifikan",
+        "ArrayList selalu lebih cepat"
+      ],
+      "answer": 1,
+      "explanation": "ArrayList lebih efisien untuk insertion/removal di tengah karena array di baliknya tetap terurut. LinkedList lebih efisien untuk traversal dan deletion di tengah karena linked list."
+    },
+    {
+      "question": "Apa yang terjadi jika kita menggunakan `HashMap` tanpa `equals()` dan `hashCode()`?",
+      "options": [
+        "Program akan crash",
+        "Hash map akan berfungsi normal",
+        "Program akan berjalan tapi data tidak akurat",
+        "Error runtime yang sulit diprediksi"
+      ],
+      "answer": 2,
+      "explanation": "Without proper equals/hashCode, objects dengan content berbeda bisa dianggap sama (due to identity-based hashing), causing collisions and incorrect lookup behavior."
+    }
+  ]
+}

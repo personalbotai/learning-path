@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa nama class induk semua exception?",
+      "options": ["Error", "Throwable", "Exception", "RuntimeException"],
+      "answer": 1,
+      "explanation": "Throwable adalah base class untuk Error dan Exception."
+    },
+    {
+      "question": "Exception apa yang tidak perlu dicanangkan catches?",
+      "options": ["Checked", "Unchecked (RuntimeException)", "IOException", "SQLException"],
+      "answer": 1,
+      "explanation": "Unchecked exceptions (subclass RuntimeException) tidak perlu ditangkap atau dinyatakan."
+    },
+    {
+      "question": "Contoh checked exception adalah?",
+      "options": ["NullPointerException", "IllegalArgumentException", "IOException", "ArrayIndexOutOfBoundsException"],
+      "answer": 2,
+      "explanation": "IOException adalah checked exception; NullPointerException dan IllegalArgumentException adalah unchecked."
+    },
+    {
+      "question": "Untuk membuat custom exception yang harus ditangkap, extends mana?",
+      "options": ["RuntimeException", "Exception", "Error", "Throwable"],
+      "answer": 1,
+      "explanation": "Extends Exception (bukan RuntimeException) akan menghasilkan checked exception."
+    },
+    {
+      "question": "Kata kunci untuk melempar exception adalah?",
+      "options": ["catch", "throw", "throws", "new"],
+      "answer": 1,
+      "explanation": "Gunakan throw untuk melempar exception."
+    }
+  ]
+}

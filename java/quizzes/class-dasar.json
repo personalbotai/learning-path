@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": " Apa perbedaan class dan object?", "options": ["Class adalah blueprint, object adalah instance", "Object adalah blueprint, class adalah instance", "Sama saja", "Tidak ada perbedaan"], "answer": 0, "explanation": "Class为中template, object即instance yang dibuat dari class." },
+    { "question": "Keyword untuk membuat class?", "options": ["class", "struct", "object", "define"], "answer": 0, "explanation": "Java menggunakan keyword class." },
+    { "question": "Bagaimana membuat instance Object?", "options": ["object Person = new Person()", "Person p = new Person()", "new Person p", "create Person()"], "answer": 1, "explanation": "Person p = new Person();" },
+    { "question": "Apa yang terjadi jika class tidak memiliki constructor eksplisit?", "options": ["Error", "Java menyediakan default constructor", "Tidak bisa diinstansiasi", "Harus dibuat sendiri"], "answer": 1, "explanation": "Java menyediakan default no-arg constructor jika tidak ada constructor lain." },
+    { "question": "Kata kunci this digunakan untuk?", "options": ["Mengakses class", "Mengakses instance fields", "Mengakses static fields", "Membuat object"], "answer": 1, "explanation": "this merujuk ke instance saat ini (untuk membedakan field dengan parameter)." }
+  ]
+}

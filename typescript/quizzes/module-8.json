@@ -1,0 +1,123 @@
+{
+  "module": 8,
+  "title": "Quiz: Best Practices",
+  "description": "Test your knowledge of clean code, performance, security, debugging, and error handling",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa clean code principle untuk nama variabel?",
+      "options": [
+        "Singkat tanpa arti",
+        " Deskriptif dan reveal intent",
+        "Hanya huruf kapital",
+        "Pakai angka"
+      ],
+      "correct": 1,
+      "explanation": "Nama variabel harus deskriptif dan reveal intent (misal: userList, bukan ul)."
+    },
+    {
+      "id": 2,
+      "question": "What is a memory leak in JavaScript?",
+      "options": [
+        "Memory yang tidak lagi digunakan tapi masih di-reference mencegah garbage collection",
+        "Memory yang used berlebihan",
+        "Memory yang corrupted",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "Memory leak terjadi ketika objek tidak lagi diperlukan tapi masih di-reference, sehingga GC tidak dapat membersihkannya."
+    },
+    {
+      "id": 3,
+      "question": "Apa common JavaScript security vulnerability?",
+      "options": [
+        "SQL Injection",
+        "XSS (Cross-Site Scripting)",
+        "Buffer overflow",
+        "CSRF only"
+      ],
+      "correct": 1,
+      "explanation": "XSS terjadi ketika attacker menyisipkan script ke halaman yang dijalankan di browser user."
+    },
+    {
+      "id": 4,
+      "question": "Tool untuk debugging JavaScript di browser?",
+      "options": ["Console", "Chrome DevTools", "alert()", "Both A and B"],
+      "correct": 1,
+      "explanation": "Chrome DevTools (dan Firefox/Edge DevTools) adalah tools debugging utama untuk frontend JS."
+    },
+    {
+      "id": 5,
+      "question": "Best practice untuk error handling?",
+      "options": [
+        "Ignore all errors",
+        "Use try-catch untuk recoverable errors, throw untuk unrecoverable",
+        "Hanya console.log",
+        "Never use try-catch"
+      ],
+      "correct": 1,
+      "explanation": "Gunakan try-catch untuk errors yang bisa dipulihkan; untuk errors fatal, biarkan propagate atau throw custom error."
+    },
+    {
+      "id": 6,
+      "question": "Apa goal dari performance optimization?",
+      "options": [
+        "Hanya reduce file size",
+        "Improve user experience (fast load, smooth interaction)",
+        "Hanya untuk SEO",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "Performance optimization bertujuan meningkatkan UX: load time, responsiveness, dll."
+    },
+    {
+      "id": 7,
+      "question": "What is a closure memory leak?",
+      "options": [
+        "Closure yang large",
+        "Closure yang memegang reference ke objek besar yang tidak lagi diperlukan",
+        "Closure yang recursive",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "Closure bisa menyebabkan memory leak jika mempertahankan reference ke objek yang sudah tidak diperlukan (misal: event listener yang tidak di-remove)."
+    },
+    {
+      "id": 8,
+      "question": "Cara mencegah XSS di browser?",
+      "options": [
+        "Hanya gunakan innerHTML",
+        "Sanitize user input, gunakan textContent, Content Security Policy (CSP)",
+        "Nonaktifkan JavaScript",
+        "Hanya gunakan eval()"
+      ],
+      "correct": 1,
+      "explanation": "Sanitize input, hindari innerHTML dengan data tidak tepercaya, gunakan textContent, implement CSP."
+    },
+    {
+      "id": 9,
+      "question": "Apa code smell?",
+      "options": [
+        "Code yang berbau",
+        "Symptom indicator dari design problem yang lebih dalam",
+        "Test yang gagal",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "Code smell adalah tanda (seperti duplicated code, long method) yang mengindikasikan masalah underlying dalam desain."
+    },
+    {
+      "id": 10,
+      "question": "Debugging technique untuk step through code?",
+      "options": [
+        "console.log only",
+        "Breakpoints dan step execution di DevTools",
+        "alert()",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "Breakpoints memungkinkan pause eksekusi, inspect variables, step through code line-by-line."
+    }
+  ]
+}

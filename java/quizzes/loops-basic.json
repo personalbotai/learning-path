@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa yang happens jika kondisi while selalu true",
+      "options": ["Loop berhenti otomatis", "Infinite loop", "Error compile", "Tidak masalah"],
+      "answer": 1,
+      "explanation": "Kondisi selalu true menyebabkan infinite loop; program harus dihentikanmanual."
+    },
+    {
+      "question": "Perbedaan for dan for-each?",
+      "options": ["For-each butuh index", "For-each digunakan untuk array/collection tanpa index", "For lebih cepat", "Tidak ada perbedaan"],
+      "answer": 1,
+      "explanation": "For-each (enhanced for) mempermudah iterasi tanpa mengakses index."
+    },
+    {
+      "question": "Do-while Pastikan minimal berjalan berapa kali?",
+      "options": ["0", "1", "2", "Tergantung kondisi"],
+      "answer": 1,
+      "explanation": "Do-while mengeksekusi minimal sekali sebelum cek kondisi."
+    },
+    {
+      "question": "Apa sintaks for-loop lengkap?",
+      "options": ["for (init; condition; update)", "for condition { }", "for each in", "loop (condition)"],
+      "answer": 0,
+      "explanation": "for (inisialisasi; kondisi; update) { ... }"
+    },
+    {
+      "question": "Manakah yang tidak valid?",
+      "options": ["for (int i=0; i<10; i++)", "for (int i : arr)", "for (;;)", "for i = 0; i < 10; i++"],
+      "answer": 3,
+      "explanation": "Java tidak memiliki for style C dengan tiga ekspresi tanpa kurung; harus pakai kurung."
+    }
+  ]
+}

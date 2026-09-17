@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa yang dilakukan statement break dalam loop?",
+      "options": ["Melompat ke iterasi berikutnya", "Menghentikan loop", "Melanjutkan ke case berikutnya", "Tidak ada efek"],
+      "answer": 1,
+      "explanation": "Break segera mengakhiri loop (atau switch)."
+    },
+    {
+      "question": "Continue digunakan untuk?",
+      "options": [" Keluar dari loop", "Melompat ke iterasi berikutnya", "Menghentikan switch", "Melepas resource"],
+      "answer": 1,
+      "explanation": "Continue melompat ke iterasi berikutnya dari loop."
+    },
+    {
+      "question": "Break atau continue dapat diberi label untuk?",
+      "options": ["Switch saja", "Loop terluar (nested)", "Method", "Tidak berlaku"],
+      "answer": 1,
+      "explanation": "Labeled break/continue mengontrol loop luar dalam nested loops."
+    },
+    {
+      "question": "Apa yang terjadi jika break digunakan dalam switch?",
+      "options": ["Keluar dari blok switch", "Melompat ke case berikutnya", "Error", "Tidak efek"],
+      "answer": 0,
+      "explanation": "Break dalam switch keluar dari switch statement."
+    },
+    {
+      "question": "Perintah untuk keluar dari loop yang beriungkus (nested) tanpa countless break?",
+      "options": ["break outer;", "continue outer;", "break label;", "break alla loops;"],
+      "answer": 2,
+      "explanation": "Gunakan labeled break (misal break outerLoop;) untuk keluar dari outer loop."
+    }
+  ]
+}

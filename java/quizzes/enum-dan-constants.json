@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa nama keyword untuk membuat enumerated type?",
+      "options": ["enum", "enumerate", "enumeration", "constant"],
+      "answer": 0,
+      "explanation": "Keyword 'enum' digunakan untuk mendefinisikan enumeration."
+    },
+    {
+      "question": "Bagaimana cara mendapatkan array semua constants dari enum?",
+      "options": ["getValues()", "values()", "getEnums()", "list()"],
+      "answer": 1,
+      "explanation": "Method values() mengembalikan array semua enum constants."
+    },
+    {
+      "question": "Dapatkah enum memiliki fields dan methods?",
+      "options": ["Tidak", "Ya, seperti class biasa", "Hanya fields", "Hanya methods"],
+      "answer": 1,
+      "explanation": "Enum dapat memiliki fields, constructor, dan methods (seperti class)."
+    },
+    {
+      "question": "Apa yang dikembalikan oleh ordinal()?",
+      "options": ["Nama constant", "Posisi ordinal (0-based)", "Jumlah constants", "Class object"],
+      "answer": 1,
+      "explanation": "ordinal() mengembalikan posisi ordinal (dimulai dari 0)."
+    },
+    {
+      "question": "Bisakah enum implements interface?",
+      "options": ["Tidak", "Ya, seperti class lain", "Hanya extends enum", "Tidak perlu"],
+      "answer": 1,
+      "explanation": "Enum dapat implements interface."
+    }
+  ]
+}

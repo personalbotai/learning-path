@@ -1,0 +1,128 @@
+{
+  "module": 1,
+  "title": "Quiz: Dasar-Dasar JavaScript",
+  "description": "Uji pemahaman mendalam tentang eksekusi JavaScript, TDZ, tipe data modern, operator ES2024, dan kontrol alur.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa yang terjadi ketika variabel yang dideklarasikan dengan 'let' atau 'const' diakses sebelum baris deklarasinya dieksekusi?",
+      "options": [
+        "Mengembalikan nilai undefined karena hoisting",
+        "Melemparkan ReferenceError karena variabel berada dalam Temporal Dead Zone (TDZ)",
+        "Melemparkan TypeError karena variabel belum diinisialisasi",
+        "Mengembalikan nilai null secara implisit"
+      ],
+      "correct": 1,
+      "explanation": "Variabel dengan let/const tetap di-hoist, namun tidak diinisialisasi ke undefined seperti halnya var. Mengaksesnya sebelum baris deklarasi berada dalam Temporal Dead Zone (TDZ) dan menyebabkan ReferenceError."
+    },
+    {
+      "id": 2,
+      "question": "Perhatikan ekspresi berikut: console.log(null ?? 'fallback'); console.log(0 || 'fallback'); Apa output yang dihasilkan?",
+      "options": [
+        "'fallback' dan 'fallback'",
+        "null dan 0",
+        "'fallback' dan 0",
+        "'fallback' dan 'fallback' (keduanya menganggap falsy)"
+      ],
+      "correct": 0,
+      "explanation": "Nullish coalescing (??) hanya memeriksa null atau undefined, sehingga null ?? 'fallback' menghasilkan 'fallback'. Logical OR (||) mengevaluasi semua nilai falsy (termasuk 0, false, ''), sehingga 0 || 'fallback' menghasilkan 'fallback'."
+    },
+    {
+      "id": 3,
+      "question": "Manakah pernyataan yang benar mengenai tipe data primitif BigInt di JavaScript?",
+      "options": [
+        "BigInt dapat dioperasikan langsung dengan Number tanpa konversi eksplisit (misal: 10n + 5)",
+        "BigInt tidak dapat merepresentasikan angka desimal/floating point",
+        "typeof 42n menghasilkan 'number'",
+        "BigInt dibatasi hingga maksimum 2^53 - 1"
+      ],
+      "correct": 1,
+      "explanation": "BigInt dirancang khusus untuk bilangan bulat dengan presisi arbitrer dan tidak mendukung desimal (operasi pembagian dibulatkan ke bawah / truncated). Menggabungkan BigInt dan Number secara langsung akan melempar TypeError."
+    },
+    {
+      "id": 4,
+      "question": "Apa hasil evaluasi dari operator short-circuit assignment: let a = { count: 0 }; a.count ??= 10; a.total ||= 20; console.log(a.count, a.total);",
+      "options": [
+        "10 20",
+        "0 20",
+        "0 undefined",
+        "10 undefined"
+      ],
+      "correct": 1,
+      "explanation": "a.count ??= 10 hanya menetapkan nilai jika a.count bernilai null/undefined; karena nilainya 0 (bukan nullish), nilainya tetap 0. Sedangkan a.total ||= 20 menetapkan nilai jika falsy; karena a.total sebelumnya undefined (falsy), nilainya menjadi 20."
+    },
+    {
+      "id": 5,
+      "question": "Bagaimana evaluasi optional chaining pada pemanggilan method: const user = { getName: null }; console.log(user.getName?.());",
+      "options": [
+        "Melemparkan TypeError: user.getName is not a function",
+        "Mengembalikan undefined tanpa mengeksekusi pemanggilan",
+        "Mengembalikan null",
+        "Melemparkan ReferenceError"
+      ],
+      "correct": 1,
+      "explanation": "Optional chaining (?.) pada pemanggilan fungsi memeriksa apakah operand sebelum ?. bernilai null atau undefined. Jika ya, evaluasi langsung berhenti dan mengembalikan undefined secara aman tanpa memicu runtime TypeError."
+    },
+    {
+      "id": 6,
+      "question": "Dalam mode strict ('use strict'), apa yang terjadi ketika kode mengeksekusi penugasan nilai ke variabel yang belum dideklarasikan (misal: 'x = 100;')?",
+      "options": [
+        "Variabel x secara otomatis dibuat menjadi properti global object (window / globalThis)",
+        "Dilemparkan ReferenceError: x is not defined",
+        "Variabel diabaikan secara diam-diam (silent ignore)",
+        "Dibuat variabel bertipe var pada scope terdekat"
+      ],
+      "correct": 1,
+      "explanation": "Dalam strict mode, penugasan ke identifier yang tidak dideklarasikan akan memicu ReferenceError, mencegah kebocoran variabel global (accidental global variables)."
+    },
+    {
+      "id": 7,
+      "question": "Apa perbedaan utama antara perulangan 'for...in' dan 'for...of' pada JavaScript?",
+      "options": [
+        "'for...in' mengiterasi nilai elemen, sedangkan 'for...of' mengiterasi key/properti yang dapat dihitung (enumerable)",
+        "'for...in' mengiterasi enumerable property names (keys) termasuk dari prototype chain, sedangkan 'for...of' mengiterasi nilai dari iterable object (menggunakan @@iterator)",
+        "'for...of' hanya bisa digunakan untuk Object literal, sedangkan 'for...in' hanya untuk Array",
+        "Keduanya identik dan hanya berbeda secara sintaksis"
+      ],
+      "correct": 1,
+      "explanation": "for...in menelusuri string keys yang enumerable pada objek beserta rantai prototipenya, sedangkan for...of mengeksekusi iterator protocol (Symbol.iterator) untuk menghasilkan nilai dari objek yang iterable (Array, Set, Map, String, dsb)."
+    },
+    {
+      "id": 8,
+      "question": "Perhatikan blok kode berikut:\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 0);\n}\nBerapa output yang dicetak ke konsol?",
+      "options": [
+        "0, 1, 2",
+        "3, 3, 3",
+        "undefined, undefined, undefined",
+        "3, 2, 1"
+      ],
+      "correct": 1,
+      "explanation": "Karena deklarasi 'var' berakar pada function/global scope (bukan block scope), semua callback setTimeout menangkap referensi yang sama ke variabel 'i'. Saat timer selesai dieksekusi di event loop, perulangan telah selesai dan 'i' bernilai 3."
+    },
+    {
+      "id": 9,
+      "question": "Manakah perbandingan nilai di bawah ini yang menghasilkan 'true' menurut spesifikasi ECMAScript?",
+      "options": [
+        "NaN === NaN",
+        "+0 === -0",
+        "Object.is(NaN, NaN) === false",
+        "Object.is(+0, -0) === true"
+      ],
+      "correct": 1,
+      "explanation": "Dalam operator ===, +0 dan -0 dianggap sama (true), sedangkan NaN === NaN adalah false. Sebaliknya, Object.is membedakan +0 dan -0 (menghasilkan false) dan memperlakukan Object.is(NaN, NaN) sebagai true (SameValue algorithm)."
+    },
+    {
+      "id": 10,
+      "question": "Apa output dari konversi tipe implisit berikut: console.log([] + {} + [1]);",
+      "options": [
+        "'[object Object]1'",
+        "'0[object Object]1'",
+        "NaN",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "Operator + memicu ToPrimitive. [] diubah menjadi string kosong \"\", {} diubah menjadi \"[object Object]\", sehingga \"\" + \"[object Object]\" = \"[object Object]\". Kemudian ditambah [1] yang diubah menjadi \"1\", menghasilkan string final \"[object Object]1\"."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": "Apa yang tidak boleh untuk abstract class?", "options": ["Digunakan sebagai superclass", "Mengandung abstract method", "Diinstansiasi", "Memiliki concrete methods"], "answer": 2, "explanation": "Abstract class tidak dapat diinstansiasi (new AbstractClass() error)." },
+    { "question": "Abstract method dinyatakan dengan?", "options": ["abstract void method();", "void abstract method();", "abstract void method() {};", "void method() abstract;"], "answer": 0, "explanation": "Sintaks: abstract void methodName(); tanpa body." },
+    { "question": "Apakah abstract class bisa memiliki fields dan concrete methods?", "options": ["Tidak", "Ya", "Hanya fields", "Hanya methods"], "answer": 1, "explanation": "Abstract class dapat memiliki fields dan methods konkret." },
+    { "question": "Subclass dari abstract class harus?", "options": ["Menjadi abstract juga", "Mengimplementasikan semua abstract method", "Memiliki constructor", "Tidak diperlukan"], "answer": 1, "explanation": "Subclass konkret harus mengimplementasikan semua abstract methods milik superclass (atau menjadi abstract)." },
+    { "question": "Bisakah abstract class extends class konkret lain?", "options": ["Tidak", "Ya", "Hanya abstract", "Hanya interface"], "answer": 1, "explanation": "Abstract class dapat extends class lain (concrete/abstract)." }
+  ]
+}

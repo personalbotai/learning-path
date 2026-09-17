@@ -1,0 +1,128 @@
+{
+  "module": 2,
+  "title": "Quiz: Struktur Data JavaScript",
+  "description": "Uji pemahaman komprehensif struktur data JS modern: Map vs WeakMap, Set vs WeakSet, structuredClone, Object.groupBy, dan immutability Array API.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mengapa WeakMap dan WeakSet tidak memiliki properti '.size' dan tidak dapat diiterasi (non-iterable)?",
+      "options": [
+        "Karena key/value disimpan dalam format enkripsi biner",
+        "Karena referensi terhadap objek bersifat lemah (weakly held), sehingga keberadaannya tergantung siklus non-deterministik Garbage Collector",
+        "Karena hanya mendukung tipe primitif number dan string",
+        "Karena WeakMap dan WeakSet dieksekusi di background thread Web Worker"
+      ],
+      "correct": 1,
+      "explanation": "WeakMap dan WeakSet memegang referensi objek secara lemah sehingga tidak mencegah Garbage Collection. Karena GC berjalan non-deterministik, daftar kunci yang ada bisa berubah sewaktu-waktu, sehingga enumerasi dan penghitungan size sengaja tidak diizinkan oleh spesifikasi."
+    },
+    {
+      "id": 2,
+      "question": "Apa keunggulan utama 'structuredClone()' dibandingkan dengan 'JSON.parse(JSON.stringify())' untuk deep copy objek?",
+      "options": [
+        "structuredClone() selalu berjalan secara asynchronous",
+        "structuredClone() dapat menangani circular references, tipe Date, RegExp, Map, Set, dan ArrayBuffer secara tepat",
+        "structuredClone() dapat menyalin fungsi (methods) dan prototype chain",
+        "structuredClone() membutuhkan memori 10x lebih kecil tanpa alokasi baru"
+      ],
+      "correct": 1,
+      "explanation": "structuredClone() menggunakan algoritma Structured Clone yang mendukung cyclic/circular references, built-in types (Date, RegExp, Map, Set, TypedArray), sedangkan JSON.stringify akan gagal pada circular reference dan mengubah Date menjadi string serta menghilangkan Set/Map/undefined."
+    },
+    {
+      "id": 3,
+      "question": "Metode Array manakah yang diperkenalkan di ES2023 untuk mengurutkan atau membalik array tanpa mengubah (memutasi) array aslinya?",
+      "options": [
+        "sort() dan reverse()",
+        "toSorted() dan toReversed()",
+        "cloneSort() dan cloneReverse()",
+        "asSorted() dan asReversed()"
+      ],
+      "correct": 1,
+      "explanation": "ES2023 memperkenalkan metode Change Array by Copy: toSorted(), toReversed(), toSpliced(), dan with(), yang mengembalikan salinan baru array dengan perubahan tanpa memutasi array asli."
+    },
+    {
+      "id": 4,
+      "question": "Bagaimana hasil dari penggunaan method Array.prototype.at() dengan argumen indeks negatif (misal: ['a', 'b', 'c'].at(-1))?",
+      "options": [
+        "Mengembalikan undefined",
+        "Melemparkan RangeError",
+        "Mengembalikan elemen terakhir ('c')",
+        "Mengembalikan elemen pertama ('a')"
+      ],
+      "correct": 2,
+      "explanation": "Metode .at(index) mendukung indeks negatif dengan menghitung posisi relatif dari akhir array, di mana -1 adalah elemen terakhir, -2 elemen kedua dari belakang, dan seterusnya."
+    },
+    {
+      "id": 5,
+      "question": "Apa perbedaan mendasar antara Map dan Object literal biasa dalam hal kunci (keys)?",
+      "options": [
+        "Map hanya menerima key bertipe string atau symbol",
+        "Object dapat memiliki key bertipe function, objek, atau tipe primitif apa pun secara langsung tanpa stringification",
+        "Map mengizinkan key bertipe apa pun (termasuk objek, fungsi, dan primitif) serta mempertahankan urutan penyisipan (insertion order)",
+        "Map tidak menjamin urutan penelusuran key, sedangkan Object selalu terurut berdasarkan abjad"
+      ],
+      "correct": 2,
+      "explanation": "Kunci pada Map dapat berupa tipe data apa pun (termasuk referensi objek dan fungsi), selalu mengingat urutan penyisipan asli saat iterasi, dan tidak mewarisi default keys dari prototype chain."
+    },
+    {
+      "id": 6,
+      "question": "Fitur Object.groupBy() (ES2024) mengembalikan struktur data dalam bentuk apa?",
+      "options": [
+        "Sebuah Map dengan key berupa predikat pengelompokan",
+        "Sebuah null-prototype object (Object.create(null)) dengan properti berupa array elemen",
+        "Array 2 dimensi yang terurut",
+        "Sebuah Set dari sub-array"
+      ],
+      "correct": 1,
+      "explanation": "Object.groupBy() mengembalikan objek biasa tanpa prototype (null-prototype object) yang key-nya adalah hasil string dari callback pengelompokan dan valuenya adalah array item yang cocok. Untuk mengembalikan Map, digunakan Map.groupBy()."
+    },
+    {
+      "id": 7,
+      "question": "Diberikan operasi Set berikut:\nconst a = new Set([1, 2, 3]);\nconst b = new Set([2, 3, 4]);\nMetode Set standar ES2024 manakah yang menghasilkan Set baru berisi [2, 3]?",
+      "options": [
+        "a.difference(b)",
+        "a.intersection(b)",
+        "a.symmetricDifference(b)",
+        "a.union(b)"
+      ],
+      "correct": 1,
+      "explanation": "ES2024 memperkenalkan metode komposisi Set seperti intersection (irisan), union (gabungan), difference (selisih), dan symmetricDifference (selisih simetris). a.intersection(b) menghasilkan elemen yang ada di kedua Set: {2, 3}."
+    },
+    {
+      "id": 8,
+      "question": "Perhatikan potongan kode berikut:\nconst target = { a: 1 };\nconst source = { get b() { return 2; } };\nconst copy = Object.assign({}, source);\nApa sifat properti 'b' pada objek 'copy'?",
+      "options": [
+        "Properti 'b' menjadi getter function yang sama dengan di source",
+        "Properti 'b' menjadi data property biasa dengan nilai 2 (getter dieksekusi saat assign)",
+        "Properti 'b' tidak tersalin dan bernilai undefined",
+        "Melemparkan TypeError karena getter tidak bisa di-copy"
+      ],
+      "correct": 1,
+      "explanation": "Object.assign() hanya menyalin nilai enumerable own properties menggunakan operasi [[Get]] dan [[Set]]. Getter pada objek sumber dievaluasi dan nilainya disalin sebagai nilai properti biasa, bukan sebagai getter function."
+    },
+    {
+      "id": 9,
+      "question": "Apa output dari penggunaan method Array.prototype.findLastIndex() jika tidak ada elemen yang memenuhi kriteria pengujian callback?",
+      "options": [
+        "null",
+        "undefined",
+        "-1",
+        "0"
+      ],
+      "correct": 2,
+      "explanation": "Sama seperti findIndex(), jika tidak ada elemen yang memenuhi kondisi predikat, findLastIndex() mengembalikan nilai -1."
+    },
+    {
+      "id": 10,
+      "question": "Perhatikan kode berikut:\nconst arr = [1, [2, [3, [4]]]];\nconsole.log(arr.flat(2));\nBerapa hasil evaluasi array tersebut?",
+      "options": [
+        "[1, 2, 3, [4]]",
+        "[1, 2, 3, 4]",
+        "[1, 2, [3, [4]]]",
+        "[1, [2, 3, 4]]"
+      ],
+      "correct": 0,
+      "explanation": "Metode flat(depth) meratakan sub-array bersarang hingga kedalaman tertentu. Dengan depth = 2, lapisan array luar dan sub-array level 1 dibuka, menyisakan level terdalam sehingga menghasilkan [1, 2, 3, [4]]."
+    }
+  ]
+}

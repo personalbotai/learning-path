@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": "Queue biasanya menggunakan urutan?", "options": ["LIFO", "FIFO", "Acak", "Priority"], "answer": 1, "explanation": "Queue umumnya FIFO (first-in-first-out)." },
+    { "question": "Metode untuk lihat kepala queue tanpahapus?", "options": ["poll()", "remove()", "peek()", "element()"], "answer": 2, "explanation": "peek() mengembalikan elemen pertama tanpa menghapus; null jika kosong." },
+    { "question": "Deque beroperasi di?", "options": ["Hanya kepala", "Hanya ekor", "Kedua ujung", "Tidak ada"], "answer": 2, "explanation": "Deque (double-ended queue) mendukung penambahan dan penghapusan di kedua ujung." },
+    { "question": "Implementasi Queue default yang disarankan?", "options": ["LinkedList", "ArrayDeque", "Vector", "Stack"], "answer": 1, "explanation": "ArrayDeque lebih cepat dan generally better daripada LinkedList untuk Queue/Deque." },
+    { "question": "PriorityQueue tidak guarantee?", "options": ["FIFO order", "Order by natural/comparator", "Thread safety", "Null elements"], "answer": 0, "explanation": "PriorityQueue mengutamakan berdasarkan prioritas, bukan urutan masuk (FIFO)." }
+  ]
+}

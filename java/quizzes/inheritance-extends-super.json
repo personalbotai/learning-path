@@ -1,0 +1,9 @@
+{
+  "quiz": [
+    { "question": "Keyword untuk pewarisan class?", "options": ["implements", "extends", "inherits", "super"], "answer": 1, "explanation": "extend digunakan untuk mewarisi dari superclass." },
+    { "question": "Apa yang diwariskan ke subclass?", "options": ["Hanya methods", "Hanya fields", "Methods dan fields (kecuali private)", "Semua termasuk private"], "answer": 2, "explanation": "Subclass mewarisi semua fields dan methods, kecuali private fields tidak bisa diakses langsung." },
+    { "question": "Object apakah yang dapat melakukan upcast otomatis?", "options": ["Subclass to superclass", "Superclass to subclass", "Tidak ada", "Hanya interface"], "answer": 0, "explanation": "Upcast (subclass → superclass) implisit." },
+    { "question": "Annotation untuk override method?", "options": ["@Override", "@Replace", "@Inherit", "@Subclass"], "answer": 0, "explanation": "@Override annotation menandakan method override." },
+    { "question": "Java support multiple class inheritance?", "options": ["Ya", "Tidak", "Hanya via interfaces", "Hanya abstract classes"], "answer": 1, "explanation": "Java hanya satu class inheritance; multiple inheritance melalui interface." }
+  ]
+}

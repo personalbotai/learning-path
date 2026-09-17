@@ -1,0 +1,98 @@
+{
+  "module": 2,
+  "title": "Quiz: Struktur Data JavaScript",
+  "description": "Test your understanding of arrays, objects, sets, maps, and JSON",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa method array untuk menambahkan elemen di akhir array?",
+      "options": ["push()", "pop()", "shift()", "unshift()"],
+      "correct": 0,
+      "explanation": "push() menambahkan satu atau lebih elemen ke akhir array."
+    },
+    {
+      "id": 2,
+      "question": "Manakah yang benar tentang Set?",
+      "options": [
+        "Menyimpan elemen berurutan dengan index",
+        "Menyimpan elemen unik tanpa urutan khusus",
+        "Menyimpan pasangan key-value",
+        "Mengizinkan duplicate values"
+      ],
+      "correct": 1,
+      "explanation": "Set adalah koleksi nilai unik, tidak memiliki urutan tertentu (ES6)."
+    },
+    {
+      "id": 3,
+      "question": "Bagaimana cara mengakses properti objek dengan variable name?",
+      "options": [
+        "obj.variable",
+        "obj['variable']",
+        "obj.{variable}",
+        "obj(variable)"
+      ],
+      "correct": 1,
+      "explanation": "Notasi bracket obj['prop'] memungkinkan dynamic property access."
+    },
+    {
+      "id": 4,
+      "question": "Apa method untuk mengubah array menjadi string dengan separator?",
+      "options": ["join()", "split()", "concat()", "toString()"],
+      "correct": 0,
+      "explanation": "join() menggabungkan elemen array menjadi string dengan separator yang ditentukan."
+    },
+    {
+      "id": 5,
+      "question": "Manakah yang benar tentang Map?",
+      "options": [
+        "Kunci bisa berupa tipe apapun (object, function, primitive)",
+        "Hanya bisa string sebagai key",
+        "Otomatis mengurutkan key",
+        "Tidak memiliki size property"
+      ],
+      "correct": 0,
+      "explanation": "Map keys bisa berupa tipe apa pun (termasuk objek), berbeda dengan objek biasa yang hanya string/symbol."
+    },
+    {
+      "id": 6,
+      "question": "Method apa yang mengembalikan array baru tanpa mengubah array asli?",
+      "options": ["splice()", "slice()", "pop()", "shift()"],
+      "correct": 1,
+      "explanation": "slice() mengembalikan shallow copy; splice() mengubah array asli."
+    },
+    {
+      "id": 7,
+      "question": "JSON.stringify() mengubah apa menjadi string JSON?",
+      "options": ["String menjadi object", "Object/array menjadi string JSON", "Number menjadi string", "Boolean menjadi string"],
+      "correct": 1,
+      "explanation": "JSON.stringify() serializes object/array/value to JSON string."
+    },
+    {
+      "id": 8,
+      "question": "Apa hasil dari: [1,2,3].map(x => x * 2)?",
+      "options": ["[1,4,9]", "[2,4,6]", "[1,2,3,1,2,3]", "Error"],
+      "correct": 1,
+      "explanation": "map() membuat array baru dengan menerapkan fungsi pada setiap elemen."
+    },
+    {
+      "id": 9,
+      "question": "Manakah tentang spread operator [...array]?",
+      "options": [
+        "Hanya bisa digunakan di array",
+        "Membuat shallow copy array atau object",
+        "Hanya untuk string",
+        "Mengubah array asli"
+      ],
+      "correct": 1,
+      "explanation": "Spread operator membuat shallow copy dari iterable (array, string, object)."
+    },
+    {
+      "id": 10,
+      "question": "Apa method untuk filter array berdasarkan kondisi?",
+      "options": ["find()", "filter()", "reduce()", "some()"],
+      "correct": 1,
+      "explanation": "filter() mengembalikan elemen-elemen yang memenuhi kondisi."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "module": 4,
+  "title": "Quiz: Konsep Lanjut JavaScript",
+  "description": "Test your knowledge of closures, prototypes, this, arrow functions, and IIFE",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa closure?",
+      "options": [
+        "Function yang bisa mengakses variabel dari outer scope meski outer function sudah selesai dieksekusi",
+        "Function yang tidak memiliki nama",
+        "Object yang meng-masing method",
+        "Tipe data khusus"
+      ],
+      "correct": 0,
+      "explanation": "Closure adalah function yang retains access ke lexical scope-nya meskipun function tersebut dijalankan di luar scope tersebut."
+    },
+    {
+      "id": 2,
+      "question": "Apa prototype chain?",
+      "options": [
+        "Rantai inheritance berbentuk prototype",
+        "Array dari prototypes",
+        "Function constructor",
+        "Object.create()"
+      ],
+      "correct": 0,
+      "explanation": "Prototype chain adalah mekanisme inheritance di mana object memiliki internal [[Prototype]] yang merefer ke objek lain."
+    },
+    {
+      "id": 3,
+      "question": "Apa nilai this dalam arrow function?",
+      "options": [
+        "Selalu undefined",
+        "Inherit dari lexical scope (di mana arrow function didefinisikan)",
+        "Refer ke window/global",
+        "Refer ke function pemanggil"
+      ],
+      "correct": 1,
+      "explanation": "Arrow functions tidak memiliki this sendiri; mereka mengambil this dari surrounding lexical context."
+    },
+    {
+      "id": 4,
+      "question": "Kapan this dalam function reguler mengacu ke object pemanggil?",
+      "options": [
+        "Selalu",
+        "Hanya jika strict mode",
+        "Bergantung pada cara function dipanggil (call/apply/bind atau method call)",
+        "Tidak pernah"
+      ],
+      "correct": 2,
+      "explanation": "this di function reguler adalah dinamis: method call → this = objek; function call → this = undefined (strict) / global (non-strict)."
+    },
+    {
+      "id": 5,
+      "question": "Apa IIFE?",
+      "options": [
+        "Immediately Invoked Function Expression",
+        "Internal Function Execution",
+        "Independent Isolated Function Environment",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "IIFE adalah function yang didefinisikan dan langsung dieksekusi saat definisi, sering untuk encapsulation."
+    },
+    {
+      "id": 6,
+      "question": "Apa hasil dari: function Outer() { let x = 10; return function Inner() { console.log(x); } } const f = Outer(); f();",
+      "options": ["undefined", "10", "Error", "null"],
+      "correct": 1,
+      "explanation": "Inner closure retains access ke x dari Outer, meskipun Outer sudah selesai."
+    },
+    {
+      "id": 7,
+      "question": "Manakah tentang prototype inheritance?",
+      "options": [
+        "Hanya class yang bisa inherit",
+        "Semua object memiliki prototype (kecuali Object.prototype)",
+        "Tidak bisa diubah setelah dibuat",
+        "Tidak ada __proto__"
+      ],
+      "correct": 1,
+      "explanation": "Setiap object (kecuali Object.prototype) memiliki internal [[Prototype]], bisa diakses via __proto__ atau Object.getPrototypeOf()."
+    },
+    {
+      "id": 8,
+      "question": "Apa tujuan module pattern?",
+      "options": [
+        "Membuat module ES6",
+        "Menyembunyikan private data dan mengekspose public API",
+        "Menggabungkan beberapa file",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "Module pattern menggunakan closure untuk encapsulation: private variables dan public methods."
+    },
+    {
+      "id": 9,
+      "question": "Arrow functions tidak memiliki ______.",
+      "options": ["arguments object", "this", "prototype", "Semua benar"],
+      "correct": 3,
+      "explanation": "Arrow functions tidak memiliki this, arguments, new.target, atau super. Mereka murni lexical."
+    },
+    {
+      "id": 10,
+      "question": "Apa Function.prototype.bind() lakukan?",
+      "options": [
+        "Menggabungkan dua function",
+        "Membuat function baru dengan this dan argumen tetap (partial application)",
+        "Mengubah function menjadi arrow",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "bind() mengembalikan new function dengan this yang terikat dan argumen awal (currying)."
+    }
+  ]
+}

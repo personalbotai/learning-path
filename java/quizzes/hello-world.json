@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Perintah untuk mengkompilasi HelloWorld.java adalah?",
+      "options": ["java HelloWorld", "javac HelloWorld.java", "javaw HelloWorld", "compile HelloWorld"],
+      "answer": 1,
+      "explanation": "javac (Java compiler) digunakan untuk mengompile .java menjadi .class."
+    },
+    {
+      "question": "Setelah kompilasi, file apa yang dihasilkan?",
+      "options": [".java", ".exe", ".class", ".jar"],
+      "answer": 2,
+      "explanation": "Kompilasi menghasilkan bytecode dalam file .class."
+    },
+    {
+      "question": "Perintah untuk menjalankan program HelloWorld adalah?",
+      "options": ["java HelloWorld.class", "java HelloWorld", "javaw HelloWorld", "run HelloWorld"],
+      "answer": 1,
+      "explanation": "Gunakan 'java' diikuti nama class (tanpa .class)."
+    },
+    {
+      "question": "Apa yang terjadi jika nama file tidak sama dengan public class?",
+      "options": ["Tidak masalah", "Error kompilasi", "Error saat menjalankan", "Java otomatis mengganti"],
+      "answer": 1,
+      "explanation": "Compiler menolak jika public class name tidak sesuai nama file."
+    },
+    {
+      "question": "Apa fungsi method main?",
+      "options": ["Menyimpan data", "Entry point program", "Komplier helper", "None"],
+      "answer": 1,
+      "explanation": "Method main adalah entry point yang dipanggil JVM ketika program dijalankan."
+    }
+  ]
+}

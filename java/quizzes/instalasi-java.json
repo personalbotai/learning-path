@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa yang dikandung dalam JDK?",
+      "options": ["Hanya Java Runtime Environment (JRE)", "Compiler, JRE, dan library tambahan", "Hanya compiler (javac)", "IDE resmi Oracle"],
+      "answer": 1,
+      "explanation": "JDK berisi JRE, compiler (javac), serta library dan tools tambahan seperti javadoc."
+    },
+    {
+      "question": "Perintah untuk mengkompilasi file Java adalah?",
+      "options": ["java", "javac", "javaw", "jvm"],
+      "answer": 1,
+      "explanation": "javac (Java compiler) digunakan untuk mengubah .java menjadi .class."
+    },
+    {
+      "question": "Apa tujuan variabel JAVA_HOME?",
+      "options": ["Menentukan lokasi IDE", "Menentukan lokasi JDK untuk tooling lain", "Mengatur ukuran heap", "Menentukan port JVM"],
+      "answer": 1,
+      "explanation": "JAVA_HOME menunjuk ke direktori instalasi JDK, digunakan oleh banyak tool (Maven, Gradle, Tomcat)."
+    },
+    {
+      "question": "IDE berikut yang POPULER untuk Java, kecuali:",
+      "options": ["IntelliJ IDEA", "Eclipse", "NetBeans", "Visual Studio Code", "Vim"],
+      "answer": 4,
+      "explanation": "Vim adalah text editor, bukan IDE khusus Java (meski dapat digunakan)."
+    },
+    {
+      "question": "Setelah instalasi, perintah apa untuk memeriksa versi JDK?",
+      "options": ["java -v", "javac -version", "java -version", "Both b and c"],
+      "answer": 3,
+      "explanation": "java -version menunjukkan versi runtime, javac -version menunjukkan versi compiler. Keduanya berguna."
+    }
+  ]
+}

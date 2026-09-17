@@ -1,0 +1,83 @@
+{
+  "module": 5,
+  "title": "Quiz: Standard Library JavaScript",
+  "description": "Test your knowledge of Math, Date, String, Array methods, Number, and RegExp",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa hasil Math.max(1, 3, 2)?",
+      "options": ["1", "2", "3", "NaN"],
+      "correct": 2,
+      "explanation": "Math.max() mengembalikan nilai terbesar dari argumen."
+    },
+    {
+      "id": 2,
+      "question": "Method string untuk mengubah semua karakter menjadi lowercase?",
+      "options": ["toLowerCase()", "toUpperCase()", "trim()", "slice()"],
+      "correct": 0,
+      "explanation": "toLowerCase() mengembalikan string baru dengan semua huruf kecil."
+    },
+    {
+      "id": 3,
+      "question": "Apa diferencia antara == dan ===?",
+      "options": [
+        "Tidak ada",
+        "=== melakukan type coercion, == tidak",
+        "=== strict equality (tipe dan nilai), == melakukan type coercion",
+        "== lebih ketat"
+      ],
+      "correct": 2,
+      "explanation": "Strict equality === membandingkan tipe dan nilai tanpa coercion; == melakukan type coercion."
+    },
+    {
+      "id": 4,
+      "question": "Array method untuk filter berdasarkan kondisi?",
+      "options": ["find()", "filter()", "some()", "every()"],
+      "correct": 1,
+      "explanation": "filter() mengembalikan elemen yang memenuhi fungsi predikat."
+    },
+    {
+      "id": 5,
+      "question": "Apa Date.now() kembalikan?",
+      "options": ["Date object", "Timestamp dalam milidetik", "String tanggal", "Error"],
+      "correct": 1,
+      "explanation": "Date.now() mengembalikan jumlah milidetik sejak 1 Jan 1970 UTC."
+    },
+    {
+      "id": 6,
+      "question": "RegExp flag untuk case-insensitive?",
+      "options": ["g", "i", "m", "s"],
+      "correct": 1,
+      "explanation": "Flag 'i' membuat pattern case-insensitive."
+    },
+    {
+      "id": 7,
+      "question": "Method untuk mengganti substring dengan string lain?",
+      "options": ["replace()", "substring()", "substr()", "slice()"],
+      "correct": 0,
+      "explanation": "replace() mengganti pattern/substring dengan replacement."
+    },
+    {
+      "id": 8,
+      "question": "Apa Number.MAX_SAFE_INTEGER?",
+      "options": ["2^53 - 1", "2^31 - 1", "Infinity", "2^63 - 1"],
+      "correct": 0,
+      "explanation": "MAX_SAFE_INTEGER adalah 2^53 - 1, nilai integer teraman untuk representasi double-precision."
+    },
+    {
+      "id": 9,
+      "question": "Array method untuk menjalankan fungsi pada setiap elemen tanpa membuat array baru?",
+      "options": ["map()", "forEach()", "reduce()", "filter()"],
+      "correct": 1,
+      "explanation": "forEach() melakukan side-effect pada setiap elemen, mengembalikan undefined."
+    },
+    {
+      "id": 10,
+      "question": "Apa Math.random() hasil?",
+      "options": ["Integer acak", "Float acak antara 0 (inklusif) dan 1 (eksklusif)", "Float acak antara 0 dan 100", "Error"],
+      "correct": 1,
+      "explanation": "Math.random() mengembalikan angka float pseudo-random di [0, 1)."
+    }
+  ]
+}

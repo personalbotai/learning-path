@@ -1,0 +1,93 @@
+{
+  "module": 7,
+  "title": "Quiz: Tooling & Ecosystem",
+  "description": "Test your knowledge of npm, ES6 modules, Babel, Webpack, ESLint, and Jest",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Perintah untuk menginisialisasi package.json?",
+      "options": ["npm init", "npm start", "npm create", "npm install"],
+      "correct": 0,
+      "explanation": "npm init (atau npm init -y) membuat file package.json baru."
+    },
+    {
+      "id": 2,
+      "question": "Syntax import untuk menarik default export?",
+      "options": ["import * as name", "import { default as name }", "import name from 'module'", "import { name }"],
+      "correct": 2,
+      "explanation": "Default import: import name from 'module'."
+    },
+    {
+      "id": 3,
+      "question": "Apa tujuan Babel?",
+      "options": [
+        "Mengompilasi JavaScript modern ke ECMAScript 5 untuk kompatibilitas",
+        "Mengelola dependencies",
+        "Menjalankan tests",
+        "Membangun assets"
+      ],
+      "correct": 0,
+      "explanation": "Babel transpiles modern JavaScript (ES6+) ke ES5 agar bisa berjalan di browser lama."
+    },
+    {
+      "id": 4,
+      "question": "File utama Webpack untuk konfigurasi?",
+      "options": ["webpack.config.js", "webpack.json", "babel.config.js", "package.json"],
+      "correct": 0,
+      "explanation": "Webpack menggunakan webpack.config.js (atau .ts) untuk konfigurasi."
+    },
+    {
+      "id": 5,
+      "question": "Apa ESLint?",
+      "options": [
+        "Testing framework",
+        "Code linter untuk menemukan patterns problematic dan enforce style",
+        "Module bundler",
+        "Package manager"
+      ],
+      "correct": 1,
+      "explanation": "ESLint analyzes code untuk mencari patterns yang tidak diinginkan dan enforce coding standards."
+    },
+    {
+      "id": 6,
+      "question": "Perintah untuk menjalankan test dengan Jest?",
+      "options": ["jest", "npm test", "npm run test", "Semua benar"],
+      "correct": 3,
+      "explanation": "Jest bisa dijalankan via jest, npm test (jika script test diset), atau npm run test."
+    },
+    {
+      "id": 7,
+      "question": "Bagaimana cara mengekspor multiple named exports?",
+      "options": ["export default", "export { a, b }", "export *", "export const"],
+      "correct": 1,
+      "explanation": "Named exports: export { a, b, c } atau export const x = ...; export function y() {}"
+    },
+    {
+      "id": 8,
+      "question": "Apa purpose dari .babelrc?",
+      "options": ["Webpack config", "Babel configuration (presets & plugins)", "ESLint rules", "npm scripts"],
+      "correct": 1,
+      "explanation": ".babelrc (atau babel.config.js) berisi konfigurasi Babel seperti presets dan plugins."
+    },
+    {
+      "id": 9,
+      "question": "Apa difference antara development dan production build di Webpack?",
+      "options": [
+        "Tidak ada",
+        "Dev: source maps, no minification; Prod: minified, optimized",
+        "Prod lebih cepat tanpa optimasi",
+        "Hanya dev build yang support modules"
+      ],
+      "correct": 1,
+      "explanation": "Development builds prioritize debugging (source maps); production builds optimize for size/speed (minification, tree-shaking)."
+    },
+    {
+      "id": 10,
+      "question": "Jest assertion function untuk cek nilai?",
+      "options": ["assert()", "expect()", "test()", "should()"],
+      "correct": 1,
+      "explanation": "Jest uses expect(value).toBe(expected) or .toEqual() etc."
+    }
+  ]
+}

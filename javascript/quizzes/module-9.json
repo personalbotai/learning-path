@@ -1,0 +1,128 @@
+{
+  "module": 9,
+  "title": "Quiz: Advanced Topics",
+  "description": "Uji pemahaman topik mutakhir JavaScript: Generators & Async Iterators, Proxy & Reflect API, Symbol metaprogramming, dan implementasi Design Patterns modern.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Perhatikan generator function berikut:\nfunction* gen() {\n  const x = yield 1;\n  yield x * 2;\n}\nconst g = gen();\nconsole.log(g.next().value);\nconsole.log(g.next(5).value);\nBerapa output yang dicetak berturut-turut?",
+      "options": [
+        "1 dan 10",
+        "1 dan 2",
+        "1 dan NaN",
+        "5 dan 10"
+      ],
+      "correct": 0,
+      "explanation": "Pemanggilan g.next() pertama mengeksekusi generator hingga yield 1 (mengembalikan value: 1). Pemanggilan kedua g.next(5) memasukkan nilai 5 sebagai hasil evaluasi ekspresi (yield 1), menetapkan x = 5, lalu yield x * 2 menghasilkan value: 10."
+    },
+    {
+      "id": 2,
+      "question": "Apa keunggulan utama menggunakan 'Reflect.set(target, prop, value, receiver)' di dalam Proxy set trap dibandingkan penugasan langsung 'target[prop] = value'?",
+      "options": [
+        "Reflect.set membuat operasi berjalan asynchronous",
+        "Reflect.set memastikan bahwa jika target memiliki setter pada prototype-nya, setter tersebut dieksekusi dengan context 'receiver' yang benar (mengarah ke proxy instance)",
+        "Reflect.set secara otomatis menghapus properti privat",
+        "Reflect.set hanya bisa menerima nilai number"
+      ],
+      "correct": 1,
+      "explanation": "Argumen receiver pada Reflect method memastikan bahwa binding 'this' di dalam accessor descriptor (getter/setter) tetap mengarah ke Proxy asal (bukan objek target internal), menjaga konsistensi metaprogramming saat inheritance."
+    },
+    {
+      "id": 3,
+      "question": "Apa fungsi dari Symbol bawaan 'Symbol.asyncIterator' pada sebuah objek di JavaScript?",
+      "options": [
+        "Menjadikan objek dapat ditelusuri menggunakan loop 'for await...of' dan menghasilkan Promise pada setiap pemanggilan .next()",
+        "Mengonversi objek menjadi array synchronous",
+        "Mengirim data objek melalui WebSocket",
+        "Membuat snapshot memori objek"
+      ],
+      "correct": 0,
+      "explanation": "Symbol.asyncIterator mendefinisikan Async Iterable Protocol. Objek yang mengimplementasikan method [Symbol.asyncIterator]() dapat dikonsumsi oleh perulangan 'for await (const item of asyncIterable)'."
+    },
+    {
+      "id": 4,
+      "question": "Bagaimana cara membuat objek Proxy yang dapat dibatalkan aksesnya secara permanen di masa mendatang (Revocable Proxy)?",
+      "options": [
+        "Menggunakan Proxy.revoke(target)",
+        "Menggunakan Proxy.revocable(target, handler) yang mengembalikan { proxy, revoke }, lalu memanggil fungsi revoke() ketika ingin menonaktifkan akses",
+        "Menyetel target = null",
+        "Menghapus handler menggunakan delete handler"
+      ],
+      "correct": 1,
+      "explanation": "Proxy.revocable() membuat pasangan objek proxy dan fungsi pemutus (revoke). Begitu revoke() dieksekusi, semua operasi trapping selanjutnya pada proxy tersebut akan langsung melemparkan TypeError."
+    },
+    {
+      "id": 5,
+      "question": "Perhatikan Symbol well-known 'Symbol.hasInstance'. Kapan method ini dipanggil oleh JavaScript runtime?",
+      "options": [
+        "Saat operator 'instanceof' dievaluasi untuk mengkustomisasi perilaku pengecekan instance suatu constructor/class",
+        "Saat operator 'typeof' digunakan",
+        "Saat objek di-serialize dengan JSON.stringify()",
+        "Saat objek di-clone dengan structuredClone()"
+      ],
+      "correct": 0,
+      "explanation": "Symbol.hasInstance memungkinkan sebuah class atau fungsi constructor menyesuaikan cara operator 'instanceof' mengenali apakah suatu objek dianggap sebagai instance dari class tersebut."
+    },
+    {
+      "id": 6,
+      "question": "Apa perbedaan esensial antara 'Observer Pattern' dan 'Publish-Subscribe (Pub/Sub) Pattern' di JavaScript?",
+      "options": [
+        "Observer pattern hanya bekerja di browser, Pub/Sub di Node.js",
+        "Pada Observer pattern, Subject mengetahui langsung daftar Observer-nya (tightly coupled); sedangkan pada Pub/Sub, Publisher dan Subscriber terhubung secara terpisah (decoupled) melalui Event Channel / Message Broker perantara",
+        "Pub/Sub tidak mendukung transmisi data payload",
+        "Observer pattern mengharuskan semua fungsi berbentuk synchronous generator"
+      ],
+      "correct": 1,
+      "explanation": "Dalam Observer pattern klasik, Observers terdaftar langsung pada Subject. Pada Pub/Sub, pengirim (Publisher) dan penerima (Subscriber) tidak saling mengetahui, melainkan berkomunikasi melalui topic/channel yang dikelola broker terpusat."
+    },
+    {
+      "id": 7,
+      "question": "Bagaimana cara mengimplementasikan Singleton Pattern yang thread-safe dan aman dari modifikasi di JavaScript modern?",
+      "options": [
+        "Menyimpan instance di variabel global window",
+        "Menggunakan static private field (#instance) dalam class, melempar error di constructor jika instance sudah ada, dan membekukan instance dengan Object.freeze()",
+        "Membuat 10 function berbeda untuk setiap panggilan",
+        "Menggunakan keyword 'singleton' bawaan ES2024"
+      ],
+      "correct": 1,
+      "explanation": "Pola Singleton modern menggunakan modul terisolasi atau class dengan private static field #instance dan accessor static getInstance(), serta Object.freeze() untuk menjamin keaslian dan immutabilitas instance tunggal."
+    },
+    {
+      "id": 8,
+      "question": "Apa kegunaan trap 'has' (contoh: has(target, prop)) pada Proxy handler?",
+      "options": [
+        "Menangani operasi delete target[prop]",
+        "Menangkap dan menyesuaikan evaluasi operator 'prop in proxy'",
+        "Memeriksa apakah target adalah fungsi yang dapat dipanggil",
+        "Memvalidasi tipe data properti"
+      ],
+      "correct": 1,
+      "explanation": "Trap 'has' diaktifkan saat runtime mengevaluasi operator 'in' (contoh: 'name' in proxyObj) atau operasi Reflect.has(proxyObj, 'name')."
+    },
+    {
+      "id": 9,
+      "question": "Perhatikan kode iterator kustom berikut:\nconst range = {\n  from: 1, to: 3,\n  [Symbol.iterator]() {\n    let current = this.from;\n    const last = this.to;\n    return {\n      next() {\n        return current <= last ? { value: current++, done: false } : { done: true };\n      }\n    };\n  }\n};\nconsole.log([...range]);\nBerapa hasil evaluasinya?",
+      "options": [
+        "[1, 2, 3]",
+        "[1, 2]",
+        "[1, 2, 3, undefined]",
+        "TypeError: range is not iterable"
+      ],
+      "correct": 0,
+      "explanation": "Dengan mengimplementasikan method [Symbol.iterator]() yang mengembalikan objek dengan method next() berformat { value, done }, objek range mematuhi Iteration Protocols sehingga dapat diekspansi oleh spread operator menjadi [1, 2, 3]."
+    },
+    {
+      "id": 10,
+      "question": "Bagaimana 'Symbol.toPrimitive' digunakan untuk mengendalikan konversi tipe implisit suatu objek?",
+      "options": [
+        "Mengubah objek menjadi string JSON murni",
+        "Menentukan fungsi kustom yang dipanggil saat objek dikonversi ke tipe primitif, dengan menerima hint berupa 'number', 'string', atau 'default'",
+        "Menonaktifkan konversi objek ke tipe lain",
+        "Mendefinisikan tipe primitif baru di level V8 engine"
+      ],
+      "correct": 1,
+      "explanation": "Method [Symbol.toPrimitive](hint) memungkinkan objek meng-override perilaku ToPrimitive standar JavaScript, menyesuaikan output saat objek diubah menjadi number (+obj), string (`${obj}`), atau operasi gabungan (+)."
+    }
+  ]
+}

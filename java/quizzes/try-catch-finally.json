@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa yang selalu dieksekusi setelah try-catch?",
+      "options": ["catch", "finally", "throw", "return"],
+      "answer": 1,
+      "explanation": "Blok finally selalu dijalankan setelah try atau catch."
+    },
+    {
+      "question": "Manfaat utama try-with-resources?",
+      "options": ["Menangkap lebih banyak exception", " resources Auto-closeable tanpa finally", "Menghindari所有 exception", "Mengganti catch"],
+      "answer": 1,
+      "explanation": "try-with-resources menutup resources otomatis, mengkode lebih bersih."
+    },
+    {
+      "question": "Bisa ada lebih dari satu resource dalam try-with-resources?",
+      "options": ["Tidak", "Ya, dengan ;", "Hanya satu", "Tergantung Java version"],
+      "answer": 1,
+      "explanation": "Multiple resources dapat dideklarasikan dengan ; di antara (seperti try (A a = ...; B b = ...) { ... } )."
+    },
+    {
+      "question": "Jika exception terjadi di dalam try dan juga di finally, apa outcome?",
+      "options": ["Exception dari try diseberkan", "Exception dari finally menimpa", "Keduanya disimpan (suppressed)", "Program crash"],
+      "answer": 2,
+      "explanation": "Exception dari finally akan disimpan sebagai suppressed ke exception asli (jika ada)."
+    },
+    {
+      "question": "Kapan finally tidak dieksekusi?",
+      "options": ["Jika ada return di try", "Jika System.exit() Called", "Jika exception di throw", "Telah selalu dieksekusi"],
+      "answer": 1,
+      "explanation": "Jika JVM terminates (System.exit) atau kill -9, finally tidak dieksekusi; namun return dalam try tidak menghalangi finally."
+    }
+  ]
+}

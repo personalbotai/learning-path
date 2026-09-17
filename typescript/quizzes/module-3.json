@@ -1,0 +1,103 @@
+{
+  "module": 3,
+  "title": "Quiz: Object-Oriented Programming",
+  "description": "Test your understanding of classes, inheritance, encapsulation, and polymorphism",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Apa keyword untuk membuat class di JavaScript ES6?",
+      "options": ["function", "class", "object", "constructor"],
+      "correct": 1,
+      "explanation": "ES6 memperkenalkan keyword 'class' untuk membuat class (syntactic sugar atas prototype)."
+    },
+    {
+      "id": 2,
+      "question": "Method apa yang dipanggil otomatis saat objek dibuat?",
+      "options": ["create()", "init()", "constructor()", "new()"],
+      "correct": 2,
+      "explanation": "constructor adalah method khusus yang dipanggil saat instantiation."
+    },
+    {
+      "id": 3,
+      "question": "Bagaimana cara melakukan inheritance dalam class ES6?",
+      "options": ["Object.create()", "class Child extends Parent", "Child.prototype = Parent", "None"],
+      "correct": 1,
+      "explanation": "extends keyword digunakan untuk membuat subclass."
+    },
+    {
+      "id": 4,
+      "question": "Apa maksud encapsulation?",
+      "options": [
+        "Menggabungkan data dan method",
+        "Menyembunyikan detail implementasi",
+        "Menggunakan banyak instance",
+        "Membuat class abstract"
+      ],
+      "correct": 1,
+      "explanation": "Encapsulation membatasi akses langsung ke data internal (menggunakan closure atau private fields)."
+    },
+    {
+      "id": 5,
+      "question": "Manakah tentang polymorphism?",
+      "options": [
+        "Satu interface, banyak implementasi",
+        "Hanya satu subclass",
+        "Hanya untuk functions",
+        "Tidak涉及 inheritance"
+      ],
+      "correct": 0,
+      "explanation": "Polymorphism memungkinkan subclass override method parent untuk perilaku berbeda."
+    },
+    {
+      "id": 6,
+      "question": "Apa output dari: class A { constructor() { this.x = 1; } } const b = new A(); console.log(b.x);",
+      "options": ["undefined", "1", "Error", "null"],
+      "correct": 1,
+      "explanation": "Constructor mengatur properti this.x, jadi b.x = 1."
+    },
+    {
+      "id": 7,
+      "question": "Keyword mana yang membuat property private (ES2022+)?",
+      "options": ["private", "#", "_", "hidden"],
+      "correct": 1,
+      "explanation": "Private fields ditandai dengan # (hash) di depan nama."
+    },
+    {
+      "id": 8,
+      "question": "Apa getter dan setter?",
+      "options": [
+        "Methods untuk mengambil dan mengatur nilai property",
+        "Hanya untuk arrays",
+        "Built-in functions",
+        "Static methods"
+      ],
+      "correct": 0,
+      "explanation": "Getter mengembalikan nilai; setter mengubah nilai dengan encapsulation."
+    },
+    {
+      "id": 9,
+      "question": "Manakah tentang super()?",
+      "options": [
+        "Memanggil function parent",
+        "Hanya untuk static methods",
+        "Harus dipanggil setelah this digunakan",
+        "Tidak perlu di constructor"
+      ],
+      "correct": 0,
+      "explanation": "super() memanggil constructor parent; harus dipanggil sebelum this di derived class."
+    },
+    {
+      "id": 10,
+      "question": "Apa method overriding?",
+      "options": [
+        "Mendefinisikan ulang method parent di subclass",
+        "Overloading method",
+        "Menyembunyikan method",
+        "None"
+      ],
+      "correct": 0,
+      "explanation": "Overriding adalah subclass memberikan implementasi berbeda untuk method yang sudah ada di parent."
+    }
+  ]
+}

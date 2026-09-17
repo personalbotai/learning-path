@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Apa yang terjadi saat casting double ke int secara eksplisit?",
+      "options": ["Bulatkan ke integer terdekat", "Memotong bagian desimal (truncation)", "Mengembalikan nilai pecahan", "Error compile"],
+      "answer": 1,
+      "explanation": "Casting double ke int memotong (truncate) bagian pecahan tanpa pembulatan."
+    },
+    {
+      "question": "Kapan cast eksplisit diperlukan?",
+      "options": ["Saat widening conversion", "Saat narrowing conversion", "Selalu", "Tidak pernah"],
+      "answer": 1,
+      "explanation": "Narrowing conversion memerlukan cast eksplisit karena berisiko kehilangan data."
+    },
+    {
+      "question": "Apa hasil dari (int) 'A'?",
+      "options": ["65 (ASCII value)", "A", "Error", "97"],
+      "answer": 0,
+      "explanation": "char 'A' dapat di-cast ke int menghasilkan nilai ASCII/Unicode 65."
+    },
+    {
+      "question": "Cara aman melakukan downcast pada objek?",
+      "options": ["Langsung cast tanpa cek", "Gunakan instanceof terlebih dahulu", "Pastikan class sama", "Tidak perlu"],
+      "answer": 1,
+      "explanation": "Untuk menghindari ClassCastException, cek dengan instanceof sebelum downcast."
+    },
+    {
+      "question": "Apakah autoboxing memerlukan cast eksplisit?",
+      "options": ["Ya, selalu", "Tidak, otomatis", "Hanya untuk narrowing", "Hanya untuk widening"],
+      "answer": 1,
+      "explanation": "Autoboxing dan unboxing berjalan otomatis tanpa cast eksplisit."
+    }
+  ]
+}

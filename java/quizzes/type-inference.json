@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Kapan var bisa digunakan?",
+      "options": ["Untuk field class", "Untuk parameter method", "Untuk local variable dengan initializer", "Untuk return type method"],
+      "answer": 2,
+      "explanation": "var hanya berlaku untuk local variable, harus ada initializer, dan dideklarasikan di dalam method/block."
+    },
+    {
+      "question": "Apa yang terjadi jika menulis: var x = null;?",
+      "options": ["x bertipe Object", "Compile error: cannot infer type", "x bertype Void", "x bertipe null"],
+      "answer": 1,
+      "explanation": "Compile error karena tipe tidak bisa diinfer dari null."
+    },
+    {
+      "question": "Manakah yang benar tentang diamond operator?",
+      "options": ["Digunakan untuk array creation", "Digunakan untuk instance creation generic untuk mengurangi boilerplate", "Digunakan untuk method return", "Digunakan untuk var"],
+      "answer": 1,
+      "explanation": "Diamond operator <> memungkinkan compiler mendeduc tipe parameter generic dari context."
+    },
+    {
+      "question": "Contoh yang valid menggunakan var?",
+      "options": ["var list = new ArrayList<String>();", "var i; i = 10;", "var s = null;", "var m = Map.of();"],
+      "answer": 0,
+      "explanation": "var list = new ArrayList<String>(); legal; initializer memberikan tipe."
+    },
+    {
+      "question": "Type inference juga berlaku untuk lambda parameters?",
+      "options": ["Tidak", "Ya, tipe diinfer dari target functional interface", "Hanya jika menggunakan var", "Tidak perlu inference"],
+      "answer": 1,
+      "explanation": "Lambda expression parameters types dapat diinfer dari context (functional interface target type)."
+    }
+  ]
+}

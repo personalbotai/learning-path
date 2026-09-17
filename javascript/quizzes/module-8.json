@@ -1,0 +1,128 @@
+{
+  "module": 8,
+  "title": "Quiz: Best Practices & Performance",
+  "description": "Uji pemahaman arsitektur Event Loop, microtasks vs macrotasks, memory leaks, Web Workers multi-threading, dan keamanan frontend (XSS, CSP, prototype pollution).",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Perhatikan urutan eksekusi Event Loop berikut:\nconsole.log('1');\nsetTimeout(() => console.log('2'), 0);\nqueueMicrotask(() => console.log('3'));\nPromise.resolve().then(() => console.log('4'));\nconsole.log('5');\nBagaimana urutan output yang tepat?",
+      "options": [
+        "1, 5, 3, 4, 2",
+        "1, 2, 3, 4, 5",
+        "1, 5, 2, 3, 4",
+        "1, 5, 4, 3, 2"
+      ],
+      "correct": 0,
+      "explanation": "Eksekusi synchronous berjalan duluan: '1' lalu '5'. Setelah call stack kosong, Microtask Queue (queueMicrotask dan Promise .then) dikuras habis: '3' lalu '4'. Terakhir, Macrotask/Task Queue (callback setTimeout) dieksekusi: '2'."
+    },
+    {
+      "id": 2,
+      "question": "Mengapa Web Worker tidak dapat mengakses objek 'window', 'document', atau memanipulasi elemen DOM secara langsung?",
+      "options": [
+        "Karena Web Worker dieksekusi di server bukan di browser",
+        "Karena Web Worker berjalan di thread terpisah (background thread) di luar Main UI Thread, sehingga pembatasan akses DOM mencegah race condition dan thread-safety issues pada render tree",
+        "Karena Web Worker hanya mendukung bahasa WebAssembly",
+        "Karena browser menonaktifkan memori untuk Worker"
+      ],
+      "correct": 1,
+      "explanation": "DOM di browser tidak thread-safe. Untuk mencegah konflik manipulasi tampilan konkuren, Web Worker diisolasi dalam DedicatedWorkerGlobalScope tanpa akses ke DOM, dan berkomunikasi dengan UI thread murni via message passing (postMessage)."
+    },
+    {
+      "id": 3,
+      "question": "Manakah skenario berikut yang paling sering menjadi penyebab Memory Leak pada Single Page Application (SPA)?",
+      "options": [
+        "Menggunakan operator 'const' alih-alih 'let'",
+        "Lupa menghapus global event listener (misal: window.addEventListener) atau interval (setInterval) saat komponen halaman di-unmount/dihancurkan",
+        "Menggunakan array method .map() dan .filter()",
+        "Menginisialisasi class dengan static methods"
+      ],
+      "correct": 1,
+      "explanation": "Event listener pada objek berumur panjang (seperti window atau document) memegang referensi closure ke komponen atau data lokal. Jika tidak dibersihkan dengan removeEventListener atau clearInterval, seluruh pohon objek tersebut tidak bisa dibersihkan oleh Garbage Collector."
+    },
+    {
+      "id": 4,
+      "question": "Bagaimana kerentanan 'Prototype Pollution' dapat terjadi di aplikasi JavaScript?",
+      "options": [
+        "Saat user memasukkan password terlalu pendek",
+        "Ketika operasi deep merge atau cloning properti objek yang tidak aman memproses key khusus seperti '__proto__', 'constructor', atau 'prototype', sehingga memodifikasi prototype global Object.prototype",
+        "Saat browser mengalami kehabisan RAM",
+        "Ketika file JavaScript tidak dikompresi dengan gzip"
+      ],
+      "correct": 1,
+      "explanation": "Prototype Pollution terjadi ketika fungsi utilitas penggabungan objek tanpa sanitasi menyalin properti berbahaya dengan kunci __proto__, yang secara tidak sengaja memodifikasi Object.prototype dan memengaruhi seluruh objek di runtime aplikasi."
+    },
+    {
+      "id": 5,
+      "question": "Apa fungsi header HTTP 'Content-Security-Policy' (CSP) dalam konteks pertahanan keamanan web modern?",
+      "options": [
+        "Mempercepat kompresi gambar SVG",
+        "Membatasi sumber daya (skrip, gaya, font, frame) yang diizinkan untuk dimuat dan dieksekusi oleh browser, secara efektif memitigasi serangan Cross-Site Scripting (XSS)",
+        "Menggantikan enkripsi HTTPS/TLS",
+        "Menghapus cookie secara berkala"
+      ],
+      "correct": 1,
+      "explanation": "CSP adalah lapisan keamanan yang memungkinkan administrator situs mendeklarasikan domain asal tepercaya untuk skrip, frame, media, dan melarang eksekusi inline script (unsafe-inline) atau eval() untuk menangkal serangan XSS."
+    },
+    {
+      "id": 6,
+      "question": "Apa perbedaan teknik optimasi antara 'Debounce' dan 'Throttle' pada pemanggilan fungsi berkali-kali (contohnya scroll atau input search)?",
+      "options": [
+        "Debounce menunda eksekusi hingga ada jeda waktu tanpa aktivitas baru; Throttle membatasi eksekusi fungsi agar berjalan maksimal satu kali setiap interval waktu tertentu",
+        "Throttle hanya bisa digunakan pada operasi mouse, sedangkan Debounce untuk keyboard",
+        "Debounce menjalankan fungsi di background worker, Throttle di main thread",
+        "Keduanya identik dan hanya berbeda di penamaan library"
+      ],
+      "correct": 0,
+      "explanation": "Debouncing mengelompokkan panggilan beruntun dan hanya mengeksekusi fungsi setelah aktivitas berhenti selama jeda waktu N (cocok untuk input autocomplete). Throttling memastikan fungsi dieksekusi dengan frekuensi teratur maksimal 1x per jeda waktu N (cocok untuk scroll/resize)."
+    },
+    {
+      "id": 7,
+      "question": "Bagaimana cara kerja teknik optimasi 'Virtual Scrolling / Virtual List' pada data array berukuran sangat besar (misal: 100.000 baris)?",
+      "options": [
+        "Membuat 100.000 elemen DOM tersembunyi dengan display: none",
+        "Hanya me-render elemen DOM yang terlihat di viewport (ditambah buffer kecil) dan menghitung total tinggi kontainer menggunakan padding/transform untuk menghemat memori dan beban layout browser",
+        "Mengompresi data tabel menjadi format gambar JPEG",
+        "Membagi array menjadi 10 file JSON berbeda"
+      ],
+      "correct": 1,
+      "explanation": "Virtual scrolling menjaga jumlah node DOM tetap sangat kecil (hanya puluhan elemen yang terlihat di layar pengguna) dan memperbarui isinya secara dinamis saat scroll, mencegah degradasi performa rendering dan konsumsi memori masif."
+    },
+    {
+      "id": 8,
+      "question": "Dalam transfer data antara Main Thread dan Web Worker, apa keuntungan menggunakan 'Transferable Objects' (seperti ArrayBuffer) dibandingkan transfer data biasa?",
+      "options": [
+        "Data dikirim tanpa duplikasi memori melalui pemindahan kepemilikan byte buffer seketika (zero-copy transfer), bukan structured cloning",
+        "Data otomatis dikonversi ke string JSON",
+        "Data disimpan di local storage",
+        "Data dienkripsi otomatis"
+      ],
+      "correct": 0,
+      "explanation": "Transferable Objects memindahkan kepemilikan memori secara instan (zero-copy) dari satu konteks ke konteks lain. ArrayBuffer asal di thread pengirim menjadi terlepas (detached / ukuran 0), menghasilkan performa transfer gigabyte data dalam waktu sub-milidetik."
+    },
+    {
+      "id": 9,
+      "question": "Apa perbedaan antara 'Performance Navigation Timing API' (performance.getEntriesByType('navigation')) dengan 'console.time()'?",
+      "options": [
+        "console.time() mengukur metrik level browser internal, sedangkan Navigation Timing hanya untuk string",
+        "Navigation Timing API menyediakan metrik jaringan dan rendering standar industri (DNS lookup, TCP handshake, TTFB, DOMContentLoaded, Load) secara presisi tinggi, sedangkan console.time() adalah utilitas logging manual untuk blok kode spesifik",
+        "Navigation Timing hanya bisa diakses melalui Node.js backend",
+        "console.time() otomatis memperbaiki bottleneck performa"
+      ],
+      "correct": 1,
+      "explanation": "Navigation Timing API memberikan pengukuran granular siklus hidup halaman web (DNS, TLS, Response time, DOM Interactive, Load event) yang terstandarisasi untuk monitoring Real User Monitoring (RUM)."
+    },
+    {
+      "id": 10,
+      "question": "Manakah praktik yang direkomendasikan untuk mencegah 'Re-entrancy' atau 'Double Submit' pada tombol transaksi UI?",
+      "options": [
+        "Mengabaikan event click dari user",
+        "Menonaktifkan tombol (disabled = true) atau memasang flag state isSubmitting/AbortController segera setelah klik pertama sebelum request async dimulai",
+        "Membuat 2 request HTTP secara bersamaan",
+        "Menghapus seluruh event listener dari browser window"
+      ],
+      "correct": 1,
+      "explanation": "Menonaktifkan UI kontrol atau mengelola guard state async (isSubmitting) mencegah pemanggilan request berulang dari klik ganda pengguna yang tidak sabar sebelum respons pertama selesai diproses."
+    }
+  ]
+}

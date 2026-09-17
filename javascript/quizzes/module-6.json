@@ -1,0 +1,128 @@
+{
+  "module": 6,
+  "title": "Quiz: Web Development Fundamentals",
+  "description": "Uji pemahaman komprehensif DOM architecture, event delegation & propagation, Fetch API & AbortController, Promise combinators, dan Error Cause.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Bagaimana urutan fase perjalanan Event Propagation di DOM ketika sebuah interaksi pengguna terjadi?",
+      "options": [
+        "Bubbling Phase -> Target Phase -> Capturing Phase",
+        "Capturing Phase -> Target Phase -> Bubbling Phase",
+        "Target Phase -> Capturing Phase -> Bubbling Phase",
+        "Direct Dispatch Phase langsung ke Target tanpa fase lain"
+      ],
+      "correct": 1,
+      "explanation": "Event propagation dimulai dari window menuruni pohon DOM ke target element (Capturing Phase), dieksekusi pada target (Target Phase), lalu merambat naik kembali ke window (Bubbling Phase)."
+    },
+    {
+      "id": 2,
+      "question": "Bagaimana cara kerja teknik 'Event Delegation' dan apa keuntungan utamanya dari sisi efisiensi memori?",
+      "options": [
+        "Mendaftarkan event listener pada setiap elemen child secara otomatis menggunakan loop Web Worker",
+        "Mendaftarkan satu event listener pada elemen ancestor (parent) dan memanfaatkan event bubbling untuk menangkap interaksi elemen child menggunakan event.target",
+        "Mengganti seluruh event handler dengan CSS pseudo-class :hover",
+        "Menduplikasi DOM node ke shadow root terpisah"
+      ],
+      "correct": 1,
+      "explanation": "Event delegation memanfaatkan bubbling dengan menaruh satu listener di parent. Ini menghemat memori alokasi listener yang banyak dan otomatis menangani elemen child yang ditambahkan secara dinamis di kemudian hari."
+    },
+    {
+      "id": 3,
+      "question": "Bagaimana cara membatalkan HTTP request Fetch API yang sedang berlangsung menggunakan AbortController?",
+      "options": [
+        "Memanggil window.stopFetch()",
+        "Mengirimkan 'controller.signal' pada options fetch(), lalu memanggil 'controller.abort()'",
+        "Menutup koneksi WebSocket di background",
+        "Menghapus elemen DOM tempat data akan ditampilkan"
+      ],
+      "correct": 1,
+      "explanation": "AbortController membuat objek controller yang memiliki properti signal. Properti ini diteruskan ke fetch(url, { signal }). Saat controller.abort() dipanggil, fetch promise akan di-reject dengan AbortError/DOMException."
+    },
+    {
+      "id": 4,
+      "question": "Apa perbedaan perilaku antara Promise.all() dan Promise.allSettled() ketika salah satu Promise mengalami rejection?",
+      "options": [
+        "Promise.all() langsung reject seketika (fail-fast), sedangkan Promise.allSettled() menunggu seluruh Promise selesai dan mengembalikan status ({ status: 'fulfilled' | 'rejected', ... }) setiap promise",
+        "Promise.allSettled() langsung reject, sedangkan Promise.all() mengabaikan error",
+        "Keduanya selalu reject jika ada 1 error",
+        "Promise.allSettled() hanya menerima Promise synchronous"
+      ],
+      "correct": 0,
+      "explanation": "Promise.all() bersifat all-or-nothing (fail-fast) dan langsung reject saat error pertama terjadi. Promise.allSettled() menunggu semua promise selesai terlepas dari status sukses atau gagal, lalu memberikan array objek deskripsi status masing-masing."
+    },
+    {
+      "id": 5,
+      "question": "Apa fungsi fitur 'Error Cause' yang diperkenalkan pada ES2022 (contoh: new Error('Gagal proses', { cause: originalError }))?",
+      "options": [
+        "Mengirim error secara otomatis ke server monitoring analitik",
+        "Membungkus error level tinggi dengan tetap mempertahankan jejak (stack trace & detail) dari error penyebab aslinya untuk kemudahan debugging",
+        "Mengubah error fatal menjadi warning",
+        "Menghentikan event loop seketika"
+      ],
+      "correct": 1,
+      "explanation": "Fitur error cause memungkinkan error chaining; pengembang dapat menangkap error berlevel rendah dan melempar error baru yang lebih kontekstual tanpa kehilangan referensi ke error asal di properti .cause."
+    },
+    {
+      "id": 6,
+      "question": "Apa perbedaan antara 'e.preventDefault()' dan 'e.stopPropagation()' pada DOM event handling?",
+      "options": [
+        "e.preventDefault() menghentikan perambatan event ke parent, sedangkan e.stopPropagation() mencegah aksi default browser (misal navigasi link atau submit form)",
+        "e.preventDefault() mencegah aksi bawaan browser, sedangkan e.stopPropagation() mencegah event merambat lebih lanjut melalui rantai DOM (bubbling/capturing)",
+        "Keduanya adalah sinonim yang identik",
+        "e.stopPropagation() menghapus event listener dari memory"
+      ],
+      "correct": 1,
+      "explanation": "preventDefault() membatalkan aksi default yang disediakan browser untuk event tersebut (seperti submit form atau klik <a>), sedangkan stopPropagation() menghentikan event merambat ke node DOM di atasnya/di bawahnya."
+    },
+    {
+      "id": 7,
+      "question": "Apa perbedaan antara 'Promise.race()' dan 'Promise.any()' di JavaScript?",
+      "options": [
+        "Promise.race() menyelesaikan dengan hasil Promise pertama yang settle (baik fulfilled maupun rejected), sedangkan Promise.any() menunggu Promise pertama yang fulfilled (sukses) dan hanya reject jika semua Promise rejected (AggregateError)",
+        "Promise.any() selalu mengembalikan array hasil, sedangkan Promise.race() mengembalikan single value",
+        "Promise.race() hanya bekerja pada HTTP request",
+        "Keduanya identik dalam menangani kegagalan"
+      ],
+      "correct": 0,
+      "explanation": "Promise.race() mengadopsi status penyelesaian Promise tercepat (baik resolve maupun reject). Promise.any() mencari hasil sukses pertama; jika seluruh Promise gagal, ia akan melemparkan AggregateError."
+    },
+    {
+      "id": 8,
+      "question": "Mengapa penggunaan 'textContent' lebih disarankan dibandingkan 'innerHTML' ketika menyisipkan data teks dari input pengguna ke DOM?",
+      "options": [
+        "textContent otomatis mengompresi gambar",
+        "textContent memperlakukan input murni sebagai teks dan tidak mem-parsing string sebagai tag HTML, sehingga mencegah celah keamanan Cross-Site Scripting (XSS)",
+        "innerHTML tidak didukung di browser modern",
+        "textContent memicu reflow dan repaint lebih cepat"
+      ],
+      "correct": 1,
+      "explanation": "innerHTML menguraikan string input sebagai markup HTML, sehingga string berbahaya yang berisi <script> atau <img onerror=...> dapat dieksekusi (XSS). textContent memperlakukan konten sebagai teks polos murni yang aman."
+    },
+    {
+      "id": 9,
+      "question": "Apa yang terjadi pada pemanggilan 'fetch()' ketika server merespons dengan status HTTP 404 atau 500?",
+      "options": [
+        "Promise fetch otomatis melempar error dan masuk ke blok .catch()",
+        "Promise fetch tetap berstatus resolve (fulfilled), dan aplikasi harus memeriksa nilai properti 'response.ok' atau 'response.status'",
+        "Browser langsung menghentikan eksekusi script",
+        "Fetch mengembalikan nilai null"
+      ],
+      "correct": 1,
+      "explanation": "Fetch Promise hanya akan reject pada kegagalan jaringan fatal (network failure atau request dibatalkan/aborted). Respons HTTP 4xx atau 5xx tetap di-resolve, dengan response.ok bernilai false."
+    },
+    {
+      "id": 10,
+      "question": "Perhatikan mekanisme reflow dan repaint pada DOM. Manakah modifikasi berikut yang memicu reflow (layout recalculation) paling signifikan?",
+      "options": [
+        "Mengubah warna teks (color)",
+        "Mengubah opacity elemen dari 1 ke 0.5",
+        "Mengubah properti dimensi dan layout seperti width, height, margin, atau offsetHeight pada elemen",
+        "Mengubah visibility dari visible ke hidden"
+      ],
+      "correct": 2,
+      "explanation": "Reflow (layout) terjadi saat geometri dan posisi elemen berubah di halaman (seperti width, margin, padding, offsetWidth). Perubahan murni visual seperti color atau opacity biasanya hanya memicu repaint atau compositing."
+    }
+  ]
+}

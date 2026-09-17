@@ -1,0 +1,78 @@
+/* SQL Learning Path — Dark & Light Theme Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --brand: #10b981;
+  --brand-hover: #059669;
+  --brand-gradient: linear-gradient(135deg, #10b981, #047857);
+  --brand-gradient-hover: linear-gradient(135deg, #34d399, #10b981);
+  --bg-950: #0a0f1a;
+  --bg-900: #0f172a;
+  --bg-850: #172033;
+  --bg-800: #1e293b;
+  --border: rgba(255,255,255,.06);
+  --border-strong: #1e293b;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+* { scrollbar-width: thin; scrollbar-color: #475569 transparent; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg-950); color: var(--text); line-height: 1.6; }
+
+.glass-header {
+  background: rgba(10,15,26,.88);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.prose { color: #cbd5e1; line-height: 1.8; max-width: none; }
+.prose h1 { color: #f8fafc; font-size: 1.7rem; font-weight: 800; letter-spacing: -.025em; margin: 0 0 1rem; padding-bottom: .75rem; border-bottom: 1px solid var(--border); }
+.prose h2 { color: #f1f5f9; font-size: 1.25rem; font-weight: 700; margin: 1.5rem 0 .5rem; }
+.prose h3 { color: #e2e8f0; font-size: 1.05rem; font-weight: 600; margin: 1.25rem 0 .5rem; }
+.prose p { margin-bottom: 1rem; }
+.prose ul, .prose ol { margin: .5rem 0 1rem 1.5rem; }
+.prose li { margin-bottom: .35rem; }
+.prose code:not(pre code) { background: rgba(255,255,255,.08); color: #6ee7b7; padding: .15rem .4rem; border-radius: .375rem; font-size: .85em; font-family: 'JetBrains Mono', monospace; }
+.prose pre { background: #050811; border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; margin: 1rem 0; overflow-x: auto; }
+.prose pre code { background: transparent; padding: 0; color: #e2e8f0; font-size: .85rem; font-family: 'JetBrains Mono', monospace; line-height: 1.6; }
+
+.btn-brand { background: var(--brand-gradient); color: #fff; transition: all .2s; }
+.btn-brand:hover { background: var(--brand-gradient-hover); transform: translateY(-1px); }
+
+/* Custom SQL Table Results */
+.sql-table-wrap { overflow-x: auto; max-height: 320px; border-radius: 0.75rem; }
+.sql-table { width: 100%; border-collapse: collapse; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; text-align: left; }
+.sql-table th { background: #1e293b; color: #6ee7b7; padding: 0.6rem 0.8rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; }
+.sql-table td { padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #e2e8f0; }
+.sql-table tr:hover td { background: rgba(255,255,255,0.04); }
+
+/* Light Theme Overrides */
+html.light {
+  --bg-950: #f8fafc;
+  --bg-900: #f1f5f9;
+  --bg-850: #e2e8f0;
+  --bg-800: #cbd5e1;
+  --border: rgba(0,0,0,.08);
+  --border-strong: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+}
+html.light body { background: var(--bg-950); color: var(--text); }
+html.light .glass-header { background: rgba(248,250,252,.92); border-color: rgba(0,0,0,.08); }
+html.light .prose { color: #334155; }
+html.light .prose h1, html.light .prose h2, html.light .prose h3 { color: #0f172a; }
+html.light .prose code:not(pre code) { background: #e2e8f0; color: #047857; }
+html.light .prose pre { background: #1e293b; color: #f8fafc; }
+html.light .sql-table th { background: #e2e8f0; color: #047857; }
+html.light .sql-table td { border-color: rgba(0,0,0,0.06); color: #1e293b; }

@@ -1,0 +1,34 @@
+{
+  "quiz": [
+    {
+      "question": "Manakah yang benar tentang if-else?",
+      "options": ["Kondisi harus boolean", "Bisa tanpa braces", "Kondisi bisa integer", "Tidak ada else opsional"],
+      "answer": 0,
+      "explanation": "If memerlukan kondisi bertipe boolean."
+    },
+    {
+      "question": " Pada switch, apa yang terjadi jika tidak ada break?",
+      "options": ["Error compile", "Lewati ke case berikutnya (fall-through)", "Keluar dari switch", "Tidak apa-apa"],
+      "answer": 1,
+      "explanation": "Tanpa break, eksekusi akan jatuh ke case berikutnya."
+    },
+    {
+      "question": "Tipe data yang bisa digunakan pada switch (Java 7+)?",
+      "options": ["int, char, String", "int, char, boolean", "int, char, long", "Semua tipe primitif"],
+      "answer": 0,
+      "explanation": "Switch mendukung int, char, short, byte, enum, String (sejak Java 7), serta wrapper types."
+    },
+    {
+      "question": "Switch expression (arrow) muncul dari Java version?",
+      "options": ["Java 8", "Java 10", "Java 12/14", "Java 16"],
+      "answer": 2,
+      "explanation": "Arrow syntax diperkenalkan sebagai preview di Java 12 dan final di Java 14."
+    },
+    {
+      "question": "Apa manfaat switch expression dibanding statement?",
+      "options": ["Menghasilkan nilai (value)", "Hanya untuk String", "Tidak perlu break", "Lebih cepat"],
+      "answer": 0,
+      "explanation": "Switch expression mengembalikan nilai, bisa ditugaskan ke variabel."
+    }
+  ]
+}
