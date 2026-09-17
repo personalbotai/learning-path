@@ -1639,9 +1639,17 @@ if (typeof window !== 'undefined') {
     if (typeof clearOutput === 'function') window.clearOutput = clearOutput;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+function initMain() {
+        renderNav();
+        loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
+        updateProgress();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
     renderNav();
     const savedLast = parseInt(localStorage.getItem('cpp_last_lesson') || '0', 10);
     loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
     updateProgress();
 });
+
+    if (typeof updateProgress === "function") window.updateProgress = updateProgress;

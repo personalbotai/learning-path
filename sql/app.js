@@ -1887,7 +1887,13 @@ if (typeof window !== 'undefined') {
     if (typeof clearOutput === 'function') window.clearOutput = clearOutput;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initMain() {
+        renderNav();
+        loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
+        updateProgress();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
         initSQL();
         let resumeIdx = 0;
         try {
@@ -1897,3 +1903,5 @@ document.addEventListener('DOMContentLoaded', () => {
         loadLesson(resumeIdx);
     });
 })();
+
+    if (typeof updateProgress === "function") window.updateProgress = updateProgress;
