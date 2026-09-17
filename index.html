@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Paths — Syamsul Bahri</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: #050811; color: #e2e8f0; font-family: system-ui, sans-serif; }
+  .card {
+    background: rgba(10, 15, 29, 0.85); border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 18px; padding: 24px; transition: border-color .28s ease;
+  }
+  .card:hover { border-color: rgba(56, 189, 248, 0.45); }
+</style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+  <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">Learning Paths</h1>
+  <p class="text-slate-400 mb-10 text-center">Pusat pembelajaran open-source. Pilih track untuk memulai.</p>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl w-full">
+    <a href="/python/" class="card"><h3 class="font-bold text-white text-lg">Python</h3><p class="text-sm text-slate-400 mt-2">Zero → Advanced (3.11+)</p></a>
+    <a href="/javascript/" class="card"><h3 class="font-bold text-white text-lg">JavaScript</h3><p class="text-sm text-slate-400 mt-2">ES6+, DOM & async</p></a>
+    <a href="/typescript/" class="card"><h3 class="font-bold text-white text-lg">TypeScript</h3><p class="text-sm text-slate-400 mt-2">Static type system & generics</p></a>
+    <a href="/go/" class="card"><h3 class="font-bold text-white text-lg">Go</h3><p class="text-sm text-slate-400 mt-2">Cloud-Native & goroutines</p></a>
+    <a href="/java/" class="card"><h3 class="font-bold text-white text-lg">Java</h3><p class="text-sm text-slate-400 mt-2">Java 21 LTS & Spring</p></a>
+    <a href="/rust/" class="card"><h3 class="font-bold text-white text-lg">Rust</h3><p class="text-sm text-slate-400 mt-2">Memory-Safe & Zero-Cost</p></a>
+    <a href="/cpp/" class="card"><h3 class="font-bold text-white text-lg">C++</h3><p class="text-sm text-slate-400 mt-2">High-Perf C++20/C++23</p></a>
+  </div>
+</body>
+</html>
