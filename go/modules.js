@@ -1,131 +1,271 @@
-// Go Learning Path - Modules Definition
-const modules = [
+const MODULES = [
   {
-    module: 1,
-    title: "Pengenalan",
-    lessons: [
-      { slug: "apa-itu-go", title: "Apa itu Go?" },
-      { slug: "instalasi-dan-setup", title: "Instalasi dan Setup Go Environment" },
-    ]
+    "module": 1,
+    "title": "Pengenalan",
+    "lessons": [
+      {
+        "slug": "M01-L01",
+        "title": "Apa itu Go?",
+        "lesson": 1
+      },
+      {
+        "slug": "M01-L02",
+        "title": "Instalasi dan Setup Go Environment",
+        "lesson": 2
+      }
+    ],
+    "id": 1
   },
   {
-    module: 2,
-    title: "Dasar",
-    lessons: [
-      { slug: "variabel-dan-tipe-data", title: "Variabel dan Tipe Data" },
-      { slug: "operator-dan-ekspresi", title: "Operator dan Ekspresi" },
-    ]
+    "module": 2,
+    "title": "Dasar",
+    "lessons": [
+      {
+        "slug": "M02-L01",
+        "title": "Variabel dan Tipe Data",
+        "lesson": 1
+      },
+      {
+        "slug": "M02-L02",
+        "title": "Operator dan Ekspresi",
+        "lesson": 2
+      }
+    ],
+    "id": 2
   },
   {
-    module: 3,
-    title: "Kontrol",
-    lessons: [
-      { slug: "control-flow-if-else", title: "Control Flow: If dan Else" },
-      { slug: "loop-dan-iterasi", title: "Loop dan Iterasi" },
-      { slug: "switch-dan-select", title: "Switch dan Select Statement" },
-    ]
+    "module": 3,
+    "title": "Kontrol",
+    "lessons": [
+      {
+        "slug": "M03-L01",
+        "title": "Control Flow: If dan Else",
+        "lesson": 1
+      },
+      {
+        "slug": "M03-L02",
+        "title": "Loop dan Iterasi",
+        "lesson": 2
+      },
+      {
+        "slug": "M03-L03",
+        "title": "Switch dan Select Statement",
+        "lesson": 3
+      }
+    ],
+    "id": 3
   },
   {
-    module: 4,
-    title: "Fungsi",
-    lessons: [
-      { slug: "fungsi-dasar", title: "Fungsi Dasar" },
-      { slug: "closure-dan-anonymous", title: "Closure dan Anonymous Functions" },
-    ]
+    "module": 4,
+    "title": "Fungsi",
+    "lessons": [
+      {
+        "slug": "M04-L01",
+        "title": "Fungsi Dasar",
+        "lesson": 1
+      },
+      {
+        "slug": "M04-L02",
+        "title": "Closure dan Anonymous Functions",
+        "lesson": 2
+      }
+    ],
+    "id": 4
   },
   {
-    module: 5,
-    title: "Data Structure",
-    lessons: [
-      { slug: "array-dan-slice", title: "Array dan Slice" },
-      { slug: "map-dan-key-value", title: "Map: Key-Value Data Structure" },
-    ]
+    "module": 5,
+    "title": "Data Structure",
+    "lessons": [
+      {
+        "slug": "M05-L01",
+        "title": "Array dan Slice",
+        "lesson": 1
+      },
+      {
+        "slug": "M05-L02",
+        "title": "Map: Key-Value Data Structure",
+        "lesson": 2
+      }
+    ],
+    "id": 5
   },
   {
-    module: 6,
-    title: "OOP",
-    lessons: [
-      { slug: "struct-dan-method", title: "Struct dan Method" },
-      { slug: "interface-dasar", title: "Interface Dasar" },
-    ]
+    "module": 6,
+    "title": "OOP",
+    "lessons": [
+      {
+        "slug": "M06-L01",
+        "title": "Struct dan Method",
+        "lesson": 1
+      },
+      {
+        "slug": "M06-L02",
+        "title": "Interface Dasar",
+        "lesson": 2
+      }
+    ],
+    "id": 6
   },
   {
-    module: 7,
-    title: "Error",
-    lessons: [
-      { slug: "error-handling", title: "Error Handling di Go" },
-    ]
+    "module": 7,
+    "title": "Error",
+    "lessons": [
+      {
+        "slug": "M07-L01",
+        "title": "Error Handling di Go",
+        "lesson": 1
+      }
+    ],
+    "id": 7
   },
   {
-    module: 8,
-    title: "Concurrency",
-    lessons: [
-      { slug: "goroutine-dasar", title: "Goroutine Dasar" },
-      { slug: "channel-dasar", title: "Channel Dasar" },
-      { slug: "select-dan-concurrency", title: "Select dan Pattern Concurrency" },
-    ]
+    "module": 8,
+    "title": "Concurrency",
+    "lessons": [
+      {
+        "slug": "M08-L01",
+        "title": "Goroutine Dasar",
+        "lesson": 1
+      },
+      {
+        "slug": "M08-L02",
+        "title": "Channel Dasar",
+        "lesson": 2
+      },
+      {
+        "slug": "M08-L03",
+        "title": "Select dan Pattern Concurrency",
+        "lesson": 3
+      }
+    ],
+    "id": 8
   },
   {
-    module: 9,
-    title: "Memory",
-    lessons: [
-      { slug: "pointer-dasar", title: "Pointer Dasar" },
-    ]
+    "module": 9,
+    "title": "Memory",
+    "lessons": [
+      {
+        "slug": "M09-L01",
+        "title": "Pointer Dasar",
+        "lesson": 1
+      }
+    ],
+    "id": 9
   },
   {
-    module: 10,
-    title: "Modul",
-    lessons: [
-      { slug: "package-dan-import", title: "Package dan Import System" },
-      { slug: "module-dan-dependency", title: "Go Modules dan Dependency Management" },
-    ]
+    "module": 10,
+    "title": "Modul",
+    "lessons": [
+      {
+        "slug": "M10-L01",
+        "title": "Package dan Import System",
+        "lesson": 1
+      },
+      {
+        "slug": "M10-L02",
+        "title": "Go Modules dan Dependency Management",
+        "lesson": 2
+      }
+    ],
+    "id": 10
   },
   {
-    module: 11,
-    title: "File",
-    lessons: [
-      { slug: "file-io-dasar", title: "File I/O Dasar" },
-    ]
+    "module": 11,
+    "title": "File",
+    "lessons": [
+      {
+        "slug": "M11-L01",
+        "title": "File I/O Dasar",
+        "lesson": 1
+      }
+    ],
+    "id": 11
   },
   {
-    module: 12,
-    title: "Data",
-    lessons: [
-      { slug: "json-dan-encoding", title: "JSON dan Encoding" },
-    ]
+    "module": 12,
+    "title": "Data",
+    "lessons": [
+      {
+        "slug": "M12-L01",
+        "title": "JSON dan Encoding",
+        "lesson": 1
+      }
+    ],
+    "id": 12
   },
   {
-    module: 13,
-    title: "Testing",
-    lessons: [
-      { slug: "testing-dasar", title: "Testing Dasar" },
-    ]
+    "module": 13,
+    "title": "Testing",
+    "lessons": [
+      {
+        "slug": "M13-L01",
+        "title": "Testing Dasar",
+        "lesson": 1
+      }
+    ],
+    "id": 13
   },
   {
-    module: 14,
-    title: "Web",
-    lessons: [
-      { slug: "http-server-dasar", title: "HTTP Server Dasar" },
-    ]
+    "module": 14,
+    "title": "Web",
+    "lessons": [
+      {
+        "slug": "M14-L01",
+        "title": "HTTP Server Dasar",
+        "lesson": 1
+      }
+    ],
+    "id": 14
   },
   {
-    module: 15,
-    title: "Advanced",
-    lessons: [
-      { slug: "context-dan-timeout", title: "Context dan Timeout" },
-      { slug: "defer-panic-recover", title: "Defer, Panic, dan Recover" },
-      { slug: "generics-dasar", title: "Generics Dasar (Go 1.18+)" },
-      { slug: "reflection-dasar", title: "Reflection Dasar" },
-    ]
+    "module": 15,
+    "title": "Advanced",
+    "lessons": [
+      {
+        "slug": "M15-L01",
+        "title": "Context dan Timeout",
+        "lesson": 1
+      },
+      {
+        "slug": "M15-L02",
+        "title": "Defer, Panic, dan Recover",
+        "lesson": 2
+      },
+      {
+        "slug": "M15-L03",
+        "title": "Generics Dasar (Go 1.18+)",
+        "lesson": 3
+      },
+      {
+        "slug": "M15-L04",
+        "title": "Reflection Dasar",
+        "lesson": 4
+      }
+    ],
+    "id": 15
   },
   {
-    module: 16,
-    title: "Project",
-    lessons: [
-      { slug: "cli-application", title: "Membuat CLI Application" },
-      { slug: "rest-api-project", title: "Membuat REST API" },
-    ]
-  },
+    "module": 16,
+    "title": "Project",
+    "lessons": [
+      {
+        "slug": "M16-L01",
+        "title": "Membuat CLI Application",
+        "lesson": 1
+      },
+      {
+        "slug": "M16-L02",
+        "title": "Membuat REST API",
+        "lesson": 2
+      }
+    ],
+    "id": 16
+  }
 ];
 
-module.exports = modules;
+if (typeof window !== 'undefined') {
+  window.MODULES = MODULES;
+}
+if (typeof module !== 'undefined') {
+  module.exports = MODULES;
+}

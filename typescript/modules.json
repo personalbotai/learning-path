@@ -1,0 +1,554 @@
+[
+  {
+    "id": 1,
+    "title": "Modul 1: Pengenalan & Dasar TypeScript",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 1,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Abstract Classes",
+        "slug": "M01-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Access Modifiers",
+        "slug": "M01-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Ambient Modules",
+        "slug": "M01-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Any Dan Unknown",
+        "slug": "M01-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Apa Itu Typescript",
+        "slug": "M01-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Array Dan Tuple",
+        "slug": "M01-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Arrow Functions Types",
+        "slug": "M01-L07",
+        "lesson": 7
+      },
+      {
+        "id": 8,
+        "title": "Barrel Files",
+        "slug": "M01-L08",
+        "lesson": 8
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Modul 2: Tipe Data Kompleks & Objek",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 2,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Build Tools Webpack Babel",
+        "slug": "M02-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Class Dasar",
+        "slug": "M02-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Compiler Options Target Module Lib",
+        "slug": "M02-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Conditional Types",
+        "slug": "M02-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Constructor Parameter Properties",
+        "slug": "M02-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Declaration Files D Ts",
+        "slug": "M02-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Declaration Merging",
+        "slug": "M02-L07",
+        "lesson": 7
+      },
+      {
+        "id": 8,
+        "title": "Default Type Params",
+        "slug": "M02-L08",
+        "lesson": 8
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Modul 3: Fungsi & Anotasi Parameter",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 3,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Default Vs Named Export",
+        "slug": "M03-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Definitelytyped",
+        "slug": "M03-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Dynamic Import Code Splitting",
+        "slug": "M03-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Enum Named Constants",
+        "slug": "M03-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Es6 Modules Import Export",
+        "slug": "M03-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Eslint Typescript",
+        "slug": "M03-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Exclude Extract Nonnullable",
+        "slug": "M03-L07",
+        "lesson": 7
+      },
+      {
+        "id": 8,
+        "title": "Extending Interfaces Types",
+        "slug": "M03-L08",
+        "lesson": 8
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Modul 4: Union, Intersection & Type Narrowing",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 4,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Final Project Fullstack",
+        "slug": "M04-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Function Overloads",
+        "slug": "M04-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Function Types",
+        "slug": "M04-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Generic Constraints",
+        "slug": "M04-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Generic Functions Dasar",
+        "slug": "M04-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Generic Interfaces Classes",
+        "slug": "M04-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Generic Utility Types",
+        "slug": "M04-L07",
+        "lesson": 7
+      },
+      {
+        "id": 8,
+        "title": "Hello World",
+        "slug": "M04-L08",
+        "lesson": 8
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Modul 5: Interface & Type Alias Mendalam",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 5,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Include Exclude Files",
+        "slug": "M05-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Index Signatures",
+        "slug": "M05-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Indexed Access Types",
+        "slug": "M05-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Inheritance Extends Super",
+        "slug": "M05-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Instalasi Typescript",
+        "slug": "M05-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Interface Dasar",
+        "slug": "M05-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Interface Vs Type Alias",
+        "slug": "M05-L07",
+        "lesson": 7
+      },
+      {
+        "id": 8,
+        "title": "Intersection Types",
+        "slug": "M05-L08",
+        "lesson": 8
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Modul 6: Generics",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 6,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Mapped Types",
+        "slug": "M06-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Migrasi Js Ke Ts",
+        "slug": "M06-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Namespaces Organisasi Kode",
+        "slug": "M06-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Nullable Types",
+        "slug": "M06-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Omit Thisparameter",
+        "slug": "M06-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Optional Default Params",
+        "slug": "M06-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Optional Readonly Properties",
+        "slug": "M06-L07",
+        "lesson": 7
+      },
+      {
+        "id": 8,
+        "title": "Parameter Utilities",
+        "slug": "M06-L08",
+        "lesson": 8
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 7,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Parameters Constructorparameters",
+        "slug": "M07-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Partial Required",
+        "slug": "M07-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Path Mapping Module Resolution",
+        "slug": "M07-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Pick Omit",
+        "slug": "M07-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Prettier Integration",
+        "slug": "M07-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Project Cli Tool",
+        "slug": "M07-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Project React Ts",
+        "slug": "M07-L07",
+        "lesson": 7
+      },
+      {
+        "id": 8,
+        "title": "Project Rest Api",
+        "slug": "M07-L08",
+        "lesson": 8
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Modul 8: Utility Types Bawaan",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 8,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Project Setup Typescript",
+        "slug": "M08-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Project Type Definitions",
+        "slug": "M08-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Readonly Params",
+        "slug": "M08-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Readonly Record",
+        "slug": "M08-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Record Tuple",
+        "slug": "M08-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Rest Spread",
+        "slug": "M08-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Returntype Parameters Thistype",
+        "slug": "M08-L07",
+        "lesson": 7
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Modul 9: OOP & Class di TypeScript",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 9,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Strict Mode Options",
+        "slug": "M09-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Template Literal Types",
+        "slug": "M09-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Tipe Primitif",
+        "slug": "M09-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Tsconfig Json Struktur",
+        "slug": "M09-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Type Aliases",
+        "slug": "M09-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Type Assertions",
+        "slug": "M09-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Type Guards",
+        "slug": "M09-L07",
+        "lesson": 7
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "desc": "Materi TypeScript",
+    "icon": "fa-solid fa-code",
+    "module": 10,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Type Inference",
+        "slug": "M10-L01",
+        "lesson": 1
+      },
+      {
+        "id": 2,
+        "title": "Type Narrowing",
+        "slug": "M10-L02",
+        "lesson": 2
+      },
+      {
+        "id": 3,
+        "title": "Typescript Compiler Tsc",
+        "slug": "M10-L03",
+        "lesson": 3
+      },
+      {
+        "id": 4,
+        "title": "Typescript Vs Javascript",
+        "slug": "M10-L04",
+        "lesson": 4
+      },
+      {
+        "id": 5,
+        "title": "Union Types",
+        "slug": "M10-L05",
+        "lesson": 5
+      },
+      {
+        "id": 6,
+        "title": "Using Js Libraries",
+        "slug": "M10-L06",
+        "lesson": 6
+      },
+      {
+        "id": 7,
+        "title": "Void Never Dan Tipe Khusus",
+        "slug": "M10-L07",
+        "lesson": 7
+      }
+    ]
+  }
+]

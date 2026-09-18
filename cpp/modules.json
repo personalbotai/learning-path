@@ -1,0 +1,574 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "module": 1,
+      "title": "Fondasi C++ Modern dan Tooling",
+      "desc": "Peserta mampu membangun, menjalankan, membaca error, dan menulis program C++ dasar di browser.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "1. Program Pertama dengan C++20 dan C++23",
+          "slug": "M01-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "2. Tipe Data, Literal, `auto`, dan `constexpr`",
+          "slug": "M01-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "3. Operator, Precedence, dan Short-Circuit",
+          "slug": "M01-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "4. Kontrol Alur dan Loop",
+          "slug": "M01-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "5. Fungsi, Parameter, Overload, dan `constexpr`",
+          "slug": "M01-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "6. Header, Namespace, Debugging, dan Unit Test Mini",
+          "slug": "M01-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "module": 2,
+      "title": "Nilai, Referensi, dan Abstraksi Data",
+      "desc": "Peserta memahami nilai, lifetime, encapsulation, dan pembatasan konstansi.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "7. Initialization dan Object Lifetime",
+          "slug": "M02-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "8. Pointer, Reference, dan Address",
+          "slug": "M02-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "9. Struct, Class, dan Invariant",
+          "slug": "M02-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "10. Const Correctness dan Value Semantics",
+          "slug": "M02-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "11. `std::string`, `std::string_view`, dan `std::span`",
+          "slug": "M02-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "12. RAII dan Penanganan Exception",
+          "slug": "M02-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "module": 3,
+      "title": "Object-Oriented C++ dan Polymorphism",
+      "desc": "Peserta mampu mendesain kelas, hierarki, interface, dan komposisi yang aman.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "13. Constructor, Destructor, dan Initializer List",
+          "slug": "M03-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "14. Copy Semantics dan Rule of Three/Five",
+          "slug": "M03-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "15. Operator Overloading",
+          "slug": "M03-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "16. Inheritance dan Virtual Dispatch",
+          "slug": "M03-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "17. Interface Abstrak dan Polymorphic Design",
+          "slug": "M03-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "18. Composition, Policy, dan CRTP",
+          "slug": "M03-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "module": 4,
+      "title": "Template dan Generic Programming",
+      "desc": "Peserta mampu menulis generic code yang aman, spesifik, dan mudah dibaca.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "19. Function Templates dan Template Deduction",
+          "slug": "M04-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "20. Class Templates dan Instantiation",
+          "slug": "M04-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "21. Partial Specialization, Full Specialization, dan Traits",
+          "slug": "M04-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "22. Variadic Templates dan Fold Expression",
+          "slug": "M04-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "23. Compile-Time Programming dengan `constexpr` dan `consteval`",
+          "slug": "M04-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "24. SFINAE, `requires`, dan Early Constraint",
+          "slug": "M04-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "module": 5,
+      "title": "Ownership, Smart Pointer, dan Memory Management",
+      "desc": "Peserta mampu mengelola resource tanpa leak, double-free, dan dangling pointer.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "25. Ownership Model dan Raw Memory",
+          "slug": "M05-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "26. `std::unique_ptr` dan Exclusive Ownership",
+          "slug": "M05-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "27. `std::shared_ptr` dan `std::weak_ptr`",
+          "slug": "M05-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "28. Allocator-Aware Container dan `pmr`",
+          "slug": "M05-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "29. RAII Wrapper dan Safe Resource Patterns",
+          "slug": "M05-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "30. Mendeteksi Memory Bug dengan Sanitizer",
+          "slug": "M05-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "module": 6,
+      "title": "Move Semantics, STL, dan In-Place Construction",
+      "desc": "Peserta memahami value category, perpindahan resource, dan penggunaan STL secara efisien.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "31. Value Category: Lvalue, Xvalue, dan Prvalue",
+          "slug": "M06-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "32. Move Constructor dan Move Assignment",
+          "slug": "M06-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "33. Perfect Forwarding",
+          "slug": "M06-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "34. Copy Elision, NRVO, dan Guaranteed Move",
+          "slug": "M06-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "35. STL Container dan Allocation Strategy",
+          "slug": "M06-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "36. In-Place Construction dengan `emplace`, `optional`, dan `variant`",
+          "slug": "M06-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "module": 7,
+      "title": "Algoritma, Ranges, dan Modern Standard Library",
+      "desc": "Peserta mampu memproses data dengan STL, iterators, dan ranges secara lazy serta ekspresif.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "37. Iterator dan Standard Algorithms",
+          "slug": "M07-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "38. Ranges Views: Lazy dan Non-Owning",
+          "slug": "M07-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "39. Range Algorithms dan Range Concepts",
+          "slug": "M07-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "40. Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`",
+          "slug": "M07-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "41. Error Value dengan `std::expected` dan `std::optional`",
+          "slug": "M07-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "42. API Modern C++20/23: Format, Print, Numbers, dan `mdspan`",
+          "slug": "M07-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "module": 8,
+      "title": "Concurrency dan Parallelism",
+      "desc": "Peserta mampu menulis threaded code yang benar, aman, dan tidak mengalami data race.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "43. Thread Dasar, Join, dan Detach",
+          "slug": "M08-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "44. Mutex, `lock_guard`, dan Condition Variable",
+          "slug": "M08-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "45. Atomic dan Memory Ordering",
+          "slug": "M08-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "46. `std::async`, Future, dan Task",
+          "slug": "M08-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "47. Thread Pool, Deadlock, dan Concurrency Pitfalls",
+          "slug": "M08-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "48. Pengantar Coroutine: Suspension dan Resumption",
+          "slug": "M08-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "module": 9,
+      "title": "Coroutine Lanjutan, Concepts, dan Ranges",
+      "desc": "Peserta mampu merakit async API, generator, constrained generic, dan custom ranges.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "49. Membangun Coroutine dari Komponen Dasar",
+          "slug": "M09-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "50. Async/Await dengan Executor dan Cancellation",
+          "slug": "M09-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "51. Generator dengan `std::generator` C++23",
+          "slug": "M09-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "52. Concepts dan Constrained Overload",
+          "slug": "M09-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "53. Custom Range, `view`, dan `borrowed_range`",
+          "slug": "M09-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "54. Modern Generic Design: Templates + Concepts + Ranges",
+          "slug": "M09-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "module": 10,
+      "title": "C++23, Performa, Reliabilitas, dan Capstone",
+      "desc": "Peserta mampu merancang, menguji, memprofiling, dan menyajikan aplikasi C++ modern yang realistis.",
+      "icon": "fa-solid fa-code",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "55. Migrasi ke C++23 Library",
+          "slug": "M10-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "56. Performance, Profiling, dan Optimization yang Terukur",
+          "slug": "M10-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "57. Reliabilitas, Security, dan Test Matrix",
+          "slug": "M10-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "58. Arsitektur, C++20 Modules, Build, dan CI",
+          "slug": "M10-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "59. Capstone Design: Modern Data Pipeline",
+          "slug": "M10-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "60. Capstone Implementation, Demo, dan Refleksi",
+          "slug": "M10-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    }
+  ]
+}

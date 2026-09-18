@@ -1,0 +1,454 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Modul 1: Pengenalan & Dasar Rust",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi pengenalan dan dasar Rust",
+      "module": 1,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 1: Pengenalan & Dasar Rust - Part 1",
+          "slug": "M01-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 1: Pengenalan & Dasar Rust - Part 2",
+          "slug": "M01-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 1: Pengenalan & Dasar Rust - Part 3",
+          "slug": "M01-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 1: Pengenalan & Dasar Rust - Part 4",
+          "slug": "M01-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 1: Pengenalan & Dasar Rust - Part 5",
+          "slug": "M01-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 1: Pengenalan & Dasar Rust - Part 6",
+          "slug": "M01-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Modul 2: Ownership & Borrowing",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi ownership dan borrowing",
+      "module": 2,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 2: Ownership & Borrowing - Part 1",
+          "slug": "M02-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 2: Ownership & Borrowing - Part 2",
+          "slug": "M02-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 2: Ownership & Borrowing - Part 3",
+          "slug": "M02-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 2: Ownership & Borrowing - Part 4",
+          "slug": "M02-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 2: Ownership & Borrowing - Part 5",
+          "slug": "M02-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 2: Ownership & Borrowing - Part 6",
+          "slug": "M02-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Modul 3: Structs, Enums, & Pattern Matching",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi structs, enums, dan pattern matching",
+      "module": 3,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 1",
+          "slug": "M03-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 2",
+          "slug": "M03-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 3",
+          "slug": "M03-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 4",
+          "slug": "M03-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 5",
+          "slug": "M03-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 6",
+          "slug": "M03-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Modul 4: Collections & Error Handling",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi collections dan error handling",
+      "module": 4,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 4: Collections & Error Handling - Part 1",
+          "slug": "M04-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 4: Collections & Error Handling - Part 2",
+          "slug": "M04-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 4: Collections & Error Handling - Part 3",
+          "slug": "M04-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 4: Collections & Error Handling - Part 4",
+          "slug": "M04-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 4: Collections & Error Handling - Part 5",
+          "slug": "M04-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 4: Collections & Error Handling - Part 6",
+          "slug": "M04-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Modul 5: Generics, Traits, & Lifetimes",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi generics, traits, dan lifetimes",
+      "module": 5,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 1",
+          "slug": "M05-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 2",
+          "slug": "M05-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 3",
+          "slug": "M05-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 4",
+          "slug": "M05-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 5",
+          "slug": "M05-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 6",
+          "slug": "M05-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Modul 6: Functional Features & Smart Pointers",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi functional features dan smart pointers",
+      "module": 6,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 6: Functional Features & Smart Pointers - Part 1",
+          "slug": "M06-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 6: Functional Features & Smart Pointers - Part 2",
+          "slug": "M06-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 6: Functional Features & Smart Pointers - Part 3",
+          "slug": "M06-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 6: Functional Features & Smart Pointers - Part 4",
+          "slug": "M06-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 6: Functional Features & Smart Pointers - Part 5",
+          "slug": "M06-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 6: Functional Features & Smart Pointers - Part 6",
+          "slug": "M06-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Modul 7: Fearless Concurrency",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi fearless concurrency",
+      "module": 7,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 7: Fearless Concurrency - Part 1",
+          "slug": "M07-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 7: Fearless Concurrency - Part 2",
+          "slug": "M07-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 7: Fearless Concurrency - Part 3",
+          "slug": "M07-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 7: Fearless Concurrency - Part 4",
+          "slug": "M07-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 7: Fearless Concurrency - Part 5",
+          "slug": "M07-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 7: Fearless Concurrency - Part 6",
+          "slug": "M07-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Modul 8: Async/Await & Ekosistem Tokio",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi async/await dan ekosistem tokio",
+      "module": 8,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 1",
+          "slug": "M08-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 2",
+          "slug": "M08-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 3",
+          "slug": "M08-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 4",
+          "slug": "M08-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 5",
+          "slug": "M08-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 6",
+          "slug": "M08-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi advanced rust",
+      "module": 9,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 1",
+          "slug": "M09-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 2",
+          "slug": "M09-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 3",
+          "slug": "M09-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 4",
+          "slug": "M09-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 5",
+          "slug": "M09-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 6",
+          "slug": "M09-L06",
+          "lesson": 6
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
+      "icon": "fa-solid fa-code",
+      "desc": "Materi ekosistem, testing, dan WASM",
+      "module": 10,
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 1",
+          "slug": "M10-L01",
+          "lesson": 1
+        },
+        {
+          "id": 2,
+          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 2",
+          "slug": "M10-L02",
+          "lesson": 2
+        },
+        {
+          "id": 3,
+          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 3",
+          "slug": "M10-L03",
+          "lesson": 3
+        },
+        {
+          "id": 4,
+          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 4",
+          "slug": "M10-L04",
+          "lesson": 4
+        },
+        {
+          "id": 5,
+          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 5",
+          "slug": "M10-L05",
+          "lesson": 5
+        },
+        {
+          "id": 6,
+          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 6",
+          "slug": "M10-L06",
+          "lesson": 6
+        }
+      ]
+    }
+  ]
+}
