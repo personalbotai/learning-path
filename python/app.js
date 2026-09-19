@@ -1,15 +1,15 @@
 // Python Learning Path — Modern Interactive Engine
 // Depends on: MODULES from modules.js (loaded first)
 
-const MODULES = typeof window !== 'undefined' && window.MODULES ? window.MODULES : [];
+const MODULES_DATA = typeof window !== 'undefined' && window.MODULES ? window.MODULES : [];
 const lessons = [];
-MODULES.forEach(mod => {
+MODULES_DATA.forEach(mod => {
     mod.lessons.forEach(l => {
         lessons.push({
             id: l.slug,
             lessonNum: l.id,
             moduleId: mod.id,
-            title: l.id + ". " + l.title,
+            title: l.title,
             slug: l.slug,
             duration: l.duration || "15 m",
             module: mod.title,
@@ -104,7 +104,7 @@ function renderNav(filter) {
     const q = (filterQuery || '').toLowerCase().trim();
     const curModId = lessons[currentLesson] ? lessons[currentLesson].moduleId : 1;
     
-    const html = MODULES.map(mod => {
+    const html = MODULES_DATA.map(mod => {
         const modLessons = lessons.filter(l => l.moduleId === mod.id);
         const filtered = q ? modLessons.filter(l => 
             l.title.toLowerCase().includes(q) || 
@@ -268,7 +268,7 @@ try {
 }
 
 if (typeof window !== 'undefined') {
-  window.MODULES = MODULES;
+  window.MODULES = MODULES_DATA;
   window.lessons = lessons;
   window.LESSONS = lessons;
 
@@ -293,7 +293,7 @@ function checkQuiz() {
     if (!resultEl) return;
     resultEl.innerHTML = '<span class="text-slate-500 text-xs">Quiz engine belum tersedia.</span>';
 }
-  window.app = { MODULES, LESSONS: lessons, lessons, loadLesson, runCode, checkQuiz, renderNav, markComplete, resetProgress };
+  window.app = { MODULES: MODULES_DATA, LESSONS: lessons, lessons, loadLesson, runCode, checkQuiz, renderNav, markComplete, resetProgress };
 }
 
 // Expose global functions for inline HTML onclick handlers
