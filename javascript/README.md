@@ -2,7 +2,7 @@
 
 > **Interactive, hands-on JavaScript course from beginner to full-stack — right inside your browser.**
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-f59e0b?style=for-the-badge&logo=github&logoColor=white)](https://personalbotai.github.io/javascript-learning-path/)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-eab308?style=for-the-badge&logo=github&logoColor=white)](https://personalbotai.github.io/javascript-learning-path/)
 [![Hub Portal](https://img.shields.io/badge/🚀_Hub_Portal-hub.syamsulbahri.dev-10b981?style=for-the-badge)](https://hub.syamsulbahri.dev)
 [![PWA Ready](https://img.shields.io/badge/📱_PWA-Installable-purple?style=for-the-badge)](https://personalbotai.github.io/javascript-learning-path/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
@@ -57,6 +57,7 @@ This repository is part of the **PersonalBot Interactive Learning Series**:
 | ☕ | **Java** | 30 Modern Java 21 Lessons | Judge0 CE JDK 17 Compiler | [Open Java Path](https://personalbotai.github.io/java-learning-path/) |
 | 🦀 | **Rust** | 15 Systems Lessons | Rust Playground API & Sandbox | [Open Rust Path](https://personalbotai.github.io/rust-learning-path/) |
 | 🚀 | **C++** | 20 Modern C++20 Lessons | Wandbox GCC 13 C++20 Runner | [Open C++ Path](https://personalbotai.github.io/cpp-learning-path/) |
+| 🗄️ | **SQL** | 20 Relational DB Lessons | SQLite 3.44+ WASM Engine | [Open SQL Path](https://personalbotai.github.io/sql-learning-path/) |
 
 ---
 
