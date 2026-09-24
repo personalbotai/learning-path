@@ -1,333 +1,566 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Syamsulbahri Learning Paths — Autonomous Education</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = { darkMode: "class", 
-  theme: {
-    extend: {
-      fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] },
-      colors: { ink: '#050811', panel: '#0a0f1d' }
-    }
-  }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  body { @apply bg-slate-50 dark:bg-[#050811];  color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-  .grid-bg {
-    background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 30%, transparent 100%);
-  }
-  .glow {
-    position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(168, 85, 247, 0.1) 40%, transparent 70%);
-    pointer-events: none; filter: blur(50px);
-  }
-  .course-card {
-    background: rgba(10, 15, 29, 0.6); border: 1px solid rgba(148, 163, 184, 0.1);
-    border-radius: 20px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex; flex-direction: column; overflow: hidden; position: relative;
-  }
-  .course-card:hover {
-    border-color: rgba(255, 255, 255, 0.2); transform: translateY(-4px);
-    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5); background: rgba(15, 23, 42, 0.8);
-  }
-  .icon-box {
-    width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; letter-spacing: 1px;
-  }
-  .badge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; border: 1px solid transparent; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syamsulbahri Learning Paths — Autonomous Education & Engineering Mastery</title>
+  <meta name="description" content="Platform pembelajaran software engineering interaktif standar industri dari Zero hingga Advanced: TypeScript, Go, Java, Rust, SQL, C++, Python, dan JavaScript.">
   
-  /* Brand Colors */
-  .brand-py { color: #38bdf8; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.2); }
-  .brand-js { color: #fbbf24; background: rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.2); }
-  .brand-ts { color: #60a5fa; background: rgba(96, 165, 250, 0.1); border-color: rgba(96, 165, 250, 0.2); }
-  .brand-go { color: #2dd4bf; background: rgba(45, 212, 191, 0.1); border-color: rgba(45, 212, 191, 0.2); }
-  .brand-jv { color: #fb923c; background: rgba(251, 146, 60, 0.1); border-color: rgba(251, 146, 60, 0.2); }
-  .brand-rs { color: #f87171; background: rgba(248, 113, 113, 0.1); border-color: rgba(248, 113, 113, 0.2); }
-  .brand-cpp { color: #818cf8; background: rgba(129, 140, 248, 0.1); border-color: rgba(129, 140, 248, 0.2); }
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class", 
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+          },
+          colors: {
+            ink: '#030712',
+            surface: '#0b0f19',
+            surfaceCard: '#111827'
+          }
+        }
+      }
+    }
+  </script>
 
-  html:not(.dark) body {
-    background: #f8fafc !important;
-    color: #0f172a !important;
-  }
-  html:not(.dark) .course-card {
-    background: #ffffff !important;
-    border-color: #e2e8f0 !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
-  }
-  html:not(.dark) .course-card:hover {
-    border-color: #cbd5e1 !important;
-    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1) !important;
-    background: #ffffff !important;
-  }
-  html:not(.dark) .grid-bg {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
-  }
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-</style>
+  <style>
+    body {
+      color: #e2e8f0;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Background Grid & Aurora Glow */
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 100%);
+    }
+
+    .aurora-glow {
+      position: absolute;
+      top: -160px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(139, 92, 246, 0.15) 35%, rgba(236, 72, 153, 0.06) 60%, transparent 75%);
+      pointer-events: none;
+      filter: blur(70px);
+    }
+
+    /* Course Card Glassmorphism & Hover Glow */
+    .course-card {
+      background: rgba(17, 24, 39, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    html:not(.dark) .course-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(226, 232, 240, 0.9);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 25px 0 var(--hover-glow, rgba(56, 189, 248, 0.15));
+    }
+
+    html:not(.dark) .course-card:hover {
+      box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.1), 0 0 20px 0 var(--hover-glow, rgba(56, 189, 248, 0.2));
+    }
+
+    /* Track Filter Button Active */
+    .filter-btn.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    html:not(.dark) .filter-btn.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+  </style>
 </head>
-<body class="bg-slate-50 dark:bg-[#050811] relative">
-  <!-- Nav -->
-  <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-10">
-    <div class="flex items-center gap-3">
-      <!-- 1. Panah (Return to Hub) -->
-      <a href="https://hub.syamsulbahri.dev" title="Return to Hub" class="w-8 h-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 hover:border-sky-300 dark:hover:border-sky-800 flex items-center justify-center transition-all group">
-        <svg class="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+
+<body class="bg-slate-50 dark:bg-[#030712] text-slate-800 dark:text-slate-200 transition-colors duration-200 min-h-screen flex flex-col">
+
+  <!-- Floating Navigation Bar -->
+  <nav class="sticky top-0 z-50 border-b border-slate-200/80 dark:border-white/5 bg-white/70 dark:bg-[#030712]/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-indigo-500 to-purple-600 flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+          SB
+        </div>
+        <div>
+          <div class="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+            Learning Paths
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-500 dark:text-sky-400 border border-sky-500/20 font-semibold">2026 Edition</span>
+          </div>
+          <p class="text-[11px] text-slate-500 font-mono hidden sm:block">syamsulbahri.dev/learning-path</p>
+        </div>
       </a>
-      <!-- 2. Logo SB -->
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 via-indigo-600 to-violet-700 dark:from-sky-400 dark:via-indigo-500 dark:to-violet-600 p-[1px] shadow-sm">
-        <div class="w-full h-full bg-white dark:bg-[#050811] rounded-[11px] flex items-center justify-center font-extrabold text-slate-900 dark:text-white text-sm">SB</div>
+
+      <!-- Quick Links & Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="#tracks" class="hidden sm:inline-flex text-xs font-semibold px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition">
+          Jelajahi Jalur
+        </a>
+        <a href="#curriculum-breakdown" class="hidden sm:inline-flex text-xs font-semibold px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition">
+          Struktur 0-to-Advanced
+        </a>
+        
+        <!-- GitHub Button -->
+        <a href="https://github.com/personalbotai/learning-path" target="_blank" rel="noopener noreferrer" class="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-xs font-medium text-slate-700 dark:text-slate-300 transition flex items-center gap-2" title="Source Code GitHub">
+          <i class="fab fa-github text-sm"></i>
+          <span class="hidden md:inline">GitHub</span>
+        </a>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 transition" aria-label="Toggle Theme">
+          <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
       </div>
-      <!-- 3. Title -->
-      <div>
-        <div class="font-bold text-slate-900 dark:text-white leading-tight">Syamsul Bahri</div>
-        <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Education</div>
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <button id="theme-toggle" class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus:outline-none">
-        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-      </button>
+
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="relative pt-16 pb-20 overflow-hidden border-b border-slate-200 dark:border-slate-800/60">
-    <div class="glow"></div>
+  <header class="relative pt-16 pb-24 overflow-hidden border-b border-slate-200/80 dark:border-white/5">
+    <div class="aurora-glow"></div>
     <div class="absolute inset-0 grid-bg pointer-events-none"></div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-sky-500/20 bg-sky-500/10 text-sky-400 text-xs font-bold uppercase tracking-wider mb-8">
-        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-        Sovereign Curriculum
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-600 dark:text-sky-400 text-xs font-bold uppercase tracking-wider mb-8 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        Kurikulum Lengkap Standar Industri 2026
       </div>
-      <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15] mb-6">
-        Master Software Engineering.<br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">Zero Distractions.</span>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-6">
+        Kuasai Rekayasa Perangkat Lunak.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-indigo-400 to-fuchsia-400">Dari 0 Hingga Tingkat Lanjut.</span>
       </h1>
-      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-        Interactive learning paths designed for deep technical mastery. From memory-safe systems programming to cloud-native backends and type-safe frontends.
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
+        Jalur pembelajaran teknis interaktif tanpa distraksi. Disusun secara pedagogis mulai dari pemahaman konsep fundamental hingga pembangunan aplikasi berskala produksi: arsitektur sistem, <i>fearless concurrency</i>, static typing, dan ekosistem database relasional.
       </p>
-      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-300">
-        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 100% Free</div>
-        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Interactive Environments</div>
-        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Self-Paced</div>
+
+      <!-- Key Value Propositions -->
+      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 mb-12">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+          <i class="fa-solid fa-code text-sky-400"></i>
+          <span><b>486</b> Pelajaran Interaktif</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+          <i class="fa-solid fa-terminal text-emerald-400"></i>
+          <span>Editor Kode & Terminal Live</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+          <i class="fa-solid fa-certificate text-amber-400"></i>
+          <span>Sertifikat Kelulusan Resmi</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+          <i class="fa-solid fa-bolt text-purple-400"></i>
+          <span>100% Gratis & Self-Paced</span>
+        </div>
       </div>
+
+      <!-- Quick CTA Button -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#tracks" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+          <span>Pilih Jalur Belajar</span>
+          <i class="fa-solid fa-arrow-down text-xs"></i>
+        </a>
+        <a href="/typescript/" class="px-6 py-3.5 rounded-2xl bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
+          Mulai Track Populer (TypeScript) →
+        </a>
+      </div>
+
     </div>
   </header>
 
-  <!-- Courses Grid -->
-  <main class="max-w-7xl mx-auto px-6 py-20 relative z-10">
-    <div class="flex items-end justify-between mb-10">
+  <!-- Interactive Search & Filter Section -->
+  <section id="tracks" class="max-w-7xl mx-auto px-6 pt-16 pb-6 w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200 dark:border-white/5">
       <div>
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Available Learning Paths</h2>
-        <p class="text-slate-600 dark:text-slate-400 mt-1">Select a track to start your journey.</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
+          <span>Daftar Jalur Pembelajaran</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">8 Track Aktif</span>
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Pilih salah satu bahasa untuk membuka kurikulum interaktif di browser Anda.</p>
       </div>
-      <div class="hidden sm:block text-sm text-slate-500 font-mono">8 Tracks Active</div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center gap-2" id="filter-container">
+        <button onclick="filterCourses('all')" class="filter-btn active text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 transition">
+          Semua (8)
+        </button>
+        <button onclick="filterCourses('systems')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Systems & Low-Level
+        </button>
+        <button onclick="filterCourses('backend')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Backend & Cloud
+        </button>
+        <button onclick="filterCourses('frontend')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Frontend & Fullstack
+        </button>
+      </div>
     </div>
+  </section>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Courses Grid -->
+  <main class="max-w-7xl mx-auto px-6 pb-24 w-full relative z-10 flex-1">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="courses-grid">
       
-      <!-- Python -->
-      <a href="/python/" class="course-card group">
-        <div class="h-1 w-full bg-sky-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 1. TypeScript -->
+      <a href="/typescript/" class="course-card group" data-category="frontend" style="--hover-glow: rgba(59, 130, 246, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-blue-500 to-sky-400"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box brand-py">PY</div>
-            <div class="badge brand-py">55 Lessons</div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              TS
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              77 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Python Mastery</h3>
-          <p class="text-xs font-mono text-sky-400/80 mb-3">Beginner to Advanced · Python 3.11+</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Master the core language, OOP, data structures, backend automation, and testing. Complete with an interactive web editor and quizzes.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-400 transition-colors">
+            TypeScript Mastery
+          </h3>
+          <p class="text-xs font-mono text-blue-400/80 mb-3">10 Modul • Zero to Advanced</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            Mulai dari konsep fundamental <i>Apa itu TypeScript</i>, inferensi tipe, generics, mapped types, hingga pembuatan REST API dan React App.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-blue-500 dark:text-blue-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
 
-      <!-- JavaScript -->
-      <a href="/javascript/" class="course-card group">
-        <div class="h-1 w-full bg-amber-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 2. Go (Golang) -->
+      <a href="/go/" class="course-card group" data-category="backend" style="--hover-glow: rgba(6, 182, 212, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-cyan-500 to-teal-400"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box brand-js">JS</div>
-            <div class="badge brand-js">54 Lessons</div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              GO
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              60 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Modern JavaScript</h3>
-          <p class="text-xs font-mono text-amber-400/80 mb-3">ES6+ · DOM & Async</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Build interactive frontends. Covers the ECMAScript spec, closures, promises, DOM manipulation, and modern web APIs.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-cyan-400 transition-colors">
+            Go Backend & Cloud
+          </h3>
+          <p class="text-xs font-mono text-cyan-400/80 mb-3">10 Modul • Standar Industri</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            Kurikulum komprehensif 60 pelajaran: filosofi Go, goroutines, channels, generics, unit testing, hingga REST API & deployment Docker.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-cyan-500 dark:text-cyan-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
 
-      <!-- TypeScript -->
-      <a href="/typescript/" class="course-card group">
-        <div class="h-1 w-full bg-blue-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 3. Rust -->
+      <a href="/rust/" class="course-card group" data-category="systems" style="--hover-glow: rgba(239, 68, 68, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-orange-500 to-red-500"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box brand-ts">TS</div>
-            <div class="badge brand-ts">Intermediate</div>
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              🦀
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
+              60 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">TypeScript Architecture</h3>
-          <p class="text-xs font-mono text-blue-400/80 mb-3">Static Typing · Generics</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Elevate your JS. Learn structural typing, advanced generics, utility types, and how to build scalable, bug-free applications.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-orange-400 transition-colors">
+            Rust Systems Programming
+          </h3>
+          <p class="text-xs font-mono text-orange-400/80 mb-3">10 Modul • Memory-Safe</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            Kuasai borrow checker, ownership, lifetimes, fearless concurrency, ekosistem async Tokio, macros, dan capstone key-value store.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-orange-500 dark:text-orange-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
 
-      <!-- Go -->
-      <a href="/go/" class="course-card group">
-        <div class="h-1 w-full bg-teal-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 4. SQL & Database -->
+      <a href="/sql/" class="course-card group" data-category="backend" style="--hover-glow: rgba(16, 185, 129, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-emerald-500 to-teal-500"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box brand-go">GO</div>
-            <div class="badge brand-go">Cloud-Native</div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              SQL
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              60 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Go for Backend</h3>
-          <p class="text-xs font-mono text-teal-400/80 mb-3">High Performance · Concurrency</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Write fast, compiled binaries. Deep dive into goroutines, channels, interfaces, and building robust microservices.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-emerald-400 transition-colors">
+            SQL & Relational Database
+          </h3>
+          <p class="text-xs font-mono text-emerald-400/80 mb-3">10 Modul • SQLite WASM Live</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            Dari SELECT dasar, DML, agregasi, joins, subquery CTE, window functions, performa indexing, hingga ekosistem SQLite WASM modern.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-emerald-500 dark:text-emerald-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
 
-      <!-- Java -->
-      <a href="/java/" class="course-card group">
-        <div class="h-1 w-full bg-orange-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 5. Java -->
+      <a href="/java/" class="course-card group" data-category="backend" style="--hover-glow: rgba(249, 115, 22, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-amber-500 to-orange-500"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box brand-jv">JV</div>
-            <div class="badge brand-jv">Enterprise</div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              ☕
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              60 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Java Enterprise</h3>
-          <p class="text-xs font-mono text-orange-400/80 mb-3">Java 21 LTS · Spring Boot</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Master strict OOP, JVM internals, garbage collection, and modern Java features like records and virtual threads.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-amber-400 transition-colors">
+            Java Enterprise & Modern
+          </h3>
+          <p class="text-xs font-mono text-amber-400/80 mb-3">10 Modul • Java 21 LTS</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            OOP mendalam, Collections, fitur Java 17-21 (Records, Virtual Threads), Concurrency, JDBC/JPA, dan Spring Boot REST Microservice.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-amber-500 dark:text-amber-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
 
-      <!-- Rust -->
-      <a href="/rust/" class="course-card group">
-        <div class="h-1 w-full bg-red-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 6. C++ -->
+      <a href="/cpp/" class="course-card group" data-category="systems" style="--hover-glow: rgba(99, 102, 241, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-indigo-500 to-blue-600"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box brand-rs">RS</div>
-            <div class="badge brand-rs">Memory-Safe</div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              C++
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+              60 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Rust Systems</h3>
-          <p class="text-xs font-mono text-red-400/80 mb-3">Zero-Cost Abstractions</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Conquer the borrow checker. Learn ownership, lifetimes, traits, and fearless concurrency without a garbage collector.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-indigo-400 transition-colors">
+            Modern C++ (C++20/23)
+          </h3>
+          <p class="text-xs font-mono text-indigo-400/80 mb-3">10 Modul • High Performance</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            Performa puncak. RAII, smart pointers, templates & concepts, move semantics, ranges, coroutines, dan multithreading paralel.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-indigo-500 dark:text-indigo-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
 
-      <!-- C++ -->
-      <a href="/cpp/" class="course-card group lg:col-start-2">
-        <div class="h-1 w-full bg-indigo-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 7. Python -->
+      <a href="/python/" class="course-card group" data-category="backend" style="--hover-glow: rgba(14, 165, 233, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-sky-400 to-indigo-500"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box brand-cpp">C++</div>
-            <div class="badge brand-cpp">Low-Level</div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              🐍
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              55 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Modern C++</h3>
-          <p class="text-xs font-mono text-indigo-400/80 mb-3">C++20 / C++23</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Maximum performance. From raw pointers to RAII, smart pointers, template metaprogramming, and standard library algorithms.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-sky-400 transition-colors">
+            Python Mastery
+          </h3>
+          <p class="text-xs font-mono text-sky-400/80 mb-3">10 Modul • Python 3.11+</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            Dari dasar sintaks, struktur data teroptimasi, OOP, file I/O, generator & decorator, concurrency threading, hingga packaging.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-sky-500 dark:text-sky-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
 
-
-      <!-- SQL -->
-      <a href="/sql/" class="course-card group">
-        <div class="h-1 w-full bg-pink-400 opacity-80 group-hover:opacity-100"></div>
+      <!-- 8. JavaScript -->
+      <a href="/javascript/" class="course-card group" data-category="frontend" style="--hover-glow: rgba(245, 158, 11, 0.25);">
+        <div class="h-1.5 w-full bg-gradient-to-r from-amber-400 to-yellow-500"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="icon-box" style="color: #f472b6; background: rgba(244, 114, 182, 0.1); border-color: rgba(244, 114, 182, 0.2);">SQL</div>
-            <div class="badge" style="color: #f472b6; background: rgba(244, 114, 182, 0.1);">Database</div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              JS
+            </div>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              54 Materi
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">SQL & Databases</h3>
-          <p class="text-xs font-mono text-pink-400/80 mb-3">Relational Data · PostgreSQL</p>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
-            Master data querying, joins, subqueries, and database design. Essential for backend engineers and data analysts.
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-amber-400 transition-colors">
+            Modern JavaScript
+          </h3>
+          <p class="text-xs font-mono text-amber-400/80 mb-3">10 Modul • ES6+ Web APIs</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
+            Kuasai fondasi web modern: closures, prototype, asynchronous async/await, event loop, manipulasi DOM dinamis, dan tooling pnpm/Bun.
           </p>
-          <div class="mt-auto border-t border-slate-200 dark:border-slate-800/80 pt-4 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:text-white">
-            Start Track <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-amber-500 dark:text-amber-400">
+            <span>Mulai Belajar</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
         </div>
       </a>
+
     </div>
   </main>
-  
-  <footer class="border-t border-slate-200 dark:border-slate-800/80 py-8 text-center text-sm text-slate-500 font-mono">
-    &copy; 2026 Syamsul Bahri Sovereign Infrastructure
+
+  <!-- Learning Method & Highlights Section -->
+  <section id="curriculum-breakdown" class="py-20 border-t border-slate-200/80 dark:border-white/5 bg-slate-100/50 dark:bg-white/[0.02]">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Metodologi Belajar Standar Industri
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+          Setiap modul dirancang sistematis untuk menjamin pemahaman konsep mendalam dan keterampilan praktis.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-8">
+        
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">1. Pedagogical 0 to Advanced</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Tidak ada asumsi pengetahuan sebelumnya. Urutan silabus dimulai dari filosofi dasar, sintaks awal, hingga proyek fullstack atau microservice nyata.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">2. Live Interactive Code Runner</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Eksperimen langsung di browser tanpa instalasi runtime lokal. Didukung compiler online, WebAssembly (SQLite WASM), dan transpiler terintegrasi.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">3. Sertifikat Kelulusan Resmi</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Klaim sertifikat kelulusan kanvas beresolusi tinggi saat Anda mencapai progres 100% pada seluruh kuis materi dan latihan interaktif.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200/80 dark:border-white/5 py-10 bg-white dark:bg-[#030712] text-xs text-slate-500 font-mono">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        &copy; 2026 Syamsul Bahri Sovereign Infrastructure. All rights reserved.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/personalbotai" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">GitHub Organization</a>
+        <a href="#tracks" class="hover:text-slate-900 dark:hover:text-white transition">Daftar Track</a>
+        <a href="https://syamsulbahri.dev" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">syamsulbahri.dev</a>
+      </div>
+    </div>
   </footer>
 
-<script>
-  var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-  var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+  <!-- Scripts: Theme Toggle & Filter -->
+  <script>
+    // Theme toggle
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleBtn = document.getElementById('theme-toggle');
 
-  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      themeToggleLightIcon.classList.remove('hidden');
-      document.documentElement.classList.add('dark');
-  } else {
+    if (localStorage.getItem('color-theme') === 'light') {
       themeToggleDarkIcon.classList.remove('hidden');
       document.documentElement.classList.remove('dark');
-  }
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+      document.documentElement.classList.add('dark');
+    }
 
-  var themeToggleBtn = document.getElementById('theme-toggle');
-
-  themeToggleBtn.addEventListener('click', function() {
+    themeToggleBtn.addEventListener('click', function() {
       themeToggleDarkIcon.classList.toggle('hidden');
       themeToggleLightIcon.classList.toggle('hidden');
-      if (localStorage.getItem('color-theme')) {
-          if (localStorage.getItem('color-theme') === 'light') {
-              document.documentElement.classList.add('dark');
-              localStorage.setItem('color-theme', 'dark');
-          } else {
-              document.documentElement.classList.remove('dark');
-              localStorage.setItem('color-theme', 'light');
-          }
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
       } else {
-          if (document.documentElement.classList.contains('dark')) {
-              document.documentElement.classList.remove('dark');
-              localStorage.setItem('color-theme', 'light');
-          } else {
-              document.documentElement.classList.add('dark');
-              localStorage.setItem('color-theme', 'dark');
-          }
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
       }
-  });
-</script>
+    });
+
+    // Category Filter
+    function filterCourses(category) {
+      const cards = document.querySelectorAll('.course-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
