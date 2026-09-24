@@ -1650,3 +1650,214 @@ document.addEventListener('DOMContentLoaded', function() {
     loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
     updateProgress();
 });
+
+// ================= Interactive Handlers (CPP) =================
+function nextLesson() {
+    if (typeof currentLesson !== 'undefined' && typeof lessons !== 'undefined' && currentLesson < lessons.length - 1) {
+        loadLesson(currentLesson + 1);
+    }
+}
+
+function prevLesson() {
+    if (typeof currentLesson !== 'undefined' && currentLesson > 0) {
+        loadLesson(currentLesson - 1);
+    }
+}
+
+function checkQuiz() {
+    const lesson = lessons[currentLesson];
+    if (!lesson || !lesson.quiz) return;
+    const selected = document.querySelector('input[name="quiz_option"]:checked') || document.querySelector('input[name="quiz-opt"]:checked');
+    const resultEl = document.getElementById('quiz-result');
+    if (!resultEl) return;
+    if (!selected) {
+        resultEl.innerHTML = '<span class="text-amber-400 text-xs">Pilih salah satu jawaban terlebih dahulu.</span>';
+        return;
+    }
+    const val = parseInt(selected.value, 10);
+    const correctVal = lesson.quiz.answer !== undefined ? lesson.quiz.answer : (lesson.quiz.correct !== undefined ? lesson.quiz.correct : 0);
+    if (val === correctVal) {
+        resultEl.innerHTML = '<div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs">' +
+            '<i class="fas fa-check-circle mr-1"></i> Benar! ' + escapeHtml(lesson.quiz.explanation || '') +
+        '</div>';
+        markComplete();
+    } else {
+        resultEl.innerHTML = '<div class="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs">' +
+            '<i class="fas fa-times-circle mr-1"></i> Kurang tepat. ' + escapeHtml(lesson.quiz.explanation || 'Silakan tinjau kembali materi.') +
+        '</div>';
+    }
+}
+
+async function runCode() {
+    const editor = document.getElementById('code-editor');
+    const out = document.getElementById('output');
+    if (!editor || !out) return;
+    const code = editor.value;
+    out.innerHTML = '<span class="text-cyan-400"><i class="fa-solid fa-spinner fa-spin"></i> Menjalankan kode C++...</span>';
+    
+    // Attempt Judge0 or playground execution if applicable
+    try {
+        const langIds = { cpp: 54, rust: 73, go: 60 };
+        const langId = langIds['cpp'] || 73;
+        const res = await fetch('https://ce.judge0.com/submissions?base64_encoded=false&wait=true', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                source_code: code,
+                language_id: langId
+            })
+        });
+        if (res.ok) {
+            const data = await res.json();
+            const stdout = data.stdout || '';
+            const stderr = data.stderr || data.compile_output || '';
+            if (stderr) {
+                out.innerHTML = '<div class="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 font-mono text-xs whitespace-pre-wrap">' + escapeHtml(stderr) + '</div>';
+            } else if (stdout) {
+                out.innerHTML = '<pre class="text-xs text-cyan-300 font-mono whitespace-pre-wrap">' + escapeHtml(stdout) + '</pre>';
+            } else {
+                out.innerHTML = '<pre class="text-xs text-slate-400 font-mono">// Program sukses dieksekusi tanpa output.</pre>';
+            }
+            return;
+        }
+    } catch (e) {}
+    
+    // Fallback simulation
+    out.innerHTML = '<div class="p-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-mono text-xs">' +
+        '// Eksekusi kode C++ lokal (Simulasi):\n\n' + escapeHtml(code) +
+    '</div>';
+}
+
+function resetCode() {
+    if (typeof lessons !== 'undefined' && lessons[currentLesson]) {
+        const editor = document.getElementById('code-editor');
+        if (editor) editor.value = (lessons[currentLesson].code || '').replace(/\\n/g, '\n');
+        const out = document.getElementById('output');
+        if (out) out.innerHTML = '<span class="text-slate-500">// Editor di-reset ke kode awal materi.</span>';
+    }
+}
+
+function clearOutput() {
+    const out = document.getElementById('output');
+    if (out) out.innerHTML = '<span class="text-slate-500">// Output dibersihkan.</span>';
+}
+
+function copyCode() {
+    const editor = document.getElementById('code-editor');
+    if (editor && navigator.clipboard) {
+        navigator.clipboard.writeText(editor.value).then(() => {
+            alert('Kode berhasil disalin!');
+        });
+    }
+}
+
+// Certificate helpers
+function openCertificateModal() {
+    const modal = document.getElementById('certificate-modal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    const tot = typeof lessons !== 'undefined' ? lessons.length : 60;
+    const done = Object.keys(progress).filter(k => !!progress[k]).length;
+    const isCompleted = done >= tot;
+    const lockedView = document.getElementById('cert-locked-view');
+    const unlockedView = document.getElementById('cert-unlocked-view');
+    const unlockedFooter = document.getElementById('cert-unlocked-footer');
+    if (isCompleted) {
+        if (lockedView) lockedView.classList.add('hidden');
+        if (unlockedView) unlockedView.classList.remove('hidden');
+        if (unlockedFooter) unlockedFooter.classList.remove('hidden');
+        drawCertificate();
+    } else {
+        if (lockedView) lockedView.classList.remove('hidden');
+        if (unlockedView) unlockedView.classList.add('hidden');
+        if (unlockedFooter) unlockedFooter.classList.add('hidden');
+        const pText = document.getElementById('cert-locked-progress-text');
+        const pBar = document.getElementById('cert-locked-progress-bar');
+        const pRem = document.getElementById('cert-locked-remaining-text');
+        const pct = Math.round((done / tot) * 100);
+        if (pText) pText.textContent = pct + '%';
+        if (pBar) pBar.style.width = pct + '%';
+        if (pRem) pRem.textContent = 'Tersisa ' + (tot - done) + ' pelajaran lagi.';
+    }
+}
+
+function closeCertificateModal() {
+    const modal = document.getElementById('certificate-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+}
+
+function drawCertificate() {
+    const canvas = document.getElementById('cert-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const nameInput = document.getElementById('cert-name-input');
+    const studentName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : 'Peserta C++ Learning Path';
+    
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.strokeStyle = '#f97316';
+    ctx.lineWidth = 10;
+    ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+    
+    ctx.fillStyle = '#f97316';
+    ctx.font = 'bold 36px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('SERTIFIKAT KELULUSAN RESMI', canvas.width / 2, 120);
+    
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('Diberikan kepada:', canvas.width / 2, 200);
+    
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 44px sans-serif';
+    ctx.fillText(studentName, canvas.width / 2, 280);
+    
+    ctx.fillStyle = '#cbd5e1';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('Telah berhasil menyelesaikan seluruh 60 kurikulum pelajaran', canvas.width / 2, 360);
+    ctx.fillText('C++ Learning Path Standar Industri', canvas.width / 2, 400);
+    
+    ctx.fillStyle = '#f97316';
+    ctx.font = 'bold 20px monospace';
+    ctx.fillText('STATUS: VERIFIED & COMPLETED (100%)', canvas.width / 2, 480);
+    
+    ctx.fillStyle = '#64748b';
+    ctx.font = '14px monospace';
+    ctx.fillText('Verifikasi: https://learning-path.syamsulbahri.dev/cpp/', canvas.width / 2, 570);
+}
+
+function downloadCertificatePNG() {
+    const canvas = document.getElementById('cert-canvas');
+    if (!canvas) return;
+    const link = document.createElement('a');
+    link.download = 'Sertifikat-C++-Learning-Path.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}
+
+function printCertificate() {
+    const canvas = document.getElementById('cert-canvas');
+    if (!canvas) return;
+    const dataUrl = canvas.toDataURL('image/png');
+    const w = window.open('', '_blank');
+    w.document.write('<html><head><title>Cetak Sertifikat</title></head><body style="margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#000;"><img src="' + dataUrl + '" style="max-width:95vw;max-height:95vh;border-radius:12px;" /><script>window.onload = () => { window.print(); };<\/script></body></html>');
+}
+
+// Window global exports
+window.nextLesson = nextLesson;
+window.prevLesson = prevLesson;
+window.checkQuiz = checkQuiz;
+window.runCode = runCode;
+window.resetCode = resetCode;
+window.clearOutput = clearOutput;
+window.copyCode = copyCode;
+window.openCertificateModal = openCertificateModal;
+window.closeCertificateModal = closeCertificateModal;
+window.drawCertificate = drawCertificate;
+window.downloadCertificatePNG = downloadCertificatePNG;
+window.printCertificate = printCertificate;

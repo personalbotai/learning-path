@@ -1933,6 +1933,8 @@ window.markComplete = markComplete;
 window.resetProgress = resetProgress;
 window.checkQuiz = checkQuiz;
 window.runSQL = runSQL;
+window.runCode = runSQL;
+function runCode() { runSQL(); }
 window.resetCode = resetCode;
 window.copyCode = copyCode;
 window.closeSidebar = closeSidebar;
