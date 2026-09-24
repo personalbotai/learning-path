@@ -1557,7 +1557,23 @@ async function loadLesson(index) {
     let html = '';
     try {
         let md = '';
-        const mdCandidate = (typeof LESSON_FILES !== 'undefined' && LESSON_FILES[index]) ? LESSON_FILES[index] : (lesson.mdFile || ('lessons/' + (lesson.slug || '') + '.md'));
+        const basePath = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
+        const candidates = [
+            (typeof LESSON_FILES !== 'undefined' && LESSON_FILES[index]) ? LESSON_FILES[index] : null,
+            lesson.mdFile,
+            'lessons/' + lesson.slug + '.md',
+            './lessons/' + lesson.slug + '.md',
+            basePath + 'lessons/' + lesson.slug + '.md'
+        ].filter(Boolean);
+        for (const c of candidates) {
+            try {
+                const res = await fetch(c);
+                if (res.ok) {
+                    md = await res.text();
+                    if (md && md.trim().length > 0) break;
+                }
+            } catch(e) {}
+        }
         try {
             const res = await fetch(mdCandidate);
             if (res.ok) md = await res.text();
@@ -1632,7 +1648,7 @@ async function loadLesson(index) {
     
     // Scroll to top
     const contentScroll = document.getElementById('content-scroll');
-    if (contentScroll) contentScroll.scrollTo({top: 0, behavior: 'smooth'});
+    if (contentScroll && typeof contentScroll.scrollTo === 'function') contentScroll.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 // Initialize progress from localStorage

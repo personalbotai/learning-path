@@ -1,7 +1,83 @@
-// TypeScript Learning Path - Main Application
-// 12 Modules, 77 Lessons
-'use strict';
-
+// TypeScript Learning Path — Core Application
+const LESSON_FILES = [
+  "lessons/M01-L01.md",
+  "lessons/M01-L02.md",
+  "lessons/M01-L03.md",
+  "lessons/M01-L04.md",
+  "lessons/M01-L05.md",
+  "lessons/M01-L06.md",
+  "lessons/M01-L07.md",
+  "lessons/M01-L08.md",
+  "lessons/M02-L01.md",
+  "lessons/M02-L02.md",
+  "lessons/M02-L03.md",
+  "lessons/M02-L04.md",
+  "lessons/M02-L05.md",
+  "lessons/M02-L06.md",
+  "lessons/M02-L07.md",
+  "lessons/M02-L08.md",
+  "lessons/M03-L01.md",
+  "lessons/M03-L02.md",
+  "lessons/M03-L03.md",
+  "lessons/M03-L04.md",
+  "lessons/M03-L05.md",
+  "lessons/M03-L06.md",
+  "lessons/M03-L07.md",
+  "lessons/M03-L08.md",
+  "lessons/M04-L01.md",
+  "lessons/M04-L02.md",
+  "lessons/M04-L03.md",
+  "lessons/M04-L04.md",
+  "lessons/M04-L05.md",
+  "lessons/M04-L06.md",
+  "lessons/M04-L07.md",
+  "lessons/M04-L08.md",
+  "lessons/M05-L01.md",
+  "lessons/M05-L02.md",
+  "lessons/M05-L03.md",
+  "lessons/M05-L04.md",
+  "lessons/M05-L05.md",
+  "lessons/M05-L06.md",
+  "lessons/M05-L07.md",
+  "lessons/M05-L08.md",
+  "lessons/M06-L01.md",
+  "lessons/M06-L02.md",
+  "lessons/M06-L03.md",
+  "lessons/M06-L04.md",
+  "lessons/M06-L05.md",
+  "lessons/M06-L06.md",
+  "lessons/M06-L07.md",
+  "lessons/M06-L08.md",
+  "lessons/M07-L01.md",
+  "lessons/M07-L02.md",
+  "lessons/M07-L03.md",
+  "lessons/M07-L04.md",
+  "lessons/M07-L05.md",
+  "lessons/M07-L06.md",
+  "lessons/M07-L07.md",
+  "lessons/M07-L08.md",
+  "lessons/M08-L01.md",
+  "lessons/M08-L02.md",
+  "lessons/M08-L03.md",
+  "lessons/M08-L04.md",
+  "lessons/M08-L05.md",
+  "lessons/M08-L06.md",
+  "lessons/M08-L07.md",
+  "lessons/M09-L01.md",
+  "lessons/M09-L02.md",
+  "lessons/M09-L03.md",
+  "lessons/M09-L04.md",
+  "lessons/M09-L05.md",
+  "lessons/M09-L06.md",
+  "lessons/M09-L07.md",
+  "lessons/M10-L01.md",
+  "lessons/M10-L02.md",
+  "lessons/M10-L03.md",
+  "lessons/M10-L04.md",
+  "lessons/M10-L05.md",
+  "lessons/M10-L06.md",
+  "lessons/M10-L07.md"
+];
 const MODULES = [
   {
     "id": 1,
@@ -64,1339 +140,1721 @@ const MODULES = [
     "icon": "fa-solid fa-code"
   }
 ];
-
 const lessons = [
   {
     "id": 1,
-    "slug": "ts-1",
-    "title": "1. Apa itu TypeScript?",
-    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "slug": "M01-L01",
+    "title": "Abstract Classes",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Apa itu TypeScript?\n\n- Perbedaan TS vs JS\n- Konsep Static Typing vs Dynamic Typing",
-    "code": "// TypeScript Apa itu TypeScript?\nconst lessonTitle: string = 'Apa itu TypeScript?';",
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L01.md",
+    "code": "// TypeScript: Abstract Classes\nconst topicName: string = \"Abstract Classes\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa keuntungan utama TypeScript dibandingkan JavaScript pada aplikasi skala besar?",
+      "question": "Apa konsep utama dari Abstract Classes?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 2,
-    "slug": "ts-2",
-    "title": "2. Setup & Kompilasi Dasar",
-    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "slug": "M01-L02",
+    "title": "Access Modifiers",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Setup & Kompilasi Dasar\n\n- Peran file tsconfig.json\n- Penggunaan compiler tsc",
-    "code": "// TypeScript Setup & Kompilasi Dasar\nconst lessonTitle: string = 'Setup & Kompilasi Dasar';",
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L02.md",
+    "code": "// TypeScript: Access Modifiers\nconst topicName: string = \"Access Modifiers\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "File apa yang digunakan untuk mengatur konfigurasi compiler pada TypeScript?",
+      "question": "Apa konsep utama dari Access Modifiers?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 3,
-    "slug": "ts-3",
-    "title": "3. Type Inference",
-    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "slug": "M01-L03",
+    "title": "Ambient Modules",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Type Inference\n\n- Bagaimana TS menebak tipe secara otomatis\n- Kapan tipe eksplisit tidak diperlukan",
-    "code": "// TypeScript Type Inference\nconst lessonTitle: string = 'Type Inference';",
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L03.md",
+    "code": "// TypeScript: Ambient Modules\nconst topicName: string = \"Ambient Modules\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa istilah untuk kemampuan TypeScript dalam menebak tipe data tanpa anotasi tertulis?",
+      "question": "Apa konsep utama dari Ambient Modules?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 4,
-    "slug": "ts-4",
-    "title": "4. Type Annotation (Anotasi Tipe)",
-    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "slug": "M01-L04",
+    "title": "Any Dan Unknown",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Type Annotation (Anotasi Tipe)\n\n- Sintaks let x: tipe\n- Tipe primitif: string, number, boolean",
-    "code": "// TypeScript Type Annotation (Anotasi Tipe)\nconst lessonTitle: string = 'Type Annotation (Anotasi Tipe)';",
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L04.md",
+    "code": "// TypeScript: Any Dan Unknown\nconst topicName: string = \"Any Dan Unknown\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Bagaimana sintaks yang benar untuk mendeklarasikan variabel bertipe angka di TypeScript?",
+      "question": "Apa konsep utama dari Any Dan Unknown?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 5,
-    "slug": "ts-5",
-    "title": "5. Tipe any vs unknown",
-    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "slug": "M01-L05",
+    "title": "Apa Itu Typescript",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Tipe any vs unknown\n\n- Bahaya menggunakan any\n- Mengapa unknown lebih aman untuk tipe tidak tertebak",
-    "code": "// TypeScript Tipe any vs unknown\nconst lessonTitle: string = 'Tipe any vs unknown';",
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L05.md",
+    "code": "// TypeScript: Apa Itu Typescript\nconst topicName: string = \"Apa Itu Typescript\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Mengapa disarankan untuk menggunakan tipe 'unknown' daripada 'any'?",
+      "question": "Apa konsep utama dari Apa Itu Typescript?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 6,
-    "slug": "ts-6",
-    "title": "6. Array & Tuple",
-    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "slug": "M01-L06",
+    "title": "Array Dan Tuple",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Array & Tuple\n\n- Sintaks Array T[] vs Array<T>\n- Tuple untuk array dengan tipe dan panjang tetap",
-    "code": "// TypeScript Array & Tuple\nconst lessonTitle: string = 'Array & Tuple';",
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L06.md",
+    "code": "// TypeScript: Array Dan Tuple\nconst topicName: string = \"Array Dan Tuple\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa perbedaan paling mendasar antara tipe Array biasa dan Tuple di TypeScript?",
+      "question": "Apa konsep utama dari Array Dan Tuple?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 7,
-    "slug": "ts-7",
-    "title": "7. Object Types Dasar",
-    "module": "Modul 2: Tipe Data Kompleks & Objek",
-    "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Object Types Dasar\n\n- Menentukan tipe/bentuk sebuah objek (inline type)\n- Properti wajib dalam objek",
-    "code": "// TypeScript Object Types Dasar\nconst lessonTitle: string = 'Object Types Dasar';",
+    "slug": "M01-L07",
+    "title": "Arrow Functions Types",
+    "moduleId": 1,
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L07.md",
+    "code": "// TypeScript: Arrow Functions Types\nconst topicName: string = \"Arrow Functions Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Simbol apa yang memisahkan nama properti dan tipenya di dalam definisi tipe objek?",
+      "question": "Apa konsep utama dari Arrow Functions Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 8,
-    "slug": "ts-8",
-    "title": "8. Optional Properties",
-    "module": "Modul 2: Tipe Data Kompleks & Objek",
-    "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Optional Properties\n\n- Penggunaan modifier tanda tanya (?)\n- Menghindari error saat properti tidak tersedia",
-    "code": "// TypeScript Optional Properties\nconst lessonTitle: string = 'Optional Properties';",
+    "slug": "M01-L08",
+    "title": "Barrel Files",
+    "moduleId": 1,
+    "module": "Modul 1: Pengenalan & Dasar TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M01-L08.md",
+    "code": "// TypeScript: Barrel Files\nconst topicName: string = \"Barrel Files\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Karakter apa yang digunakan untuk membuat sebuah properti menjadi tidak wajib (opsional)?",
+      "question": "Apa konsep utama dari Barrel Files?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 9,
-    "slug": "ts-9",
-    "title": "9. Readonly Properties",
-    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "slug": "M02-L01",
+    "title": "Build Tools Webpack Babel",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Readonly Properties\n\n- Mencegah mutasi data menggunakan modifier readonly\n- Perbedaan readonly dengan const",
-    "code": "// TypeScript Readonly Properties\nconst lessonTitle: string = 'Readonly Properties';",
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L01.md",
+    "code": "// TypeScript: Build Tools Webpack Babel\nconst topicName: string = \"Build Tools Webpack Babel\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Modifier apa yang mencegah suatu properti objek diubah nilainya setelah diinisialisasi?",
+      "question": "Apa konsep utama dari Build Tools Webpack Babel?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 10,
-    "slug": "ts-10",
-    "title": "10. Index Signatures",
-    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "slug": "M02-L02",
+    "title": "Class Dasar",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Index Signatures\n\n- Membuat objek dinamis sebagai kamus/dictionary\n- Batasan tipe pada key index",
-    "code": "// TypeScript Index Signatures\nconst lessonTitle: string = 'Index Signatures';",
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L02.md",
+    "code": "// TypeScript: Class Dasar\nconst topicName: string = \"Class Dasar\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Kapan penggunaan index signature direkomendasikan?",
+      "question": "Apa konsep utama dari Class Dasar?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 11,
-    "slug": "ts-11",
-    "title": "11. Enum (Numeric & String)",
-    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "slug": "M02-L03",
+    "title": "Compiler Options Target Module Lib",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Enum (Numeric & String)\n\n- Mendefinisikan himpunan konstanta terstruktur\n- Auto-increment pada numeric enum",
-    "code": "// TypeScript Enum (Numeric & String)\nconst lessonTitle: string = 'Enum (Numeric & String)';",
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L03.md",
+    "code": "// TypeScript: Compiler Options Target Module Lib\nconst topicName: string = \"Compiler Options Target Module Lib\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Secara default, nilai numerik apa yang diberikan ke anggota pertama dari sebuah Enum?",
+      "question": "Apa konsep utama dari Compiler Options Target Module Lib?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 12,
-    "slug": "ts-12",
-    "title": "12. Enum vs Const Assertions (as const)",
-    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "slug": "M02-L04",
+    "title": "Conditional Types",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Enum vs Const Assertions (as const)\n\n- Literal inference dengan 'as const'\n- Kelebihan 'as const' untuk performa bundler",
-    "code": "// TypeScript Enum vs Const Assertions (as const)\nconst lessonTitle: string = 'Enum vs Const Assertions (as const)';",
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L04.md",
+    "code": "// TypeScript: Conditional Types\nconst topicName: string = \"Conditional Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa keuntungan menggunakan 'as const' dibandingkan dengan enum?",
+      "question": "Apa konsep utama dari Conditional Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 13,
-    "slug": "ts-13",
-    "title": "13. Parameter & Return Type",
-    "module": "Modul 3: Fungsi & Anotasi Parameter",
-    "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Parameter & Return Type\n\n- Mengetik input fungsi\n- Menentukan nilai kembalian (return type) fungsi",
-    "code": "// TypeScript Parameter & Return Type\nconst lessonTitle: string = 'Parameter & Return Type';",
+    "slug": "M02-L05",
+    "title": "Constructor Parameter Properties",
+    "moduleId": 2,
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L05.md",
+    "code": "// TypeScript: Constructor Parameter Properties\nconst topicName: string = \"Constructor Parameter Properties\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Jika sebuah fungsi tidak secara eksplisit didefinisikan return type-nya, apa yang dilakukan TypeScript?",
+      "question": "Apa konsep utama dari Constructor Parameter Properties?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 14,
-    "slug": "ts-14",
-    "title": "14. Optional & Default Parameters",
-    "module": "Modul 3: Fungsi & Anotasi Parameter",
-    "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Optional & Default Parameters\n\n- Parameter fungsi yang tidak wajib (?)\n- Memberikan nilai bawaan (default value)",
-    "code": "// TypeScript Optional & Default Parameters\nconst lessonTitle: string = 'Optional & Default Parameters';",
+    "slug": "M02-L06",
+    "title": "Declaration Files D Ts",
+    "moduleId": 2,
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L06.md",
+    "code": "// TypeScript: Declaration Files D Ts\nconst topicName: string = \"Declaration Files D Ts\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Di mana posisi parameter opsional harus ditempatkan dalam argumen fungsi?",
+      "question": "Apa konsep utama dari Declaration Files D Ts?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 15,
-    "slug": "ts-15",
-    "title": "15. Rest Parameters",
-    "module": "Modul 3: Fungsi & Anotasi Parameter",
-    "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Rest Parameters\n\n- Menangani jumlah argumen tak terhingga dengan ...args\n- Mengetik rest parameters sebagai Array",
-    "code": "// TypeScript Rest Parameters\nconst lessonTitle: string = 'Rest Parameters';",
+    "slug": "M02-L07",
+    "title": "Declaration Merging",
+    "moduleId": 2,
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L07.md",
+    "code": "// TypeScript: Declaration Merging\nconst topicName: string = \"Declaration Merging\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Tipe data struktur apa yang selalu digunakan untuk merepresentasikan rest parameter?",
+      "question": "Apa konsep utama dari Declaration Merging?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 16,
-    "slug": "ts-16",
-    "title": "16. Function Types",
-    "module": "Modul 3: Fungsi & Anotasi Parameter",
-    "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Function Types\n\n- Menyimpan signature/bentuk fungsi ke dalam tipe\n- Sintaks panah (=>) pada tipe fungsi",
-    "code": "// TypeScript Function Types\nconst lessonTitle: string = 'Function Types';",
+    "slug": "M02-L08",
+    "title": "Default Type Params",
+    "moduleId": 2,
+    "module": "Modul 2: Tipe Data Kompleks & Objek",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M02-L08.md",
+    "code": "// TypeScript: Default Type Params\nconst topicName: string = \"Default Type Params\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Simbol apa yang digunakan untuk memisahkan parameter dan return type dalam penulisan tipe fungsi?",
+      "question": "Apa konsep utama dari Default Type Params?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 17,
-    "slug": "ts-17",
-    "title": "17. Void & Never",
-    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "slug": "M03-L01",
+    "title": "Default Vs Named Export",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Void & Never\n\n- Perbedaan void (selesai tanpa return) vs never (tidak pernah selesai)\n- Kasus penggunaan throw error dan infinite loops",
-    "code": "// TypeScript Void & Never\nconst lessonTitle: string = 'Void & Never';",
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L01.md",
+    "code": "// TypeScript: Default Vs Named Export\nconst topicName: string = \"Default Vs Named Export\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Tipe apa yang direpresentasikan oleh fungsi yang memiliki infinite loop (perulangan tiada henti)?",
+      "question": "Apa konsep utama dari Default Vs Named Export?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 18,
-    "slug": "ts-18",
-    "title": "18. Function Overloading",
-    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "slug": "M03-L02",
+    "title": "Definitelytyped",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Function Overloading\n\n- Satu fungsi dengan berbagai bentuk input/output\n- Implementasi signature overload",
-    "code": "// TypeScript Function Overloading\nconst lessonTitle: string = 'Function Overloading';",
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L02.md",
+    "code": "// TypeScript: Definitelytyped\nconst topicName: string = \"Definitelytyped\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apakah implementasi utama dari function overload di TS harus mencakup atau mengakomodasi semua bentuk signature yang didefinisikan?",
+      "question": "Apa konsep utama dari Definitelytyped?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 19,
-    "slug": "ts-19",
-    "title": "19. Union Types (|)",
-    "module": "Modul 4: Union, Intersection & Type Narrowing",
-    "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Union Types (|)\n\n- Mendeklarasikan tipe fleksibel (A atau B)\n- Penggunaan tipe union pada variabel dan fungsi",
-    "code": "// TypeScript Union Types (|)\nconst lessonTitle: string = 'Union Types (|)';",
+    "slug": "M03-L03",
+    "title": "Dynamic Import Code Splitting",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L03.md",
+    "code": "// TypeScript: Dynamic Import Code Splitting\nconst topicName: string = \"Dynamic Import Code Splitting\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Karakter apa yang digunakan untuk memisahkan antar tipe pada Union Types?",
+      "question": "Apa konsep utama dari Dynamic Import Code Splitting?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 20,
-    "slug": "ts-20",
-    "title": "20. Intersection Types (&)",
-    "module": "Modul 4: Union, Intersection & Type Narrowing",
-    "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Intersection Types (&)\n\n- Menggabungkan beberapa tipe menjadi satu bentuk utuh\n- Kasus penggunaan pada tipe objek majemuk",
-    "code": "// TypeScript Intersection Types (&)\nconst lessonTitle: string = 'Intersection Types (&)';",
+    "slug": "M03-L04",
+    "title": "Enum Named Constants",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L04.md",
+    "code": "// TypeScript: Enum Named Constants\nconst topicName: string = \"Enum Named Constants\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa hasil dari Intersection Type (&) antara string dan number?",
+      "question": "Apa konsep utama dari Enum Named Constants?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 21,
-    "slug": "ts-21",
-    "title": "21. Literal Types",
-    "module": "Modul 4: Union, Intersection & Type Narrowing",
-    "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Literal Types\n\n- Menentukan tipe menggunakan nilai presisi\n- Kombinasi Literal Types dan Union Types",
-    "code": "// TypeScript Literal Types\nconst lessonTitle: string = 'Literal Types';",
+    "slug": "M03-L05",
+    "title": "Es6 Modules Import Export",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L05.md",
+    "code": "// TypeScript: Es6 Modules Import Export\nconst topicName: string = \"Es6 Modules Import Export\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa keuntungan utama menggunakan Literal Types yang dikombinasikan dengan Union?",
+      "question": "Apa konsep utama dari Es6 Modules Import Export?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 22,
-    "slug": "ts-22",
-    "title": "22. Type Guards (typeof & instanceof)",
-    "module": "Modul 4: Union, Intersection & Type Narrowing",
-    "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Type Guards (typeof & instanceof)\n\n- Mengecilkan (narrowing) tipe berdasarkan kondisi runtime\n- Penggunaan typeof untuk primitif dan instanceof untuk class",
-    "code": "// TypeScript Type Guards (typeof & instanceof)\nconst lessonTitle: string = 'Type Guards (typeof & instanceof)';",
+    "slug": "M03-L06",
+    "title": "Eslint Typescript",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L06.md",
+    "code": "// TypeScript: Eslint Typescript\nconst topicName: string = \"Eslint Typescript\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang bisa mengecek apakah variabel adalah instance dari class tertentu di runtime?",
+      "question": "Apa konsep utama dari Eslint Typescript?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 23,
-    "slug": "ts-23",
-    "title": "23. Discriminated Unions",
-    "module": "Modul 4: Union, Intersection & Type Narrowing",
-    "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Discriminated Unions\n\n- Properti penanda (discriminant) dalam objek\n- Pola switch-case yang aman secara tipe",
-    "code": "// TypeScript Discriminated Unions\nconst lessonTitle: string = 'Discriminated Unions';",
+    "slug": "M03-L07",
+    "title": "Exclude Extract Nonnullable",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L07.md",
+    "code": "// TypeScript: Exclude Extract Nonnullable\nconst topicName: string = \"Exclude Extract Nonnullable\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa peran dari field (properti) khusus pada sebuah Discriminated Union?",
+      "question": "Apa konsep utama dari Exclude Extract Nonnullable?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 24,
-    "slug": "ts-24",
-    "title": "24. Custom Type Predicates (is)",
-    "module": "Modul 4: Union, Intersection & Type Narrowing",
-    "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Custom Type Predicates (is)\n\n- Membuat fungsi khusus penentu tipe\n- Return type boolean berformat 'arg is Type'",
-    "code": "// TypeScript Custom Type Predicates (is)\nconst lessonTitle: string = 'Custom Type Predicates (is)';",
+    "slug": "M03-L08",
+    "title": "Extending Interfaces Types",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi & Anotasi Parameter",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M03-L08.md",
+    "code": "// TypeScript: Extending Interfaces Types\nconst topicName: string = \"Extending Interfaces Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang digunakan di akhir fungsi predicate agar TypeScript tahu operasi narrowing sukses?",
+      "question": "Apa konsep utama dari Extending Interfaces Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 25,
-    "slug": "ts-25",
-    "title": "25. Type Aliases (type keyword)",
-    "module": "Modul 5: Interface & Type Alias Mendalam",
-    "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Type Aliases (type keyword)\n\n- Memberi nama custom pada tipe data\n- Fleksibilitas tipe untuk union atau primitif",
-    "code": "// TypeScript Type Aliases (type keyword)\nconst lessonTitle: string = 'Type Aliases (type keyword)';",
+    "slug": "M04-L01",
+    "title": "Final Project Fullstack",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L01.md",
+    "code": "// TypeScript: Final Project Fullstack\nconst topicName: string = \"Final Project Fullstack\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apakah Type Alias bisa digunakan untuk menamai tipe Union dan Literal sekaligus?",
+      "question": "Apa konsep utama dari Final Project Fullstack?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 26,
-    "slug": "ts-26",
-    "title": "26. Interfaces Dasar",
-    "module": "Modul 5: Interface & Type Alias Mendalam",
-    "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Interfaces Dasar\n\n- Mendefinisikan blueprint dari objek atau kelas\n- Menyatakan kontrak untuk properti dan method",
-    "code": "// TypeScript Interfaces Dasar\nconst lessonTitle: string = 'Interfaces Dasar';",
+    "slug": "M04-L02",
+    "title": "Function Overloads",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L02.md",
+    "code": "// TypeScript: Function Overloads\nconst topicName: string = \"Function Overloads\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Berbeda dengan Type Alias, Interface hanya dapat digunakan untuk merepresentasikan apa?",
+      "question": "Apa konsep utama dari Function Overloads?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 27,
-    "slug": "ts-27",
-    "title": "27. Interface vs Type (Perbedaan)",
-    "module": "Modul 5: Interface & Type Alias Mendalam",
-    "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Interface vs Type (Perbedaan)\n\n- Declaration Merging (hanya Interface)\n- Intersection pada Type",
-    "code": "// TypeScript Interface vs Type (Perbedaan)\nconst lessonTitle: string = 'Interface vs Type (Perbedaan)';",
+    "slug": "M04-L03",
+    "title": "Function Types",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L03.md",
+    "code": "// TypeScript: Function Types\nconst topicName: string = \"Function Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Fitur apa yang memungkinkan Anda mendeklarasikan interface berulang kali agar tergabung menjadi satu?",
+      "question": "Apa konsep utama dari Function Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 28,
-    "slug": "ts-28",
-    "title": "28. Extending Interfaces",
-    "module": "Modul 5: Interface & Type Alias Mendalam",
-    "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Extending Interfaces\n\n- Pewarisan sifat dari interface lain (extends)\n- Meng-extend tipe lebih dari satu",
-    "code": "// TypeScript Extending Interfaces\nconst lessonTitle: string = 'Extending Interfaces';",
+    "slug": "M04-L04",
+    "title": "Generic Constraints",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L04.md",
+    "code": "// TypeScript: Generic Constraints\nconst topicName: string = \"Generic Constraints\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang digunakan oleh Interface untuk mewarisi sifat dari Interface lainnya?",
+      "question": "Apa konsep utama dari Generic Constraints?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 29,
-    "slug": "ts-29",
-    "title": "29. Implements pada Class",
-    "module": "Modul 5: Interface & Type Alias Mendalam",
-    "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Implements pada Class\n\n- Memaksa class memenuhi struktur Interface\n- Pemakaian ganda multiple interface",
-    "code": "// TypeScript Implements pada Class\nconst lessonTitle: string = 'Implements pada Class';",
+    "slug": "M04-L05",
+    "title": "Generic Functions Dasar",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L05.md",
+    "code": "// TypeScript: Generic Functions Dasar\nconst topicName: string = \"Generic Functions Dasar\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang menghubungkan sebuah Class sehingga wajib mematuhi aturan sebuah Interface?",
+      "question": "Apa konsep utama dari Generic Functions Dasar?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 30,
-    "slug": "ts-30",
-    "title": "30. Recursive Types",
-    "module": "Modul 5: Interface & Type Alias Mendalam",
-    "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Recursive Types\n\n- Tipe data yang mereferensikan dirinya sendiri\n- Pola Tree, JSON, dan Data bersarang",
-    "code": "// TypeScript Recursive Types\nconst lessonTitle: string = 'Recursive Types';",
+    "slug": "M04-L06",
+    "title": "Generic Interfaces Classes",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L06.md",
+    "code": "// TypeScript: Generic Interfaces Classes\nconst topicName: string = \"Generic Interfaces Classes\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Struktur data seperti apa yang sangat bergantung pada pembuatan Recursive Type?",
+      "question": "Apa konsep utama dari Generic Interfaces Classes?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 31,
-    "slug": "ts-31",
-    "title": "31. Pengenalan Generics",
-    "module": "Modul 6: Generics",
-    "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Pengenalan Generics\n\n- Konsep parameter untuk tipe data\n- Menghindari repetisi fungsi identikal beda tipe",
-    "code": "// TypeScript Pengenalan Generics\nconst lessonTitle: string = 'Pengenalan Generics';",
+    "slug": "M04-L07",
+    "title": "Generic Utility Types",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L07.md",
+    "code": "// TypeScript: Generic Utility Types\nconst topicName: string = \"Generic Utility Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Simbol konvensi apa yang paling umum dipakai (satu huruf kapital) untuk merepresentasikan tipe Generic?",
+      "question": "Apa konsep utama dari Generic Utility Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 32,
-    "slug": "ts-32",
-    "title": "32. Generic Interfaces & Types",
-    "module": "Modul 6: Generics",
-    "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Generic Interfaces & Types\n\n- Interface yang menerima argumen tipe\n- Membangun struktur wrapper universal",
-    "code": "// TypeScript Generic Interfaces & Types\nconst lessonTitle: string = 'Generic Interfaces & Types';",
+    "slug": "M04-L08",
+    "title": "Hello World",
+    "moduleId": 4,
+    "module": "Modul 4: Union, Intersection & Type Narrowing",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M04-L08.md",
+    "code": "// TypeScript: Hello World\nconst topicName: string = \"Hello World\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Bagaimana cara membaca secara konsep dari definisi APIResponse<string>?",
+      "question": "Apa konsep utama dari Hello World?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 33,
-    "slug": "ts-33",
-    "title": "33. Generic Classes",
-    "module": "Modul 6: Generics",
-    "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Generic Classes\n\n- Class yang mengadopsi fleksibilitas generic type\n- Mendefinisikan method yang spesifik pada generic class",
-    "code": "// TypeScript Generic Classes\nconst lessonTitle: string = 'Generic Classes';",
+    "slug": "M05-L01",
+    "title": "Include Exclude Files",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L01.md",
+    "code": "// TypeScript: Include Exclude Files\nconst topicName: string = \"Include Exclude Files\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Kapan penentuan tipe pasti (konkret) terjadi pada Generic Class?",
+      "question": "Apa konsep utama dari Include Exclude Files?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 34,
-    "slug": "ts-34",
-    "title": "34. Generic Constraints (extends)",
-    "module": "Modul 6: Generics",
-    "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Generic Constraints (extends)\n\n- Membatasi tipe generic agar punya properti spesifik\n- Menjamin keamanan akses properti dalam generic",
-    "code": "// TypeScript Generic Constraints (extends)\nconst lessonTitle: string = 'Generic Constraints (extends)';",
+    "slug": "M05-L02",
+    "title": "Index Signatures",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L02.md",
+    "code": "// TypeScript: Index Signatures\nconst topicName: string = \"Index Signatures\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang dipakai untuk memaksa Generic parameter agar memenuhi kondisi tertentu?",
+      "question": "Apa konsep utama dari Index Signatures?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 35,
-    "slug": "ts-35",
-    "title": "35. Multiple Generic Parameters",
-    "module": "Modul 6: Generics",
-    "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Multiple Generic Parameters\n\n- Menggunakan lebih dari satu tipe (T, U, V)\n- Menggabungkan dua data dengan tipe tidak diketahui",
-    "code": "// TypeScript Multiple Generic Parameters\nconst lessonTitle: string = 'Multiple Generic Parameters';",
+    "slug": "M05-L03",
+    "title": "Indexed Access Types",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L03.md",
+    "code": "// TypeScript: Indexed Access Types\nconst topicName: string = \"Indexed Access Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Karakter apa yang digunakan untuk memisahkan parameter generik pada kurung sudut <T, U>?",
+      "question": "Apa konsep utama dari Indexed Access Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 36,
-    "slug": "ts-36",
-    "title": "36. Generics dengan Default Types",
-    "module": "Modul 6: Generics",
-    "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Generics dengan Default Types\n\n- Nilai bawaan pada generik layaknya default parameter\n- Sintaks <T = DefaultType>",
-    "code": "// TypeScript Generics dengan Default Types\nconst lessonTitle: string = 'Generics dengan Default Types';",
+    "slug": "M05-L04",
+    "title": "Inheritance Extends Super",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L04.md",
+    "code": "// TypeScript: Inheritance Extends Super\nconst topicName: string = \"Inheritance Extends Super\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Simbol apa yang memberi nilai otomatis/default jika user lupa atau tidak memberikan spesifikasi tipe generik?",
+      "question": "Apa konsep utama dari Inheritance Extends Super?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 37,
-    "slug": "ts-37",
-    "title": "37. Conditional Types Dasar",
-    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
-    "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Conditional Types Dasar\n\n- Logika if/else pada sistem tipe\n- Sintaks T extends U ? X : Y",
-    "code": "// TypeScript Conditional Types Dasar\nconst lessonTitle: string = 'Conditional Types Dasar';",
+    "slug": "M05-L05",
+    "title": "Instalasi Typescript",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L05.md",
+    "code": "// TypeScript: Instalasi Typescript\nconst topicName: string = \"Instalasi Typescript\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Sintaks operator JavaScript apa yang diadaptasi pada penulisan Conditional Types di TypeScript?",
+      "question": "Apa konsep utama dari Instalasi Typescript?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 38,
-    "slug": "ts-38",
-    "title": "38. Infer dalam Conditional Types",
-    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
-    "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Infer dalam Conditional Types\n\n- Menangkap (extracting) tipe secara dinamis\n- Keyword infer",
-    "code": "// TypeScript Infer dalam Conditional Types\nconst lessonTitle: string = 'Infer dalam Conditional Types';",
+    "slug": "M05-L06",
+    "title": "Interface Dasar",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L06.md",
+    "code": "// TypeScript: Interface Dasar\nconst topicName: string = \"Interface Dasar\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang digunakan di dalam klausa extends untuk menampung tipe inferensi dan digunakan di true-branch?",
+      "question": "Apa konsep utama dari Interface Dasar?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 39,
-    "slug": "ts-39",
-    "title": "39. Mapped Types Dasar",
-    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
-    "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Mapped Types Dasar\n\n- Transformasi iteratif tipe objek per properti\n- Sintaks [K in keyof T]",
-    "code": "// TypeScript Mapped Types Dasar\nconst lessonTitle: string = 'Mapped Types Dasar';",
+    "slug": "M05-L07",
+    "title": "Interface Vs Type Alias",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L07.md",
+    "code": "// TypeScript: Interface Vs Type Alias\nconst topicName: string = \"Interface Vs Type Alias\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword gabungan apa yang dipakai untuk mendapatkan seluruh kumpulan key dari sebuah objek T?",
+      "question": "Apa konsep utama dari Interface Vs Type Alias?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 40,
-    "slug": "ts-40",
-    "title": "40. Mapped Types dengan Modifiers (+ dan -)",
-    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
-    "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Mapped Types dengan Modifiers (+ dan -)\n\n- Menambah/Mencabut sifat readonly atau opsional\n- Modifikasi mapping -? dan -readonly",
-    "code": "// TypeScript Mapped Types dengan Modifiers (+ dan -)\nconst lessonTitle: string = 'Mapped Types dengan Modifiers (+ dan -)';",
+    "slug": "M05-L08",
+    "title": "Intersection Types",
+    "moduleId": 5,
+    "module": "Modul 5: Interface & Type Alias Mendalam",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M05-L08.md",
+    "code": "// TypeScript: Intersection Types\nconst topicName: string = \"Intersection Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa efek yang akan dihasilkan dari operator modifier '-readonly' pada mapped type?",
+      "question": "Apa konsep utama dari Intersection Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 41,
-    "slug": "ts-41",
-    "title": "41. Key Remapping (as)",
-    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
-    "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Key Remapping (as)\n\n- Mengganti/merekonstruksi nama kunci saat mapping\n- Sintaks keyof T as NewKey",
-    "code": "// TypeScript Key Remapping (as)\nconst lessonTitle: string = 'Key Remapping (as)';",
+    "slug": "M06-L01",
+    "title": "Mapped Types",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L01.md",
+    "code": "// TypeScript: Mapped Types\nconst topicName: string = \"Mapped Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang dapat kita tempelkan pada pemetaan kunci untuk mengubah nama aslinya menjadi baru?",
+      "question": "Apa konsep utama dari Mapped Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 42,
-    "slug": "ts-42",
-    "title": "42. Template Literal Types",
-    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
-    "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Template Literal Types\n\n- Manipulasi literal string tingkat-tipe\n- Pembuatan union dinamis dari kombinasi string",
-    "code": "// TypeScript Template Literal Types\nconst lessonTitle: string = 'Template Literal Types';",
+    "slug": "M06-L02",
+    "title": "Migrasi Js Ke Ts",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L02.md",
+    "code": "// TypeScript: Migrasi Js Ke Ts\nconst topicName: string = \"Migrasi Js Ke Ts\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Selain template string, fitur apa yang biasa dikombinasikan secara elegan dengan Template Literal Types untuk utilitas string?",
+      "question": "Apa konsep utama dari Migrasi Js Ke Ts?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 43,
-    "slug": "ts-43",
-    "title": "43. Partial<T> & Required<T>",
-    "module": "Modul 8: Utility Types Bawaan",
-    "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Partial<T> & Required<T>\n\n- Mengubah semua field menjadi opsional atau wajib\n- Kasus penggunaan form dan update state",
-    "code": "// TypeScript Partial<T> & Required<T>\nconst lessonTitle: string = 'Partial<T> & Required<T>';",
+    "slug": "M06-L03",
+    "title": "Namespaces Organisasi Kode",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L03.md",
+    "code": "// TypeScript: Namespaces Organisasi Kode\nconst topicName: string = \"Namespaces Organisasi Kode\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa utilitas (utility type) yang berfungsi terbalik dari fungsi Partial<T>?",
+      "question": "Apa konsep utama dari Namespaces Organisasi Kode?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 44,
-    "slug": "ts-44",
-    "title": "44. Readonly<T>",
-    "module": "Modul 8: Utility Types Bawaan",
-    "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Readonly<T>\n\n- Pembuatan versi tidak-dapat-dimutasi dari suatu objek\n- Perbedaan strictness antar nested object",
-    "code": "// TypeScript Readonly<T>\nconst lessonTitle: string = 'Readonly<T>';",
+    "slug": "M06-L04",
+    "title": "Nullable Types",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L04.md",
+    "code": "// TypeScript: Nullable Types\nconst topicName: string = \"Nullable Types\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apakah utility Readonly<T> otomatis menyegel / mengunci mutasi di level objek yang bersarang (nested)?",
+      "question": "Apa konsep utama dari Nullable Types?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 45,
-    "slug": "ts-45",
-    "title": "45. Record<K, T>",
-    "module": "Modul 8: Utility Types Bawaan",
-    "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Record<K, T>\n\n- Struktur dictionary/Map cepat\n- Mendefinisikan Map Object dengan spesifik key union",
-    "code": "// TypeScript Record<K, T>\nconst lessonTitle: string = 'Record<K, T>';",
+    "slug": "M06-L05",
+    "title": "Omit Thisparameter",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L05.md",
+    "code": "// TypeScript: Omit Thisparameter\nconst topicName: string = \"Omit Thisparameter\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Pada sintaks Record<K, T>, argument tipe T mewakili apa?",
+      "question": "Apa konsep utama dari Omit Thisparameter?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 46,
-    "slug": "ts-46",
-    "title": "46. Pick<T, K> & Omit<T, K>",
-    "module": "Modul 8: Utility Types Bawaan",
-    "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Pick<T, K> & Omit<T, K>\n\n- Menyaring atau membuang key tertentu dari tipe utuh\n- Pembentukan DTO (Data Transfer Object) UI",
-    "code": "// TypeScript Pick<T, K> & Omit<T, K>\nconst lessonTitle: string = 'Pick<T, K> & Omit<T, K>';",
+    "slug": "M06-L06",
+    "title": "Optional Default Params",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L06.md",
+    "code": "// TypeScript: Optional Default Params\nconst topicName: string = \"Optional Default Params\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Jika kita hanya menginginkan 2 properti saja dari total 20 properti, utility apa yang lebih tepat: Pick atau Omit?",
+      "question": "Apa konsep utama dari Optional Default Params?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 47,
-    "slug": "ts-47",
-    "title": "47. Exclude<T, U> & Extract<T, U>",
-    "module": "Modul 8: Utility Types Bawaan",
-    "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Exclude<T, U> & Extract<T, U>\n\n- Modifikasi dan pemilihan dari kumpulan Union Types\n- Filter tingkat tipe logis",
-    "code": "// TypeScript Exclude<T, U> & Extract<T, U>\nconst lessonTitle: string = 'Exclude<T, U> & Extract<T, U>';",
+    "slug": "M06-L07",
+    "title": "Optional Readonly Properties",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L07.md",
+    "code": "// TypeScript: Optional Readonly Properties\nconst topicName: string = \"Optional Readonly Properties\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apakah Exclude/Extract ditujukan untuk memfilter properti objek atau Union Types?",
+      "question": "Apa konsep utama dari Optional Readonly Properties?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 48,
-    "slug": "ts-48",
-    "title": "48. ReturnType<T> & Parameters<T>",
-    "module": "Modul 8: Utility Types Bawaan",
-    "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# ReturnType<T> & Parameters<T>\n\n- Ekstraksi input-output pada fungsi eksternal\n- Mengakses tipe ketika library hanya export fungsinya saja",
-    "code": "// TypeScript ReturnType<T> & Parameters<T>\nconst lessonTitle: string = 'ReturnType<T> & Parameters<T>';",
+    "slug": "M06-L08",
+    "title": "Parameter Utilities",
+    "moduleId": 6,
+    "module": "Modul 6: Generics",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M06-L08.md",
+    "code": "// TypeScript: Parameter Utilities\nconst topicName: string = \"Parameter Utilities\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Parameter T macam apa yang harus disuplai kepada ReturnType<T>?",
+      "question": "Apa konsep utama dari Parameter Utilities?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 49,
-    "slug": "ts-49",
-    "title": "49. Modifiers: Public, Private, Protected",
-    "module": "Modul 9: OOP & Class di TypeScript",
-    "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Modifiers: Public, Private, Protected\n\n- Konsep enkapsulasi variabel instance class\n- Menjaga akses data state pada OOP",
-    "code": "// TypeScript Modifiers: Public, Private, Protected\nconst lessonTitle: string = 'Modifiers: Public, Private, Protected';",
+    "slug": "M07-L01",
+    "title": "Parameters Constructorparameters",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L01.md",
+    "code": "// TypeScript: Parameters Constructorparameters\nconst topicName: string = \"Parameters Constructorparameters\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Access modifier apa yang memberikan izin ke internal kelas induk dan anak turunannya (extends) saja?",
+      "question": "Apa konsep utama dari Parameters Constructorparameters?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 50,
-    "slug": "ts-50",
-    "title": "50. Parameter Properties",
-    "module": "Modul 9: OOP & Class di TypeScript",
-    "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Parameter Properties\n\n- Cara elegan mengurangi boilerplate constructor\n- Sintaks instansiasi on-the-fly",
-    "code": "// TypeScript Parameter Properties\nconst lessonTitle: string = 'Parameter Properties';",
+    "slug": "M07-L02",
+    "title": "Partial Required",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L02.md",
+    "code": "// TypeScript: Partial Required\nconst topicName: string = \"Partial Required\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Bagaimana TypeScript mengetahui bahwa argumen constructor harus dijadikan properti instansi class otomatis?",
+      "question": "Apa konsep utama dari Partial Required?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 51,
-    "slug": "ts-51",
-    "title": "51. Getters & Setters",
-    "module": "Modul 9: OOP & Class di TypeScript",
-    "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Getters & Setters\n\n- Metode accessor properti pseudo\n- Menambah logika pembatasan pada modifikasi assignment",
-    "code": "// TypeScript Getters & Setters\nconst lessonTitle: string = 'Getters & Setters';",
+    "slug": "M07-L03",
+    "title": "Path Mapping Module Resolution",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L03.md",
+    "code": "// TypeScript: Path Mapping Module Resolution\nconst topicName: string = \"Path Mapping Module Resolution\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Keyword apa yang wajib disematkan sebelum nama method untuk mendeklarasikannya sebagai Getter di TS/JS?",
+      "question": "Apa konsep utama dari Path Mapping Module Resolution?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 52,
-    "slug": "ts-52",
-    "title": "52. Static Properties & Methods",
-    "module": "Modul 9: OOP & Class di TypeScript",
-    "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Static Properties & Methods\n\n- Properti yang terhubung secara global ke class dan bukan ke object instansi\n- Pembuatan Utility Class",
-    "code": "// TypeScript Static Properties & Methods\nconst lessonTitle: string = 'Static Properties & Methods';",
+    "slug": "M07-L04",
+    "title": "Pick Omit",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L04.md",
+    "code": "// TypeScript: Pick Omit\nconst topicName: string = \"Pick Omit\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apakah properti bertipe Static bisa diakses via instance dari class bersangkutan melalui sintaks obj.propName?",
+      "question": "Apa konsep utama dari Pick Omit?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 53,
-    "slug": "ts-53",
-    "title": "53. Abstract Classes",
-    "module": "Modul 9: OOP & Class di TypeScript",
-    "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Abstract Classes\n\n- Class kerangka (blueprint) yang tidak bisa di instansiasi dengan 'new'\n- Abstrak method kontrak untuk anak (child class)",
-    "code": "// TypeScript Abstract Classes\nconst lessonTitle: string = 'Abstract Classes';",
+    "slug": "M07-L05",
+    "title": "Prettier Integration",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L05.md",
+    "code": "// TypeScript: Prettier Integration\nconst topicName: string = \"Prettier Integration\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Sebutkan keyword esensial yang membuat sebuah class menjadi kerangka murni dan tidak bisa dibangun via (new)?",
+      "question": "Apa konsep utama dari Prettier Integration?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 54,
-    "slug": "ts-54",
-    "title": "54. This Type (Polymorphic this)",
-    "module": "Modul 9: OOP & Class di TypeScript",
-    "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# This Type (Polymorphic this)\n\n- Mereturn tipe this untuk Method Chaining\n- Beradaptasi secara dinamis ke subclass",
-    "code": "// TypeScript This Type (Polymorphic this)\nconst lessonTitle: string = 'This Type (Polymorphic this)';",
+    "slug": "M07-L06",
+    "title": "Project Cli Tool",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L06.md",
+    "code": "// TypeScript: Project Cli Tool\nconst topicName: string = \"Project Cli Tool\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Pola rekayasa perangkat lunak apa yang sangat diuntungkan oleh return bertipe 'this'?",
+      "question": "Apa konsep utama dari Project Cli Tool?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 55,
-    "slug": "ts-55",
-    "title": "55. Decorators (Standar TS 5.0)",
-    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
-    "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Decorators (Standar TS 5.0)\n\n- Evolusi metadata standard class dan method ECMAScript\n- Tidak perlu lagi flag experimental",
-    "code": "// TypeScript Decorators (Standar TS 5.0)\nconst lessonTitle: string = 'Decorators (Standar TS 5.0)';",
+    "slug": "M07-L07",
+    "title": "Project React Ts",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L07.md",
+    "code": "// TypeScript: Project React Ts\nconst topicName: string = \"Project React Ts\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apakah di TypeScript 5.0 dan versi terbaru, flag kompilasi 'experimentalDecorators' masih wajib diaktifkan?",
+      "question": "Apa konsep utama dari Project React Ts?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 56,
-    "slug": "ts-56",
-    "title": "56. Const Type Parameters (TS 5.0)",
-    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
-    "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Const Type Parameters (TS 5.0)\n\n- Memaksa generic inferensi tipe literal\n- Sintaks <const T>",
-    "code": "// TypeScript Const Type Parameters (TS 5.0)\nconst lessonTitle: string = 'Const Type Parameters (TS 5.0)';",
+    "slug": "M07-L08",
+    "title": "Project Rest Api",
+    "moduleId": 7,
+    "module": "Modul 7: Advanced Types: Mapped & Conditional Types",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M07-L08.md",
+    "code": "// TypeScript: Project Rest Api\nconst topicName: string = \"Project Rest Api\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Di mana letak penempatan keyword 'const' agar inference generiknya menghasilkan readonly tuple/literal?",
+      "question": "Apa konsep utama dari Project Rest Api?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 57,
-    "slug": "ts-57",
-    "title": "57. Satisfies Operator (TS 4.9/5.0)",
-    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
-    "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Satisfies Operator (TS 4.9/5.0)\n\n- Memvalidasi bentuk tipe tetapi menjaga ketepatan tipe asli inferensi\n- Mengatasi batas luas dari type annotation dan as",
-    "code": "// TypeScript Satisfies Operator (TS 4.9/5.0)\nconst lessonTitle: string = 'Satisfies Operator (TS 4.9/5.0)';",
+    "slug": "M08-L01",
+    "title": "Project Setup Typescript",
+    "moduleId": 8,
+    "module": "Modul 8: Utility Types Bawaan",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M08-L01.md",
+    "code": "// TypeScript: Project Setup Typescript\nconst topicName: string = \"Project Setup Typescript\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Apa keuntungan sentral dari keyword 'satisfies' dibandingkan memberikan type annotation/type casting ('as') eksplisit?",
+      "question": "Apa konsep utama dari Project Setup Typescript?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 58,
-    "slug": "ts-58",
-    "title": "58. Modul Node16/NodeNext (Resolusi)",
-    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
-    "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Modul Node16/NodeNext (Resolusi)\n\n- Dukungan dual module ESM & CommonJS native di TS modern\n- Penyesuaian import .js file",
-    "code": "// TypeScript Modul Node16/NodeNext (Resolusi)\nconst lessonTitle: string = 'Modul Node16/NodeNext (Resolusi)';",
+    "slug": "M08-L02",
+    "title": "Project Type Definitions",
+    "moduleId": 8,
+    "module": "Modul 8: Utility Types Bawaan",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M08-L02.md",
+    "code": "// TypeScript: Project Type Definitions\nconst topicName: string = \"Project Type Definitions\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Selain 'Node16' dan 'NodeNext', setting 'moduleResolution' baru apa di TS 5 yang difokuskan pada pemakaian bundler eksternal seperti Vite/Webpack?",
+      "question": "Apa konsep utama dari Project Type Definitions?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 59,
-    "slug": "ts-59",
-    "title": "59. Menulis Tipe Declarations (.d.ts)",
-    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
-    "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Menulis Tipe Declarations (.d.ts)\n\n- Sistem pengetikan pada file JavaScript yang tidak memiliki TypeScript (Legacy lib)\n- Global augmentation",
-    "code": "// TypeScript Menulis Tipe Declarations (.d.ts)\nconst lessonTitle: string = 'Menulis Tipe Declarations (.d.ts)';",
+    "slug": "M08-L03",
+    "title": "Readonly Params",
+    "moduleId": 8,
+    "module": "Modul 8: Utility Types Bawaan",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M08-L03.md",
+    "code": "// TypeScript: Readonly Params\nconst topicName: string = \"Readonly Params\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Ekstensi apa yang harus dipasang untuk merepresentasikan bahwa ini hanya file berisi 'definisi tipe' murni tanpa eksekusi logika kode?",
+      "question": "Apa konsep utama dari Readonly Params?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   },
   {
     "id": 60,
-    "slug": "ts-60",
-    "title": "60. Strict Mode & Project References",
-    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
-    "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# Strict Mode & Project References\n\n- Setelan best practice strictness kompilasi untuk enterprise\n- Scale codebase dengan Project References di monorepo",
-    "code": "// TypeScript Strict Mode & Project References\nconst lessonTitle: string = 'Strict Mode & Project References';",
+    "slug": "M08-L04",
+    "title": "Readonly Record",
+    "moduleId": 8,
+    "module": "Modul 8: Utility Types Bawaan",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M08-L04.md",
+    "code": "// TypeScript: Readonly Record\nconst topicName: string = \"Readonly Record\";\nconsole.log(\"Belajar: \" + topicName);",
     "quiz": {
-      "question": "Pengaturan flag tsconfig.json mana yang paling signifikan dalam memberikan tingkat keamanan statis tipe (strictness) yang absolut?",
+      "question": "Apa konsep utama dari Readonly Record?",
       "options": [
-        "Static typing",
-        "Dynamic eval",
-        "No compiler",
-        "Bypass types"
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
       ],
       "answer": 0,
-      "explanation": "TS static type safety."
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 61,
+    "slug": "M08-L05",
+    "title": "Record Tuple",
+    "moduleId": 8,
+    "module": "Modul 8: Utility Types Bawaan",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M08-L05.md",
+    "code": "// TypeScript: Record Tuple\nconst topicName: string = \"Record Tuple\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Record Tuple?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 62,
+    "slug": "M08-L06",
+    "title": "Rest Spread",
+    "moduleId": 8,
+    "module": "Modul 8: Utility Types Bawaan",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M08-L06.md",
+    "code": "// TypeScript: Rest Spread\nconst topicName: string = \"Rest Spread\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Rest Spread?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 63,
+    "slug": "M08-L07",
+    "title": "Returntype Parameters Thistype",
+    "moduleId": 8,
+    "module": "Modul 8: Utility Types Bawaan",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M08-L07.md",
+    "code": "// TypeScript: Returntype Parameters Thistype\nconst topicName: string = \"Returntype Parameters Thistype\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Returntype Parameters Thistype?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 64,
+    "slug": "M09-L01",
+    "title": "Strict Mode Options",
+    "moduleId": 9,
+    "module": "Modul 9: OOP & Class di TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M09-L01.md",
+    "code": "// TypeScript: Strict Mode Options\nconst topicName: string = \"Strict Mode Options\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Strict Mode Options?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 65,
+    "slug": "M09-L02",
+    "title": "Template Literal Types",
+    "moduleId": 9,
+    "module": "Modul 9: OOP & Class di TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M09-L02.md",
+    "code": "// TypeScript: Template Literal Types\nconst topicName: string = \"Template Literal Types\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Template Literal Types?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 66,
+    "slug": "M09-L03",
+    "title": "Tipe Primitif",
+    "moduleId": 9,
+    "module": "Modul 9: OOP & Class di TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M09-L03.md",
+    "code": "// TypeScript: Tipe Primitif\nconst topicName: string = \"Tipe Primitif\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Tipe Primitif?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 67,
+    "slug": "M09-L04",
+    "title": "Tsconfig Json Struktur",
+    "moduleId": 9,
+    "module": "Modul 9: OOP & Class di TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M09-L04.md",
+    "code": "// TypeScript: Tsconfig Json Struktur\nconst topicName: string = \"Tsconfig Json Struktur\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Tsconfig Json Struktur?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 68,
+    "slug": "M09-L05",
+    "title": "Type Aliases",
+    "moduleId": 9,
+    "module": "Modul 9: OOP & Class di TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M09-L05.md",
+    "code": "// TypeScript: Type Aliases\nconst topicName: string = \"Type Aliases\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Type Aliases?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 69,
+    "slug": "M09-L06",
+    "title": "Type Assertions",
+    "moduleId": 9,
+    "module": "Modul 9: OOP & Class di TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M09-L06.md",
+    "code": "// TypeScript: Type Assertions\nconst topicName: string = \"Type Assertions\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Type Assertions?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 70,
+    "slug": "M09-L07",
+    "title": "Type Guards",
+    "moduleId": 9,
+    "module": "Modul 9: OOP & Class di TypeScript",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M09-L07.md",
+    "code": "// TypeScript: Type Guards\nconst topicName: string = \"Type Guards\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Type Guards?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 71,
+    "slug": "M10-L01",
+    "title": "Type Inference",
+    "moduleId": 10,
+    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M10-L01.md",
+    "code": "// TypeScript: Type Inference\nconst topicName: string = \"Type Inference\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Type Inference?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 72,
+    "slug": "M10-L02",
+    "title": "Type Narrowing",
+    "moduleId": 10,
+    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M10-L02.md",
+    "code": "// TypeScript: Type Narrowing\nconst topicName: string = \"Type Narrowing\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Type Narrowing?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 73,
+    "slug": "M10-L03",
+    "title": "Typescript Compiler Tsc",
+    "moduleId": 10,
+    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M10-L03.md",
+    "code": "// TypeScript: Typescript Compiler Tsc\nconst topicName: string = \"Typescript Compiler Tsc\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Typescript Compiler Tsc?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 74,
+    "slug": "M10-L04",
+    "title": "Typescript Vs Javascript",
+    "moduleId": 10,
+    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M10-L04.md",
+    "code": "// TypeScript: Typescript Vs Javascript\nconst topicName: string = \"Typescript Vs Javascript\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Typescript Vs Javascript?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 75,
+    "slug": "M10-L05",
+    "title": "Union Types",
+    "moduleId": 10,
+    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M10-L05.md",
+    "code": "// TypeScript: Union Types\nconst topicName: string = \"Union Types\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Union Types?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 76,
+    "slug": "M10-L06",
+    "title": "Using Js Libraries",
+    "moduleId": 10,
+    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M10-L06.md",
+    "code": "// TypeScript: Using Js Libraries\nconst topicName: string = \"Using Js Libraries\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Using Js Libraries?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
+    }
+  },
+  {
+    "id": 77,
+    "slug": "M10-L07",
+    "title": "Void Never Dan Tipe Khusus",
+    "moduleId": 10,
+    "module": "Modul 10: Fitur Terbaru (TS 5+), Ekosistem & Best Practices",
+    "duration": "20 min",
+    "level": "Menengah",
+    "mdFile": "lessons/M10-L07.md",
+    "code": "// TypeScript: Void Never Dan Tipe Khusus\nconst topicName: string = \"Void Never Dan Tipe Khusus\";\nconsole.log(\"Belajar: \" + topicName);",
+    "quiz": {
+      "question": "Apa konsep utama dari Void Never Dan Tipe Khusus?",
+      "options": [
+        "Memastikan type safety dan arsitektur kode yang terstruktur",
+        "Menghapus pemeriksaan tipe pada saat compile time",
+        "Mengganti runtime JavaScript secara keseluruhan",
+        "Menonaktifkan fitur modern ECMAScript"
+      ],
+      "answer": 0,
+      "explanation": "TypeScript menyediakan fitur ini untuk memperkuat keandalan tipe dan memudahkan pemeliharaan kode skala besar."
     }
   }
 ];
+const LESSONS = lessons;
 
+window.MODULES = MODULES;
+window.lessons = lessons;
+window.LESSONS = lessons;
 
-// ======== Fix for missing renderNav, loadLesson, etc. ========
-
-// Global state
 let currentLesson = 0;
 let filterQuery = '';
-let progress = {};  // {lessonId: true} map
+let progress = {};
+
+try {
+    const saved = localStorage.getItem('ts_progress') || localStorage.getItem('typescript_progress');
+    if (saved) progress = JSON.parse(saved);
+} catch (e) {
+    progress = {};
+}
 
 function escapeHtml(text) {
+    if (!text) return '';
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
@@ -1406,9 +1864,18 @@ function closeSidebar() {
     try {
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebar-overlay');
+        const backdrop = document.getElementById('backdrop');
         if (sidebar) sidebar.classList.remove('translate-x-0');
         if (overlay) overlay.classList.add('hidden');
+        if (backdrop) backdrop.classList.add('hidden');
     } catch (e) {}
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    if (sidebar) sidebar.classList.toggle('translate-x-0');
+    if (overlay) overlay.classList.toggle('hidden');
 }
 
 function toggleModule(id) {
@@ -1430,7 +1897,7 @@ function updateProgress() {
     if (progressBar) progressBar.style.width = percent + '%';
     if (progressText) progressText.textContent = percent + '%';
     if (mobileProgress) mobileProgress.textContent = percent + '%';
-    if (statDone) statDone.textContent = doneLessons + '/' + totalLessons;
+    if (statDone) statDone.textContent = doneLessons;
 }
 
 function updateCompleteButtons() {
@@ -1452,16 +1919,19 @@ function markComplete() {
     if (!lesson) return;
     progress[lesson.id] = true;
     try {
+        localStorage.setItem('ts_progress', JSON.stringify(progress));
         localStorage.setItem('typescript_progress', JSON.stringify(progress));
     } catch (e) {}
     updateProgress();
     updateCompleteButtons();
+    renderNav();
 }
 
 function resetProgress() {
     if (!confirm('Reset semua progress?')) return;
     progress = {};
     try {
+        localStorage.removeItem('ts_progress');
         localStorage.removeItem('typescript_progress');
     } catch (e) {}
     updateProgress();
@@ -1481,7 +1951,7 @@ function renderNav(filter) {
         const filtered = q ? modLessons.filter(l => 
             l.title.toLowerCase().includes(q) || 
             (mod.title && mod.title.toLowerCase().includes(q)) || 
-            (l.slug || '').includes(q)
+            (l.slug || '').toLowerCase().includes(q)
         ) : modLessons;
         if (q && filtered.length === 0) return '';
         
@@ -1492,23 +1962,23 @@ function renderNav(filter) {
             const isActive = idx === currentLesson;
             const isDone = !!progress[l.id];
             const cls = isActive ? 'lesson-active font-semibold' : 'text-slate-400 hover:text-slate-200 hover:bg-white/5';
-            return `<button onclick="loadLesson(${idx}); if(typeof closeSidebar==='function')closeSidebar();" class="w-full text-left px-3 py-2 rounded-lg text-xs transition flex items-center gap-2.5 ${cls}">
-                <span class="text-[11px] shrink-0">${isDone ? '✅' : '○'}</span>
-                <span class="truncate flex-1">${escapeHtml(l.title)}</span>
-            </button>`;
+            return '<button onclick="loadLesson(' + idx + '); if(typeof closeSidebar===\'function\')closeSidebar();" class="w-full text-left px-3 py-2 rounded-lg text-xs transition flex items-center gap-2.5 ' + cls + '">' +
+                '<span class="text-[11px] shrink-0">' + (isDone ? '✅' : '○') + '</span>' +
+                '<span class="truncate flex-1">' + escapeHtml(l.title) + '</span>' +
+            '</button>';
         }).join('');
         
         const badgeCls = doneCount === modLessons.length ? 'bg-emerald-500/20 text-emerald-300' : 'bg-white/5 text-slate-500';
-        return `<div class="mb-1">
-            <button onclick="toggleModule(${mod.id})" class="w-full flex items-center justify-between px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition rounded-lg text-left">
-                <span class="flex items-center gap-2 truncate">
-                    ${mod.icon ? `<i class="${mod.icon} text-cyan-400 text-sm w-4 text-center"></i>` : ''}
-                    <span class="truncate">${escapeHtml(mod.title)}</span>
-                </span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full ${badgeCls}">${doneCount}/${modLessons.length}</span>
-            </button>
-            <div id="module-${mod.id}" class="space-y-0.5 mt-0.5 px-2 ${isCurrentModule ? '' : 'hidden'}">${lessonRows}</div>
-        </div>`;
+        return '<div class="mb-1">' +
+            '<button onclick="toggleModule(' + mod.id + ')" class="w-full flex items-center justify-between px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition rounded-lg text-left">' +
+                '<span class="flex items-center gap-2 truncate">' +
+                    (mod.icon ? '<i class="' + mod.icon + ' text-blue-400 text-sm w-4 text-center"></i>' : '') +
+                    '<span class="truncate">' + escapeHtml(mod.title) + '</span>' +
+                '</span>' +
+                '<span class="text-[10px] font-mono px-2 py-0.5 rounded-full ' + badgeCls + '">' + doneCount + '/' + modLessons.length + '</span>' +
+            '</button>' +
+            '<div id="module-' + mod.id + '" class="space-y-0.5 mt-0.5 px-2 ' + (isCurrentModule ? '' : 'hidden') + '">' + lessonRows + '</div>' +
+        '</div>';
     }).join('');
     
     nav.innerHTML = html;
@@ -1517,14 +1987,15 @@ function renderNav(filter) {
 
 async function loadLesson(index) {
     if (index < 0 || index >= lessons.length) return;
-    try { localStorage.setItem('typescript_last_lesson', String(index)); } catch (e) {}
+    try { 
+        localStorage.setItem('ts_last_lesson', String(index));
+        localStorage.setItem('typescript_last_lesson', String(index));
+    } catch (e) {}
     currentLesson = index;
     const lesson = lessons[index];
     
-    // Close sidebar on mobile
     if (typeof closeSidebar === 'function') closeSidebar();
     
-    // Update header
     const bc = document.getElementById('breadcrumb');
     const lt = document.getElementById('lesson-title');
     const ld = document.getElementById('lesson-duration');
@@ -1533,7 +2004,7 @@ async function loadLesson(index) {
     if (bc) bc.textContent = lesson.module + ' • ' + lesson.duration;
     if (lt) lt.textContent = lesson.title.replace(/^\d+\.\s*/, '');
     if (ld) {
-        ld.innerHTML = `<i class="fa-regular fa-clock"></i> ${lesson.duration}`;
+        ld.innerHTML = '<i class="fa-regular fa-clock"></i> ' + lesson.duration;
         ld.classList.remove('hidden');
     }
     if (ll) {
@@ -1545,7 +2016,6 @@ async function loadLesson(index) {
         li.classList.remove('hidden');
     }
     
-    // Set content
     const contentEl = document.getElementById('lesson-content');
     if (contentEl) {
         contentEl.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)"><i class="fa-solid fa-spinner fa-spin"></i> Memuat materi…</div>';
@@ -1553,49 +2023,76 @@ async function loadLesson(index) {
     
     let html = '';
     try {
-        // If content exists in the lesson object, use it directly (no fetch needed)
-        if (lesson.content && typeof lesson.content === 'string') {
+        let md = '';
+        const basePath = location.pathname.endsWith('/') ? location.pathname : location.pathname + '/';
+        const candidates = [
+            (typeof LESSON_FILES !== 'undefined' && LESSON_FILES[index]) ? LESSON_FILES[index] : null,
+            lesson.mdFile,
+            'lessons/' + lesson.slug + '.md',
+            './lessons/' + lesson.slug + '.md',
+            basePath + 'lessons/' + lesson.slug + '.md'
+        ].filter(Boolean);
+        
+        for (const c of candidates) {
+            try {
+                const res = await fetch(c);
+                if (res.ok) {
+                    md = await res.text();
+                    if (md && md.trim().length > 0) break;
+                }
+            } catch (err) {}
+        }
+        
+        const rawContent = lesson.content || lesson.content_md || lesson.description || '';
+        if (!md && rawContent) {
+            md = rawContent;
+        }
+        
+        if (md) {
             if (typeof marked !== 'undefined') {
                 if (typeof marked.setOptions === 'function') marked.setOptions({gfm: true, breaks: true});
-                html = typeof marked === 'function' ? marked(lesson.content) : (typeof marked.parse === 'function' ? marked.parse(lesson.content) : '<pre>'+escapeHtml(lesson.content)+'</pre>');
+                html = typeof marked.parse === 'function' ? marked.parse(md) : (typeof marked === 'function' ? marked(md) : md);
             } else {
-                html = `<pre>${escapeHtml(lesson.content)}</pre>`;
+                html = '<pre>' + escapeHtml(md) + '</pre>';
             }
         } else {
-            // Fallback: generate simple content
-            html = `<h2>${escapeHtml(lesson.title)}</h2>
-                   <p>Materi Python modern yang menarik. Mulai menulis kode di editor di bawah.</p>`;
+            html = '<h2>' + escapeHtml(lesson.title) + '</h2><p>Materi sedang disiapkan. Gunakan editor di bawah.</p>';
         }
     } catch (e) {
-        html = `<div style="color:var(--text-muted);font-size:.8rem;margin-top:8px">Gagal memuat materi: ${escapeHtml(e.message)}</div>`;
+        html = '<div style="color:var(--text-muted);font-size:.8rem;margin-top:8px">Gagal memuat materi: ' + escapeHtml(e.message) + '</div>';
     }
     
-    if (contentEl) contentEl.innerHTML = '<div class="prose max-w-none">' + html + '</div>';
+    if (contentEl) {
+        contentEl.innerHTML = '<div class="prose max-w-none">' + html + '</div>';
+        contentEl.querySelectorAll('pre code').forEach(block => {
+            if (typeof hljs !== 'undefined') hljs.highlightElement(block);
+        });
+    }
     
-    // Update code editor if exists
     const codeEditor = document.getElementById('code-editor');
     if (codeEditor && lesson.code) {
         codeEditor.value = lesson.code.replace(/\\n/g, '\n');
     }
     
-    // Quiz
     const quizSection = document.getElementById('quiz-section');
     const quizContent = document.getElementById('quiz-content');
+    const quizResult = document.getElementById('quiz-result');
+    if (quizResult) quizResult.innerHTML = '';
+    
     if (lesson.quiz && quizContent && quizSection) {
         quizSection.classList.remove('hidden');
-        quizContent.innerHTML = 
-            `<p class="text-slate-200 text-sm font-medium mb-3">${escapeHtml(lesson.quiz.question)}</p>
-             <div class="space-y-2">${lesson.quiz.options.map((opt, i) => 
-                `<label class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-white/5 border border-white/5 cursor-pointer transition text-xs sm:text-sm text-slate-300">
-                    <input type="radio" name="quiz-opt" value="${i}" class="accent-cyan-500">
-                    <span>${escapeHtml(opt)}</span>
-                </label>`
-             ).join('')}</div>`;
+        let qHtml = '<div class="text-sm font-semibold text-white mb-3">' + escapeHtml(lesson.quiz.question) + '</div>';
+        lesson.quiz.options.forEach((opt, oIdx) => {
+            qHtml += '<label class="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/5 cursor-pointer transition">' +
+                '<input type="radio" name="quiz_option" value="' + oIdx + '" class="mt-1 text-blue-500 focus:ring-blue-500">' +
+                '<span class="text-xs sm:text-sm text-slate-300 leading-relaxed">' + escapeHtml(opt) + '</span>' +
+            '</label>';
+        });
+        quizContent.innerHTML = qHtml;
     } else if (quizSection) {
         quizSection.classList.add('hidden');
     }
     
-    // Update navigation buttons
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     if (prevBtn) prevBtn.disabled = index === 0;
@@ -1604,50 +2101,228 @@ async function loadLesson(index) {
     updateCompleteButtons();
     renderNav();
     
-    // Scroll to top
-    const contentScroll = document.getElementById('content-scroll');
-    if (contentScroll) contentScroll.scrollTo({top: 0, behavior: 'smooth'});
+    const contentScroll = document.getElementById('content-scroll') || document.getElementById('contentArea');
+    if (contentScroll && typeof contentScroll.scrollTo === 'function') contentScroll.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-// Initialize progress from localStorage
-try {
-    const saved = localStorage.getItem('typescript_progress');
-    if (saved) progress = JSON.parse(saved);
-} catch (e) {
-    progress = {};
+function nextLesson() {
+    if (currentLesson < lessons.length - 1) loadLesson(currentLesson + 1);
 }
 
-
-
-// Expose global functions for inline HTML onclick handlers
-if (typeof window !== 'undefined') {
-    window.loadLesson = loadLesson;
-    window.renderNav = renderNav;
-    window.toggleModule = toggleModule;
-    window.markComplete = markComplete;
-    window.resetProgress = resetProgress;
-    window.closeSidebar = typeof closeSidebar !== 'undefined' ? closeSidebar : function(){};
-    window.prevLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson - 1); };
-    window.nextLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson + 1); };
-    if (typeof runCode === 'function') window.runCode = runCode;
-    if (typeof checkQuiz === 'function') window.checkQuiz = checkQuiz;
-    if (typeof escapeHtml === 'function') window.escapeHtml = escapeHtml;
-    if (typeof copyCode === 'function') window.copyCode = copyCode;
-    if (typeof resetCode === 'function') window.resetCode = resetCode;
-    if (typeof clearOutput === 'function') window.clearOutput = clearOutput;
+function prevLesson() {
+    if (currentLesson > 0) loadLesson(currentLesson - 1);
 }
 
-function initMain() {
-        renderNav();
-        loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
-        updateProgress();
+function checkQuiz() {
+    const lesson = lessons[currentLesson];
+    if (!lesson || !lesson.quiz) return;
+    const selected = document.querySelector('input[name="quiz_option"]:checked');
+    const resultEl = document.getElementById('quiz-result');
+    if (!resultEl) return;
+    if (!selected) {
+        resultEl.innerHTML = '<span class="text-amber-400 text-xs">Pilih salah satu jawaban terlebih dahulu.</span>';
+        return;
     }
+    const val = parseInt(selected.value, 10);
+    const correctVal = lesson.quiz.answer !== undefined ? lesson.quiz.answer : lesson.quiz.correct;
+    if (val === correctVal) {
+        resultEl.innerHTML = '<div class="p-3 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs">' +
+            '<i class="fas fa-check-circle mr-1"></i> Benar! ' + escapeHtml(lesson.quiz.explanation || '') +
+        '</div>';
+        markComplete();
+    } else {
+        resultEl.innerHTML = '<div class="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs">' +
+            '<i class="fas fa-times-circle mr-1"></i> Kurang tepat. ' + escapeHtml(lesson.quiz.explanation || 'Silakan tinjau kembali materi.') +
+        '</div>';
+    }
+}
 
-    document.addEventListener('DOMContentLoaded', function() {
+function runCode() {
+    const editor = document.getElementById('code-editor');
+    const out = document.getElementById('output');
+    if (!editor || !out) return;
+    const code = editor.value;
+    try {
+        let logs = [];
+        const customConsole = {
+            log: (...args) => logs.push(args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ')),
+            error: (...args) => logs.push('[ERROR] ' + args.join(' ')),
+            warn: (...args) => logs.push('[WARN] ' + args.join(' '))
+        };
+        // Compile typescript if ts library exists
+        let jsCode = code;
+        if (typeof ts !== 'undefined' && typeof ts.transpile === 'function') {
+            jsCode = ts.transpile(code);
+        }
+        const fn = new Function('console', jsCode);
+        fn(customConsole);
+        out.innerHTML = '<pre class="text-xs text-blue-300 font-mono">' + escapeHtml(logs.join('\n') || '// Kode berhasil dijalankan (tanpa output console)') + '</pre>';
+    } catch(err) {
+        out.innerHTML = '<div class="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 font-mono text-xs">' + escapeHtml(err.message) + '</div>';
+    }
+}
+
+function resetCode() {
+    if (lessons[currentLesson]) {
+        const editor = document.getElementById('code-editor');
+        if (editor) editor.value = lessons[currentLesson].code;
+        const out = document.getElementById('output');
+        if (out) out.innerHTML = '<span class="text-slate-500">// Editor di-reset. Klik Run untuk mengeksekusi kode TypeScript.</span>';
+    }
+}
+
+function copyCode() {
+    const editor = document.getElementById('code-editor');
+    if (editor && navigator.clipboard) {
+        navigator.clipboard.writeText(editor.value).then(() => {
+            alert('Kode TypeScript disalin!');
+        });
+    }
+}
+
+// Certificate helpers
+function openCertificateModal() {
+    const modal = document.getElementById('certificate-modal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    const totalLessons = lessons.length;
+    const doneLessons = Object.keys(progress).filter(k => !!progress[k]).length;
+    const isCompleted = doneLessons >= totalLessons;
+    const lockedView = document.getElementById('cert-locked-view');
+    const unlockedView = document.getElementById('cert-unlocked-view');
+    const unlockedFooter = document.getElementById('cert-unlocked-footer');
+    if (isCompleted) {
+        if (lockedView) lockedView.classList.add('hidden');
+        if (unlockedView) unlockedView.classList.remove('hidden');
+        if (unlockedFooter) unlockedFooter.classList.remove('hidden');
+        drawCertificate();
+    } else {
+        if (lockedView) lockedView.classList.remove('hidden');
+        if (unlockedView) unlockedView.classList.add('hidden');
+        if (unlockedFooter) unlockedFooter.classList.add('hidden');
+        const pText = document.getElementById('cert-locked-progress-text');
+        const pBar = document.getElementById('cert-locked-progress-bar');
+        const pRem = document.getElementById('cert-locked-remaining-text');
+        const pct = Math.round((doneLessons / totalLessons) * 100);
+        if (pText) pText.textContent = pct + '%';
+        if (pBar) pBar.style.width = pct + '%';
+        if (pRem) pRem.textContent = 'Tersisa ' + (totalLessons - doneLessons) + ' pelajaran lagi.';
+    }
+}
+
+function closeCertificateModal() {
+    const modal = document.getElementById('certificate-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+}
+
+function drawCertificate() {
+    const canvas = document.getElementById('cert-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const nameInput = document.getElementById('cert-name-input');
+    const studentName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : 'Peserta TypeScript Learning Path';
+    
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.strokeStyle = '#3b82f6';
+    ctx.lineWidth = 10;
+    ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+    
+    ctx.fillStyle = '#3b82f6';
+    ctx.font = 'bold 36px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('SERTIFIKAT KELULUSAN RESMI', canvas.width / 2, 120);
+    
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('Diberikan kepada:', canvas.width / 2, 200);
+    
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 44px sans-serif';
+    ctx.fillText(studentName, canvas.width / 2, 280);
+    
+    ctx.fillStyle = '#cbd5e1';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('Telah berhasil menyelesaikan seluruh 77 kurikulum pelajaran', canvas.width / 2, 360);
+    ctx.fillText('TypeScript Learning Path Modern & Industry Standard', canvas.width / 2, 400);
+    
+    ctx.fillStyle = '#3b82f6';
+    ctx.font = 'bold 20px monospace';
+    ctx.fillText('STATUS: VERIFIED & COMPLETED (100%)', canvas.width / 2, 480);
+    
+    ctx.fillStyle = '#64748b';
+    ctx.font = '14px monospace';
+    ctx.fillText('Verifikasi: https://learning-path.syamsulbahri.dev/typescript/', canvas.width / 2, 570);
+}
+
+function downloadCertificatePNG() {
+    const canvas = document.getElementById('cert-canvas');
+    if (!canvas) return;
+    const link = document.createElement('a');
+    link.download = 'Sertifikat-TypeScript-Learning-Path.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}
+
+function printCertificate() {
+    const canvas = document.getElementById('cert-canvas');
+    if (!canvas) return;
+    const dataUrl = canvas.toDataURL('image/png');
+    const w = window.open('', '_blank');
+    w.document.write('<html><head><title>Cetak Sertifikat</title></head><body style="margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#000;"><img src="' + dataUrl + '" style="max-width:95vw;max-height:95vh;border-radius:12px;" /><script>window.onload = () => { window.print(); };<\/script></body></html>');
+}
+
+// Window exports
+window.loadLesson = loadLesson;
+window.nextLesson = nextLesson;
+window.prevLesson = prevLesson;
+window.markComplete = markComplete;
+window.resetProgress = resetProgress;
+window.checkQuiz = checkQuiz;
+window.runCode = runCode;
+window.resetCode = resetCode;
+window.copyCode = copyCode;
+window.closeSidebar = closeSidebar;
+window.toggleSidebar = toggleSidebar;
+window.toggleModule = toggleModule;
+window.renderNav = renderNav;
+window.openCertificateModal = openCertificateModal;
+window.closeCertificateModal = closeCertificateModal;
+window.drawCertificate = drawCertificate;
+window.downloadCertificatePNG = downloadCertificatePNG;
+window.printCertificate = printCertificate;
+
+document.addEventListener('DOMContentLoaded', () => {
     renderNav();
-    const savedLast = parseInt(localStorage.getItem('typescript_last_lesson') || '0', 10);
-    loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
+    let resumeIdx = 0;
+    try {
+        const saved = localStorage.getItem('ts_last_lesson') || localStorage.getItem('typescript_last_lesson');
+        if (saved !== null) resumeIdx = parseInt(saved, 10) || 0;
+    } catch(e) {}
+    loadLesson(resumeIdx >= 0 && resumeIdx < lessons.length ? resumeIdx : 0);
     updateProgress();
+    
+    const search = document.getElementById('lesson-search');
+    if (search) {
+        search.addEventListener('input', (e) => {
+            renderNav(e.target.value);
+        });
+    }
+    const mobileSearch = document.getElementById('lesson-search-mobile');
+    if (mobileSearch) {
+        mobileSearch.addEventListener('input', (e) => {
+            renderNav(e.target.value);
+        });
+    }
+    const mobileRowSearch = document.getElementById('lesson-search-mobile-row');
+    if (mobileRowSearch) {
+        mobileRowSearch.addEventListener('input', (e) => {
+            renderNav(e.target.value);
+        });
+    }
 });
-
-    if (typeof updateProgress === "function") window.updateProgress = updateProgress;
