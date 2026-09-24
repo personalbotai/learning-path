@@ -269,6 +269,276 @@
         "passingScore": 70
       },
       "module": 5
+    },
+    {
+      "id": 6,
+      "title": "Java Modern Features (Java 17 - 21 LTS)",
+      "description": "Records, Sealed Classes, Pattern Matching, Text Blocks, dan Virtual Threads.",
+      "lessons": [
+        {
+          "id": 31,
+          "slug": "M06-L01",
+          "title": "Records: Immutable Data Carrier",
+          "duration": "20 min",
+          "lesson": 1
+        },
+        {
+          "id": 32,
+          "slug": "M06-L02",
+          "title": "Sealed Classes & Interfaces",
+          "duration": "20 min",
+          "lesson": 2
+        },
+        {
+          "id": 33,
+          "slug": "M06-L03",
+          "title": "Pattern Matching untuk instanceof & switch",
+          "duration": "20 min",
+          "lesson": 3
+        },
+        {
+          "id": 34,
+          "slug": "M06-L04",
+          "title": "Text Blocks & String Templates",
+          "duration": "15 min",
+          "lesson": 4
+        },
+        {
+          "id": 35,
+          "slug": "M06-L05",
+          "title": "Virtual Threads (Project Loom)",
+          "duration": "25 min",
+          "lesson": 5
+        },
+        {
+          "id": 36,
+          "slug": "M06-L06",
+          "title": "Sequenced Collections & Scoped Values",
+          "duration": "20 min",
+          "lesson": 6
+        }
+      ],
+      "quiz": {
+        "questionCount": 10,
+        "passingScore": 70
+      },
+      "module": 6
+    },
+    {
+      "id": 7,
+      "title": "Concurrency & Multithreading",
+      "description": "Threads, Runnable, synchronized, ExecutorService, CompletableFuture, dan Structured Concurrency.",
+      "lessons": [
+        {
+          "id": 37,
+          "slug": "M07-L01",
+          "title": "Dasar Thread & Runnable Interface",
+          "duration": "20 min",
+          "lesson": 1
+        },
+        {
+          "id": 38,
+          "slug": "M07-L02",
+          "title": "Sinkronisasi, Lock & volatile Keyword",
+          "duration": "25 min",
+          "lesson": 2
+        },
+        {
+          "id": 39,
+          "slug": "M07-L03",
+          "title": "ExecutorService & Thread Pools",
+          "duration": "20 min",
+          "lesson": 3
+        },
+        {
+          "id": 40,
+          "slug": "M07-L04",
+          "title": "Callable, Future & CompletableFuture",
+          "duration": "25 min",
+          "lesson": 4
+        },
+        {
+          "id": 41,
+          "slug": "M07-L05",
+          "title": "Atomic Variables & Concurrent Collections",
+          "duration": "20 min",
+          "lesson": 5
+        },
+        {
+          "id": 42,
+          "slug": "M07-L06",
+          "title": "Structured Concurrency di Java 21",
+          "duration": "25 min",
+          "lesson": 6
+        }
+      ],
+      "quiz": {
+        "questionCount": 10,
+        "passingScore": 70
+      },
+      "module": 7
+    },
+    {
+      "id": 8,
+      "title": "I/O, Networking & File Operations",
+      "description": "Java I/O Streams, NIO.2 Files/Path, Serialisasi Objek, HTTP Client API, dan Logging SLF4J.",
+      "lessons": [
+        {
+          "id": 43,
+          "slug": "M08-L01",
+          "title": "Java I/O: Streams & Readers/Writers",
+          "duration": "20 min",
+          "lesson": 1
+        },
+        {
+          "id": 44,
+          "slug": "M08-L02",
+          "title": "Java NIO.2 (Files & Path API)",
+          "duration": "20 min",
+          "lesson": 2
+        },
+        {
+          "id": 45,
+          "slug": "M08-L03",
+          "title": "Serialisasi & Deserialisasi Objek",
+          "duration": "20 min",
+          "lesson": 3
+        },
+        {
+          "id": 46,
+          "slug": "M08-L04",
+          "title": "HTTP Client API Modern (java.net.http)",
+          "duration": "25 min",
+          "lesson": 4
+        },
+        {
+          "id": 47,
+          "slug": "M08-L05",
+          "title": "Socket Programming Dasar: TCP Server",
+          "duration": "20 min",
+          "lesson": 5
+        },
+        {
+          "id": 48,
+          "slug": "M08-L06",
+          "title": "Loggers di Java: SLF4J & Logback",
+          "duration": "15 min",
+          "lesson": 6
+        }
+      ],
+      "quiz": {
+        "questionCount": 10,
+        "passingScore": 70
+      },
+      "module": 8
+    },
+    {
+      "id": 9,
+      "title": "Database, JDBC & JPA / Hibernate",
+      "description": "JDBC Connection, PreparedStatement, HikariCP, ORM JPA, Entitas, dan Transaksi ACID.",
+      "lessons": [
+        {
+          "id": 49,
+          "slug": "M09-L01",
+          "title": "Dasar JDBC: Driver, Connection & Statement",
+          "duration": "25 min",
+          "lesson": 1
+        },
+        {
+          "id": 50,
+          "slug": "M09-L02",
+          "title": "PreparedStatement & SQL Injection",
+          "duration": "20 min",
+          "lesson": 2
+        },
+        {
+          "id": 51,
+          "slug": "M09-L03",
+          "title": "Connection Pooling dengan HikariCP",
+          "duration": "20 min",
+          "lesson": 3
+        },
+        {
+          "id": 52,
+          "slug": "M09-L04",
+          "title": "Pengenalan JPA & Hibernate ORM",
+          "duration": "25 min",
+          "lesson": 4
+        },
+        {
+          "id": 53,
+          "slug": "M09-L05",
+          "title": "Relasi Entitas: @OneToMany & Lazy Loading",
+          "duration": "25 min",
+          "lesson": 5
+        },
+        {
+          "id": 54,
+          "slug": "M09-L06",
+          "title": "Transaksi ACID & @Transactional",
+          "duration": "20 min",
+          "lesson": 6
+        }
+      ],
+      "quiz": {
+        "questionCount": 10,
+        "passingScore": 70
+      },
+      "module": 9
+    },
+    {
+      "id": 10,
+      "title": "Spring Boot, Testing & Microservices",
+      "description": "Spring Boot Core IoC/DI, RESTful API Controllers, Spring Data JPA, Unit Test JUnit 5/Mockito, dan Docker.",
+      "lessons": [
+        {
+          "id": 55,
+          "slug": "M10-L01",
+          "title": "Pengenalan Spring Boot & Inversion of Control",
+          "duration": "25 min",
+          "lesson": 1
+        },
+        {
+          "id": 56,
+          "slug": "M10-L02",
+          "title": "Membangun RESTful API dengan Spring Web",
+          "duration": "30 min",
+          "lesson": 2
+        },
+        {
+          "id": 57,
+          "slug": "M10-L03",
+          "title": "Spring Data JPA & Repository Pattern",
+          "duration": "25 min",
+          "lesson": 3
+        },
+        {
+          "id": 58,
+          "slug": "M10-L04",
+          "title": "Unit Testing & Mocking dengan JUnit 5 & Mockito",
+          "duration": "25 min",
+          "lesson": 4
+        },
+        {
+          "id": 59,
+          "slug": "M10-L05",
+          "title": "Build Tools: Maven vs Gradle & Docker Container",
+          "duration": "20 min",
+          "lesson": 5
+        },
+        {
+          "id": 60,
+          "slug": "M10-L06",
+          "title": "Capstone Project: Production REST API Microservice",
+          "duration": "35 min",
+          "lesson": 6
+        }
+      ],
+      "quiz": {
+        "questionCount": 10,
+        "passingScore": 70
+      },
+      "module": 10
     }
   ]
 }

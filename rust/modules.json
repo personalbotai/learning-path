@@ -2,450 +2,480 @@
   "modules": [
     {
       "id": 1,
-      "title": "Modul 1: Pengenalan & Dasar Rust",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi pengenalan dan dasar Rust",
-      "module": 1,
+      "title": "Pengenalan & Dasar Rust",
       "lessons": [
         {
           "id": 1,
-          "title": "Modul 1: Pengenalan & Dasar Rust - Part 1",
           "slug": "M01-L01",
+          "title": "Pengenalan Rust, Filosofi & Toolchain",
+          "duration": "15 min",
           "lesson": 1
         },
         {
           "id": 2,
-          "title": "Modul 1: Pengenalan & Dasar Rust - Part 2",
           "slug": "M01-L02",
+          "title": "Variabel, Mutability & Shadowing",
+          "duration": "15 min",
           "lesson": 2
         },
         {
           "id": 3,
-          "title": "Modul 1: Pengenalan & Dasar Rust - Part 3",
           "slug": "M01-L03",
+          "title": "Tipe Data Primitif: Skalar & Majemuk",
+          "duration": "20 min",
           "lesson": 3
         },
         {
           "id": 4,
-          "title": "Modul 1: Pengenalan & Dasar Rust - Part 4",
           "slug": "M01-L04",
+          "title": "Fungsi, Parameter & Expression Return",
+          "duration": "15 min",
           "lesson": 4
         },
         {
           "id": 5,
-          "title": "Modul 1: Pengenalan & Dasar Rust - Part 5",
           "slug": "M01-L05",
+          "title": "Alur Kendali: If/Else & Perulangan",
+          "duration": "20 min",
           "lesson": 5
         },
         {
           "id": 6,
-          "title": "Modul 1: Pengenalan & Dasar Rust - Part 6",
           "slug": "M01-L06",
+          "title": "Manajemen Proyek dengan Cargo & Testing",
+          "duration": "20 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 2,
-      "title": "Modul 2: Ownership & Borrowing",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi ownership dan borrowing",
-      "module": 2,
+      "title": "Ownership & Borrowing System",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 2: Ownership & Borrowing - Part 1",
+          "id": 7,
           "slug": "M02-L01",
+          "title": "Konsep Ownership: Aturan Memori, Stack & Heap",
+          "duration": "25 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 2: Ownership & Borrowing - Part 2",
+          "id": 8,
           "slug": "M02-L02",
+          "title": "Move Semantics & Copy Trait",
+          "duration": "20 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 2: Ownership & Borrowing - Part 3",
+          "id": 9,
           "slug": "M02-L03",
+          "title": "Borrowing: Referensi Immutable (&T)",
+          "duration": "20 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 2: Ownership & Borrowing - Part 4",
+          "id": 10,
           "slug": "M02-L04",
+          "title": "Referensi Mutable (&mut T) & Aturan Peminjaman",
+          "duration": "20 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 2: Ownership & Borrowing - Part 5",
+          "id": 11,
           "slug": "M02-L05",
+          "title": "Pencegahan Dangling References",
+          "duration": "15 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 2: Ownership & Borrowing - Part 6",
+          "id": 12,
           "slug": "M02-L06",
+          "title": "Tipe Slice: String Slice & Array Slice",
+          "duration": "20 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 3,
-      "title": "Modul 3: Structs, Enums, & Pattern Matching",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi structs, enums, dan pattern matching",
-      "module": 3,
+      "title": "Structs, Enums, & Pattern Matching",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 1",
+          "id": 13,
           "slug": "M03-L01",
+          "title": "Mendefinisikan & Menginstansiasi Struct",
+          "duration": "20 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 2",
+          "id": 14,
           "slug": "M03-L02",
+          "title": "Tuple Structs & Unit-Like Structs",
+          "duration": "15 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 3",
+          "id": 15,
           "slug": "M03-L03",
+          "title": "Method Syntax & Associated Functions (impl)",
+          "duration": "20 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 4",
+          "id": 16,
           "slug": "M03-L04",
+          "title": "Rich Enums: Membawa Data di Tiap Varian",
+          "duration": "20 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 5",
+          "id": 17,
           "slug": "M03-L05",
+          "title": "Option<T>: Pengganti Aman untuk Null",
+          "duration": "20 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 3: Structs, Enums, & Pattern Matching - Part 6",
+          "id": 18,
           "slug": "M03-L06",
+          "title": "Pattern Matching: match Exhaustive & if let",
+          "duration": "20 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 4,
-      "title": "Modul 4: Collections & Error Handling",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi collections dan error handling",
-      "module": 4,
+      "title": "Collections & Error Handling",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 4: Collections & Error Handling - Part 1",
+          "id": 19,
           "slug": "M04-L01",
+          "title": "Vector (Vec<T>): List Dinamis di Heap",
+          "duration": "20 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 4: Collections & Error Handling - Part 2",
+          "id": 20,
           "slug": "M04-L02",
+          "title": "String & &str: Manipulasi Teks UTF-8",
+          "duration": "20 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 4: Collections & Error Handling - Part 3",
+          "id": 21,
           "slug": "M04-L03",
+          "title": "HashMap<K, V>: Koleksi Key-Value Asosiatif",
+          "duration": "20 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 4: Collections & Error Handling - Part 4",
+          "id": 22,
           "slug": "M04-L04",
+          "title": "Unrecoverable Errors dengan panic!",
+          "duration": "15 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 4: Collections & Error Handling - Part 5",
+          "id": 23,
           "slug": "M04-L05",
+          "title": "Result<T, E>: Penanganan Recoverable Error",
+          "duration": "20 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 4: Collections & Error Handling - Part 6",
+          "id": 24,
           "slug": "M04-L06",
+          "title": "Error Propagation & Operator Tanda Tanya (?)",
+          "duration": "20 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 5,
-      "title": "Modul 5: Generics, Traits, & Lifetimes",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi generics, traits, dan lifetimes",
-      "module": 5,
+      "title": "Generics, Traits, & Lifetimes",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 1",
+          "id": 25,
           "slug": "M05-L01",
+          "title": "Generic Data Types pada Fungsi & Struct",
+          "duration": "20 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 2",
+          "id": 26,
           "slug": "M05-L02",
+          "title": "Traits: Mendefinisikan Shared Behavior",
+          "duration": "25 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 3",
+          "id": 27,
           "slug": "M05-L03",
+          "title": "Trait Bounds & Klausa where",
+          "duration": "20 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 4",
+          "id": 28,
           "slug": "M05-L04",
+          "title": "Traits Standar: Debug, Clone, Copy, Display",
+          "duration": "20 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 5",
+          "id": 29,
           "slug": "M05-L05",
+          "title": "Lifetime Annotations ('a) & Validasi Referensi",
+          "duration": "25 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 5: Generics, Traits, & Lifetimes - Part 6",
+          "id": 30,
           "slug": "M05-L06",
+          "title": "Lifetime Elision Rules & 'static Lifetime",
+          "duration": "15 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 6,
-      "title": "Modul 6: Functional Features & Smart Pointers",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi functional features dan smart pointers",
-      "module": 6,
+      "title": "Functional Features & Smart Pointers",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 6: Functional Features & Smart Pointers - Part 1",
+          "id": 31,
           "slug": "M06-L01",
+          "title": "Closures: Anonymous Functions & Scope Capture",
+          "duration": "20 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 6: Functional Features & Smart Pointers - Part 2",
+          "id": 32,
           "slug": "M06-L02",
+          "title": "Iterators & Zero-Cost Pipeline Adapters",
+          "duration": "25 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 6: Functional Features & Smart Pointers - Part 3",
+          "id": 33,
           "slug": "M06-L03",
+          "title": "Box<T>: Smart Pointer untuk Alokasi Heap",
+          "duration": "20 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 6: Functional Features & Smart Pointers - Part 4",
+          "id": 34,
           "slug": "M06-L04",
+          "title": "Deref Coercion & Drop Trait",
+          "duration": "20 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 6: Functional Features & Smart Pointers - Part 5",
+          "id": 35,
           "slug": "M06-L05",
+          "title": "Rc<T>: Reference Counting Single-Threaded",
+          "duration": "20 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 6: Functional Features & Smart Pointers - Part 6",
+          "id": 36,
           "slug": "M06-L06",
+          "title": "RefCell<T> & Pola Interior Mutability",
+          "duration": "20 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 7,
-      "title": "Modul 7: Fearless Concurrency",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi fearless concurrency",
-      "module": 7,
+      "title": "Fearless Concurrency",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 7: Fearless Concurrency - Part 1",
+          "id": 37,
           "slug": "M07-L01",
+          "title": "Native OS Threads dengan thread::spawn",
+          "duration": "20 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 7: Fearless Concurrency - Part 2",
+          "id": 38,
           "slug": "M07-L02",
+          "title": "Transfer Kepemilikan Data dengan Closure move",
+          "duration": "15 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 7: Fearless Concurrency - Part 3",
+          "id": 39,
           "slug": "M07-L03",
+          "title": "Message Passing: Komunikasi via mpsc Channel",
+          "duration": "25 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 7: Fearless Concurrency - Part 4",
+          "id": 40,
           "slug": "M07-L04",
+          "title": "Shared State Concurrency: Mutex<T> & Arc<T>",
+          "duration": "25 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 7: Fearless Concurrency - Part 5",
+          "id": 41,
           "slug": "M07-L05",
+          "title": "Pencegahan Deadlock & Sinkronisasi Aman",
+          "duration": "15 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 7: Fearless Concurrency - Part 6",
+          "id": 42,
           "slug": "M07-L06",
+          "title": "Extensible Concurrency: Trait Send & Sync",
+          "duration": "15 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 8,
-      "title": "Modul 8: Async/Await & Ekosistem Tokio",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi async/await dan ekosistem tokio",
-      "module": 8,
+      "title": "Async/Await & Ekosistem Tokio",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 1",
+          "id": 43,
           "slug": "M08-L01",
+          "title": "Pengenalan Asynchronous Rust: Future & Polling",
+          "duration": "20 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 2",
+          "id": 44,
           "slug": "M08-L02",
+          "title": "Runtime Tokio: Setup, #[tokio::main] & Executor",
+          "duration": "20 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 3",
+          "id": 45,
           "slug": "M08-L03",
+          "title": "Async/Await Syntax & Eksekusi Non-blocking",
+          "duration": "20 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 4",
+          "id": 46,
           "slug": "M08-L04",
+          "title": "Concurrent Tasks dengan tokio::spawn",
+          "duration": "25 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 5",
+          "id": 47,
           "slug": "M08-L05",
+          "title": "Tokio Async Channels & Primitif Sinkronisasi",
+          "duration": "20 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 8: Async/Await & Ekosistem Tokio - Part 6",
+          "id": 48,
           "slug": "M08-L06",
+          "title": "Membangun REST API Asynchronous Cepat dengan Axum",
+          "duration": "30 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 9,
-      "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi advanced rust",
-      "module": 9,
+      "title": "Advanced Rust (Macros, Unsafe, FFI)",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 1",
+          "id": 49,
           "slug": "M09-L01",
+          "title": "Declarative Macros dengan macro_rules!",
+          "duration": "25 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 2",
+          "id": 50,
           "slug": "M09-L02",
+          "title": "Procedural Macros (Derive, Attribute, Function)",
+          "duration": "25 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 3",
+          "id": 51,
           "slug": "M09-L03",
+          "title": "Unsafe Rust: Batasan, Kekuatan & Safety Invariants",
+          "duration": "20 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 4",
+          "id": 52,
           "slug": "M09-L04",
+          "title": "Raw Pointers (*const T, *mut T) & Manual Dereference",
+          "duration": "20 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 5",
+          "id": 53,
           "slug": "M09-L05",
+          "title": "FFI (Foreign Function Interface): Interop C",
+          "duration": "25 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 9: Advanced Rust (Macros, Unsafe, FFI) - Part 6",
+          "id": 54,
           "slug": "M09-L06",
+          "title": "Advanced Traits: Associated Types & Syntax",
+          "duration": "20 min",
           "lesson": 6
         }
       ]
     },
     {
       "id": 10,
-      "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
-      "icon": "fa-solid fa-code",
-      "desc": "Materi ekosistem, testing, dan WASM",
-      "module": 10,
+      "title": "Ekosistem, Testing, & Capstone Project",
       "lessons": [
         {
-          "id": 1,
-          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 1",
+          "id": 55,
           "slug": "M10-L01",
+          "title": "Testing Komprehensif: Unit, Integrasi, & Doc-Tests",
+          "duration": "20 min",
           "lesson": 1
         },
         {
-          "id": 2,
-          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 2",
+          "id": 56,
           "slug": "M10-L02",
+          "title": "Benchmarking Performa dengan Criterion.rs",
+          "duration": "20 min",
           "lesson": 2
         },
         {
-          "id": 3,
-          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 3",
+          "id": 57,
           "slug": "M10-L03",
+          "title": "WebAssembly (WASM): Kompilasi Rust ke Browser",
+          "duration": "25 min",
           "lesson": 3
         },
         {
-          "id": 4,
-          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 4",
+          "id": 58,
           "slug": "M10-L04",
+          "title": "Membangun Tool CLI Profesional dengan Clap",
+          "duration": "25 min",
           "lesson": 4
         },
         {
-          "id": 5,
-          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 5",
+          "id": 59,
           "slug": "M10-L05",
+          "title": "CI/CD GitHub Actions & Publikasi ke Crates.io",
+          "duration": "20 min",
           "lesson": 5
         },
         {
-          "id": 6,
-          "title": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM) - Part 6",
+          "id": 60,
           "slug": "M10-L06",
+          "title": "Capstone: In-Memory Key-Value Store",
+          "duration": "35 min",
           "lesson": 6
         }
       ]

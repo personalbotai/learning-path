@@ -1,5 +1,5 @@
 // Service Worker for Java Learning Path (v1.2)
-const CACHE_NAME = 'lp-cache-1789637385279';
+const CACHE_NAME = 'lp-cache-1790228402842';
 const PRECACHE_URLS = [
   './',
   './index.html',

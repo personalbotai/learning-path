@@ -1,3 +1,4 @@
+const LESSON_FILES = ["lessons/M01-L01.md","lessons/M01-L02.md","lessons/M01-L03.md","lessons/M01-L04.md","lessons/M01-L05.md","lessons/M01-L06.md","lessons/M02-L01.md","lessons/M02-L02.md","lessons/M02-L03.md","lessons/M02-L04.md","lessons/M02-L05.md","lessons/M02-L06.md","lessons/M03-L01.md","lessons/M03-L02.md","lessons/M03-L03.md","lessons/M03-L04.md","lessons/M03-L05.md","lessons/M03-L06.md","lessons/M04-L01.md","lessons/M04-L02.md","lessons/M04-L03.md","lessons/M04-L04.md","lessons/M04-L05.md","lessons/M04-L06.md","lessons/M05-L01.md","lessons/M05-L02.md","lessons/M05-L03.md","lessons/M05-L04.md","lessons/M05-L05.md","lessons/M05-L06.md","lessons/M06-L01.md","lessons/M06-L02.md","lessons/M06-L03.md","lessons/M06-L04.md","lessons/M06-L05.md","lessons/M06-L06.md","lessons/M07-L01.md","lessons/M07-L02.md","lessons/M07-L03.md","lessons/M07-L04.md","lessons/M07-L05.md","lessons/M07-L06.md","lessons/M08-L01.md","lessons/M08-L02.md","lessons/M08-L03.md","lessons/M08-L04.md","lessons/M08-L05.md","lessons/M08-L06.md","lessons/M09-L01.md","lessons/M09-L02.md","lessons/M09-L03.md","lessons/M09-L04.md","lessons/M09-L05.md","lessons/M09-L06.md","lessons/M10-L01.md","lessons/M10-L02.md","lessons/M10-L03.md","lessons/M10-L04.md","lessons/M10-L05.md","lessons/M10-L06.md"];
 // ============================================
 // Java Learning Path — Interactive Learning Engine
 // ============================================
@@ -5,62 +6,62 @@
 const MODULES = [
   {
     "id": 1,
-    "title": "Modul 1: Dasar Java & Ekosistem",
-    "desc": "Java 21 LTS",
+    "title": "Dasar-Dasar Java",
+    "desc": "Pengenalan Java, instalasi JDK dan IDE, struktur program, variabel, tipe data, serta input/output dasar.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 2,
-    "title": "Modul 2: Variabel dan Tipe Data",
-    "desc": "Java 21 LTS",
+    "title": "Tipe Data & Operators",
+    "desc": "Eksplorasi tipe data primitif, wrapper classes, array, enum, casting, dan type inference.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 3,
-    "title": "Modul 3: Control Flow (Percabangan & Perulangan)",
-    "desc": "Java 21 LTS",
+    "title": "Kontrol Alur",
+    "desc": "Kontrol alur program: if-else, switch, loops (for, while, do-while), break, continue, exceptions, dan try-catch.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 4,
-    "title": "Modul 4: Object-Oriented Programming (OOP) Dasar",
-    "desc": "Java 21 LTS",
+    "title": "Object-OrientedProgramming",
+    "desc": "Konsep OOP: class, object, access modifiers, inheritance, abstract classes, interfaces, polymorphism.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 5,
-    "title": "Modul 5: OOP Lanjutan (Inheritance & Polymorphism)",
-    "desc": "Java 21 LTS",
+    "title": "Collections Framework",
+    "desc": "Pengenalan Collections, List, Set, Map, Queue, dan Stream API dasar.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 6,
-    "title": "Modul 6: Java Collections Framework",
-    "desc": "Java 21 LTS",
+    "title": "Java Modern Features (Java 17 - 21 LTS)",
+    "desc": "Records, Sealed Classes, Pattern Matching, Text Blocks, dan Virtual Threads.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 7,
-    "title": "Modul 7: Error Handling & Exceptions",
-    "desc": "Java 21 LTS",
+    "title": "Concurrency & Multithreading",
+    "desc": "Threads, Runnable, synchronized, ExecutorService, CompletableFuture, dan Structured Concurrency.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 8,
-    "title": "Modul 8: Modern Java (Functional & Streams)",
-    "desc": "Java 21 LTS",
+    "title": "I/O, Networking & File Operations",
+    "desc": "Java I/O Streams, NIO.2 Files/Path, Serialisasi Objek, HTTP Client API, dan Logging SLF4J.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 9,
-    "title": "Modul 9: Fitur Baru Java (Java 14 - 21)",
-    "desc": "Java 21 LTS",
+    "title": "Database, JDBC & JPA / Hibernate",
+    "desc": "JDBC Connection, PreparedStatement, HikariCP, ORM JPA, Entitas, dan Transaksi ACID.",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 10,
-    "title": "Modul 10: Concurrency Modern & Virtual Threads",
-    "desc": "Java 21 LTS",
+    "title": "Spring Boot, Testing & Microservices",
+    "desc": "Spring Boot Core IoC/DI, RESTful API Controllers, Spring Data JPA, Unit Test JUnit 5/Mockito, dan Docker.",
     "icon": "fa-solid fa-code"
   }
 ];
@@ -1479,26 +1480,46 @@ async function loadLesson(index) {
 
     // Fetch markdown content locally (fast & reliable)
     try {
-        const response = await fetch(lesson.mdFile);
-        if (response.ok) {
-            const md = await response.text();
+        let md = '';
+        const slug = lesson.slug || ('M' + String(lesson.moduleId || 1).padStart(2, '0') + '-L' + String(lesson.lesson || 1).padStart(2, '0'));
+        const candidates = [
+            (typeof LESSON_FILES !== 'undefined' && LESSON_FILES[index]) ? LESSON_FILES[index] : null,
+            lesson.mdFile,
+            'lessons/' + slug + '.md',
+            './lessons/' + slug + '.md'
+        ].filter(Boolean);
+
+        for (const candidate of candidates) {
+            try {
+                const res = await fetch(candidate);
+                if (res.ok) {
+                    md = await res.text();
+                    if (md && md.trim().length > 0) break;
+                }
+            } catch(e) {}
+        }
+
+        const rawContent = lesson.content || lesson.content_md || lesson.description || '';
+        if (!md && rawContent) {
+            md = rawContent;
+        }
+
+        if (md && typeof marked !== 'undefined') {
             contentEl.innerHTML = marked.parse(md);
             enhanceCodeBlocks(contentEl);
+        } else if (md) {
+            contentEl.innerHTML = '<div class="prose max-w-none">' + md + '</div>';
         } else {
-            contentEl.innerHTML = `<div class="p-6 bg-red-950/40 border border-red-800 rounded-lg text-red-300">
-                Gagal memuat materi dari <code>${lesson.mdFile}</code>.
-            </div>`;
+            contentEl.innerHTML = '<div class="p-6 bg-orange-950/30 border border-orange-800 rounded-lg text-orange-300">Materi ' + (lesson.title || 'pelajaran') + ' sedang disiapkan. Editor tetap aktif.</div>';
         }
     } catch (err) {
         console.error('Failed to load markdown:', err);
-        contentEl.innerHTML = `<div class="p-6 bg-red-950/40 border border-red-800 rounded-lg text-red-300">
-            Terjadi kesalahan jaringan saat memuat materi.
-        </div>`;
+        contentEl.innerHTML = '<div class="p-6 bg-red-950/40 border border-red-800 rounded-lg text-red-300">Gagal memuat materi: ' + (err.message || 'Terjadi kesalahan') + '</div>';
     }
 
     // Setup Code Editor
     const editor = document.getElementById('code-editor');
-    editor.value = lesson.defaultCode;
+    editor.value = lesson.defaultCode || lesson.code || ("// " + lesson.title + "\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Halo dari " + lesson.title + "\");\n    }\n}");
     setTimeout(updateGutter, 30);
     const output = document.getElementById('output');
     output.innerHTML = '<span class="text-slate-500">// Output akan muncul di sini saat tombol Run ditekan</span>';
@@ -1799,7 +1820,7 @@ function renderQuiz(lesson) {
     }
 
     if (quizSec) { quizSec.style.display = 'block'; quizSec.classList.remove('hidden'); }
-    quizContent.innerHTML = lesson.quiz.map((q, qIndex) => `
+    quizContent.innerHTML = (Array.isArray(lesson.quiz) ? lesson.quiz : [lesson.quiz]).map((q, qIndex) => `
         <div class="quiz-question-card" id="quiz-card-${qIndex}">
             <div class="quiz-q-text">${qIndex + 1}. ${escapeHtml(q.question)}</div>
             <div class="quiz-options-group">
@@ -1822,7 +1843,7 @@ function checkQuiz() {
     let correctCount = 0;
     let answeredAll = true;
 
-    lesson.quiz.forEach((q, qIndex) => {
+    (Array.isArray(lesson.quiz) ? lesson.quiz : [lesson.quiz]).forEach((q, qIndex) => {
         const selected = document.querySelector(`input[name="quiz_q_${qIndex}"]:checked`);
         const explainEl = document.getElementById(`quiz-explain-${qIndex}`);
 
@@ -1999,25 +2020,6 @@ function escapeHtml(str) {
 }
 
 // ============ Boot ============
-
-// Expose global functions for inline HTML onclick handlers
-if (typeof window !== 'undefined') {
-    window.loadLesson = loadLesson;
-    window.renderNav = renderNav;
-    window.toggleModule = toggleModule;
-    window.markComplete = markComplete;
-    window.resetProgress = resetProgress;
-    window.closeSidebar = typeof closeSidebar !== 'undefined' ? closeSidebar : function(){};
-    window.prevLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson - 1); };
-    window.nextLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson + 1); };
-    if (typeof runCode === 'function') window.runCode = runCode;
-    if (typeof checkQuiz === 'function') window.checkQuiz = checkQuiz;
-    if (typeof escapeHtml === 'function') window.escapeHtml = escapeHtml;
-    if (typeof copyCode === 'function') window.copyCode = copyCode;
-    if (typeof resetCode === 'function') window.resetCode = resetCode;
-    if (typeof clearOutput === 'function') window.clearOutput = clearOutput;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     renderNav();
     updateOverallProgress();

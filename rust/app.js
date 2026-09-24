@@ -1,1387 +1,1388 @@
+const LESSON_FILES = ['lessons/M01-L01.md', 'lessons/M01-L02.md', 'lessons/M01-L03.md', 'lessons/M01-L04.md', 'lessons/M01-L05.md', 'lessons/M01-L06.md', 'lessons/M02-L01.md', 'lessons/M02-L02.md', 'lessons/M02-L03.md', 'lessons/M02-L04.md', 'lessons/M02-L05.md', 'lessons/M02-L06.md', 'lessons/M03-L01.md', 'lessons/M03-L02.md', 'lessons/M03-L03.md', 'lessons/M03-L04.md', 'lessons/M03-L05.md', 'lessons/M03-L06.md', 'lessons/M04-L01.md', 'lessons/M04-L02.md', 'lessons/M04-L03.md', 'lessons/M04-L04.md', 'lessons/M04-L05.md', 'lessons/M04-L06.md', 'lessons/M05-L01.md', 'lessons/M05-L02.md', 'lessons/M05-L03.md', 'lessons/M05-L04.md', 'lessons/M05-L05.md', 'lessons/M05-L06.md', 'lessons/M06-L01.md', 'lessons/M06-L02.md', 'lessons/M06-L03.md', 'lessons/M06-L04.md', 'lessons/M06-L05.md', 'lessons/M06-L06.md', 'lessons/M07-L01.md', 'lessons/M07-L02.md', 'lessons/M07-L03.md', 'lessons/M07-L04.md', 'lessons/M07-L05.md', 'lessons/M07-L06.md', 'lessons/M08-L01.md', 'lessons/M08-L02.md', 'lessons/M08-L03.md', 'lessons/M08-L04.md', 'lessons/M08-L05.md', 'lessons/M08-L06.md', 'lessons/M09-L01.md', 'lessons/M09-L02.md', 'lessons/M09-L03.md', 'lessons/M09-L04.md', 'lessons/M09-L05.md', 'lessons/M09-L06.md', 'lessons/M10-L01.md', 'lessons/M10-L02.md', 'lessons/M10-L03.md', 'lessons/M10-L04.md', 'lessons/M10-L05.md', 'lessons/M10-L06.md'];
 // Rust Learning Path — Core Application & Interactive Engine 🦀
 
 const MODULES = [
   {
     "id": 1,
-    "title": "Pengenalan & Dasar-dasar Rust",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust pengenalan & dasar-dasar rust"
+    "title": "Pengenalan & Dasar Rust",
+    "desc": "Kurikulum komprehensif Modul 1 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 2,
-    "title": "Ownership & Borrowing",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust ownership & borrowing"
+    "title": "Ownership & Borrowing System",
+    "desc": "Kurikulum komprehensif Modul 2 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 3,
     "title": "Structs, Enums, & Pattern Matching",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust structs, enums, & pattern matching"
+    "desc": "Kurikulum komprehensif Modul 3 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 4,
     "title": "Collections & Error Handling",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust collections & error handling"
+    "desc": "Kurikulum komprehensif Modul 4 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 5,
     "title": "Generics, Traits, & Lifetimes",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust generics, traits, & lifetimes"
+    "desc": "Kurikulum komprehensif Modul 5 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 6,
     "title": "Functional Features & Smart Pointers",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust functional features & smart pointers"
+    "desc": "Kurikulum komprehensif Modul 6 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 7,
     "title": "Fearless Concurrency",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust fearless concurrency"
+    "desc": "Kurikulum komprehensif Modul 7 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 8,
     "title": "Async/Await & Ekosistem Tokio",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust async/await & ekosistem tokio"
+    "desc": "Kurikulum komprehensif Modul 8 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 9,
     "title": "Advanced Rust (Macros, Unsafe, FFI)",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust advanced rust (macros, unsafe, ffi)"
+    "desc": "Kurikulum komprehensif Modul 9 Standar Industri.",
+    "icon": "fa-solid fa-code"
   },
   {
     "id": 10,
-    "title": "Ekosistem, Testing, & WebAssembly (WASM)",
-    "icon": "fa-solid fa-code",
-    "desc": "Materi inti Rust ekosistem, testing, & webassembly (wasm)"
+    "title": "Ekosistem, Testing, & Capstone Project",
+    "desc": "Kurikulum komprehensif Modul 10 Standar Industri.",
+    "icon": "fa-solid fa-code"
   }
 ];
 
 const lessons = [
   {
     "id": 1,
-    "slug": "rust-1-1",
-    "title": "1.1 Hello World & Struktur Program",
-    "module": "Modul 1: Pengenalan & Dasar-dasar Rust",
+    "slug": "M01-L01",
+    "title": "Pengenalan Rust, Filosofi & Toolchain",
+    "module": "Modul 1: Pengenalan & Dasar Rust",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 1.1 Hello World & Struktur Program\n\nMateri detail Rust Pengenalan & Dasar-dasar Rust.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 1.1 Hello World & Struktur Program\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 1\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M01-L01.md",
+    "code": "// M01-L01 - Pengenalan Rust, Filosofi & Toolchain\nfn main() {\n    println!(\"=== Pengenalan Rust, Filosofi & Toolchain ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 1.1 Hello World & Struktur Program?",
+      "question": "Apa konsep utama pada Pengenalan Rust, Filosofi & Toolchain?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 2,
-    "slug": "rust-1-2",
-    "title": "1.2 Variabel & Mutabilitas",
-    "module": "Modul 1: Pengenalan & Dasar-dasar Rust",
+    "slug": "M01-L02",
+    "title": "Variabel, Mutability & Shadowing",
+    "module": "Modul 1: Pengenalan & Dasar Rust",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 1.2 Variabel & Mutabilitas\n\nMateri detail Rust Pengenalan & Dasar-dasar Rust.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 1.2 Variabel & Mutabilitas\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 2\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M01-L02.md",
+    "code": "// M01-L02 - Variabel, Mutability & Shadowing\nfn main() {\n    println!(\"=== Variabel, Mutability & Shadowing ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 1.2 Variabel & Mutabilitas?",
+      "question": "Apa konsep utama pada Variabel, Mutability & Shadowing?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 3,
-    "slug": "rust-1-3",
-    "title": "1.3 Tipe Data Skalar & Kompon",
-    "module": "Modul 1: Pengenalan & Dasar-dasar Rust",
+    "slug": "M01-L03",
+    "title": "Tipe Data Primitif: Skalar & Majemuk",
+    "module": "Modul 1: Pengenalan & Dasar Rust",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 1.3 Tipe Data Skalar & Kompon\n\nMateri detail Rust Pengenalan & Dasar-dasar Rust.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 1.3 Tipe Data Skalar & Kompon\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 3\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M01-L03.md",
+    "code": "// M01-L03 - Tipe Data Primitif: Skalar & Majemuk\nfn main() {\n    println!(\"=== Tipe Data Primitif: Skalar & Majemuk ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 1.3 Tipe Data Skalar & Kompon?",
+      "question": "Apa konsep utama pada Tipe Data Primitif: Skalar & Majemuk?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 4,
-    "slug": "rust-1-4",
-    "title": "1.4 Fungsi & Return Values",
-    "module": "Modul 1: Pengenalan & Dasar-dasar Rust",
+    "slug": "M01-L04",
+    "title": "Fungsi, Parameter & Expression Return",
+    "module": "Modul 1: Pengenalan & Dasar Rust",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 1.4 Fungsi & Return Values\n\nMateri detail Rust Pengenalan & Dasar-dasar Rust.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 1.4 Fungsi & Return Values\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 4\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M01-L04.md",
+    "code": "// M01-L04 - Fungsi, Parameter & Expression Return\nfn main() {\n    println!(\"=== Fungsi, Parameter & Expression Return ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 1.4 Fungsi & Return Values?",
+      "question": "Apa konsep utama pada Fungsi, Parameter & Expression Return?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 5,
-    "slug": "rust-1-5",
-    "title": "1.5 Control Flow: if, else, & if let",
-    "module": "Modul 1: Pengenalan & Dasar-dasar Rust",
+    "slug": "M01-L05",
+    "title": "Alur Kendali: If/Else & Perulangan",
+    "module": "Modul 1: Pengenalan & Dasar Rust",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 1.5 Control Flow: if, else, & if let\n\nMateri detail Rust Pengenalan & Dasar-dasar Rust.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 1.5 Control Flow: if, else, & if let\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 5\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M01-L05.md",
+    "code": "// M01-L05 - Alur Kendali: If/Else & Perulangan\nfn main() {\n    println!(\"=== Alur Kendali: If/Else & Perulangan ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 1.5 Control Flow: if, else, & if let?",
+      "question": "Apa konsep utama pada Alur Kendali: If/Else & Perulangan?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 6,
-    "slug": "rust-1-6",
-    "title": "1.6 Control Flow: loop, while, & for",
-    "module": "Modul 1: Pengenalan & Dasar-dasar Rust",
+    "slug": "M01-L06",
+    "title": "Manajemen Proyek dengan Cargo & Testing",
+    "module": "Modul 1: Pengenalan & Dasar Rust",
     "moduleId": 1,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 1.6 Control Flow: loop, while, & for\n\nMateri detail Rust Pengenalan & Dasar-dasar Rust.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 1.6 Control Flow: loop, while, & for\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 6\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M01-L06.md",
+    "code": "// M01-L06 - Manajemen Proyek dengan Cargo & Testing\nfn main() {\n    println!(\"=== Manajemen Proyek dengan Cargo & Testing ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 1.6 Control Flow: loop, while, & for?",
+      "question": "Apa konsep utama pada Manajemen Proyek dengan Cargo & Testing?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 7,
-    "slug": "rust-2-1",
-    "title": "2.1 Konsep Dasar Ownership",
-    "module": "Modul 2: Ownership & Borrowing",
+    "slug": "M02-L01",
+    "title": "Konsep Ownership: Aturan Memori, Stack & Heap",
+    "module": "Modul 2: Ownership & Borrowing System",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 2.1 Konsep Dasar Ownership\n\nMateri detail Rust Ownership & Borrowing.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 2.1 Konsep Dasar Ownership\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 7\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M02-L01.md",
+    "code": "// M02-L01 - Konsep Ownership: Aturan Memori, Stack & Heap\nfn main() {\n    println!(\"=== Konsep Ownership: Aturan Memori, Stack & Heap ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 2.1 Konsep Dasar Ownership?",
+      "question": "Apa konsep utama pada Konsep Ownership: Aturan Memori, Stack & Heap?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 8,
-    "slug": "rust-2-2",
-    "title": "2.2 Interaksi Data: Move & Clone",
-    "module": "Modul 2: Ownership & Borrowing",
+    "slug": "M02-L02",
+    "title": "Move Semantics & Copy Trait",
+    "module": "Modul 2: Ownership & Borrowing System",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 2.2 Interaksi Data: Move & Clone\n\nMateri detail Rust Ownership & Borrowing.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 2.2 Interaksi Data: Move & Clone\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 8\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M02-L02.md",
+    "code": "// M02-L02 - Move Semantics & Copy Trait\nfn main() {\n    println!(\"=== Move Semantics & Copy Trait ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 2.2 Interaksi Data: Move & Clone?",
+      "question": "Apa konsep utama pada Move Semantics & Copy Trait?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 9,
-    "slug": "rust-2-3",
-    "title": "2.3 References & Borrowing",
-    "module": "Modul 2: Ownership & Borrowing",
+    "slug": "M02-L03",
+    "title": "Borrowing: Referensi Immutable (&T)",
+    "module": "Modul 2: Ownership & Borrowing System",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 2.3 References & Borrowing\n\nMateri detail Rust Ownership & Borrowing.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 2.3 References & Borrowing\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 9\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M02-L03.md",
+    "code": "// M02-L03 - Borrowing: Referensi Immutable (&T)\nfn main() {\n    println!(\"=== Borrowing: Referensi Immutable (&T) ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 2.3 References & Borrowing?",
+      "question": "Apa konsep utama pada Borrowing: Referensi Immutable (&T)?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 10,
-    "slug": "rust-2-4",
-    "title": "2.4 Mutable References",
-    "module": "Modul 2: Ownership & Borrowing",
+    "slug": "M02-L04",
+    "title": "Referensi Mutable (&mut T) & Aturan Peminjaman",
+    "module": "Modul 2: Ownership & Borrowing System",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 2.4 Mutable References\n\nMateri detail Rust Ownership & Borrowing.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 2.4 Mutable References\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 10\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M02-L04.md",
+    "code": "// M02-L04 - Referensi Mutable (&mut T) & Aturan Peminjaman\nfn main() {\n    println!(\"=== Referensi Mutable (&mut T) & Aturan Peminjaman ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 2.4 Mutable References?",
+      "question": "Apa konsep utama pada Referensi Mutable (&mut T) & Aturan Peminjaman?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 11,
-    "slug": "rust-2-5",
-    "title": "2.5 Dangling References & Lifetimes Dasar",
-    "module": "Modul 2: Ownership & Borrowing",
+    "slug": "M02-L05",
+    "title": "Pencegahan Dangling References",
+    "module": "Modul 2: Ownership & Borrowing System",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 2.5 Dangling References & Lifetimes Dasar\n\nMateri detail Rust Ownership & Borrowing.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 2.5 Dangling References & Lifetimes Dasar\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 11\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M02-L05.md",
+    "code": "// M02-L05 - Pencegahan Dangling References\nfn main() {\n    println!(\"=== Pencegahan Dangling References ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 2.5 Dangling References & Lifetimes Dasar?",
+      "question": "Apa konsep utama pada Pencegahan Dangling References?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 12,
-    "slug": "rust-2-6",
-    "title": "2.6 Tipe Data Slice",
-    "module": "Modul 2: Ownership & Borrowing",
+    "slug": "M02-L06",
+    "title": "Tipe Slice: String Slice & Array Slice",
+    "module": "Modul 2: Ownership & Borrowing System",
     "moduleId": 2,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 2.6 Tipe Data Slice\n\nMateri detail Rust Ownership & Borrowing.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 2.6 Tipe Data Slice\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 12\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M02-L06.md",
+    "code": "// M02-L06 - Tipe Slice: String Slice & Array Slice\nfn main() {\n    println!(\"=== Tipe Slice: String Slice & Array Slice ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 2.6 Tipe Data Slice?",
+      "question": "Apa konsep utama pada Tipe Slice: String Slice & Array Slice?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 13,
-    "slug": "rust-3-1",
-    "title": "3.1 Mendefinisikan & Menggunakan Structs",
+    "slug": "M03-L01",
+    "title": "Mendefinisikan & Menginstansiasi Struct",
     "module": "Modul 3: Structs, Enums, & Pattern Matching",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 3.1 Mendefinisikan & Menggunakan Structs\n\nMateri detail Rust Structs, Enums, & Pattern Matching.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 3.1 Mendefinisikan & Menggunakan Structs\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 13\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M03-L01.md",
+    "code": "// M03-L01 - Mendefinisikan & Menginstansiasi Struct\nfn main() {\n    println!(\"=== Mendefinisikan & Menginstansiasi Struct ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 3.1 Mendefinisikan & Menggunakan Structs?",
+      "question": "Apa konsep utama pada Mendefinisikan & Menginstansiasi Struct?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 14,
-    "slug": "rust-3-2",
-    "title": "3.2 Method & Associated Functions",
+    "slug": "M03-L02",
+    "title": "Tuple Structs & Unit-Like Structs",
     "module": "Modul 3: Structs, Enums, & Pattern Matching",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 3.2 Method & Associated Functions\n\nMateri detail Rust Structs, Enums, & Pattern Matching.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 3.2 Method & Associated Functions\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 14\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M03-L02.md",
+    "code": "// M03-L02 - Tuple Structs & Unit-Like Structs\nfn main() {\n    println!(\"=== Tuple Structs & Unit-Like Structs ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 3.2 Method & Associated Functions?",
+      "question": "Apa konsep utama pada Tuple Structs & Unit-Like Structs?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 15,
-    "slug": "rust-3-3",
-    "title": "3.3 Mendefinisikan Enums",
+    "slug": "M03-L03",
+    "title": "Method Syntax & Associated Functions (impl)",
     "module": "Modul 3: Structs, Enums, & Pattern Matching",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 3.3 Mendefinisikan Enums\n\nMateri detail Rust Structs, Enums, & Pattern Matching.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 3.3 Mendefinisikan Enums\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 15\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M03-L03.md",
+    "code": "// M03-L03 - Method Syntax & Associated Functions (impl)\nfn main() {\n    println!(\"=== Method Syntax & Associated Functions (impl) ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 3.3 Mendefinisikan Enums?",
+      "question": "Apa konsep utama pada Method Syntax & Associated Functions (impl)?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 16,
-    "slug": "rust-3-4",
-    "title": "3.4 Pattern Matching dengan `match`",
+    "slug": "M03-L04",
+    "title": "Rich Enums: Membawa Data di Tiap Varian",
     "module": "Modul 3: Structs, Enums, & Pattern Matching",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 3.4 Pattern Matching dengan `match`\n\nMateri detail Rust Structs, Enums, & Pattern Matching.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 3.4 Pattern Matching dengan `match`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 16\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M03-L04.md",
+    "code": "// M03-L04 - Rich Enums: Membawa Data di Tiap Varian\nfn main() {\n    println!(\"=== Rich Enums: Membawa Data di Tiap Varian ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 3.4 Pattern Matching dengan `match`?",
+      "question": "Apa konsep utama pada Rich Enums: Membawa Data di Tiap Varian?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 17,
-    "slug": "rust-3-5",
-    "title": "3.5 Tipe `Option<T>`",
+    "slug": "M03-L05",
+    "title": "Option<T>: Pengganti Aman untuk Null",
     "module": "Modul 3: Structs, Enums, & Pattern Matching",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 3.5 Tipe `Option<T>`\n\nMateri detail Rust Structs, Enums, & Pattern Matching.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 3.5 Tipe `Option<T>`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 17\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M03-L05.md",
+    "code": "// M03-L05 - Option<T>: Pengganti Aman untuk Null\nfn main() {\n    println!(\"=== Option<T>: Pengganti Aman untuk Null ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 3.5 Tipe `Option<T>`?",
+      "question": "Apa konsep utama pada Option<T>: Pengganti Aman untuk Null?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 18,
-    "slug": "rust-3-6",
-    "title": "3.6 Ekspresi `if let`",
+    "slug": "M03-L06",
+    "title": "Pattern Matching: match Exhaustive & if let",
     "module": "Modul 3: Structs, Enums, & Pattern Matching",
     "moduleId": 3,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 3.6 Ekspresi `if let`\n\nMateri detail Rust Structs, Enums, & Pattern Matching.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 3.6 Ekspresi `if let`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 18\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M03-L06.md",
+    "code": "// M03-L06 - Pattern Matching: match Exhaustive & if let\nfn main() {\n    println!(\"=== Pattern Matching: match Exhaustive & if let ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 3.6 Ekspresi `if let`?",
+      "question": "Apa konsep utama pada Pattern Matching: match Exhaustive & if let?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 19,
-    "slug": "rust-4-1",
-    "title": "4.1 Vectors (`Vec<T>`)",
+    "slug": "M04-L01",
+    "title": "Vector (Vec<T>): List Dinamis di Heap",
     "module": "Modul 4: Collections & Error Handling",
     "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 4.1 Vectors (`Vec<T>`)\n\nMateri detail Rust Collections & Error Handling.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 4.1 Vectors (`Vec<T>`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 19\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M04-L01.md",
+    "code": "// M04-L01 - Vector (Vec<T>): List Dinamis di Heap\nfn main() {\n    println!(\"=== Vector (Vec<T>): List Dinamis di Heap ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 4.1 Vectors (`Vec<T>`)?",
+      "question": "Apa konsep utama pada Vector (Vec<T>): List Dinamis di Heap?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 20,
-    "slug": "rust-4-2",
-    "title": "4.2 Strings yang Dinamis (`String`)",
+    "slug": "M04-L02",
+    "title": "String & &str: Manipulasi Teks UTF-8",
     "module": "Modul 4: Collections & Error Handling",
     "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 4.2 Strings yang Dinamis (`String`)\n\nMateri detail Rust Collections & Error Handling.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 4.2 Strings yang Dinamis (`String`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 20\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M04-L02.md",
+    "code": "// M04-L02 - String & &str: Manipulasi Teks UTF-8\nfn main() {\n    println!(\"=== String & &str: Manipulasi Teks UTF-8 ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 4.2 Strings yang Dinamis (`String`)?",
+      "question": "Apa konsep utama pada String & &str: Manipulasi Teks UTF-8?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 21,
-    "slug": "rust-4-3",
-    "title": "4.3 HashMaps",
+    "slug": "M04-L03",
+    "title": "HashMap<K, V>: Koleksi Key-Value Asosiatif",
     "module": "Modul 4: Collections & Error Handling",
     "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 4.3 HashMaps\n\nMateri detail Rust Collections & Error Handling.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 4.3 HashMaps\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 21\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M04-L03.md",
+    "code": "// M04-L03 - HashMap<K, V>: Koleksi Key-Value Asosiatif\nfn main() {\n    println!(\"=== HashMap<K, V>: Koleksi Key-Value Asosiatif ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 4.3 HashMaps?",
+      "question": "Apa konsep utama pada HashMap<K, V>: Koleksi Key-Value Asosiatif?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 22,
-    "slug": "rust-4-4",
-    "title": "4.4 Unrecoverable Errors (`panic!`)",
+    "slug": "M04-L04",
+    "title": "Unrecoverable Errors dengan panic!",
     "module": "Modul 4: Collections & Error Handling",
     "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 4.4 Unrecoverable Errors (`panic!`)\n\nMateri detail Rust Collections & Error Handling.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 4.4 Unrecoverable Errors (`panic!`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 22\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M04-L04.md",
+    "code": "// M04-L04 - Unrecoverable Errors dengan panic!\nfn main() {\n    println!(\"=== Unrecoverable Errors dengan panic! ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 4.4 Unrecoverable Errors (`panic!`)?",
+      "question": "Apa konsep utama pada Unrecoverable Errors dengan panic!?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 23,
-    "slug": "rust-4-5",
-    "title": "4.5 Recoverable Errors (`Result<T, E>`)",
+    "slug": "M04-L05",
+    "title": "Result<T, E>: Penanganan Recoverable Error",
     "module": "Modul 4: Collections & Error Handling",
     "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 4.5 Recoverable Errors (`Result<T, E>`)\n\nMateri detail Rust Collections & Error Handling.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 4.5 Recoverable Errors (`Result<T, E>`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 23\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M04-L05.md",
+    "code": "// M04-L05 - Result<T, E>: Penanganan Recoverable Error\nfn main() {\n    println!(\"=== Result<T, E>: Penanganan Recoverable Error ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 4.5 Recoverable Errors (`Result<T, E>`)?",
+      "question": "Apa konsep utama pada Result<T, E>: Penanganan Recoverable Error?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 24,
-    "slug": "rust-4-6",
-    "title": "4.6 Error Propagation dengan Operator `?`",
+    "slug": "M04-L06",
+    "title": "Error Propagation & Operator Tanda Tanya (?)",
     "module": "Modul 4: Collections & Error Handling",
     "moduleId": 4,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 4.6 Error Propagation dengan Operator `?`\n\nMateri detail Rust Collections & Error Handling.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 4.6 Error Propagation dengan Operator `?`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 24\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M04-L06.md",
+    "code": "// M04-L06 - Error Propagation & Operator Tanda Tanya (?)\nfn main() {\n    println!(\"=== Error Propagation & Operator Tanda Tanya (?) ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 4.6 Error Propagation dengan Operator `?`?",
+      "question": "Apa konsep utama pada Error Propagation & Operator Tanda Tanya (?)?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 25,
-    "slug": "rust-5-1",
-    "title": "5.1 Generics pada Tipe Data & Fungsi",
+    "slug": "M05-L01",
+    "title": "Generic Data Types pada Fungsi & Struct",
     "module": "Modul 5: Generics, Traits, & Lifetimes",
     "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 5.1 Generics pada Tipe Data & Fungsi\n\nMateri detail Rust Generics, Traits, & Lifetimes.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 5.1 Generics pada Tipe Data & Fungsi\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 25\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M05-L01.md",
+    "code": "// M05-L01 - Generic Data Types pada Fungsi & Struct\nfn main() {\n    println!(\"=== Generic Data Types pada Fungsi & Struct ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 5.1 Generics pada Tipe Data & Fungsi?",
+      "question": "Apa konsep utama pada Generic Data Types pada Fungsi & Struct?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 26,
-    "slug": "rust-5-2",
-    "title": "5.2 Mendefinisikan & Mengimplementasi Traits",
+    "slug": "M05-L02",
+    "title": "Traits: Mendefinisikan Shared Behavior",
     "module": "Modul 5: Generics, Traits, & Lifetimes",
     "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 5.2 Mendefinisikan & Mengimplementasi Traits\n\nMateri detail Rust Generics, Traits, & Lifetimes.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 5.2 Mendefinisikan & Mengimplementasi Traits\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 26\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M05-L02.md",
+    "code": "// M05-L02 - Traits: Mendefinisikan Shared Behavior\nfn main() {\n    println!(\"=== Traits: Mendefinisikan Shared Behavior ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 5.2 Mendefinisikan & Mengimplementasi Traits?",
+      "question": "Apa konsep utama pada Traits: Mendefinisikan Shared Behavior?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 27,
-    "slug": "rust-5-3",
-    "title": "5.3 Trait Bounds & `impl Trait`",
+    "slug": "M05-L03",
+    "title": "Trait Bounds & Klausa where",
     "module": "Modul 5: Generics, Traits, & Lifetimes",
     "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 5.3 Trait Bounds & `impl Trait`\n\nMateri detail Rust Generics, Traits, & Lifetimes.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 5.3 Trait Bounds & `impl Trait`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 27\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M05-L03.md",
+    "code": "// M05-L03 - Trait Bounds & Klausa where\nfn main() {\n    println!(\"=== Trait Bounds & Klausa where ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 5.3 Trait Bounds & `impl Trait`?",
+      "question": "Apa konsep utama pada Trait Bounds & Klausa where?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 28,
-    "slug": "rust-5-4",
-    "title": "5.4 Validasi Referensi dengan Lifetimes",
+    "slug": "M05-L04",
+    "title": "Traits Standar: Debug, Clone, Copy, Display",
     "module": "Modul 5: Generics, Traits, & Lifetimes",
     "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 5.4 Validasi Referensi dengan Lifetimes\n\nMateri detail Rust Generics, Traits, & Lifetimes.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 5.4 Validasi Referensi dengan Lifetimes\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 28\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M05-L04.md",
+    "code": "// M05-L04 - Traits Standar: Debug, Clone, Copy, Display\nfn main() {\n    println!(\"=== Traits Standar: Debug, Clone, Copy, Display ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 5.4 Validasi Referensi dengan Lifetimes?",
+      "question": "Apa konsep utama pada Traits Standar: Debug, Clone, Copy, Display?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 29,
-    "slug": "rust-5-5",
-    "title": "5.5 Lifetime Annotations pada Structs",
+    "slug": "M05-L05",
+    "title": "Lifetime Annotations ('a) & Validasi Referensi",
     "module": "Modul 5: Generics, Traits, & Lifetimes",
     "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 5.5 Lifetime Annotations pada Structs\n\nMateri detail Rust Generics, Traits, & Lifetimes.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 5.5 Lifetime Annotations pada Structs\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 29\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M05-L05.md",
+    "code": "// M05-L05 - Lifetime Annotations ('a) & Validasi Referensi\nfn main() {\n    println!(\"=== Lifetime Annotations ('a) & Validasi Referensi ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 5.5 Lifetime Annotations pada Structs?",
+      "question": "Apa konsep utama pada Lifetime Annotations ('a) & Validasi Referensi?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 30,
-    "slug": "rust-5-6",
-    "title": "5.6 Lifetime Elision Rules & `'static`",
+    "slug": "M05-L06",
+    "title": "Lifetime Elision Rules & 'static Lifetime",
     "module": "Modul 5: Generics, Traits, & Lifetimes",
     "moduleId": 5,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 5.6 Lifetime Elision Rules & `'static`\n\nMateri detail Rust Generics, Traits, & Lifetimes.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 5.6 Lifetime Elision Rules & `'static`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 30\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M05-L06.md",
+    "code": "// M05-L06 - Lifetime Elision Rules & 'static Lifetime\nfn main() {\n    println!(\"=== Lifetime Elision Rules & 'static Lifetime ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 5.6 Lifetime Elision Rules & `'static`?",
+      "question": "Apa konsep utama pada Lifetime Elision Rules & 'static Lifetime?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 31,
-    "slug": "rust-6-1",
-    "title": "6.1 Closures: Anonymous Functions",
+    "slug": "M06-L01",
+    "title": "Closures: Anonymous Functions & Scope Capture",
     "module": "Modul 6: Functional Features & Smart Pointers",
     "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 6.1 Closures: Anonymous Functions\n\nMateri detail Rust Functional Features & Smart Pointers.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 6.1 Closures: Anonymous Functions\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 31\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L01.md",
+    "code": "// M06-L01 - Closures: Anonymous Functions & Scope Capture\nfn main() {\n    println!(\"=== Closures: Anonymous Functions & Scope Capture ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 6.1 Closures: Anonymous Functions?",
+      "question": "Apa konsep utama pada Closures: Anonymous Functions & Scope Capture?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 32,
-    "slug": "rust-6-2",
-    "title": "6.2 Closures: Capturing Environment",
+    "slug": "M06-L02",
+    "title": "Iterators & Zero-Cost Pipeline Adapters",
     "module": "Modul 6: Functional Features & Smart Pointers",
     "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 6.2 Closures: Capturing Environment\n\nMateri detail Rust Functional Features & Smart Pointers.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 6.2 Closures: Capturing Environment\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 32\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L02.md",
+    "code": "// M06-L02 - Iterators & Zero-Cost Pipeline Adapters\nfn main() {\n    println!(\"=== Iterators & Zero-Cost Pipeline Adapters ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 6.2 Closures: Capturing Environment?",
+      "question": "Apa konsep utama pada Iterators & Zero-Cost Pipeline Adapters?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 33,
-    "slug": "rust-6-3",
-    "title": "6.3 Iterators",
+    "slug": "M06-L03",
+    "title": "Box<T>: Smart Pointer untuk Alokasi Heap",
     "module": "Modul 6: Functional Features & Smart Pointers",
     "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 6.3 Iterators\n\nMateri detail Rust Functional Features & Smart Pointers.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 6.3 Iterators\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 33\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L03.md",
+    "code": "// M06-L03 - Box<T>: Smart Pointer untuk Alokasi Heap\nfn main() {\n    println!(\"=== Box<T>: Smart Pointer untuk Alokasi Heap ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 6.3 Iterators?",
+      "question": "Apa konsep utama pada Box<T>: Smart Pointer untuk Alokasi Heap?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 34,
-    "slug": "rust-6-4",
-    "title": "6.4 Smart Pointers: `Box<T>`",
+    "slug": "M06-L04",
+    "title": "Deref Coercion & Drop Trait",
     "module": "Modul 6: Functional Features & Smart Pointers",
     "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 6.4 Smart Pointers: `Box<T>`\n\nMateri detail Rust Functional Features & Smart Pointers.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 6.4 Smart Pointers: `Box<T>`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 34\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L04.md",
+    "code": "// M06-L04 - Deref Coercion & Drop Trait\nfn main() {\n    println!(\"=== Deref Coercion & Drop Trait ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 6.4 Smart Pointers: `Box<T>`?",
+      "question": "Apa konsep utama pada Deref Coercion & Drop Trait?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 35,
-    "slug": "rust-6-5",
-    "title": "6.5 Smart Pointers: `Rc<T>` (Reference Counting)",
+    "slug": "M06-L05",
+    "title": "Rc<T>: Reference Counting Single-Threaded",
     "module": "Modul 6: Functional Features & Smart Pointers",
     "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 6.5 Smart Pointers: `Rc<T>` (Reference Counting)\n\nMateri detail Rust Functional Features & Smart Pointers.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 6.5 Smart Pointers: `Rc<T>` (Reference Counting)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 35\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L05.md",
+    "code": "// M06-L05 - Rc<T>: Reference Counting Single-Threaded\nfn main() {\n    println!(\"=== Rc<T>: Reference Counting Single-Threaded ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 6.5 Smart Pointers: `Rc<T>` (Reference Counting)?",
+      "question": "Apa konsep utama pada Rc<T>: Reference Counting Single-Threaded?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 36,
-    "slug": "rust-6-6",
-    "title": "6.6 Interior Mutability: `RefCell<T>`",
+    "slug": "M06-L06",
+    "title": "RefCell<T> & Pola Interior Mutability",
     "module": "Modul 6: Functional Features & Smart Pointers",
     "moduleId": 6,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 6.6 Interior Mutability: `RefCell<T>`\n\nMateri detail Rust Functional Features & Smart Pointers.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 6.6 Interior Mutability: `RefCell<T>`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 36\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L06.md",
+    "code": "// M06-L06 - RefCell<T> & Pola Interior Mutability\nfn main() {\n    println!(\"=== RefCell<T> & Pola Interior Mutability ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 6.6 Interior Mutability: `RefCell<T>`?",
+      "question": "Apa konsep utama pada RefCell<T> & Pola Interior Mutability?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 37,
-    "slug": "rust-7-1",
-    "title": "7.1 Pengenalan Threads",
+    "slug": "M07-L01",
+    "title": "Native OS Threads dengan thread::spawn",
     "module": "Modul 7: Fearless Concurrency",
     "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 7.1 Pengenalan Threads\n\nMateri detail Rust Fearless Concurrency.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 7.1 Pengenalan Threads\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 37\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L01.md",
+    "code": "// M07-L01 - Native OS Threads dengan thread::spawn\nfn main() {\n    println!(\"=== Native OS Threads dengan thread::spawn ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 7.1 Pengenalan Threads?",
+      "question": "Apa konsep utama pada Native OS Threads dengan thread::spawn?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 38,
-    "slug": "rust-7-2",
-    "title": "7.2 Menggunakan `move` dengan Threads",
+    "slug": "M07-L02",
+    "title": "Transfer Kepemilikan Data dengan Closure move",
     "module": "Modul 7: Fearless Concurrency",
     "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 7.2 Menggunakan `move` dengan Threads\n\nMateri detail Rust Fearless Concurrency.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 7.2 Menggunakan `move` dengan Threads\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 38\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L02.md",
+    "code": "// M07-L02 - Transfer Kepemilikan Data dengan Closure move\nfn main() {\n    println!(\"=== Transfer Kepemilikan Data dengan Closure move ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 7.2 Menggunakan `move` dengan Threads?",
+      "question": "Apa konsep utama pada Transfer Kepemilikan Data dengan Closure move?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 39,
-    "slug": "rust-7-3",
-    "title": "7.3 Message Passing (Channels `mpsc`)",
+    "slug": "M07-L03",
+    "title": "Message Passing: Komunikasi via mpsc Channel",
     "module": "Modul 7: Fearless Concurrency",
     "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 7.3 Message Passing (Channels `mpsc`)\n\nMateri detail Rust Fearless Concurrency.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 7.3 Message Passing (Channels `mpsc`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 39\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L03.md",
+    "code": "// M07-L03 - Message Passing: Komunikasi via mpsc Channel\nfn main() {\n    println!(\"=== Message Passing: Komunikasi via mpsc Channel ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 7.3 Message Passing (Channels `mpsc`)?",
+      "question": "Apa konsep utama pada Message Passing: Komunikasi via mpsc Channel?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 40,
-    "slug": "rust-7-4",
-    "title": "7.4 Shared-State Concurrency (`Mutex<T>`)",
+    "slug": "M07-L04",
+    "title": "Shared State Concurrency: Mutex<T> & Arc<T>",
     "module": "Modul 7: Fearless Concurrency",
     "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 7.4 Shared-State Concurrency (`Mutex<T>`)\n\nMateri detail Rust Fearless Concurrency.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 7.4 Shared-State Concurrency (`Mutex<T>`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 40\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L04.md",
+    "code": "// M07-L04 - Shared State Concurrency: Mutex<T> & Arc<T>\nfn main() {\n    println!(\"=== Shared State Concurrency: Mutex<T> & Arc<T> ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 7.4 Shared-State Concurrency (`Mutex<T>`)?",
+      "question": "Apa konsep utama pada Shared State Concurrency: Mutex<T> & Arc<T>?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 41,
-    "slug": "rust-7-5",
-    "title": "7.5 Sharing Status Multi-Thread (`Arc<T>`)",
+    "slug": "M07-L05",
+    "title": "Pencegahan Deadlock & Sinkronisasi Aman",
     "module": "Modul 7: Fearless Concurrency",
     "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 7.5 Sharing Status Multi-Thread (`Arc<T>`)\n\nMateri detail Rust Fearless Concurrency.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 7.5 Sharing Status Multi-Thread (`Arc<T>`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 41\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L05.md",
+    "code": "// M07-L05 - Pencegahan Deadlock & Sinkronisasi Aman\nfn main() {\n    println!(\"=== Pencegahan Deadlock & Sinkronisasi Aman ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 7.5 Sharing Status Multi-Thread (`Arc<T>`)?",
+      "question": "Apa konsep utama pada Pencegahan Deadlock & Sinkronisasi Aman?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 42,
-    "slug": "rust-7-6",
-    "title": "7.6 Trait `Send` dan `Sync`",
+    "slug": "M07-L06",
+    "title": "Extensible Concurrency: Trait Send & Sync",
     "module": "Modul 7: Fearless Concurrency",
     "moduleId": 7,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 7.6 Trait `Send` dan `Sync`\n\nMateri detail Rust Fearless Concurrency.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 7.6 Trait `Send` dan `Sync`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 42\");\n}",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L06.md",
+    "code": "// M07-L06 - Extensible Concurrency: Trait Send & Sync\nfn main() {\n    println!(\"=== Extensible Concurrency: Trait Send & Sync ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 7.6 Trait `Send` dan `Sync`?",
+      "question": "Apa konsep utama pada Extensible Concurrency: Trait Send & Sync?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 43,
-    "slug": "rust-8-1",
-    "title": "8.1 Pengenalan Asynchronous Programming & Futures",
+    "slug": "M08-L01",
+    "title": "Pengenalan Asynchronous Rust: Future & Polling",
     "module": "Modul 8: Async/Await & Ekosistem Tokio",
     "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 8.1 Pengenalan Asynchronous Programming & Futures\n\nMateri detail Rust Async/Await & Ekosistem Tokio.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 8.1 Pengenalan Asynchronous Programming & Futures\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 43\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L01.md",
+    "code": "// M08-L01 - Pengenalan Asynchronous Rust: Future & Polling\nfn main() {\n    println!(\"=== Pengenalan Asynchronous Rust: Future & Polling ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 8.1 Pengenalan Asynchronous Programming & Futures?",
+      "question": "Apa konsep utama pada Pengenalan Asynchronous Rust: Future & Polling?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 44,
-    "slug": "rust-8-2",
-    "title": "8.2 Sintaks `async` / `await`",
+    "slug": "M08-L02",
+    "title": "Runtime Tokio: Setup, #[tokio::main] & Executor",
     "module": "Modul 8: Async/Await & Ekosistem Tokio",
     "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 8.2 Sintaks `async` / `await`\n\nMateri detail Rust Async/Await & Ekosistem Tokio.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 8.2 Sintaks `async` / `await`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 44\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L02.md",
+    "code": "// M08-L02 - Runtime Tokio: Setup, #[tokio::main] & Executor\nfn main() {\n    println!(\"=== Runtime Tokio: Setup, #[tokio::main] & Executor ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 8.2 Sintaks `async` / `await`?",
+      "question": "Apa konsep utama pada Runtime Tokio: Setup, #[tokio::main] & Executor?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 45,
-    "slug": "rust-8-3",
-    "title": "8.3 Pengenalan Runtime Tokio & `#[tokio::main]`",
+    "slug": "M08-L03",
+    "title": "Async/Await Syntax & Eksekusi Non-blocking",
     "module": "Modul 8: Async/Await & Ekosistem Tokio",
     "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 8.3 Pengenalan Runtime Tokio & `#[tokio::main]`\n\nMateri detail Rust Async/Await & Ekosistem Tokio.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 8.3 Pengenalan Runtime Tokio & `#[tokio::main]`\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 45\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L03.md",
+    "code": "// M08-L03 - Async/Await Syntax & Eksekusi Non-blocking\nfn main() {\n    println!(\"=== Async/Await Syntax & Eksekusi Non-blocking ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 8.3 Pengenalan Runtime Tokio & `#[tokio::main]`?",
+      "question": "Apa konsep utama pada Async/Await Syntax & Eksekusi Non-blocking?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 46,
-    "slug": "rust-8-4",
-    "title": "8.4 Spawning Tokio Tasks",
+    "slug": "M08-L04",
+    "title": "Concurrent Tasks dengan tokio::spawn",
     "module": "Modul 8: Async/Await & Ekosistem Tokio",
     "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 8.4 Spawning Tokio Tasks\n\nMateri detail Rust Async/Await & Ekosistem Tokio.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 8.4 Spawning Tokio Tasks\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 46\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L04.md",
+    "code": "// M08-L04 - Concurrent Tasks dengan tokio::spawn\nfn main() {\n    println!(\"=== Concurrent Tasks dengan tokio::spawn ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 8.4 Spawning Tokio Tasks?",
+      "question": "Apa konsep utama pada Concurrent Tasks dengan tokio::spawn?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 47,
-    "slug": "rust-8-5",
-    "title": "8.5 Async Channels (Tokio `mpsc`)",
+    "slug": "M08-L05",
+    "title": "Tokio Async Channels & Primitif Sinkronisasi",
     "module": "Modul 8: Async/Await & Ekosistem Tokio",
     "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 8.5 Async Channels (Tokio `mpsc`)\n\nMateri detail Rust Async/Await & Ekosistem Tokio.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 8.5 Async Channels (Tokio `mpsc`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 47\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L05.md",
+    "code": "// M08-L05 - Tokio Async Channels & Primitif Sinkronisasi\nfn main() {\n    println!(\"=== Tokio Async Channels & Primitif Sinkronisasi ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 8.5 Async Channels (Tokio `mpsc`)?",
+      "question": "Apa konsep utama pada Tokio Async Channels & Primitif Sinkronisasi?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 48,
-    "slug": "rust-8-6",
-    "title": "8.6 `select!` Macro & Task Cancellation",
+    "slug": "M08-L06",
+    "title": "Membangun REST API Asynchronous Cepat dengan Axum",
     "module": "Modul 8: Async/Await & Ekosistem Tokio",
     "moduleId": 8,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 8.6 `select!` Macro & Task Cancellation\n\nMateri detail Rust Async/Await & Ekosistem Tokio.\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 8.6 `select!` Macro & Task Cancellation\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 48\");\n}",
+    "duration": "30 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L06.md",
+    "code": "// M08-L06 - Membangun REST API Asynchronous Cepat dengan Axum\nfn main() {\n    println!(\"=== Membangun REST API Asynchronous Cepat dengan Axum ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 8.6 `select!` Macro & Task Cancellation?",
+      "question": "Apa konsep utama pada Membangun REST API Asynchronous Cepat dengan Axum?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 49,
-    "slug": "rust-9-1",
-    "title": "9.1 Unsafe Rust: Dereferencing Raw Pointers",
+    "slug": "M09-L01",
+    "title": "Declarative Macros dengan macro_rules!",
     "module": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
     "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 9.1 Unsafe Rust: Dereferencing Raw Pointers\n\nMateri detail Rust Advanced Rust (Macros, Unsafe, FFI).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 9.1 Unsafe Rust: Dereferencing Raw Pointers\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 49\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L01.md",
+    "code": "// M09-L01 - Declarative Macros dengan macro_rules!\nfn main() {\n    println!(\"=== Declarative Macros dengan macro_rules! ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 9.1 Unsafe Rust: Dereferencing Raw Pointers?",
+      "question": "Apa konsep utama pada Declarative Macros dengan macro_rules!?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 50,
-    "slug": "rust-9-2",
-    "title": "9.2 Unsafe Rust: Eksternal FFI (Foreign Function Interface)",
+    "slug": "M09-L02",
+    "title": "Procedural Macros (Derive, Attribute, Function)",
     "module": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
     "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 9.2 Unsafe Rust: Eksternal FFI (Foreign Function Interface)\n\nMateri detail Rust Advanced Rust (Macros, Unsafe, FFI).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 9.2 Unsafe Rust: Eksternal FFI (Foreign Function Interface)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 50\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L02.md",
+    "code": "// M09-L02 - Procedural Macros (Derive, Attribute, Function)\nfn main() {\n    println!(\"=== Procedural Macros (Derive, Attribute, Function) ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 9.2 Unsafe Rust: Eksternal FFI (Foreign Function Interface)?",
+      "question": "Apa konsep utama pada Procedural Macros (Derive, Attribute, Function)?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 51,
-    "slug": "rust-9-3",
-    "title": "9.3 Advanced Traits (Associated Types)",
+    "slug": "M09-L03",
+    "title": "Unsafe Rust: Batasan, Kekuatan & Safety Invariants",
     "module": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
     "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 9.3 Advanced Traits (Associated Types)\n\nMateri detail Rust Advanced Rust (Macros, Unsafe, FFI).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 9.3 Advanced Traits (Associated Types)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 51\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L03.md",
+    "code": "// M09-L03 - Unsafe Rust: Batasan, Kekuatan & Safety Invariants\nfn main() {\n    println!(\"=== Unsafe Rust: Batasan, Kekuatan & Safety Invariants ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 9.3 Advanced Traits (Associated Types)?",
+      "question": "Apa konsep utama pada Unsafe Rust: Batasan, Kekuatan & Safety Invariants?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 52,
-    "slug": "rust-9-4",
-    "title": "9.4 Advanced Types (Newtype Pattern)",
+    "slug": "M09-L04",
+    "title": "Raw Pointers (*const T, *mut T) & Manual Dereference",
     "module": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
     "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 9.4 Advanced Types (Newtype Pattern)\n\nMateri detail Rust Advanced Rust (Macros, Unsafe, FFI).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 9.4 Advanced Types (Newtype Pattern)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 52\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L04.md",
+    "code": "// M09-L04 - Raw Pointers (*const T, *mut T) & Manual Dereference\nfn main() {\n    println!(\"=== Raw Pointers (*const T, *mut T) & Manual Dereference ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 9.4 Advanced Types (Newtype Pattern)?",
+      "question": "Apa konsep utama pada Raw Pointers (*const T, *mut T) & Manual Dereference?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 53,
-    "slug": "rust-9-5",
-    "title": "9.5 Declarative Macros (`macro_rules!`)",
+    "slug": "M09-L05",
+    "title": "FFI (Foreign Function Interface): Interop C",
     "module": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
     "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 9.5 Declarative Macros (`macro_rules!`)\n\nMateri detail Rust Advanced Rust (Macros, Unsafe, FFI).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 9.5 Declarative Macros (`macro_rules!`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 53\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L05.md",
+    "code": "// M09-L05 - FFI (Foreign Function Interface): Interop C\nfn main() {\n    println!(\"=== FFI (Foreign Function Interface): Interop C ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 9.5 Declarative Macros (`macro_rules!`)?",
+      "question": "Apa konsep utama pada FFI (Foreign Function Interface): Interop C?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 54,
-    "slug": "rust-9-6",
-    "title": "9.6 Procedural Macros",
+    "slug": "M09-L06",
+    "title": "Advanced Traits: Associated Types & Syntax",
     "module": "Modul 9: Advanced Rust (Macros, Unsafe, FFI)",
     "moduleId": 9,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 9.6 Procedural Macros\n\nMateri detail Rust Advanced Rust (Macros, Unsafe, FFI).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 9.6 Procedural Macros\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 54\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L06.md",
+    "code": "// M09-L06 - Advanced Traits: Associated Types & Syntax\nfn main() {\n    println!(\"=== Advanced Traits: Associated Types & Syntax ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 9.6 Procedural Macros?",
+      "question": "Apa konsep utama pada Advanced Traits: Associated Types & Syntax?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 55,
-    "slug": "rust-10-1",
-    "title": "10.1 Menulis dan Menjalankan Unit Tests",
-    "module": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
+    "slug": "M10-L01",
+    "title": "Testing Komprehensif: Unit, Integrasi, & Doc-Tests",
+    "module": "Modul 10: Ekosistem, Testing, & Capstone Project",
     "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 10.1 Menulis dan Menjalankan Unit Tests\n\nMateri detail Rust Ekosistem, Testing, & WebAssembly (WASM).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 10.1 Menulis dan Menjalankan Unit Tests\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 55\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L01.md",
+    "code": "// M10-L01 - Testing Komprehensif: Unit, Integrasi, & Doc-Tests\nfn main() {\n    println!(\"=== Testing Komprehensif: Unit, Integrasi, & Doc-Tests ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 10.1 Menulis dan Menjalankan Unit Tests?",
+      "question": "Apa konsep utama pada Testing Komprehensif: Unit, Integrasi, & Doc-Tests?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 56,
-    "slug": "rust-10-2",
-    "title": "10.2 Integration Tests & Konfigurasi",
-    "module": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
+    "slug": "M10-L02",
+    "title": "Benchmarking Performa dengan Criterion.rs",
+    "module": "Modul 10: Ekosistem, Testing, & Capstone Project",
     "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 10.2 Integration Tests & Konfigurasi\n\nMateri detail Rust Ekosistem, Testing, & WebAssembly (WASM).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 10.2 Integration Tests & Konfigurasi\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 56\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L02.md",
+    "code": "// M10-L02 - Benchmarking Performa dengan Criterion.rs\nfn main() {\n    println!(\"=== Benchmarking Performa dengan Criterion.rs ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 10.2 Integration Tests & Konfigurasi?",
+      "question": "Apa konsep utama pada Benchmarking Performa dengan Criterion.rs?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 57,
-    "slug": "rust-10-3",
-    "title": "10.3 Manajemen Cargo Workspaces",
-    "module": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
+    "slug": "M10-L03",
+    "title": "WebAssembly (WASM): Kompilasi Rust ke Browser",
+    "module": "Modul 10: Ekosistem, Testing, & Capstone Project",
     "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 10.3 Manajemen Cargo Workspaces\n\nMateri detail Rust Ekosistem, Testing, & WebAssembly (WASM).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 10.3 Manajemen Cargo Workspaces\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 57\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L03.md",
+    "code": "// M10-L03 - WebAssembly (WASM): Kompilasi Rust ke Browser\nfn main() {\n    println!(\"=== WebAssembly (WASM): Kompilasi Rust ke Browser ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 10.3 Manajemen Cargo Workspaces?",
+      "question": "Apa konsep utama pada WebAssembly (WASM): Kompilasi Rust ke Browser?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 0,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 58,
-    "slug": "rust-10-4",
-    "title": "10.4 Pengenalan WebAssembly (WASM) & Rust",
-    "module": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
+    "slug": "M10-L04",
+    "title": "Membangun Tool CLI Profesional dengan Clap",
+    "module": "Modul 10: Ekosistem, Testing, & Capstone Project",
     "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 10.4 Pengenalan WebAssembly (WASM) & Rust\n\nMateri detail Rust Ekosistem, Testing, & WebAssembly (WASM).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 10.4 Pengenalan WebAssembly (WASM) & Rust\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 58\");\n}",
+    "duration": "25 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L04.md",
+    "code": "// M10-L04 - Membangun Tool CLI Profesional dengan Clap\nfn main() {\n    println!(\"=== Membangun Tool CLI Profesional dengan Clap ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 10.4 Pengenalan WebAssembly (WASM) & Rust?",
+      "question": "Apa konsep utama pada Membangun Tool CLI Profesional dengan Clap?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 1,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 59,
-    "slug": "rust-10-5",
-    "title": "10.5 Integrasi Rust & JS (`wasm-bindgen`)",
-    "module": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
+    "slug": "M10-L05",
+    "title": "CI/CD GitHub Actions & Publikasi ke Crates.io",
+    "module": "Modul 10: Ekosistem, Testing, & Capstone Project",
     "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 10.5 Integrasi Rust & JS (`wasm-bindgen`)\n\nMateri detail Rust Ekosistem, Testing, & WebAssembly (WASM).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 10.5 Integrasi Rust & JS (`wasm-bindgen`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 59\");\n}",
+    "duration": "20 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L05.md",
+    "code": "// M10-L05 - CI/CD GitHub Actions & Publikasi ke Crates.io\nfn main() {\n    println!(\"=== CI/CD GitHub Actions & Publikasi ke Crates.io ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 10.5 Integrasi Rust & JS (`wasm-bindgen`)?",
+      "question": "Apa konsep utama pada CI/CD GitHub Actions & Publikasi ke Crates.io?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 2,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   },
   {
     "id": 60,
-    "slug": "rust-10-6",
-    "title": "10.6 Manipulasi DOM dengan WASM (`web-sys`)",
-    "module": "Modul 10: Ekosistem, Testing, & WebAssembly (WASM)",
+    "slug": "M10-L06",
+    "title": "Capstone: In-Memory Key-Value Store",
+    "module": "Modul 10: Ekosistem, Testing, & Capstone Project",
     "moduleId": 10,
-    "duration": "15 m",
-    "level": "Semua",
-    "content": "# 10.6 Manipulasi DOM dengan WASM (`web-sys`)\n\nMateri detail Rust Ekosistem, Testing, & WebAssembly (WASM).\n\n- Poin utama 1\n- Poin utama 2\n",
-    "code": "// Rust 10.6 Manipulasi DOM dengan WASM (`web-sys`)\nfn main() {\n    println!(\"Hello Rust {}\", \"lesson 60\");\n}",
+    "duration": "35 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L06.md",
+    "code": "// M10-L06 - Capstone: In-Memory Key-Value Store\nfn main() {\n    println!(\"=== Capstone: In-Memory Key-Value Store ===\");\n}",
     "quiz": {
-      "question": "Apa konsep utama pada 10.6 Manipulasi DOM dengan WASM (`web-sys`)?",
+      "question": "Apa konsep utama pada Capstone: In-Memory Key-Value Store?",
       "options": [
-        "Opsi A",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin performa dan keamanan memori",
+        "Memperlambat kompilasi",
+        "Mengabaikan type-check",
+        "Memerlukan runtime garbage collector"
       ],
-      "answer": 3,
-      "explanation": "Penjelasan dari konsep tersebut."
+      "correct": 0,
+      "explanation": "Rust mendesain fitur ini untuk menjamin memory safety dan performa tinggi tanpa garbage collector."
     }
   }
 ];
@@ -1555,18 +1556,41 @@ async function loadLesson(index) {
     
     let html = '';
     try {
-        // If content exists in the lesson object, use it directly (no fetch needed)
-        if (lesson.content && typeof lesson.content === 'string') {
+        let md = '';
+        const mdCandidate = (typeof LESSON_FILES !== 'undefined' && LESSON_FILES[index]) ? LESSON_FILES[index] : (lesson.mdFile || ('lessons/' + (lesson.slug || '') + '.md'));
+        try {
+            const res = await fetch(mdCandidate);
+            if (res.ok) md = await res.text();
+        } catch (err) {}
+        
+        if (!md && lesson.mdFile) {
+            try {
+                const res = await fetch(lesson.mdFile);
+                if (res.ok) md = await res.text();
+            } catch (err) {}
+        }
+        
+        if (!md && lesson.slug) {
+            try {
+                const res = await fetch('lessons/' + lesson.slug + '.md');
+                if (res.ok) md = await res.text();
+            } catch (err) {}
+        }
+        
+        const rawContent = lesson.content || lesson.content_md || lesson.description || '';
+        if (!md && rawContent) {
+            md = rawContent;
+        }
+        
+        if (md) {
             if (typeof marked !== 'undefined') {
-                if (typeof marked.setOptions === 'function') marked.setOptions({gfm: true, breaks: true});
-                html = typeof marked === 'function' ? marked(lesson.content) : (typeof marked.parse === 'function' ? marked.parse(lesson.content) : '<pre>'+escapeHtml(lesson.content)+'</pre>');
+                marked.setOptions({gfm: true, breaks: true});
+                html = marked.parse(md);
             } else {
-                html = `<pre>${escapeHtml(lesson.content)}</pre>`;
+                html = '<pre>' + escapeHtml(md) + '</pre>';
             }
         } else {
-            // Fallback: generate simple content
-            html = `<h2>${escapeHtml(lesson.title)}</h2>
-                   <p>Materi Python modern yang menarik. Mulai menulis kode di editor di bawah.</p>`;
+            html = '<h2>' + escapeHtml(lesson.title) + '</h2><p>Materi sedang diperbarui. Silakan gunakan editor di bawah.</p>';
         }
     } catch (e) {
         html = `<div style="color:var(--text-muted);font-size:.8rem;margin-top:8px">Gagal memuat materi: ${escapeHtml(e.message)}</div>`;
@@ -1620,36 +1644,9 @@ try {
 }
 
 
-
-// Expose global functions for inline HTML onclick handlers
-if (typeof window !== 'undefined') {
-    window.loadLesson = loadLesson;
-    window.renderNav = renderNav;
-    window.toggleModule = toggleModule;
-    window.markComplete = markComplete;
-    window.resetProgress = resetProgress;
-    window.closeSidebar = typeof closeSidebar !== 'undefined' ? closeSidebar : function(){};
-    window.prevLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson - 1); };
-    window.nextLesson = function() { if (typeof currentLesson !== 'undefined') loadLesson(currentLesson + 1); };
-    if (typeof runCode === 'function') window.runCode = runCode;
-    if (typeof checkQuiz === 'function') window.checkQuiz = checkQuiz;
-    if (typeof escapeHtml === 'function') window.escapeHtml = escapeHtml;
-    if (typeof copyCode === 'function') window.copyCode = copyCode;
-    if (typeof resetCode === 'function') window.resetCode = resetCode;
-    if (typeof clearOutput === 'function') window.clearOutput = clearOutput;
-}
-
-function initMain() {
-        renderNav();
-        loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
-        updateProgress();
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     renderNav();
     const savedLast = parseInt(localStorage.getItem('rust_last_lesson') || '0', 10);
     loadLesson(!isNaN(savedLast) && savedLast >= 0 && savedLast < lessons.length ? savedLast : 0);
     updateProgress();
 });
-
-    if (typeof updateProgress === "function") window.updateProgress = updateProgress;

@@ -608,6 +608,75 @@
     })();
     </script>
 
+    <script>
+    // Legacy ID aliases -> unified template mirror (auto-sync)
+    (function(){
+        const pairs = [
+            ['lessonBody','lesson-content'],
+            ['contentArea','content-scroll'],
+            ['menu-toggle','menuToggle'],
+            ['sidebar-toggle','menuToggle'],
+            ['theme-icon','themeToggleIcon'],
+            ['themeToggleIcon','theme-icon'],
+            ['searchInput','lesson-search'],
+            ['searchInputMobile','lesson-search-mobile'],
+            ['sidebar-completed-count','stat-done'],
+            ['sidebar-progress-text','course-progress'],
+            ['progress-count','stat-done'],
+            ['nav-buttons','next-btn'],
+        ];
+        for (const [oldId, newId] of pairs) {
+            if (document.getElementById(oldId)) continue;
+            const src = document.getElementById(newId);
+            if (!src) continue;
+            const tag = src.tagName.toLowerCase();
+            const alias = document.createElement(tag === 'input' ? 'input' : 'span');
+            alias.id = oldId;
+            alias.style.display = 'none';
+            alias.setAttribute('data-alias-for', newId);
+            src.parentNode.insertBefore(alias, src.nextSibling);
+            // two-way value mirror for inputs
+            if (tag === 'input') {
+                src.addEventListener('input', () => { alias.value = src.value; alias.dispatchEvent(new Event('input',{bubbles:true})); });
+                alias.addEventListener('input', () => { src.value = alias.value; src.dispatchEvent(new Event('input',{bubbles:true})); });
+            }
+        }
+        // sync text content of mirrored counters every 500ms
+        const mirrors = [['stat-done','sidebar-completed-count'],['stat-done','progress-count'],['course-progress','sidebar-progress-text']];
+        setInterval(() => {
+            for (const [a,b] of mirrors) {
+                const ea = document.getElementById(a), eb = document.getElementById(b);
+                if (ea && eb && eb.textContent !== ea.textContent) eb.textContent = ea.textContent;
+            }
+        }, 500);
+        // gutter stub: no-op updateGutter guard
+        if (!document.getElementById('editor-gutter')) {
+            const g = document.createElement('div'); g.id = 'editor-gutter'; g.style.display = 'none';
+            document.body.appendChild(g);
+        }
+        if (!document.getElementById('quiz-feedback')) {
+            const q = document.createElement('div'); q.id = 'quiz-feedback'; q.style.display = 'none';
+            const qs = document.getElementById('quiz-section');
+            (qs || document.body).appendChild(q);
+        }
+        if (!document.getElementById('terminal-input')) {
+            const t = document.createElement('input'); t.id = 'terminal-input'; t.style.display = 'none';
+            document.body.appendChild(t);
+        }
+        if (!document.getElementById('info-banner')) {
+            const ib = document.createElement('div'); ib.id = 'info-banner'; ib.style.display = 'none';
+            document.body.appendChild(ib);
+        }
+        // contentArea.scrollTo proxy -> content-scroll
+        const ca = document.getElementById('contentArea');
+        if (ca && !ca.__proxied) {
+            ca.__proxied = true;
+            const cs = document.getElementById('content-scroll');
+            if (cs) { ca.scrollTo = cs.scrollTo.bind(cs); }
+        }
+    })();
+    </script>
+
     <!-- Certificate Modal (Gated 100% Completion) -->
     <div id="certificate-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] hidden items-center justify-center p-4">
         <div class="w-full max-w-2xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
@@ -691,27 +760,5 @@
             });
         }
     </script>
-
-    <!-- Force clear legacy service worker cache -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for (let registration of registrations) {
-            registration.unregister().then(function(boolean) {
-              console.log('Old ServiceWorker unregistered:', boolean);
-            });
-          }
-        });
-        if ('caches' in window) {
-          caches.keys().then(function(names) {
-            for (let name of names) {
-              caches.delete(name);
-              console.log('Cache cleared:', name);
-            }
-          });
-        }
-      }
-    </script>
-
 </body>
 </html>
