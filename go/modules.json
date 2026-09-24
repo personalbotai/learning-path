@@ -1,266 +1,1173 @@
 {
   "modules": [
     {
+      "id": 1,
       "module": 1,
-      "title": "Pengenalan",
+      "title": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+      "desc": "Kurikulum standar industri Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 1,
+          "lesson": 1,
+          "title": "1. Sejarah Go dan Filosofi Desain Bahasa",
+          "rawTitle": "Sejarah Go dan Filosofi Desain Bahasa",
           "slug": "M01-L01",
-          "title": "Apa itu Go?",
-          "lesson": 1
+          "moduleId": 1,
+          "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Asal mula Go (2009, Robert Griesemer, Rob Pike, Ken Thompson) dan masalah yang diatasi (kompleksitas C++, lambat build)",
+            "2. Filosofi desain: kesederhanaan, keterbacaan, konvensi > konfigurasi",
+            "3. Ekosistem Go saat ini: Go 1.22+, tooling (go vet, go fmt, gopls), dan komunitas"
+          ],
+          "snippet": "Jalankan `go version`, `go env`, dan `gofmt -d` pada file dengan indentasi campuran untuk merasakan tooling bawaan",
+          "quizText": "Apa perbedaan antara `go run`, `go build`, dan `go install`? Sebutkan 3 filosofi desain inti Go."
         },
         {
+          "id": 2,
+          "lesson": 2,
+          "title": "2. Workspace, Module, dan Struktur Proyek",
+          "rawTitle": "Workspace, Module, dan Struktur Proyek",
           "slug": "M01-L02",
-          "title": "Instalasi dan Setup Go Environment",
-          "lesson": 2
+          "moduleId": 1,
+          "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. GOPATH vs modul: penjelasan `go.mod`, `go.sum`, dan semantic import versioning",
+            "2. Struktur folder standar: `cmd/`, `internal/`, `pkg/`, `api/`, `web/`",
+            "3. Inisialisasi modul: `go mod init`, `go mod tidy`, dan mengelola dependensi"
+          ],
+          "snippet": "Buat modul baru `hello-go`, tambahkan fungsi `main()` yang print \"Hello, Go!\", lalu build dan jalankan",
+          "quizText": "Apa fungsi file `go.sum`? Apa perbedaan antara paket `internal` dan `pkg`?"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "3. Variabel, Konstanta, dan Tipe Dasar",
+          "rawTitle": "Variabel, Konstanta, dan Tipe Dasar",
+          "slug": "M01-L03",
+          "moduleId": 1,
+          "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Deklarasi variabel: `var`, inferensi tipe (`:=`), dan short declaration",
+            "2. Tipe dasar: `int`, `float64`, `string`, `bool`, `byte`, `rune`",
+            "3. Konstanta: `const`, `iota` (enumerasi), dan untyped constants"
+          ],
+          "snippet": "Deklarasikan variabel dengan berbagai tipe, gunakan `iota` untuk membuat konstanta bulan (Januari=1...Desember=12), print semuanya",
+          "quizText": "Apa bedanya `var x = 5` dan `x := 5`? Apa tipe default untuk literal integer tanpa spesifikasi?"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "4. Operator dan Ekspresi",
+          "rawTitle": "Operator dan Ekspresi",
+          "slug": "M01-L04",
+          "moduleId": 1,
+          "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Operator aritmatika, relasional, dan logika",
+            "2. Operator bitwise: `&`, `|`, `^`, `<<`, `>>`",
+            "3. Operator assignment majemuk (`+=`, `&=`, dll.) dan precedence"
+          ],
+          "snippet": "Tulis kalkulator sederhana yang menerima 2 angka dan operator, gunakan switch pada operator untuk menghitung hasil",
+          "quizText": "Apa hasil dari `3 << 2`? Apa perbedaan `==` dan `:=`? Apa output dari `!true && (2+2 == 4)`?"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "5. Input/Output Sederhana dan Formatting",
+          "rawTitle": "Input/Output Sederhana dan Formatting",
+          "slug": "M01-L05",
+          "moduleId": 1,
+          "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `fmt.Print`, `fmt.Println`, `fmt.Printf` dan `fmt.Scan`",
+            "2. Verb format: `%d`, `%s`, `%f`, `%v`, `%q`, `%t`",
+            "3. `strings` dan `strconv` packages untuk manipulasi string dasar"
+          ],
+          "snippet": "Program yang membaca nama dan umur dari stdin, lalu mencetak greeting terformat: \"Halo [nama], umurmu [umur] tahun\"",
+          "quizText": "Apa bedanya `%v` dan `%+v` dalam `fmt.Printf`? Verb format apa yang digunakan untuk membaca input integer?"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "6. Comments, Dokumentasi, dan Code Style",
+          "rawTitle": "Comments, Dokumentasi, dan Code Style",
+          "slug": "M01-L06",
+          "moduleId": 1,
+          "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Single-line `//` dan multi-line `/* */` comments",
+            "2. Doc comments (`// FunctionName ...`) dan generator dokumen `godoc`",
+            "3. Go Proverbs: \"Clear is better than clever\", Go fmt rules, dan effective Go guidelines"
+          ],
+          "snippet": "Tulis fungsi dengan doc comment yang baik, generate godoc, dan bandingkan dengan kode tanpa dokumentasi",
+          "quizText": "Apa itu \"effective Go\"? Apa tujuan utama `go vet`? Bagaimana cara menghasilkan dokumentasi dari kode Go?"
         }
-      ],
-      "id": 1
+      ]
     },
     {
+      "id": 2,
       "module": 2,
-      "title": "Dasar",
+      "title": "Modul 2: Struktur Kontrol & Alur Program",
+      "desc": "Kurikulum standar industri Modul 2: Struktur Kontrol & Alur Program",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 7,
+          "lesson": 1,
+          "title": "1. If, Else If, Else",
+          "rawTitle": "If, Else If, Else",
           "slug": "M02-L01",
-          "title": "Variabel dan Tipe Data",
-          "lesson": 1
+          "moduleId": 2,
+          "module": "Modul 2: Struktur Kontrol & Alur Program",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Sintaks if/else if/else dan blok inisialisasi di dalam if (`if x := 5; x > 3`)",
+            "2. Nested if dan best practice menghindari deep nesting",
+            "3. Truthy/falsy: Go tidak mengizinkan non-boolean dalam kondisi"
+          ],
+          "snippet": "Program klasifikasi nilai (A/B/C/D/F) menggunakan if-else chain dengan blok inisialisasi variabel",
+          "quizText": "Apa output dari `if x := 10; x > 5 { fmt.Println(\"Besar\") } else { fmt.Println(\"Kecil\") }`? Bisakah `if x > 5` di Go tanpa tipe eksplisit?"
         },
         {
+          "id": 8,
+          "lesson": 2,
+          "title": "2. Switch Statement",
+          "rawTitle": "Switch Statement",
           "slug": "M02-L02",
-          "title": "Operator dan Ekspresi",
-          "lesson": 2
+          "moduleId": 2,
+          "module": "Modul 2: Struktur Kontrol & Alur Program",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Switch ekspresi (berdasarkan nilai) dan switch type switch (`switch v.(type)`)",
+            "2. Fallthrough behavior (berbeda dengan C/Java) dan `default` case",
+            "3. Case tanpa ekspresi: `switch { case cond1: ... }` sebagai if-else chain"
+          ],
+          "snippet": "Program evaluasi hari dalam minggu (menggunakan `time.Day.String()`) dengan switch, termasuk weekend detection",
+          "quizText": "Apa bedanya `break` dalam switch Go vs C? Apa itu type switch dan kapan digunakan?"
+        },
+        {
+          "id": 9,
+          "lesson": 3,
+          "title": "3. For Loop (Satu-satunya Loop)",
+          "rawTitle": "For Loop (Satu-satunya Loop)",
+          "slug": "M02-L03",
+          "moduleId": 2,
+          "module": "Modul 2: Struktur Kontrol & Alur Program",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Three-part for: `for i := 0; i < n; i++`",
+            "2. While-style: `for condition { ... }` dan infinite loop: `for { ... }`",
+            "3. `break`, `continue`, dan `goto` (penggunaan terbatas)"
+          ],
+          "snippet": "Implementasikan FizzBuzz (1-100): kelipatan 3 → \"Fizz\", kelipatan 5 → \"Buzz\", keduanya → \"FizzBuzz\"",
+          "quizText": "Apa output dari `for i := 0; i < 3; i++ { fmt.Print(i) }`? Apakah Go memiliki `while` keyword?"
+        },
+        {
+          "id": 10,
+          "lesson": 4,
+          "title": "4. Range dan Iterasi Koleksi",
+          "rawTitle": "Range dan Iterasi Koleksi",
+          "slug": "M02-L04",
+          "moduleId": 2,
+          "module": "Modul 2: Struktur Kontrol & Alur Program",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `range` pada slice: `for i, v := range slice`",
+            "2. `range` pada map: `for k, v := range map`",
+            "3. `range` pada string (byte vs rune untuk Unicode) dan `_` untuk mengabaikan index/value"
+          ],
+          "snippet": "Hitung frekuensi karakter dalam string \"go语言真有趣\" menggunakan map dan range, tangani Unicode dengan benar",
+          "quizText": "Apa yang dikembalikan `range` pada string secara default (byte atau rune)? Bagaimana cara mengabaikan index saat range?"
+        },
+        {
+          "id": 11,
+          "lesson": 5,
+          "title": "5. Defer, Panic, dan Recover",
+          "rawTitle": "Defer, Panic, dan Recover",
+          "slug": "M02-L05",
+          "moduleId": 2,
+          "module": "Modul 2: Struktur Kontrol & Alur Program",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `defer` untuk eksekusi terlambat (LIFO order), penggunaan umum: resource cleanup",
+            "2. `panic` untuk kesalahan fatal dan `recover` untuk menangkap panic"
+          ],
+          "snippet": "Tulis fungsi yang membuka file, defer close, dan tunjukkan LIFO defer dengan 3 defer statement. Tambahkan recover untuk handle panic",
+          "quizText": "Dalam urutan apa defer dieksekusi? Apa perbedaan panic dan error dalam Go? Bisakah recover menangkap panic di fungsi lain?"
+        },
+        {
+          "id": 12,
+          "lesson": 6,
+          "title": "6. Pattern Matching dengan Select",
+          "rawTitle": "Pattern Matching dengan Select",
+          "slug": "M02-L06",
+          "moduleId": 2,
+          "module": "Modul 2: Struktur Kontrol & Alur Program",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `select` untuk multiplexing channel operations",
+            "2. `select` dengan `default` untuk non-blocking operations",
+            "3. Timeout handling dengan `select` dan `time.After`"
+          ],
+          "snippet": "Simulasikan request dengan 3 channel (API 1, API 2, API 3) dan gunakan select untuk menerima respons pertama yang tersedia",
+          "quizText": "Apa yang terjadi jika beberapa channel siap dalam select? Bagaimana cara membuat channel operation non-blocking?"
         }
-      ],
-      "id": 2
+      ]
     },
     {
+      "id": 3,
       "module": 3,
-      "title": "Kontrol",
+      "title": "Modul 3: Fungsi, Closures & Method",
+      "desc": "Kurikulum standar industri Modul 3: Fungsi, Closures & Method",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 13,
+          "lesson": 1,
+          "title": "1. Deklarasi dan Pemanggilan Fungsi",
+          "rawTitle": "Deklarasi dan Pemanggilan Fungsi",
           "slug": "M03-L01",
-          "title": "Control Flow: If dan Else",
-          "lesson": 1
+          "moduleId": 3,
+          "module": "Modul 3: Fungsi, Closures & Method",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Sintaks fungsi: `func nama(param tipe) tipeKembalian { ... }`",
+            "2. Multiple return values dan named return values",
+            "3. Variadic functions: `func variadic(nums ...int)` dan spread `...`"
+          ],
+          "snippet": "Buat fungsi `hitung(a, b int) (jumlah, selisih, hasilBagi int, sisa int)` dan fungsi variadic `rataRata(angles ...float64)`",
+          "quizText": "Apa itu variadic function? Bagaimana cara mendefinisikan named return values? Apa sintaks untuk fungsi dengan 3 nilai kembalian?"
         },
         {
+          "id": 14,
+          "lesson": 2,
+          "title": "2. Fungsi sebagai First-Class Citizen",
+          "rawTitle": "Fungsi sebagai First-Class Citizen",
           "slug": "M03-L02",
-          "title": "Loop dan Iterasi",
-          "lesson": 2
+          "moduleId": 3,
+          "module": "Modul 3: Fungsi, Closures & Method",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Fungsi sebagai nilai: assign ke variabel, passing sebagai argument",
+            "2. Function types dan anonymous functions (literals)",
+            "3. Higher-order functions: `map`, `filter`, `reduce` pattern"
+          ],
+          "snippet": "Implementasikan `apply(nums []int, fn func(int) int) []int` yang menerapkan fungsi pada setiap elemen slice, lalu panggil dengan fungsi kuadrat dan kubik",
+          "quizText": "Apa tipe dari variabel `f := func(x int) int { return x * 2 }`? Bagaimana cara melewatkan fungsi sebagai parameter?"
         },
         {
+          "id": 15,
+          "lesson": 3,
+          "title": "3. Closures dan Scope",
+          "rawTitle": "Closures dan Scope",
           "slug": "M03-L03",
-          "title": "Switch dan Select Statement",
-          "lesson": 3
+          "moduleId": 3,
+          "module": "Modul 3: Fungsi, Closures & Method",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Closure: fungsi yang \"menangkap\" variabel dari luar scope",
+            "2. Variabel captured oleh reference, bukan by value",
+            "3. Pitfall closure dalam loop: `for i := range` dan closure sharing variabel"
+          ],
+          "snippet": "Buat counter function `func newCounter() func() int` yang mengembalikan closure menghitung naik. Tunjukkan bug klasik closure-in-loop dan perbaikinya",
+          "quizText": "Apa itu closure? Apakah variabel yang di-capture disalin atau direferensikan? Apa bug umum closure dalam loop?"
+        },
+        {
+          "id": 16,
+          "lesson": 4,
+          "title": "4. Recursion dan Factorial/Fibonacci",
+          "rawTitle": "Recursion dan Factorial/Fibonacci",
+          "slug": "M03-L04",
+          "moduleId": 3,
+          "module": "Modul 3: Fungsi, Closures & Method",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Rekursi dasar: fungsi memanggil dirinya sendiri",
+            "2. Base case dan recursive case",
+            "3. Memoization untuk optimasi rekursi dan stack overflow prevention"
+          ],
+          "snippet": "Implementasikan Fibonacci dengan rekursi sederhana, lalu versi memoized menggunakan map. Bandingkan performa keduanya untuk n=40",
+          "quizText": "Apa itu base case? Mengapa rekursi Fibonacci tanpa memoisasi sangat lambat untuk n>40?"
+        },
+        {
+          "id": 17,
+          "lesson": 5,
+          "title": "5. Method pada Tipe",
+          "rawTitle": "Method pada Tipe",
+          "slug": "M03-L05",
+          "moduleId": 3,
+          "module": "Modul 3: Fungsi, Closures & Method",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Method declaration: `func (r Receiver) nama() tipe` vs function",
+            "2. Value receiver vs pointer receiver dan kapan menggunakan masing-masing",
+            "3. Method sets dan konsekuensinya untuk interface satisfaction"
+          ],
+          "snippet": "Buat tipe `Rectangle` dengan method `Area()`, `Perimeter()`, dan `Scale(factor float64)` menggunakan pointer receiver",
+          "quizText": "Apa perbedaan value receiver dan pointer receiver? Method mana yang dimiliki oleh `*T` vs `T`?"
+        },
+        {
+          "id": 18,
+          "lesson": 6,
+          "title": "6. Receivers, Embedded Types & Method Chaining",
+          "rawTitle": "Receivers, Embedded Types & Method Chaining",
+          "slug": "M03-L06",
+          "moduleId": 3,
+          "module": "Modul 3: Fungsi, Closures & Method",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Embedded types (struct within struct) dan method promotion",
+            "2. Method chaining: method mengembalikan pointer receiver",
+            "3. Overriding methods pada embedded types"
+          ],
+          "snippet": "Buat tipe `Logger` dengan method `Log()`, `Warn()`, `Error()` yang mendukung chaining: `logger.Log(\"msg\").Warn(\"warning\")`",
+          "quizText": "Apa itu method promotion? Bagaimana method chaining bekerja di Go?"
         }
-      ],
-      "id": 3
+      ]
     },
     {
+      "id": 4,
       "module": 4,
-      "title": "Fungsi",
+      "title": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+      "desc": "Kurikulum standar industri Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 19,
+          "lesson": 1,
+          "title": "1. Struct Deklarasi dan Inisialisasi",
+          "rawTitle": "Struct Deklarasi dan Inisialisasi",
           "slug": "M04-L01",
-          "title": "Fungsi Dasar",
-          "lesson": 1
+          "moduleId": 4,
+          "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Struct definition: `type Nama struct { field tipe }`",
+            "2. Inisialisasi: literal `Point{x: 1, y: 2}`, `&Point{}`, dan `new(Point)`",
+            "3. Zero value dan field access dengan dot notation"
+          ],
+          "snippet": "Buat struct `Buku` (judul, penulis, harga), inisialisasi 3 buku, dan hitung total harga semua buku",
+          "quizText": "Apa zero value untuk struct? Bagaimana cara membuat pointer ke struct literal?"
         },
         {
+          "id": 20,
+          "lesson": 2,
+          "title": "2. Field Tags, Embedding, dan Komposisi",
+          "rawTitle": "Field Tags, Embedding, dan Komposisi",
           "slug": "M04-L02",
-          "title": "Closure dan Anonymous Functions",
-          "lesson": 2
+          "moduleId": 4,
+          "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Struct tags: `json:\"nama_field\"`, `db:\"column_name\"` untuk serialisasi",
+            "2. Struct embedding (komposisi, bukan pewarisan)",
+            "3. Akses field tertanam dan shadowing"
+          ],
+          "snippet": "Buat struct `User` (name, email) dan struct `Admin` yang embed `User` + `role string`. Tambahkan tag `json` pada field dan marshal ke JSON",
+          "quizText": "Apa itu struct embedding? Apa bedanya dengan inheritance? Bagaimana tag struct digunakan?"
+        },
+        {
+          "id": 21,
+          "lesson": 3,
+          "title": "3. Interface Dasar",
+          "rawTitle": "Interface Dasar",
+          "slug": "M04-L03",
+          "moduleId": 4,
+          "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Interface definition: `interface { Method1() Tipe1; Method2() Tipe2 }`",
+            "2. Implementasi implisit: tidak ada `implements` keyword",
+            "3. Empty interface `interface{}` / `any` (Go 1.18+) dan type assertion"
+          ],
+          "snippet": "Buat interface `Shape` dengan method `Area() float64`. Implementasikan pada `Circle` dan `Rectangle`. Gunakan `any` dan type assertion untuk print tipe",
+          "quizText": "Apa itu empty interface? Apa itu type assertion dan syntax-nya? Bagaimana Go menangkap implementasi interface?"
+        },
+        {
+          "id": 22,
+          "lesson": 4,
+          "title": "4. Interface Lanjutan dan Polymorphism",
+          "rawTitle": "Interface Lanjutan dan Polymorphism",
+          "slug": "M04-L04",
+          "moduleId": 4,
+          "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Interface composition: menggabungkan interface",
+            "2. Interface sebagai contract dan decoupling",
+            "3. Polymorphism: fungsi menerima interface, menerima berbagai tipe implementasi"
+          ],
+          "snippet": "Buat interface `Speaker { Speak() string }` dan `Animal{Speaker}`. Implementasikan pada `Dog`, `Cat`, lalu fungsi `Announce(speaker Speaker)` yang memanggil Speak",
+          "quizText": "Apa itu interface composition? Bagaimana Go menggunakan interface untuk decoupling kode?"
+        },
+        {
+          "id": 23,
+          "lesson": 5,
+          "title": "5. Type Switch dan Type Assertion Lanjutan",
+          "rawTitle": "Type Switch dan Type Assertion Lanjutan",
+          "slug": "M04-L05",
+          "moduleId": 4,
+          "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Type switch: `switch v.(type) { case int: ... case string: ... }`",
+            "2. Safe type assertion: `val, ok := v.(Tipe)` dan comma-ok idiom",
+            "3. Reflection basics: `reflect.TypeOf()` dan `reflect.ValueOf()`"
+          ],
+          "snippet": "Buat fungsi `printType(any)` yang menggunakan type switch untuk menangani int, string, float64, dan slice, dengan default case",
+          "quizText": "Apa bedanya type assertion `v.(Tipe)` dan `v.(Tipe)` dengan comma-ok? Apa fungsi `reflect.TypeOf`?"
+        },
+        {
+          "id": 24,
+          "lesson": 6,
+          "title": "6. Generics: Introduction (Go 1.18+)",
+          "rawTitle": "Generics: Introduction (Go 1.18+)",
+          "slug": "M04-L06",
+          "moduleId": 4,
+          "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Type parameters: `func Map[K comparable, V any](m map[K]V, fn func(V) V) map[K]V`",
+            "2. Type constraints: `comparable`, `ordered`, dan custom constraint interfaces",
+            "3. Generic types: `type Stack[T any] struct { items []T }`"
+          ],
+          "snippet": "Buat generic `Filter[T any](slice []T, predicate func(T) bool) []T`, uji dengan `int` dan `string`",
+          "quizText": "Apa itu type parameter? Apa batasan constraint `comparable`? Kapan Go 1.18 memperkenalkan generics?"
         }
-      ],
-      "id": 4
+      ]
     },
     {
+      "id": 5,
       "module": 5,
-      "title": "Data Structure",
+      "title": "Modul 5: Goroutines, Channels & Concurrency",
+      "desc": "Kurikulum standar industri Modul 5: Goroutines, Channels & Concurrency",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 25,
+          "lesson": 1,
+          "title": "1. Goroutines: Dasar",
+          "rawTitle": "Goroutines: Dasar",
           "slug": "M05-L01",
-          "title": "Array dan Slice",
-          "lesson": 1
+          "moduleId": 5,
+          "module": "Modul 5: Goroutines, Channels & Concurrency",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `go` keyword untuk menjalankan fungsi sebagai goroutine",
+            "2. Lifecycle goroutine: created → scheduled → running → done",
+            "3. Main goroutine vs child goroutine dan masalah synchronisasi dasar"
+          ],
+          "snippet": "Buat 3 goroutine yang masing-masing print angka 1-5 dengan jeda, amati interleaving output. Gunakan `time.Sleep` untuk koordinasi sederhana",
+          "quizText": "Apa keyword untuk memulai goroutine? Apa perbedaan goroutine dan thread OS?"
         },
         {
+          "id": 26,
+          "lesson": 2,
+          "title": "2. Channels: Buffered dan Unbuffered",
+          "rawTitle": "Channels: Buffered dan Unbuffered",
           "slug": "M05-L02",
-          "title": "Map: Key-Value Data Structure",
-          "lesson": 2
+          "moduleId": 5,
+          "module": "Modul 5: Goroutines, Channels & Concurrency",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Channel creation: `ch := make(chan int)` (unbuffered) dan `ch := make(chan int, 5)` (buffered)",
+            "2. Send `ch <- 1` dan receive `val := <-ch`",
+            "3. Full buffer blocking (buffered) dan send/receive deadlock (unbuffered)"
+          ],
+          "snippet": "Buat program dengan buffered channel (capacity 3), kirim 5 item, dan amati blocking behavior. Lalu uji unbuffered channel tanpa receiver",
+          "quizText": "Apa bedanya buffered dan unbuffered channel? Apa yang terjadi mengirim ke channel full?"
+        },
+        {
+          "id": 27,
+          "lesson": 3,
+          "title": "3. Channel Direction dan Safety",
+          "rawTitle": "Channel Direction dan Safety",
+          "slug": "M05-L03",
+          "moduleId": 5,
+          "module": "Modul 5: Goroutines, Channels & Concurrency",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Directional channels: `chan<- int` (send-only) dan `<-chan int` (receive-only)",
+            "2. Channel sebagai argument fungsi untuk membatasi operasi",
+            "3. Range pada channel: `for val := range ch` dan close channel"
+          ],
+          "snippet": "Buat producer goroutine yang mengirim data ke `chan<- int` dan consumer yang membaca dari `<-chan int`. Gunakan `close` dan `range` untuk menyelesaikan konsumsi",
+          "quizText": "Apa sintaks channel send-only? Apa yang terjadi saat range channel yang sudah di-close?"
+        },
+        {
+          "id": 28,
+          "lesson": 4,
+          "title": "4. Select: Multiplexing Channel",
+          "rawTitle": "Select: Multiplexing Channel",
+          "slug": "M05-L04",
+          "moduleId": 5,
+          "module": "Modul 5: Goroutines, Channels & Concurrency",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `select` untuk menunggu beberapa channel secara bersamaan",
+            "2. Random selection ketika beberapa channel siap",
+            "3. `default` case untuk non-blocking select"
+          ],
+          "snippet": "Buat 2 channel (fast dan slow producer), gunakan select untuk memproses data dari channel mana pun yang tersedia lebih dulu",
+          "quizText": "Apa yang terjadi jika dua channel siap dalam select? Bagaimana default case mengubah blocking behavior?"
+        },
+        {
+          "id": 29,
+          "lesson": 5,
+          "title": "5. WaitGroup dan Sync Primitives",
+          "rawTitle": "WaitGroup dan Sync Primitives",
+          "slug": "M05-L05",
+          "moduleId": 5,
+          "module": "Modul 5: Goroutines, Channels & Concurrency",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `sync.WaitGroup`: `Add`, `Done`, `Wait` untuk menunggu goroutine",
+            "2. `sync.Mutex`: lock/unlock untuk shared memory protection",
+            "3. `sync.Once`: eksekusi tunggal dan `sync.Map` untuk concurrent map"
+          ],
+          "snippet": "Simulasikan bank account dengan 10 goroutine yang deposit/withdraw concurrently. Gunakan Mutex untuk melindungi balance dan tunjukkan race condition tanpa mutex",
+          "quizText": "Apa fungsi `WaitGroup.Add(0)` vs `WaitGroup.Add(1)`? Kapan harus menggunakan `sync.Map` daripada `map` biasa?"
+        },
+        {
+          "id": 30,
+          "lesson": 6,
+          "title": "6. Race Condition dan Detect",
+          "rawTitle": "Race Condition dan Detect",
+          "slug": "M05-L06",
+          "moduleId": 5,
+          "module": "Modul 5: Goroutines, Channels & Concurrency",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Race condition: definisi dan contoh klasik (counter tanpa lock)",
+            "2. `-race` flag: `go run -race` dan `go test -race` untuk detect",
+            "3. Best practices: jangan share memory by communicating (via channel)"
+          ],
+          "snippet": "Tulis program dengan race condition (counter increment tanpa lock), jalankan dengan `go run -race` untuk melihat deteksi, lalu perbaiki dengan channel",
+          "quizText": "Apa itu race condition? Bagaimana cara mendeteksinya? Apa prinsip Go tentang sharing memory?"
         }
-      ],
-      "id": 5
+      ]
     },
     {
+      "id": 6,
       "module": 6,
-      "title": "OOP",
+      "title": "Modul 6: Context & Error Handling",
+      "desc": "Kurikulum standar industri Modul 6: Context & Error Handling",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 31,
+          "lesson": 1,
+          "title": "1. Error Handling Fundamentals",
+          "rawTitle": "Error Handling Fundamentals",
           "slug": "M06-L01",
-          "title": "Struct dan Method",
-          "lesson": 1
+          "moduleId": 6,
+          "module": "Modul 6: Context & Error Handling",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Pola error Go: fungsi mengembalikan `(result, error)` dan `if err != nil`",
+            "2. `error` interface: `type error interface { Error() string }`",
+            "3. `errors.New()`, `fmt.Errorf()` dengan `%w` wrapping"
+          ],
+          "snippet": "Buat fungsi `divide(a, b float64) (float64, error)` yang mengembalikan error pembagian nol. Tangani error di main dan wrap dengan `fmt.Errorf`",
+          "quizText": "Apa itu `error` interface? Apa bedanya `errors.New` dan `fmt.Errorf` dengan `%w`?"
         },
         {
+          "id": 32,
+          "lesson": 2,
+          "title": "2. Custom Error dan Errors As/Is",
+          "rawTitle": "Custom Error dan Errors As/Is",
           "slug": "M06-L02",
-          "title": "Interface Dasar",
-          "lesson": 2
+          "moduleId": 6,
+          "module": "Modul 6: Context & Error Handling",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Custom error type dengan struct: `type InvalidInputError struct { Field string }`",
+            "2. `errors.Is(err, target)` untuk pengecekan error tertentu",
+            "3. `errors.As(err, &target)` untuk extract custom error"
+          ],
+          "snippet": "Buat custom error `ValidationError` dengan field `Field` dan `Msg`. Fungsi validasi mengembalikan error ini, lalu tangani dengan `errors.As`",
+          "quizText": "Apa fungsi `errors.As`? Bagaimana membedakan error jenis tertentu dari wrapped error?"
+        },
+        {
+          "id": 33,
+          "lesson": 3,
+          "title": "3. Context Dasar (context.Context)",
+          "rawTitle": "Context Dasar (context.Context)",
+          "slug": "M06-L03",
+          "moduleId": 6,
+          "module": "Modul 6: Context & Error Handling",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `context.Context`: interface untuk cancellation, deadline, dan request-scoped values",
+            "2. `context.Background()` dan `context.TODO()`",
+            "3. `context.WithCancel`, `context.WithTimeout`, `context.WithDeadline`"
+          ],
+          "snippet": "Buat goroutine pekerja yang menerima context. Tambahkan timeout 2 detik, simulasi pekerjaan lambat, dan amati cancellation via `ctx.Done()`",
+          "quizText": "Apa itu `context.Context`? Apa perbedaan `WithCancel` dan `WithTimeout`?"
+        },
+        {
+          "id": 34,
+          "lesson": 4,
+          "title": "4. Context untuk Cancellation Propagation",
+          "rawTitle": "Context untuk Cancellation Propagation",
+          "slug": "M06-L04",
+          "moduleId": 6,
+          "module": "Modul 6: Context & Error Handling",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Propagasi context melalui call chain: `func handler(ctx context.Context)`",
+            "2. `ctx.Err()` dan `context.Canceled` vs `context.DeadlineExceeded`",
+            "3. Cancel function dan defer pattern: `defer cancel()`"
+          ],
+          "snippet": "Buat chain 3 goroutine (A → B → C) yang semua menerima context yang sama. Cancel dari A dan amati B dan C berhenti. Gunakan defer cancel()",
+          "quizText": "Apa yang terjadi ketika context di-cancel? Apa itu `defer cancel()` pattern?"
+        },
+        {
+          "id": 35,
+          "lesson": 5,
+          "title": "5. Context Values dan Middleware Pattern",
+          "rawTitle": "Context Values dan Middleware Pattern",
+          "slug": "M06-L05",
+          "moduleId": 6,
+          "module": "Modul 6: Context & Error Handling",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `context.WithValue` untuk request-scoped data (user ID, trace ID)",
+            "2. Key type kustom untuk menghindari collision: `type ctxKey string`",
+            "3. Middleware pattern: fungsi yang menerima handler + context dan mengembalikan handler"
+          ],
+          "snippet": "Implementasikan middleware logging yang menambahkan request ID ke context, handler yang membaca request ID dari context, dan chain middleware",
+          "quizText": "Mengapa disarankan menggunakan custom key type daripada string untuk `WithValue`? Apa itu middleware pattern dalam konteks Go?"
+        },
+        {
+          "id": 36,
+          "lesson": 6,
+          "title": "6. Error Handling Strategy & Best Practices",
+          "rawTitle": "Error Handling Strategy & Best Practices",
+          "slug": "M06-L06",
+          "moduleId": 6,
+          "module": "Modul 6: Context & Error Handling",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Layering error handling: wrap errors di layer bawah, handle di layer atas",
+            "2. Sentinel errors vs custom errors vs wrapped errors — kapan memilih",
+            "3. Panic vs error: kapan pantas panic (harusnya tidak, kecuali bug)"
+          ],
+          "snippet": "Buat service layer sederhana (repo → service → handler) dengan error wrapping di setiap layer dan handling yang tepat di layer paling atas",
+          "quizText": "Kapan seharusnya menggunakan panic dalam Go? Apa perbedaan sentinel error dan wrapped error?"
         }
-      ],
-      "id": 6
+      ]
     },
     {
+      "id": 7,
       "module": 7,
-      "title": "Error",
+      "title": "Modul 7: Generics, Koleksi & Pipeline",
+      "desc": "Kurikulum standar industri Modul 7: Generics, Koleksi & Pipeline",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 37,
+          "lesson": 1,
+          "title": "1. Generics: Constraints dan Comparable",
+          "rawTitle": "Generics: Constraints dan Comparable",
           "slug": "M07-L01",
-          "title": "Error Handling di Go",
-          "lesson": 1
+          "moduleId": 7,
+          "module": "Modul 7: Generics, Koleksi & Pipeline",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Constraint interface: `type Number interface { int | float64 }`",
+            "2. `comparable` constraint dan penggunaannya dalam map/generics",
+            "3. Union types dalam constraint: `T int | string | float64`"
+          ],
+          "snippet": "Buat generic `Min[T ordered](a, b T) T` dan generic `Contains[T comparable](slice []T, val T) bool`. Uji dengan berbagai tipe.",
+          "quizText": "Apa itu union type dalam constraint? Menggunakan `comparable` vs `comparable`? Apa itu `ordered` constraint?"
+        },
+        {
+          "id": 38,
+          "lesson": 2,
+          "title": "2. Generic Data Structures",
+          "rawTitle": "Generic Data Structures",
+          "slug": "M07-L02",
+          "moduleId": 7,
+          "module": "Modul 7: Generics, Koleksi & Pipeline",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Generic struct: `type Queue[T any] struct { items []T }`",
+            "2. Generic methods pada struct: `func (q *Queue[T]) Enqueue(item T)`",
+            "3. Generic map/set operations dan kasus penggunaan"
+          ],
+          "snippet": "Implementasikan generic `Stack[T]`, `Set[T comparable]`, dan `LinkedList[T]` dengan operasi dasar (push/pop, add/remove, insert/delete)",
+          "quizText": "Apakah constraint tipe untuk Set? Mengapa `any` dan `interface{}` setara?"
+        },
+        {
+          "id": 39,
+          "lesson": 3,
+          "title": "3. Slice Lanjutan",
+          "rawTitle": "Slice Lanjutan",
+          "slug": "M07-L03",
+          "moduleId": 7,
+          "module": "Modul 7: Generics, Koleksi & Pipeline",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Slice mechanics: pointer, length, capacity (`s = s[:n]`, `s = s[:len(s)-1]`)",
+            "2. `append` dan memory reallocation, preallocation dengan `make([]T, 0, cap)`",
+            "3. Copy vs assignment (shared backing array) dan `copy()`"
+          ],
+          "snippet": "Demonstrasikan backing array sharing: buat slice, sub-slice, ubah elemen sub-slice, dan lihat perubahan pada slice asli. Bandingkan performa append dengan/without preallocation",
+          "quizText": "Apa bedanya `copy()` dan assignment slice? Apa itu backing array?"
+        },
+        {
+          "id": 40,
+          "lesson": 4,
+          "title": "4. Map Lanjutan dan Iterasi",
+          "rawTitle": "Map Lanjutan dan Iterasi",
+          "slug": "M07-L04",
+          "moduleId": 7,
+          "module": "Modul 7: Generics, Koleksi & Pipeline",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Map internals: hash map, O(1) average access",
+            "2. Safe concurrent map: `sync.Map` vs `map + Mutex` benchmark",
+            "3. Map deletion: `delete(m, key)` dan iterasi safety"
+          ],
+          "snippet": "Benchmark `map + Mutex` vs `sync.Map` untuk 1000 goroutine concurrent reads/writes. Analisis hasil dengan `go test -bench`",
+          "quizText": "Kapan `sync.Map` lebih baik daripada `map`+`Mutex`? Apa kompleksitas time map access?"
+        },
+        {
+          "id": 41,
+          "lesson": 5,
+          "title": "5. Pipeline Pattern dengan Channel",
+          "rawTitle": "Pipeline Pattern dengan Channel",
+          "slug": "M07-L05",
+          "moduleId": 7,
+          "module": "Modul 7: Generics, Koleksi & Pipeline",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Fan-out: 1 channel → banyak goroutine worker",
+            "2. Fan-in: banyak channel → 1 channel (merge)",
+            "3. Pipeline: stage1 → stage2 → stage3 dengan channels di antara"
+          ],
+          "snippet": "Buat pipeline: generate numbers → square numbers → filter even → print results. Setiap tahap adalah goroutine terpisah yang terhubung via channel",
+          "quizText": "Apa itu fan-out pattern? Bagaimana pipeline pattern menggunakan channels?"
+        },
+        {
+          "id": 42,
+          "lesson": 6,
+          "title": "6. Pooling dan Resource Management",
+          "rawTitle": "Pooling dan Resource Management",
+          "slug": "M07-L06",
+          "moduleId": 7,
+          "module": "Modul 7: Generics, Koleksi & Pipeline",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `sync.Pool`: reuse objects untuk mengurangi GC pressure",
+            "2. `sync.Once`: inisialisasi sekali (lazy singleton)",
+            "3. Resource cleanup pattern: `defer` + error check"
+          ],
+          "snippet": "Buat object pool untuk `bytes.Buffer` (prevent allocation berulang). Gunakan `sync.Once` untuk singleton config loader. Bandingkan alokasi dengan/without pool",
+          "quizText": "Apa tujuan `sync.Pool`? Kapan `sync.Once` lebih baik daripada inisialisasi di main?"
         }
-      ],
-      "id": 7
+      ]
     },
     {
+      "id": 8,
       "module": 8,
-      "title": "Concurrency",
+      "title": "Modul 8: Paket, Modul & Dependency Management",
+      "desc": "Kurikulum standar industri Modul 8: Paket, Modul & Dependency Management",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 43,
+          "lesson": 1,
+          "title": "1. Package Design dan Konvensi",
+          "rawTitle": "Package Design dan Konvensi",
           "slug": "M08-L01",
-          "title": "Goroutine Dasar",
-          "lesson": 1
+          "moduleId": 8,
+          "module": "Modul 8: Paket, Modul & Dependency Management",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Package declaration, naming convention (snake_case → kebab, `go.mod` name = import path)",
+            "2. Exported vs unexported: kapitalisasi huruf (Capital = exported)",
+            "3. Package main vs library dan `cmd/` directory pattern"
+          ],
+          "snippet": "Buat 2 paket: `geometry` (exported `Area()`) dan `utils` (unexported helper). Import kedua paket di `main` dan perhatikan aksesibilitas",
+          "quizText": "Apa aturan naming untuk exported identifier? Apa perbedaan `package main` dan library package?"
         },
         {
+          "id": 44,
+          "lesson": 2,
+          "title": "2. Import Management dan Aliasing",
+          "rawTitle": "Import Management dan Aliasing",
           "slug": "M08-L02",
-          "title": "Channel Dasar",
-          "lesson": 2
+          "moduleId": 8,
+          "module": "Modul 8: Paket, Modul & Dependency Management",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Import statement, import alias: `import f \"fmt\"` dan dot import: `import . \"fmt\"`",
+            "2. Import grouping dan blank import `_` untuk side effects (init)",
+            "3. Circular import problem dan solusi: extract ke paket ketiga"
+          ],
+          "snippet": "Demonstrasikan dot import, alias, dan blank import dengan paket `database/sql` (driver registration via blank import)",
+          "quizText": "Apa itu blank import dan kapan digunakan? Apa masalah circular import?"
         },
         {
+          "id": 45,
+          "lesson": 3,
+          "title": "3. Modul Proxy dan Go Proxy Protocol",
+          "rawTitle": "Modul Proxy dan Go Proxy Protocol",
           "slug": "M08-L03",
-          "title": "Select dan Pattern Concurrency",
-          "lesson": 3
+          "moduleId": 8,
+          "module": "Modul 8: Paket, Modul & Dependency Management",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `proxy.golang.org` dan `SUMDB` (sum database)",
+            "2. `go env GOPROXY`, `GOSUMDB`, `GOFLAGS`",
+            "3. Private module: `.gitconfig` dan `GONOSUMCHECK`, `GONOPROXY`"
+          ],
+          "snippet": "Konfigurasi GOPROXY berbeda (direct, proxy, offline), coba `go mod download` dengan setiap konfigurasi, dan lihat perbedaan behavior",
+          "quizText": "Apa itu `proxy.golang.org`? Bagaimana cara mengakses private module di Go?"
+        },
+        {
+          "id": 46,
+          "lesson": 4,
+          "title": "4. Minimal Version Selection (MVS)",
+          "rawTitle": "Minimal Version Selection (MVS)",
+          "slug": "M08-L04",
+          "moduleId": 8,
+          "module": "Modul 8: Paket, Modul & Dependency Management",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. MVS: Go memilih versi minimal yang kompatibel, bukan terbaru",
+            "2. `go get` dan `go upgrade`: perbedaan behavior MVS",
+            "3. `go.mod` directive: `go 1.x.x`, `require`, `exclude`, `replace`"
+          ],
+          "snippet": "Buat modul dengan dependensi, coba `go get package@latest` vs `go get package`, analisis perubahan `go.mod`, dan gunakan `replace` untuk override lokal",
+          "quizText": "Apa itu MVS? Bagaimana `go get` tanpa version bekerja di bawah MVS?"
+        },
+        {
+          "id": 47,
+          "lesson": 5,
+          "title": "5. Vendor Directory dan Offline Build",
+          "rawTitle": "Vendor Directory dan Offline Build",
+          "slug": "M08-L05",
+          "moduleId": 8,
+          "module": "Modul 8: Paket, Modul & Dependency Management",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `go mod vendor`: membuat vendor directory",
+            "2. `-mod=vendor` flag dan `go env -w GOFLAGS=-mod=vendor`",
+            "3. Keuntungan vendor: reproducible build, offline development"
+          ],
+          "snippet": "Clone project dengan dependensi eksternal, buat vendor directory, hapus cache go, dan build dengan `-mod=vendor` untuk bukti offline build",
+          "quizText": "Apa fungsi vendor directory? Kapan sebaiknya menggunakan vendor?"
+        },
+        {
+          "id": 48,
+          "lesson": 6,
+          "title": "6. Monorepo dan Workspace (Go 1.18+)",
+          "rawTitle": "Monorepo dan Workspace (Go 1.18+)",
+          "slug": "M08-L06",
+          "moduleId": 8,
+          "module": "Modul 8: Paket, Modul & Dependency Management",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `go work` file untuk multi-module workspace",
+            "2. `go work init` dan `go work use`",
+            "3. Monorepo pattern: package sharing tanpa publish ke proxy"
+          ],
+          "snippet": "Buat workspace dengan 2 modul lokal (aplikasi dan library), gunakan `go work init` dan `go work use`, modifikasi library dan test langsung di aplikasi",
+          "quizText": "Apa itu `go.work` file? Kapan harus menggunakan workspace?"
         }
-      ],
-      "id": 8
+      ]
     },
     {
+      "id": 9,
       "module": 9,
-      "title": "Memory",
+      "title": "Modul 9: Testing, Benchmarking & Quality",
+      "desc": "Kurikulum standar industri Modul 9: Testing, Benchmarking & Quality",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 49,
+          "lesson": 1,
+          "title": "1. Unit Testing Dasar",
+          "rawTitle": "Unit Testing Dasar",
           "slug": "M09-L01",
-          "title": "Pointer Dasar",
-          "lesson": 1
+          "moduleId": 9,
+          "module": "Modul 9: Testing, Benchmarking & Quality",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Test file convention: `_test.go`, `func TestXxx(t *testing.T)`",
+            "2. Table-driven tests: `[]struct { input X; want Y }` pattern",
+            "3. `t.Errorf` vs `t.Fatalf`, subtests: `t.Run`"
+          ],
+          "snippet": "Tulis test untuk fungsi kalkulator (add, subtract, multiply, divide) menggunakan table-driven pattern. Jalankan `go test -v`",
+          "quizText": "Apa konvensi penamaan file test? Bedanya `t.Errorf` dan `t.Fatalf`?"
+        },
+        {
+          "id": 50,
+          "lesson": 2,
+          "title": "2. Benchmarking dan Profiling",
+          "rawTitle": "Benchmarking dan Profiling",
+          "slug": "M09-L02",
+          "moduleId": 9,
+          "module": "Modul 9: Testing, Benchmarking & Quality",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Benchmark: `func BenchmarkXxx(b *testing.B)` dan `-bench` flag",
+            "2. `b.ReportAllocs()`, `b.ResetTimer()`, `b.RunParallel`",
+            "3. Memory profiling: `go test -memprofile` dan CPU profiling: `go test -cpuprofile`"
+          ],
+          "snippet": "Benchmark append vs preallocated slice, benchmark string concatenation vs `strings.Builder`. Hasilkan memory profile dan analyze",
+          "quizText": "Apa output `go test -bench` (N dan ns/op)? Bagaimana mengaktifkan memory reporting?"
+        },
+        {
+          "id": 51,
+          "lesson": 3,
+          "title": "3. Mocking dan Dependency Injection",
+          "rawTitle": "Mocking dan Dependency Injection",
+          "slug": "M09-L03",
+          "moduleId": 9,
+          "module": "Modul 9: Testing, Benchmarking & Quality",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Interface-based mocking: buat mock implementasi interface untuk testing",
+            "2. Dependency injection via parameter: `func Service(db DBInterface)`",
+            "3. Generate mock: `go generate` dan tools (mockgen, mockery)"
+          ],
+          "snippet": "Buat interface `UserRepository` dan mock `MockUserRepository`. Inject mock ke service layer dan test tanpa database nyata",
+          "quizText": "Mengapa interface memudahkan testing? Apa itu dependency injection?"
+        },
+        {
+          "id": 52,
+          "lesson": 4,
+          "title": "4. Integration Testing dan httptest",
+          "rawTitle": "Integration Testing dan httptest",
+          "slug": "M09-L04",
+          "moduleId": 9,
+          "module": "Modul 9: Testing, Benchmarking & Quality",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `net/http/httptest`: `httptest.NewServer` dan `httptest.NewRecorder`",
+            "2. Integration test: setup → execute → verify teardown pattern",
+            "3. Database testing: `sqlx` atau `gorm` test container, migrations"
+          ],
+          "snippet": "Buat HTTP handler dan test dengan `httptest.NewRecorder`. Verifikasi status code, headers, dan body response",
+          "quizText": "Apa fungsi `httptest.NewRecorder`? Bedanya unit test dan integration test?"
+        },
+        {
+          "id": 53,
+          "lesson": 5,
+          "title": "5. Race Detection dan Linting",
+          "rawTitle": "Race Detection dan Linting",
+          "slug": "M09-L05",
+          "moduleId": 9,
+          "module": "Modul 9: Testing, Benchmarking & Quality",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `go test -race`: race detector dan interpretasi output",
+            "2. `go vet`: static analysis dan detected issues",
+            "3. `golangci-lint`: linting suite dan konfigurasi `.golangci.yml`"
+          ],
+          "snippet": "Tulis kode dengan race condition, jalankan `go test -race` untuk deteksi. Setup `golangci-lint` dan jalankan pada kode dengan masalah umum (unused import, shadowing)",
+          "quizText": "Apa perbedaan `go vet` dan `go test -race`? Apa itu `golangci-lint`?"
+        },
+        {
+          "id": 54,
+          "lesson": 6,
+          "title": "6. Continuous Integration untuk Go",
+          "rawTitle": "Continuous Integration untuk Go",
+          "slug": "M09-L06",
+          "moduleId": 9,
+          "module": "Modul 9: Testing, Benchmarking & Quality",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. GitHub Actions: workflow untuk `go test`, `go vet`, `go build`",
+            "2. Matrix build: Go versi berbeda dan OS berbeda",
+            "3. Code coverage: `go test -coverprofile`, `go tool cover`"
+          ],
+          "snippet": "Buat `.github/workflows/ci.yml` yang menjalankan test, vet, build, dan coverage report untuk Go 1.21 dan 1.22 pada Linux dan macOS",
+          "quizText": "Apa itu matrix strategy di GitHub Actions? Bagaimana cara generate coverage report?"
         }
-      ],
-      "id": 9
+      ]
     },
     {
+      "id": 10,
       "module": 10,
-      "title": "Modul",
+      "title": "Modul 10: Proyek Akhir & Best Practices Industri",
+      "desc": "Kurikulum standar industri Modul 10: Proyek Akhir & Best Practices Industri",
+      "icon": "fa-solid fa-code",
       "lessons": [
         {
+          "id": 55,
+          "lesson": 1,
+          "title": "1. REST API dengan Standard Library",
+          "rawTitle": "REST API dengan Standard Library",
           "slug": "M10-L01",
-          "title": "Package dan Import System",
-          "lesson": 1
+          "moduleId": 10,
+          "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `net/http`: `http.ListenAndServe`, `http.HandleFunc`, `http.NewRequest`",
+            "2. JSON serialization: `json.Marshal` dan `json.Unmarshal`",
+            "3. Middleware pattern di `net/http`: function wrapper"
+          ],
+          "snippet": "Buat REST API minimal (CRUD buku) tanpa framework — hanya `net/http` + `encoding/json` + `sync.Mutex` untuk storage",
+          "quizText": "Apa keuntungan mengakan stdlib untuk REST API? Bagaimana middleware bekerja di `net/http`?"
         },
         {
+          "id": 56,
+          "lesson": 2,
+          "title": "2. HTTP Client dan Eksternal API",
+          "rawTitle": "HTTP Client dan Eksternal API",
           "slug": "M10-L02",
-          "title": "Go Modules dan Dependency Management",
-          "lesson": 2
-        }
-      ],
-      "id": 10
-    },
-    {
-      "module": 11,
-      "title": "File",
-      "lessons": [
-        {
-          "slug": "M11-L01",
-          "title": "File I/O Dasar",
-          "lesson": 1
-        }
-      ],
-      "id": 11
-    },
-    {
-      "module": 12,
-      "title": "Data",
-      "lessons": [
-        {
-          "slug": "M12-L01",
-          "title": "JSON dan Encoding",
-          "lesson": 1
-        }
-      ],
-      "id": 12
-    },
-    {
-      "module": 13,
-      "title": "Testing",
-      "lessons": [
-        {
-          "slug": "M13-L01",
-          "title": "Testing Dasar",
-          "lesson": 1
-        }
-      ],
-      "id": 13
-    },
-    {
-      "module": 14,
-      "title": "Web",
-      "lessons": [
-        {
-          "slug": "M14-L01",
-          "title": "HTTP Server Dasar",
-          "lesson": 1
-        }
-      ],
-      "id": 14
-    },
-    {
-      "module": 15,
-      "title": "Advanced",
-      "lessons": [
-        {
-          "slug": "M15-L01",
-          "title": "Context dan Timeout",
-          "lesson": 1
+          "moduleId": 10,
+          "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `http.Client`: timeout, transport, custom headers",
+            "2. `context` integration: request dengan timeout/cancel",
+            "3. JSON API consumption: GET/POST ke public API dan parse response"
+          ],
+          "snippet": "Konsumsi API publik (OpenWeatherMap free tier atau JSONPlaceholder), parse JSON response ke struct, tangani error dan timeout dengan context",
+          "quizText": "Mengapa harus menggunakan `http.Client` singleton daripada `http.Get`? Bagaimana context digunakan dalam HTTP request?"
         },
         {
-          "slug": "M15-L02",
-          "title": "Defer, Panic, dan Recover",
-          "lesson": 2
+          "id": 57,
+          "lesson": 3,
+          "title": "3. Database dengan Database/sql",
+          "rawTitle": "Database dengan Database/sql",
+          "slug": "M10-L03",
+          "moduleId": 10,
+          "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. `database/sql`: connection pooling, `Prepare`, `Query`, `Exec`",
+            "2. `sql.Rows`: iterate dan `sql.Row`: single result",
+            "3. Migration strategy dan `sql.DB` lifecycle"
+          ],
+          "snippet": "Hubungkan ke SQLite (embedded), buat tabel, INSERT data, SELECT dengan WHERE, UPDATE, dan DELETE. Tunjukkan connection pool settings (`SetMaxOpenConns`)",
+          "quizText": "Apa itu connection pool? Apa fungsi `db.Close()` dan kapan harus dipanggil?"
         },
         {
-          "slug": "M15-L03",
-          "title": "Generics Dasar (Go 1.18+)",
-          "lesson": 3
+          "id": 58,
+          "lesson": 4,
+          "title": "4. Konfigurasi dan Environment Management",
+          "rawTitle": "Konfigurasi dan Environment Management",
+          "slug": "M10-L04",
+          "moduleId": 10,
+          "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Environment variables: `os.Getenv`, `os.LookupEnv`, `os.Setenv`",
+            "2. Konfigurasi struct: `mapstructure` atau manual parsing",
+            "3. `.env` file: `godotenv` library dan 12-factor app principles"
+          ],
+          "snippet": "Buat aplikasi yang membaca konfigurasi dari env vars (DB_HOST, DB_PORT, LOG_LEVEL), dengan default values dan validation. Gunakan `godotenv` untuk `.env` loading",
+          "quizText": "Apa itu 12-factor app? Bagaimana cara aman membaca sensitive env vars?"
         },
         {
-          "slug": "M15-L04",
-          "title": "Reflection Dasar",
-          "lesson": 4
+          "id": 59,
+          "lesson": 5,
+          "title": "5. Logging dan Observability",
+          "rawTitle": "Logging dan Observability",
+          "slug": "M10-L05",
+          "moduleId": 10,
+          "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Standard `log` package: `log.Println`, `log.Printf`, `log.SetOutput`",
+            "2. Structured logging: `slog` (Go 1.21+) dan JSON handler",
+            "3. Metrics: `expvar` dan `prometheus/client_golang` basics"
+          ],
+          "snippet": "Ganti log package dengan `slog` (JSON handler), buat structured logs dengan level INFO/WARN/ERROR. Tambahkan `expvar` untuk expose request count metric",
+          "quizText": "Apa itu structured logging? Mengapa `slog` lebih baik dari `log`?"
+        },
+        {
+          "id": 60,
+          "lesson": 6,
+          "title": "6. Deployment dan Final Best Practices",
+          "rawTitle": "Deployment dan Final Best Practices",
+          "slug": "M10-L06",
+          "moduleId": 10,
+          "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+          "duration": "15 min",
+          "level": "Standar Industri",
+          "points": [
+            "1. Cross-compilation: `GOOS=linux GOARCH=amd64 go build`",
+            "2. Docker: multi-stage build untuk Go (builder + slim runtime)",
+            "3. Best practices review: error handling, naming, testing, concurrency patterns — review checklist"
+          ],
+          "snippet": "Build binary Go, buat Dockerfile multi-stage (golang:1.22 builder → alpine:3.19 runtime), build Docker image, dan jalankan container",
+          "quizText": "Apa keuntungan multi-stage Docker build untuk Go? Apa perintah cross-compile untuk Linux ARM64?"
         }
-      ],
-      "id": 15
-    },
-    {
-      "module": 16,
-      "title": "Project",
-      "lessons": [
-        {
-          "slug": "M16-L01",
-          "title": "Membuat CLI Application",
-          "lesson": 1
-        },
-        {
-          "slug": "M16-L02",
-          "title": "Membuat REST API",
-          "lesson": 2
-        }
-      ],
-      "id": 16
+      ]
     }
   ]
 }

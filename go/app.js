@@ -1,131 +1,125 @@
-// Go Learning Path — Core Application
+// Go Learning Path — Core Application (60 Industry Standard Lessons)
 const LESSON_FILES = [
   "lessons/M01-L01.md",
   "lessons/M01-L02.md",
+  "lessons/M01-L03.md",
+  "lessons/M01-L04.md",
+  "lessons/M01-L05.md",
+  "lessons/M01-L06.md",
   "lessons/M02-L01.md",
   "lessons/M02-L02.md",
+  "lessons/M02-L03.md",
+  "lessons/M02-L04.md",
+  "lessons/M02-L05.md",
+  "lessons/M02-L06.md",
   "lessons/M03-L01.md",
   "lessons/M03-L02.md",
   "lessons/M03-L03.md",
+  "lessons/M03-L04.md",
+  "lessons/M03-L05.md",
+  "lessons/M03-L06.md",
   "lessons/M04-L01.md",
   "lessons/M04-L02.md",
+  "lessons/M04-L03.md",
+  "lessons/M04-L04.md",
+  "lessons/M04-L05.md",
+  "lessons/M04-L06.md",
   "lessons/M05-L01.md",
   "lessons/M05-L02.md",
+  "lessons/M05-L03.md",
+  "lessons/M05-L04.md",
+  "lessons/M05-L05.md",
+  "lessons/M05-L06.md",
   "lessons/M06-L01.md",
   "lessons/M06-L02.md",
+  "lessons/M06-L03.md",
+  "lessons/M06-L04.md",
+  "lessons/M06-L05.md",
+  "lessons/M06-L06.md",
   "lessons/M07-L01.md",
+  "lessons/M07-L02.md",
+  "lessons/M07-L03.md",
+  "lessons/M07-L04.md",
+  "lessons/M07-L05.md",
+  "lessons/M07-L06.md",
   "lessons/M08-L01.md",
   "lessons/M08-L02.md",
   "lessons/M08-L03.md",
+  "lessons/M08-L04.md",
+  "lessons/M08-L05.md",
+  "lessons/M08-L06.md",
   "lessons/M09-L01.md",
+  "lessons/M09-L02.md",
+  "lessons/M09-L03.md",
+  "lessons/M09-L04.md",
+  "lessons/M09-L05.md",
+  "lessons/M09-L06.md",
   "lessons/M10-L01.md",
   "lessons/M10-L02.md",
-  "lessons/M11-L01.md",
-  "lessons/M12-L01.md",
-  "lessons/M13-L01.md",
-  "lessons/M14-L01.md",
-  "lessons/M15-L01.md",
-  "lessons/M15-L02.md",
-  "lessons/M15-L03.md",
-  "lessons/M15-L04.md",
-  "lessons/M16-L01.md",
-  "lessons/M16-L02.md"
+  "lessons/M10-L03.md",
+  "lessons/M10-L04.md",
+  "lessons/M10-L05.md",
+  "lessons/M10-L06.md"
 ];
 const MODULES = [
   {
     "id": 1,
-    "title": "Modul 1: Pengenalan",
-    "desc": "",
+    "title": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+    "desc": "Kurikulum standar industri Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 2,
-    "title": "Modul 2: Dasar",
-    "desc": "",
+    "title": "Modul 2: Struktur Kontrol & Alur Program",
+    "desc": "Kurikulum standar industri Modul 2: Struktur Kontrol & Alur Program",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 3,
-    "title": "Modul 3: Kontrol",
-    "desc": "",
+    "title": "Modul 3: Fungsi, Closures & Method",
+    "desc": "Kurikulum standar industri Modul 3: Fungsi, Closures & Method",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 4,
-    "title": "Modul 4: Fungsi",
-    "desc": "",
+    "title": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+    "desc": "Kurikulum standar industri Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 5,
-    "title": "Modul 5: Data Structure",
-    "desc": "",
+    "title": "Modul 5: Goroutines, Channels & Concurrency",
+    "desc": "Kurikulum standar industri Modul 5: Goroutines, Channels & Concurrency",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 6,
-    "title": "Modul 6: OOP",
-    "desc": "",
+    "title": "Modul 6: Context & Error Handling",
+    "desc": "Kurikulum standar industri Modul 6: Context & Error Handling",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 7,
-    "title": "Modul 7: Error",
-    "desc": "",
+    "title": "Modul 7: Generics, Koleksi & Pipeline",
+    "desc": "Kurikulum standar industri Modul 7: Generics, Koleksi & Pipeline",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 8,
-    "title": "Modul 8: Concurrency",
-    "desc": "",
+    "title": "Modul 8: Paket, Modul & Dependency Management",
+    "desc": "Kurikulum standar industri Modul 8: Paket, Modul & Dependency Management",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 9,
-    "title": "Modul 9: Memory",
-    "desc": "",
+    "title": "Modul 9: Testing, Benchmarking & Quality",
+    "desc": "Kurikulum standar industri Modul 9: Testing, Benchmarking & Quality",
     "icon": "fa-solid fa-code"
   },
   {
     "id": 10,
-    "title": "Modul 10: Modul",
-    "desc": "",
-    "icon": "fa-solid fa-code"
-  },
-  {
-    "id": 11,
-    "title": "Modul 11: File",
-    "desc": "",
-    "icon": "fa-solid fa-code"
-  },
-  {
-    "id": 12,
-    "title": "Modul 12: Data",
-    "desc": "",
-    "icon": "fa-solid fa-code"
-  },
-  {
-    "id": 13,
-    "title": "Modul 13: Testing",
-    "desc": "",
-    "icon": "fa-solid fa-code"
-  },
-  {
-    "id": 14,
-    "title": "Modul 14: Web",
-    "desc": "",
-    "icon": "fa-solid fa-code"
-  },
-  {
-    "id": 15,
-    "title": "Modul 15: Advanced",
-    "desc": "",
-    "icon": "fa-solid fa-code"
-  },
-  {
-    "id": 16,
-    "title": "Modul 16: Project",
-    "desc": "",
+    "title": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "desc": "Kurikulum standar industri Modul 10: Proyek Akhir & Best Practices Industri",
     "icon": "fa-solid fa-code"
   }
 ];
@@ -133,661 +127,1321 @@ const lessons = [
   {
     "id": 1,
     "slug": "M01-L01",
-    "title": "Apa itu Go?",
+    "title": "1. Sejarah Go dan Filosofi Desain Bahasa",
     "moduleId": 1,
-    "module": "Modul 1: Pengenalan",
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
     "duration": "15 min",
     "level": "Standar Industri",
     "mdFile": "lessons/M01-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Apa itu Go? ===\")\n}",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Sejarah Go dan Filosofi Desain Bahasa ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Apa itu Go??",
+      "question": "Apa perbedaan antara `go run`, `go build`, dan `go install`? Sebutkan 3 filosofi desain inti Go.",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 2,
     "slug": "M01-L02",
-    "title": "Instalasi dan Setup Go Environment",
+    "title": "2. Workspace, Module, dan Struktur Proyek",
     "moduleId": 1,
-    "module": "Modul 1: Pengenalan",
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
     "duration": "15 min",
     "level": "Standar Industri",
     "mdFile": "lessons/M01-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Instalasi dan Setup Go Environment ===\")\n}",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Workspace, Module, dan Struktur Proyek ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Instalasi dan Setup Go Environment?",
+      "question": "Apa fungsi file `go.sum`? Apa perbedaan antara paket `internal` dan `pkg`?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 3,
-    "slug": "M02-L01",
-    "title": "Variabel dan Tipe Data",
-    "moduleId": 2,
-    "module": "Modul 2: Dasar",
+    "slug": "M01-L03",
+    "title": "3. Variabel, Konstanta, dan Tipe Dasar",
+    "moduleId": 1,
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M02-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Variabel dan Tipe Data ===\")\n}",
+    "mdFile": "lessons/M01-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Variabel, Konstanta, dan Tipe Dasar ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Variabel dan Tipe Data?",
+      "question": "Apa bedanya `var x = 5` dan `x := 5`? Apa tipe default untuk literal integer tanpa spesifikasi?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 4,
-    "slug": "M02-L02",
-    "title": "Operator dan Ekspresi",
-    "moduleId": 2,
-    "module": "Modul 2: Dasar",
+    "slug": "M01-L04",
+    "title": "4. Operator dan Ekspresi",
+    "moduleId": 1,
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M02-L02.md",
+    "mdFile": "lessons/M01-L04.md",
     "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Operator dan Ekspresi ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Operator dan Ekspresi?",
+      "question": "Apa hasil dari `3 << 2`? Apa perbedaan `==` dan `:=`? Apa output dari `!true && (2+2 == 4)`?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 5,
-    "slug": "M03-L01",
-    "title": "Control Flow: If dan Else",
-    "moduleId": 3,
-    "module": "Modul 3: Kontrol",
+    "slug": "M01-L05",
+    "title": "5. Input/Output Sederhana dan Formatting",
+    "moduleId": 1,
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M03-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Control Flow: If dan Else ===\")\n}",
+    "mdFile": "lessons/M01-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Input/Output Sederhana dan Formatting ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Control Flow: If dan Else?",
+      "question": "Apa bedanya `%v` dan `%+v` dalam `fmt.Printf`? Verb format apa yang digunakan untuk membaca input integer?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 6,
-    "slug": "M03-L02",
-    "title": "Loop dan Iterasi",
-    "moduleId": 3,
-    "module": "Modul 3: Kontrol",
+    "slug": "M01-L06",
+    "title": "6. Comments, Dokumentasi, dan Code Style",
+    "moduleId": 1,
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M03-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Loop dan Iterasi ===\")\n}",
+    "mdFile": "lessons/M01-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Comments, Dokumentasi, dan Code Style ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Loop dan Iterasi?",
+      "question": "Apa itu \"effective Go\"? Apa tujuan utama `go vet`? Bagaimana cara menghasilkan dokumentasi dari kode Go?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 7,
-    "slug": "M03-L03",
-    "title": "Switch dan Select Statement",
-    "moduleId": 3,
-    "module": "Modul 3: Kontrol",
+    "slug": "M02-L01",
+    "title": "1. If, Else If, Else",
+    "moduleId": 2,
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M03-L03.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Switch dan Select Statement ===\")\n}",
+    "mdFile": "lessons/M02-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== If, Else If, Else ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Switch dan Select Statement?",
+      "question": "Apa output dari `if x := 10; x > 5 { fmt.Println(\"Besar\") } else { fmt.Println(\"Kecil\") }`? Bisakah `if x > 5` di Go tanpa tipe eksplisit?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 8,
-    "slug": "M04-L01",
-    "title": "Fungsi Dasar",
-    "moduleId": 4,
-    "module": "Modul 4: Fungsi",
+    "slug": "M02-L02",
+    "title": "2. Switch Statement",
+    "moduleId": 2,
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M04-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Fungsi Dasar ===\")\n}",
+    "mdFile": "lessons/M02-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Switch Statement ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Fungsi Dasar?",
+      "question": "Apa bedanya `break` dalam switch Go vs C? Apa itu type switch dan kapan digunakan?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 9,
-    "slug": "M04-L02",
-    "title": "Closure dan Anonymous Functions",
-    "moduleId": 4,
-    "module": "Modul 4: Fungsi",
+    "slug": "M02-L03",
+    "title": "3. For Loop (Satu-satunya Loop)",
+    "moduleId": 2,
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M04-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Closure dan Anonymous Functions ===\")\n}",
+    "mdFile": "lessons/M02-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== For Loop (Satu-satunya Loop) ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Closure dan Anonymous Functions?",
+      "question": "Apa output dari `for i := 0; i < 3; i++ { fmt.Print(i) }`? Apakah Go memiliki `while` keyword?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 10,
-    "slug": "M05-L01",
-    "title": "Array dan Slice",
-    "moduleId": 5,
-    "module": "Modul 5: Data Structure",
+    "slug": "M02-L04",
+    "title": "4. Range dan Iterasi Koleksi",
+    "moduleId": 2,
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M05-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Array dan Slice ===\")\n}",
+    "mdFile": "lessons/M02-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Range dan Iterasi Koleksi ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Array dan Slice?",
+      "question": "Apa yang dikembalikan `range` pada string secara default (byte atau rune)? Bagaimana cara mengabaikan index saat range?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 11,
-    "slug": "M05-L02",
-    "title": "Map: Key-Value Data Structure",
-    "moduleId": 5,
-    "module": "Modul 5: Data Structure",
+    "slug": "M02-L05",
+    "title": "5. Defer, Panic, dan Recover",
+    "moduleId": 2,
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M05-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Map: Key-Value Data Structure ===\")\n}",
+    "mdFile": "lessons/M02-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Defer, Panic, dan Recover ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Map: Key-Value Data Structure?",
+      "question": "Dalam urutan apa defer dieksekusi? Apa perbedaan panic dan error dalam Go? Bisakah recover menangkap panic di fungsi lain?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 12,
-    "slug": "M06-L01",
-    "title": "Struct dan Method",
-    "moduleId": 6,
-    "module": "Modul 6: OOP",
+    "slug": "M02-L06",
+    "title": "6. Pattern Matching dengan Select",
+    "moduleId": 2,
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M06-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Struct dan Method ===\")\n}",
+    "mdFile": "lessons/M02-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Pattern Matching dengan Select ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Struct dan Method?",
+      "question": "Apa yang terjadi jika beberapa channel siap dalam select? Bagaimana cara membuat channel operation non-blocking?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 13,
-    "slug": "M06-L02",
-    "title": "Interface Dasar",
-    "moduleId": 6,
-    "module": "Modul 6: OOP",
+    "slug": "M03-L01",
+    "title": "1. Deklarasi dan Pemanggilan Fungsi",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi, Closures & Method",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M06-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Interface Dasar ===\")\n}",
+    "mdFile": "lessons/M03-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Deklarasi dan Pemanggilan Fungsi ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Interface Dasar?",
+      "question": "Apa itu variadic function? Bagaimana cara mendefinisikan named return values? Apa sintaks untuk fungsi dengan 3 nilai kembalian?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 14,
-    "slug": "M07-L01",
-    "title": "Error Handling di Go",
-    "moduleId": 7,
-    "module": "Modul 7: Error",
+    "slug": "M03-L02",
+    "title": "2. Fungsi sebagai First-Class Citizen",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi, Closures & Method",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M07-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Error Handling di Go ===\")\n}",
+    "mdFile": "lessons/M03-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Fungsi sebagai First-Class Citizen ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Error Handling di Go?",
+      "question": "Apa tipe dari variabel `f := func(x int) int { return x * 2 }`? Bagaimana cara melewatkan fungsi sebagai parameter?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 15,
-    "slug": "M08-L01",
-    "title": "Goroutine Dasar",
-    "moduleId": 8,
-    "module": "Modul 8: Concurrency",
+    "slug": "M03-L03",
+    "title": "3. Closures dan Scope",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi, Closures & Method",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M08-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Goroutine Dasar ===\")\n}",
+    "mdFile": "lessons/M03-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Closures dan Scope ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Goroutine Dasar?",
+      "question": "Apa itu closure? Apakah variabel yang di-capture disalin atau direferensikan? Apa bug umum closure dalam loop?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 16,
-    "slug": "M08-L02",
-    "title": "Channel Dasar",
-    "moduleId": 8,
-    "module": "Modul 8: Concurrency",
+    "slug": "M03-L04",
+    "title": "4. Recursion dan Factorial/Fibonacci",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi, Closures & Method",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M08-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Channel Dasar ===\")\n}",
+    "mdFile": "lessons/M03-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Recursion dan Factorial/Fibonacci ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Channel Dasar?",
+      "question": "Apa itu base case? Mengapa rekursi Fibonacci tanpa memoisasi sangat lambat untuk n>40?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 17,
-    "slug": "M08-L03",
-    "title": "Select dan Pattern Concurrency",
-    "moduleId": 8,
-    "module": "Modul 8: Concurrency",
+    "slug": "M03-L05",
+    "title": "5. Method pada Tipe",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi, Closures & Method",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M08-L03.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Select dan Pattern Concurrency ===\")\n}",
+    "mdFile": "lessons/M03-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Method pada Tipe ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Select dan Pattern Concurrency?",
+      "question": "Apa perbedaan value receiver dan pointer receiver? Method mana yang dimiliki oleh `*T` vs `T`?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 18,
-    "slug": "M09-L01",
-    "title": "Pointer Dasar",
-    "moduleId": 9,
-    "module": "Modul 9: Memory",
+    "slug": "M03-L06",
+    "title": "6. Receivers, Embedded Types & Method Chaining",
+    "moduleId": 3,
+    "module": "Modul 3: Fungsi, Closures & Method",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M09-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Pointer Dasar ===\")\n}",
+    "mdFile": "lessons/M03-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Receivers, Embedded Types & Method Chaining ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Pointer Dasar?",
+      "question": "Apa itu method promotion? Bagaimana method chaining bekerja di Go?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 19,
-    "slug": "M10-L01",
-    "title": "Package dan Import System",
-    "moduleId": 10,
-    "module": "Modul 10: Modul",
+    "slug": "M04-L01",
+    "title": "1. Struct Deklarasi dan Inisialisasi",
+    "moduleId": 4,
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M10-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Package dan Import System ===\")\n}",
+    "mdFile": "lessons/M04-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Struct Deklarasi dan Inisialisasi ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Package dan Import System?",
+      "question": "Apa zero value untuk struct? Bagaimana cara membuat pointer ke struct literal?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 20,
-    "slug": "M10-L02",
-    "title": "Go Modules dan Dependency Management",
-    "moduleId": 10,
-    "module": "Modul 10: Modul",
+    "slug": "M04-L02",
+    "title": "2. Field Tags, Embedding, dan Komposisi",
+    "moduleId": 4,
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M10-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Go Modules dan Dependency Management ===\")\n}",
+    "mdFile": "lessons/M04-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Field Tags, Embedding, dan Komposisi ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Go Modules dan Dependency Management?",
+      "question": "Apa itu struct embedding? Apa bedanya dengan inheritance? Bagaimana tag struct digunakan?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 21,
-    "slug": "M11-L01",
-    "title": "File I/O Dasar",
-    "moduleId": 11,
-    "module": "Modul 11: File",
+    "slug": "M04-L03",
+    "title": "3. Interface Dasar",
+    "moduleId": 4,
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M11-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== File I/O Dasar ===\")\n}",
+    "mdFile": "lessons/M04-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Interface Dasar ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari File I/O Dasar?",
+      "question": "Apa itu empty interface? Apa itu type assertion dan syntax-nya? Bagaimana Go menangkap implementasi interface?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 22,
-    "slug": "M12-L01",
-    "title": "JSON dan Encoding",
-    "moduleId": 12,
-    "module": "Modul 12: Data",
+    "slug": "M04-L04",
+    "title": "4. Interface Lanjutan dan Polymorphism",
+    "moduleId": 4,
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M12-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== JSON dan Encoding ===\")\n}",
+    "mdFile": "lessons/M04-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Interface Lanjutan dan Polymorphism ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari JSON dan Encoding?",
+      "question": "Apa itu interface composition? Bagaimana Go menggunakan interface untuk decoupling kode?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 23,
-    "slug": "M13-L01",
-    "title": "Testing Dasar",
-    "moduleId": 13,
-    "module": "Modul 13: Testing",
+    "slug": "M04-L05",
+    "title": "5. Type Switch dan Type Assertion Lanjutan",
+    "moduleId": 4,
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M13-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Testing Dasar ===\")\n}",
+    "mdFile": "lessons/M04-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Type Switch dan Type Assertion Lanjutan ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Testing Dasar?",
+      "question": "Apa bedanya type assertion `v.(Tipe)` dan `v.(Tipe)` dengan comma-ok? Apa fungsi `reflect.TypeOf`?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 24,
-    "slug": "M14-L01",
-    "title": "HTTP Server Dasar",
-    "moduleId": 14,
-    "module": "Modul 14: Web",
+    "slug": "M04-L06",
+    "title": "6. Generics: Introduction (Go 1.18+)",
+    "moduleId": 4,
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M14-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== HTTP Server Dasar ===\")\n}",
+    "mdFile": "lessons/M04-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Generics: Introduction (Go 1.18+) ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari HTTP Server Dasar?",
+      "question": "Apa itu type parameter? Apa batasan constraint `comparable`? Kapan Go 1.18 memperkenalkan generics?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 25,
-    "slug": "M15-L01",
-    "title": "Context dan Timeout",
-    "moduleId": 15,
-    "module": "Modul 15: Advanced",
+    "slug": "M05-L01",
+    "title": "1. Goroutines: Dasar",
+    "moduleId": 5,
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M15-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Context dan Timeout ===\")\n}",
+    "mdFile": "lessons/M05-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Goroutines: Dasar ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Context dan Timeout?",
+      "question": "Apa keyword untuk memulai goroutine? Apa perbedaan goroutine dan thread OS?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 26,
-    "slug": "M15-L02",
-    "title": "Defer, Panic, dan Recover",
-    "moduleId": 15,
-    "module": "Modul 15: Advanced",
+    "slug": "M05-L02",
+    "title": "2. Channels: Buffered dan Unbuffered",
+    "moduleId": 5,
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M15-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Defer, Panic, dan Recover ===\")\n}",
+    "mdFile": "lessons/M05-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Channels: Buffered dan Unbuffered ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Defer, Panic, dan Recover?",
+      "question": "Apa bedanya buffered dan unbuffered channel? Apa yang terjadi mengirim ke channel full?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 27,
-    "slug": "M15-L03",
-    "title": "Generics Dasar (Go 1.18+)",
-    "moduleId": 15,
-    "module": "Modul 15: Advanced",
+    "slug": "M05-L03",
+    "title": "3. Channel Direction dan Safety",
+    "moduleId": 5,
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M15-L03.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Generics Dasar (Go 1.18+) ===\")\n}",
+    "mdFile": "lessons/M05-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Channel Direction dan Safety ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Generics Dasar (Go 1.18+)?",
+      "question": "Apa sintaks channel send-only? Apa yang terjadi saat range channel yang sudah di-close?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 28,
-    "slug": "M15-L04",
-    "title": "Reflection Dasar",
-    "moduleId": 15,
-    "module": "Modul 15: Advanced",
+    "slug": "M05-L04",
+    "title": "4. Select: Multiplexing Channel",
+    "moduleId": 5,
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M15-L04.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Reflection Dasar ===\")\n}",
+    "mdFile": "lessons/M05-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Select: Multiplexing Channel ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Reflection Dasar?",
+      "question": "Apa yang terjadi jika dua channel siap dalam select? Bagaimana default case mengubah blocking behavior?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 29,
-    "slug": "M16-L01",
-    "title": "Membuat CLI Application",
-    "moduleId": 16,
-    "module": "Modul 16: Project",
+    "slug": "M05-L05",
+    "title": "5. WaitGroup dan Sync Primitives",
+    "moduleId": 5,
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M16-L01.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Membuat CLI Application ===\")\n}",
+    "mdFile": "lessons/M05-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== WaitGroup dan Sync Primitives ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Membuat CLI Application?",
+      "question": "Apa fungsi `WaitGroup.Add(0)` vs `WaitGroup.Add(1)`? Kapan harus menggunakan `sync.Map` daripada `map` biasa?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   },
   {
     "id": 30,
-    "slug": "M16-L02",
-    "title": "Membuat REST API",
-    "moduleId": 16,
-    "module": "Modul 16: Project",
+    "slug": "M05-L06",
+    "title": "6. Race Condition dan Detect",
+    "moduleId": 5,
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
     "duration": "15 min",
     "level": "Standar Industri",
-    "mdFile": "lessons/M16-L02.md",
-    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Membuat REST API ===\")\n}",
+    "mdFile": "lessons/M05-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Race Condition dan Detect ===\")\n}",
     "quiz": {
-      "question": "Apa konsep utama dari Membuat REST API?",
+      "question": "Apa itu race condition? Bagaimana cara mendeteksinya? Apa prinsip Go tentang sharing memory?",
       "options": [
-        "Memahami sintaks dan idiom standar dalam Go",
-        "Mengabaikan error handling bawaan Go",
-        "Menghapus fungsi main dalam package",
-        "Mengganti garbage collector Go"
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
       ],
       "answer": 0,
-      "explanation": "Go mendesain konsep ini untuk kesederhanaan, konkurensi efisien, dan kejelasan kode."
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 31,
+    "slug": "M06-L01",
+    "title": "1. Error Handling Fundamentals",
+    "moduleId": 6,
+    "module": "Modul 6: Context & Error Handling",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Error Handling Fundamentals ===\")\n}",
+    "quiz": {
+      "question": "Apa itu `error` interface? Apa bedanya `errors.New` dan `fmt.Errorf` dengan `%w`?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 32,
+    "slug": "M06-L02",
+    "title": "2. Custom Error dan Errors As/Is",
+    "moduleId": 6,
+    "module": "Modul 6: Context & Error Handling",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Custom Error dan Errors As/Is ===\")\n}",
+    "quiz": {
+      "question": "Apa fungsi `errors.As`? Bagaimana membedakan error jenis tertentu dari wrapped error?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 33,
+    "slug": "M06-L03",
+    "title": "3. Context Dasar (context.Context)",
+    "moduleId": 6,
+    "module": "Modul 6: Context & Error Handling",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Context Dasar (context.Context) ===\")\n}",
+    "quiz": {
+      "question": "Apa itu `context.Context`? Apa perbedaan `WithCancel` dan `WithTimeout`?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 34,
+    "slug": "M06-L04",
+    "title": "4. Context untuk Cancellation Propagation",
+    "moduleId": 6,
+    "module": "Modul 6: Context & Error Handling",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Context untuk Cancellation Propagation ===\")\n}",
+    "quiz": {
+      "question": "Apa yang terjadi ketika context di-cancel? Apa itu `defer cancel()` pattern?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 35,
+    "slug": "M06-L05",
+    "title": "5. Context Values dan Middleware Pattern",
+    "moduleId": 6,
+    "module": "Modul 6: Context & Error Handling",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Context Values dan Middleware Pattern ===\")\n}",
+    "quiz": {
+      "question": "Mengapa disarankan menggunakan custom key type daripada string untuk `WithValue`? Apa itu middleware pattern dalam konteks Go?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 36,
+    "slug": "M06-L06",
+    "title": "6. Error Handling Strategy & Best Practices",
+    "moduleId": 6,
+    "module": "Modul 6: Context & Error Handling",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M06-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Error Handling Strategy & Best Practices ===\")\n}",
+    "quiz": {
+      "question": "Kapan seharusnya menggunakan panic dalam Go? Apa perbedaan sentinel error dan wrapped error?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 37,
+    "slug": "M07-L01",
+    "title": "1. Generics: Constraints dan Comparable",
+    "moduleId": 7,
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Generics: Constraints dan Comparable ===\")\n}",
+    "quiz": {
+      "question": "Apa itu union type dalam constraint? Menggunakan `comparable` vs `comparable`? Apa itu `ordered` constraint?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 38,
+    "slug": "M07-L02",
+    "title": "2. Generic Data Structures",
+    "moduleId": 7,
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Generic Data Structures ===\")\n}",
+    "quiz": {
+      "question": "Apakah constraint tipe untuk Set? Mengapa `any` dan `interface{}` setara?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 39,
+    "slug": "M07-L03",
+    "title": "3. Slice Lanjutan",
+    "moduleId": 7,
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Slice Lanjutan ===\")\n}",
+    "quiz": {
+      "question": "Apa bedanya `copy()` dan assignment slice? Apa itu backing array?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 40,
+    "slug": "M07-L04",
+    "title": "4. Map Lanjutan dan Iterasi",
+    "moduleId": 7,
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Map Lanjutan dan Iterasi ===\")\n}",
+    "quiz": {
+      "question": "Kapan `sync.Map` lebih baik daripada `map`+`Mutex`? Apa kompleksitas time map access?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 41,
+    "slug": "M07-L05",
+    "title": "5. Pipeline Pattern dengan Channel",
+    "moduleId": 7,
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Pipeline Pattern dengan Channel ===\")\n}",
+    "quiz": {
+      "question": "Apa itu fan-out pattern? Bagaimana pipeline pattern menggunakan channels?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 42,
+    "slug": "M07-L06",
+    "title": "6. Pooling dan Resource Management",
+    "moduleId": 7,
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M07-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Pooling dan Resource Management ===\")\n}",
+    "quiz": {
+      "question": "Apa tujuan `sync.Pool`? Kapan `sync.Once` lebih baik daripada inisialisasi di main?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 43,
+    "slug": "M08-L01",
+    "title": "1. Package Design dan Konvensi",
+    "moduleId": 8,
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Package Design dan Konvensi ===\")\n}",
+    "quiz": {
+      "question": "Apa aturan naming untuk exported identifier? Apa perbedaan `package main` dan library package?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 44,
+    "slug": "M08-L02",
+    "title": "2. Import Management dan Aliasing",
+    "moduleId": 8,
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Import Management dan Aliasing ===\")\n}",
+    "quiz": {
+      "question": "Apa itu blank import dan kapan digunakan? Apa masalah circular import?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 45,
+    "slug": "M08-L03",
+    "title": "3. Modul Proxy dan Go Proxy Protocol",
+    "moduleId": 8,
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Modul Proxy dan Go Proxy Protocol ===\")\n}",
+    "quiz": {
+      "question": "Apa itu `proxy.golang.org`? Bagaimana cara mengakses private module di Go?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 46,
+    "slug": "M08-L04",
+    "title": "4. Minimal Version Selection (MVS)",
+    "moduleId": 8,
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Minimal Version Selection (MVS) ===\")\n}",
+    "quiz": {
+      "question": "Apa itu MVS? Bagaimana `go get` tanpa version bekerja di bawah MVS?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 47,
+    "slug": "M08-L05",
+    "title": "5. Vendor Directory dan Offline Build",
+    "moduleId": 8,
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Vendor Directory dan Offline Build ===\")\n}",
+    "quiz": {
+      "question": "Apa fungsi vendor directory? Kapan sebaiknya menggunakan vendor?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 48,
+    "slug": "M08-L06",
+    "title": "6. Monorepo dan Workspace (Go 1.18+)",
+    "moduleId": 8,
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M08-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Monorepo dan Workspace (Go 1.18+) ===\")\n}",
+    "quiz": {
+      "question": "Apa itu `go.work` file? Kapan harus menggunakan workspace?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 49,
+    "slug": "M09-L01",
+    "title": "1. Unit Testing Dasar",
+    "moduleId": 9,
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Unit Testing Dasar ===\")\n}",
+    "quiz": {
+      "question": "Apa konvensi penamaan file test? Bedanya `t.Errorf` dan `t.Fatalf`?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 50,
+    "slug": "M09-L02",
+    "title": "2. Benchmarking dan Profiling",
+    "moduleId": 9,
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Benchmarking dan Profiling ===\")\n}",
+    "quiz": {
+      "question": "Apa output `go test -bench` (N dan ns/op)? Bagaimana mengaktifkan memory reporting?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 51,
+    "slug": "M09-L03",
+    "title": "3. Mocking dan Dependency Injection",
+    "moduleId": 9,
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Mocking dan Dependency Injection ===\")\n}",
+    "quiz": {
+      "question": "Mengapa interface memudahkan testing? Apa itu dependency injection?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 52,
+    "slug": "M09-L04",
+    "title": "4. Integration Testing dan httptest",
+    "moduleId": 9,
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Integration Testing dan httptest ===\")\n}",
+    "quiz": {
+      "question": "Apa fungsi `httptest.NewRecorder`? Bedanya unit test dan integration test?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 53,
+    "slug": "M09-L05",
+    "title": "5. Race Detection dan Linting",
+    "moduleId": 9,
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Race Detection dan Linting ===\")\n}",
+    "quiz": {
+      "question": "Apa perbedaan `go vet` dan `go test -race`? Apa itu `golangci-lint`?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 54,
+    "slug": "M09-L06",
+    "title": "6. Continuous Integration untuk Go",
+    "moduleId": 9,
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M09-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Continuous Integration untuk Go ===\")\n}",
+    "quiz": {
+      "question": "Apa itu matrix strategy di GitHub Actions? Bagaimana cara generate coverage report?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 55,
+    "slug": "M10-L01",
+    "title": "1. REST API dengan Standard Library",
+    "moduleId": 10,
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L01.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== REST API dengan Standard Library ===\")\n}",
+    "quiz": {
+      "question": "Apa keuntungan mengakan stdlib untuk REST API? Bagaimana middleware bekerja di `net/http`?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 56,
+    "slug": "M10-L02",
+    "title": "2. HTTP Client dan Eksternal API",
+    "moduleId": 10,
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L02.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== HTTP Client dan Eksternal API ===\")\n}",
+    "quiz": {
+      "question": "Mengapa harus menggunakan `http.Client` singleton daripada `http.Get`? Bagaimana context digunakan dalam HTTP request?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 57,
+    "slug": "M10-L03",
+    "title": "3. Database dengan Database/sql",
+    "moduleId": 10,
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L03.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Database dengan Database/sql ===\")\n}",
+    "quiz": {
+      "question": "Apa itu connection pool? Apa fungsi `db.Close()` dan kapan harus dipanggil?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 58,
+    "slug": "M10-L04",
+    "title": "4. Konfigurasi dan Environment Management",
+    "moduleId": 10,
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L04.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Konfigurasi dan Environment Management ===\")\n}",
+    "quiz": {
+      "question": "Apa itu 12-factor app? Bagaimana cara aman membaca sensitive env vars?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 59,
+    "slug": "M10-L05",
+    "title": "5. Logging dan Observability",
+    "moduleId": 10,
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L05.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Logging dan Observability ===\")\n}",
+    "quiz": {
+      "question": "Apa itu structured logging? Mengapa `slog` lebih baik dari `log`?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
+    }
+  },
+  {
+    "id": 60,
+    "slug": "M10-L06",
+    "title": "6. Deployment dan Final Best Practices",
+    "moduleId": 10,
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "duration": "15 min",
+    "level": "Standar Industri",
+    "mdFile": "lessons/M10-L06.md",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"=== Deployment dan Final Best Practices ===\")\n}",
+    "quiz": {
+      "question": "Apa keuntungan multi-stage Docker build untuk Go? Apa perintah cross-compile untuk Linux ARM64?",
+      "options": [
+        "Memahami sintaks dan idiom standar dalam ekosistem Go",
+        "Mengabaikan error handling bawaan runtime Go",
+        "Menghapus deklarasi fungsi main dalam package",
+        "Mengganti mekanisme garbage collector bawaan"
+      ],
+      "answer": 0,
+      "explanation": "Go mendesain fitur ini untuk kesederhanaan, kinerja konkurensi efisien, dan keterbacaan kode."
     }
   }
 ];
@@ -1202,7 +1856,7 @@ function drawCertificate() {
     
     ctx.fillStyle = '#cbd5e1';
     ctx.font = '18px sans-serif';
-    ctx.fillText('Telah berhasil menyelesaikan seluruh 30 kurikulum pelajaran', canvas.width / 2, 360);
+    ctx.fillText('Telah berhasil menyelesaikan seluruh 60 kurikulum pelajaran', canvas.width / 2, 360);
     ctx.fillText('Go (Golang) Learning Path Standar Industri', canvas.width / 2, 400);
     
     ctx.fillStyle = '#06b6d4';
