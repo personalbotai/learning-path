@@ -1,0 +1,554 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Modul 1: Dasar C# 12 & .NET 8 Runtime",
+      "description": "Pelajari secara tuntas Dasar C# 12 & .NET 8 Runtime dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "1. Evolusi .NET, CLR, JIT & Top-Level Statements",
+          "slug": "M01-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "2. Type System: Value Types vs Reference Types",
+          "slug": "M01-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "3. Nullable Reference Types & Null-Coalescing",
+          "slug": "M01-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "4. Control Flow, Switch Expressions & Pattern Matching",
+          "slug": "M01-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "5. Arrays, Span<T> & Memory<T> Intro",
+          "slug": "M01-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "6. Methods, Out/Ref Parameters & Local Functions",
+          "slug": "M01-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Modul 2: Object-Oriented Programming & C# 12 Modern",
+      "description": "Pelajari secara tuntas Object-Oriented Programming & C# 12 Modern dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 7,
+          "lesson": 1,
+          "title": "1. Classes, Constructors & Primary Constructors di C# 12",
+          "slug": "M02-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 8,
+          "lesson": 2,
+          "title": "2. Properties, Init-Only Setters & Required Members",
+          "slug": "M02-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 9,
+          "lesson": 3,
+          "title": "3. Inheritance, Abstract Classes & Virtual/Override",
+          "slug": "M02-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 10,
+          "lesson": 4,
+          "title": "4. Interfaces, Default Interface Methods & Static Virtual Members",
+          "slug": "M02-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 11,
+          "lesson": 5,
+          "title": "5. Records & Record Structs: Value-Based Equality",
+          "slug": "M02-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 12,
+          "lesson": 6,
+          "title": "6. Structs, Readonly Structs & ref struct",
+          "slug": "M02-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Modul 3: Generics & Collections",
+      "description": "Pelajari secara tuntas Generics & Collections dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 13,
+          "lesson": 1,
+          "title": "1. Generic Classes, Interfaces & Constraints (where T : class)",
+          "slug": "M03-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 14,
+          "lesson": 2,
+          "title": "2. Generic Collections: List<T>, Dictionary<TKey, TValue>, HashSet<T>",
+          "slug": "M03-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 15,
+          "lesson": 3,
+          "title": "3. Collection Expressions & Spread Operator [..items] di C# 12",
+          "slug": "M03-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 16,
+          "lesson": 4,
+          "title": "4. Iterators & yield return / yield break",
+          "slug": "M03-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 17,
+          "lesson": 5,
+          "title": "5. Covariance & Contravariance (in, out) pada Generics",
+          "slug": "M03-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 18,
+          "lesson": 6,
+          "title": "6. Concurrent Collections untuk Thread-Safe Data",
+          "slug": "M03-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Modul 4: LINQ (Language Integrated Query) Mendalam",
+      "description": "Pelajari secara tuntas LINQ (Language Integrated Query) Mendalam dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 19,
+          "lesson": 1,
+          "title": "1. Konsep LINQ, Query Syntax vs Method Syntax",
+          "slug": "M04-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 20,
+          "lesson": 2,
+          "title": "2. Filtering, Projection & Ordering: Where, Select, OrderBy",
+          "slug": "M04-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 21,
+          "lesson": 3,
+          "title": "3. Grouping, Joining & Aggregation: GroupBy, Join, Aggregate",
+          "slug": "M04-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 22,
+          "lesson": 4,
+          "title": "4. Deferred Execution vs Immediate Execution",
+          "slug": "M04-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 23,
+          "lesson": 5,
+          "title": "5. LINQ to Objects vs IQueryable Expression Trees",
+          "slug": "M04-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 24,
+          "lesson": 6,
+          "title": "6. Performance Tuning & Menghindari Multiple Enumeration",
+          "slug": "M04-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Modul 5: Asynchronous Programming (Task & TAP)",
+      "description": "Pelajari secara tuntas Asynchronous Programming (Task & TAP) dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 25,
+          "lesson": 1,
+          "title": "1. Threading vs Task-based Asynchronous Pattern (TAP)",
+          "slug": "M05-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 26,
+          "lesson": 2,
+          "title": "2. async & await Keywords, State Machine Internals",
+          "slug": "M05-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 27,
+          "lesson": 3,
+          "title": "3. Task, ValueTask, Task.WhenAll & Task.WhenAny",
+          "slug": "M05-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 28,
+          "lesson": 4,
+          "title": "4. CancellationTokens & Cooperative Cancellation",
+          "slug": "M05-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 29,
+          "lesson": 5,
+          "title": "5. IAsyncEnumerable & Asynchronous Streams",
+          "slug": "M05-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 30,
+          "lesson": 6,
+          "title": "6. Deadlocks, SynchronizationContext & ConfigureAwait(false)",
+          "slug": "M05-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Modul 6: Memory Management, Garbage Collection & High Perf",
+      "description": "Pelajari secara tuntas Memory Management, Garbage Collection & High Perf dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 31,
+          "lesson": 1,
+          "title": "1. Stack vs Heap & Garbage Collector Generations (0, 1, 2)",
+          "slug": "M06-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 32,
+          "lesson": 2,
+          "title": "2. IDisposable, using Statements & IAsyncDisposable",
+          "slug": "M06-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 33,
+          "lesson": 3,
+          "title": "3. Span<T>, ReadOnlySpan<T> & ArrayPool untuk Zero Allocation",
+          "slug": "M06-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 34,
+          "lesson": 4,
+          "title": "4. Unsafe Code, Pointers & Native Interop (P/Invoke)",
+          "slug": "M06-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 35,
+          "lesson": 5,
+          "title": "5. BenchmarkDotNet untuk Mengukur Performa Kode",
+          "slug": "M06-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 36,
+          "lesson": 6,
+          "title": "6. SIMD (Vectorization) & Hardware Intrinsics",
+          "slug": "M06-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Modul 7: ASP.NET Core Minimal APIs & Web API",
+      "description": "Pelajari secara tuntas ASP.NET Core Minimal APIs & Web API dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 37,
+          "lesson": 1,
+          "title": "1. ASP.NET Core Hosting Model, Kestrel & Startup Pipeline",
+          "slug": "M07-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 38,
+          "lesson": 2,
+          "title": "2. Dependency Injection Container: Transient, Scoped, Singleton",
+          "slug": "M07-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 39,
+          "lesson": 3,
+          "title": "3. Minimal APIs: Route Handlers, Filters & Model Binding",
+          "slug": "M07-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 40,
+          "lesson": 4,
+          "title": "4. Middleware Pipeline Architecture",
+          "slug": "M07-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 41,
+          "lesson": 5,
+          "title": "5. Authentication & Authorization: JWT, OAuth & Policies",
+          "slug": "M07-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 42,
+          "lesson": 6,
+          "title": "6. Validation: FluentValidation & Data Annotations",
+          "slug": "M07-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Modul 8: Entity Framework Core (EF Core 8)",
+      "description": "Pelajari secara tuntas Entity Framework Core (EF Core 8) dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 43,
+          "lesson": 1,
+          "title": "1. DbContext, DbSet & Code-First Entity Configuration",
+          "slug": "M08-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 44,
+          "lesson": 2,
+          "title": "2. Relationships: One-to-One, One-to-Many, Many-to-Many",
+          "slug": "M08-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 45,
+          "lesson": 3,
+          "title": "3. Migrations, Seeding & Database Updates",
+          "slug": "M08-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 46,
+          "lesson": 4,
+          "title": "4. Tracking vs AsNoTracking Queries",
+          "slug": "M08-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 47,
+          "lesson": 5,
+          "title": "5. Eager Loading (Include), Explicit Loading & Lazy Loading",
+          "slug": "M08-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 48,
+          "lesson": 6,
+          "title": "6. Transactions, SavePoints & Concurrency Conflicts",
+          "slug": "M08-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Modul 9: Design Patterns & Clean Architecture",
+      "description": "Pelajari secara tuntas Design Patterns & Clean Architecture dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 49,
+          "lesson": 1,
+          "title": "1. SOLID Principles & Implementation di C#",
+          "slug": "M09-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 50,
+          "lesson": 2,
+          "title": "2. Repository & Unit of Work Patterns",
+          "slug": "M09-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 51,
+          "lesson": 3,
+          "title": "3. CQRS (Command Query Responsibility Segregation) dengan MediatR",
+          "slug": "M09-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 52,
+          "lesson": 4,
+          "title": "4. Domain-Driven Design (DDD): Entities, Value Objects, Aggregates",
+          "slug": "M09-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 53,
+          "lesson": 5,
+          "title": "5. Event-Driven Architecture dengan MassTransit & RabbitMQ",
+          "slug": "M09-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 54,
+          "lesson": 6,
+          "title": "6. Clean Architecture Project Structure",
+          "slug": "M09-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Modul 10: Testing, Deployment & Observability",
+      "description": "Pelajari secara tuntas Testing, Deployment & Observability dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 55,
+          "lesson": 1,
+          "title": "1. Unit Testing dengan xUnit, NSubstitute & FluentAssertions",
+          "slug": "M10-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 56,
+          "lesson": 2,
+          "title": "2. Integration Testing dengan WebApplicationFactory",
+          "slug": "M10-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 57,
+          "lesson": 3,
+          "title": "3. Structured Logging dengan Serilog & OpenTelemetry",
+          "slug": "M10-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 58,
+          "lesson": 4,
+          "title": "4. Health Checks & Metrics di .NET",
+          "slug": "M10-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 59,
+          "lesson": 5,
+          "title": "5. Containerizing ASP.NET Core dengan Docker & Chiseled Images",
+          "slug": "M10-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 60,
+          "lesson": 6,
+          "title": "6. Native AOT (Ahead-of-Time) Compilation untuk Cloud Native",
+          "slug": "M10-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    }
+  ]
+}

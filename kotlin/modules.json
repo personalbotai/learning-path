@@ -1,0 +1,554 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Modul 1: Dasar & Fondasi Kotlin 2.0",
+      "description": "Pelajari secara tuntas Dasar & Fondasi Kotlin 2.0 dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "1. Pengenalan Kotlin, JVM, K2 Compiler & Gradle",
+          "slug": "M01-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "2. Variabel val vs var, Data Types & Type Inference",
+          "slug": "M01-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "3. Null Safety: Nullable Types, Safe Calls & Elvis Operator",
+          "slug": "M01-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "4. Percabangan: if as Expression, when & Smart Casts",
+          "slug": "M01-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "5. Perulangan: for, while, Ranges & Step",
+          "slug": "M01-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "6. Fungsi, Default Arguments & Single-Expression Functions",
+          "slug": "M01-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Modul 2: Object-Oriented Programming (OOP) di Kotlin",
+      "description": "Pelajari secara tuntas Object-Oriented Programming (OOP) di Kotlin dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 7,
+          "lesson": 1,
+          "title": "1. Classes, Constructors & Init Blocks",
+          "slug": "M02-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 8,
+          "lesson": 2,
+          "title": "2. Properties, Custom Getters/Setters & backing fields",
+          "slug": "M02-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 9,
+          "lesson": 3,
+          "title": "3. Inheritance, open, override & Any Class",
+          "slug": "M02-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 10,
+          "lesson": 4,
+          "title": "4. Interfaces & Multiple Interface Implementation",
+          "slug": "M02-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 11,
+          "lesson": 5,
+          "title": "5. Data Classes, ComponentN & copy() Method",
+          "slug": "M02-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 12,
+          "lesson": 6,
+          "title": "6. Visibility Modifiers & Packages",
+          "slug": "M02-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Modul 3: Struktur Data & Koleksi Tingkat Lanjut",
+      "description": "Pelajari secara tuntas Struktur Data & Koleksi Tingkat Lanjut dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 13,
+          "lesson": 1,
+          "title": "1. List, Set, Map: Mutable vs Immutable Collections",
+          "slug": "M03-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 14,
+          "lesson": 2,
+          "title": "2. Transformasi: map, filter, flatMap, reduce, fold",
+          "slug": "M03-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 15,
+          "lesson": 3,
+          "title": "3. Sequences: Lazy Evaluation untuk Big Data",
+          "slug": "M03-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 16,
+          "lesson": 4,
+          "title": "4. Grouping, Partitioning & Chunking Collections",
+          "slug": "M03-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 17,
+          "lesson": 5,
+          "title": "5. Set Operations & Custom Comparable/Comparator",
+          "slug": "M03-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 18,
+          "lesson": 6,
+          "title": "6. Array Primitives vs Object Arrays",
+          "slug": "M03-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Modul 4: Fitur Bahasa Canggih",
+      "description": "Pelajari secara tuntas Fitur Bahasa Canggih dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 19,
+          "lesson": 1,
+          "title": "1. Extension Functions & Extension Properties",
+          "slug": "M04-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 20,
+          "lesson": 2,
+          "title": "2. Sealed Classes & Sealed Interfaces (Algebraic Types)",
+          "slug": "M04-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 21,
+          "lesson": 3,
+          "title": "3. Inline Classes / Value Classes untuk Performa Zero-Cost",
+          "slug": "M04-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 22,
+          "lesson": 4,
+          "title": "4. Operator Overloading & Infix Functions",
+          "slug": "M04-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 23,
+          "lesson": 5,
+          "title": "5. Delegation Pattern & Delegated Properties (by lazy, observable)",
+          "slug": "M04-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 24,
+          "lesson": 6,
+          "title": "6. Generics: Invariance, Covariance (out) & Contravariance (in)",
+          "slug": "M04-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Modul 5: Functional Programming Paradigm",
+      "description": "Pelajari secara tuntas Functional Programming Paradigm dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 25,
+          "lesson": 1,
+          "title": "1. Higher-Order Functions & Function Types",
+          "slug": "M05-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 26,
+          "lesson": 2,
+          "title": "2. Lambdas, Closures & Anonymous Functions",
+          "slug": "M05-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 27,
+          "lesson": 3,
+          "title": "3. Inline, noinline & crossinline Modifiers",
+          "slug": "M05-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 28,
+          "lesson": 4,
+          "title": "4. Scope Functions: let, run, with, apply, also",
+          "slug": "M05-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 29,
+          "lesson": 5,
+          "title": "5. Type-Safe Builders & DSL (Domain Specific Language)",
+          "slug": "M05-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 30,
+          "lesson": 6,
+          "title": "6. Currying & Partial Application",
+          "slug": "M05-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Modul 6: Asynchronous Programming dengan Coroutines",
+      "description": "Pelajari secara tuntas Asynchronous Programming dengan Coroutines dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 31,
+          "lesson": 1,
+          "title": "1. Konsep Asinkron: Threads vs Lightweight Coroutines",
+          "slug": "M06-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 32,
+          "lesson": 2,
+          "title": "2. Coroutine Builders: launch, async & runBlocking",
+          "slug": "M06-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 33,
+          "lesson": 3,
+          "title": "3. CoroutineScope, Job & Structured Concurrency",
+          "slug": "M06-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 34,
+          "lesson": 4,
+          "title": "4. Dispatchers (Main, IO, Default, Unconfined)",
+          "slug": "M06-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 35,
+          "lesson": 5,
+          "title": "5. Exception Handling & SupervisorJob",
+          "slug": "M06-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 36,
+          "lesson": 6,
+          "title": "6. Cancellation, Timeout & Cooperative Cancellation",
+          "slug": "M06-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Modul 7: Reactive Streams dengan Kotlin Flow",
+      "description": "Pelajari secara tuntas Reactive Streams dengan Kotlin Flow dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 37,
+          "lesson": 1,
+          "title": "1. Cold Streams: Flow Builder & Flow Collectors",
+          "slug": "M07-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 38,
+          "lesson": 2,
+          "title": "2. Flow Operators: transform, filter, take, debounce, flatMapMerge",
+          "slug": "M07-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 39,
+          "lesson": 3,
+          "title": "3. Hot Streams: StateFlow & SharedFlow",
+          "slug": "M07-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 40,
+          "lesson": 4,
+          "title": "4. Backpressure & Buffering di Flows",
+          "slug": "M07-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 41,
+          "lesson": 5,
+          "title": "5. Channel API: Rendezvous, Buffered, Conflated Channels",
+          "slug": "M07-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 42,
+          "lesson": 6,
+          "title": "6. Testing Coroutines & Flows dengan Turbine & TestDispatcher",
+          "slug": "M07-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Modul 8: Kotlin Multiplatform (KMP) & Compose",
+      "description": "Pelajari secara tuntas Kotlin Multiplatform (KMP) & Compose dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 43,
+          "lesson": 1,
+          "title": "1. Arsitektur KMP: Shared Code, expect/actual Declarations",
+          "slug": "M08-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 44,
+          "lesson": 2,
+          "title": "2. Ktor Client: Asynchronous Cross-Platform Networking",
+          "slug": "M08-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 45,
+          "lesson": 3,
+          "title": "3. SQLDelight / Room Multiplatform: Cross-Platform Persistence",
+          "slug": "M08-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 46,
+          "lesson": 4,
+          "title": "4. Jetpack Compose / Compose Multiplatform Architecture",
+          "slug": "M08-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 47,
+          "lesson": 5,
+          "title": "5. State Management di KMP (MVI / MVVM)",
+          "slug": "M08-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 48,
+          "lesson": 6,
+          "title": "6. Building Target: Android, iOS & Desktop",
+          "slug": "M08-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Modul 9: Interoperabilitas Java & Modern Tooling",
+      "description": "Pelajari secara tuntas Interoperabilitas Java & Modern Tooling dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 49,
+          "lesson": 1,
+          "title": "1. Memanggil Java dari Kotlin & Kotlin dari Java",
+          "slug": "M09-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 50,
+          "lesson": 2,
+          "title": "2. @JvmStatic, @JvmOverloads, @JvmField Annotations",
+          "slug": "M09-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 51,
+          "lesson": 3,
+          "title": "3. Dependency Injection dengan Koin & Dagger/Hilt",
+          "slug": "M09-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 52,
+          "lesson": 4,
+          "title": "4. JSON Serialization dengan kotlinx.serialization",
+          "slug": "M09-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 53,
+          "lesson": 5,
+          "title": "5. Reflection & Metadata Handling di Kotlin",
+          "slug": "M09-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 54,
+          "lesson": 6,
+          "title": "6. Gradle Kotlin DSL (build.gradle.kts) & Version Catalogs",
+          "slug": "M09-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Modul 10: Production, Testing & Best Practices",
+      "description": "Pelajari secara tuntas Production, Testing & Best Practices dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 55,
+          "lesson": 1,
+          "title": "1. Unit Testing dengan MockK & Kotest",
+          "slug": "M10-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 56,
+          "lesson": 2,
+          "title": "2. Static Analysis dengan Detekt & Ktlint",
+          "slug": "M10-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 57,
+          "lesson": 3,
+          "title": "3. Memory Management & Coroutine Leak Prevention",
+          "slug": "M10-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 58,
+          "lesson": 4,
+          "title": "4. ProGuard / R8 Optimization & Minification",
+          "slug": "M10-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 59,
+          "lesson": 5,
+          "title": "5. Building Backend Services dengan Ktor Server & Spring Boot",
+          "slug": "M10-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 60,
+          "lesson": 6,
+          "title": "6. Continuous Integration & Publishing Multiplatform Libraries",
+          "slug": "M10-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    }
+  ]
+}

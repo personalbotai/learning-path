@@ -1,0 +1,15 @@
+{
+  "name": "Kotlin 2.0 Multiplatform Learning Path",
+  "short_name": "Kotlin LP",
+  "start_url": "/kotlin/",
+  "display": "standalone",
+  "background_color": "#0a0f1d",
+  "theme_color": "#a855f7",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%236366f1'/><text y='.9em' font-size='90'>\ud83d\udcbb</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

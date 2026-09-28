@@ -1,0 +1,554 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Modul 1: Dasar & Fondasi Dart 3",
+      "description": "Pelajari secara tuntas Dasar & Fondasi Dart 3 dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "1. Pengenalan Dart SDK, Dart VM, JIT & AOT Compilation",
+          "slug": "M01-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "2. Variabel, Type Inference (var, final, const) & Built-in Types",
+          "slug": "M01-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "3. Sound Null Safety: Non-nullable, Late Variables & Flow Analysis",
+          "slug": "M01-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "4. Operators: Cascade (..), Null-aware (?. ?? ??=) & Spread (...)",
+          "slug": "M01-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "5. Control Flow: if-case, switch statements & Loops",
+          "slug": "M01-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "6. Fungsi: Positional, Named, Optional Parameters & Arrow Syntax",
+          "slug": "M01-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Modul 2: Object-Oriented Programming di Dart",
+      "description": "Pelajari secara tuntas Object-Oriented Programming di Dart dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 7,
+          "lesson": 1,
+          "title": "1. Classes, Generative Constructors & Named Constructors",
+          "slug": "M02-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 8,
+          "lesson": 2,
+          "title": "2. Initializer Lists & Redirecting Constructors",
+          "slug": "M02-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 9,
+          "lesson": 3,
+          "title": "3. Getters, Setters & Private Fields dengan Prefix Underscore",
+          "slug": "M02-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 10,
+          "lesson": 4,
+          "title": "4. Inheritance & Method Overriding dengan @override",
+          "slug": "M02-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 11,
+          "lesson": 5,
+          "title": "5. Abstract Classes & Implicit Interfaces",
+          "slug": "M02-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 12,
+          "lesson": 6,
+          "title": "6. Mixins: with Keyword & on Constraint",
+          "slug": "M02-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Modul 3: Dart 3 Type System & Class Modifiers",
+      "description": "Pelajari secara tuntas Dart 3 Type System & Class Modifiers dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 13,
+          "lesson": 1,
+          "title": "1. Class Modifiers: base, interface, final, sealed",
+          "slug": "M03-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 14,
+          "lesson": 2,
+          "title": "2. abstract interface class & abstract base class",
+          "slug": "M03-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 15,
+          "lesson": 3,
+          "title": "3. Sealed Classes untuk Exhaustive Pattern Matching",
+          "slug": "M03-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 16,
+          "lesson": 4,
+          "title": "4. Extension Methods untuk Menambah Kapabilitas Tipe",
+          "slug": "M03-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 17,
+          "lesson": 5,
+          "title": "5. Extension Types (Zero-Cost Wrappers / Inline Classes)",
+          "slug": "M03-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 18,
+          "lesson": 6,
+          "title": "6. Typedefs & Generics Constraints",
+          "slug": "M03-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Modul 4: Records & Patterns (Fitur Unggulan Dart 3)",
+      "description": "Pelajari secara tuntas Records & Patterns (Fitur Unggulan Dart 3) dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 19,
+          "lesson": 1,
+          "title": "1. Records: Anonymously Grouping Multiple Values",
+          "slug": "M04-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 20,
+          "lesson": 2,
+          "title": "2. Record Types & Destructuring Syntax",
+          "slug": "M04-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 21,
+          "lesson": 3,
+          "title": "3. Patterns: Matching, Destructuring & Variable Assignment",
+          "slug": "M04-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 22,
+          "lesson": 4,
+          "title": "4. Pattern Matching di Switch Statements & Expressions",
+          "slug": "M04-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 23,
+          "lesson": 5,
+          "title": "5. Guard Clauses (when) pada Patterns",
+          "slug": "M04-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 24,
+          "lesson": 6,
+          "title": "6. Relational & Logical Patterns",
+          "slug": "M04-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Modul 5: Koleksi & Functional Programming",
+      "description": "Pelajari secara tuntas Koleksi & Functional Programming dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 25,
+          "lesson": 1,
+          "title": "1. List, Set, Map: Literal Syntax & Generic Typing",
+          "slug": "M05-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 26,
+          "lesson": 2,
+          "title": "2. Collection if, Collection for & Spread Operators",
+          "slug": "M05-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 27,
+          "lesson": 3,
+          "title": "3. Higher-Order Functions: map, where, fold, reduce, any, every",
+          "slug": "M05-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 28,
+          "lesson": 4,
+          "title": "4. Iterable vs List: Lazy Evaluation",
+          "slug": "M05-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 29,
+          "lesson": 5,
+          "title": "5. Unmodifiable Collections & Built-in Iterators",
+          "slug": "M05-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 30,
+          "lesson": 6,
+          "title": "6. First-Class Functions, Closures & Lexical Scope",
+          "slug": "M05-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Modul 6: Asynchronous Programming: Futures & Streams",
+      "description": "Pelajari secara tuntas Asynchronous Programming: Futures & Streams dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 31,
+          "lesson": 1,
+          "title": "1. Event Loop, Microtask Queue & Event Queue",
+          "slug": "M06-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 32,
+          "lesson": 2,
+          "title": "2. Futures, async & await Architecture",
+          "slug": "M06-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 33,
+          "lesson": 3,
+          "title": "3. Error Handling: try-catch, catchError, whenComplete",
+          "slug": "M06-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 34,
+          "lesson": 4,
+          "title": "4. Streams: Single-Subscription vs Broadcast Streams",
+          "slug": "M06-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 35,
+          "lesson": 5,
+          "title": "5. Stream Transformers, async* & yield Keyword",
+          "slug": "M06-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 36,
+          "lesson": 6,
+          "title": "6. StreamController & Reactive State Pipelines",
+          "slug": "M06-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Modul 7: Concurrency & Parallelism dengan Isolates",
+      "description": "Pelajari secara tuntas Concurrency & Parallelism dengan Isolates dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 37,
+          "lesson": 1,
+          "title": "1. Memahami Single-Threaded Event Loop Dart",
+          "slug": "M07-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 38,
+          "lesson": 2,
+          "title": "2. Isolates vs Threads: Shared Memory-less Execution",
+          "slug": "M07-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 39,
+          "lesson": 3,
+          "title": "3. Isolate.spawn, SendPort & ReceivePort Communication",
+          "slug": "M07-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 40,
+          "lesson": 4,
+          "title": "4. Compute Function (Flutter) & Isolate.run() Modern API",
+          "slug": "M07-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 41,
+          "lesson": 5,
+          "title": "5. Background Tasks & Heavy Compute Offloading",
+          "slug": "M07-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 42,
+          "lesson": 6,
+          "title": "6. Isolate Pools & Worker Architecture",
+          "slug": "M07-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Modul 8: Networking, Serialization & Data Handling",
+      "description": "Pelajari secara tuntas Networking, Serialization & Data Handling dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 43,
+          "lesson": 1,
+          "title": "1. HTTP Requests dengan http & dio Packages",
+          "slug": "M08-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 44,
+          "lesson": 2,
+          "title": "2. JSON Parsing: Manual vs json_serializable / build_runner",
+          "slug": "M08-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 45,
+          "lesson": 3,
+          "title": "3. WebSockets Client untuk Real-Time Data",
+          "slug": "M08-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 46,
+          "lesson": 4,
+          "title": "4. Local Persistence: SharedPreferences, Hive & Isar Database",
+          "slug": "M08-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 47,
+          "lesson": 5,
+          "title": "5. Binary Data & Typed Data (Uint8List, ByteBuffer)",
+          "slug": "M08-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 48,
+          "lesson": 6,
+          "title": "6. Handling Timeouts, Retries & Interceptors",
+          "slug": "M08-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Modul 9: Paket, Tooling & Dart Developer Ecosystem",
+      "description": "Pelajari secara tuntas Paket, Tooling & Dart Developer Ecosystem dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 49,
+          "lesson": 1,
+          "title": "1. pubspec.yaml, Dependencies & pub.dev Ecosystem",
+          "slug": "M09-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 50,
+          "lesson": 2,
+          "title": "2. Dart CLI: dart format, dart analyze, dart fix",
+          "slug": "M09-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 51,
+          "lesson": 3,
+          "title": "3. Static Analysis Configuration (analysis_options.yaml)",
+          "slug": "M09-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 52,
+          "lesson": 4,
+          "title": "4. Creating, Documenting (dartdoc) & Publishing Packages",
+          "slug": "M09-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 53,
+          "lesson": 5,
+          "title": "5. Dart Native & FFI (Foreign Function Interface) dengan C/C++",
+          "slug": "M09-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 54,
+          "lesson": 6,
+          "title": "6. Compiling Dart ke JavaScript & WebAssembly (WasmGC)",
+          "slug": "M09-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Modul 10: Testing, Architecture & Best Practices",
+      "description": "Pelajari secara tuntas Testing, Architecture & Best Practices dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 55,
+          "lesson": 1,
+          "title": "1. Unit Testing dengan test Package & Assertions",
+          "slug": "M10-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 56,
+          "lesson": 2,
+          "title": "2. Mocking dengan mocktail / mockito",
+          "slug": "M10-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 57,
+          "lesson": 3,
+          "title": "3. Stream Testing & FakeAsync Time Simulation",
+          "slug": "M10-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 58,
+          "lesson": 4,
+          "title": "4. State Management Patterns (BLoC, Riverpod, Provider Principles)",
+          "slug": "M10-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 59,
+          "lesson": 5,
+          "title": "5. Clean Architecture & Dependency Injection",
+          "slug": "M10-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 60,
+          "lesson": 6,
+          "title": "6. Continuous Integration (CI) dengan GitHub Actions",
+          "slug": "M10-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    }
+  ]
+}

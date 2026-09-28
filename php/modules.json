@@ -1,0 +1,554 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Modul 1: Dasar & Sintaks PHP 8.3 Modern",
+      "description": "Pelajari secara tuntas Dasar & Sintaks PHP 8.3 Modern dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 1,
+          "lesson": 1,
+          "title": "1. Instalasi, CLI & Siklus Request PHP",
+          "slug": "M01-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 2,
+          "lesson": 2,
+          "title": "2. Variabel, Strict Types & Type Juggling",
+          "slug": "M01-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 3,
+          "lesson": 3,
+          "title": "3. Operator, Match Expression vs Switch",
+          "slug": "M01-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 4,
+          "lesson": 4,
+          "title": "4. Struktur Kontrol & Nullsafe Operator",
+          "slug": "M01-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 5,
+          "lesson": 5,
+          "title": "5. Fungsi, Named Arguments & Arrow Functions",
+          "slug": "M01-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 6,
+          "lesson": 6,
+          "title": "6. Array Manipulation & Array Destructuring",
+          "slug": "M01-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Modul 2: Object-Oriented Programming (OOP) Mendalam",
+      "description": "Pelajari secara tuntas Object-Oriented Programming (OOP) Mendalam dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 7,
+          "lesson": 1,
+          "title": "1. Class, Object, Constructor Property Promotion",
+          "slug": "M02-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 8,
+          "lesson": 2,
+          "title": "2. Inheritance, Abstract Class & Polymorphism",
+          "slug": "M02-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 9,
+          "lesson": 3,
+          "title": "3. Interface, Contract & Multiple Implementations",
+          "slug": "M02-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 10,
+          "lesson": 4,
+          "title": "4. Traits: Horizontal Code Reuse & Conflict Resolution",
+          "slug": "M02-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 11,
+          "lesson": 5,
+          "title": "5. Readonly Properties & Readonly Classes",
+          "slug": "M02-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 12,
+          "lesson": 6,
+          "title": "6. Enums (Backed & Pure Enums) di PHP 8.1+",
+          "slug": "M02-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Modul 3: Fitur Canggih PHP 8.x",
+      "description": "Pelajari secara tuntas Fitur Canggih PHP 8.x dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 13,
+          "lesson": 1,
+          "title": "1. Attributes (Pengganti Docblock Annotations)",
+          "slug": "M03-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 14,
+          "lesson": 2,
+          "title": "2. Fibers & Asynchronous Concurrency Dasar",
+          "slug": "M03-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 15,
+          "lesson": 3,
+          "title": "3. Generators & Memory Efficient Iterators",
+          "slug": "M03-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 16,
+          "lesson": 4,
+          "title": "4. First-Class Callable Syntax",
+          "slug": "M03-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 17,
+          "lesson": 5,
+          "title": "5. Dynamic Class Fetching & Class Constant Types",
+          "slug": "M03-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 18,
+          "lesson": 6,
+          "title": "6. WeakMap & Memory Leak Prevention",
+          "slug": "M03-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Modul 4: Manajemen Error, Exception & Logging",
+      "description": "Pelajari secara tuntas Manajemen Error, Exception & Logging dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 19,
+          "lesson": 1,
+          "title": "1. Error Levels, Error Handling & Custom Exceptions",
+          "slug": "M04-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 20,
+          "lesson": 2,
+          "title": "2. Hierarchy of Throwable: Error vs Exception",
+          "slug": "M04-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 21,
+          "lesson": 3,
+          "title": "3. Finally Blocks & Exception Chaining",
+          "slug": "M04-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 22,
+          "lesson": 4,
+          "title": "4. PSR-3 Logger Interface & Monolog Integration",
+          "slug": "M04-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 23,
+          "lesson": 5,
+          "title": "5. Debugging dengan Xdebug & Stack Traces",
+          "slug": "M04-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 24,
+          "lesson": 6,
+          "title": "6. Handling Deprecations & Backward Compatibility",
+          "slug": "M04-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Modul 5: Database & Data Persistence (PDO)",
+      "description": "Pelajari secara tuntas Database & Data Persistence (PDO) dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 25,
+          "lesson": 1,
+          "title": "1. Koneksi Database dengan PDO & Exception Mode",
+          "slug": "M05-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 26,
+          "lesson": 2,
+          "title": "2. Prepared Statements & SQL Injection Mitigation",
+          "slug": "M05-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 27,
+          "lesson": 3,
+          "title": "3. Transactions, ACID & Rollbacks",
+          "slug": "M05-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 28,
+          "lesson": 4,
+          "title": "4. Database Migrations & Seeding Pattern",
+          "slug": "M05-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 29,
+          "lesson": 5,
+          "title": "5. Repository Pattern & Data Mapper",
+          "slug": "M05-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 30,
+          "lesson": 6,
+          "title": "6. Interaksi NoSQL: Redis Caching dengan PHP",
+          "slug": "M05-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Modul 6: Security Best Practices di Web",
+      "description": "Pelajari secara tuntas Security Best Practices di Web dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 31,
+          "lesson": 1,
+          "title": "1. XSS, CSRF & Content Security Policy",
+          "slug": "M06-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 32,
+          "lesson": 2,
+          "title": "2. Password Hashing (Argon2id & bcrypt)",
+          "slug": "M06-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 33,
+          "lesson": 3,
+          "title": "3. Session Hijacking & Session Fixation Protection",
+          "slug": "M06-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 34,
+          "lesson": 4,
+          "title": "4. Input Validation, Sanitization & Filter Vars",
+          "slug": "M06-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 35,
+          "lesson": 5,
+          "title": "5. CORS Handling & HTTP Security Headers",
+          "slug": "M06-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 36,
+          "lesson": 6,
+          "title": "6. Safe File Uploads & MIME Type Verification",
+          "slug": "M06-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Modul 7: Composer & Manajemen Dependensi",
+      "description": "Pelajari secara tuntas Composer & Manajemen Dependensi dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 37,
+          "lesson": 1,
+          "title": "1. composer.json, Autoloading PSR-4 & Lock File",
+          "slug": "M07-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 38,
+          "lesson": 2,
+          "title": "2. Semantic Versioning & Dependency Resolution",
+          "slug": "M07-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 39,
+          "lesson": 3,
+          "title": "3. Membuat & Menerbitkan Composer Package",
+          "slug": "M07-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 40,
+          "lesson": 4,
+          "title": "4. Composer Scripts & Automation Hooks",
+          "slug": "M07-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 41,
+          "lesson": 5,
+          "title": "5. Optimizing Autoloader untuk Production",
+          "slug": "M07-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 42,
+          "lesson": 6,
+          "title": "6. Static Analysis: PHPStan & Psalm Level Max",
+          "slug": "M07-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Modul 8: Testing & Quality Assurance",
+      "description": "Pelajari secara tuntas Testing & Quality Assurance dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 43,
+          "lesson": 1,
+          "title": "1. Unit Testing dengan PHPUnit Dasar",
+          "slug": "M08-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 44,
+          "lesson": 2,
+          "title": "2. Mocking, Stubs & Test Doubles",
+          "slug": "M08-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 45,
+          "lesson": 3,
+          "title": "3. Modern Testing dengan Pest PHP",
+          "slug": "M08-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 46,
+          "lesson": 4,
+          "title": "4. Integration Testing & Database Assertions",
+          "slug": "M08-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 47,
+          "lesson": 5,
+          "title": "5. Code Coverage, TDD & Mutation Testing (Infection)",
+          "slug": "M08-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 48,
+          "lesson": 6,
+          "title": "6. CI/CD Pipeline dengan GitHub Actions untuk PHP",
+          "slug": "M08-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Modul 9: RESTful API & Standar PSR",
+      "description": "Pelajari secara tuntas RESTful API & Standar PSR dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 49,
+          "lesson": 1,
+          "title": "1. HTTP Lifecycle, PSR-7 Request/Response",
+          "slug": "M09-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 50,
+          "lesson": 2,
+          "title": "2. PSR-15 Middlewares & Pipeline Pattern",
+          "slug": "M09-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 51,
+          "lesson": 3,
+          "title": "3. Authentication: JWT (JSON Web Tokens) & Bearer Auth",
+          "slug": "M09-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 52,
+          "lesson": 4,
+          "title": "4. Rate Limiting, Pagination & API Resource Formatting",
+          "slug": "M09-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 53,
+          "lesson": 5,
+          "title": "5. OpenAPI / Swagger Documentation",
+          "slug": "M09-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 54,
+          "lesson": 6,
+          "title": "6. GraphQL Implementation di PHP",
+          "slug": "M09-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Modul 10: Arsitektur Enterprise & Deployment",
+      "description": "Pelajari secara tuntas Arsitektur Enterprise & Deployment dengan konsep mendalam, studi kasus kode nyata, dan kuis interaktif.",
+      "lessons": [
+        {
+          "id": 55,
+          "lesson": 1,
+          "title": "1. MVC, Clean Architecture & Domain-Driven Design (DDD)",
+          "slug": "M10-L01",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 56,
+          "lesson": 2,
+          "title": "2. Message Queues: RabbitMQ / Redis Queue Worker",
+          "slug": "M10-L02",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 57,
+          "lesson": 3,
+          "title": "3. OPcache, JIT Compiler Optimization & Tuning",
+          "slug": "M10-L03",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 58,
+          "lesson": 4,
+          "title": "4. Dockerizing PHP: PHP-FPM, Nginx & Alpine Linux",
+          "slug": "M10-L04",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 59,
+          "lesson": 5,
+          "title": "5. FrankenPHP, RoadRunner & Swoole High Performance",
+          "slug": "M10-L05",
+          "duration": "15 m",
+          "level": "Semua"
+        },
+        {
+          "id": 60,
+          "lesson": 6,
+          "title": "6. Monitoring, APM (OpenTelemetry) & Zero-Downtime Deploy",
+          "slug": "M10-L06",
+          "duration": "15 m",
+          "level": "Semua"
+        }
+      ]
+    }
+  ]
+}
