@@ -76,15 +76,15 @@ const lessons = [
     "content": "# Program Pertama dengan C++20 dan C++23\n\n### Materi Inti:\n- Alur compile, link, dan run program C++.\n- Peran header, namespace std, dan flag -std=c++20 atau -std=c++23.\n- Menjalankan kode C++ melalui JupyterLite/Xeus-Cling.",
     "code": "// C++ C++20/C++23\n#include <iostream>\n\nint main() {\n    std::cout << \"Program Pertama dengan C++20 dan C++23\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa efek flag `-std=c++23`?",
+      "question": "Apa perbedaan fundamental antara C-style header (`<stdio.h>`), C++ header (`<iostream>`), dan C++20 Header Units / Modules (`import std;`)?",
       "options": [
-        "Memilih standar C++23 untuk kompilasi, jika didukung compiler.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`import std;` mengimpor interface modul yang telah dikompilasi sebelumnya, kebal terhadap kebocoran macro preprocessor, dan mempercepat waktu kompilasi secara drastis.",
+        "`import std;` hanya berjalan di runtime dan memperlambat kompilasi.",
+        "`<iostream>` otomatis menyertakan semua fungsi grafis 3D.",
+        "Tidak ada perbedaan sama sekali selain gaya penulisan sintaks."
       ],
       "answer": 0,
-      "explanation": "Flag standar memengaruhi\u8bed\u6cd5 dan library yang boleh digunakan, tetapi dukungan implementasi tetap bergantung pada compiler."
+      "explanation": "C++20 Modules mengisolasi macro dari kebocoran antar unit translasi, mengeliminasi parsing file header berulang kali, dan menjamin kebersihan namespace."
     }
   },
   {
@@ -98,15 +98,15 @@ const lessons = [
     "content": "# Tipe Data, Literal, `auto`, dan `constexpr`\n\n### Materi Inti:\n- Tipe fundamental integer, floating-point, char, bool, dan pointer dasar.\n- Signedness, ukuran tipe, suffix literal, dan konversi angka.\n- `auto` untuk deduksi tipe dan `constexpr` untuk nilai compile-time.",
     "code": "// C++ C++11/C++14\n#include <iostream>\n\nint main() {\n    std::cout << \"Tipe Data, Literal, `auto`, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tipe dari `auto x = 42LL;`?",
+      "question": "Apa fungsi flag compiler `-std=c++23` pada compiler modern seperti GCC 13+ atau Clang 16+?",
       "options": [
-        "`long long`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengaktifkan dukungan standar ISO C++23, membuka fitur bahasa modern seperti `std::print`, `std::expected`, multidimensional subscript operator, dan deducing this.",
+        "Memaksa compiler menolak seluruh kode yang menggunakan pointer.",
+        "Mengubah compiler C++ menjadi interpreter bahasa Python.",
+        "Menghapus fitur garbage collection otomatis dari C++."
       ],
       "answer": 0,
-      "explanation": "Suffix `LL` memaksa literal integer menjadi long long."
+      "explanation": "Flag `-std=c++23` menginstruksikan frontend compiler untuk mematuhi spesifikasi standar ISO C++23 dan mengaktifkan library fitur terbaru di libstdc++ / libc++."
     }
   },
   {
@@ -120,15 +120,15 @@ const lessons = [
     "content": "# Operator, Precedence, dan Short-Circuit\n\n### Materi Inti:\n- Operator arithmetic, comparison, logical, conditional, dan assignment.\n- Precedence, associativity, dan pentingnya parentheses.\n- Short-circuit evaluation pada `&&` dan `||`.",
     "code": "// C++ C++11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator, Precedence, dan Short-Circuit\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `false && (1 / 0)` dan mengapa?",
+      "question": "Mengapa library pemformatan C++23 `std::print` dan `std::println` lebih unggul dibanding `std::cout` dan `printf`?",
       "options": [
-        "`false`; operand kanan tidak dieksekusi karena short-circuit.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menghadirkan pemformatan type-safe yang diperiksa saat compile time (tanpa format string vulnerability), bebas overhead sinkronisasi iostream, dan eksekusi jauh lebih cepat.",
+        "`std::print` hanya bisa mencetak angka integer saja.",
+        "`std::print` mencetak output ke file hard disk secara default.",
+        "`std::print` membutuhkan dependensi runtime eksternal di luar C++."
       ],
       "answer": 0,
-      "explanation": "`&&` berhenti setelah operand pertama diketahui false."
+      "explanation": "`std::print` berbasis pustaka `{fmt}`, menggabungkan keamanan tipe compile-time C++ dengan kecepatan raw I/O yang bahkan melampaui `printf` standar."
     }
   },
   {
@@ -142,15 +142,15 @@ const lessons = [
     "content": "# Kontrol Alur dan Loop\n\n### Materi Inti:\n- `if`, `else`, `switch`, dan equality/comparison.\n- For loop, range-based for, break, continue, dan early return.\n- Menulis kondisi yang mudah diuji dan tidak ambigu.",
     "code": "// C++ C++11\n#include <iostream>\n\nint main() {\n    std::cout << \"Kontrol Alur dan Loop\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Pada `for (int x : v)`, apakah mengubah `x` mengubah elemen `v`?",
+      "question": "Apa bahaya laten dari statement `using namespace std;` dalam file header C++?",
       "options": [
-        "Tidak; `x` adalah salinan elemen.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mencemari namespace global di semua file yang meng-include header tersebut, memicu potensi konflik nama fungsi/tipe (name collision) yang sulit dilacak.",
+        "Membuat file header tidak bisa dikompilasi sama sekali.",
+        "Menghapus definisi class di dalam namespace std.",
+        "Membuat compiler mengalokasikan 1 GB memori tambahan."
       ],
       "answer": 0,
-      "explanation": "Range-based for dengan tipe biasa membuat salinan nilai."
+      "explanation": "Mengimpor seluruh namespace `std` ke scope global di header menyuntikkan ribuan identifier ke setiap unit translasi pemanggil, merusak modularitas kode."
     }
   },
   {
@@ -164,15 +164,15 @@ const lessons = [
     "content": "# Fungsi, Parameter, Overload, dan `constexpr`\n\n### Materi Inti:\n- Declaration, definition, return type, dan parameter passing.\n- Pass by value, pass by reference, default arguments, dan overload resolution.\n- Fungsi `constexpr` untuk kalkulasi compile-time.",
     "code": "// C++ C++11/C++14\n#include <iostream>\n\nint main() {\n    std::cout << \"Fungsi, Parameter, Overload, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa keuntungan parameter `const T&` untuk objek besar?",
+      "question": "Apa yang dimaksud dengan perilaku *Undefined Behavior (UB)* dalam standar ISO C++?",
       "options": [
-        "Menghindari salinan dan menjamin fungsi tidak mengubah objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Operasi di mana standar C++ tidak memberikan jaminan apa pun atas perilaku program; compiler bebas mengasumsikan UB tidak pernah terjadi dan dapat menghasilkan optimasi tak terduga atau crash.",
+        "Error kompilasi yang muncul saat sintaks salah ketik.",
+        "Pesan peringatan (warning) yang otomatis hilang saat runtime.",
+        "Fitur opsional yang diaktifkan dengan macro `#define`."
       ],
       "answer": 0,
-      "explanation": "Reference menghindari copy, sedangkan `const` mengekspresikan tidak adanya modifikasi."
+      "explanation": "UB (seperti pointer out-of-bounds, signed integer overflow, use-after-free) adalah sumber celah keamanan terbesar di C/C++; compiler dapat mengeliminasi pengecekan kode yang dianggap mustahil terjadi."
     }
   },
   {
@@ -186,15 +186,15 @@ const lessons = [
     "content": "# Header, Namespace, Debugging, dan Unit Test Mini\n\n### Materi Inti:\n- Pemisahan `.h` dan `.cpp`, include guard, dan `#pragma once`.\n- Namespace untuk menghindari nama global yang tabrakan.\n- Assertion, breakpoint, dan unit test sederhana.",
     "code": "// C++ C++11/C++20\n#include <iostream>\n\nint main() {\n    std::cout << \"Header, Namespace, Debugging, dan Unit Test Mini\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa definisi fungsi non-inline sebaiknya tidak diletakkan di header?",
+      "question": "Kapan identifier `[[nodiscard]]` (C++17/C++20) sangat krusial disematkan pada fungsi?",
       "options": [
-        "Dapat menyebabkan multiple definition saat linking.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memerintahkan compiler membangkitkan peringatan (warning) jika pemanggil mengabaikan nilai return value fungsi (misal: kode status error atau objek resource RAII).",
+        "Menghapus nilai return value dari memori cache prosesor.",
+        "Mencegah fungsi dipanggil lebih dari satu kali.",
+        "Menyembunyikan fungsi dari dokumentasi Doxygen."
       ],
       "answer": 0,
-      "explanation": "Header biasanya hanya berisi declaration; definisi ditempatkan di satu translation unit."
+      "explanation": "`[[nodiscard]]` mencegah bug kritis di mana caller lupa mengecek hasil operasi penting (seperti alokasi memori atau error code) yang dapat menyebabkan kebocoran resource."
     }
   },
   {
@@ -208,15 +208,15 @@ const lessons = [
     "content": "# Initialization dan Object Lifetime\n\n### Materi Inti:\n- Automatic, static, thread-local, dan local lifetime.\n- Value initialization, aggregate initialization, dan initializer list.\n- Urutan destruction ketika nested scope berakhir.",
     "code": "// C++ C++11\n#include <iostream>\n\nint main() {\n    std::cout << \"Initialization dan Object Lifetime\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan objek automatic lokal dihancurkan?",
+      "question": "Apa perbedaan penting antara *Lvalue* dan *Rvalue* dalam sistem tipe C++?",
       "options": [
-        "Ketika keluar dari scope-nya.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Lvalue merujuk ke objek yang memiliki identitas memori persisten (dapat diambil alamat memorinya `&x`), sedangkan Rvalue adalah objek sementara tanpa identitas persisten (temporary).",
+        "Lvalue disimpan di flash disk, Rvalue disimpan di RAM.",
+        "Lvalue hanya berupa tipe integer, sedangkan Rvalue bertipe float.",
+        "Rvalue tidak dapat digunakan dalam ekspresi matematika."
       ],
       "answer": 0,
-      "explanation": "Destruction terjadi secara reverse order terhadap construction di scope yang sama."
+      "explanation": "Distingsi Lvalue vs Rvalue menjadi fondasi *Move Semantics*; sumber daya milik Rvalue sementara dapat 'dicuri' (move) dengan aman tanpa duplikasi deep-copy."
     }
   },
   {
@@ -230,15 +230,15 @@ const lessons = [
     "content": "# Pointer, Reference, dan Address\n\n### Materi Inti:\n- Pointer nullable, reference wajib terinisialisasi, dan pointer arithmetic.\n- Lvalue reference versus rvalue reference.\n- Perbedaan address-of, pointer, dan lifetime.",
     "code": "// C++ C++11\n#include <iostream>\n\nint main() {\n    std::cout << \"Pointer, Reference, dan Address\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah reference dapat di-reseat setelah inisialisasi?",
+      "question": "Bagaimana fungsi pembantu `std::move(x)` bekerja di C++11/C++20?",
       "options": [
-        "Tidak.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Melakukan static cast tanpa syarat pada objek `x` menjadi rvalue reference (`T&&`), mengizinkan resource-nya dipindahkan melalui move constructor atau move assignment.",
+        "Memindahkan data objek secara fisik ke alamat memori lain saat baris itu dieksekusi.",
+        "Menghapus objek `x` dari memori secara permanen seketika itu juga.",
+        "Menggandakan data objek ke thread background."
       ],
       "answer": 0,
-      "explanation": "Reference adalah alias sejak dibuat dan tidak dapat diarahkan ke objek lain."
+      "explanation": "`std::move` sebenarnya tidak 'memindahkan' apa pun secara fisik; ia murni cast tipe ke rvalue reference sehingga memicu pemilihan overload move constructor yang efisien."
     }
   },
   {
@@ -252,15 +252,15 @@ const lessons = [
     "content": "# Struct, Class, dan Invariant\n\n### Materi Inti:\n- Data members, member functions, access control, dan encapsulation.\n- Membangun invariant seperti `balance >= 0`.\n- Memisahkan interface publik dari implementasi internal.",
     "code": "// C++ C++11\n#include <iostream>\n\nint main() {\n    std::cout << \"Struct, Class, dan Invariant\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa access default untuk anggota `class`?",
+      "question": "Apa status objek sumber (*source object*) setelah isi datanya dipindahkan melalui *Move Semantics*?",
       "options": [
-        "`private`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Berada dalam status 'valid but unspecified state'; objek masih aman untuk dihancurkan oleh destruktor atau di-reassign nilai baru, tetapi isinya tidak boleh diasumsikan.",
+        "Objek otomatis terhapus dari memori stack secara gaib.",
+        "Objek melempar crash jika disentuh kembali.",
+        "Isi objek tetap utuh tidak mengalami perubahan apa pun."
       ],
       "answer": 0,
-      "explanation": "`struct` menggunakan `public` sebagai default, sedangkan `class` menggunakan `private`."
+      "explanation": "Standar C++ mewajibkan moved-from object tetap dalam kondisi legal yang memenuhi invarian kelas (bisa di-destruct atau diisi ulang), biasanya pointer internalnya di-set ke `nullptr`."
     }
   },
   {
@@ -274,15 +274,15 @@ const lessons = [
     "content": "# Const Correctness dan Value Semantics\n\n### Materi Inti:\n- Const object, const member function, dan pass-by-const-reference.\n- Value semantics versus reference semantics.\n- Kapan `mutable` boleh digunakan dan mengapa harus hati-hati.",
     "code": "// C++ C++11\n#include <iostream>\n\nint main() {\n    std::cout << \"Const Correctness dan Value Semantics\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bisakah non-const member function dipanggil pada const object?",
+      "question": "Apa yang dimaksud dengan idiom *RAII* (Resource Acquisition Is Initialization) di C++ modern?",
       "options": [
-        "Tidak, kecuali member tersebut dinyatakan `mutable`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Pengikatan siklus hidup resource (memori heap, file, socket, mutex) ke masa hidup objek stack; resource diperoleh di konstruktor dan otomatis dilepas di destruktor.",
+        "Mengharuskan semua variabel diinisialisasi dengan angka nol.",
+        "Menjalankan inisialisasi aplikasi di file konfigurasi XML.",
+        "Menggunakan garbage collector eksternal untuk mengelola RAM."
       ],
       "answer": 0,
-      "explanation": "`const` member function menjamin objek tidak dimodifikasi secara logis."
+      "explanation": "RAII adalah keunggulan utama C++ dalam keamanan resource; pelepasan resource dijamin terjadi secara deterministik begitu scope berakhir, bahkan saat terjadi exception (*stack unwinding*)."
     }
   },
   {
@@ -296,15 +296,15 @@ const lessons = [
     "content": "# `std::string`, `std::string_view`, dan `std::span`\n\n### Materi Inti:\n- `std::string` memiliki data; `string_view` adalah view non-owning.\n- `std::span` menyediakan view atas contiguous storage.\n- Lifetime hazard, dangling view, dan pemilihan interface yang benar.",
     "code": "// C++ C++17/C++20\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::string`, `std::string_view`, dan `std::span`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa risiko `string_view` yang menunjuk temporary string?",
+      "question": "Kapan penggunaan `std::unique_ptr<T>` lebih tepat dibandingkan `std::shared_ptr<T>`?",
       "options": [
-        "Dangling pointer dan undefined behavior setelah temporary hancur.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Untuk kepemilikan tunggal eksklusif (*exclusive ownership*) tanpa overhead reference counting atomik (zero overhead dibanding raw pointer).",
+        "Saat resource ingin diakses bersama oleh ribuan thread tanpa sinkronisasi.",
+        "Hanya saat memprogram mikrokontroler Arduino 8-bit.",
+        "Ketika objek harus disalin menggunakan operator copy `=`."
       ],
       "answer": 0,
-      "explanation": "`string_view` tidak meningkatkan reference count atau memiliki data."
+      "explanation": "`std::unique_ptr` adalah pointer pintar standar default: ia menjamin pembersihan resource otomatis tanpa biaya memori tambahan (hanya membungkus satu pointer mentah)."
     }
   },
   {
@@ -318,15 +318,15 @@ const lessons = [
     "content": "# RAII dan Penanganan Exception\n\n### Materi Inti:\n- Resource Acquisition Is Initialization sebagai pola utama ownership.\n- Stack unwinding dan destruction saat exception dilempar.\n- Menulis destructor yang tidak me-lempar exception.",
     "code": "// C++ C++11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII dan Penanganan Exception\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa peran RAII?",
+      "question": "Mengapa pembuatan shared pointer sebaiknya selalu menggunakan `std::make_shared<T>(args)` daripada `std::shared_ptr<T>(new T(args))`?",
       "options": [
-        "Mengikat kepemilikan resource dengan lifetime objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggabungkan alokasi memori untuk objek `T` dan control block (reference counter) menjadi satu blok memori contiguous tunggal, menghemat 1 alokasi heap dan lebih cache-friendly.",
+        "Mencegah compiler melempar error template.",
+        "Membuat pointer menjadi read-only secara otomatis.",
+        "Hanya agar sintaks penulisan terlihat lebih pendek."
       ],
       "answer": 0,
-      "explanation": "Resource dibebaskan otomatis ketika objek RAII keluar dari scope."
+      "explanation": "`make_shared` memotong alokasi heap dari 2 kali menjadi 1 kali alokasi efisien, serta memberikan keamanan exception (*exception safety*) jika ada argumen lain yang gagal."
     }
   },
   {
@@ -364,7 +364,7 @@ const lessons = [
     "quiz": {
       "question": "Apa perbedaan copy constructor dan copy assignment?",
       "options": [
-        "Copy constructor membentuk objek baru; assignment mengganti\u72b6\u6001 objek yang sudah ada.",
+        "Copy constructor membentuk objek baru; assignment mengganti状态 objek yang sudah ada.",
         "Opsi B",
         "Opsi C",
         "Opsi D"
@@ -557,7 +557,7 @@ const lessons = [
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk\u5f3a\u5236 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
+    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk强制 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
     "code": "// C++ C++14/C++20\n#include <iostream>\n\nint main() {\n    std::cout << \"Compile-Time Programming dengan `constexpr` dan `consteval`\" << std::endl;\n    return 0;\n}",
     "quiz": {
       "question": "Apa perbedaan `constexpr` dan `consteval`?",
@@ -1306,7 +1306,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Reliabilitas, Security, dan Test Matrix\n\n### Materi Inti:\n- Sanitizer, invariant test, property test, dan fuzzing ringan.\n- Input validation, ownership contract, dan secure defaults.\n- Testing pada edge case, malformed input, dan concurrent path.",
-    "code": "// C++ C++11\u2013C++23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
+    "code": "// C++ C++11–C++23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
     "quiz": {
       "question": "Bagaimana mendokumentasikan raw pointer non-owning?",
       "options": [

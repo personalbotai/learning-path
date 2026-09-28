@@ -76,15 +76,15 @@ const lessons = [
     "content": "# Program Pertama dengan PHP20 dan PHP23\n\n### Materi Inti:\n- Alur compile, link, dan run program PHP.\n- Peran header, namespace std, dan flag -std=c++20 atau -std=c++23.\n- Menjalankan kode PHP melalui JupyterLite/Xeus-Cling.",
     "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Program Pertama dengan PHP20 dan PHP23\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa efek flag `-std=c++23`?",
+      "question": "Apa yang membedakan mode `declare(strict_types=1);` dengan default type coercion di PHP 8.3?",
       "options": [
-        "Memilih standar PHP23 untuk kompilasi, jika didukung compiler.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memaksa pengecekan tipe skalar secara ketat pada pemanggilan fungsi/metode dalam file yang mendeklarasikannya.",
+        "Mengubah semua tipe data runtime menjadi string otomatis.",
+        "Hanya berlaku untuk tipe return value dan mengabaikan tipe parameter argumen.",
+        "Menonaktifkan garbage collection untuk meningkatkan kecepatan eksekusi skrip."
       ],
       "answer": 0,
-      "explanation": "Flag standar memengaruhi\u8bed\u6cd5 dan library yang boleh digunakan, tetapi dukungan implementasi tetap bergantung pada compiler."
+      "explanation": "`declare(strict_types=1)` bersifat per-file dan memaksa PHP melempar `TypeError` jika argumen skalar tidak persis sesuai deklarasi tipe parameter fungsi."
     }
   },
   {
@@ -98,15 +98,15 @@ const lessons = [
     "content": "# Tipe Data, Literal, `auto`, dan `constexpr`\n\n### Materi Inti:\n- Tipe fundamental integer, floating-point, char, bool, dan pointer dasar.\n- Signedness, ukuran tipe, suffix literal, dan konversi angka.\n- `auto` untuk deduksi tipe dan `constexpr` untuk nilai compile-time.",
     "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Tipe Data, Literal, `auto`, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tipe dari `auto x = 42LL;`?",
+      "question": "Perhatikan kode: `echo 0 == '0a' ? 'true' : 'false';`. Apa output di PHP 8.0+ dan mengapa?",
       "options": [
-        "`long long`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "'false', karena perbandingan string non-numerik dengan integer tidak lagi mengkonversi string menjadi 0.",
+        "'true', karena string '0a' di-cast menjadi integer 0 secara implisit.",
+        "Melemparkan fatal error karena tipe data berbeda.",
+        "'false', karena operator == otomatis berubah menjadi === di PHP 8."
       ],
       "answer": 0,
-      "explanation": "Suffix `LL` memaksa literal integer menjadi long long."
+      "explanation": "Sejak PHP 8.0, perbandingan angka vs non-numeric string menghasilkan false, berbeda dengan PHP 7 yang meng-cast string menjadi 0."
     }
   },
   {
@@ -120,15 +120,15 @@ const lessons = [
     "content": "# Operator, Precedence, dan Short-Circuit\n\n### Materi Inti:\n- Operator arithmetic, comparison, logical, conditional, dan assignment.\n- Precedence, associativity, dan pentingnya parentheses.\n- Short-circuit evaluation pada `&&` dan `||`.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator, Precedence, dan Short-Circuit\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `false && (1 / 0)` dan mengapa?",
+      "question": "Apa keunggulan ekspresi `match` dibandingkan dengan pernyataan `switch` tradisional di PHP 8?",
       "options": [
-        "`false`; operand kanan tidak dieksekusi karena short-circuit.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`match` mengembalikan nilai (expression), menggunakan perbandingan identik (`===`), dan tidak memerlukan `break`.",
+        "`match` hanya dapat membandingkan integer dan tidak mendukung banyak kondisi.",
+        "`match` mengevaluasi semua cabang kondisi secara bersamaan (parallel).",
+        "`match` menggunakan type coercion longgar (`==`) dan otomatis jatuh ke case berikutnya jika tidak ada `break`."
       ],
       "answer": 0,
-      "explanation": "`&&` berhenti setelah operand pertama diketahui false."
+      "explanation": "`match` adalah expression (mengembalikan nilai), menggunakan strict equality (`===`), tidak melakukan fallthrough sehingga tidak butuh `break`, dan melempar `UnhandledMatchError` jika tidak ada kondisi yang cocok."
     }
   },
   {
@@ -142,15 +142,15 @@ const lessons = [
     "content": "# Kontrol Alur dan Loop\n\n### Materi Inti:\n- `if`, `else`, `switch`, dan equality/comparison.\n- For loop, range-based for, break, continue, dan early return.\n- Menulis kondisi yang mudah diuji dan tidak ambigu.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Kontrol Alur dan Loop\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Pada `for (int x : v)`, apakah mengubah `x` mengubah elemen `v`?",
+      "question": "Apa yang terjadi jika variabel bernilai `null` dipanggil dengan nullsafe operator `$user?->profile?->getAddress()`?",
       "options": [
-        "Tidak; `x` adalah salinan elemen.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Eksekusi rantai langsung berhenti dan mengembalikan `null` tanpa memicu error.",
+        "Memicu warning 'Attempt to read property on null'.",
+        "Melemparkan `NullPointerException` runtime.",
+        "Mengembalikan string kosong `\"\"`."
       ],
       "answer": 0,
-      "explanation": "Range-based for dengan tipe biasa membuat salinan nilai."
+      "explanation": "Nullsafe operator (`?->`) mengevaluasi apakah sisi kiri bernilai null; jika ya, seluruh rantai pemanggilan langsung berhenti dan menghasilkan `null` dengan aman."
     }
   },
   {
@@ -164,15 +164,15 @@ const lessons = [
     "content": "# Fungsi, Parameter, Overload, dan `constexpr`\n\n### Materi Inti:\n- Declaration, definition, return type, dan parameter passing.\n- Pass by value, pass by reference, default arguments, dan overload resolution.\n- Fungsi `constexpr` untuk kalkulasi compile-time.",
     "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Fungsi, Parameter, Overload, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa keuntungan parameter `const T&` untuk objek besar?",
+      "question": "Bagaimana sintaks *named arguments* memengaruhi pemanggilan fungsi di PHP 8?",
       "options": [
-        "Menghindari salinan dan menjamin fungsi tidak mengubah objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memungkinkan pengiriman argumen berdasarkan nama parameter, sehingga urutan posisi argumen dapat diabaikan.",
+        "Memaksa semua parameter default harus ditulis ulang saat pemanggilan.",
+        "Mengharuskan nama argumen dibungkus dalam tanda petik string.",
+        "Mengganti parameter menjadi array asosiatif di dalam tubuh fungsi."
       ],
       "answer": 0,
-      "explanation": "Reference menghindari copy, sedangkan `const` mengekspresikan tidak adanya modifikasi."
+      "explanation": "Named arguments memungkinkan pemanggilan `fungsi(paramB: 10, paramA: 5)` sehingga tidak bergantung pada posisi indeks dan parameter opsional di tengah bisa dilewati."
     }
   },
   {
@@ -186,15 +186,15 @@ const lessons = [
     "content": "# Header, Namespace, Debugging, dan Unit Test Mini\n\n### Materi Inti:\n- Pemisahan `.h` dan `.php`, include guard, dan `#pragma once`.\n- Namespace untuk menghindari nama global yang tabrakan.\n- Assertion, breakpoint, dan unit test sederhana.",
     "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Header, Namespace, Debugging, dan Unit Test Mini\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa definisi fungsi non-inline sebaiknya tidak diletakkan di header?",
+      "question": "Apa hasil dari array unpacking pada array dengan key string di PHP 8.1+ `[...$arr1, ...$arr2]`?",
       "options": [
-        "Dapat menyebabkan multiple definition saat linking.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Key string yang sama akan saling menimpa (overwrite) oleh array yang terletak di belakang.",
+        "Melemparkan `Fatal Error: Cannot unpack string keys`.",
+        "Key string otomatis diubah menjadi indeks integer numerik mulai dari 0.",
+        "Kedua array digabungkan menjadi multidimensional array."
       ],
       "answer": 0,
-      "explanation": "Header biasanya hanya berisi declaration; definisi ditempatkan di satu translation unit."
+      "explanation": "PHP 8.1+ mendukung unpacking array dengan key string; perilakunya identik dengan `array_merge()` di mana key string duplikat ditimpa oleh array sebelah kanan."
     }
   },
   {
@@ -208,15 +208,15 @@ const lessons = [
     "content": "# Initialization dan Object Lifetime\n\n### Materi Inti:\n- Automatic, static, thread-local, dan local lifetime.\n- Value initialization, aggregate initialization, dan initializer list.\n- Urutan destruction ketika nested scope berakhir.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Initialization dan Object Lifetime\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan objek automatic lokal dihancurkan?",
+      "question": "Bagaimana cara kerja *Constructor Property Promotion* di PHP 8?",
       "options": [
-        "Ketika keluar dari scope-nya.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mendeklarasikan visibility (public/protected/private) langsung di parameter `__construct` sehingga otomatis membuat dan mengisi properti kelas.",
+        "Membuat properti menjadi statis di memori global.",
+        "Mengubah parameter konstruktor menjadi instance Singleton otomatis.",
+        "Hanya berfungsi jika kelas mewarisi kelas lain (extends)."
       ],
       "answer": 0,
-      "explanation": "Destruction terjadi secara reverse order terhadap construction di scope yang sama."
+      "explanation": "Constructor Property Promotion menyederhanakan boilerplate deklarasi properti kelas dan assignment di constructor menjadi satu baris deklarasi di signature constructor."
     }
   },
   {
@@ -230,15 +230,15 @@ const lessons = [
     "content": "# Pointer, Reference, dan Address\n\n### Materi Inti:\n- Pointer nullable, reference wajib terinisialisasi, dan pointer arithmetic.\n- Lvalue reference versus rvalue reference.\n- Perbedaan address-of, pointer, dan lifetime.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Pointer, Reference, dan Address\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah reference dapat di-reseat setelah inisialisasi?",
+      "question": "Manakah pernyataan yang benar mengenai *Readonly Classes* di PHP 8.2+?",
       "options": [
-        "Tidak.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Semua properti di dalam kelas secara otomatis bertipe readonly dan harus memiliki type declaration eksplisit.",
+        "Kelas readonly dapat memiliki properti untyped atau dinamis.",
+        "Kelas readonly dapat diekstend oleh kelas biasa yang tidak berstatus readonly.",
+        "Nilai properti dapat diubah kembali menggunakan refleksi runtime."
       ],
       "answer": 0,
-      "explanation": "Reference adalah alias sejak dibuat dan tidak dapat diarahkan ke objek lain."
+      "explanation": "Readonly class di PHP 8.2 mensyaratkan semua properti memiliki tipe data eksplisit dan mencegah penambahan dynamic properties, memastikan objek benar-benar immutable setelah inisialisasi."
     }
   },
   {
@@ -252,15 +252,15 @@ const lessons = [
     "content": "# Struct, Class, dan Invariant\n\n### Materi Inti:\n- Data members, member functions, access control, dan encapsulation.\n- Membangun invariant seperti `balance >= 0`.\n- Memisahkan interface publik dari implementasi internal.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Struct, Class, dan Invariant\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa access default untuk anggota `class`?",
+      "question": "Apa perbedaan mendasar antara *Pure Enum* dan *Backed Enum* di PHP 8.1+?",
       "options": [
-        "`private`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Backed Enum memiliki representasi nilai skalar (string atau int) via properti `value` dan metode `from()` / `tryFrom()`.",
+        "Pure Enum hanya bisa digunakan di dalam database PDO.",
+        "Backed Enum tidak dapat mengimplementasikan interface.",
+        "Pure Enum otomatis memiliki nilai integer 0, 1, 2 secara default."
       ],
       "answer": 0,
-      "explanation": "`struct` menggunakan `public` sebagai default, sedangkan `class` menggunakan `private`."
+      "explanation": "Pure Enum hanya berupa case konseptual tanpa skalar primitif, sedangkan Backed Enum terikat pada skalar (`enum Status: string`) dan menyediakan deserialisasi otomatis via `tryFrom()`."
     }
   },
   {
@@ -274,15 +274,15 @@ const lessons = [
     "content": "# Const Correctness dan Value Semantics\n\n### Materi Inti:\n- Const object, const member function, dan pass-by-const-reference.\n- Value semantics versus reference semantics.\n- Kapan `mutable` boleh digunakan dan mengapa harus hati-hati.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Const Correctness dan Value Semantics\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bisakah non-const member function dipanggil pada const object?",
+      "question": "Bagaimana cara mengatasi konflik nama metode yang sama dari dua Trait yang digunakan dalam satu class?",
       "options": [
-        "Tidak, kecuali member tersebut dinyatakan `mutable`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan keyword `insteadof` untuk menentukan prioritas trait, dan `as` untuk membuat alias.",
+        "Menghapus salah satu trait dari vendor folder.",
+        "Mengubah nama metode di salah satu trait menjadi private secara otomatis.",
+        "PHP tidak mengizinkan dua trait dengan nama metode sama dipakai bersamaan."
       ],
       "answer": 0,
-      "explanation": "`const` member function menjamin objek tidak dimodifikasi secara logis."
+      "explanation": "Konflik antar-trait diselesaikan dengan operator `insteadof` (misal: `TraitA::method insteadof TraitB`) dan operator `as` untuk alias metode yang digantikan."
     }
   },
   {
@@ -296,15 +296,15 @@ const lessons = [
     "content": "# `std::string`, `std::string_view`, dan `std::span`\n\n### Materi Inti:\n- `std::string` memiliki data; `string_view` adalah view non-owning.\n- `std::span` menyediakan view atas contiguous storage.\n- Lifetime hazard, dangling view, dan pemilihan interface yang benar.",
     "code": "// PHP PHP17/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::string`, `std::string_view`, dan `std::span`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa risiko `string_view` yang menunjuk temporary string?",
+      "question": "Apa fungsi dari metode `__invoke()` pada sebuah Class PHP?",
       "options": [
-        "Dangling pointer dan undefined behavior setelah temporary hancur.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memungkinkan instance objek dipanggil langsung layaknya sebuah fungsi: `$obj()`.",
+        "Metode yang otomatis dijalankan saat objek dihapus dari memori.",
+        "Metode untuk mengklon data objek secara deep copy.",
+        "Metode untuk memvalidasi skema JSON objek."
       ],
       "answer": 0,
-      "explanation": "`string_view` tidak meningkatkan reference count atau memiliki data."
+      "explanation": "Jika sebuah class memiliki magic method `__invoke()`, objek tersebut dapat dieksekusi sebagai callable seperti `$response = $action($request);`."
     }
   },
   {
@@ -318,15 +318,15 @@ const lessons = [
     "content": "# RAII dan Penanganan Exception\n\n### Materi Inti:\n- Resource Acquisition Is Initialization sebagai pola utama ownership.\n- Stack unwinding dan destruction saat exception dilempar.\n- Menulis destructor yang tidak me-lempar exception.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII dan Penanganan Exception\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa peran RAII?",
+      "question": "Mengapa interface segregation principle (ISP) menyarankan interface kecil dan spesifik?",
       "options": [
-        "Mengikat kepemilikan resource dengan lifetime objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Agar kelas pengimplementasi tidak dipaksa mengimplementasikan metode yang tidak diperlukannya.",
+        "Agar memori PHP tidak kehabisan RAM saat melakukan autoloading.",
+        "Karena PHP membatasi maksimum 3 metode per interface.",
+        "Agar file class interface dapat dikompilasi oleh JIT compiler."
       ],
       "answer": 0,
-      "explanation": "Resource dibebaskan otomatis ketika objek RAII keluar dari scope."
+      "explanation": "Interface yang ramping dan fokus mencegah kelas terikat pada dependensi atau metode kosong yang melanggar kontrak semantik."
     }
   },
   {
@@ -340,15 +340,15 @@ const lessons = [
     "content": "# Constructor, Destructor, dan Initializer List\n\n### Materi Inti:\n- Default, parameterized, copy, dan destructor.\n- Initializer list untuk konstruk anggota.\n- Urutan construction dan destruction.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Constructor, Destructor, dan Initializer List\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa initializer list lebih disukai untuk menginisialisasi anggota?",
+      "question": "Apa keunggulan utama PHP *Attributes* dibanding PHPDoc annotations tradisional?",
       "options": [
-        "Menghindari default construction lalu assignment.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Attributes adalah fitur native bahasa yang divalidasi saat kompilasi dan dapat dibaca via Reflection API secara terstruktur.",
+        "Attributes hanya disimpan sebagai komentar teks biasa dan di-parse via regex.",
+        "Attributes otomatis menghentikan eksekusi script jika ada peringatan deprecated.",
+        "Attributes hanya bisa digunakan pada framework Symfony."
       ],
       "answer": 0,
-      "explanation": "Anggota langsung dibentuk dengan nilai akhir sejak awal."
+      "explanation": "Attributes (`#[Route('/api')]`) adalah sintaks resmi AST PHP yang type-safe, cepat diakses lewat Reflection, dan terhindar dari overhead parsing string PHPDoc komentar."
     }
   },
   {
@@ -362,15 +362,15 @@ const lessons = [
     "content": "# Copy Semantics dan Rule of Three/Five\n\n### Materi Inti:\n- Copy constructor, copy assignment, dan self-assignment.\n- Shallow copy versus deep copy.\n- Copy-and-swap serta kapan menerapkan rule of five.",
     "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Semantics dan Rule of Three/Five\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan copy constructor dan copy assignment?",
+      "question": "Apa yang dimaksud dengan *Fibers* yang diperkenalkan di PHP 8.1?",
       "options": [
-        "Copy constructor membentuk objek baru; assignment mengganti\u72b6\u6001 objek yang sudah ada.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mekanisme coroutine berbobot ringan untuk manajemen concurrency kooperatif tanpa multi-threading OS.",
+        "Thread worker yang berjalan di kernel Linux secara paralel penuh.",
+        "Ekstensi untuk menghubungkan PHP ke kabel fiber optik jaringan.",
+        "Compiler optimasi pengganti OPcache."
       ],
       "answer": 0,
-      "explanation": "Keduanya perlu ditangani jika kelas memiliki resource yang harus dimiliki."
+      "explanation": "Fibers adalah coroutine full-stack yang dapat di-suspend dan di-resume dari mana saja dalam call stack, menjadi fondasi async framework modern seperti Revolt dan Amp."
     }
   },
   {
@@ -384,15 +384,15 @@ const lessons = [
     "content": "# Operator Overloading\n\n### Materi Inti:\n- Operator arithmetic, comparison, assignment, dan stream.\n- Member operator versus non-member/friend operator.\n- Implicit conversion dan bahaya operator yang mengejutkan.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator Overloading\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Operator mana yang secara umum lebih tepat menjadi non-member?",
+      "question": "Bagaimana *Generators* (`yield`) membantu efisiensi penggunaan memori saat memproses dataset besar?",
       "options": [
-        "Operator simetris seperti `+`, `==`, dan `<<`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menghasilkan nilai satu per satu sesuai permintaan (lazy iteration) tanpa memuat seluruh array ke dalam memori RAM.",
+        "Menyimpan seluruh data ke dalam file swap disk secara otomatis.",
+        "Mengkompresi array menggunakan algoritma GZIP sebelum iterasi.",
+        "Menghapus variabel global di setiap perulangan."
       ],
       "answer": 0,
-      "explanation": "Non-member memungkinkan implicit conversion pada operand kiri."
+      "explanation": "Generators menghasilkan objek `Generator` yang hanya mengkalkulasi dan mengembalikan satu elemen pada saat `yield` dipanggil, menjaga memory footprint tetap konstan."
     }
   },
   {
@@ -406,15 +406,15 @@ const lessons = [
     "content": "# Inheritance dan Virtual Dispatch\n\n### Materi Inti:\n- Base/derived relationship dan is-a semantics.\n- Virtual function, override, dan dynamic dispatch.\n- Virtual destructor pada base polymorphic.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Inheritance dan Virtual Dispatch\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang terjadi jika base pointer memanggil virtual function overridden di derived?",
+      "question": "Apa hasil dari First-Class Callable Syntax `strlen(...)` di PHP 8.1?",
       "options": [
-        "Dynamic dispatch memilih override derived.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengembalikan instance objek `Closure` dari fungsi tersebut tanpa overhead string callable.",
+        "Mengeksekusi fungsi strlen dengan parameter null.",
+        "Memicu syntax error karena elipsis (...) tidak valid.",
+        "Mengubah fungsi menjadi macro preprocessor."
       ],
       "answer": 0,
-      "explanation": "Virtual dispatch dipilih berdasarkan tipe objektif pada runtime."
+      "explanation": "Sintaks `strlen(...)` atau `$obj->method(...)` menghasilkan objek `Closure` secara bersih, type-safe, dan mendukung analisa statis."
     }
   },
   {
@@ -428,15 +428,15 @@ const lessons = [
     "content": "# Interface Abstrak dan Polymorphic Design\n\n### Materi Inti:\n- Pure virtual function dan abstract class.\n- Interface sebagai kontrak, bukan implementasi yang bocor.\n- Polymorphic destruction dan prinsip substitusi.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Interface Abstrak dan Polymorphic Design\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti pure virtual function `virtual void draw() = 0;`?",
+      "question": "Apa fungsi dari koleksi `WeakMap` di PHP 8.0?",
       "options": [
-        "Class abstrak mewajibkan derived class menyediakan implementasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyimpan relasi objek sebagai key tanpa mencegah garbage collector menghapus objek tersebut jika referensi utamanya hilang.",
+        "Membuat hash map yang otomatis terenkripsi di memori.",
+        "Menyimpan array dengan batas waktu kadaluarsa (TTL) layaknya Redis.",
+        "Menghindari penggunaan memori heap PHP."
       ],
       "answer": 0,
-      "explanation": "Function murni tidak memiliki body pada base class."
+      "explanation": "WeakMap memegang referensi lemah terhadap objek; ketika objek key dihancurkan oleh garbage collection, entri di WeakMap ikut terhapus otomatis, mencegah memory leak."
     }
   },
   {
@@ -450,15 +450,15 @@ const lessons = [
     "content": "# Composition, Policy, dan CRTP\n\n### Materi Inti:\n- Composition over inheritance dan dependency injection.\n- Policy-based design untuk memilih perilaku compile-time.\n- CRTP sebagai static polymorphism.",
     "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Composition, Policy, dan CRTP\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan polymorphism CRTP diselesaikan?",
+      "question": "Kapan sebuah Class Constant Type `public const string API_URL = '...';` diperiksa oleh PHP 8.3?",
       "options": [
-        "Pada compile-time.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Saat kompilasi dan saat kelas atau subclass di-load, memastikan tipe konstan tidak dilanggar oleh override.",
+        "Hanya saat konstan tersebut dicetak dengan `echo`.",
+        "Tidak diperiksa sama sekali karena konstan bersifat loose typing.",
+        "Hanya saat unit test dijalankan."
       ],
       "answer": 0,
-      "explanation": "CRTP menggunakan static dispatch dan tipe derived diketahui saat kompilasi."
+      "explanation": "PHP 8.3 menambahkan typed class constants sehingga tipe nilai konstan divalidasi secara ketat dan child class tidak dapat mengubah tipenya ke tipe yang tidak kompatibel."
     }
   },
   {
@@ -472,15 +472,15 @@ const lessons = [
     "content": "# Function Templates dan Template Deduction\n\n### Materi Inti:\n- Template parameter, deduction, dan explicit template arguments.\n- Overload resolution antara template dan non-template.\n- Pembatasan interface melalui requiremen operasi.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Function Templates dan Template Deduction\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti template sebagai family of functions?",
+      "question": "Manakah hierarki yang benar untuk penanganan error/exception fatal di PHP 7 dan PHP 8?",
       "options": [
-        "Compiler membuat instantiation khusus untuk setiap tipe yang digunakan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`Throwable` sebagai root interface yang diimplementasikan oleh `Exception` dan `Error`.",
+        "`Exception` sebagai root class yang membawahi `Throwable` dan `Error`.",
+        "`FatalError` berdiri sendiri tanpa hubungan hierarki dengan `Exception`.",
+        "`StandardException` yang hanya bisa ditangkap oleh handler `try-catch` khusus."
       ],
       "answer": 0,
-      "explanation": "Template bukan function runtime generik tunggal."
+      "explanation": "Semua error fatal engine (seperti `TypeError`, `ParseError`) mewarisi `Error`, sedangkan kesalahan aplikasi mewarisi `Exception`. Keduanya mengimplementasikan interface `Throwable`."
     }
   },
   {
@@ -494,15 +494,15 @@ const lessons = [
     "content": "# Class Templates dan Instantiation\n\n### Materi Inti:\n- Class template, member definition, dan header placement.\n- Explicit instantiation versus implicit instantiation.\n- Contoh `Box<T>`, `Stack<T>`, dan `Optional<T>`.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Class Templates dan Instantiation\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `Box<int>` dan `Box<double>` merupakan tipe yang sama?",
+      "question": "Kapan blok `finally` dieksekusi dalam struktur `try - catch - finally`?",
       "options": [
-        "Tidak; keduanya instantiation berbeda.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Selalu dieksekusi, baik ketika exception terjadi, tidak terjadi, bahkan jika blok try/catch melakukan `return`.",
+        "Hanya dieksekusi jika exception tidak tertangkap oleh blok catch.",
+        "Hanya dieksekusi jika tidak ada return statement di blok try.",
+        "Dieksekusi sebelum blok try dimulai."
       ],
       "answer": 0,
-      "explanation": "Tipe template di-instantiation dengan argument tipe yang berbeda."
+      "explanation": "Blok `finally` dijamin selalu berjalan di akhir untuk keperluan cleanup resource (menutup koneksi database, stream file, atau lock)."
     }
   },
   {
@@ -516,15 +516,15 @@ const lessons = [
     "content": "# Partial Specialization, Full Specialization, dan Traits\n\n### Materi Inti:\n- Partial specialization untuk keluarga tipe.\n- Full specialization untuk kasus sangat khusus.\n- Trait pattern dan `std::enable_if`.",
     "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Partial Specialization, Full Specialization, dan Traits\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Partial specialization lebih sering digunakan pada jenis template apa?",
+      "question": "Apa keuntungan menggunakan *Exception Chaining* (`new CustomException('Gagal', 0, $previousException)`)?",
       "options": [
-        "Class template.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjaga jejak stack trace asli dari akar penyebab masalah (root cause) saat membungkus exception ke layer yang lebih tinggi.",
+        "Mencegah exception ditangkap oleh global exception handler.",
+        "Mengurangi ukuran memori exception log.",
+        "Menonaktifkan pengiriman log ke error monitoring tools."
       ],
       "answer": 0,
-      "explanation": "Function template biasanya diselesaikan dengan overload; class template dapat memiliki partial specialization."
+      "explanation": "Parameter ketiga pada `Exception` (`$previous`) memungkinkan developer merunut riwayat error asli dari layer internal (misal PDOException) hingga ke error level domain aplikasi."
     }
   },
   {
@@ -538,15 +538,15 @@ const lessons = [
     "content": "# Variadic Templates dan Fold Expression\n\n### Materi Inti:\n- Parameter pack, pack expansion, dan recursion.\n- Fold expression untuk sum, product, dan logical operations.\n- Penggunaan `std::tuple` dan argument forwarding.",
     "code": "// PHP PHP11/PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Variadic Templates dan Fold Expression\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `sizeof...(Ts)`?",
+      "question": "Apa tingkatan log terendah (paling detail) menurut standar PSR-3 Logging Standard?",
       "options": [
-        "Mengembalikan jumlah elemen parameter pack.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "DEBUG",
+        "INFO",
+        "NOTICE",
+        "EMERGENCY"
       ],
       "answer": 0,
-      "explanation": "Operator ellipsis pada ukuran menghitung jumlah template arguments."
+      "explanation": "Berdasarkan RFC 5424 / PSR-3, urutan log dari paling rendah ke paling kritis adalah: DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY."
     }
   },
   {
@@ -557,18 +557,18 @@ const lessons = [
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk\u5f3a\u5236 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
+    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk强制 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
     "code": "// PHP PHP14/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Compile-Time Programming dengan `constexpr` dan `consteval`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan `constexpr` dan `consteval`?",
+      "question": "Apa risiko membiarkan `display_errors = On` di lingkungan produksi (production)?",
       "options": [
-        "`constexpr` boleh dieksekusi compile-time atau runtime; `consteval` harus compile-time.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Informasi sensitif (kredensial DB, path server, struktur query SQL) bisa terekspos ke publik saat terjadi kegagalan sistem.",
+        "Server otomatis merestart PHP-FPM setiap kali terjadi notice.",
+        "Aplikasi akan berjalan 50% lebih lambat secara konstan.",
+        "File upload otomatis ditolak oleh web server."
       ],
       "answer": 0,
-      "explanation": "`consteval` memaksa evaluasi immediate function call."
+      "explanation": "Di production, `display_errors` wajib dimatikan (Off) dan `log_errors` diaktifkan (On) untuk mencegah Information Disclosure vulnerability."
     }
   },
   {
@@ -582,15 +582,15 @@ const lessons = [
     "content": "# SFINAE, `requires`, dan Early Constraint\n\n### Materi Inti:\n- Substitution failure dan SFINAE.\n- `requires` expression dan constrained template.\n- Overload resolution serta diagnostic yang lebih jelas.",
     "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"SFINAE, `requires`, dan Early Constraint\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang terjadi pada candidate template yang gagal substitution?",
+      "question": "Bagaimana cara menangani E_DEPRECATED warning di PHP 8.3 agar tidak merusak response JSON API?",
       "options": [
-        "Candidate dihapus dari overload resolution.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengonfigurasi `error_reporting` dan custom error handler untuk mencatat deprecation ke log tanpa mencetaknya ke output stream.",
+        "Menghapus semua komentar di dalam kode.",
+        "Menggunakan tanda `@` di depan setiap baris kode aplikasi.",
+        "Menonaktifkan OPcache di php.ini."
       ],
       "answer": 0,
-      "explanation": "Itu adalah prinsip SFINAE: failure during substitution is not a hard error."
+      "explanation": "Output warning ke stdout merusak struktur payload JSON. Solusinya adalah memisahkan error stream ke file log melalui error handler terpusat."
     }
   },
   {
@@ -604,15 +604,15 @@ const lessons = [
     "content": "# Ownership Model dan Raw Memory\n\n### Materi Inti:\n- Stack ownership versus heap ownership.\n- `new`, `new[]`, `delete`, dan `delete[]`.\n- Double free, leak, mismatched deallocation, dan undefined behavior.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Ownership Model dan Raw Memory\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Alokasi `new int[10]` harus dibebaskan dengan apa?",
+      "question": "Mengapa *Prepared Statements* pada PDO sangat efektif mencegah SQL Injection?",
       "options": [
-        "`delete[]`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memisahkan query SQL dengan data parameter di level protokol database, sehingga input pengguna tidak pernah dieksekusi sebagai perintah SQL.",
+        "Mengubah semua karakter huruf kecil menjadi huruf besar di dalam query.",
+        "Melakukan enkripsi SHA-256 pada seluruh isi database secara instan.",
+        "Menolak query yang memiliki panjang lebih dari 255 karakter."
       ],
       "answer": 0,
-      "explanation": "Array dan non-array allocation memiliki mekanisme deallocation berbeda."
+      "explanation": "Prepared statements mengirimkan struktur query terlebih dahulu ke engine database untuk di-compile, lalu parameter dikirim terpisah sebagai data murni, bukan kode executable."
     }
   },
   {
@@ -626,15 +626,15 @@ const lessons = [
     "content": "# `std::unique_ptr` dan Exclusive Ownership\n\n### Materi Inti:\n- Exclusive ownership dan move-only semantics.\n- Factory function seperti `std::make_unique`.\n- Custom deleter, array support, `reset`, dan `release`.",
     "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::unique_ptr` dan Exclusive Ownership\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil menyalin `unique_ptr`?",
+      "question": "Opsi konfigurasi PDO apa yang wajib dipasang agar query error melempar exception alih-alih silent fail?",
       "options": [
-        "Compile-time error.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION`",
+        "`PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC`",
+        "`PDO::ATTR_AUTOCOMMIT => false`",
+        "`PDO::ATTR_TIMEOUT => 30`"
       ],
       "answer": 0,
-      "explanation": "`unique_ptr` tidak memiliki copy operation untuk menjaga exclusive ownership."
+      "explanation": "`PDO::ERRMODE_EXCEPTION` memastikan bahwa kesalahan SQL (syntax error, constraint violation) langsung melempar `PDOException` yang bisa ditangani dengan `try-catch`."
     }
   },
   {
@@ -648,15 +648,15 @@ const lessons = [
     "content": "# `std::shared_ptr` dan `std::weak_ptr`\n\n### Materi Inti:\n- Shared ownership, control block, dan reference count.\n- `weak_ptr` untuk optional non-owning reference.\n- Cycle ownership dan penggunaan `lock()`.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::shared_ptr` dan `std::weak_ptr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `weak_ptr::lock()` jika owner terakhir sudah hancur?",
+      "question": "Mengapa opsi `PDO::ATTR_EMULATE_PREPARES => false` sangat direkomendasikan?",
       "options": [
-        "Mengembalikan `shared_ptr` kosong.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memaksa PDO menggunakan prepared statement native bawaan server database dan mengembalikan tipe data kolom numerik yang sebenarnya (bukan string).",
+        "Membuat database MySQL bekerja dalam mode NoSQL.",
+        "Mematikan fitur transaksi database untuk mempercepat penulisan.",
+        "Mengizinkan banyak query dieksekusi dalam satu string query."
       ],
       "answer": 0,
-      "explanation": "`weak_ptr` tidak mempertahankan lifetime object."
+      "explanation": "Ketika emulasi dinonaktifkan, database server sendiri yang mem-parsing statement secara native, meningkatkan keamanan dan menjaga integer/float tetap bertipe asli di PHP."
     }
   },
   {
@@ -670,15 +670,15 @@ const lessons = [
     "content": "# Allocator-Aware Container dan `pmr`\n\n### Materi Inti:\n- Allocator-aware container dan custom allocator.\n- `std::pmr::monotonic_buffer_resource` serta pool lifetime.\n- Allocation failure, pool boundary, dan cache locality.",
     "code": "// PHP PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Allocator-Aware Container dan `pmr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa memory resource harus hidup lebih lama dari container yang menggunakannya?",
+      "question": "Dalam pola transaksi database ACID, apa tujuan pemanggilan `$pdo->rollBack()`?",
       "options": [
-        "Container dapat melakukan allocation/deallocation selama lifetime-nya.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membatalkan seluruh perubahan data yang dibuat sejak `beginTransaction()` jika terjadi error di tengah proses.",
+        "Menghapus database dan membuatnya kembali dari awal.",
+        "Menyimpan data secara permanen ke hard disk storage.",
+        "Mengunci tabel agar tidak bisa dibaca oleh koneksi lain."
       ],
       "answer": 0,
-      "explanation": "Menghancurkan resource lebih dulu menyebabkan dangling allocator."
+      "explanation": "Rollback mengembalikan kondisi data ke titik sebelum transaksi dimulai, menjamin prinsip *Atomicity* (semua berhasil atau tidak ada sama sekali)."
     }
   },
   {
@@ -692,15 +692,15 @@ const lessons = [
     "content": "# RAII Wrapper dan Safe Resource Patterns\n\n### Materi Inti:\n- Wrapper untuk file, socket, mutex, dan heap resource.\n- `lock_guard` versus `unique_lock`.\n- Scope guard untuk cleanup lintas jalur exception.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII Wrapper dan Safe Resource Patterns\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan `std::lock_guard` melepaskan mutex?",
+      "question": "Apa peran arsitektur *Repository Pattern* dalam pengelolaan data di PHP?",
       "options": [
-        "Ketika lock guard keluar dari scope.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memisahkan logika bisnis (domain) dari mekanisme akses data spesifik (ORM/SQL query), membuat kode mudah diuji dengan mock repository.",
+        "Menggantikan fungsi database MySQL dengan file JSON lokal.",
+        "Mengkompilasi query SQL menjadi file biner C++.",
+        "Memastikan tabel selalu memiliki foreign key otomatis."
       ],
       "answer": 0,
-      "explanation": "Destruction lock guard memanggil unlock secara otomatis."
+      "explanation": "Repository bertindak seperti koleksi objek di memori, mengisolasi query database dari business logic sehingga aplikasi fleksibel terhadap perubahan storage."
     }
   },
   {
@@ -714,15 +714,15 @@ const lessons = [
     "content": "# Mendeteksi Memory Bug dengan Sanitizer\n\n### Materi Inti:\n- AddressSanitizer, UndefinedBehaviorSanitizer, dan Valgrind.\n- Dangling reference, use-after-free, overflow, dan out-of-bounds.\n- Menjalankan sanitizer di native dan WebAssembly.",
     "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Mendeteksi Memory Bug dengan Sanitizer\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mana yang melakukan bounds checking: `operator[]` atau `at()`?",
+      "question": "Bagaimana cara mencegah race condition saat mengupdate saldo user di database relational?",
       "options": [
-        "`at()`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan transaksi database dipadukan dengan klausa `SELECT ... FOR UPDATE` (pessimistic locking) atau atomic update query.",
+        "Menggunakan perulangan `while(true)` di level PHP sampai berhasil.",
+        "Menyimpan saldo di session cookie browser klien.",
+        "Menggunakan tipe data VARCHAR untuk menyimpan angka saldo."
       ],
       "answer": 0,
-      "explanation": "`operator[]` tidak melakukan bounds check dan dapat menyebabkan undefined behavior."
+      "explanation": "`SELECT ... FOR UPDATE` mengunci baris terkait hingga transaksi selesai, mencegah transaksi lain membaca atau mengubah saldo secara bersamaan."
     }
   },
   {
@@ -736,15 +736,15 @@ const lessons = [
     "content": "# Value Category: Lvalue, Xvalue, dan Prvalue\n\n### Materi Inti:\n- Lvalue, xvalue, prvalue, dan named rvalue reference.\n- `std::move` sebagai cast eksplisit.\n- Decay type dan array-to-pointer decay.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Value Category: Lvalue, Xvalue, dan Prvalue\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah named rvalue reference selalu berupa rvalue saat digunakan?",
+      "question": "Algoritma hashing password apa yang menjadi standar rekomendasi tertinggi di PHP saat ini?",
       "options": [
-        "Tidak; named rvalue reference adalah lvalue.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`PASSWORD_ARGON2ID` atau `PASSWORD_BCRYPT` via fungsi `password_hash()`.",
+        "`md5()` dengan salt statis.",
+        "`sha1(sha1($password))` berganda.",
+        "AES-256-CBC dua arah."
       ],
       "answer": 0,
-      "explanation": "Nama objek tetap memiliki lvalue category meskipun tipe referensinya rvalue."
+      "explanation": "Argon2id (pemenang Password Hashing Competition) dan bcrypt tahan terhadap serangan GPU cracking berkat konfigurasi memory cost dan time cost yang fleksibel."
     }
   },
   {
@@ -758,15 +758,15 @@ const lessons = [
     "content": "# Move Constructor dan Move Assignment\n\n### Materi Inti:\n- Move operation untuk mengambil resource.\n- Source harus berada dalam valid tetapi unspecified state.\n- Move constructor idealnya `noexcept` agar container dapat memindahkan.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Move Constructor dan Move Assignment\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah move constructor selalu menghindari salinan?",
+      "question": "Bagaimana cara kerja serangan *Cross-Site Request Forgery (CSRF)* dan bagaimana pencegahannya di PHP?",
       "options": [
-        "Tidak; dapat fallback ke copy atau melakukan salinan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memanipulasi browser korban yang sudah login untuk mengirim request berbahaya; dicegah dengan validasi CSRF token acak per sesi/request.",
+        "Menyuntikkan script JavaScript ke form komentar; dicegah dengan `addslashes()`.",
+        "Menebak password akun admin dengan brute-force; dicegah dengan captcha.",
+        "Mencuri file database via FTP; dicegah dengan mengganti port."
       ],
       "answer": 0,
-      "explanation": "Move operation hanya memberi kesempatan untuk perpindahan; implementasinya tetap menentukan."
+      "explanation": "CSRF menunggangi autentikasi cookie korban. Mitigasi utamanya adalah menyertakan token kriptografis acak yang unik per sesi pada setiap request state-changing (POST/PUT/DELETE)."
     }
   },
   {
@@ -780,15 +780,15 @@ const lessons = [
     "content": "# Perfect Forwarding\n\n### Materi Inti:\n- Forwarding reference dan `auto&&`.\n- `std::forward<T>` untuk mempertahankan value category.\n- Argument unwrapping dengan `std::unwrap_reference`.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Perfect Forwarding\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan `std::forward<T>(t)`?",
+      "question": "Apa fungsi atribut cookie `HttpOnly` dan `SameSite=Lax/Strict` pada session PHP?",
       "options": [
-        "Mempertahankan value category saat meneruskan argument.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`HttpOnly` mencegah script JavaScript mengakses cookie (mitigasi XSS session theft), sedangkan `SameSite` membatasi pengiriman cookie pada cross-site request (mitigasi CSRF).",
+        "Mempercepat waktu transfer cookie melalui protokol HTTP/3.",
+        "Mengenkripsi isi cookie dengan algoritma RSA publik-privat.",
+        "Membuat cookie hanya berlaku jika pengguna menggunakan browser Google Chrome."
       ],
       "answer": 0,
-      "explanation": "Tanpa forward, argument dapat berubah menjadi lvalue."
+      "explanation": "`HttpOnly` memblokir pencurian `PHPSESSID` melalui `document.cookie` saat terjadi celah XSS, sementara `SameSite` melindungi dari pengiriman cookie otomatis di cross-origin context."
     }
   },
   {
@@ -802,15 +802,15 @@ const lessons = [
     "content": "# Copy Elision, NRVO, dan Guaranteed Move\n\n### Materi Inti:\n- Copy elision dan Named Return Value Optimization.\n- Prvalue construction langsung ke result object.\n- `std::move` yang tidak perlu dapat menghambat copy elision.",
     "code": "// PHP PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Elision, NRVO, dan Guaranteed Move\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dapat dilakukan compiler pada `return Vec{};`?",
+      "question": "Fungsi sanitasi output apa yang tepat digunakan untuk mencegah celah *Cross-Site Scripting (XSS)* saat mencetak string ke template HTML?",
       "options": [
-        "Membentuk result object langsung tanpa move.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`htmlspecialchars($str, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')`",
+        "`strip_tags()` tanpa parameter tambahan.",
+        "`urlencode()`",
+        "`addslashes()`"
       ],
       "answer": 0,
-      "explanation": "Prvalue dapat di-elide secara dijamin pada banyak kondisi PHP17."
+      "explanation": "`htmlspecialchars` mengonversi karakter berbahaya seperti `<`, `>`, `&`, `\"`, dan `'` menjadi entitas HTML aman, mencegah browser mengeksekusi tag `<script>`."
     }
   },
   {
@@ -824,15 +824,15 @@ const lessons = [
     "content": "# STL Container dan Allocation Strategy\n\n### Materi Inti:\n- Tradeoff vector, deque, list, map, set, dan unordered_map.\n- Iterator invalidation, reserve, resize, dan shrink-to-fit.\n- Copy versus move behavior pada container.",
     "code": "// PHP PHP11/PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"STL Container dan Allocation Strategy\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan `reserve(n)` dan `resize(n)` pada vector?",
+      "question": "Mengapa hanya memeriksa ekstensi nama file (misal `.jpg`) tidak cukup untuk keamanan file upload di PHP?",
       "options": [
-        "`reserve` mengubah capacity; `resize` mengubah size.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Penyerang dapat mengunggah file executable (seperti `shell.php.jpg`) dengan MIME-type palsu; sistem wajib memvalidasi MIME type isi file (magic bytes via finfo) dan me-rename file.",
+        "Karena ekstensi file otomatis dihapus oleh web server.",
+        "Karena PHP tidak bisa membaca file berukuran lebih dari 1MB.",
+        "Ekstensi file hanya berlaku di sistem operasi Windows."
       ],
       "answer": 0,
-      "explanation": "Capacity menyediakan ruang alokasi, sedangkan size menentukan jumlah elemen aktif."
+      "explanation": "Validasi upload yang aman wajib memeriksa byte signature asli via `finfo_file()`, membuat nama acak baru, menyimpan di luar public web root, dan menonaktifkan eksekusi skrip di folder upload."
     }
   },
   {
@@ -846,15 +846,15 @@ const lessons = [
     "content": "# In-Place Construction dengan `emplace`, `optional`, dan `variant`\n\n### Materi Inti:\n- `emplace_back` dan konstruksi langsung di dalam container.\n- `std::optional<T>::emplace` untuk optional move-only value.\n- `std::variant` dan pemilihan alternative secara eksplisit.",
     "code": "// PHP PHP17/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan `emplace`?",
+      "question": "Apa fungsi header keamanan HTTP `Content-Security-Policy (CSP)`?",
       "options": [
-        "Membentuk objek langsung di lokasi penyimpanan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mendefinisikan sumber daya (script, style, gambar) yang sah dan boleh dimuat atau dieksekusi oleh browser web klien.",
+        "Menolak koneksi internet dari negara tertentu.",
+        "Mengompresi response halaman HTML dengan Brotli.",
+        "Mengalihkan request HTTP ke HTTPS secara paksa."
       ],
       "answer": 0,
-      "explanation": "Ini mengurangi temporary dan penting untuk move-only types."
+      "explanation": "CSP bertindak sebagai layer pertahanan kedua terhadap XSS dengan membatasi eksekusi inline script dan hanya mengizinkan resource dari domain yang telah disetujui (whitelist/nonce)."
     }
   },
   {
@@ -868,15 +868,15 @@ const lessons = [
     "content": "# Iterator dan Standard Algorithms\n\n### Materi Inti:\n- Iterator categories dan range begin/end.\n- `find`, `sort`, `count`, `transform`, dan algorithm contracts.\n- Lambda expression untuk operasi lokal.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Iterator dan Standard Algorithms\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Alasan apa yang dibutuhkan `std::sort` pada seluruh range?",
+      "question": "Apa perbedaan mendasar antara file `composer.json` dan `composer.lock`?",
       "options": [
-        "Random-access iterator.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`composer.json` mendefinisikan aturan dependensi dan constraint versi, sedangkan `composer.lock` mengunci versi pasti setiap package yang terpasang.",
+        "`composer.lock` hanya digunakan di Windows, sedangkan `composer.json` di Linux.",
+        "`composer.json` otomatis terhapus saat perintah `composer install` selesai.",
+        "Keduanya memiliki fungsi identik dan salah satunya dapat dihapus tanpa dampak."
       ],
       "answer": 0,
-      "explanation": "`std::sort` memerlukan kemampuan akses acak untuk strategi sorting-nya."
+      "explanation": "`composer.lock` menjamin seluruh anggota tim dan server produksi menginstal versi package yang 100% identik (deterministic build)."
     }
   },
   {
@@ -890,15 +890,15 @@ const lessons = [
     "content": "# Ranges Views: Lazy dan Non-Owning\n\n### Materi Inti:\n- `views::filter`, `transform`, `take`, dan `drop`.\n- View versus owning range.\n- Lazy evaluation dan lifetime adaptor.",
     "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Ranges Views: Lazy dan Non-Owning\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan view ranges biasanya dieksekusi?",
+      "question": "Kapan sebaiknya perintah `composer update` dijalankan dibandingkan `composer install`?",
       "options": [
-        "Ketika range di-iterate atau dikonsumsi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`composer update` dijalankan di development saat sengaja ingin memperbarui versi package sesuai aturan constraint, sedangkan `composer install` membaca lockfile di production.",
+        "`composer update` harus selalu dijalankan di server production setiap kali deploy.",
+        "`composer install` menghapus folder `vendor` lalu mengunduh ulang tanpa aturan versi.",
+        "Tidak ada perbedaan, keduanya menghasilkan hash lockfile yang sama."
       ],
       "answer": 0,
-      "explanation": "Views memisahkan deklarasi transformasi dari eksekusi."
+      "explanation": "Di server produksi atau CI/CD, selalu jalankan `composer install` agar tidak terjadi pergeseran versi tak terduga yang dapat merusak aplikasi."
     }
   },
   {
@@ -912,15 +912,15 @@ const lessons = [
     "content": "# Range Algorithms dan Range Concepts\n\n### Materi Inti:\n- `std::ranges::sort`, `find`, dan `for_each`.\n- Input, output, forward, sortable, dan mutable range requirements.\n- Mengurangi manual iterator arithmetic.",
     "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Range Algorithms dan Range Concepts\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bagaimana range algorithms menemukan awal dan akhir range?",
+      "question": "Bagaimana standar autoloading PSR-4 memetakan namespace ke struktur direktori?",
       "options": [
-        "Melalui range protocol begin/end.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Prefix namespace dipetakan ke root direktori tertentu, dan sub-namespace berikutnya mewakili subfolder yang persis sama dengan nama file class.",
+        "Semua file class harus diletakkan dalam satu folder tunggal tanpa subfolder.",
+        "Nama class harus ditulis dengan huruf kapital semua agar terbaca oleh autoloader.",
+        "Autoloading memerlukan file XML terpisah untuk setiap class baru."
       ],
       "answer": 0,
-      "explanation": "Ranges mengurangi ketergantungan pada iterator manual yang tidak konsisten."
+      "explanation": "Di PSR-4, misalnya `\"App\\\\\": \"src/\"`, maka class `App\\Services\\PaymentService` akan otomatis dicari di file `src/Services/PaymentService.php`."
     }
   },
   {
@@ -934,15 +934,15 @@ const lessons = [
     "content": "# Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\n\n### Materi Inti:\n- `views::zip` untuk beberapa range paralel.\n- `views::chunk`, `slide`, dan `enumerate`.\n- Tuple-like elements, overflow behavior, dan lifetime.",
     "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `views::chunk(3)`?",
+      "question": "Apa tujuan menjalankan perintah `composer dump-autoload -o` (optimize autoloader)?",
       "options": [
-        "Membagi range menjadi sub-range berisi maksimal tiga elemen.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengubah aturan pemetaan direktori PSR-4/0 menjadi classmap array flat satu per satu, mempercepat resolusi class secara drastis di production.",
+        "Menghapus dependensi development (`require-dev`) dari disk.",
+        "Membersihkan cache sistem operasi dan me-reboot web server.",
+        "Mengkompilasi file PHP menjadi bytecode C++."
       ],
       "answer": 0,
-      "explanation": "Chunk memperlakukan elemen sebagai kelompok kecil."
+      "explanation": "Option `-o` atau `--optimize` menghasilkan classmap lengkap di memori, menghilangkan kebutuhan pengecekan filesystem (`file_exists`) berulang kali saat me-load class."
     }
   },
   {
@@ -956,15 +956,15 @@ const lessons = [
     "content": "# Error Value dengan `std::expected` dan `std::optional`\n\n### Materi Inti:\n- `optional<T>` untuk absence tanpa error detail.\n- `expected<T,E>` untuk success atau error terstruktur.\n- Composing operations dengan `and_then`, `transform`, dan `or_else`.",
     "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Error Value dengan `std::expected` dan `std::optional`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa representasi utama `std::expected<T, E>`?",
+      "question": "Apa kegunaan alat static analysis seperti *PHPStan* atau *Psalm* dalam siklus pengembangan modern?",
       "options": [
-        "Satu dari dua state: value `T` atau error `E`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mendeteksi bug logika, kesalahan type hint, dead code, dan potensi null pointer sebelum kode dieksekusi tanpa perlu menjalankan aplikasi.",
+        "Memformat spasi dan indentasi kode secara otomatis.",
+        "Menghitung biaya hosting server bulanan.",
+        "Menjalankan penetration test terhadap server API."
       ],
       "answer": 0,
-      "explanation": "Expected lebih informatif daripada optional ketika operasi dapat gagal dengan alasan."
+      "explanation": "Static analysis membaca AST kode sumber dan menganalisis aliran tipe data secara matematis, menangkap bug kritis pada compile/CI time."
     }
   },
   {
@@ -978,15 +978,15 @@ const lessons = [
     "content": "# API Modern PHP20/23: Format, Print, Numbers, dan `mdspan`\n\n### Materi Inti:\n- `std::format`, `std::print`, dan feature-test macros.\n- `std::numbers` untuk konstanta numerik standar.\n- `std::mdspan` untuk multidimensional view tanpa ownership.",
     "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"API Modern PHP20/23: Format, Print, Numbers, dan `mdspan`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `std::print` dalam PHP23?",
+      "question": "Arti dari constraint versi `^8.3.0` pada composer.json adalah?",
       "options": [
-        "Menulis formatted text langsung ke stdout.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengizinkan pembaruan versi minor dan patch (>=8.3.0 dan <9.0.0), tetapi melarang pembaruan major yang berpotensi breaking change.",
+        "Hanya mengizinkan versi patch (>=8.3.0 dan <8.4.0).",
+        "Harus persis versi 8.3.0 tanpa perubahan sama sekali.",
+        "Boleh menginstal versi 9.0 atau 10.0 jika sudah tersedia."
       ],
       "answer": 0,
-      "explanation": "`print` mengurangi kebutuhan membuat intermediate string."
+      "explanation": "Caret operator (`^`) mengikuti konvensi Semantic Versioning, mengizinkan update non-breaking hingga versi di bawah angka major berikutnya."
     }
   },
   {
@@ -1000,15 +1000,15 @@ const lessons = [
     "content": "# Thread Dasar, Join, dan Detach\n\n### Materi Inti:\n- Membuat, menjalankan, `join`, dan `detach` thread.\n- Lifetime thread dan bahaya detach tanpa koordinasi.\n- Data race versus race condition.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Dasar, Join, dan Detach\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `std::thread::join()`?",
+      "question": "Apa perbedaan mendasar antara *Unit Testing* dan *Integration Testing*?",
       "options": [
-        "Menunggu thread selesai sebelum melanjutkan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Unit test menguji fungsi/class secara terisolasi dengan mengabaikan dependensi luar (via mock), sedangkan integration test menguji kerja sama beberapa modul dengan database/service nyata.",
+        "Unit test dijalankan manual oleh user, integration test dijalankan otomatis oleh robot.",
+        "Unit test hanya untuk kode frontend JavaScript, integration test untuk backend PHP.",
+        "Unit test tidak memerlukan assertion atau kriteria kelulusan."
       ],
       "answer": 0,
-      "explanation": "Join memastikan lifetime dan hasil thread selesai sebelum scope berlanjut."
+      "explanation": "Unit test fokus pada satu unit logika murni dengan isolasi ketat (cepat dan ringan), sedangkan integration test memvalidasi interaksi antar-komponen nyata seperti query database dan panggilan API."
     }
   },
   {
@@ -1022,15 +1022,15 @@ const lessons = [
     "content": "# Mutex, `lock_guard`, dan Condition Variable\n\n### Materi Inti:\n- Critical section dan mutual exclusion.\n- RAII locking dengan `lock_guard` dan `unique_lock`.\n- Condition variable, predicate loop, notify-one/all.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Mutex, `lock_guard`, dan Condition Variable\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa condition variable harus digunakan dalam loop predicate?",
+      "question": "Apa peran *Mock Object* dalam pengujian kode yang memanggil external payment gateway API?",
       "options": [
-        "Untuk menangani spurious wakeup dan kondisi yang berubah.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyimulasikan perilaku dan response gateway pembayaran tanpa melakukan panggilan jaringan HTTP sungguhan dan tanpa biaya transaksi.",
+        "Menguji kecepatan transfer kabel internet server.",
+        "Mencuri token rahasia dari akun merchant payment gateway.",
+        "Membuat database tiruan di memori kartu grafis."
       ],
       "answer": 0,
-      "explanation": "Notify tidak membuktikan kondisi yang diinginkan sudah terpenuhi."
+      "explanation": "Mocking menggantikan komponen eksternal yang tidak deterministik atau lambat, memungkinkan test berjalan cepat, andal, dan dapat menguji skenario error yang sulit direproduksi di API nyata."
     }
   },
   {
@@ -1044,15 +1044,15 @@ const lessons = [
     "content": "# Atomic dan Memory Ordering\n\n### Materi Inti:\n- Atomic load/store, fetch-add, compare-exchange.\n- Relaxed, acquire, release, dan sequential consistency.\n- Lock-free atomic dan tradeoff performance.",
     "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Atomic dan Memory Ordering\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dijamin atomic relaxed?",
+      "question": "Apa keunggulan framework testing *Pest PHP* dibanding PHPUnit standar?",
       "options": [
-        "Atomicity operation, tetapi tidak memberi global ordering antar thread.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Sintaks yang elegan, ekspresif, dan minimalis berbasis closure (`it('can calculate total', function() { ... })`) yang tetap kompatibel penuh di atas engine PHPUnit.",
+        "Pest tidak membutuhkan interpreter PHP untuk menjalankan test.",
+        "Pest secara otomatis menulis test case sendiri menggunakan kecerdasan buatan.",
+        "Pest hanya bisa digunakan untuk aplikasi mobile Laravel."
       ],
       "answer": 0,
-      "explanation": "Relaxed cocok untuk counter murni, bukan untuk melindungi data kompleks."
+      "explanation": "Pest menghadirkan Developer Experience (DX) modern dengan syntax declarative/BDD yang bersih tanpa boilerplate class panjang, sambil mempertahankan ekosistem PHPUnit."
     }
   },
   {
@@ -1066,15 +1066,15 @@ const lessons = [
     "content": "# `std::async`, Future, dan Task\n\n### Materi Inti:\n- Launch policy dan asynchronous execution.\n- Future/get, exception propagation, dan timeout.\n- Lifetime task dan bahaya menunggu terlalu lama.",
     "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::async`, Future, dan Task\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dilakukan `future::get()`?",
+      "question": "Apa konsep dasar siklus *Test-Driven Development (TDD)*?",
       "options": [
-        "Memblokir sampai result tersedia, lalu mengembalikan value atau melempar exception.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Red (tulis test yang gagal) -> Green (tulis kode minimal agar test lulus) -> Refactor (rapikan kode tanpa merusak test).",
+        "Tulis semua kode aplikasi -> Deploy ke server -> Tulis test jika ada keluhan pengguna.",
+        "Deploy -> Monitor log -> Buat unit test untuk bug yang muncul di production.",
+        "Tulis dokumentasi -> Uji manual via browser -> Tulis unit test."
       ],
       "answer": 0,
-      "explanation": "Future menyalin exception task ke pemanggil get."
+      "explanation": "Siklus Red-Green-Refactor memaksa arsitektur kode menjadi modular, testable, dan memastikan setiap baris kode yang ditulis memiliki spesifikasi pengujian yang jelas."
     }
   },
   {
@@ -1088,15 +1088,15 @@ const lessons = [
     "content": "# Thread Pool, Deadlock, dan Concurrency Pitfalls\n\n### Materi Inti:\n- Work queue, worker lifetime, dan task scheduling.\n- Deadlock, starvation, ABA, false sharing, dan lock ordering.\n- Desain bounded concurrency dan backpressure.",
     "code": "// PHP PHP11/PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Pool, Deadlock, dan Concurrency Pitfalls\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Prinsip apa yang mencegah banyak deadlock sederhana?",
+      "question": "Apa yang diukur oleh metrik *Code Coverage* dalam testing suite?",
       "options": [
-        "Jangan memegang mutex sambil menunggu resource milik thread lain.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Persentase baris kode atau branch yang berhasil dieksekusi selama proses automated test dijalankan.",
+        "Kecepatan kompilasi kode saat diunggah ke GitHub.",
+        "Jumlah komentar dokumentasi yang ada di dalam repository.",
+        "Jumlah baris kode yang ditulis oleh AI."
       ],
       "answer": 0,
-      "explanation": "Gunakan lock ordering tetap atau release lock sebelum menunggu."
+      "explanation": "Code coverage memberikan visibilitas terhadap bagian kode mana yang belum tersentuh oleh unit test, meskipun 100% coverage tidak selalu menjamin ketiadaan bug logika."
     }
   },
   {
@@ -1110,15 +1110,15 @@ const lessons = [
     "content": "# Pengantar Coroutine: Suspension dan Resumption\n\n### Materi Inti:\n- Coroutine frame, promise object, dan awaiter.\n- `co_await`, `co_yield`, dan `co_return`.\n- Perbedaan blocking thread dengan cooperative suspension.",
     "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Pengantar Coroutine: Suspension dan Resumption\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa syarat utama ekspresi pada `co_await`?",
+      "question": "Apa tujuan dari *Mutation Testing* (misalnya menggunakan tool Infection PHP)?",
       "options": [
-        "Harus merupakan awaitable yang dapat diterima awaiter.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menguji kualitas test itu sendiri dengan menyuntikkan perubahan kecil (mutasi) pada kode sumber dan memastikan test suite mendeteksi kegagalan tersebut.",
+        "Mengubah kode PHP menjadi bahasa pemrograman lain secara otomatis.",
+        "Menghapus database testing setelah pengujian selesai.",
+        "Menjalankan load test dengan ribuan virtual user."
       ],
       "answer": 0,
-      "explanation": "Compiler membutuhkan operasi await_ready, await_suspend, dan await_resume."
+      "explanation": "Mutation testing memastikan test suite benar-benar menguji logika (memiliki assertion yang bermakna), bukan sekadar mengeksekusi baris kode demi angka coverage semu."
     }
   },
   {
@@ -1132,15 +1132,15 @@ const lessons = [
     "content": "# Membangun Coroutine dari Komponen Dasar\n\n### Materi Inti:\n- Promise methods: `return_value`, `yield_value`, `initial_suspend`, dan `final_suspend`.\n- Coroutine return object dan exception propagation.\n- Mengapa coroutine bukan thread.",
     "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Membangun Coroutine dari Komponen Dasar\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa peran `promise_type`?",
+      "question": "Mengapa standar PSR-7 memodelkan HTTP Request dan Response sebagai objek yang *Immutable*?",
       "options": [
-        "Mendefinisikan interface dan state khusus coroutine.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mencegah perubahan state secara tidak sengaja oleh middleware lain dalam pipeline pemrosesan HTTP.",
+        "Agar response dapat disimpan di memori RAM tanpa batas waktu.",
+        "Karena standar web browser melarang modifikasi header HTTP.",
+        "Untuk menghemat penggunaan string di dalam kernel PHP."
       ],
       "answer": 0,
-      "explanation": "Compiler menggunakan promise type untuk membangun coroutine frame dan return object."
+      "explanation": "Objek PSR-7 yang immutable (`withHeader()`, `withStatus()`) mengembalikan clone instance baru, menjaga integritas pesan HTTP saat melewati rantai middleware yang panjang."
     }
   },
   {
@@ -1154,15 +1154,15 @@ const lessons = [
     "content": "# Async/Await dengan Executor dan Cancellation\n\n### Materi Inti:\n- Custom awaiter dan executor policy.\n- Exception propagation, timeout, dan cancellation token.\n- Composing async operations tanpa nested blocking.",
     "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Async/Await dengan Executor dan Cancellation\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `std::async` memiliki cancellation token standar?",
+      "question": "Bagaimana alur kerja *Pipeline Middleware* berbasis standar PSR-15?",
       "options": [
-        "Tidak.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Setiap middleware menerima `$request` dan `$handler`, dapat memodifikasi request, meneruskan ke handler berikutnya, atau langsung mengembalikan response (short-circuit).",
+        "Middleware dieksekusi secara acak tanpa urutan tertentu.",
+        "Middleware hanya dieksekusi ketika request menghasilkan HTTP status 500.",
+        "Middleware bertugas mengubah kode PHP menjadi format JSON murni."
       ],
       "answer": 0,
-      "explanation": "Cancellation harus dirancang secara kooperatif atau menggunakan abstraction lain."
+      "explanation": "PSR-15 mendefinisikan kontrak middleware standar industri (`process(ServerRequestInterface $request, RequestHandlerInterface $handler)`), mempermudah integrasi lintas framework."
     }
   },
   {
@@ -1176,15 +1176,15 @@ const lessons = [
     "content": "# Generator dengan `std::generator` PHP23\n\n### Materi Inti:\n- `co_yield` sebagai lazy producer.\n- Backpressure, range protocol, dan lifetime iterator.\n- Menggabungkan generator dengan ranges.",
     "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Generator dengan `std::generator` PHP23\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Berapa banyak nilai yang dihasilkan generator per resume?",
+      "question": "Apa keuntungan menggunakan *JSON Web Token (JWT)* untuk autentikasi stateless API?",
       "options": [
-        "Satu nilai per `co_yield` yang dicapai.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Server tidak perlu menyimpan sesi login di database/cache memori; verifikasi user dilakukan dengan memvalidasi tanda tangan kriptografis pada token.",
+        "JWT otomatis memperbarui token kadaluarsa tanpa campur tangan klien.",
+        "JWT mengenkripsi seluruh isi database server secara publik.",
+        "Token JWT tidak memiliki batas ukuran dan bisa menyimpan file gambar."
       ],
       "answer": 0,
-      "explanation": "Generator menghentikan eksekusi setiap kaliyield dan melanjutkan saat iterator maju."
+      "explanation": "JWT memuat klaim data pengguna dan tanda tangan digital, memungkinkan server memvalidasi identitas secara mandiri (stateless) yang ideal untuk arsitektur microservices dan horizontal scaling."
     }
   },
   {
@@ -1198,15 +1198,15 @@ const lessons = [
     "content": "# Concepts dan Constrained Overload\n\n### Materi Inti:\n- `requires` expression dan named concept.\n- Constraint satisfaction dan overload resolution.\n- Mengganti SFINAE noise dengan diagnostic yang jelas.",
     "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Concepts dan Constrained Overload\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan concept dievaluasi?",
+      "question": "Apa status code HTTP yang paling tepat dikembalikan saat klien berhasil membuat data resource baru di server REST API?",
       "options": [
-        "Selama constraint satisfaction pada kompilasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`201 Created` disertai header `Location` atau payload data yang baru dibuat.",
+        "`200 OK` tanpa payload.",
+        "`204 No Content`",
+        "`301 Moved Permanently`"
       ],
       "answer": 0,
-      "explanation": "Concept membatasi kandidat yang dapat dipilih compiler."
+      "explanation": "Status `201 Created` adalah standar semantik HTTP untuk mengindikasikan bahwa request berhasil dan menghasilkan satu atau lebih resource baru di server."
     }
   },
   {
@@ -1220,15 +1220,15 @@ const lessons = [
     "content": "# Custom Range, `view`, dan `borrowed_range`\n\n### Materi Inti:\n- Range requirements dan `range_reference_t`.\n- View, borrowed range, dan adaptor customization.\n- `views::as_const`, `cache_latest`, `chunk`, `slide`, dan `enumerate`.",
     "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Custom Range, `view`, dan `borrowed_range`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti `borrowed_range`?",
+      "question": "Bagaimana cara mengimplementasikan *Rate Limiting* berbasis algoritma Token Bucket menggunakan Redis di PHP?",
       "options": [
-        "Iterator tetap valid setelah range temporary dihancurkan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyimpan jumlah hit dan timestamp per user/IP di Redis key dengan operasi atomic (INCR & EXPIRE) untuk menolak request berlebih dengan status 429 Too Many Requests.",
+        "Membuat user menunggu 10 detik di setiap query database.",
+        "Memblokir alamat IP user secara permanen dari server firewall.",
+        "Menghapus akun pengguna yang mengirim request lebih dari 5 kali."
       ],
       "answer": 0,
-      "explanation": "Requirement ini mencegah dangling iterator pada adaptor ranges."
+      "explanation": "Rate limiter melindungi API dari abuse dan serangan DDoS dengan membatasi jumlah request dalam jendela waktu tertentu dan mengembalikan header status `429 Too Many Requests`."
     }
   },
   {
@@ -1242,15 +1242,15 @@ const lessons = [
     "content": "# Modern Generic Design: Templates + Concepts + Ranges\n\n### Materi Inti:\n- Menggabungkan constrained template, range algorithms, dan move-only values.\n- API generik dengan error type dan no unnecessary copy.\n- Menulis benchmark serta test matrix untuk beberapa tipe.",
     "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Modern Generic Design: Templates + Concepts + Ranges\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Requirement apa yang diperlukan `std::ranges::sort`?",
+      "question": "Apa perbedaan mendasar antara representasi API *RESTful* dan *GraphQL*?",
       "options": [
-        "Range harus sortable dan mutable.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "REST menggunakan endpoint spesifik dengan struktur response tetap per URL, sedangkan GraphQL menggunakan satu endpoint di mana klien menentukan field data persis yang dibutuhkan.",
+        "GraphQL hanya dapat digunakan pada database MongoDB.",
+        "REST API tidak mendukung metode POST dan DELETE.",
+        "GraphQL mengharuskan server menggunakan bahasa pemrograman Python."
       ],
       "answer": 0,
-      "explanation": "Sorting membutuhkan kemampuan membaca dan menulis elemen."
+      "explanation": "GraphQL mengatasi masalah *over-fetching* dan *under-fetching* pada REST tradisional dengan memberikan kendali query schema kepada aplikasi klien."
     }
   },
   {
@@ -1264,15 +1264,15 @@ const lessons = [
     "content": "# Migrasi ke PHP23 Library\n\n### Materi Inti:\n- `std::expected`, `std::print`, `std::source_location`, dan string `contains`.\n- `std::ranges::to`, `std::mdspan`, dan `std::generator`.\n- Feature-test macros dan strategi fallback compiler.",
     "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Migrasi ke PHP23 Library\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi utama `std::expected<T, E>`?",
+      "question": "Apa peran prinsip *Dependency Inversion* dalam arsitektur Clean Architecture / Hexagonal Architecture?",
       "options": [
-        "Mewakili value sukses atau error terstruktur.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Modul tingkat tinggi (business logic/domain) tidak boleh bergantung pada modul tingkat rendah (database, framework); keduanya harus bergantung pada abstraksi (interface).",
+        "Membalik urutan penulisan kode dari bawah ke atas.",
+        "Menolak penggunaan class dan hanya menggunakan fungsi prosedural murni.",
+        "Mengharuskan semua database diakses secara langsung tanpa ORM."
       ],
       "answer": 0,
-      "explanation": "Expected membantu.error handling tanpa menggunakan exception untuk alur normal."
+      "explanation": "Prinsip ini menjaga core business logic tetap murni, independen dari framework, dan mudah diganti driver databasenya tanpa merusak aturan bisnis utama."
     }
   },
   {
@@ -1286,15 +1286,15 @@ const lessons = [
     "content": "# Performance, Profiling, dan Optimization yang Terukur\n\n### Materi Inti:\n- Big-O, cache locality, branch prediction, dan allocation cost.\n- Move semantics, emplace, reserve, dan avoiding unnecessary copy.\n- Benchmark, profiler, dan reproducibility.",
     "code": "// PHP PHP17/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Performance, Profiling, dan Optimization yang Terukur\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `reserve` mengubah size vector?",
+      "question": "Mengapa server runtime seperti *FrankenPHP* atau *RoadRunner* jauh lebih cepat dibandingkan arsitektur tradisional PHP-FPM?",
       "options": [
-        "Tidak; reserve hanya mengubah capacity.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan model *Worker Mode* yang menyimpan aplikasi tetap hidup di memori RAM setelah bootstrap pertama, menghilangkan overhead inisialisasi framework per request.",
+        "Menonaktifkan sistem keamanan PHP untuk mempercepat respon.",
+        "Mengubah kode PHP menjadi assembly biner x86_64 sebelum dijalankan.",
+        "Menolak semua request yang tidak menggunakan caching browser."
       ],
       "answer": 0,
-      "explanation": "Elemen baru tetap harus ditambahkan dengan resize/emplace/push."
+      "explanation": "Dalam worker mode, framework (seperti Laravel atau Symfony) hanya di-boot satu kali saat server start; setiap request HTTP yang masuk langsung dieksekusi tanpa proses load file dan autoloader berulang."
     }
   },
   {
@@ -1306,17 +1306,17 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Reliabilitas, Security, dan Test Matrix\n\n### Materi Inti:\n- Sanitizer, invariant test, property test, dan fuzzing ringan.\n- Input validation, ownership contract, dan secure defaults.\n- Testing pada edge case, malformed input, dan concurrent path.",
-    "code": "// PHP PHP11\u2013PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
+    "code": "// PHP PHP11–PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bagaimana mendokumentasikan raw pointer non-owning?",
+      "question": "Apa fungsi dari ekstensi *OPcache* dan bagaimana JIT (Just-In-Time) compiler meningkatkan performa di PHP 8?",
       "options": [
-        "Jelaskan bahwa pointer tidak memiliki ownership dan lifetime harus dijaga caller.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "OPcache menyimpan precompiled bytecode di shared memory, sedangkan JIT mengompilasi bagian bytecode yang sering dieksekusi menjadi instruksi mesin asli (machine code).",
+        "OPcache menghapus database sementara saat RAM penuh.",
+        "JIT bertugas menerjemahkan syntax PHP menjadi syntax JavaScript di browser.",
+        "Keduanya hanya berfungsi jika PHP dijalankan di sistem operasi Windows Server."
       ],
       "answer": 0,
-      "explanation": "Tanpa kontrak lifetime, raw pointer mudah menjadi dangling."
+      "explanation": "OPcache menghilangkan tahap parsing dan compiling script ke bytecode, sementara JIT membawa optimasi lebih lanjut untuk beban komputasi CPU-intensive dengan mengeksekusi instruksi mesin langsung."
     }
   },
   {
@@ -1330,15 +1330,15 @@ const lessons = [
     "content": "# Arsitektur, PHP20 Modules, Build, dan CI\n\n### Materi Inti:\n- Layering, interface boundary, dependency inversion, dan module boundary.\n- CMake/compiler flags, WebAssembly build, dan browser execution.\n- CI untuk build, test, sanitizer, dan format/lint.",
     "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Arsitektur, PHP20 Modules, Build, dan CI\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan interface boundary dalam arsitektur PHP?",
+      "question": "Dalam arsitektur microservices berbasis pesan (Message Queue), apa tujuan memisahkan task berat (seperti kirim email atau render video) ke background worker?",
       "options": [
-        "Mengurangi coupling dan menyembunyikan implementasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membuat response HTTP API tetap cepat (sub-100ms) bagi pengguna dengan mendelegasikan pemrosesan berat ke antrean asynchronous (RabbitMQ / Redis).",
+        "Menghemat kuota internet server production.",
+        "Menghindari penggunaan database relasional di server.",
+        "Mencegah hacker mengetahui alamat IP asli pengirim email."
       ],
       "answer": 0,
-      "explanation": "Client bergantung pada kontrak stabil, bukan detail internal."
+      "explanation": "Asynchronous processing mencegah timeout pada request HTTP klien dan mendistribusikan beban kerja secara merata di antara worker pool yang dapat di-scale secara horizontal."
     }
   },
   {
@@ -1352,15 +1352,15 @@ const lessons = [
     "content": "# Capstone Design: Modern Data Pipeline\n\n### Materi Inti:\n- Merancang domain type, ownership, error handling, dan API.\n- Memilih templates, concepts, ranges, smart pointer, dan coroutine secara tepat.\n- Menentukan acceptance criteria, benchmark, dan test cases.",
     "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Design: Modern Data Pipeline\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Sebelum coding, aspek ownership dan async apa yang harus ditentukan?",
+      "question": "Apa keuntungan menggunakan *Multi-Stage Build* pada Dockerfile untuk aplikasi PHP production?",
       "options": [
-        "Siapa pemilik resource, kapan resource mati, siapa menjalankan operasi async, dan bagaimana exception/cancellation ditangani.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menghasilkan ukuran image container yang jauh lebih kecil dan aman dengan memisahkan tahap build dependensi (Composer, Node.js) dari runtime image akhir.",
+        "Memungkinkan satu container menjalankan 5 sistem operasi berbeda secara bersamaan.",
+        "Menghilangkan kebutuhan konfigurasi Nginx dan reverse proxy.",
+        "Membuat container kebal terhadap serangan brute-force SSH."
       ],
       "answer": 0,
-      "explanation": "Keputusan ini menentukan smart pointer, coroutine awaiter, dan synchronization."
+      "explanation": "Multi-stage build hanya menyalin artifact hasil build (kode yang teroptimasi dan vendor folder tanpa tools dev), menghasilkan container yang ramping, cepat di-deploy, dan memiliki attack surface minimal."
     }
   },
   {
@@ -1374,15 +1374,15 @@ const lessons = [
     "content": "# Capstone Implementation, Demo, dan Refleksi\n\n### Materi Inti:\n- Implementasi end-to-end di JupyterLite/WebAssembly.\n- Menjalankan unit test, sanitizer, dan benchmark.\n- Menjelaskan tradeoff, hasil, keterbatasan, dan langkah pengembangan.",
     "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Implementation, Demo, dan Refleksi\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan memilih `unique_ptr` daripada `shared_ptr` dalam capstone?",
+      "question": "Bagaimana strategi *Blue-Green Deployment* atau *Canary Release* menjamin ketersediaan tinggi (Zero-Downtime Deployment)?",
       "options": [
-        "Ketika ownership eksklusif dan cycle risk tidak ada.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyiapkan lingkungan baru yang identik, memvalidasi kesehatan aplikasi, lalu mengalihkan trafik router secara mulus tanpa memutus koneksi pengguna aktif.",
+        "Mematikan server selama 1 jam di tengah malam saat trafik rendah.",
+        "Mengunggah file kode satu per satu via FTP langsung ke folder live.",
+        "Menonaktifkan sertifikat SSL saat proses pembaruan sistem."
       ],
       "answer": 0,
-      "explanation": "Unique_ptr lebih sederhana, lebih murah, dan membuat ownership lebih jelas."
+      "explanation": "Dengan mengalihkan routing trafik di layer load balancer ke versi baru yang sudah terbukti sehat, downtime dieliminasi dan rollback dapat dilakukan instan jika terdeteksi anomali."
     }
   }
 ];

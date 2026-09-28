@@ -76,15 +76,15 @@ const lessons = [
     "content": "# Program Pertama dengan Dart20 dan Dart23\n\n### Materi Inti:\n- Alur compile, link, dan run program Dart.\n- Peran header, namespace std, dan flag -std=c++20 atau -std=c++23.\n- Menjalankan kode Dart melalui JupyterLite/Xeus-Cling.",
     "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Program Pertama dengan Dart20 dan Dart23\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa efek flag `-std=c++23`?",
+      "question": "Apa arti dari konsep *Sound Null Safety* di Dart 3?",
       "options": [
-        "Memilih standar Dart23 untuk kompilasi, jika didukung compiler.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Sistem tipe menjamin secara mutlak bahwa variabel non-nullable tidak akan pernah bernilai null saat runtime; tidak ada celah bypass tipe.",
+        "Semua variabel otomatis bernilai null jika tidak diisi.",
+        "Null safety hanya divalidasi saat aplikasi dijalankan di browser web.",
+        "Null safety dihilangkan agar performa aplikasi Flutter lebih cepat."
       ],
       "answer": 0,
-      "explanation": "Flag standar memengaruhi\u8bed\u6cd5 dan library yang boleh digunakan, tetapi dukungan implementasi tetap bergantung pada compiler."
+      "explanation": "Di Dart 3, null safety bersifat sound 100%: compiler memanfaatkan jaminan ini untuk optimasi biner (menghapus runtime null checks), menghasilkan aplikasi lebih cepat dan ramping."
     }
   },
   {
@@ -98,15 +98,15 @@ const lessons = [
     "content": "# Tipe Data, Literal, `auto`, dan `constexpr`\n\n### Materi Inti:\n- Tipe fundamental integer, floating-point, char, bool, dan pointer dasar.\n- Signedness, ukuran tipe, suffix literal, dan konversi angka.\n- `auto` untuk deduksi tipe dan `constexpr` untuk nilai compile-time.",
     "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Tipe Data, Literal, `auto`, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tipe dari `auto x = 42LL;`?",
+      "question": "Kapan keyword `late` digunakan pada deklarasi variabel di Dart?",
       "options": [
-        "`long long`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Untuk variabel non-nullable yang diinisialisasi setelah deklarasi, dan inisialisasinya dieksekusi secara lazy saat pertama kali diakses.",
+        "Untuk mendeklarasikan variabel yang nilainya pasti kadaluarsa setelah 5 detik.",
+        "Hanya untuk variabel yang dikirim ke database SQLite.",
+        "Sebagai pengganti keyword final pada angka bulat."
       ],
       "answer": 0,
-      "explanation": "Suffix `LL` memaksa literal integer menjadi long long."
+      "explanation": "`late` menunda inisialisasi properti; jika variabel `late` diakses sebelum diberi nilai (dan tidak ada initializer expression), Dart melempar `LateInitializationError`."
     }
   },
   {
@@ -120,15 +120,15 @@ const lessons = [
     "content": "# Operator, Precedence, dan Short-Circuit\n\n### Materi Inti:\n- Operator arithmetic, comparison, logical, conditional, dan assignment.\n- Precedence, associativity, dan pentingnya parentheses.\n- Short-circuit evaluation pada `&&` dan `||`.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator, Precedence, dan Short-Circuit\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `false && (1 / 0)` dan mengapa?",
+      "question": "Apa fungsi operator *Cascade* (`..` atau `?..`) pada pemanggilan objek di Dart?",
       "options": [
-        "`false`; operand kanan tidak dieksekusi karena short-circuit.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Melakukan serangkaian operasi atau mutasi properti pada objek yang sama lalu mengembalikan objek penerima tersebut secara chaining.",
+        "Membuat salinan clone objek baru di memori heap.",
+        "Menghapus objek dari memori secara paksa.",
+        "Mengonversi objek menjadi string JSON."
       ],
       "answer": 0,
-      "explanation": "`&&` berhenti setelah operand pertama diketahui false."
+      "explanation": "Cascade operator menyederhanakan kode konfigurasi objek tanpa perlu mengulang-ulang nama variabel (misal: `paint..color = Colors.blue..strokeWidth = 5.0;`)."
     }
   },
   {
@@ -142,15 +142,15 @@ const lessons = [
     "content": "# Kontrol Alur dan Loop\n\n### Materi Inti:\n- `if`, `else`, `switch`, dan equality/comparison.\n- For loop, range-based for, break, continue, dan early return.\n- Menulis kondisi yang mudah diuji dan tidak ambigu.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Kontrol Alur dan Loop\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Pada `for (int x : v)`, apakah mengubah `x` mengubah elemen `v`?",
+      "question": "Perhatikan kode: `var (name, age) = ('Budi', 25);`. Fitur apa yang diperkenalkan di Dart 3 ini?",
       "options": [
-        "Tidak; `x` adalah salinan elemen.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Records dan Destructuring Pattern: mengelompokkan nilai anonim secara type-safe dan membongkarnya ke variabel individual secara instan.",
+        "Pembuatan class Singleton otomatis.",
+        "Pembuatan array dua dimensi di memori.",
+        "Konversi data ke format tabel SQL."
       ],
       "answer": 0,
-      "explanation": "Range-based for dengan tipe biasa membuat salinan nilai."
+      "explanation": "Dart 3 memperkenalkan Records sebagai tipe data nilai anonim agregat, serta pattern destructuring yang dapat membongkar field record secara posisi atau nama."
     }
   },
   {
@@ -164,15 +164,15 @@ const lessons = [
     "content": "# Fungsi, Parameter, Overload, dan `constexpr`\n\n### Materi Inti:\n- Declaration, definition, return type, dan parameter passing.\n- Pass by value, pass by reference, default arguments, dan overload resolution.\n- Fungsi `constexpr` untuk kalkulasi compile-time.",
     "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Fungsi, Parameter, Overload, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa keuntungan parameter `const T&` untuk objek besar?",
+      "question": "Apa perbedaan antara variabel `final` dan `const` di Dart?",
       "options": [
-        "Menghindari salinan dan menjamin fungsi tidak mengubah objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`const` adalah nilai konstan waktu kompilasi (*compile-time constant*) yang sepenuhnya immutable, sedangkan `final` diinisialisasi satu kali saat waktu runtime.",
+        "`final` nilainya dapat diubah berkali-kali, sedangkan `const` tidak.",
+        "`const` hanya boleh digunakan di dalam widget StatelessWidget Flutter.",
+        "Keduanya identik dan hanya berbeda nama kata kunci."
       ],
       "answer": 0,
-      "explanation": "Reference menghindari copy, sedangkan `const` mengekspresikan tidak adanya modifikasi."
+      "explanation": "`const` dialokasikan di memori kanonikal saat compile time; dua instance `const [1, 2]` yang identik akan merujuk ke alamat memori fisik yang persis sama."
     }
   },
   {
@@ -186,15 +186,15 @@ const lessons = [
     "content": "# Header, Namespace, Debugging, dan Unit Test Mini\n\n### Materi Inti:\n- Pemisahan `.h` dan `.dart`, include guard, dan `#pragma once`.\n- Namespace untuk menghindari nama global yang tabrakan.\n- Assertion, breakpoint, dan unit test sederhana.",
     "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Header, Namespace, Debugging, dan Unit Test Mini\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa definisi fungsi non-inline sebaiknya tidak diletakkan di header?",
+      "question": "Bagaimana cara mendefinisikan *Named Parameters* opsional dengan nilai default di fungsi Dart?",
       "options": [
-        "Dapat menyebabkan multiple definition saat linking.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membungkus parameter di dalam kurung kurawal `{int count = 0, String prefix = ''}`.",
+        "Membungkus parameter di dalam kurung siku `[int count = 0]`.",
+        "Menggunakan keyword `optional` di depan parameter.",
+        "Menulis parameter di luar tanda kurung fungsi."
       ],
       "answer": 0,
-      "explanation": "Header biasanya hanya berisi declaration; definisi ditempatkan di satu translation unit."
+      "explanation": "Kurung kurawal `{}` mendefinisikan named parameter (dapat dipanggil dengan `fn(count: 5)`), sedangkan kurung siku `[]` mendefinisikan positional optional parameter."
     }
   },
   {
@@ -208,15 +208,15 @@ const lessons = [
     "content": "# Initialization dan Object Lifetime\n\n### Materi Inti:\n- Automatic, static, thread-local, dan local lifetime.\n- Value initialization, aggregate initialization, dan initializer list.\n- Urutan destruction ketika nested scope berakhir.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Initialization dan Object Lifetime\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan objek automatic lokal dihancurkan?",
+      "question": "Apa fungsi dari *Initializer List* pada konstruktor kelas di Dart (misal: `Point(x, y) : this.x = x, this.y = y;`)?",
       "options": [
-        "Ketika keluar dari scope-nya.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menginisialisasi field kelas sebelum tubuh konstruktor `{ ... }` dieksekusi, wajib digunakan untuk field bertipe `final` non-nullable.",
+        "Menghapus instans objek lama dari memori garbage collection.",
+        "Menjalankan query SQL sebelum kelas dibuat.",
+        "Membuat kelas otomatis menjadi thread-safe."
       ],
       "answer": 0,
-      "explanation": "Destruction terjadi secara reverse order terhadap construction di scope yang sama."
+      "explanation": "Initializer list dieksekusi sebelum constructor body dan sebelum konstruktor superclass berjalan, memastikan seluruh field immutable `final` sudah terisi dengan sah."
     }
   },
   {
@@ -230,15 +230,15 @@ const lessons = [
     "content": "# Pointer, Reference, dan Address\n\n### Materi Inti:\n- Pointer nullable, reference wajib terinisialisasi, dan pointer arithmetic.\n- Lvalue reference versus rvalue reference.\n- Perbedaan address-of, pointer, dan lifetime.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Pointer, Reference, dan Address\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah reference dapat di-reseat setelah inisialisasi?",
+      "question": "Secara default, apakah setiap class di Dart otomatis mendefinisikan sebuah *Implicit Interface*?",
       "options": [
-        "Tidak.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Ya, setiap class secara implisit menjadi interface yang dapat diimplementasikan (`implements`) oleh class lain tanpa mewarisi kode implementasinya.",
+        "Tidak, interface hanya bisa dibuat dengan keyword khusus `interface` di file terpisah.",
+        "Hanya abstract class yang menjadi interface implisit.",
+        "Implicit interface hanya berlaku jika class tidak memiliki constructor."
       ],
       "answer": 0,
-      "explanation": "Reference adalah alias sejak dibuat dan tidak dapat diarahkan ke objek lain."
+      "explanation": "Di Dart, setiap deklarasi class otomatis mendefinisikan kontrak interface yang terdiri dari seluruh instance member publiknya, memungkinkan polimorfisme fleksibel."
     }
   },
   {
@@ -252,15 +252,15 @@ const lessons = [
     "content": "# Struct, Class, dan Invariant\n\n### Materi Inti:\n- Data members, member functions, access control, dan encapsulation.\n- Membangun invariant seperti `balance >= 0`.\n- Memisahkan interface publik dari implementasi internal.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Struct, Class, dan Invariant\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa access default untuk anggota `class`?",
+      "question": "Bagaimana konsep *Mixins* (`mixin Name on SuperClass`) bekerja di Dart?",
       "options": [
-        "`private`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyediakan mekanisme penggunaan kembali kode (code reuse) pada banyak hierarki kelas yang berbeda tanpa melalui pewarisan bertingkat ganda (*multiple inheritance*).",
+        "Menggabungkan dua database SQLite menjadi satu file.",
+        "Mengompresi file kode sumber menjadi format biner.",
+        "Hanya bisa digunakan pada widget animasi Flutter."
       ],
       "answer": 0,
-      "explanation": "`struct` menggunakan `public` sebagai default, sedangkan `class` menggunakan `private`."
+      "explanation": "Mixin disuntikkan via kata kunci `with`; klausa `on` membatasi mixin hanya bisa digunakan pada kelas yang mewarisi kelas dasar tertentu."
     }
   },
   {
@@ -274,15 +274,15 @@ const lessons = [
     "content": "# Const Correctness dan Value Semantics\n\n### Materi Inti:\n- Const object, const member function, dan pass-by-const-reference.\n- Value semantics versus reference semantics.\n- Kapan `mutable` boleh digunakan dan mengapa harus hati-hati.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Const Correctness dan Value Semantics\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bisakah non-const member function dipanggil pada const object?",
+      "question": "Apa tujuan mendeklarasikan *Factory Constructor* (`factory ClassName(...)`) di Dart?",
       "options": [
-        "Tidak, kecuali member tersebut dinyatakan `mutable`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Konstruktor yang fleksibel: tidak selalu membuat instance baru (dapat mengembalikan objek yang sudah ada di cache) atau mengembalikan instance subtipe.",
+        "Konstruktor yang membuat pabrik widget di memori GPU.",
+        "Konstruktor yang hanya bisa dijalankan di pabrik server Google.",
+        "Mengharuskan class memiliki 10 method statis."
       ],
       "answer": 0,
-      "explanation": "`const` member function menjamin objek tidak dimodifikasi secara logis."
+      "explanation": "Factory constructor sangat populer untuk implementasi Singleton pattern atau deserialisasi data JSON (`factory User.fromJson(...)`) yang mengembalikan instans tervalidasi."
     }
   },
   {
@@ -296,15 +296,15 @@ const lessons = [
     "content": "# `std::string`, `std::string_view`, dan `std::span`\n\n### Materi Inti:\n- `std::string` memiliki data; `string_view` adalah view non-owning.\n- `std::span` menyediakan view atas contiguous storage.\n- Lifetime hazard, dangling view, dan pemilihan interface yang benar.",
     "code": "// Dart Dart17/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::string`, `std::string_view`, dan `std::span`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa risiko `string_view` yang menunjuk temporary string?",
+      "question": "Bagaimana aturan penamaan *Private Members* (field atau fungsi privat) di Dart?",
       "options": [
-        "Dangling pointer dan undefined behavior setelah temporary hancur.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan awalan garis bawah / underscore pada nama identifier (misal: `_privateField` atau `_helper()`), dan visibilitasnya privat di level library (file).",
+        "Menggunakan keyword `private` seperti di Java/C#.",
+        "Menuliskan nama variabel dengan huruf kapital semua.",
+        "Menyimpan method di dalam folder bernama private."
       ],
       "answer": 0,
-      "explanation": "`string_view` tidak meningkatkan reference count atau memiliki data."
+      "explanation": "Dart tidak memiliki keyword `private`/`public`; privatisasi ditentukan murni oleh prefix underscore (`_`) dan berlaku pada level file library, bukan level class saja."
     }
   },
   {
@@ -318,15 +318,15 @@ const lessons = [
     "content": "# RAII dan Penanganan Exception\n\n### Materi Inti:\n- Resource Acquisition Is Initialization sebagai pola utama ownership.\n- Stack unwinding dan destruction saat exception dilempar.\n- Menulis destructor yang tidak me-lempar exception.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII dan Penanganan Exception\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa peran RAII?",
+      "question": "Apa keuntungan menggunakan *Redirecting Constructors* (misal: `Point.alongXAxis(double x) : this(x, 0);`)?",
       "options": [
-        "Mengikat kepemilikan resource dengan lifetime objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Meneruskan pemanggilan konstruktor khusus ke konstruktor utama kelas dengan nilai default tertentu, mencegah duplikasi kode inisialisasi.",
+        "Mengalihkan trafik HTTP pengguna ke server lain.",
+        "Mengubah orientasi layar ponsel menjadi landscape.",
+        "Menghapus instans objek dari memori."
       ],
       "answer": 0,
-      "explanation": "Resource dibebaskan otomatis ketika objek RAII keluar dari scope."
+      "explanation": "Redirecting constructor menjaga inisialisasi tetap DRY (Don't Repeat Yourself) dengan memusatkan logika konstruksi pada satu primary generative constructor."
     }
   },
   {
@@ -340,15 +340,15 @@ const lessons = [
     "content": "# Constructor, Destructor, dan Initializer List\n\n### Materi Inti:\n- Default, parameterized, copy, dan destructor.\n- Initializer list untuk konstruk anggota.\n- Urutan construction dan destruction.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Constructor, Destructor, dan Initializer List\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa initializer list lebih disukai untuk menginisialisasi anggota?",
+      "question": "Apa arti dari class modifier `sealed class` di Dart 3?",
       "options": [
-        "Menghindari default construction lalu assignment.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Kelas abstrak yang hanya dapat diwarisi atau diimplementasikan dalam library/file yang sama, memungkinkan exhaustiveness check pada pattern matching switch.",
+        "Kelas yang seluruh isinya terenkripsi dengan algoritma SSL.",
+        "Kelas yang dilarang memiliki properti bertipe data angka.",
+        "Kelas yang otomatis terhapus saat aplikasi ditutup."
       ],
       "answer": 0,
-      "explanation": "Anggota langsung dibentuk dengan nilai akhir sejak awal."
+      "explanation": "Sealed class di Dart 3 memastikan compiler mengetahui seluruh subtipe yang mungkin; switch expression yang mengecek sealed class tidak memerlukan fallback clause `default`."
     }
   },
   {
@@ -362,15 +362,15 @@ const lessons = [
     "content": "# Copy Semantics dan Rule of Three/Five\n\n### Materi Inti:\n- Copy constructor, copy assignment, dan self-assignment.\n- Shallow copy versus deep copy.\n- Copy-and-swap serta kapan menerapkan rule of five.",
     "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Semantics dan Rule of Three/Five\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan copy constructor dan copy assignment?",
+      "question": "Kapan class modifier `base class` digunakan di Dart 3?",
       "options": [
-        "Copy constructor membentuk objek baru; assignment mengganti\u72b6\u6001 objek yang sudah ada.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengizinkan kelas diwarisi (`extends`) di luar library, tetapi melarang keras implementasi langsung (`implements`) di luar library untuk menjaga integritas kontrak kelas.",
+        "Menjadikan kelas sebagai database utama aplikasi.",
+        "Menghapus konstruktor dari kelas dasar.",
+        "Memaksa kelas hanya boleh dijalankan di thread background."
       ],
       "answer": 0,
-      "explanation": "Keduanya perlu ditangani jika kelas memiliki resource yang harus dimiliki."
+      "explanation": "Modifier `base` menjamin bahwa setiap penambahan method baru pada kelas di masa depan tidak akan memecahkan implementasi kelas konsumen di luar package."
     }
   },
   {
@@ -384,15 +384,15 @@ const lessons = [
     "content": "# Operator Overloading\n\n### Materi Inti:\n- Operator arithmetic, comparison, assignment, dan stream.\n- Member operator versus non-member/friend operator.\n- Implicit conversion dan bahaya operator yang mengejutkan.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator Overloading\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Operator mana yang secara umum lebih tepat menjadi non-member?",
+      "question": "Apa fungsi modifier `interface class` di Dart 3?",
       "options": [
-        "Operator simetris seperti `+`, `==`, dan `<<`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengizinkan kelas lain mengimplementasikan antarmukanya (`implements`) di luar library, tetapi melarang pewarisan kode (`extends`) di luar library.",
+        "Mengubah kelas menjadi antarmuka grafis WebGL.",
+        "Menghapus seluruh field privat dari kelas.",
+        "Hanya bisa digunakan pada proyek Dart CLI."
       ],
       "answer": 0,
-      "explanation": "Non-member memungkinkan implicit conversion pada operand kiri."
+      "explanation": "`interface class` membatasi konsumen hanya boleh memperlakukan kelas sebagai kontrak antarmuka murni, mencegah keterikatan pada detail implementasi konkret kelas induk."
     }
   },
   {
@@ -406,15 +406,15 @@ const lessons = [
     "content": "# Inheritance dan Virtual Dispatch\n\n### Materi Inti:\n- Base/derived relationship dan is-a semantics.\n- Virtual function, override, dan dynamic dispatch.\n- Virtual destructor pada base polymorphic.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Inheritance dan Virtual Dispatch\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang terjadi jika base pointer memanggil virtual function overridden di derived?",
+      "question": "Apa keunggulan fitur *Extension Types* (diperkenalkan di Dart 3.3) dibanding wrapper class biasa?",
       "options": [
-        "Dynamic dispatch memilih override derived.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyediakan abstraksi tipe baru di atas tipe yang sudah ada dengan biaya performa nol (*Zero-Cost Abstraction*), karena tipe wrapper dibongkar habis saat kompilasi.",
+        "Membuat aplikasi Flutter dapat berjalan tanpa koneksi internet.",
+        "Mengizinkan penulisan kode JavaScript di dalam file Dart.",
+        "Menghilangkan kebutuhan garbage collection."
       ],
       "answer": 0,
-      "explanation": "Virtual dispatch dipilih berdasarkan tipe objektif pada runtime."
+      "explanation": "Extension type adalah inline class murni; ia memberikan tampilan API baru yang type-safe tanpa ada alokasi objek wrapper tambahan di memori heap saat runtime."
     }
   },
   {
@@ -428,15 +428,15 @@ const lessons = [
     "content": "# Interface Abstrak dan Polymorphic Design\n\n### Materi Inti:\n- Pure virtual function dan abstract class.\n- Interface sebagai kontrak, bukan implementasi yang bocor.\n- Polymorphic destruction dan prinsip substitusi.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Interface Abstrak dan Polymorphic Design\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti pure virtual function `virtual void draw() = 0;`?",
+      "question": "Bagaimana cara kerja *Extension Methods* (misal: `extension StringUtils on String`) di Dart?",
       "options": [
-        "Class abstrak mewajibkan derived class menyediakan implementasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menambahkan fungsi baru ke tipe data yang sudah ada (bahkan third-party atau SDK) tanpa perlu mengubah kode sumber asli atau membuat subclass turunan.",
+        "Mengubah bahasa Dart menjadi bahasa Python.",
+        "Mendownload ekstensi dari toko aplikasi online saat runtime.",
+        "Menggandakan ukuran memori string di RAM."
       ],
       "answer": 0,
-      "explanation": "Function murni tidak memiliki body pada base class."
+      "explanation": "Extension methods adalah static resolution sugar; IDE memberikan autocompletion layaknya method bawaan, dievaluasi berdasarkan tipe statis variabel saat compile-time."
     }
   },
   {
@@ -450,15 +450,15 @@ const lessons = [
     "content": "# Composition, Policy, dan CRTP\n\n### Materi Inti:\n- Composition over inheritance dan dependency injection.\n- Policy-based design untuk memilih perilaku compile-time.\n- CRTP sebagai static polymorphism.",
     "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Composition, Policy, dan CRTP\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan polymorphism CRTP diselesaikan?",
+      "question": "Apa perbedaan antara `final class` dan `sealed class` di Dart 3?",
       "options": [
-        "Pada compile-time.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`final class` melarang segala bentuk pewarisan atau implementasi di luar library (bahkan tidak bisa diekstend sama sekali di luar), sedangkan `sealed` bersifat abstract dan bisa diekstend di file lokal yang sama.",
+        "`final class` dapat dibuat objeknya secara langsung, sedangkan `sealed class` selalu abstract.",
+        "`sealed class` tidak mendukung pattern matching.",
+        "Keduanya memiliki arti yang persis sama."
       ],
       "answer": 0,
-      "explanation": "CRTP menggunakan static dispatch dan tipe derived diketahui saat kompilasi."
+      "explanation": "`final class` menutup total hierarki pewarisan di luar file/library asalnya, sedangkan `sealed class` dirancang untuk memodelkan variasi tipe terbatas (algebraic types)."
     }
   },
   {
@@ -472,15 +472,15 @@ const lessons = [
     "content": "# Function Templates dan Template Deduction\n\n### Materi Inti:\n- Template parameter, deduction, dan explicit template arguments.\n- Overload resolution antara template dan non-template.\n- Pembatasan interface melalui requiremen operasi.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Function Templates dan Template Deduction\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti template sebagai family of functions?",
+      "question": "Bagaimana cara mendefinisikan Record yang memiliki campuran field posisional dan field bernama di Dart 3?",
       "options": [
-        "Compiler membuat instantiation khusus untuk setiap tipe yang digunakan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`(String name, int age, {bool isActive, double rating})`",
+        "`[String name, int age, {bool isActive}]`",
+        "`{String name: 'Budi', int age: 20}`",
+        "`Record<name, age, isActive>`"
       ],
       "answer": 0,
-      "explanation": "Template bukan function runtime generik tunggal."
+      "explanation": "Record menggunakan sintaks kurung biasa `(...)`; elemen di luar kurung kurawal adalah posisional, dan di dalam `{}` adalah named field yang diakses via `.fieldName`."
     }
   },
   {
@@ -494,15 +494,15 @@ const lessons = [
     "content": "# Class Templates dan Instantiation\n\n### Materi Inti:\n- Class template, member definition, dan header placement.\n- Explicit instantiation versus implicit instantiation.\n- Contoh `Box<T>`, `Stack<T>`, dan `Optional<T>`.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Class Templates dan Instantiation\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `Box<int>` dan `Box<double>` merupakan tipe yang sama?",
+      "question": "Perhatikan kode: `switch (obj) { case [int a, int b]: ... }`. Pola pattern apa yang digunakan di sini?",
       "options": [
-        "Tidak; keduanya instantiation berbeda.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "List Pattern: memvalidasi bahwa `obj` adalah List dengan tepat 2 elemen ber-tipe integer, sekaligus mendestruktur nilai keduanya ke variabel `a` dan `b`.",
+        "Array Allocation Pattern.",
+        "Wildcard Matching.",
+        "Regex String Matcher."
       ],
       "answer": 0,
-      "explanation": "Tipe template di-instantiation dengan argument tipe yang berbeda."
+      "explanation": "List Pattern di Dart 3 memeriksa tipe koleksi, panjang elemen, tipe tiap elemen, dan membongkar nilainya secara atomic dalam satu baris deklarasi yang elegan."
     }
   },
   {
@@ -516,15 +516,15 @@ const lessons = [
     "content": "# Partial Specialization, Full Specialization, dan Traits\n\n### Materi Inti:\n- Partial specialization untuk keluarga tipe.\n- Full specialization untuk kasus sangat khusus.\n- Trait pattern dan `std::enable_if`.",
     "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Partial Specialization, Full Specialization, dan Traits\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Partial specialization lebih sering digunakan pada jenis template apa?",
+      "question": "Bagaimana *Guard Clauses* (klausa `when`) memperkaya Pattern Matching di Dart 3?",
       "options": [
-        "Class template.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menambahkan syarat kondisi boolean tambahan yang harus bernilai `true` agar pattern pada case tersebut dianggap cocok (*matched*).",
+        "Mencegah exception dilempar keluar dari fungsi.",
+        "Membuat switch berjalan dalam loop tak terbatas.",
+        "Mengunci layar aplikasi Flutter saat kondisi terpenuhi."
       ],
       "answer": 0,
-      "explanation": "Function template biasanya diselesaikan dengan overload; class template dapat memiliki partial specialization."
+      "explanation": "Contoh: `case (int x, int y) when x == y:` hanya akan cocok jika pattern record berpasangan dua integer DAN nilai x sama persis dengan y."
     }
   },
   {
@@ -538,15 +538,15 @@ const lessons = [
     "content": "# Variadic Templates dan Fold Expression\n\n### Materi Inti:\n- Parameter pack, pack expansion, dan recursion.\n- Fold expression untuk sum, product, dan logical operations.\n- Penggunaan `std::tuple` dan argument forwarding.",
     "code": "// Dart Dart11/Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Variadic Templates dan Fold Expression\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `sizeof...(Ts)`?",
+      "question": "Apa fungsi simbol *Rest Element* (`...` atau `..._`) dalam pattern matching koleksi list di Dart 3?",
       "options": [
-        "Mengembalikan jumlah elemen parameter pack.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mencocokkan nol atau lebih elemen dengan panjang arbitrer di bagian mana pun dari list, mengabaikan sisa elemen yang tidak relevan.",
+        "Menghapus elemen tengah dari memori array.",
+        "Menggandakan seluruh isi list menjadi dua kali lipat.",
+        "Menolak list yang memiliki panjang ganjil."
       ],
       "answer": 0,
-      "explanation": "Operator ellipsis pada ukuran menghitung jumlah template arguments."
+      "explanation": "Misal `case [first, ..., last]:` mendestruktur elemen pertama dan terakhir list secara instan, tanpa peduli seberapa panjang elemen di antara keduanya."
     }
   },
   {
@@ -557,18 +557,18 @@ const lessons = [
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk\u5f3a\u5236 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
+    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk强制 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
     "code": "// Dart Dart14/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Compile-Time Programming dengan `constexpr` dan `consteval`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan `constexpr` dan `consteval`?",
+      "question": "Mengapa ekspresi *Switch Expression* (`var label = switch(status) { ... };`) di Dart 3 harus exhaustiveness?",
       "options": [
-        "`constexpr` boleh dieksekusi compile-time atau runtime; `consteval` harus compile-time.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Karena sebagai ekspresi yang mengembalikan nilai, setiap cabang nilai yang mungkin dari input harus menghasilkan satu nilai keluaran yang valid.",
+        "Karena switch expression hanya boleh berisi maksimal 3 kondisi.",
+        "Agar compiler dapat mengubahnya menjadi tabel HTML.",
+        "Karena Dart tidak mendukung penanganan error runtime."
       ],
       "answer": 0,
-      "explanation": "`consteval` memaksa evaluasi immediate function call."
+      "explanation": "Jika ada nilai enum, boolean, atau sealed class yang tidak tertangani dan tidak ada wildcard fallback (`_`), compiler menolak kompilasi dengan pesan error exhaustiveness."
     }
   },
   {
@@ -582,15 +582,15 @@ const lessons = [
     "content": "# SFINAE, `requires`, dan Early Constraint\n\n### Materi Inti:\n- Substitution failure dan SFINAE.\n- `requires` expression dan constrained template.\n- Overload resolution serta diagnostic yang lebih jelas.",
     "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"SFINAE, `requires`, dan Early Constraint\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang terjadi pada candidate template yang gagal substitution?",
+      "question": "Perhatikan kode: `if (json case {'user': {'name': String n, 'id': int id}})`. Pola pattern apa yang terjadi di sini?",
       "options": [
-        "Candidate dihapus dari overload resolution.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Object/Map Pattern Matching bersarang yang memverifikasi skema JSON dan mengekstrak nilai `n` dan `id` jika struktur cocok tanpa risiko null/type crash.",
+        "Konversi JSON ke file XML secara rekursif.",
+        "Pengiriman query REST API ke server backend.",
+        "Pencarian kata kunci dalam database lokal."
       ],
       "answer": 0,
-      "explanation": "Itu adalah prinsip SFINAE: failure during substitution is not a hard error."
+      "explanation": "Map/Object pattern matching di Dart 3 mengeliminasi puluhan baris boilerplate validasi pengecekan null dan `as Type` saat parsing payload API kompleks."
     }
   },
   {
@@ -604,15 +604,15 @@ const lessons = [
     "content": "# Ownership Model dan Raw Memory\n\n### Materi Inti:\n- Stack ownership versus heap ownership.\n- `new`, `new[]`, `delete`, dan `delete[]`.\n- Double free, leak, mismatched deallocation, dan undefined behavior.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Ownership Model dan Raw Memory\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Alokasi `new int[10]` harus dibebaskan dengan apa?",
+      "question": "Apa fungsi fitur *Collection If* dan *Collection For* pada literal koleksi di Dart?",
       "options": [
-        "`delete[]`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyisipkan elemen ke dalam List, Set, atau Map secara kondisional atau melalui iterasi perulangan langsung di dalam deklarasi sintaks literal koleksi.",
+        "Menghapus elemen array saat aplikasi berjalan.",
+        "Mengurutkan isi koleksi secara alfabetis otomatis.",
+        "Mengharuskan koleksi disimpan di dalam file terpisah."
       ],
       "answer": 0,
-      "explanation": "Array dan non-array allocation memiliki mekanisme deallocation berbeda."
+      "explanation": "Fitur ini menjadi pilar utama sintaks deklaratif Flutter, memungkinkan penambahan widget UI ke dalam children tree secara dinamis dan elegan tanpa manipulasi array imperatif."
     }
   },
   {
@@ -626,15 +626,15 @@ const lessons = [
     "content": "# `std::unique_ptr` dan Exclusive Ownership\n\n### Materi Inti:\n- Exclusive ownership dan move-only semantics.\n- Factory function seperti `std::make_unique`.\n- Custom deleter, array support, `reset`, dan `release`.",
     "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::unique_ptr` dan Exclusive Ownership\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil menyalin `unique_ptr`?",
+      "question": "Apa perbedaan karakteristik mendasar antara `Iterable` dan `List` di Dart?",
       "options": [
-        "Compile-time error.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`Iterable` merepresentasikan sequence elemen yang dapat dievaluasi secara malas (*lazy evaluation*), sedangkan `List` menyimpan semua elemen secara nyata di memori terindeks.",
+        "`Iterable` hanya bisa berisi string, sedangkan `List` berisi angka.",
+        "`List` tidak mendukung operasi perulangan for-in.",
+        "`Iterable` otomatis terhapus dari memori setelah 1 kali baca."
       ],
       "answer": 0,
-      "explanation": "`unique_ptr` tidak memiliki copy operation untuk menjaga exclusive ownership."
+      "explanation": "Metode seperti `.map()` dan `.where()` pada List mengembalikan objek `Iterable` lazy; komputasi pemrosesan baru terjadi saat data diakses via `.toList()` atau perulangan."
     }
   },
   {
@@ -648,15 +648,15 @@ const lessons = [
     "content": "# `std::shared_ptr` dan `std::weak_ptr`\n\n### Materi Inti:\n- Shared ownership, control block, dan reference count.\n- `weak_ptr` untuk optional non-owning reference.\n- Cycle ownership dan penggunaan `lock()`.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::shared_ptr` dan `std::weak_ptr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `weak_ptr::lock()` jika owner terakhir sudah hancur?",
+      "question": "Apa peran operator *Spread* (`...` dan null-aware `...?`) pada koleksi Dart?",
       "options": [
-        "Mengembalikan `shared_ptr` kosong.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyisipkan seluruh elemen dari koleksi lain ke dalam koleksi target secara ringkas, dan `...?` mengabaikan koleksi jika bernilai `null`.",
+        "Membagi angka dalam list dengan angka sepuluh.",
+        "Mengonversi list menjadi set unik secara otomatis.",
+        "Mengenkripsi isi list dengan password."
       ],
       "answer": 0,
-      "explanation": "`weak_ptr` tidak mempertahankan lifetime object."
+      "explanation": "Spread operator menyederhanakan penggabungan koleksi tanpa perlu memanggil `addAll()`, dan varian null-aware mencegah null dereference crash."
     }
   },
   {
@@ -670,15 +670,15 @@ const lessons = [
     "content": "# Allocator-Aware Container dan `pmr`\n\n### Materi Inti:\n- Allocator-aware container dan custom allocator.\n- `std::pmr::monotonic_buffer_resource` serta pool lifetime.\n- Allocation failure, pool boundary, dan cache locality.",
     "code": "// Dart Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Allocator-Aware Container dan `pmr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa memory resource harus hidup lebih lama dari container yang menggunakannya?",
+      "question": "Apa yang dimaksud dengan *Closure* dalam fungsi Dart?",
       "options": [
-        "Container dapat melakukan allocation/deallocation selama lifetime-nya.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Objek fungsi yang mempertahankan akses ke variabel-variabel di dalam lexical scope tempat fungsi tersebut dibuat, meskipun scope asalnya sudah selesai dieksekusi.",
+        "Fungsi yang otomatis menutup koneksi database setelah selesai.",
+        "Fungsi yang tidak memiliki return value (void).",
+        "Fungsi yang dilarang dipanggil lebih dari satu kali."
       ],
       "answer": 0,
-      "explanation": "Menghancurkan resource lebih dulu menyebabkan dangling allocator."
+      "explanation": "Closure 'mengingat' variabel lingkungannya; fitur ini menjadi fondasi event handling, async callbacks, dan arsitektur functional programming di Dart."
     }
   },
   {
@@ -692,15 +692,15 @@ const lessons = [
     "content": "# RAII Wrapper dan Safe Resource Patterns\n\n### Materi Inti:\n- Wrapper untuk file, socket, mutex, dan heap resource.\n- `lock_guard` versus `unique_lock`.\n- Scope guard untuk cleanup lintas jalur exception.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII Wrapper dan Safe Resource Patterns\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan `std::lock_guard` melepaskan mutex?",
+      "question": "Bagaimana cara membuat *Unmodifiable Collection* (koleksi yang tidak dapat diubah) di Dart?",
       "options": [
-        "Ketika lock guard keluar dari scope.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan konstruktor `List.unmodifiable(list)` atau membuat literal dengan keyword `const [1, 2, 3]`.",
+        "Menghapus method `.add()` dari compiler Dart.",
+        "Mengubah nama variabel menjadi huruf besar semua.",
+        "Menyimpan list di memori kartu SIM ponsel."
       ],
       "answer": 0,
-      "explanation": "Destruction lock guard memanggil unlock secara otomatis."
+      "explanation": "Mencoba memodifikasi `List.unmodifiable` akan memicu runtime `UnsupportedError`, menjamin integritas data state yang tidak boleh diubah oleh komponen lain."
     }
   },
   {
@@ -714,15 +714,15 @@ const lessons = [
     "content": "# Mendeteksi Memory Bug dengan Sanitizer\n\n### Materi Inti:\n- AddressSanitizer, UndefinedBehaviorSanitizer, dan Valgrind.\n- Dangling reference, use-after-free, overflow, dan out-of-bounds.\n- Menjalankan sanitizer di native dan WebAssembly.",
     "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Mendeteksi Memory Bug dengan Sanitizer\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mana yang melakukan bounds checking: `operator[]` atau `at()`?",
+      "question": "Apa hasil evaluasi fungsi reduksi `.fold(0, (acc, item) => acc + item)` pada list angka?",
       "options": [
-        "`at()`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjumlahkan seluruh elemen list dengan nilai awal akumulator dimulai dari 0 dan mengembalikan total akhir angka bulat.",
+        "Menghapus semua elemen yang bernilai nol.",
+        "Membuat list baru dengan panjang nol.",
+        "Mengembalikan rata-rata nilai dari list."
       ],
       "answer": 0,
-      "explanation": "`operator[]` tidak melakukan bounds check dan dapat menyebabkan undefined behavior."
+      "explanation": "`fold` mengiterasi setiap elemen, memperbarui nilai akumulator sesuai fungsi callback, dan mengembalikan hasil akumulasi akhir secara fungsional murni."
     }
   },
   {
@@ -736,15 +736,15 @@ const lessons = [
     "content": "# Value Category: Lvalue, Xvalue, dan Prvalue\n\n### Materi Inti:\n- Lvalue, xvalue, prvalue, dan named rvalue reference.\n- `std::move` sebagai cast eksplisit.\n- Decay type dan array-to-pointer decay.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Value Category: Lvalue, Xvalue, dan Prvalue\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah named rvalue reference selalu berupa rvalue saat digunakan?",
+      "question": "Bagaimana *Event Loop* di Dart mengelola urutan eksekusi antara *Microtask Queue* dan *Event Queue*?",
       "options": [
-        "Tidak; named rvalue reference adalah lvalue.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Microtask Queue memiliki prioritas absolut lebih tinggi; semua task di Microtask Queue wajib diselesaikan seluruhnya sebelum Event Loop mengambil satu task dari Event Queue.",
+        "Event Queue dijalankan lebih dulu daripada Microtask Queue.",
+        "Keduanya dieksekusi secara acak tanpa aturan prioritas.",
+        "Microtask hanya dieksekusi saat aplikasi kehabisan memori."
       ],
       "answer": 0,
-      "explanation": "Nama objek tetap memiliki lvalue category meskipun tipe referensinya rvalue."
+      "explanation": "Operasi cepat internal biasanya dijadwalkan di Microtask Queue via `scheduleMicrotask()`, sedangkan I/O, timer, gesture sentuhan, dan drawing frame berada di Event Queue."
     }
   },
   {
@@ -758,15 +758,15 @@ const lessons = [
     "content": "# Move Constructor dan Move Assignment\n\n### Materi Inti:\n- Move operation untuk mengambil resource.\n- Source harus berada dalam valid tetapi unspecified state.\n- Move constructor idealnya `noexcept` agar container dapat memindahkan.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Move Constructor dan Move Assignment\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah move constructor selalu menghindari salinan?",
+      "question": "Apa perbedaan mendasar antara *Single-Subscription Stream* dan *Broadcast Stream* di Dart?",
       "options": [
-        "Tidak; dapat fallback ke copy atau melakukan salinan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Single-Subscription hanya mengizinkan tepat satu listener selama masa hidupnya (event di-buffer), sedangkan Broadcast mengizinkan banyak listener mendengarkan secara simultan.",
+        "Broadcast Stream disimpan di cloud, sedangkan Single-Subscription di RAM lokal.",
+        "Single-Subscription hanya bisa mengirim satu event saja lalu otomatis error.",
+        "Broadcast Stream tidak mendukung asynchronous await."
       ],
       "answer": 0,
-      "explanation": "Move operation hanya memberi kesempatan untuk perpindahan; implementasinya tetap menentukan."
+      "explanation": "Single-subscription ideal untuk membaca file berurutan (tidak boleh ada data terlewat), sedangkan broadcast ideal untuk event UI independen seperti sensor accelerometer atau klik mouse."
     }
   },
   {
@@ -780,15 +780,15 @@ const lessons = [
     "content": "# Perfect Forwarding\n\n### Materi Inti:\n- Forwarding reference dan `auto&&`.\n- `std::forward<T>` untuk mempertahankan value category.\n- Argument unwrapping dengan `std::unwrap_reference`.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Perfect Forwarding\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan `std::forward<T>(t)`?",
+      "question": "Bagaimana cara menghasilkan Stream data secara asinkron di dalam fungsi generator Dart?",
       "options": [
-        "Mempertahankan value category saat meneruskan argument.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menandai fungsi dengan modifier `async*` dan mengemisikan setiap nilai menggunakan keyword `yield`.",
+        "Menandai fungsi dengan modifier `sync*` dan memanggil `return` berulang kali.",
+        "Menggunakan perulangan while tak terbatas dengan fungsi `sleep()`.",
+        "Memanggil endpoint REST API di thread utama."
       ],
       "answer": 0,
-      "explanation": "Tanpa forward, argument dapat berubah menjadi lvalue."
+      "explanation": "Fungsi `async*` menghasilkan objek `Stream<T>` di mana setiap pemanggilan `yield value;` memancarkan event baru ke pendengar stream secara non-blocking."
     }
   },
   {
@@ -802,15 +802,15 @@ const lessons = [
     "content": "# Copy Elision, NRVO, dan Guaranteed Move\n\n### Materi Inti:\n- Copy elision dan Named Return Value Optimization.\n- Prvalue construction langsung ke result object.\n- `std::move` yang tidak perlu dapat menghambat copy elision.",
     "code": "// Dart Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Elision, NRVO, dan Guaranteed Move\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dapat dilakukan compiler pada `return Vec{};`?",
+      "question": "Apa kegunaan operator `yield*` (yield-each) dalam generator `async*`?",
       "options": [
-        "Membentuk result object langsung tanpa move.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mendelegasikan dan meneruskan seluruh emisi event dari Stream lain secara langsung ke output stream fungsi generator saat ini.",
+        "Menghapus semua event yang bernilai ganjil.",
+        "Menghentikan fungsi generator secara paksa tanpa memicu close event.",
+        "Mengalikan nilai angka dengan faktor pengali bintang."
       ],
       "answer": 0,
-      "explanation": "Prvalue dapat di-elide secara dijamin pada banyak kondisi Dart17."
+      "explanation": "`yield* anotherStream;` menyederhanakan komposisi stream rekursif atau penggabungan beberapa sumber stream tanpa perlu perulangan `await for` manual."
     }
   },
   {
@@ -824,15 +824,15 @@ const lessons = [
     "content": "# STL Container dan Allocation Strategy\n\n### Materi Inti:\n- Tradeoff vector, deque, list, map, set, dan unordered_map.\n- Iterator invalidation, reserve, resize, dan shrink-to-fit.\n- Copy versus move behavior pada container.",
     "code": "// Dart Dart11/Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"STL Container dan Allocation Strategy\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan `reserve(n)` dan `resize(n)` pada vector?",
+      "question": "Bagaimana cara menangani error secara terstruktur pada pemanggilan `Future` menggunakan sintaks modern?",
       "options": [
-        "`reserve` mengubah capacity; `resize` mengubah size.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membungkus pemanggilan `await future` di dalam blok standar `try - catch (e, stackTrace)`.",
+        "Memanggil `exit(0)` setiap kali future gagal.",
+        "Mengabaikan error dan membiarkan layar aplikasi menjadi merah.",
+        "Mengubah Future menjadi variabel nullable."
       ],
       "answer": 0,
-      "explanation": "Capacity menyediakan ruang alokasi, sedangkan size menentukan jumlah elemen aktif."
+      "explanation": "Sintaks async/await memungkinkan penanganan exception asynchronous dengan pola `try-catch-finally` sinkron yang bersih dan mudah dibaca."
     }
   },
   {
@@ -846,15 +846,15 @@ const lessons = [
     "content": "# In-Place Construction dengan `emplace`, `optional`, dan `variant`\n\n### Materi Inti:\n- `emplace_back` dan konstruksi langsung di dalam container.\n- `std::optional<T>::emplace` untuk optional move-only value.\n- `std::variant` dan pemilihan alternative secara eksplisit.",
     "code": "// Dart Dart17/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan `emplace`?",
+      "question": "Apa fungsi class `StreamController<T>` dalam arsitektur manajemen state reaktif di Dart?",
       "options": [
-        "Membentuk objek langsung di lokasi penyimpanan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Bertindak sebagai perantara yang menyediakan *Sink* untuk memasukkan data baru ke dalam stream dan *Stream* bagi komponen luar untuk mendengarkan perubahan data.",
+        "Mengatur volume audio pada speaker perangkat mobile.",
+        "Mengontrol kecepatan koneksi internet pengguna.",
+        "Menghapus cache aplikasi secara periodik."
       ],
       "answer": 0,
-      "explanation": "Ini mengurangi temporary dan penting untuk move-only types."
+      "explanation": "`StreamController` adalah jantung dari pola BLoC (Business Logic Component) murni di Flutter, memisahkan event input (sink) dari state output (stream)."
     }
   },
   {
@@ -868,15 +868,15 @@ const lessons = [
     "content": "# Iterator dan Standard Algorithms\n\n### Materi Inti:\n- Iterator categories dan range begin/end.\n- `find`, `sort`, `count`, `transform`, dan algorithm contracts.\n- Lambda expression untuk operasi lokal.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Iterator dan Standard Algorithms\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Alasan apa yang dibutuhkan `std::sort` pada seluruh range?",
+      "question": "Mengapa *Isolate* di Dart berbeda secara fundamental dari Thread konvensional di bahasa Java/C++?",
       "options": [
-        "Random-access iterator.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Setiap Isolate memiliki ruang memori heap dan Event Loop tersendiri yang sepenuhnya terisolasi; tidak ada memori bersama (*no shared memory*), sehingga bebas dari race condition dan mutex lock.",
+        "Isolate hanya berjalan di server Linux cloud, bukan di smartphone.",
+        "Isolate tidak bisa menjalankan kode Dart sama sekali.",
+        "Isolate secara otomatis memperlambat komputasi hingga 50%."
       ],
       "answer": 0,
-      "explanation": "`std::sort` memerlukan kemampuan akses acak untuk strategi sorting-nya."
+      "explanation": "Isolate berkomunikasi murni melalui pesan (*Message Passing*) via `SendPort` dan `ReceivePort`, mengeliminasi bug konkurensi klasik seperti thread race condition dan deadlock memori."
     }
   },
   {
@@ -890,15 +890,15 @@ const lessons = [
     "content": "# Ranges Views: Lazy dan Non-Owning\n\n### Materi Inti:\n- `views::filter`, `transform`, `take`, dan `drop`.\n- View versus owning range.\n- Lazy evaluation dan lifetime adaptor.",
     "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Ranges Views: Lazy dan Non-Owning\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan view ranges biasanya dieksekusi?",
+      "question": "Apa metode paling sederhana di Dart 2.19+ / Dart 3 untuk menjalankan fungsi komputasi berat di Isolate latar belakang?",
       "options": [
-        "Ketika range di-iterate atau dikonsumsi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`Isolate.run(() => heavyComputation())`",
+        "`Thread.sleep(1000)`",
+        "`Future.delayed(Duration.zero)`",
+        "`computeEngine.start()`"
       ],
       "answer": 0,
-      "explanation": "Views memisahkan deklarasi transformasi dari eksekusi."
+      "explanation": "`Isolate.run()` menyederhanakan spawn, pengiriman argumen, eksekusi, penangkapan error, dan penutupan isolate latar belakang menjadi satu baris kode async yang elegan."
     }
   },
   {
@@ -912,15 +912,15 @@ const lessons = [
     "content": "# Range Algorithms dan Range Concepts\n\n### Materi Inti:\n- `std::ranges::sort`, `find`, dan `for_each`.\n- Input, output, forward, sortable, dan mutable range requirements.\n- Mengurangi manual iterator arithmetic.",
     "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Range Algorithms dan Range Concepts\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bagaimana range algorithms menemukan awal dan akhir range?",
+      "question": "Bagaimana cara mentransfer objek berukuran besar (seperti buffer gambar jutaan byte) antar Isolate tanpa biaya copying memori?",
       "options": [
-        "Melalui range protocol begin/end.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memanfaatkan *TransferableTypedData*, yang memindahkan kepemilikan memori biner fisik langsung antar isolate tanpa duplikasi alokasi heap.",
+        "Mengunggah gambar ke server Google Drive terlebih dahulu.",
+        "Mengubah gambar menjadi teks base64 panjang.",
+        "Mengompresi gambar menjadi format ZIP."
       ],
       "answer": 0,
-      "explanation": "Ranges mengurangi ketergantungan pada iterator manual yang tidak konsisten."
+      "explanation": "`TransferableTypedData` mentransfer kepemilikan buffer memori dalam waktu <1 milidetik, mencegah frame drop (jank) pada UI Flutter saat memproses foto resolusi tinggi."
     }
   },
   {
@@ -934,15 +934,15 @@ const lessons = [
     "content": "# Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\n\n### Materi Inti:\n- `views::zip` untuk beberapa range paralel.\n- `views::chunk`, `slide`, dan `enumerate`.\n- Tuple-like elements, overflow behavior, dan lifetime.",
     "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `views::chunk(3)`?",
+      "question": "Kapan sebuah komputasi wajib dipindahkan ke Isolate terpisah di aplikasi Flutter?",
       "options": [
-        "Membagi range menjadi sub-range berisi maksimal tiga elemen.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Ketika komputasi membutuhkan waktu CPU lebih dari 16 milidetik (seperti parsing JSON raksasa puluhan MB atau manipulasi gambar), yang dapat memblokir UI thread dan menyebabkan *Jank*.",
+        "Hanya saat baterai smartphone berada di bawah 20%.",
+        "Saat membuat teks judul halaman aplikasi.",
+        "Ketika aplikasi berpindah dari portrait ke landscape."
       ],
       "answer": 0,
-      "explanation": "Chunk memperlakukan elemen sebagai kelompok kecil."
+      "explanation": "Untuk mempertahankan animasi mulus 60 FPS (atau 120 FPS), UI thread tidak boleh diblokir lebih dari 8-16ms; operasi berat wajib didelegasikan ke background isolate."
     }
   },
   {
@@ -956,15 +956,15 @@ const lessons = [
     "content": "# Error Value dengan `std::expected` dan `std::optional`\n\n### Materi Inti:\n- `optional<T>` untuk absence tanpa error detail.\n- `expected<T,E>` untuk success atau error terstruktur.\n- Composing operations dengan `and_then`, `transform`, dan `or_else`.",
     "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Error Value dengan `std::expected` dan `std::optional`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa representasi utama `std::expected<T, E>`?",
+      "question": "Bagaimana cara kerja komunikasi dua arah antara dua Isolate di Dart?",
       "options": [
-        "Satu dari dua state: value `T` atau error `E`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Isolate utama membuat `ReceivePort`, mengirimkan `SendPort`-nya ke Isolate pekerja; pekerja kemudian membalas dengan `SendPort`-nya sendiri sehingga terbentuk jalur kirim-terima pesan dua arah.",
+        "Keduanya menulis dan membaca file teks yang sama di hard disk secara bergantian.",
+        "Menggunakan kabel USB yang tersambung ke komputer.",
+        "Komunikasi dua arah dilarang keras di dalam engine Dart."
       ],
       "answer": 0,
-      "explanation": "Expected lebih informatif daripada optional ketika operasi dapat gagal dengan alasan."
+      "explanation": "Handshake dua arah melalui pasangan `SendPort`/`ReceivePort` memungkinkan pembuatan worker pool persisten yang siap menerima tugas komputasi secara terus menerus."
     }
   },
   {
@@ -978,15 +978,15 @@ const lessons = [
     "content": "# API Modern Dart20/23: Format, Print, Numbers, dan `mdspan`\n\n### Materi Inti:\n- `std::format`, `std::print`, dan feature-test macros.\n- `std::numbers` untuk konstanta numerik standar.\n- `std::mdspan` untuk multidimensional view tanpa ownership.",
     "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"API Modern Dart20/23: Format, Print, Numbers, dan `mdspan`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `std::print` dalam Dart23?",
+      "question": "Apakah pembuatan Isolate baru di Dart memiliki overhead waktu dan memori?",
       "options": [
-        "Menulis formatted text langsung ke stdout.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Ya, karena memerlukan alokasi memori heap baru dan inisialisasi Event Loop terpisah (~puluhan KB hingga beberapa MB RAM), sehingga untuk tugas berulang lebih baik menggunakan *Isolate Pool* daripada spawn berulang kali.",
+        "Tidak, alokasi isolate membutuhkan nol byte memori dan nol milidetik.",
+        "Isolate hanya memakan memori di hard disk penyimpanan.",
+        "Overhead hanya terjadi jika menggunakan perangkat iOS."
       ],
       "answer": 0,
-      "explanation": "`print` mengurangi kebutuhan membuat intermediate string."
+      "explanation": "Karena isolasi memori penuh, spawning isolate membutuhkan biaya inisialisasi awal; arsitektur yang matang menggunakan worker pool yang tetap hidup untuk mendaur ulang proses."
     }
   },
   {
@@ -1000,15 +1000,15 @@ const lessons = [
     "content": "# Thread Dasar, Join, dan Detach\n\n### Materi Inti:\n- Membuat, menjalankan, `join`, dan `detach` thread.\n- Lifetime thread dan bahaya detach tanpa koordinasi.\n- Data race versus race condition.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Dasar, Join, dan Detach\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `std::thread::join()`?",
+      "question": "Apa keunggulan menggunakan package *Dio* dibandingkan library *http* standar di Flutter/Dart?",
       "options": [
-        "Menunggu thread selesai sebelum melanjutkan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyediakan fitur bawaan enterprise: Interceptors (request/response/error), pembatalan request via CancelToken, FormData/upload file progress, cookie manager, dan konfigurasi base URL/timeout terpusat.",
+        "Dio dapat mengirim request tanpa koneksi internet sama sekali.",
+        "Dio secara otomatis meretas firewall server tujuan.",
+        "Dio hanya mendukung format data teks mentah tanpa JSON."
       ],
       "answer": 0,
-      "explanation": "Join memastikan lifetime dan hasil thread selesai sebelum scope berlanjut."
+      "explanation": "Dio adalah HTTP client tingkat lanjut yang sangat populer di ekosistem Flutter karena arsitektur interceptor yang mempermudah refresh token JWT dan logging jaringan."
     }
   },
   {
@@ -1022,15 +1022,15 @@ const lessons = [
     "content": "# Mutex, `lock_guard`, dan Condition Variable\n\n### Materi Inti:\n- Critical section dan mutual exclusion.\n- RAII locking dengan `lock_guard` dan `unique_lock`.\n- Condition variable, predicate loop, notify-one/all.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Mutex, `lock_guard`, dan Condition Variable\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa condition variable harus digunakan dalam loop predicate?",
+      "question": "Bagaimana cara kerja serialisasi JSON menggunakan pustaka *json_serializable* dan *build_runner*?",
       "options": [
-        "Untuk menangani spurious wakeup dan kondisi yang berubah.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menganalisis anotasi model `@JsonSerializable()` saat build-time dan menghasilkan kode boilerplate `_$UserFromJson` dan `_$UserToJson` secara otomatis dan type-safe.",
+        "Membaca file JSON menggunakan Java Reflection saat aplikasi berjalan di memori.",
+        "Mengunggah model data ke server online untuk di-generate.",
+        "Menghapus seluruh field yang bertipe data String."
       ],
       "answer": 0,
-      "explanation": "Notify tidak membuktikan kondisi yang diinginkan sudah terpenuhi."
+      "explanation": "Code generation saat build-time memastikan serialisasi JSON berjalan sangat cepat tanpa runtime reflection yang dilarang di Flutter AOT iOS."
     }
   },
   {
@@ -1044,15 +1044,15 @@ const lessons = [
     "content": "# Atomic dan Memory Ordering\n\n### Materi Inti:\n- Atomic load/store, fetch-add, compare-exchange.\n- Relaxed, acquire, release, dan sequential consistency.\n- Lock-free atomic dan tradeoff performance.",
     "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Atomic dan Memory Ordering\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dijamin atomic relaxed?",
+      "question": "Database lokal embedded manakah yang sangat cepat dan menyediakan reaktivitas real-time bawaan untuk Flutter/Dart?",
       "options": [
-        "Atomicity operation, tetapi tidak memberi global ordering antar thread.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`Isar` atau `Hive`",
+        "Microsoft SQL Server Enterprise Edition.",
+        "Oracle Database Cloud.",
+        "Apache Cassandra Cluster."
       ],
       "answer": 0,
-      "explanation": "Relaxed cocok untuk counter murni, bukan untuk melindungi data kompleks."
+      "explanation": "Isar dan Hive ditulis khusus untuk Flutter/Dart, menyimpan objek langsung tanpa mapping relasional yang lambat, dan menyediakan query reactive berbasis Stream."
     }
   },
   {
@@ -1066,15 +1066,15 @@ const lessons = [
     "content": "# `std::async`, Future, dan Task\n\n### Materi Inti:\n- Launch policy dan asynchronous execution.\n- Future/get, exception propagation, dan timeout.\n- Lifetime task dan bahaya menunggu terlalu lama.",
     "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::async`, Future, dan Task\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dilakukan `future::get()`?",
+      "question": "Bagaimana cara menangani pembatalan (*Cancellation*) HTTP request saat pengguna keluar dari layar sebelum request selesai?",
       "options": [
-        "Memblokir sampai result tersedia, lalu mengembalikan value atau melempar exception.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengaitkan request dengan `CancelToken` (pada Dio) dan memanggil `cancelToken.cancel()` pada lifecycle `dispose()` layar.",
+        "Mematikan daya ponsel pengguna seketika.",
+        "Menghapus alamat IP server dari DNS lokal.",
+        "Mengabaikan dan membiarkan memori RAM bocor."
       ],
       "answer": 0,
-      "explanation": "Future menyalin exception task ke pemanggil get."
+      "explanation": "Membatalkan request yang tidak lagi dibutuhkan menghemat kuota internet pengguna, mengurangi beban server backend, dan mencegah crash state pada widget yang sudah di-unmount."
     }
   },
   {
@@ -1088,15 +1088,15 @@ const lessons = [
     "content": "# Thread Pool, Deadlock, dan Concurrency Pitfalls\n\n### Materi Inti:\n- Work queue, worker lifetime, dan task scheduling.\n- Deadlock, starvation, ABA, false sharing, dan lock ordering.\n- Desain bounded concurrency dan backpressure.",
     "code": "// Dart Dart11/Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Pool, Deadlock, dan Concurrency Pitfalls\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Prinsip apa yang mencegah banyak deadlock sederhana?",
+      "question": "Kapan penggunaan `Uint8List` dan `ByteData` sangat penting dalam penanganan data di Dart?",
       "options": [
-        "Jangan memegang mutex sambil menunggu resource milik thread lain.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Saat memproses data biner mentah (file I/O, streaming kamera, manipulasi byte gambar, atau protokol soket TCP/UDP) untuk efisiensi memori tingkat tinggi.",
+        "Hanya saat mencetak teks 'Hello World' ke terminal konsol.",
+        "Saat memvalidasi alamat email pengguna di form login.",
+        "Sebagai pengganti seluruh tipe data string di aplikasi."
       ],
       "answer": 0,
-      "explanation": "Gunakan lock ordering tetap atau release lock sebelum menunggu."
+      "explanation": "Typed Data (`typed_data` library) memetakan memori biner contiguous secara langsung tanpa overhead boxing, esensial untuk manipulasi grafis dan komunikasi protokol biner."
     }
   },
   {
@@ -1110,15 +1110,15 @@ const lessons = [
     "content": "# Pengantar Coroutine: Suspension dan Resumption\n\n### Materi Inti:\n- Coroutine frame, promise object, dan awaiter.\n- `co_await`, `co_yield`, dan `co_return`.\n- Perbedaan blocking thread dengan cooperative suspension.",
     "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Pengantar Coroutine: Suspension dan Resumption\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa syarat utama ekspresi pada `co_await`?",
+      "question": "Apa fungsi dari interceptor pada HTTP client dalam konteks keamanan autentikasi?",
       "options": [
-        "Harus merupakan awaitable yang dapat diterima awaiter.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyuntikkan header `Authorization: Bearer <token>` secara otomatis pada setiap request keluar dan menangkap error 401 untuk melakukan auto-refresh token yang kadaluarsa.",
+        "Mencatat password pengguna ke file teks publik.",
+        "Menonaktifkan enkripsi HTTPS secara sepihak.",
+        "Mengubah status kode 500 menjadi status 200 OK palsu."
       ],
       "answer": 0,
-      "explanation": "Compiler membutuhkan operasi await_ready, await_suspend, dan await_resume."
+      "explanation": "Auth interceptor memusatkan logika token management secara transparan bagi layer repository; jika token expired, interceptor me-refresh token di background lalu me-retry request asli."
     }
   },
   {
@@ -1132,15 +1132,15 @@ const lessons = [
     "content": "# Membangun Coroutine dari Komponen Dasar\n\n### Materi Inti:\n- Promise methods: `return_value`, `yield_value`, `initial_suspend`, dan `final_suspend`.\n- Coroutine return object dan exception propagation.\n- Mengapa coroutine bukan thread.",
     "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Membangun Coroutine dari Komponen Dasar\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa peran `promise_type`?",
+      "question": "Apa fungsi dari file `analysis_options.yaml` dalam sebuah proyek Dart/Flutter?",
       "options": [
-        "Mendefinisikan interface dan state khusus coroutine.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengonfigurasi aturan *Dart Analyzer* (linter rules), tingkat keparahan error/warning, dan mengaktifkan style guide resmi (seperti `package:flutter_lints`).",
+        "Menyimpan password akun developer Google Play Store.",
+        "Mengatur harga jual aplikasi di toko online.",
+        "Menentukan warna tema utama ponsel pengguna."
       ],
       "answer": 0,
-      "explanation": "Compiler menggunakan promise type untuk membangun coroutine frame dan return object."
+      "explanation": "Linter menegakkan konsistensi gaya kode tim, mendeteksi potensi bug, serta mempromosikan best practices idiomatik secara otomatis saat developer mengetik di IDE."
     }
   },
   {
@@ -1154,15 +1154,15 @@ const lessons = [
     "content": "# Async/Await dengan Executor dan Cancellation\n\n### Materi Inti:\n- Custom awaiter dan executor policy.\n- Exception propagation, timeout, dan cancellation token.\n- Composing async operations tanpa nested blocking.",
     "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Async/Await dengan Executor dan Cancellation\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `std::async` memiliki cancellation token standar?",
+      "question": "Apa perbedaan penting antara dependensi `dependencies` dan `dev_dependencies` di `pubspec.yaml`?",
       "options": [
-        "Tidak.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`dependencies` disertakan ke dalam bundel biner rilis aplikasi, sedangkan `dev_dependencies` (seperti test tools, generator) hanya digunakan saat pengembangan dan tidak ikut ke rilis akhir.",
+        "`dependencies` hanya berlaku di sistem operasi Windows.",
+        "`dev_dependencies` wajib diunduh secara manual dengan file zip.",
+        "Tidak ada perbedaan teknis sama sekali dalam build final."
       ],
       "answer": 0,
-      "explanation": "Cancellation harus dirancang secara kooperatif atau menggunakan abstraction lain."
+      "explanation": "Memisahkan dev dependencies (seperti `build_runner`, `flutter_test`) menjaga ukuran binary rilis tetap minimal dan mencegah bloating dependensi produksi."
     }
   },
   {
@@ -1176,15 +1176,15 @@ const lessons = [
     "content": "# Generator dengan `std::generator` Dart23\n\n### Materi Inti:\n- `co_yield` sebagai lazy producer.\n- Backpressure, range protocol, dan lifetime iterator.\n- Menggabungkan generator dengan ranges.",
     "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Generator dengan `std::generator` Dart23\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Berapa banyak nilai yang dihasilkan generator per resume?",
+      "question": "Perintah Dart CLI apa yang digunakan untuk memperbaiki pelanggaran aturan linter secara otomatis di seluruh basis kode?",
       "options": [
-        "Satu nilai per `co_yield` yang dicapai.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`dart fix --apply`",
+        "`dart clean --all`",
+        "`dart delete --force`",
+        "`dart format --error`"
       ],
       "answer": 0,
-      "explanation": "Generator menghentikan eksekusi setiap kaliyield dan melanjutkan saat iterator maju."
+      "explanation": "`dart fix` menerapkan migrasi kode dan perbaikan linter otomatis yang sudah terdaftar di ekosistem Dart SDK secara aman dan cepat."
     }
   },
   {
@@ -1198,15 +1198,15 @@ const lessons = [
     "content": "# Concepts dan Constrained Overload\n\n### Materi Inti:\n- `requires` expression dan named concept.\n- Constraint satisfaction dan overload resolution.\n- Mengganti SFINAE noise dengan diagnostic yang jelas.",
     "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Concepts dan Constrained Overload\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan concept dievaluasi?",
+      "question": "Bagaimana fitur *Dart FFI (Foreign Function Interface)* bekerja?",
       "options": [
-        "Selama constraint satisfaction pada kompilasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memungkinkan kode Dart memanggil langsung pustaka native C/C++ (file `.so`, `.dylib`, atau `.dll`) di memori tanpa melalui arsitektur bridge platform channel yang lambat.",
+        "Menerjemahkan bahasa Dart menjadi bahasa Python di cloud.",
+        "Menghubungkan aplikasi Flutter ke browser Chrome lawas.",
+        "Mengubah kode Dart menjadi skrip shell Bash."
       ],
       "answer": 0,
-      "explanation": "Concept membatasi kandidat yang dapat dipilih compiler."
+      "explanation": "Dart FFI memotong overhead serialisasi data Platform Channel, memungkinkan integrasi super-cepat dengan library AI/ML (TensorFlow Lite), game engine, atau database C (SQLite)."
     }
   },
   {
@@ -1220,15 +1220,15 @@ const lessons = [
     "content": "# Custom Range, `view`, dan `borrowed_range`\n\n### Materi Inti:\n- Range requirements dan `range_reference_t`.\n- View, borrowed range, dan adaptor customization.\n- `views::as_const`, `cache_latest`, `chunk`, `slide`, dan `enumerate`.",
     "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Custom Range, `view`, dan `borrowed_range`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti `borrowed_range`?",
+      "question": "Apa yang dimaksud dengan target kompilasi *WasmGC (WebAssembly Garbage Collection)* pada Dart Web modern?",
       "options": [
-        "Iterator tetap valid setelah range temporary dihancurkan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengompilasi kode Dart langsung ke bytecode WebAssembly standar dengan integrasi Garbage Collection native browser, menghasilkan performa dan startup mendekati kecepatan native di web.",
+        "Mengubah aplikasi web menjadi ekstensi browser Chrome.",
+        "Menghapus seluruh file HTML dari internet.",
+        "Memaksa pengguna menginstal plugin Flash Player."
       ],
       "answer": 0,
-      "explanation": "Requirement ini mencegah dangling iterator pada adaptor ranges."
+      "explanation": "Dart dan Flutter Web generasi terbaru memanfaatkan WasmGC untuk eksekusi kode biner di browser dengan performa grafis 2 kali lebih cepat dibanding transpilasi JavaScript tradisional."
     }
   },
   {
@@ -1242,15 +1242,15 @@ const lessons = [
     "content": "# Modern Generic Design: Templates + Concepts + Ranges\n\n### Materi Inti:\n- Menggabungkan constrained template, range algorithms, dan move-only values.\n- API generik dengan error type dan no unnecessary copy.\n- Menulis benchmark serta test matrix untuk beberapa tipe.",
     "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Modern Generic Design: Templates + Concepts + Ranges\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Requirement apa yang diperlukan `std::ranges::sort`?",
+      "question": "Mengapa mengunci versi package di `pubspec.lock` sangat krusial dalam pipeline CI/CD?",
       "options": [
-        "Range harus sortable dan mutable.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjamin build yang deterministik dan identik di seluruh mesin developer dan server build otomatis tanpa ada pergeseran versi dependensi yang tidak terduga.",
+        "Mencegah hacker mengubah nama repositori GitHub.",
+        "Mempercepat kecepatan download internet sebesar 100%.",
+        "Hanya agar file tersebut tidak berwarna merah di git status."
       ],
       "answer": 0,
-      "explanation": "Sorting membutuhkan kemampuan membaca dan menulis elemen."
+      "explanation": "`pubspec.lock` mencatat hash integritas dan versi eksak setiap paket transitif; tim memastikan bahwa kode yang diuji di lokal identik 100% dengan yang dirilis ke production."
     }
   },
   {
@@ -1264,15 +1264,15 @@ const lessons = [
     "content": "# Migrasi ke Dart23 Library\n\n### Materi Inti:\n- `std::expected`, `std::print`, `std::source_location`, dan string `contains`.\n- `std::ranges::to`, `std::mdspan`, dan `std::generator`.\n- Feature-test macros dan strategi fallback compiler.",
     "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Migrasi ke Dart23 Library\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi utama `std::expected<T, E>`?",
+      "question": "Apa perbedaan cakupan antara *Unit Test*, *Widget Test*, dan *Integration Test* di ekosistem Flutter/Dart?",
       "options": [
-        "Mewakili value sukses atau error terstruktur.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Unit Test menguji satu fungsi/kelas terisolasi; Widget Test menguji rendering interaksi satu widget UI di memori tanpa emulator; Integration Test menguji seluruh aplikasi berjalan di perangkat/emulator fisik.",
+        "Unit Test untuk Android, Widget Test untuk iOS, Integration Test untuk Web.",
+        "Widget Test hanya bisa dijalankan oleh desainer grafis.",
+        "Integration Test tidak memerlukan kode pengujian sama sekali."
       ],
       "answer": 0,
-      "explanation": "Expected membantu.error handling tanpa menggunakan exception untuk alur normal."
+      "explanation": "Piramida testing yang sehat memprioritaskan Unit Test (cepat & murah), didukung oleh Widget Test untuk validasi interaksi UI, dan sejumlah kecil Integration Test end-to-end kritis."
     }
   },
   {
@@ -1286,15 +1286,15 @@ const lessons = [
     "content": "# Performance, Profiling, dan Optimization yang Terukur\n\n### Materi Inti:\n- Big-O, cache locality, branch prediction, dan allocation cost.\n- Move semantics, emplace, reserve, dan avoiding unnecessary copy.\n- Benchmark, profiler, dan reproducibility.",
     "code": "// Dart Dart17/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Performance, Profiling, dan Optimization yang Terukur\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `reserve` mengubah size vector?",
+      "question": "Bagaimana library *Mocktail* menyederhanakan mocking dalam unit test Dart dibanding Mockito klasik?",
       "options": [
-        "Tidak; reserve hanya mengubah capacity.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Tidak membutuhkan eksekusi `build_runner` code generation; mock class dibuat murni via inheritance runtime (`class MockUserRepo extends Mock implements UserRepo {}`).",
+        "Mocktail secara otomatis membuat kode aplikasi menjadi 100% bebas bug.",
+        "Mocktail hanya bisa digunakan pada hari libur.",
+        "Mocktail menggantikan seluruh fungsi framework testing bawaan Dart."
       ],
       "answer": 0,
-      "explanation": "Elemen baru tetap harus ditambahkan dengan resize/emplace/push."
+      "explanation": "Mocktail mengandalkan fitur null safety modern Dart untuk menyediakan API stubbing (`when(() => ...).thenReturn(...)`) tanpa perlu menjalankan generator build yang memakan waktu."
     }
   },
   {
@@ -1306,17 +1306,17 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Reliabilitas, Security, dan Test Matrix\n\n### Materi Inti:\n- Sanitizer, invariant test, property test, dan fuzzing ringan.\n- Input validation, ownership contract, dan secure defaults.\n- Testing pada edge case, malformed input, dan concurrent path.",
-    "code": "// Dart Dart11\u2013Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart Dart11–Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bagaimana mendokumentasikan raw pointer non-owning?",
+      "question": "Apa inti dari arsitektur *Clean Architecture* dalam aplikasi mobile Dart/Flutter?",
       "options": [
-        "Jelaskan bahwa pointer tidak memiliki ownership dan lifetime harus dijaga caller.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memisahkan kode menjadi lapisan Domain (Entities/UseCases), Data (Repositories/DataSources), dan Presentation (UI/BLoC); dependensi hanya boleh mengarah ke dalam menuju aturan bisnis inti.",
+        "Menghapus semua file yang memiliki lebih dari 50 baris kode.",
+        "Menyimpan seluruh logika aplikasi di dalam satu file `main.dart`.",
+        "Menolak penggunaan package eksternal dari pub.dev."
       ],
       "answer": 0,
-      "explanation": "Tanpa kontrak lifetime, raw pointer mudah menjadi dangling."
+      "explanation": "Clean Architecture membuat domain logic independen dari framework Flutter, UI, atau vendor database, memungkinkan penggantian teknologi UI atau database tanpa menyentuh core rules."
     }
   },
   {
@@ -1330,15 +1330,15 @@ const lessons = [
     "content": "# Arsitektur, Dart20 Modules, Build, dan CI\n\n### Materi Inti:\n- Layering, interface boundary, dependency inversion, dan module boundary.\n- CMake/compiler flags, WebAssembly build, dan browser execution.\n- CI untuk build, test, sanitizer, dan format/lint.",
     "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Arsitektur, Dart20 Modules, Build, dan CI\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan interface boundary dalam arsitektur Dart?",
+      "question": "Bagaimana cara menguji fungsi asinkron berbasis waktu (seperti timer atau stream debounce) tanpa membuat test menunggu secara fisik?",
       "options": [
-        "Mengurangi coupling dan menyembunyikan implementasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan utilitas `fakeAsync` dari `package:fake_async`, yang memungkinkan manipulasi waktu simulasi secara instan via `async.elapse(Duration(seconds: 10))`.",
+        "Menggunakan fungsi `sleep()` selama 10 detik di dalam unit test.",
+        "Mempercepat jam sistem operasi laptop secara manual.",
+        "Menghapus timer dari kode sebelum pengujian dijalankan."
       ],
       "answer": 0,
-      "explanation": "Client bergantung pada kontrak stabil, bukan detail internal."
+      "explanation": "`fakeAsync` membekukan waktu fisik dan menyimulasikan laju clock microtask, memungkinkan pengujian delay berjam-jam selesai dalam hitungan milidetik secara deterministik."
     }
   },
   {
@@ -1352,15 +1352,15 @@ const lessons = [
     "content": "# Capstone Design: Modern Data Pipeline\n\n### Materi Inti:\n- Merancang domain type, ownership, error handling, dan API.\n- Memilih templates, concepts, ranges, smart pointer, dan coroutine secara tepat.\n- Menentukan acceptance criteria, benchmark, dan test cases.",
     "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Design: Modern Data Pipeline\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Sebelum coding, aspek ownership dan async apa yang harus ditentukan?",
+      "question": "Apa prinsip kerja dari pola manajemen state *BLoC (Business Logic Component)*?",
       "options": [
-        "Siapa pemilik resource, kapan resource mati, siapa menjalankan operasi async, dan bagaimana exception/cancellation ditangani.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memisahkan presentasi UI murni dari logika bisnis; UI mengirimkan *Event* ke BLoC, BLoC memproses logika, lalu memancarkan *State* baru kembali ke UI melalui reactive streams.",
+        "Menyimpan seluruh data aplikasi di dalam variabel global statis.",
+        "Mengubah setiap tombol di aplikasi menjadi widget StatefulWidget.",
+        "Menolak penggunaan Stream dan hanya menggunakan callback biasa."
       ],
       "answer": 0,
-      "explanation": "Keputusan ini menentukan smart pointer, coroutine awaiter, dan synchronization."
+      "explanation": "BLoC menyediakan alur data satu arah (*unidirectional data flow*) yang dapat diprediksi, sangat terstruktur untuk aplikasi enterprise berskala besar, dan sangat mudah di-unit test."
     }
   },
   {
@@ -1374,15 +1374,15 @@ const lessons = [
     "content": "# Capstone Implementation, Demo, dan Refleksi\n\n### Materi Inti:\n- Implementasi end-to-end di JupyterLite/WebAssembly.\n- Menjalankan unit test, sanitizer, dan benchmark.\n- Menjelaskan tradeoff, hasil, keterbatasan, dan langkah pengembangan.",
     "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Implementation, Demo, dan Refleksi\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan memilih `unique_ptr` daripada `shared_ptr` dalam capstone?",
+      "question": "Apa manfaat utama mengonfigurasi *GitHub Actions CI Pipeline* untuk memvalidasi setiap Pull Request pada proyek Dart?",
       "options": [
-        "Ketika ownership eksklusif dan cycle risk tidak ada.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menjalankan `dart analyze` (linter) dan `dart test` secara otomatis pada environment bersih sebelum kode di-merge, mencegah regresi bug dan menjaga kualitas codebase bersama.",
+        "Membuat aplikasi langsung populer di mesin pencari Google.",
+        "Secara otomatis menuliskan deskripsi PR untuk developer.",
+        "Menghapus akun kontributor yang membuat kode error."
       ],
       "answer": 0,
-      "explanation": "Unique_ptr lebih sederhana, lebih murah, dan membuat ownership lebih jelas."
+      "explanation": "Continuous Integration adalah pintu gerbang kualitas tim modern, memastikan tidak ada kode yang melanggar aturan arsitektur, syntax error, atau memecahkan unit test yang lolos ke branch utama."
     }
   }
 ];

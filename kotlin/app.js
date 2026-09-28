@@ -76,15 +76,15 @@ const lessons = [
     "content": "# Program Pertama dengan Kotlin20 dan Kotlin23\n\n### Materi Inti:\n- Alur compile, link, dan run program Kotlin.\n- Peran header, namespace std, dan flag -std=c++20 atau -std=c++23.\n- Menjalankan kode Kotlin melalui JupyterLite/Xeus-Cling.",
     "code": "// Kotlin Kotlin20/Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Program Pertama dengan Kotlin20 dan Kotlin23\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa efek flag `-std=c++23`?",
+      "question": "Apa perbedaan utama antara variabel `val` dan `var` di Kotlin?",
       "options": [
-        "Memilih standar Kotlin23 untuk kompilasi, jika didukung compiler.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`val` bersifat read-only (nilai tidak dapat di-reassign setelah inisialisasi), sedangkan `var` bersifat mutable.",
+        "`val` adalah konstan waktu kompilasi yang nilainya harus diketahui sebelum aplikasi dijalankan.",
+        "`var` hanya bisa digunakan di dalam fungsi, sedangkan `val` hanya untuk properti kelas.",
+        "`val` otomatis mengalokasikan variabel ke memori heap, sedangkan `var` di stack."
       ],
       "answer": 0,
-      "explanation": "Flag standar memengaruhi\u8bed\u6cd5 dan library yang boleh digunakan, tetapi dukungan implementasi tetap bergantung pada compiler."
+      "explanation": "`val` mendefinisikan referensi read-only (mirip `final` di Java), sedangkan `var` mengizinkan reassignment nilai baru bertipe data sama."
     }
   },
   {
@@ -98,15 +98,15 @@ const lessons = [
     "content": "# Tipe Data, Literal, `auto`, dan `constexpr`\n\n### Materi Inti:\n- Tipe fundamental integer, floating-point, char, bool, dan pointer dasar.\n- Signedness, ukuran tipe, suffix literal, dan konversi angka.\n- `auto` untuk deduksi tipe dan `constexpr` untuk nilai compile-time.",
     "code": "// Kotlin Kotlin11/Kotlin14\n#include <iostream>\n\nint main() {\n    std::cout << \"Tipe Data, Literal, `auto`, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tipe dari `auto x = 42LL;`?",
+      "question": "Bagaimana fitur *Null Safety* Kotlin mencegah `NullPointerException` (NPE) saat kompilasi?",
       "options": [
-        "`long long`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Sistem tipe Kotlin membedakan secara eksplisit tipe yang boleh bernilai null (`String?`) dan yang tidak boleh (`String`).",
+        "Kotlin otomatis mengubah semua nilai null menjadi string kosong saat runtime.",
+        "Semua objek di Kotlin otomatis dibungkus dalam class `Optional` secara implisit.",
+        "Compiler Kotlin menghapus semua variabel yang bernilai null dari memori bytecode."
       ],
       "answer": 0,
-      "explanation": "Suffix `LL` memaksa literal integer menjadi long long."
+      "explanation": "Di Kotlin, tipe default bersifat non-nullable. Mengisi null ke tipe non-nullable memicu error saat kompilasi, mengeliminasi NPE sebelum runtime."
     }
   },
   {
@@ -120,15 +120,15 @@ const lessons = [
     "content": "# Operator, Precedence, dan Short-Circuit\n\n### Materi Inti:\n- Operator arithmetic, comparison, logical, conditional, dan assignment.\n- Precedence, associativity, dan pentingnya parentheses.\n- Short-circuit evaluation pada `&&` dan `||`.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator, Precedence, dan Short-Circuit\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `false && (1 / 0)` dan mengapa?",
+      "question": "Perhatikan kode: `val name: String? = null; val length = name?.length ?: 0`. Apa peran operator `?:` di sini?",
       "options": [
-        "`false`; operand kanan tidak dieksekusi karena short-circuit.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Elvis Operator: mengembalikan nilai default di sebelah kanan (`0`) jika ekspresi di sebelah kiri bernilai `null`.",
+        "Operator ternary untuk mengecek kondisi boolean.",
+        "Operator type-casting paksa yang melempar exception jika null.",
+        "Safe-call operator untuk memanggil properti objek."
       ],
       "answer": 0,
-      "explanation": "`&&` berhenti setelah operand pertama diketahui false."
+      "explanation": "Elvis operator (`?:`) mengevaluasi operand kiri; jika bukan null, nilainya digunakan; jika null, ia mengevaluasi dan mengembalikan nilai fallback di sebelah kanan."
     }
   },
   {
@@ -142,15 +142,15 @@ const lessons = [
     "content": "# Kontrol Alur dan Loop\n\n### Materi Inti:\n- `if`, `else`, `switch`, dan equality/comparison.\n- For loop, range-based for, break, continue, dan early return.\n- Menulis kondisi yang mudah diuji dan tidak ambigu.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Kontrol Alur dan Loop\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Pada `for (int x : v)`, apakah mengubah `x` mengubah elemen `v`?",
+      "question": "Apa keistimewaan dari fitur *Smart Casts* pada percabangan `if` atau `when` di Kotlin?",
       "options": [
-        "Tidak; `x` adalah salinan elemen.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Compiler otomatis meng-cast tipe variabel ke subtipe spesifik setelah dilakukan pengecekan tipe (`is Type`) tanpa perlu casting eksplisit (`as`).",
+        "Variabel integer otomatis diubah menjadi tipe string tanpa memanggil fungsi `.toString()`.",
+        "Mengubah objek biasa menjadi class Singleton saat runtime.",
+        "Memaksa garbage collection menghapus instance lama."
       ],
       "answer": 0,
-      "explanation": "Range-based for dengan tipe biasa membuat salinan nilai."
+      "explanation": "Jika variabel immutable dicek tipenya dengan `is`, compiler secara otomatis menganggap variabel tersebut sudah bertipe hasil pengecekan dalam scope terkait."
     }
   },
   {
@@ -164,15 +164,15 @@ const lessons = [
     "content": "# Fungsi, Parameter, Overload, dan `constexpr`\n\n### Materi Inti:\n- Declaration, definition, return type, dan parameter passing.\n- Pass by value, pass by reference, default arguments, dan overload resolution.\n- Fungsi `constexpr` untuk kalkulasi compile-time.",
     "code": "// Kotlin Kotlin11/Kotlin14\n#include <iostream>\n\nint main() {\n    std::cout << \"Fungsi, Parameter, Overload, dan `constexpr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa keuntungan parameter `const T&` untuk objek besar?",
+      "question": "Mengapa ekspresi `when` di Kotlin harus bersifat *exhaustive* saat menangani enum atau sealed class?",
       "options": [
-        "Menghindari salinan dan menjamin fungsi tidak mengubah objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Untuk menjamin saat kompilasi bahwa seluruh kemungkinan cabang nilai telah ditangani tanpa ada skenario yang terlewat.",
+        "Karena mesin JVM membatasi percabangan maksimal 5 kondisi.",
+        "Agar blok `else` tidak memakan memori cache CPU.",
+        "Karena Kotlin tidak mendukung statement default pada switch."
       ],
       "answer": 0,
-      "explanation": "Reference menghindari copy, sedangkan `const` mengekspresikan tidak adanya modifikasi."
+      "explanation": "Exhaustive check memastikan keandalan kode secara komprehensif; compiler melempar error jika ada case baru yang belum ditangani oleh developer."
     }
   },
   {
@@ -186,15 +186,15 @@ const lessons = [
     "content": "# Header, Namespace, Debugging, dan Unit Test Mini\n\n### Materi Inti:\n- Pemisahan `.h` dan `.kotlin`, include guard, dan `#pragma once`.\n- Namespace untuk menghindari nama global yang tabrakan.\n- Assertion, breakpoint, dan unit test sederhana.",
     "code": "// Kotlin Kotlin11/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Header, Namespace, Debugging, dan Unit Test Mini\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa definisi fungsi non-inline sebaiknya tidak diletakkan di header?",
+      "question": "Apa keuntungan menggunakan *Single-Expression Functions* (misal: `fun double(x: Int) = x * 2`)?",
       "options": [
-        "Dapat menyebabkan multiple definition saat linking.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membuat kode lebih ringkas dan compiler dapat melakukan type inference otomatis untuk tipe data return value.",
+        "Fungsi tersebut otomatis berjalan di thread terpisah (multi-threading).",
+        "Mencegah fungsi tersebut dipanggil lebih dari satu kali.",
+        "Menghapus kebutuhan unit test untuk fungsi tersebut."
       ],
       "answer": 0,
-      "explanation": "Header biasanya hanya berisi declaration; definisi ditempatkan di satu translation unit."
+      "explanation": "Single-expression function memanfaatkan ekspresi langsung dengan tanda sama dengan (`=`), memungkinkan compiler menebak return type secara aman dan membuat kode idiomatik."
     }
   },
   {
@@ -208,15 +208,15 @@ const lessons = [
     "content": "# Initialization dan Object Lifetime\n\n### Materi Inti:\n- Automatic, static, thread-local, dan local lifetime.\n- Value initialization, aggregate initialization, dan initializer list.\n- Urutan destruction ketika nested scope berakhir.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Initialization dan Object Lifetime\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan objek automatic lokal dihancurkan?",
+      "question": "Secara default, apakah sebuah `class` di Kotlin bersifat terbuka untuk diwarisi (*inheritable*)?",
       "options": [
-        "Ketika keluar dari scope-nya.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Tidak, semua class di Kotlin secara default bersifat `final`; wajib menggunakan keyword `open` agar bisa diwarisi.",
+        "Ya, semua class di Kotlin bebas diwarisi seperti di Java.",
+        "Hanya class yang memiliki primary constructor yang bisa diwarisi.",
+        "Class di Kotlin hanya bisa diwarisi jika mengimplementasikan interface."
       ],
       "answer": 0,
-      "explanation": "Destruction terjadi secara reverse order terhadap construction di scope yang sama."
+      "explanation": "Kotlin menganut filosofi 'Design and document for inheritance or else prohibit it' dari Effective Java, sehingga semua class berstatus final secara default."
     }
   },
   {
@@ -230,15 +230,15 @@ const lessons = [
     "content": "# Pointer, Reference, dan Address\n\n### Materi Inti:\n- Pointer nullable, reference wajib terinisialisasi, dan pointer arithmetic.\n- Lvalue reference versus rvalue reference.\n- Perbedaan address-of, pointer, dan lifetime.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Pointer, Reference, dan Address\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah reference dapat di-reseat setelah inisialisasi?",
+      "question": "Apa saja fungsi otomatis yang di-generate oleh compiler Kotlin untuk sebuah `data class`?",
       "options": [
-        "Tidak.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`equals()`, `hashCode()`, `toString()`, `componentN()`, dan fungsi `copy()`.",
+        "Metode serialize JSON dan HTTP client.",
+        "Metode hashing password sha-256 dan database migration.",
+        "Hanya konstruktor default tanpa parameter."
       ],
       "answer": 0,
-      "explanation": "Reference adalah alias sejak dibuat dan tidak dapat diarahkan ke objek lain."
+      "explanation": "`data class` mengeliminasi ratusan baris boilerplate POJO Java dengan meng-generate method representasi data standar berdasarkan properti di primary constructor."
     }
   },
   {
@@ -252,15 +252,15 @@ const lessons = [
     "content": "# Struct, Class, dan Invariant\n\n### Materi Inti:\n- Data members, member functions, access control, dan encapsulation.\n- Membangun invariant seperti `balance >= 0`.\n- Memisahkan interface publik dari implementasi internal.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Struct, Class, dan Invariant\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa access default untuk anggota `class`?",
+      "question": "Bagaimana cara kerja metode `.copy()` pada `data class` Kotlin?",
       "options": [
-        "`private`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membuat salinan objek baru dengan mempertahankan nilai properti asli, sambil mengizinkan modifikasi pada properti tertentu secara selektif.",
+        "Menghapus objek lama dari memori dan menggantinya dengan objek baru.",
+        "Membuat referensi pointer kedua ke alamat memori yang sama (shallow alias).",
+        "Mengklon objek menggunakan mekanisme serialisasi biner Java."
       ],
       "answer": 0,
-      "explanation": "`struct` menggunakan `public` sebagai default, sedangkan `class` menggunakan `private`."
+      "explanation": "Fungsi `copy()` sangat penting dalam arsitektur functional dan state management immutable (seperti Redux/MVI) untuk menghasilkan new state secara deklaratif."
     }
   },
   {
@@ -274,15 +274,15 @@ const lessons = [
     "content": "# Const Correctness dan Value Semantics\n\n### Materi Inti:\n- Const object, const member function, dan pass-by-const-reference.\n- Value semantics versus reference semantics.\n- Kapan `mutable` boleh digunakan dan mengapa harus hati-hati.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Const Correctness dan Value Semantics\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bisakah non-const member function dipanggil pada const object?",
+      "question": "Apa perbedaan utama antara `object` deklarasi (Singleton) dan `companion object` di Kotlin?",
       "options": [
-        "Tidak, kecuali member tersebut dinyatakan `mutable`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`companion object` terikat pada kelas induknya dan method-nya bisa dipanggil menggunakan nama kelas (mirip static di Java), sedangkan `object` adalah singleton mandiri.",
+        "`companion object` hanya bisa dibuat satu kali di seluruh aplikasi, sedangkan `object` bisa banyak.",
+        "`object` tidak bisa mengimplementasikan interface, sedangkan `companion object` bisa.",
+        "`companion object` otomatis berjalan di background thread."
       ],
       "answer": 0,
-      "explanation": "`const` member function menjamin objek tidak dimodifikasi secara logis."
+      "explanation": "`companion object` menyediakan fungsi factory method dan konstanta yang terkait langsung dengan namespace kelas tanpa memerlukan kata kunci `static`."
     }
   },
   {
@@ -296,15 +296,15 @@ const lessons = [
     "content": "# `std::string`, `std::string_view`, dan `std::span`\n\n### Materi Inti:\n- `std::string` memiliki data; `string_view` adalah view non-owning.\n- `std::span` menyediakan view atas contiguous storage.\n- Lifetime hazard, dangling view, dan pemilihan interface yang benar.",
     "code": "// Kotlin Kotlin17/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::string`, `std::string_view`, dan `std::span`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa risiko `string_view` yang menunjuk temporary string?",
+      "question": "Apa fungsi dari properti dengan *custom getter* tanpa backing field di Kotlin?",
       "options": [
-        "Dangling pointer dan undefined behavior setelah temporary hancur.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Nilai dihitung ulang setiap kali properti diakses tanpa menyimpan state di memori instance.",
+        "Menyimpan nilai ke dalam database SQLite lokal secara sinkron.",
+        "Mengubah properti menjadi variabel statis thread-safe.",
+        "Mengunci properti agar tidak bisa dibaca oleh thread lain."
       ],
       "answer": 0,
-      "explanation": "`string_view` tidak meningkatkan reference count atau memiliki data."
+      "explanation": "Jika properti memiliki getter seperti `val isAdult get() = age >= 18`, tidak ada field memori yang dialokasikan; ekspresi dievaluasi on-demand saat pemanggilan."
     }
   },
   {
@@ -318,15 +318,15 @@ const lessons = [
     "content": "# RAII dan Penanganan Exception\n\n### Materi Inti:\n- Resource Acquisition Is Initialization sebagai pola utama ownership.\n- Stack unwinding dan destruction saat exception dilempar.\n- Menulis destructor yang tidak me-lempar exception.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII dan Penanganan Exception\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa peran RAII?",
+      "question": "Kapan modifier `lateinit` boleh digunakan pada variabel di Kotlin?",
       "options": [
-        "Mengikat kepemilikan resource dengan lifetime objek.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Hanya pada variabel mutable `var`, tipe non-primitive, dan harus diinisialisasi sebelum diakses pertama kali.",
+        "Pada variabel immutable `val` tipe integer apa saja.",
+        "Pada variabel yang nilainya pasti bernilai null selamanya.",
+        "Hanya di dalam companion object."
       ],
       "answer": 0,
-      "explanation": "Resource dibebaskan otomatis ketika objek RAII keluar dari scope."
+      "explanation": "`lateinit` menunda inisialisasi properti non-null (misal untuk Dependency Injection di Android lifecycle), dan melempar `UninitializedPropertyAccessException` jika diakses sebelum diisi."
     }
   },
   {
@@ -340,15 +340,15 @@ const lessons = [
     "content": "# Constructor, Destructor, dan Initializer List\n\n### Materi Inti:\n- Default, parameterized, copy, dan destructor.\n- Initializer list untuk konstruk anggota.\n- Urutan construction dan destruction.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Constructor, Destructor, dan Initializer List\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa initializer list lebih disukai untuk menginisialisasi anggota?",
+      "question": "Apa perbedaan mendasar antara `List<T>` dan `MutableList<T>` di library standar Kotlin?",
       "options": [
-        "Menghindari default construction lalu assignment.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`List<T>` hanya menyediakan interface read-only tanpa method mutasi (`add`, `remove`), sedangkan `MutableList<T>` mendukung modifikasi elemen.",
+        "`List<T>` disimpan di flash memory, sedangkan `MutableList<T>` di RAM.",
+        "`List<T>` hanya dapat menampung maksimal 10 elemen.",
+        "`MutableList<T>` otomatis thread-safe dan synchronized."
       ],
       "answer": 0,
-      "explanation": "Anggota langsung dibentuk dengan nilai akhir sejak awal."
+      "explanation": "Pemisahan interface read-only (`List`) dan mutable (`MutableList`) mencegah efek samping (side effects) yang tidak diinginkan dalam pemrosesan koleksi."
     }
   },
   {
@@ -362,15 +362,15 @@ const lessons = [
     "content": "# Copy Semantics dan Rule of Three/Five\n\n### Materi Inti:\n- Copy constructor, copy assignment, dan self-assignment.\n- Shallow copy versus deep copy.\n- Copy-and-swap serta kapan menerapkan rule of five.",
     "code": "// Kotlin Kotlin11/Kotlin14\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Semantics dan Rule of Three/Five\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan copy constructor dan copy assignment?",
+      "question": "Mengapa menggunakan `Sequence` (`asSequence()`) lebih efisien daripada operasi rantai `List` biasa untuk koleksi berukuran besar?",
       "options": [
-        "Copy constructor membentuk objek baru; assignment mengganti\u72b6\u6001 objek yang sudah ada.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Sequence melakukan evaluasi secara *lazy* (elemen diproses satu per satu melewati seluruh pipeline) tanpa membuat alokasi koleksi perantara (intermediate collections).",
+        "Sequence menjalankan operasi di GPU multi-core secara otomatis.",
+        "Sequence mengompresi data dengan algoritma LZ4 di memori.",
+        "Sequence otomatis menghapus elemen duplikat secara background."
       ],
       "answer": 0,
-      "explanation": "Keduanya perlu ditangani jika kelas memiliki resource yang harus dimiliki."
+      "explanation": "Rantai operasi pada List biasa (seperti `.map().filter()`) menghasilkan list baru di setiap langkah; Sequence mengevaluasi per-item on-demand saat operasi terminal dipanggil."
     }
   },
   {
@@ -384,15 +384,15 @@ const lessons = [
     "content": "# Operator Overloading\n\n### Materi Inti:\n- Operator arithmetic, comparison, assignment, dan stream.\n- Member operator versus non-member/friend operator.\n- Implicit conversion dan bahaya operator yang mengejutkan.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator Overloading\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Operator mana yang secara umum lebih tepat menjadi non-member?",
+      "question": "Apa perbedaan antara fungsi reduksi `reduce()` dan `fold()` pada koleksi Kotlin?",
       "options": [
-        "Operator simetris seperti `+`, `==`, dan `<<`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`fold()` menerima nilai awal (initial accumulator value) eksplisit, sedangkan `reduce()` menggunakan elemen pertama koleksi sebagai nilai awal.",
+        "`reduce()` mengembalikan koleksi baru, sedangkan `fold()` mengembalikan boolean.",
+        "`fold()` hanya bekerja pada list string, sedangkan `reduce()` pada angka.",
+        "`reduce()` melempar exception jika koleksi berisi lebih dari 100 elemen."
       ],
       "answer": 0,
-      "explanation": "Non-member memungkinkan implicit conversion pada operand kiri."
+      "explanation": "`fold(initial) { acc, elem -> ... }` aman digunakan pada list kosong karena ada nilai awal, sedangkan `reduce` melempar `UnsupportedOperationException` jika list kosong."
     }
   },
   {
@@ -406,15 +406,15 @@ const lessons = [
     "content": "# Inheritance dan Virtual Dispatch\n\n### Materi Inti:\n- Base/derived relationship dan is-a semantics.\n- Virtual function, override, dan dynamic dispatch.\n- Virtual destructor pada base polymorphic.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Inheritance dan Virtual Dispatch\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang terjadi jika base pointer memanggil virtual function overridden di derived?",
+      "question": "Apa output dari fungsi `.flatMap { ... }` pada list of lists?",
       "options": [
-        "Dynamic dispatch memilih override derived.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengubah setiap elemen menjadi koleksi lain lalu menggabungkan (flatten) seluruh sub-koleksi tersebut menjadi satu list tunggal datar.",
+        "Menghapus list yang memiliki ukuran kurang dari 2 elemen.",
+        "Mengubah list menjadi hash map dua dimensi.",
+        "Menyaring elemen yang bernilai ganjil saja."
       ],
       "answer": 0,
-      "explanation": "Virtual dispatch dipilih berdasarkan tipe objektif pada runtime."
+      "explanation": "`flatMap` menggabungkan operasi `.map()` dan `.flatten()`, sangat berguna untuk membongkar struktur data bersarang menjadi satu stream linier."
     }
   },
   {
@@ -428,15 +428,15 @@ const lessons = [
     "content": "# Interface Abstrak dan Polymorphic Design\n\n### Materi Inti:\n- Pure virtual function dan abstract class.\n- Interface sebagai kontrak, bukan implementasi yang bocor.\n- Polymorphic destruction dan prinsip substitusi.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Interface Abstrak dan Polymorphic Design\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti pure virtual function `virtual void draw() = 0;`?",
+      "question": "Bagaimana cara membagi koleksi menjadi dua bagian berdasarkan sebuah predikat kondisi boolean dalam satu langkah?",
       "options": [
-        "Class abstrak mewajibkan derived class menyediakan implementasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan fungsi `.partition { ... }` yang mengembalikan `Pair<List<T>, List<T>>` (lolos kondisi dan gagal kondisi).",
+        "Memanggil fungsi `.filter()` dua kali secara berurutan.",
+        "Menggunakan fungsi `.groupBy()` dengan key integer acak.",
+        "Mengonversi list menjadi SQL query table."
       ],
       "answer": 0,
-      "explanation": "Function murni tidak memiliki body pada base class."
+      "explanation": "Fungsi `.partition { it.score >= 70 }` membagi list secara optimal dalam satu kali iterasi menjadi pasangan list yang memenuhi dan tidak memenuhi syarat."
     }
   },
   {
@@ -450,15 +450,15 @@ const lessons = [
     "content": "# Composition, Policy, dan CRTP\n\n### Materi Inti:\n- Composition over inheritance dan dependency injection.\n- Policy-based design untuk memilih perilaku compile-time.\n- CRTP sebagai static polymorphism.",
     "code": "// Kotlin Kotlin11/Kotlin14\n#include <iostream>\n\nint main() {\n    std::cout << \"Composition, Policy, dan CRTP\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan polymorphism CRTP diselesaikan?",
+      "question": "Apa keunggulan menggunakan `IntArray` dibandingkan `Array<Int>` di Kotlin JVM?",
       "options": [
-        "Pada compile-time.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`IntArray` direpresentasikan sebagai tipe primitif `int[]` di JVM, menghindari overhead alokasi memori boxing/unboxing objek `java.lang.Integer`.",
+        "`Array<Int>` tidak mendukung operasi perulangan for-loop.",
+        "`IntArray` otomatis memperbesar ukuran kapasitasnya seperti ArrayList.",
+        "Tidak ada perbedaan performa sama sekali di runtime JVM."
       ],
       "answer": 0,
-      "explanation": "CRTP menggunakan static dispatch dan tipe derived diketahui saat kompilasi."
+      "explanation": "Array tipe primitif khusus (`IntArray`, `DoubleArray`, dll.) menghemat memori RAM secara signifikan dan meningkatkan performa cache CPU karena data disimpan rapat secara kontigu."
     }
   },
   {
@@ -472,15 +472,15 @@ const lessons = [
     "content": "# Function Templates dan Template Deduction\n\n### Materi Inti:\n- Template parameter, deduction, dan explicit template arguments.\n- Overload resolution antara template dan non-template.\n- Pembatasan interface melalui requiremen operasi.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Function Templates dan Template Deduction\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti template sebagai family of functions?",
+      "question": "Bagaimana cara kerja *Extension Functions* (misal: `fun String.removeSpaces() = ...`) di balik layar?",
       "options": [
-        "Compiler membuat instantiation khusus untuk setiap tipe yang digunakan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Dikompilasi sebagai fungsi statis biasa di mana objek penerima (receiver) dikirimkan sebagai argumen parameter pertama.",
+        "Menyuntikkan bytecode baru langsung ke dalam kelas `java.lang.String` asli saat runtime.",
+        "Mengubah class loader JVM untuk menimpa definisi kelas sistem.",
+        "Membuat subclass baru secara tersembunyi yang mewarisi class String."
       ],
       "answer": 0,
-      "explanation": "Template bukan function runtime generik tunggal."
+      "explanation": "Extension function adalah syntactic sugar murni; compiler membuat static utility method sehingga tidak ada modifikasi class target atau overhead performa runtime."
     }
   },
   {
@@ -494,15 +494,15 @@ const lessons = [
     "content": "# Class Templates dan Instantiation\n\n### Materi Inti:\n- Class template, member definition, dan header placement.\n- Explicit instantiation versus implicit instantiation.\n- Contoh `Box<T>`, `Stack<T>`, dan `Optional<T>`.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Class Templates dan Instantiation\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `Box<int>` dan `Box<double>` merupakan tipe yang sama?",
+      "question": "Apa keunggulan *Sealed Classes* dan *Sealed Interfaces* dalam pemodelan data domain?",
       "options": [
-        "Tidak; keduanya instantiation berbeda.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membatasi hierarki pewarisan hanya pada file/package yang sama, memungkinkan exhaustiveness check pada ekspresi `when` tanpa butuh cabang `else`.",
+        "Mencegah pembuatan objek di dalam thread utama.",
+        "Memaksa semua data class terenkripsi dengan AES-256.",
+        "Hanya bisa digunakan bersama framework Spring Boot."
       ],
       "answer": 0,
-      "explanation": "Tipe template di-instantiation dengan argument tipe yang berbeda."
+      "explanation": "Sealed hierarchy merepresentasikan Algebraic Data Types (ADT), sangat ideal untuk memodelkan Result State (Loading, Success, Error) di aplikasi modern."
     }
   },
   {
@@ -516,15 +516,15 @@ const lessons = [
     "content": "# Partial Specialization, Full Specialization, dan Traits\n\n### Materi Inti:\n- Partial specialization untuk keluarga tipe.\n- Full specialization untuk kasus sangat khusus.\n- Trait pattern dan `std::enable_if`.",
     "code": "// Kotlin Kotlin11/Kotlin14\n#include <iostream>\n\nint main() {\n    std::cout << \"Partial Specialization, Full Specialization, dan Traits\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Partial specialization lebih sering digunakan pada jenis template apa?",
+      "question": "Apa keuntungan menggunakan *Inline Value Classes* (`@JvmInline value class UserId(val value: Long)`)?",
       "options": [
-        "Class template.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memberikan type-safety domain tanpa overhead alokasi objek runtime di heap (dibongkar menjadi tipe primitif aslinya di bytecode).",
+        "Membuat variabel tersebut otomatis terhubung ke database.",
+        "Mempercepat proses download dependensi Gradle.",
+        "Memungkinkan class memiliki banyak properti tanpa constructor."
       ],
       "answer": 0,
-      "explanation": "Function template biasanya diselesaikan dengan overload; class template dapat memiliki partial specialization."
+      "explanation": "Value class membungkus nilai dasar untuk mencegah kesalahan tertukar ID (type confusion) dengan biaya performa zero-cost saat runtime."
     }
   },
   {
@@ -538,15 +538,15 @@ const lessons = [
     "content": "# Variadic Templates dan Fold Expression\n\n### Materi Inti:\n- Parameter pack, pack expansion, dan recursion.\n- Fold expression untuk sum, product, dan logical operations.\n- Penggunaan `std::tuple` dan argument forwarding.",
     "code": "// Kotlin Kotlin11/Kotlin17\n#include <iostream>\n\nint main() {\n    std::cout << \"Variadic Templates dan Fold Expression\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `sizeof...(Ts)`?",
+      "question": "Bagaimana cara mengimplementasikan *Property Delegation* bawaan `by lazy` di Kotlin?",
       "options": [
-        "Mengembalikan jumlah elemen parameter pack.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Properti hanya akan diinisialisasi saat pertama kali diakses, dan secara default thread-safe (synchronized).",
+        "Properti akan diinisialisasi di thread terpisah saat aplikasi pertama kali boot.",
+        "Properti akan dihapus dari RAM setelah 5 detik tidak digunakan.",
+        "Properti hanya bisa diisi dari file konfigurasi YAML."
       ],
       "answer": 0,
-      "explanation": "Operator ellipsis pada ukuran menghitung jumlah template arguments."
+      "explanation": "`by lazy` menunda komputasi inisialisasi yang berat hingga benar-benar dibutuhkan oleh kode, menghemat waktu startup aplikasi dan penggunaan resource."
     }
   },
   {
@@ -557,18 +557,18 @@ const lessons = [
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk\u5f3a\u5236 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
+    "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk强制 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
     "code": "// Kotlin Kotlin14/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Compile-Time Programming dengan `constexpr` dan `consteval`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan `constexpr` dan `consteval`?",
+      "question": "Dalam Generics Kotlin, apa makna dari modifier varians `out` (Covariance) pada `interface Producer<out T>`?",
       "options": [
-        "`constexpr` boleh dieksekusi compile-time atau runtime; `consteval` harus compile-time.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Tipe `T` hanya boleh dihasilkan sebagai output (return value) dan aman untuk subtyping polimorfik (`Producer<String>` adalah subtipe `Producer<Any>`).",
+        "Tipe `T` hanya boleh diterima sebagai input parameter fungsi.",
+        "Menonaktifkan generic type erasure di JVM.",
+        "Memaksa compiler membuang objek keluar dari memori heap."
       ],
       "answer": 0,
-      "explanation": "`consteval` memaksa evaluasi immediate function call."
+      "explanation": "Prinsip PECS (Producer Extends, Consumer Super): `out` berarti kelas tersebut memproduksi nilai tipe T sehingga aman untuk kovariansi tipe turunan."
     }
   },
   {
@@ -582,15 +582,15 @@ const lessons = [
     "content": "# SFINAE, `requires`, dan Early Constraint\n\n### Materi Inti:\n- Substitution failure dan SFINAE.\n- `requires` expression dan constrained template.\n- Overload resolution serta diagnostic yang lebih jelas.",
     "code": "// Kotlin Kotlin11/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"SFINAE, `requires`, dan Early Constraint\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang terjadi pada candidate template yang gagal substitution?",
+      "question": "Apa tujuan dari operator overloading fungsi `operator fun plus(...)` di Kotlin?",
       "options": [
-        "Candidate dihapus dari overload resolution.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengizinkan penggunaan simbol operator matematika `+` pada objek kustom buatan developer secara elegan.",
+        "Menambah kecepatan clock prosesor CPU saat menjumlahkan angka.",
+        "Menggabungkan dua tabel database SQL tanpa query join.",
+        "Menghapus pembagian dengan angka nol."
       ],
       "answer": 0,
-      "explanation": "Itu adalah prinsip SFINAE: failure during substitution is not a hard error."
+      "explanation": "Operator overloading di Kotlin berbasis konvensi nama metode dengan keyword `operator`, memungkinkan ekspresi matematika intuitif pada objek matriks, vektor, atau uang."
     }
   },
   {
@@ -604,15 +604,15 @@ const lessons = [
     "content": "# Ownership Model dan Raw Memory\n\n### Materi Inti:\n- Stack ownership versus heap ownership.\n- `new`, `new[]`, `delete`, dan `delete[]`.\n- Double free, leak, mismatched deallocation, dan undefined behavior.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Ownership Model dan Raw Memory\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Alokasi `new int[10]` harus dibebaskan dengan apa?",
+      "question": "Apa yang dimaksud dengan *Higher-Order Function* di Kotlin?",
       "options": [
-        "`delete[]`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Fungsi yang menerima fungsi lain sebagai parameter, atau mengembalikan sebuah fungsi sebagai return value-nya.",
+        "Fungsi yang dieksekusi dengan hak akses root / superuser di Linux.",
+        "Fungsi yang memiliki lebih dari 10 parameter argumen.",
+        "Fungsi yang ditulis di tingkat paling atas file tanpa class (top-level)."
       ],
       "answer": 0,
-      "explanation": "Array dan non-array allocation memiliki mekanisme deallocation berbeda."
+      "explanation": "Dalam functional programming, fungsi adalah warga kelas satu (first-class citizens) yang dapat dikirim, disimpan, dan dikembalikan layaknya variabel biasa."
     }
   },
   {
@@ -626,15 +626,15 @@ const lessons = [
     "content": "# `std::unique_ptr` dan Exclusive Ownership\n\n### Materi Inti:\n- Exclusive ownership dan move-only semantics.\n- Factory function seperti `std::make_unique`.\n- Custom deleter, array support, `reset`, dan `release`.",
     "code": "// Kotlin Kotlin11/Kotlin14\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::unique_ptr` dan Exclusive Ownership\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil menyalin `unique_ptr`?",
+      "question": "Mengapa kata kunci `inline` sangat penting pada Higher-Order Function yang sering dipanggil?",
       "options": [
-        "Compile-time error.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menghilangkan alokasi objek objek instance `Function` di heap dan overhead virtual call dengan menyalin isi lambda langsung ke tempat pemanggilannya.",
+        "Membuat fungsi tersebut berjalan secara asynchronous di thread terpisah.",
+        "Mengompresi ukuran file APK Android.",
+        "Menghindari batasan memory limit Android."
       ],
       "answer": 0,
-      "explanation": "`unique_ptr` tidak memiliki copy operation untuk menjaga exclusive ownership."
+      "explanation": "Keyword `inline` memerintahkan compiler menanamkan bytecode tubuh fungsi dan lambda langsung di call-site, mengeliminasi alokasi closure dan meningkatkan performa."
     }
   },
   {
@@ -648,15 +648,15 @@ const lessons = [
     "content": "# `std::shared_ptr` dan `std::weak_ptr`\n\n### Materi Inti:\n- Shared ownership, control block, dan reference count.\n- `weak_ptr` untuk optional non-owning reference.\n- Cycle ownership dan penggunaan `lock()`.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::shared_ptr` dan `std::weak_ptr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `weak_ptr::lock()` jika owner terakhir sudah hancur?",
+      "question": "Bagaimana cara membedakan penggunaan scope function `let` dan `apply` di Kotlin?",
       "options": [
-        "Mengembalikan `shared_ptr` kosong.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`let` mengembalikan hasil evaluasi lambda dan merujuk objek via `it`, sedangkan `apply` mengembalikan objek penerima konteks itu sendiri dan merujuk objek via `this`.",
+        "`apply` hanya bisa digunakan untuk variabel null, sedangkan `let` untuk angka.",
+        "`let` otomatis menjalankan operasi di database background thread.",
+        "Keduanya identik dan hanya berbeda nama fungsi."
       ],
       "answer": 0,
-      "explanation": "`weak_ptr` tidak mempertahankan lifetime object."
+      "explanation": "`apply` biasanya digunakan untuk konfigurasi inisialisasi builder objek (`button.apply { text = 'OK' }`), sedangkan `let` sering digunakan untuk transformasi atau null-check."
     }
   },
   {
@@ -670,15 +670,15 @@ const lessons = [
     "content": "# Allocator-Aware Container dan `pmr`\n\n### Materi Inti:\n- Allocator-aware container dan custom allocator.\n- `std::pmr::monotonic_buffer_resource` serta pool lifetime.\n- Allocation failure, pool boundary, dan cache locality.",
     "code": "// Kotlin Kotlin17\n#include <iostream>\n\nint main() {\n    std::cout << \"Allocator-Aware Container dan `pmr`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa memory resource harus hidup lebih lama dari container yang menggunakannya?",
+      "question": "Apa peran modifier `crossinline` pada parameter fungsi lambda di dalam inline function?",
       "options": [
-        "Container dapat melakukan allocation/deallocation selama lifetime-nya.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Melarang lambda melakukan non-local return yang dapat melompat keluar dari fungsi pelingkup luar secara tak terduga.",
+        "Mengizinkan lambda berjalan melintasi batasan thread yang berbeda secara paralel.",
+        "Memaksa lambda dijalankan secara sinkron tanpa jeda waktu.",
+        "Menghapus parameter argumen dari memori stack."
       ],
       "answer": 0,
-      "explanation": "Menghancurkan resource lebih dulu menyebabkan dangling allocator."
+      "explanation": "`crossinline` mencegah eksekusi return statement non-lokal di dalam lambda yang diteruskan ke konteks eksekusi lain (seperti objek Runnable atau thread lain)."
     }
   },
   {
@@ -692,15 +692,15 @@ const lessons = [
     "content": "# RAII Wrapper dan Safe Resource Patterns\n\n### Materi Inti:\n- Wrapper untuk file, socket, mutex, dan heap resource.\n- `lock_guard` versus `unique_lock`.\n- Scope guard untuk cleanup lintas jalur exception.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII Wrapper dan Safe Resource Patterns\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan `std::lock_guard` melepaskan mutex?",
+      "question": "Bagaimana konsep *Type-Safe Builders* di Kotlin diimplementasikan (misal pada Kotlinx.html atau Jetpack Compose)?",
       "options": [
-        "Ketika lock guard keluar dari scope.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggabungkan Higher-Order Function dengan *Function Literals with Receiver* (`T.() -> Unit`).",
+        "Menggunakan generator kode compiler plugin compiler eksternal tanpa fungsi native.",
+        "Menggunakan refleksi dinamis tingkat tinggi untuk membaca variabel.",
+        "Menggunakan interpreter skrip Python di dalam runtime JVM."
       ],
       "answer": 0,
-      "explanation": "Destruction lock guard memanggil unlock secara otomatis."
+      "explanation": "Lambda with receiver memungkinkan tubuh lambda mengakses metode dan properti objek target secara implisit via `this`, menciptakan Domain-Specific Language (DSL) yang elegan."
     }
   },
   {
@@ -714,15 +714,15 @@ const lessons = [
     "content": "# Mendeteksi Memory Bug dengan Sanitizer\n\n### Materi Inti:\n- AddressSanitizer, UndefinedBehaviorSanitizer, dan Valgrind.\n- Dangling reference, use-after-free, overflow, dan out-of-bounds.\n- Menjalankan sanitizer di native dan WebAssembly.",
     "code": "// Kotlin Kotlin11/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Mendeteksi Memory Bug dengan Sanitizer\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mana yang melakukan bounds checking: `operator[]` atau `at()`?",
+      "question": "Apa arti dari konsep fungsi *Pure Function* dalam paradigma fungsional Kotlin?",
       "options": [
-        "`at()`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Fungsi yang selalu menghasilkan output identik untuk input yang sama dan tidak memicu efek samping (side effects) ke luar scope-nya.",
+        "Fungsi yang tidak menggunakan komentar sama sekali di dalam tubuh kodenya.",
+        "Fungsi yang hanya menggunakan tipe data primitif tanpa objek.",
+        "Fungsi yang ditulis dalam satu baris kode tanpa titik koma."
       ],
       "answer": 0,
-      "explanation": "`operator[]` tidak melakukan bounds check dan dapat menyebabkan undefined behavior."
+      "explanation": "Pure function bersifat deterministik dan aman terhadap konkurensi karena tidak membaca atau memodifikasi mutable global state."
     }
   },
   {
@@ -736,15 +736,15 @@ const lessons = [
     "content": "# Value Category: Lvalue, Xvalue, dan Prvalue\n\n### Materi Inti:\n- Lvalue, xvalue, prvalue, dan named rvalue reference.\n- `std::move` sebagai cast eksplisit.\n- Decay type dan array-to-pointer decay.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Value Category: Lvalue, Xvalue, dan Prvalue\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah named rvalue reference selalu berupa rvalue saat digunakan?",
+      "question": "Mengapa *Coroutines* disebut sebagai 'Lightweight Threads' dibandingkan thread sistem operasi native?",
       "options": [
-        "Tidak; named rvalue reference adalah lvalue.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Ribuan coroutine dapat berjalan di atas segelintir thread OS melalui mekanisme suspensi non-blocking tanpa overhead context-switch level kernel.",
+        "Coroutine tidak menggunakan memori RAM sama sekali saat berjalan.",
+        "Coroutine hanya bisa mengeksekusi operasi matematika sederhana.",
+        "Coroutine secara otomatis mematikan thread OS jika kehabisan memori."
       ],
       "answer": 0,
-      "explanation": "Nama objek tetap memiliki lvalue category meskipun tipe referensinya rvalue."
+      "explanation": "Satu thread OS membutuhkan ~1MB stack memory, sedangkan coroutine hanya berupa objek kecil di heap yang dapat ditangguhkan (*suspend*) tanpa memblokir thread fisik."
     }
   },
   {
@@ -758,15 +758,15 @@ const lessons = [
     "content": "# Move Constructor dan Move Assignment\n\n### Materi Inti:\n- Move operation untuk mengambil resource.\n- Source harus berada dalam valid tetapi unspecified state.\n- Move constructor idealnya `noexcept` agar container dapat memindahkan.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Move Constructor dan Move Assignment\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah move constructor selalu menghindari salinan?",
+      "question": "Apa perbedaan mendasar antara coroutine builder `launch` dan `async`?",
       "options": [
-        "Tidak; dapat fallback ke copy atau melakukan salinan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`launch` mengembalikan `Job` (fire-and-forget tanpa mengembalikan nilai hasil), sedangkan `async` mengembalikan `Deferred<T>` yang hasilnya ditunggu via `.await()`.",
+        "`launch` berjalan di background, sedangkan `async` memblokir main thread UI.",
+        "`async` tidak dapat menangani exception.",
+        "`launch` hanya bisa dijalankan satu kali seumur hidup aplikasi."
       ],
       "answer": 0,
-      "explanation": "Move operation hanya memberi kesempatan untuk perpindahan; implementasinya tetap menentukan."
+      "explanation": "`async` dirancang khusus untuk komputasi paralel yang memproduksi nilai balikan (`Deferred` adalah representasi promise ringan di Kotlin)."
     }
   },
   {
@@ -780,15 +780,15 @@ const lessons = [
     "content": "# Perfect Forwarding\n\n### Materi Inti:\n- Forwarding reference dan `auto&&`.\n- `std::forward<T>` untuk mempertahankan value category.\n- Argument unwrapping dengan `std::unwrap_reference`.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Perfect Forwarding\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan `std::forward<T>(t)`?",
+      "question": "Apa yang dimaksud dengan prinsip *Structured Concurrency* di Kotlin Coroutines?",
       "options": [
-        "Mempertahankan value category saat meneruskan argument.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Coroutine baru hanya bisa diluncurkan di dalam `CoroutineScope` spesifik yang menjamin lifecycle, pembatalan terkoordinasi, dan propagasi error anak ke induk.",
+        "Membatasi jumlah coroutine yang berjalan maksimal 4 proses di seluruh aplikasi.",
+        "Mengharuskan semua kode asinkron ditulis di dalam satu file tunggal.",
+        "Memaksa coroutine menunggu jaringan internet tersambung kembali."
       ],
       "answer": 0,
-      "explanation": "Tanpa forward, argument dapat berubah menjadi lvalue."
+      "explanation": "Structured Concurrency mencegah kebocoran coroutine (coroutine leaks); jika scope induk dibatalkan, semua child coroutines di dalamnya otomatis ikut dibatalkan."
     }
   },
   {
@@ -802,15 +802,15 @@ const lessons = [
     "content": "# Copy Elision, NRVO, dan Guaranteed Move\n\n### Materi Inti:\n- Copy elision dan Named Return Value Optimization.\n- Prvalue construction langsung ke result object.\n- `std::move` yang tidak perlu dapat menghambat copy elision.",
     "code": "// Kotlin Kotlin17\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Elision, NRVO, dan Guaranteed Move\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dapat dilakukan compiler pada `return Vec{};`?",
+      "question": "Dispatcher manakah yang paling tepat digunakan untuk operasi I/O intensif (pembacaan file disk, query database, atau HTTP request)?",
       "options": [
-        "Membentuk result object langsung tanpa move.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`Dispatchers.IO`",
+        "`Dispatchers.Main`",
+        "`Dispatchers.Default`",
+        "`Dispatchers.Unconfined`"
       ],
       "answer": 0,
-      "explanation": "Prvalue dapat di-elide secara dijamin pada banyak kondisi Kotlin17."
+      "explanation": "`Dispatchers.IO` didukung oleh pool thread elastis yang dapat berkembang hingga puluhan thread untuk menangani operasi blocking I/O tanpa menghambat komputasi CPU."
     }
   },
   {
@@ -824,15 +824,15 @@ const lessons = [
     "content": "# STL Container dan Allocation Strategy\n\n### Materi Inti:\n- Tradeoff vector, deque, list, map, set, dan unordered_map.\n- Iterator invalidation, reserve, resize, dan shrink-to-fit.\n- Copy versus move behavior pada container.",
     "code": "// Kotlin Kotlin11/Kotlin17\n#include <iostream>\n\nint main() {\n    std::cout << \"STL Container dan Allocation Strategy\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa perbedaan `reserve(n)` dan `resize(n)` pada vector?",
+      "question": "Apa perbedaan perilaku penanganan error antara `Job` standar dan `SupervisorJob` dalam CoroutineScope?",
       "options": [
-        "`reserve` mengubah capacity; `resize` mengubah size.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Pada `Job` standar, kegagalan satu child coroutine akan membatalkan induk dan semua saudara lainnya; pada `SupervisorJob`, kegagalan anak diisolasi tanpa membatalkan saudara lain.",
+        "`SupervisorJob` otomatis me-restart aplikasi jika terjadi error.",
+        "`SupervisorJob` mengabaikan semua try-catch block di dalam kode.",
+        "`SupervisorJob` tidak dapat dijalankan di perangkat mobile Android."
       ],
       "answer": 0,
-      "explanation": "Capacity menyediakan ruang alokasi, sedangkan size menentukan jumlah elemen aktif."
+      "explanation": "`SupervisorJob` sangat vital untuk arsitektur UI/Server di mana kegagalan satu request (misal gagal ambil avatar) tidak boleh menggugurkan request lain yang sedang berjalan."
     }
   },
   {
@@ -846,15 +846,15 @@ const lessons = [
     "content": "# In-Place Construction dengan `emplace`, `optional`, dan `variant`\n\n### Materi Inti:\n- `emplace_back` dan konstruksi langsung di dalam container.\n- `std::optional<T>::emplace` untuk optional move-only value.\n- `std::variant` dan pemilihan alternative secara eksplisit.",
     "code": "// Kotlin Kotlin17/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan `emplace`?",
+      "question": "Bagaimana sebuah coroutine yang sedang menjalankan loop komputasi berat dapat merespons pembatalan (*cancellation*) secara kooperatif?",
       "options": [
-        "Membentuk objek langsung di lokasi penyimpanan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Secara berkala memanggil fungsi `yield()` atau memeriksa properti `isActive` di dalam loop perulangan.",
+        "Coroutine otomatis berhenti seketika tanpa perlu penanganan tambahan.",
+        "Menutup thread JVM secara paksa dari sistem operasi.",
+        "Menghapus variabel iterator di tengah perulangan."
       ],
       "answer": 0,
-      "explanation": "Ini mengurangi temporary dan penting untuk move-only types."
+      "explanation": "Pembatalan coroutine bersifat kooperatif; jika loop CPU tidak memanggil suspending function atau tidak memeriksa `ensureActive()` / `isActive`, pembatalan akan tertunda."
     }
   },
   {
@@ -868,15 +868,15 @@ const lessons = [
     "content": "# Iterator dan Standard Algorithms\n\n### Materi Inti:\n- Iterator categories dan range begin/end.\n- `find`, `sort`, `count`, `transform`, dan algorithm contracts.\n- Lambda expression untuk operasi lokal.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Iterator dan Standard Algorithms\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Alasan apa yang dibutuhkan `std::sort` pada seluruh range?",
+      "question": "Apa perbedaan mendasar antara *Cold Stream* (`Flow`) dan *Hot Stream* (`StateFlow` / `SharedFlow`)?",
       "options": [
-        "Random-access iterator.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Cold Flow hanya mulai memproduksi data saat ada collector yang aktif mendengarkan, sedangkan Hot Flow memproduksi data terlepas dari ada atau tidaknya observer.",
+        "Cold Flow disimpan di server cloud, sedangkan Hot Flow disimpan di RAM lokal.",
+        "Hot Flow hanya dapat mengirim satu nilai saja seumur hidup aplikasi.",
+        "Cold Flow tidak mendukung operator transformasi seperti filter dan map."
       ],
       "answer": 0,
-      "explanation": "`std::sort` memerlukan kemampuan akses acak untuk strategi sorting-nya."
+      "explanation": "`Flow` standar bersifat dingin (mirip pemanggilan fungsi yang diulang per collector), sedangkan `StateFlow` selalu menyimpan nilai state terakhir di memori dan menyiarkannya ke banyak collector."
     }
   },
   {
@@ -890,15 +890,15 @@ const lessons = [
     "content": "# Ranges Views: Lazy dan Non-Owning\n\n### Materi Inti:\n- `views::filter`, `transform`, `take`, dan `drop`.\n- View versus owning range.\n- Lazy evaluation dan lifetime adaptor.",
     "code": "// Kotlin Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Ranges Views: Lazy dan Non-Owning\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan view ranges biasanya dieksekusi?",
+      "question": "Apa karakteristik utama dari `StateFlow` di arsitektur modern Android/KMP?",
       "options": [
-        "Ketika range di-iterate atau dikonsumsi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memiliki nilai awal (initial value), mempertahankan state terakhir via properti `.value`, dan hanya mengemisikan nilai baru jika berbeda dari nilai sebelumnya (*conflation*).",
+        "Menghapus data state setiap kali aplikasi berpindah layar.",
+        "Hanya bisa diakses dari background thread tanpa akses UI.",
+        "Otomatis menyimpan data ke disk storage SQLite."
       ],
       "answer": 0,
-      "explanation": "Views memisahkan deklarasi transformasi dari eksekusi."
+      "explanation": "`StateFlow` adalah pengganti modern untuk `LiveData`, dirancang khusus untuk memegang observable state pada ViewModel dan terintegrasi mulus dengan UI declarative."
     }
   },
   {
@@ -912,15 +912,15 @@ const lessons = [
     "content": "# Range Algorithms dan Range Concepts\n\n### Materi Inti:\n- `std::ranges::sort`, `find`, dan `for_each`.\n- Input, output, forward, sortable, dan mutable range requirements.\n- Mengurangi manual iterator arithmetic.",
     "code": "// Kotlin Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Range Algorithms dan Range Concepts\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bagaimana range algorithms menemukan awal dan akhir range?",
+      "question": "Kapan operator `flowOn(Dispatchers.IO)` harus disisipkan di dalam rantai pemrosesan Flow?",
       "options": [
-        "Melalui range protocol begin/end.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Untuk mengubah konteks dispatcher pengeksekusi operator-operator aliran data sebelumnya di hulu (upstream) tanpa memengaruhi collector di hilir.",
+        "Untuk mengubah thread tempat fungsi `collect()` dipanggil.",
+        "Untuk menghentikan aliran flow secara sepihak.",
+        "Hanya saat flow memproses data audio."
       ],
       "answer": 0,
-      "explanation": "Ranges mengurangi ketergantungan pada iterator manual yang tidak konsisten."
+      "explanation": "`flowOn` menjaga prinsip *Context Preservation*; ia hanya mengatur thread untuk produser upstream, sementara collector di downstream tetap berjalan di thread asalnya."
     }
   },
   {
@@ -934,15 +934,15 @@ const lessons = [
     "content": "# Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\n\n### Materi Inti:\n- `views::zip` untuk beberapa range paralel.\n- `views::chunk`, `slide`, dan `enumerate`.\n- Tuple-like elements, overflow behavior, dan lifetime.",
     "code": "// Kotlin Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa hasil `views::chunk(3)`?",
+      "question": "Apa fungsi operator `.debounce(300L)` pada aliran data input pencarian pengguna (search query)?",
       "options": [
-        "Membagi range menjadi sub-range berisi maksimal tiga elemen.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menunda emisi nilai dan membatalkan emisi sebelumnya jika ada karakter baru yang diketik dalam rentang waktu 300 milidetik, mencegah spam API call.",
+        "Mempercepat waktu pengetikan pengguna sebanyak 300%.",
+        "Menyaring kata-kata kasar dari input teks pengguna.",
+        "Menyimpan teks pencarian ke riwayat browser secara offline."
       ],
       "answer": 0,
-      "explanation": "Chunk memperlakukan elemen sebagai kelompok kecil."
+      "explanation": "Debounce adalah teknik krusial dalam reactive programming untuk menstabilkan input pengguna yang cepat, hanya memicu request saat pengguna berhenti mengetik sejenak."
     }
   },
   {
@@ -956,15 +956,15 @@ const lessons = [
     "content": "# Error Value dengan `std::expected` dan `std::optional`\n\n### Materi Inti:\n- `optional<T>` untuk absence tanpa error detail.\n- `expected<T,E>` untuk success atau error terstruktur.\n- Composing operations dengan `and_then`, `transform`, dan `or_else`.",
     "code": "// Kotlin Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Error Value dengan `std::expected` dan `std::optional`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa representasi utama `std::expected<T, E>`?",
+      "question": "Bagaimana cara menangani *Backpressure* saat produser Flow menghasilkan data lebih cepat daripada kemampuan collector memprosesnya?",
       "options": [
-        "Satu dari dua state: value `T` atau error `E`.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan strategi buffer seperti `.buffer()`, `.conflate()` (hanya ambil data terbaru), atau `.collectLatest()` (batalkan proses lama saat data baru tiba).",
+        "Mematikan koneksi internet pengguna.",
+        "Menghentikan aplikasi dengan OutOfMemoryException.",
+        "Memaksa produser berhenti selamanya."
       ],
       "answer": 0,
-      "explanation": "Expected lebih informatif daripada optional ketika operasi dapat gagal dengan alasan."
+      "explanation": "Kotlin Flow menyediakan operator mitigasi backpressure yang fleksibel, memastikan collector yang lambat tidak menyebabkan tumpukan memori tak terkendali."
     }
   },
   {
@@ -978,15 +978,15 @@ const lessons = [
     "content": "# API Modern Kotlin20/23: Format, Print, Numbers, dan `mdspan`\n\n### Materi Inti:\n- `std::format`, `std::print`, dan feature-test macros.\n- `std::numbers` untuk konstanta numerik standar.\n- `std::mdspan` untuk multidimensional view tanpa ownership.",
     "code": "// Kotlin Kotlin20/Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"API Modern Kotlin20/23: Format, Print, Numbers, dan `mdspan`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `std::print` dalam Kotlin23?",
+      "question": "Mengapa pustaka *Turbine* sangat populer digunakan untuk unit testing Kotlin Flow?",
       "options": [
-        "Menulis formatted text langsung ke stdout.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menyediakan API testing terstruktur (`flow.test { awaitItem(); awaitComplete() }`) untuk memverifikasi setiap emisi data reaktif secara deterministik.",
+        "Mempercepat kompilasi file Kotlin menjadi WebAssembly.",
+        "Menggantikan fungsi MockK di testing database.",
+        "Membuat mock server HTTP otomatis."
       ],
       "answer": 0,
-      "explanation": "`print` mengurangi kebutuhan membuat intermediate string."
+      "explanation": "Turbine memungkinkan developer menguji aliran data asinkron secara berurutan dan mengassert event (item, error, complete) tanpa perlu sleep time yang rentan flaky."
     }
   },
   {
@@ -1000,15 +1000,15 @@ const lessons = [
     "content": "# Thread Dasar, Join, dan Detach\n\n### Materi Inti:\n- Membuat, menjalankan, `join`, dan `detach` thread.\n- Lifetime thread dan bahaya detach tanpa koordinasi.\n- Data race versus race condition.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Dasar, Join, dan Detach\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi `std::thread::join()`?",
+      "question": "Bagaimana mekanisme deklarasi `expect` dan `actual` bekerja dalam arsitektur Kotlin Multiplatform (KMP)?",
       "options": [
-        "Menunggu thread selesai sebelum melanjutkan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "`expect` dideklarasikan di modul `commonMain` sebagai kontrak antarmuka bersama, sedangkan `actual` diimplementasikan secara spesifik di modul platform masing-masing (androidMain, iosMain).",
+        "`expect` digunakan untuk kode backend, sedangkan `actual` untuk frontend web.",
+        "`expect` otomatis diubah menjadi kode bahasa Swift oleh compiler Apple.",
+        "`actual` adalah annotation untuk fungsi unit test otomatis."
       ],
       "answer": 0,
-      "explanation": "Join memastikan lifetime dan hasil thread selesai sebelum scope berlanjut."
+      "explanation": "Mekanisme `expect/actual` memungkinkan shared logic di common module memanggil API spesifik platform (seperti Bluetooth atau File System) tanpa kehilangan integritas tipe saat kompilasi."
     }
   },
   {
@@ -1022,15 +1022,15 @@ const lessons = [
     "content": "# Mutex, `lock_guard`, dan Condition Variable\n\n### Materi Inti:\n- Critical section dan mutual exclusion.\n- RAII locking dengan `lock_guard` dan `unique_lock`.\n- Condition variable, predicate loop, notify-one/all.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"Mutex, `lock_guard`, dan Condition Variable\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Mengapa condition variable harus digunakan dalam loop predicate?",
+      "question": "Apa keunggulan menggunakan HTTP client *Ktor Client* dalam project KMP?",
       "options": [
-        "Untuk menangani spurious wakeup dan kondisi yang berubah.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Arsitektur engine yang modular dan multiplatform, menggunakan engine native (OkHttp di Android, Darwin di iOS/macOS, Curl di Desktop) dengan API Kotlin bersama.",
+        "Ktor tidak memerlukan koneksi internet untuk mengunduh data web.",
+        "Ktor secara otomatis membobol autentikasi firewall server.",
+        "Ktor hanya mendukung format data XML kuno."
       ],
       "answer": 0,
-      "explanation": "Notify tidak membuktikan kondisi yang diinginkan sudah terpenuhi."
+      "explanation": "Ktor Client menyediakan abstraction layer jaringan asinkron bertenaga Coroutines yang berjalan mulus di seluruh target sistem operasi tanpa duplikasi kode networking."
     }
   },
   {
@@ -1044,15 +1044,15 @@ const lessons = [
     "content": "# Atomic dan Memory Ordering\n\n### Materi Inti:\n- Atomic load/store, fetch-add, compare-exchange.\n- Relaxed, acquire, release, dan sequential consistency.\n- Lock-free atomic dan tradeoff performance.",
     "code": "// Kotlin Kotlin11/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Atomic dan Memory Ordering\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dijamin atomic relaxed?",
+      "question": "Bagaimana library *SQLDelight* menjamin type-safety pada database di multiplatform?",
       "options": [
-        "Atomicity operation, tetapi tidak memberi global ordering antar thread.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membaca skema query SQL murni secara statis dan meng-generate kode Kotlin type-safe yang memetakan kolom database ke model data saat waktu kompilasi.",
+        "Mengubah database SQLite menjadi server PostgreSQL di cloud.",
+        "Menghapus syntax error di SQL secara otomatis tanpa memberitahu developer.",
+        "Hanya mendukung penyimpanan data sementara di cookie browser."
       ],
       "answer": 0,
-      "explanation": "Relaxed cocok untuk counter murni, bukan untuk melindungi data kompleks."
+      "explanation": "SQLDelight membalik paradigma ORM tradisional: SQL adalah single source of truth, dan compiler memverifikasi sintaks query SQL secara ketat saat build time."
     }
   },
   {
@@ -1066,15 +1066,15 @@ const lessons = [
     "content": "# `std::async`, Future, dan Task\n\n### Materi Inti:\n- Launch policy dan asynchronous execution.\n- Future/get, exception propagation, dan timeout.\n- Lifetime task dan bahaya menunggu terlalu lama.",
     "code": "// Kotlin Kotlin11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::async`, Future, dan Task\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa yang dilakukan `future::get()`?",
+      "question": "Apa konsep arsitektur di balik *Compose Multiplatform* (Desktop, Android, iOS)?",
       "options": [
-        "Memblokir sampai result tersedia, lalu mengembalikan value atau melempar exception.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Rendering UI deklaratif berbasis canvas grafis Skia, mengeksekusi logika UI yang sama persis di seluruh sistem operasi dengan performa 60 FPS native.",
+        "Menampilkan halaman web HTML di dalam WebView tersembunyi.",
+        "Menerjemahkan kode Kotlin menjadi kode Java Swing di masa lampau.",
+        "Memerlukan emulator Android aktif untuk berjalan di iPhone."
       ],
       "answer": 0,
-      "explanation": "Future menyalin exception task ke pemanggil get."
+      "explanation": "Compose Multiplatform berbagi pohon logika deklaratif dan engine grafis yang sama, memberikan kebebasan berbagi 100% UI code atau hanya sebagian state presentation."
     }
   },
   {
@@ -1088,15 +1088,15 @@ const lessons = [
     "content": "# Thread Pool, Deadlock, dan Concurrency Pitfalls\n\n### Materi Inti:\n- Work queue, worker lifetime, dan task scheduling.\n- Deadlock, starvation, ABA, false sharing, dan lock ordering.\n- Desain bounded concurrency dan backpressure.",
     "code": "// Kotlin Kotlin11/Kotlin17\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Pool, Deadlock, dan Concurrency Pitfalls\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Prinsip apa yang mencegah banyak deadlock sederhana?",
+      "question": "Bagaimana cara membagikan View Model / State Management di KMP agar kompatibel dengan SwiftUI di iOS?",
       "options": [
-        "Jangan memegang mutex sambil menunggu resource milik thread lain.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mengekspor StateFlow sebagai shared state yang diobservasi di iOS menggunakan adapter Combine atau Swift async-await sequence.",
+        "Mengubah ViewModel menjadi file Storyboard XML Apple.",
+        "Memaksa developer iOS menulis ulang seluruh kode di Objective-C.",
+        "Mengirimkan state melalui socket UDP lokal."
       ],
       "answer": 0,
-      "explanation": "Gunakan lock ordering tetap atau release lock sebelum menunggu."
+      "explanation": "Arsitektur MVI/MVVM modern memusatkan state logic di common Kotlin code, sehingga tim iOS cukup menghubungkan UI SwiftUI murni ke flow state yang dipancarkan."
     }
   },
   {
@@ -1110,15 +1110,15 @@ const lessons = [
     "content": "# Pengantar Coroutine: Suspension dan Resumption\n\n### Materi Inti:\n- Coroutine frame, promise object, dan awaiter.\n- `co_await`, `co_yield`, dan `co_return`.\n- Perbedaan blocking thread dengan cooperative suspension.",
     "code": "// Kotlin Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Pengantar Coroutine: Suspension dan Resumption\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa syarat utama ekspresi pada `co_await`?",
+      "question": "Apa format output biner yang dihasilkan Kotlin/Native saat menargetkan sistem operasi iOS?",
       "options": [
-        "Harus merupakan awaitable yang dapat diterima awaiter.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Framework Apple Objective-C / Swift native binary (`.framework` atau `.xcframework`).",
+        "File eksekusi biner `.exe` Windows.",
+        "File `.jar` yang membutuhkan instalasi JVM di perangkat iPhone.",
+        "Skrip JavaScript terkompresi."
       ],
       "answer": 0,
-      "explanation": "Compiler membutuhkan operasi await_ready, await_suspend, dan await_resume."
+      "explanation": "Kotlin/Native mengompilasi kode Kotlin menggunakan backend LLVM menjadi binary kode mesin asli yang dapat langsung di-link oleh Xcode tanpa overhead virtual machine."
     }
   },
   {
@@ -1132,15 +1132,15 @@ const lessons = [
     "content": "# Membangun Coroutine dari Komponen Dasar\n\n### Materi Inti:\n- Promise methods: `return_value`, `yield_value`, `initial_suspend`, dan `final_suspend`.\n- Coroutine return object dan exception propagation.\n- Mengapa coroutine bukan thread.",
     "code": "// Kotlin Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Membangun Coroutine dari Komponen Dasar\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa peran `promise_type`?",
+      "question": "Apa fungsi anotasi `@JvmStatic` pada fungsi di dalam `companion object`?",
       "options": [
-        "Mendefinisikan interface dan state khusus coroutine.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memerintahkan compiler meng-generate metode statis asli di level bytecode kelas Java induk agar dapat dipanggil seperti `Class.method()` dari Java.",
+        "Menyimpan nilai variabel di database Redis server.",
+        "Mencegah fungsi dipanggil dari bahasa Kotlin.",
+        "Membuat fungsi menjadi synchronized thread-safe secara otomatis."
       ],
       "answer": 0,
-      "explanation": "Compiler menggunakan promise type untuk membangun coroutine frame dan return object."
+      "explanation": "Tanpa `@JvmStatic`, pemanggil dari kode Java harus mengakses instance companion secara eksplisit via `Class.Companion.method()`."
     }
   },
   {
@@ -1154,15 +1154,15 @@ const lessons = [
     "content": "# Async/Await dengan Executor dan Cancellation\n\n### Materi Inti:\n- Custom awaiter dan executor policy.\n- Exception propagation, timeout, dan cancellation token.\n- Composing async operations tanpa nested blocking.",
     "code": "// Kotlin Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Async/Await dengan Executor dan Cancellation\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `std::async` memiliki cancellation token standar?",
+      "question": "Kapan anotasi `@JvmOverloads` sangat berguna saat mengekspor class Kotlin ke Java?",
       "options": [
-        "Tidak.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Meng-generate overload konstruktor/metode Java ganda secara otomatis untuk setiap parameter yang memiliki nilai default di Kotlin.",
+        "Mengizinkan metode memiliki nama yang sama dengan keyword Java.",
+        "Menonaktifkan batasan jumlah parameter pada JVM.",
+        "Mengubah semua tipe data integer menjadi long di Java."
       ],
       "answer": 0,
-      "explanation": "Cancellation harus dirancang secara kooperatif atau menggunakan abstraction lain."
+      "explanation": "Java tidak mendukung default argument syntax; `@JvmOverloads` menciptakan metode versi 1 parameter, 2 parameter, dst., sehingga class ramah dipanggil dari Java legacy."
     }
   },
   {
@@ -1176,15 +1176,15 @@ const lessons = [
     "content": "# Generator dengan `std::generator` Kotlin23\n\n### Materi Inti:\n- `co_yield` sebagai lazy producer.\n- Backpressure, range protocol, dan lifetime iterator.\n- Menggabungkan generator dengan ranges.",
     "code": "// Kotlin Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Generator dengan `std::generator` Kotlin23\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Berapa banyak nilai yang dihasilkan generator per resume?",
+      "question": "Bagaimana cara kerja library *kotlinx.serialization* tanpa overhead Java Reflection?",
       "options": [
-        "Satu nilai per `co_yield` yang dicapai.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan compiler plugin yang menghasilkan serializer serializer biner type-safe langsung pada saat kompilasi (`@Serializable`).",
+        "Membaca file JSON secara manual baris demi baris menggunakan regex.",
+        "Mengunggah payload JSON ke server eksternal untuk diproses.",
+        "Hanya mendukung serialisasi tipe string primitif."
       ],
       "answer": 0,
-      "explanation": "Generator menghentikan eksekusi setiap kaliyield dan melanjutkan saat iterator maju."
+      "explanation": "Karena tidak menggunakan runtime reflection, `kotlinx.serialization` sangat cepat, hemat memori, dan sepenuhnya kompatibel dengan Kotlin/Native dan WebAssembly."
     }
   },
   {
@@ -1198,15 +1198,15 @@ const lessons = [
     "content": "# Concepts dan Constrained Overload\n\n### Materi Inti:\n- `requires` expression dan named concept.\n- Constraint satisfaction dan overload resolution.\n- Mengganti SFINAE noise dengan diagnostic yang jelas.",
     "code": "// Kotlin Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Concepts dan Constrained Overload\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan concept dievaluasi?",
+      "question": "Apa keuntungan utama menggunakan Gradle Kotlin DSL (`build.gradle.kts`) dibanding Groovy tradisional?",
       "options": [
-        "Selama constraint satisfaction pada kompilasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memberikan autocompletion cerdas, refactoring aman, dan validasi tipe compile-time langsung di dalam build script.",
+        "Mempercepat download package Maven hingga 10 kali lipat.",
+        "Menghapus kebutuhan instalasi Java SDK di komputer.",
+        "Menolak build jika proyek memiliki lebih dari 3 library eksternal."
       ],
       "answer": 0,
-      "explanation": "Concept membatasi kandidat yang dapat dipilih compiler."
+      "explanation": "Kotlin DSL menghadirkan kenyamanan IDE kelas satu pada konfigurasi build, mengeliminasi kesalahan pengetikan nama dependency atau plugin yang sering terjadi di Groovy."
     }
   },
   {
@@ -1220,15 +1220,15 @@ const lessons = [
     "content": "# Custom Range, `view`, dan `borrowed_range`\n\n### Materi Inti:\n- Range requirements dan `range_reference_t`.\n- View, borrowed range, dan adaptor customization.\n- `views::as_const`, `cache_latest`, `chunk`, `slide`, dan `enumerate`.",
     "code": "// Kotlin Kotlin20/Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Custom Range, `view`, dan `borrowed_range`\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa arti `borrowed_range`?",
+      "question": "Apa fungsi fitur *Version Catalogs* (`libs.versions.toml`) pada proyek multi-modul Gradle modern?",
       "options": [
-        "Iterator tetap valid setelah range temporary dihancurkan.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Sentralisasi manajemen versi dependensi dan plugin di satu file terpusat yang dapat diakses secara type-safe di seluruh sub-modul.",
+        "Menghitung total ukuran file biner aplikasi sebelum di-compile.",
+        "Membatasi hak akses developer junior terhadap file kode sumber.",
+        "Menyimpan password database proyek secara publik."
       ],
       "answer": 0,
-      "explanation": "Requirement ini mencegah dangling iterator pada adaptor ranges."
+      "explanation": "Version Catalog adalah best practice resmi Gradle untuk mencegah fragmentasi versi library antar modul dan menyederhanakan update dependency berkala."
     }
   },
   {
@@ -1242,15 +1242,15 @@ const lessons = [
     "content": "# Modern Generic Design: Templates + Concepts + Ranges\n\n### Materi Inti:\n- Menggabungkan constrained template, range algorithms, dan move-only values.\n- API generik dengan error type dan no unnecessary copy.\n- Menulis benchmark serta test matrix untuk beberapa tipe.",
     "code": "// Kotlin Kotlin20/Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Modern Generic Design: Templates + Concepts + Ranges\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Requirement apa yang diperlukan `std::ranges::sort`?",
+      "question": "Bagaimana cara menangani kata kunci Java yang bertabrakan dengan identifier Kotlin (seperti pemanggilan method `is()` atau `in()`)?",
       "options": [
-        "Range harus sortable dan mutable.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Membungkus nama identifier tersebut dengan tanda backtick (misal: `` `in` `` atau `` `is` ``).",
+        "Mengganti nama method tersebut di dalam file jar library Java.",
+        "Menggunakan tanda petik dua ganda string.",
+        "Kotlin tidak dapat memanggil method Java yang bernama keyword."
       ],
       "answer": 0,
-      "explanation": "Sorting membutuhkan kemampuan membaca dan menulis elemen."
+      "explanation": "Tanda backtick (`` ` ``) memungkinkan developer menggunakan identifier apa pun yang bentrok dengan kata kunci resmi bahasa tanpa menimbulkan syntax error."
     }
   },
   {
@@ -1264,15 +1264,15 @@ const lessons = [
     "content": "# Migrasi ke Kotlin23 Library\n\n### Materi Inti:\n- `std::expected`, `std::print`, `std::source_location`, dan string `contains`.\n- `std::ranges::to`, `std::mdspan`, dan `std::generator`.\n- Feature-test macros dan strategi fallback compiler.",
     "code": "// Kotlin Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Migrasi ke Kotlin23 Library\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa fungsi utama `std::expected<T, E>`?",
+      "question": "Apa keunggulan pustaka *MockK* dibanding Mockito saat melakukan unit testing kode Kotlin idiomatik?",
       "options": [
-        "Mewakili value sukses atau error terstruktur.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Mendukung mocking native untuk Coroutines suspending functions, extension functions, object singletons, dan private functions tanpa boilerplate.",
+        "MockK dapat menjalankan unit test tanpa perlu compiler Kotlin.",
+        "MockK secara otomatis membuat aplikasi lolos review Play Store.",
+        "MockK hanya bekerja pada file konfigurasi XML."
       ],
       "answer": 0,
-      "explanation": "Expected membantu.error handling tanpa menggunakan exception untuk alur normal."
+      "explanation": "MockK dibangun dari dasar khusus untuk Kotlin, menyediakan sintaks DSL yang ekspresif (`coEvery { ... } returns ...`) yang memahami penuh semantik coroutine dan null safety."
     }
   },
   {
@@ -1286,15 +1286,15 @@ const lessons = [
     "content": "# Performance, Profiling, dan Optimization yang Terukur\n\n### Materi Inti:\n- Big-O, cache locality, branch prediction, dan allocation cost.\n- Move semantics, emplace, reserve, dan avoiding unnecessary copy.\n- Benchmark, profiler, dan reproducibility.",
     "code": "// Kotlin Kotlin17/Kotlin20\n#include <iostream>\n\nint main() {\n    std::cout << \"Performance, Profiling, dan Optimization yang Terukur\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apakah `reserve` mengubah size vector?",
+      "question": "Apa peran alat static analysis *Detekt* dalam continuous integration (CI) proyek Kotlin?",
       "options": [
-        "Tidak; reserve hanya mengubah capacity.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menganalisis code smell, kompleksitas kode, pelanggaran aturan arsitektur, dan potensi bug performa berdasarkan aturan AST statis.",
+        "Mengunggah aplikasi ke server produksi secara otomatis.",
+        "Membuat tampilan UI aplikasi menjadi dark mode.",
+        "Menghitung gaji developer berdasarkan jumlah baris kode."
       ],
       "answer": 0,
-      "explanation": "Elemen baru tetap harus ditambahkan dengan resize/emplace/push."
+      "explanation": "Detekt menegakkan standar kualitas kode tim secara otomatis, menolak Pull Request jika terdapat kompleksitas siklomatis yang terlalu tinggi atau memory leak pattern."
     }
   },
   {
@@ -1306,17 +1306,17 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Reliabilitas, Security, dan Test Matrix\n\n### Materi Inti:\n- Sanitizer, invariant test, property test, dan fuzzing ringan.\n- Input validation, ownership contract, dan secure defaults.\n- Testing pada edge case, malformed input, dan concurrent path.",
-    "code": "// Kotlin Kotlin11\u2013Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
+    "code": "// Kotlin Kotlin11–Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Bagaimana mendokumentasikan raw pointer non-owning?",
+      "question": "Bagaimana compiler tool *R8 / ProGuard* mengoptimalkan file biner aplikasi Kotlin untuk production?",
       "options": [
-        "Jelaskan bahwa pointer tidak memiliki ownership dan lifetime harus dijaga caller.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Melakukan dead-code elimination (tree shaking), optimasi bytecode, inlining agresif, dan obfuscation nama class/method untuk mengecilkan ukuran dan keamanan.",
+        "Mengubah kode Kotlin menjadi bahasa C murni sebelum dipaketkan.",
+        "Menghapus seluruh asset gambar dari dalam bundle aplikasi.",
+        "Mencegah aplikasi di-uninstall oleh pengguna ponsel."
       ],
       "answer": 0,
-      "explanation": "Tanpa kontrak lifetime, raw pointer mudah menjadi dangling."
+      "explanation": "R8 memotong metadata dan fungsi library yang tidak terpakai, secara signifikan mengurangi ukuran APK/AAB dan waktu cold-startup aplikasi di perangkat."
     }
   },
   {
@@ -1330,15 +1330,15 @@ const lessons = [
     "content": "# Arsitektur, Kotlin20 Modules, Build, dan CI\n\n### Materi Inti:\n- Layering, interface boundary, dependency inversion, dan module boundary.\n- CMake/compiler flags, WebAssembly build, dan browser execution.\n- CI untuk build, test, sanitizer, dan format/lint.",
     "code": "// Kotlin Kotlin20/Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Arsitektur, Kotlin20 Modules, Build, dan CI\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Apa tujuan interface boundary dalam arsitektur Kotlin?",
+      "question": "Apa yang menjadi penyebab utama *Coroutine Memory Leak* di aplikasi Android/KMP?",
       "options": [
-        "Mengurangi coupling dan menyembunyikan implementasi.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Meluncurkan coroutine menggunakan `GlobalScope` yang tidak terikat pada siklus hidup (lifecycle) layar atau komponen UI.",
+        "Menggunakan dispatcher `Dispatchers.IO` untuk mendownload file.",
+        "Memanggil fungsi `.cancel()` saat layar aplikasi ditutup.",
+        "Menggunakan tipe data String di dalam coroutine."
       ],
       "answer": 0,
-      "explanation": "Client bergantung pada kontrak stabil, bukan detail internal."
+      "explanation": "`GlobalScope` membuat coroutine tetap berjalan di latar belakang selamanya meskipun user sudah keluar dari layar, menahan referensi konteks dan menyebabkan memory leak parah."
     }
   },
   {
@@ -1352,15 +1352,15 @@ const lessons = [
     "content": "# Capstone Design: Modern Data Pipeline\n\n### Materi Inti:\n- Merancang domain type, ownership, error handling, dan API.\n- Memilih templates, concepts, ranges, smart pointer, dan coroutine secara tepat.\n- Menentukan acceptance criteria, benchmark, dan test cases.",
     "code": "// Kotlin Kotlin20/Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Design: Modern Data Pipeline\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Sebelum coding, aspek ownership dan async apa yang harus ditentukan?",
+      "question": "Bagaimana framework backend *Ktor Server* memanfaatkan Coroutines untuk performa tinggi?",
       "options": [
-        "Siapa pemilik resource, kapan resource mati, siapa menjalankan operasi async, dan bagaimana exception/cancellation ditangani.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Menggunakan arsitektur I/O non-blocking asynchronous secara menyeluruh, menangani puluhan ribu koneksi request HTTP persisten dengan penggunaan RAM yang minimal.",
+        "Memerlukan server Apache Tomcat besar dengan ribuan thread OS aktif.",
+        "Menyimpan seluruh database aplikasi di dalam file session cookie.",
+        "Menolak koneksi yang tidak menggunakan protokol WebSocket."
       ],
       "answer": 0,
-      "explanation": "Keputusan ini menentukan smart pointer, coroutine awaiter, dan synchronization."
+      "explanation": "Ktor Server tidak memblokir thread saat menunggu I/O database atau jaringan, memaksimalkan throughput pada arsitektur microservices dan cloud-native container."
     }
   },
   {
@@ -1374,15 +1374,15 @@ const lessons = [
     "content": "# Capstone Implementation, Demo, dan Refleksi\n\n### Materi Inti:\n- Implementasi end-to-end di JupyterLite/WebAssembly.\n- Menjalankan unit test, sanitizer, dan benchmark.\n- Menjelaskan tradeoff, hasil, keterbatasan, dan langkah pengembangan.",
     "code": "// Kotlin Kotlin20/Kotlin23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Implementation, Demo, dan Refleksi\" << std::endl;\n    return 0;\n}",
     "quiz": {
-      "question": "Kapan memilih `unique_ptr` daripada `shared_ptr` dalam capstone?",
+      "question": "Mengapa mengaktifkan *Strict Explicit API Mode* (`explicitApi()`) sangat direkomendasikan saat membangun library open-source Kotlin?",
       "options": [
-        "Ketika ownership eksklusif dan cycle risk tidak ada.",
-        "Opsi B",
-        "Opsi C",
-        "Opsi D"
+        "Memaksa developer mendeklarasikan modifier visibilitas (`public`, `internal`) dan return type eksplisit pada semua API publik, mencegah kebocoran implementasi internal.",
+        "Membatasi ukuran library maksimal hanya 500 Kilobyte.",
+        "Melarang penggunaan third-party library di dalam proyek.",
+        "Otomatis mempublikasikan library ke Maven Central tanpa API key."
       ],
       "answer": 0,
-      "explanation": "Unique_ptr lebih sederhana, lebih murah, dan membuat ownership lebih jelas."
+      "explanation": "Explicit API Mode mencegah perubahan yang tidak disengaja merusak binary compatibility (ABI) publik bagi pengguna library di masa mendatang."
     }
   }
 ];
