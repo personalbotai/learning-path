@@ -74,7 +74,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Program Pertama dengan Dart20 dan Dart23\n\n### Materi Inti:\n- Alur compile, link, dan run program Dart.\n- Peran header, namespace std, dan flag -std=c++20 atau -std=c++23.\n- Menjalankan kode Dart melalui JupyterLite/Xeus-Cling.",
-    "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Program Pertama dengan Dart20 dan Dart23\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Program Pertama dengan Dart20 dan Dart23\n\nvoid main() {\n  var topik = \"Program Pertama dengan Dart20 dan Dart23\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa arti dari konsep *Sound Null Safety* di Dart 3?",
       "options": [
@@ -96,7 +96,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Tipe Data, Literal, `auto`, dan `constexpr`\n\n### Materi Inti:\n- Tipe fundamental integer, floating-point, char, bool, dan pointer dasar.\n- Signedness, ukuran tipe, suffix literal, dan konversi angka.\n- `auto` untuk deduksi tipe dan `constexpr` untuk nilai compile-time.",
-    "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Tipe Data, Literal, `auto`, dan `constexpr`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Tipe Data, Literal, `auto`, dan `constexpr`\n\nvoid main() {\n  var topik = \"Tipe Data, Literal, `auto`, dan `constexpr`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Kapan keyword `late` digunakan pada deklarasi variabel di Dart?",
       "options": [
@@ -118,7 +118,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Operator, Precedence, dan Short-Circuit\n\n### Materi Inti:\n- Operator arithmetic, comparison, logical, conditional, dan assignment.\n- Precedence, associativity, dan pentingnya parentheses.\n- Short-circuit evaluation pada `&&` dan `||`.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator, Precedence, dan Short-Circuit\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Operator, Precedence, dan Short-Circuit\n\nvoid main() {\n  var topik = \"Operator, Precedence, dan Short-Circuit\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi operator *Cascade* (`..` atau `?..`) pada pemanggilan objek di Dart?",
       "options": [
@@ -140,7 +140,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Kontrol Alur dan Loop\n\n### Materi Inti:\n- `if`, `else`, `switch`, dan equality/comparison.\n- For loop, range-based for, break, continue, dan early return.\n- Menulis kondisi yang mudah diuji dan tidak ambigu.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Kontrol Alur dan Loop\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Kontrol Alur dan Loop\n\nvoid main() {\n  var topik = \"Kontrol Alur dan Loop\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Perhatikan kode: `var (name, age) = ('Budi', 25);`. Fitur apa yang diperkenalkan di Dart 3 ini?",
       "options": [
@@ -162,7 +162,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Fungsi, Parameter, Overload, dan `constexpr`\n\n### Materi Inti:\n- Declaration, definition, return type, dan parameter passing.\n- Pass by value, pass by reference, default arguments, dan overload resolution.\n- Fungsi `constexpr` untuk kalkulasi compile-time.",
-    "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Fungsi, Parameter, Overload, dan `constexpr`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Fungsi, Parameter, Overload, dan `constexpr`\n\nvoid main() {\n  var topik = \"Fungsi, Parameter, Overload, dan `constexpr`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa perbedaan antara variabel `final` dan `const` di Dart?",
       "options": [
@@ -184,7 +184,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Header, Namespace, Debugging, dan Unit Test Mini\n\n### Materi Inti:\n- Pemisahan `.h` dan `.dart`, include guard, dan `#pragma once`.\n- Namespace untuk menghindari nama global yang tabrakan.\n- Assertion, breakpoint, dan unit test sederhana.",
-    "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Header, Namespace, Debugging, dan Unit Test Mini\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Header, Namespace, Debugging, dan Unit Test Mini\n\nvoid main() {\n  var topik = \"Header, Namespace, Debugging, dan Unit Test Mini\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara mendefinisikan *Named Parameters* opsional dengan nilai default di fungsi Dart?",
       "options": [
@@ -206,7 +206,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Initialization dan Object Lifetime\n\n### Materi Inti:\n- Automatic, static, thread-local, dan local lifetime.\n- Value initialization, aggregate initialization, dan initializer list.\n- Urutan destruction ketika nested scope berakhir.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Initialization dan Object Lifetime\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Initialization dan Object Lifetime\n\nvoid main() {\n  var topik = \"Initialization dan Object Lifetime\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi dari *Initializer List* pada konstruktor kelas di Dart (misal: `Point(x, y) : this.x = x, this.y = y;`)?",
       "options": [
@@ -228,7 +228,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Pointer, Reference, dan Address\n\n### Materi Inti:\n- Pointer nullable, reference wajib terinisialisasi, dan pointer arithmetic.\n- Lvalue reference versus rvalue reference.\n- Perbedaan address-of, pointer, dan lifetime.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Pointer, Reference, dan Address\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Pointer, Reference, dan Address\n\nvoid main() {\n  var topik = \"Pointer, Reference, dan Address\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Secara default, apakah setiap class di Dart otomatis mendefinisikan sebuah *Implicit Interface*?",
       "options": [
@@ -250,7 +250,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Struct, Class, dan Invariant\n\n### Materi Inti:\n- Data members, member functions, access control, dan encapsulation.\n- Membangun invariant seperti `balance >= 0`.\n- Memisahkan interface publik dari implementasi internal.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Struct, Class, dan Invariant\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Struct, Class, dan Invariant\n\nvoid main() {\n  var topik = \"Struct, Class, dan Invariant\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana konsep *Mixins* (`mixin Name on SuperClass`) bekerja di Dart?",
       "options": [
@@ -272,7 +272,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Const Correctness dan Value Semantics\n\n### Materi Inti:\n- Const object, const member function, dan pass-by-const-reference.\n- Value semantics versus reference semantics.\n- Kapan `mutable` boleh digunakan dan mengapa harus hati-hati.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Const Correctness dan Value Semantics\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Const Correctness dan Value Semantics\n\nvoid main() {\n  var topik = \"Const Correctness dan Value Semantics\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa tujuan mendeklarasikan *Factory Constructor* (`factory ClassName(...)`) di Dart?",
       "options": [
@@ -294,7 +294,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::string`, `std::string_view`, dan `std::span`\n\n### Materi Inti:\n- `std::string` memiliki data; `string_view` adalah view non-owning.\n- `std::span` menyediakan view atas contiguous storage.\n- Lifetime hazard, dangling view, dan pemilihan interface yang benar.",
-    "code": "// Dart Dart17/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::string`, `std::string_view`, dan `std::span`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: `std::string`, `std::string_view`, dan `std::span`\n\nvoid main() {\n  var topik = \"`std::string`, `std::string_view`, dan `std::span`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana aturan penamaan *Private Members* (field atau fungsi privat) di Dart?",
       "options": [
@@ -316,7 +316,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# RAII dan Penanganan Exception\n\n### Materi Inti:\n- Resource Acquisition Is Initialization sebagai pola utama ownership.\n- Stack unwinding dan destruction saat exception dilempar.\n- Menulis destructor yang tidak me-lempar exception.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII dan Penanganan Exception\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: RAII dan Penanganan Exception\n\nvoid main() {\n  var topik = \"RAII dan Penanganan Exception\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa keuntungan menggunakan *Redirecting Constructors* (misal: `Point.alongXAxis(double x) : this(x, 0);`)?",
       "options": [
@@ -338,7 +338,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Constructor, Destructor, dan Initializer List\n\n### Materi Inti:\n- Default, parameterized, copy, dan destructor.\n- Initializer list untuk konstruk anggota.\n- Urutan construction dan destruction.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Constructor, Destructor, dan Initializer List\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Constructor, Destructor, dan Initializer List\n\nvoid main() {\n  var topik = \"Constructor, Destructor, dan Initializer List\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa arti dari class modifier `sealed class` di Dart 3?",
       "options": [
@@ -360,7 +360,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Copy Semantics dan Rule of Three/Five\n\n### Materi Inti:\n- Copy constructor, copy assignment, dan self-assignment.\n- Shallow copy versus deep copy.\n- Copy-and-swap serta kapan menerapkan rule of five.",
-    "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Semantics dan Rule of Three/Five\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Copy Semantics dan Rule of Three/Five\n\nvoid main() {\n  var topik = \"Copy Semantics dan Rule of Three/Five\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Kapan class modifier `base class` digunakan di Dart 3?",
       "options": [
@@ -382,7 +382,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Operator Overloading\n\n### Materi Inti:\n- Operator arithmetic, comparison, assignment, dan stream.\n- Member operator versus non-member/friend operator.\n- Implicit conversion dan bahaya operator yang mengejutkan.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator Overloading\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Operator Overloading\n\nvoid main() {\n  var topik = \"Operator Overloading\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi modifier `interface class` di Dart 3?",
       "options": [
@@ -404,7 +404,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Inheritance dan Virtual Dispatch\n\n### Materi Inti:\n- Base/derived relationship dan is-a semantics.\n- Virtual function, override, dan dynamic dispatch.\n- Virtual destructor pada base polymorphic.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Inheritance dan Virtual Dispatch\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Inheritance dan Virtual Dispatch\n\nvoid main() {\n  var topik = \"Inheritance dan Virtual Dispatch\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa keunggulan fitur *Extension Types* (diperkenalkan di Dart 3.3) dibanding wrapper class biasa?",
       "options": [
@@ -426,7 +426,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Interface Abstrak dan Polymorphic Design\n\n### Materi Inti:\n- Pure virtual function dan abstract class.\n- Interface sebagai kontrak, bukan implementasi yang bocor.\n- Polymorphic destruction dan prinsip substitusi.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Interface Abstrak dan Polymorphic Design\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Interface Abstrak dan Polymorphic Design\n\nvoid main() {\n  var topik = \"Interface Abstrak dan Polymorphic Design\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara kerja *Extension Methods* (misal: `extension StringUtils on String`) di Dart?",
       "options": [
@@ -448,7 +448,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Composition, Policy, dan CRTP\n\n### Materi Inti:\n- Composition over inheritance dan dependency injection.\n- Policy-based design untuk memilih perilaku compile-time.\n- CRTP sebagai static polymorphism.",
-    "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Composition, Policy, dan CRTP\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Composition, Policy, dan CRTP\n\nvoid main() {\n  var topik = \"Composition, Policy, dan CRTP\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa perbedaan antara `final class` dan `sealed class` di Dart 3?",
       "options": [
@@ -470,7 +470,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Function Templates dan Template Deduction\n\n### Materi Inti:\n- Template parameter, deduction, dan explicit template arguments.\n- Overload resolution antara template dan non-template.\n- Pembatasan interface melalui requiremen operasi.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Function Templates dan Template Deduction\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Function Templates dan Template Deduction\n\nvoid main() {\n  var topik = \"Function Templates dan Template Deduction\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara mendefinisikan Record yang memiliki campuran field posisional dan field bernama di Dart 3?",
       "options": [
@@ -492,7 +492,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Class Templates dan Instantiation\n\n### Materi Inti:\n- Class template, member definition, dan header placement.\n- Explicit instantiation versus implicit instantiation.\n- Contoh `Box<T>`, `Stack<T>`, dan `Optional<T>`.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Class Templates dan Instantiation\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Class Templates dan Instantiation\n\nvoid main() {\n  var topik = \"Class Templates dan Instantiation\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Perhatikan kode: `switch (obj) { case [int a, int b]: ... }`. Pola pattern apa yang digunakan di sini?",
       "options": [
@@ -514,7 +514,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Partial Specialization, Full Specialization, dan Traits\n\n### Materi Inti:\n- Partial specialization untuk keluarga tipe.\n- Full specialization untuk kasus sangat khusus.\n- Trait pattern dan `std::enable_if`.",
-    "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"Partial Specialization, Full Specialization, dan Traits\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Partial Specialization, Full Specialization, dan Traits\n\nvoid main() {\n  var topik = \"Partial Specialization, Full Specialization, dan Traits\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana *Guard Clauses* (klausa `when`) memperkaya Pattern Matching di Dart 3?",
       "options": [
@@ -536,7 +536,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Variadic Templates dan Fold Expression\n\n### Materi Inti:\n- Parameter pack, pack expansion, dan recursion.\n- Fold expression untuk sum, product, dan logical operations.\n- Penggunaan `std::tuple` dan argument forwarding.",
-    "code": "// Dart Dart11/Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Variadic Templates dan Fold Expression\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Variadic Templates dan Fold Expression\n\nvoid main() {\n  var topik = \"Variadic Templates dan Fold Expression\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi simbol *Rest Element* (`...` atau `..._`) dalam pattern matching koleksi list di Dart 3?",
       "options": [
@@ -558,7 +558,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk强制 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
-    "code": "// Dart Dart14/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Compile-Time Programming dengan `constexpr` dan `consteval`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Compile-Time Programming dengan `constexpr` dan `consteval`\n\nvoid main() {\n  var topik = \"Compile-Time Programming dengan `constexpr` dan `consteval`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Mengapa ekspresi *Switch Expression* (`var label = switch(status) { ... };`) di Dart 3 harus exhaustiveness?",
       "options": [
@@ -580,7 +580,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# SFINAE, `requires`, dan Early Constraint\n\n### Materi Inti:\n- Substitution failure dan SFINAE.\n- `requires` expression dan constrained template.\n- Overload resolution serta diagnostic yang lebih jelas.",
-    "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"SFINAE, `requires`, dan Early Constraint\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: SFINAE, `requires`, dan Early Constraint\n\nvoid main() {\n  var topik = \"SFINAE, `requires`, dan Early Constraint\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Perhatikan kode: `if (json case {'user': {'name': String n, 'id': int id}})`. Pola pattern apa yang terjadi di sini?",
       "options": [
@@ -602,7 +602,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Ownership Model dan Raw Memory\n\n### Materi Inti:\n- Stack ownership versus heap ownership.\n- `new`, `new[]`, `delete`, dan `delete[]`.\n- Double free, leak, mismatched deallocation, dan undefined behavior.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Ownership Model dan Raw Memory\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Ownership Model dan Raw Memory\n\nvoid main() {\n  var topik = \"Ownership Model dan Raw Memory\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi fitur *Collection If* dan *Collection For* pada literal koleksi di Dart?",
       "options": [
@@ -624,7 +624,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::unique_ptr` dan Exclusive Ownership\n\n### Materi Inti:\n- Exclusive ownership dan move-only semantics.\n- Factory function seperti `std::make_unique`.\n- Custom deleter, array support, `reset`, dan `release`.",
-    "code": "// Dart Dart11/Dart14\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::unique_ptr` dan Exclusive Ownership\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: `std::unique_ptr` dan Exclusive Ownership\n\nvoid main() {\n  var topik = \"`std::unique_ptr` dan Exclusive Ownership\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa perbedaan karakteristik mendasar antara `Iterable` dan `List` di Dart?",
       "options": [
@@ -646,7 +646,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::shared_ptr` dan `std::weak_ptr`\n\n### Materi Inti:\n- Shared ownership, control block, dan reference count.\n- `weak_ptr` untuk optional non-owning reference.\n- Cycle ownership dan penggunaan `lock()`.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::shared_ptr` dan `std::weak_ptr`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: `std::shared_ptr` dan `std::weak_ptr`\n\nvoid main() {\n  var topik = \"`std::shared_ptr` dan `std::weak_ptr`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa peran operator *Spread* (`...` dan null-aware `...?`) pada koleksi Dart?",
       "options": [
@@ -668,7 +668,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Allocator-Aware Container dan `pmr`\n\n### Materi Inti:\n- Allocator-aware container dan custom allocator.\n- `std::pmr::monotonic_buffer_resource` serta pool lifetime.\n- Allocation failure, pool boundary, dan cache locality.",
-    "code": "// Dart Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Allocator-Aware Container dan `pmr`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Allocator-Aware Container dan `pmr`\n\nvoid main() {\n  var topik = \"Allocator-Aware Container dan `pmr`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa yang dimaksud dengan *Closure* dalam fungsi Dart?",
       "options": [
@@ -690,7 +690,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# RAII Wrapper dan Safe Resource Patterns\n\n### Materi Inti:\n- Wrapper untuk file, socket, mutex, dan heap resource.\n- `lock_guard` versus `unique_lock`.\n- Scope guard untuk cleanup lintas jalur exception.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII Wrapper dan Safe Resource Patterns\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: RAII Wrapper dan Safe Resource Patterns\n\nvoid main() {\n  var topik = \"RAII Wrapper dan Safe Resource Patterns\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara membuat *Unmodifiable Collection* (koleksi yang tidak dapat diubah) di Dart?",
       "options": [
@@ -712,7 +712,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mendeteksi Memory Bug dengan Sanitizer\n\n### Materi Inti:\n- AddressSanitizer, UndefinedBehaviorSanitizer, dan Valgrind.\n- Dangling reference, use-after-free, overflow, dan out-of-bounds.\n- Menjalankan sanitizer di native dan WebAssembly.",
-    "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Mendeteksi Memory Bug dengan Sanitizer\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Mendeteksi Memory Bug dengan Sanitizer\n\nvoid main() {\n  var topik = \"Mendeteksi Memory Bug dengan Sanitizer\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa hasil evaluasi fungsi reduksi `.fold(0, (acc, item) => acc + item)` pada list angka?",
       "options": [
@@ -734,7 +734,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Value Category: Lvalue, Xvalue, dan Prvalue\n\n### Materi Inti:\n- Lvalue, xvalue, prvalue, dan named rvalue reference.\n- `std::move` sebagai cast eksplisit.\n- Decay type dan array-to-pointer decay.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Value Category: Lvalue, Xvalue, dan Prvalue\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Value Category: Lvalue, Xvalue, dan Prvalue\n\nvoid main() {\n  var topik = \"Value Category: Lvalue, Xvalue, dan Prvalue\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana *Event Loop* di Dart mengelola urutan eksekusi antara *Microtask Queue* dan *Event Queue*?",
       "options": [
@@ -756,7 +756,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Move Constructor dan Move Assignment\n\n### Materi Inti:\n- Move operation untuk mengambil resource.\n- Source harus berada dalam valid tetapi unspecified state.\n- Move constructor idealnya `noexcept` agar container dapat memindahkan.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Move Constructor dan Move Assignment\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Move Constructor dan Move Assignment\n\nvoid main() {\n  var topik = \"Move Constructor dan Move Assignment\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa perbedaan mendasar antara *Single-Subscription Stream* dan *Broadcast Stream* di Dart?",
       "options": [
@@ -778,7 +778,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Perfect Forwarding\n\n### Materi Inti:\n- Forwarding reference dan `auto&&`.\n- `std::forward<T>` untuk mempertahankan value category.\n- Argument unwrapping dengan `std::unwrap_reference`.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Perfect Forwarding\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Perfect Forwarding\n\nvoid main() {\n  var topik = \"Perfect Forwarding\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara menghasilkan Stream data secara asinkron di dalam fungsi generator Dart?",
       "options": [
@@ -800,7 +800,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Copy Elision, NRVO, dan Guaranteed Move\n\n### Materi Inti:\n- Copy elision dan Named Return Value Optimization.\n- Prvalue construction langsung ke result object.\n- `std::move` yang tidak perlu dapat menghambat copy elision.",
-    "code": "// Dart Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Elision, NRVO, dan Guaranteed Move\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Copy Elision, NRVO, dan Guaranteed Move\n\nvoid main() {\n  var topik = \"Copy Elision, NRVO, dan Guaranteed Move\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa kegunaan operator `yield*` (yield-each) dalam generator `async*`?",
       "options": [
@@ -822,7 +822,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# STL Container dan Allocation Strategy\n\n### Materi Inti:\n- Tradeoff vector, deque, list, map, set, dan unordered_map.\n- Iterator invalidation, reserve, resize, dan shrink-to-fit.\n- Copy versus move behavior pada container.",
-    "code": "// Dart Dart11/Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"STL Container dan Allocation Strategy\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: STL Container dan Allocation Strategy\n\nvoid main() {\n  var topik = \"STL Container dan Allocation Strategy\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara menangani error secara terstruktur pada pemanggilan `Future` menggunakan sintaks modern?",
       "options": [
@@ -844,7 +844,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# In-Place Construction dengan `emplace`, `optional`, dan `variant`\n\n### Materi Inti:\n- `emplace_back` dan konstruksi langsung di dalam container.\n- `std::optional<T>::emplace` untuk optional move-only value.\n- `std::variant` dan pemilihan alternative secara eksplisit.",
-    "code": "// Dart Dart17/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: In-Place Construction dengan `emplace`, `optional`, dan `variant`\n\nvoid main() {\n  var topik = \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi class `StreamController<T>` dalam arsitektur manajemen state reaktif di Dart?",
       "options": [
@@ -866,7 +866,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Iterator dan Standard Algorithms\n\n### Materi Inti:\n- Iterator categories dan range begin/end.\n- `find`, `sort`, `count`, `transform`, dan algorithm contracts.\n- Lambda expression untuk operasi lokal.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Iterator dan Standard Algorithms\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Iterator dan Standard Algorithms\n\nvoid main() {\n  var topik = \"Iterator dan Standard Algorithms\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Mengapa *Isolate* di Dart berbeda secara fundamental dari Thread konvensional di bahasa Java/C++?",
       "options": [
@@ -888,7 +888,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Ranges Views: Lazy dan Non-Owning\n\n### Materi Inti:\n- `views::filter`, `transform`, `take`, dan `drop`.\n- View versus owning range.\n- Lazy evaluation dan lifetime adaptor.",
-    "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Ranges Views: Lazy dan Non-Owning\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Ranges Views: Lazy dan Non-Owning\n\nvoid main() {\n  var topik = \"Ranges Views: Lazy dan Non-Owning\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa metode paling sederhana di Dart 2.19+ / Dart 3 untuk menjalankan fungsi komputasi berat di Isolate latar belakang?",
       "options": [
@@ -910,7 +910,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Range Algorithms dan Range Concepts\n\n### Materi Inti:\n- `std::ranges::sort`, `find`, dan `for_each`.\n- Input, output, forward, sortable, dan mutable range requirements.\n- Mengurangi manual iterator arithmetic.",
-    "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Range Algorithms dan Range Concepts\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Range Algorithms dan Range Concepts\n\nvoid main() {\n  var topik = \"Range Algorithms dan Range Concepts\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara mentransfer objek berukuran besar (seperti buffer gambar jutaan byte) antar Isolate tanpa biaya copying memori?",
       "options": [
@@ -932,7 +932,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\n\n### Materi Inti:\n- `views::zip` untuk beberapa range paralel.\n- `views::chunk`, `slide`, dan `enumerate`.\n- Tuple-like elements, overflow behavior, dan lifetime.",
-    "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\n\nvoid main() {\n  var topik = \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Kapan sebuah komputasi wajib dipindahkan ke Isolate terpisah di aplikasi Flutter?",
       "options": [
@@ -954,7 +954,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Error Value dengan `std::expected` dan `std::optional`\n\n### Materi Inti:\n- `optional<T>` untuk absence tanpa error detail.\n- `expected<T,E>` untuk success atau error terstruktur.\n- Composing operations dengan `and_then`, `transform`, dan `or_else`.",
-    "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Error Value dengan `std::expected` dan `std::optional`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Error Value dengan `std::expected` dan `std::optional`\n\nvoid main() {\n  var topik = \"Error Value dengan `std::expected` dan `std::optional`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara kerja komunikasi dua arah antara dua Isolate di Dart?",
       "options": [
@@ -976,7 +976,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# API Modern Dart20/23: Format, Print, Numbers, dan `mdspan`\n\n### Materi Inti:\n- `std::format`, `std::print`, dan feature-test macros.\n- `std::numbers` untuk konstanta numerik standar.\n- `std::mdspan` untuk multidimensional view tanpa ownership.",
-    "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"API Modern Dart20/23: Format, Print, Numbers, dan `mdspan`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: API Modern Dart20/23: Format, Print, Numbers, dan `mdspan`\n\nvoid main() {\n  var topik = \"API Modern Dart20/23: Format, Print, Numbers, dan `mdspan`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apakah pembuatan Isolate baru di Dart memiliki overhead waktu dan memori?",
       "options": [
@@ -998,7 +998,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Thread Dasar, Join, dan Detach\n\n### Materi Inti:\n- Membuat, menjalankan, `join`, dan `detach` thread.\n- Lifetime thread dan bahaya detach tanpa koordinasi.\n- Data race versus race condition.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Dasar, Join, dan Detach\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Thread Dasar, Join, dan Detach\n\nvoid main() {\n  var topik = \"Thread Dasar, Join, dan Detach\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa keunggulan menggunakan package *Dio* dibandingkan library *http* standar di Flutter/Dart?",
       "options": [
@@ -1020,7 +1020,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mutex, `lock_guard`, dan Condition Variable\n\n### Materi Inti:\n- Critical section dan mutual exclusion.\n- RAII locking dengan `lock_guard` dan `unique_lock`.\n- Condition variable, predicate loop, notify-one/all.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"Mutex, `lock_guard`, dan Condition Variable\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Mutex, `lock_guard`, dan Condition Variable\n\nvoid main() {\n  var topik = \"Mutex, `lock_guard`, dan Condition Variable\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara kerja serialisasi JSON menggunakan pustaka *json_serializable* dan *build_runner*?",
       "options": [
@@ -1042,7 +1042,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Atomic dan Memory Ordering\n\n### Materi Inti:\n- Atomic load/store, fetch-add, compare-exchange.\n- Relaxed, acquire, release, dan sequential consistency.\n- Lock-free atomic dan tradeoff performance.",
-    "code": "// Dart Dart11/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Atomic dan Memory Ordering\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Atomic dan Memory Ordering\n\nvoid main() {\n  var topik = \"Atomic dan Memory Ordering\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Database lokal embedded manakah yang sangat cepat dan menyediakan reaktivitas real-time bawaan untuk Flutter/Dart?",
       "options": [
@@ -1064,7 +1064,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::async`, Future, dan Task\n\n### Materi Inti:\n- Launch policy dan asynchronous execution.\n- Future/get, exception propagation, dan timeout.\n- Lifetime task dan bahaya menunggu terlalu lama.",
-    "code": "// Dart Dart11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::async`, Future, dan Task\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: `std::async`, Future, dan Task\n\nvoid main() {\n  var topik = \"`std::async`, Future, dan Task\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara menangani pembatalan (*Cancellation*) HTTP request saat pengguna keluar dari layar sebelum request selesai?",
       "options": [
@@ -1086,7 +1086,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Thread Pool, Deadlock, dan Concurrency Pitfalls\n\n### Materi Inti:\n- Work queue, worker lifetime, dan task scheduling.\n- Deadlock, starvation, ABA, false sharing, dan lock ordering.\n- Desain bounded concurrency dan backpressure.",
-    "code": "// Dart Dart11/Dart17\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Pool, Deadlock, dan Concurrency Pitfalls\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Thread Pool, Deadlock, dan Concurrency Pitfalls\n\nvoid main() {\n  var topik = \"Thread Pool, Deadlock, dan Concurrency Pitfalls\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Kapan penggunaan `Uint8List` dan `ByteData` sangat penting dalam penanganan data di Dart?",
       "options": [
@@ -1108,7 +1108,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Pengantar Coroutine: Suspension dan Resumption\n\n### Materi Inti:\n- Coroutine frame, promise object, dan awaiter.\n- `co_await`, `co_yield`, dan `co_return`.\n- Perbedaan blocking thread dengan cooperative suspension.",
-    "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Pengantar Coroutine: Suspension dan Resumption\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Pengantar Coroutine: Suspension dan Resumption\n\nvoid main() {\n  var topik = \"Pengantar Coroutine: Suspension dan Resumption\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi dari interceptor pada HTTP client dalam konteks keamanan autentikasi?",
       "options": [
@@ -1130,7 +1130,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Membangun Coroutine dari Komponen Dasar\n\n### Materi Inti:\n- Promise methods: `return_value`, `yield_value`, `initial_suspend`, dan `final_suspend`.\n- Coroutine return object dan exception propagation.\n- Mengapa coroutine bukan thread.",
-    "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Membangun Coroutine dari Komponen Dasar\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Membangun Coroutine dari Komponen Dasar\n\nvoid main() {\n  var topik = \"Membangun Coroutine dari Komponen Dasar\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa fungsi dari file `analysis_options.yaml` dalam sebuah proyek Dart/Flutter?",
       "options": [
@@ -1152,7 +1152,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Async/Await dengan Executor dan Cancellation\n\n### Materi Inti:\n- Custom awaiter dan executor policy.\n- Exception propagation, timeout, dan cancellation token.\n- Composing async operations tanpa nested blocking.",
-    "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Async/Await dengan Executor dan Cancellation\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Async/Await dengan Executor dan Cancellation\n\nvoid main() {\n  var topik = \"Async/Await dengan Executor dan Cancellation\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa perbedaan penting antara dependensi `dependencies` dan `dev_dependencies` di `pubspec.yaml`?",
       "options": [
@@ -1174,7 +1174,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Generator dengan `std::generator` Dart23\n\n### Materi Inti:\n- `co_yield` sebagai lazy producer.\n- Backpressure, range protocol, dan lifetime iterator.\n- Menggabungkan generator dengan ranges.",
-    "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Generator dengan `std::generator` Dart23\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Generator dengan `std::generator` Dart23\n\nvoid main() {\n  var topik = \"Generator dengan `std::generator` Dart23\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Perintah Dart CLI apa yang digunakan untuk memperbaiki pelanggaran aturan linter secara otomatis di seluruh basis kode?",
       "options": [
@@ -1196,7 +1196,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Concepts dan Constrained Overload\n\n### Materi Inti:\n- `requires` expression dan named concept.\n- Constraint satisfaction dan overload resolution.\n- Mengganti SFINAE noise dengan diagnostic yang jelas.",
-    "code": "// Dart Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Concepts dan Constrained Overload\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Concepts dan Constrained Overload\n\nvoid main() {\n  var topik = \"Concepts dan Constrained Overload\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana fitur *Dart FFI (Foreign Function Interface)* bekerja?",
       "options": [
@@ -1218,7 +1218,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Custom Range, `view`, dan `borrowed_range`\n\n### Materi Inti:\n- Range requirements dan `range_reference_t`.\n- View, borrowed range, dan adaptor customization.\n- `views::as_const`, `cache_latest`, `chunk`, `slide`, dan `enumerate`.",
-    "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Custom Range, `view`, dan `borrowed_range`\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Custom Range, `view`, dan `borrowed_range`\n\nvoid main() {\n  var topik = \"Custom Range, `view`, dan `borrowed_range`\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa yang dimaksud dengan target kompilasi *WasmGC (WebAssembly Garbage Collection)* pada Dart Web modern?",
       "options": [
@@ -1240,7 +1240,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Modern Generic Design: Templates + Concepts + Ranges\n\n### Materi Inti:\n- Menggabungkan constrained template, range algorithms, dan move-only values.\n- API generik dengan error type dan no unnecessary copy.\n- Menulis benchmark serta test matrix untuk beberapa tipe.",
-    "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Modern Generic Design: Templates + Concepts + Ranges\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Modern Generic Design: Templates + Concepts + Ranges\n\nvoid main() {\n  var topik = \"Modern Generic Design: Templates + Concepts + Ranges\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Mengapa mengunci versi package di `pubspec.lock` sangat krusial dalam pipeline CI/CD?",
       "options": [
@@ -1262,7 +1262,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Migrasi ke Dart23 Library\n\n### Materi Inti:\n- `std::expected`, `std::print`, `std::source_location`, dan string `contains`.\n- `std::ranges::to`, `std::mdspan`, dan `std::generator`.\n- Feature-test macros dan strategi fallback compiler.",
-    "code": "// Dart Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Migrasi ke Dart23 Library\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Migrasi ke Dart23 Library\n\nvoid main() {\n  var topik = \"Migrasi ke Dart23 Library\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa perbedaan cakupan antara *Unit Test*, *Widget Test*, dan *Integration Test* di ekosistem Flutter/Dart?",
       "options": [
@@ -1284,7 +1284,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Performance, Profiling, dan Optimization yang Terukur\n\n### Materi Inti:\n- Big-O, cache locality, branch prediction, dan allocation cost.\n- Move semantics, emplace, reserve, dan avoiding unnecessary copy.\n- Benchmark, profiler, dan reproducibility.",
-    "code": "// Dart Dart17/Dart20\n#include <iostream>\n\nint main() {\n    std::cout << \"Performance, Profiling, dan Optimization yang Terukur\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Performance, Profiling, dan Optimization yang Terukur\n\nvoid main() {\n  var topik = \"Performance, Profiling, dan Optimization yang Terukur\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana library *Mocktail* menyederhanakan mocking dalam unit test Dart dibanding Mockito klasik?",
       "options": [
@@ -1306,7 +1306,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Reliabilitas, Security, dan Test Matrix\n\n### Materi Inti:\n- Sanitizer, invariant test, property test, dan fuzzing ringan.\n- Input validation, ownership contract, dan secure defaults.\n- Testing pada edge case, malformed input, dan concurrent path.",
-    "code": "// Dart Dart11–Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Reliabilitas, Security, dan Test Matrix\n\nvoid main() {\n  var topik = \"Reliabilitas, Security, dan Test Matrix\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa inti dari arsitektur *Clean Architecture* dalam aplikasi mobile Dart/Flutter?",
       "options": [
@@ -1328,7 +1328,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Arsitektur, Dart20 Modules, Build, dan CI\n\n### Materi Inti:\n- Layering, interface boundary, dependency inversion, dan module boundary.\n- CMake/compiler flags, WebAssembly build, dan browser execution.\n- CI untuk build, test, sanitizer, dan format/lint.",
-    "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Arsitektur, Dart20 Modules, Build, dan CI\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Arsitektur, Dart20 Modules, Build, dan CI\n\nvoid main() {\n  var topik = \"Arsitektur, Dart20 Modules, Build, dan CI\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Bagaimana cara menguji fungsi asinkron berbasis waktu (seperti timer atau stream debounce) tanpa membuat test menunggu secara fisik?",
       "options": [
@@ -1350,7 +1350,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Capstone Design: Modern Data Pipeline\n\n### Materi Inti:\n- Merancang domain type, ownership, error handling, dan API.\n- Memilih templates, concepts, ranges, smart pointer, dan coroutine secara tepat.\n- Menentukan acceptance criteria, benchmark, dan test cases.",
-    "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Design: Modern Data Pipeline\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Capstone Design: Modern Data Pipeline\n\nvoid main() {\n  var topik = \"Capstone Design: Modern Data Pipeline\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa prinsip kerja dari pola manajemen state *BLoC (Business Logic Component)*?",
       "options": [
@@ -1372,7 +1372,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Capstone Implementation, Demo, dan Refleksi\n\n### Materi Inti:\n- Implementasi end-to-end di JupyterLite/WebAssembly.\n- Menjalankan unit test, sanitizer, dan benchmark.\n- Menjelaskan tradeoff, hasil, keterbatasan, dan langkah pengembangan.",
-    "code": "// Dart Dart20/Dart23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Implementation, Demo, dan Refleksi\" << std::endl;\n    return 0;\n}",
+    "code": "// Dart 3: Capstone Implementation, Demo, dan Refleksi\n\nvoid main() {\n  var topik = \"Capstone Implementation, Demo, dan Refleksi\";\n  print(\"Menjalankan studi kasus: $topik\");\n\n  final status = \"Sukses\";\n  final code = 200;\n  print(\"Status: \" + status + \" (Kode: \" + code.toString() + \")\");\n}\n",
     "quiz": {
       "question": "Apa manfaat utama mengonfigurasi *GitHub Actions CI Pipeline* untuk memvalidasi setiap Pull Request pada proyek Dart?",
       "options": [
@@ -1697,8 +1697,7 @@ async function runCode() {
     
     // Attempt Judge0 or playground execution if applicable
     try {
-        const langIds = { dart: 54, rust: 73, go: 60 };
-        const langId = langIds['dart'] || 73;
+        const langId = 90; // DART Judge0 CE language_id
         const res = await fetch('https://ce.judge0.com/submissions?base64_encoded=false&wait=true', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

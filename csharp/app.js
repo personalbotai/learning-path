@@ -74,7 +74,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Program Pertama dengan C#20 dan C#23\n\n### Materi Inti:\n- Alur compile, link, dan run program C#.\n- Peran header, namespace std, dan flag -std=c++20 atau -std=c++23.\n- Menjalankan kode C# melalui JupyterLite/Xeus-Cling.",
-    "code": "// C# C#20/C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Program Pertama dengan C#20 dan C#23\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Program Pertama dengan C#20 dan C#23\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Program Pertama dengan C#20 dan C#23\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa perbedaan fundamental antara *Value Types* dan *Reference Types* di memori CLR .NET?",
       "options": [
@@ -96,7 +96,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Tipe Data, Literal, `auto`, dan `constexpr`\n\n### Materi Inti:\n- Tipe fundamental integer, floating-point, char, bool, dan pointer dasar.\n- Signedness, ukuran tipe, suffix literal, dan konversi angka.\n- `auto` untuk deduksi tipe dan `constexpr` untuk nilai compile-time.",
-    "code": "// C# C#11/C#14\n#include <iostream>\n\nint main() {\n    std::cout << \"Tipe Data, Literal, `auto`, dan `constexpr`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Tipe Data, Literal, `auto`, dan `constexpr`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Tipe Data, Literal, `auto`, dan `constexpr`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana fitur *Nullable Reference Types* (NRT) di C# 8+ membantu mencegah `NullReferenceException`?",
       "options": [
@@ -118,7 +118,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Operator, Precedence, dan Short-Circuit\n\n### Materi Inti:\n- Operator arithmetic, comparison, logical, conditional, dan assignment.\n- Precedence, associativity, dan pentingnya parentheses.\n- Short-circuit evaluation pada `&&` dan `||`.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator, Precedence, dan Short-Circuit\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Operator, Precedence, dan Short-Circuit\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Operator, Precedence, dan Short-Circuit\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa fungsi operator *Null-Coalescing Assignment* `??=` di C#?",
       "options": [
@@ -140,7 +140,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Kontrol Alur dan Loop\n\n### Materi Inti:\n- `if`, `else`, `switch`, dan equality/comparison.\n- For loop, range-based for, break, continue, dan early return.\n- Menulis kondisi yang mudah diuji dan tidak ambigu.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Kontrol Alur dan Loop\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Kontrol Alur dan Loop\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Kontrol Alur dan Loop\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa keunggulan menggunakan *Switch Expressions* modern (misal: `state switch { ... }`) dibanding statement switch klasik?",
       "options": [
@@ -162,7 +162,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Fungsi, Parameter, Overload, dan `constexpr`\n\n### Materi Inti:\n- Declaration, definition, return type, dan parameter passing.\n- Pass by value, pass by reference, default arguments, dan overload resolution.\n- Fungsi `constexpr` untuk kalkulasi compile-time.",
-    "code": "// C# C#11/C#14\n#include <iostream>\n\nint main() {\n    std::cout << \"Fungsi, Parameter, Overload, dan `constexpr`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Fungsi, Parameter, Overload, dan `constexpr`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Fungsi, Parameter, Overload, dan `constexpr`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa manfaat utama tipe struktur data `Span<T>` dan `ReadOnlySpan<T>` di .NET modern?",
       "options": [
@@ -184,7 +184,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Header, Namespace, Debugging, dan Unit Test Mini\n\n### Materi Inti:\n- Pemisahan `.h` dan `.csharp`, include guard, dan `#pragma once`.\n- Namespace untuk menghindari nama global yang tabrakan.\n- Assertion, breakpoint, dan unit test sederhana.",
-    "code": "// C# C#11/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Header, Namespace, Debugging, dan Unit Test Mini\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Header, Namespace, Debugging, dan Unit Test Mini\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Header, Namespace, Debugging, dan Unit Test Mini\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Kapan keyword `ref readonly` pada parameter fungsi bermanfaat di C# 12?",
       "options": [
@@ -206,7 +206,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Initialization dan Object Lifetime\n\n### Materi Inti:\n- Automatic, static, thread-local, dan local lifetime.\n- Value initialization, aggregate initialization, dan initializer list.\n- Urutan destruction ketika nested scope berakhir.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Initialization dan Object Lifetime\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Initialization dan Object Lifetime\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Initialization dan Object Lifetime\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana fitur *Primary Constructors* pada Class biasa di C# 12 bekerja?",
       "options": [
@@ -228,7 +228,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Pointer, Reference, dan Address\n\n### Materi Inti:\n- Pointer nullable, reference wajib terinisialisasi, dan pointer arithmetic.\n- Lvalue reference versus rvalue reference.\n- Perbedaan address-of, pointer, dan lifetime.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Pointer, Reference, dan Address\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Pointer, Reference, dan Address\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Pointer, Reference, dan Address\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa perbedaan karakteristik mendasar antara `record` dan `class` biasa di C#?",
       "options": [
@@ -250,7 +250,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Struct, Class, dan Invariant\n\n### Materi Inti:\n- Data members, member functions, access control, dan encapsulation.\n- Membangun invariant seperti `balance >= 0`.\n- Memisahkan interface publik dari implementasi internal.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Struct, Class, dan Invariant\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Struct, Class, dan Invariant\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Struct, Class, dan Invariant\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa tujuan modifier `init` pada deklarasi properti C# (misal: `public string Name { get; init; }`)?",
       "options": [
@@ -272,7 +272,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Const Correctness dan Value Semantics\n\n### Materi Inti:\n- Const object, const member function, dan pass-by-const-reference.\n- Value semantics versus reference semantics.\n- Kapan `mutable` boleh digunakan dan mengapa harus hati-hati.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Const Correctness dan Value Semantics\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Const Correctness dan Value Semantics\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Const Correctness dan Value Semantics\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Kapan keyword `required` pada properti class wajib dipenuhi oleh pemanggil?",
       "options": [
@@ -294,7 +294,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::string`, `std::string_view`, dan `std::span`\n\n### Materi Inti:\n- `std::string` memiliki data; `string_view` adalah view non-owning.\n- `std::span` menyediakan view atas contiguous storage.\n- Lifetime hazard, dangling view, dan pemilihan interface yang benar.",
-    "code": "// C# C#17/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::string`, `std::string_view`, dan `std::span`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: `std::string`, `std::string_view`, dan `std::span`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"`std::string`, `std::string_view`, dan `std::span`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa arti dari *Static Virtual Members in Interfaces* yang diperkenalkan pada .NET 7 / C# 11?",
       "options": [
@@ -316,7 +316,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# RAII dan Penanganan Exception\n\n### Materi Inti:\n- Resource Acquisition Is Initialization sebagai pola utama ownership.\n- Stack unwinding dan destruction saat exception dilempar.\n- Menulis destructor yang tidak me-lempar exception.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII dan Penanganan Exception\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: RAII dan Penanganan Exception\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"RAII dan Penanganan Exception\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa batasan kritis dari tipe data `ref struct` di C#?",
       "options": [
@@ -338,7 +338,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Constructor, Destructor, dan Initializer List\n\n### Materi Inti:\n- Default, parameterized, copy, dan destructor.\n- Initializer list untuk konstruk anggota.\n- Urutan construction dan destruction.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Constructor, Destructor, dan Initializer List\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Constructor, Destructor, dan Initializer List\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Constructor, Destructor, dan Initializer List\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana cara kerja sintaks *Collection Expressions* di C# 12 (misal: `int[] a = [1, 2, 3];`)?",
       "options": [
@@ -360,7 +360,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Copy Semantics dan Rule of Three/Five\n\n### Materi Inti:\n- Copy constructor, copy assignment, dan self-assignment.\n- Shallow copy versus deep copy.\n- Copy-and-swap serta kapan menerapkan rule of five.",
-    "code": "// C# C#11/C#14\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Semantics dan Rule of Three/Five\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Copy Semantics dan Rule of Three/Five\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Copy Semantics dan Rule of Three/Five\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa perbedaan penting antara keyword `yield return` dan mengembalikan `List<T>` biasa dalam fungsi?",
       "options": [
@@ -382,7 +382,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Operator Overloading\n\n### Materi Inti:\n- Operator arithmetic, comparison, assignment, dan stream.\n- Member operator versus non-member/friend operator.\n- Implicit conversion dan bahaya operator yang mengejutkan.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator Overloading\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Operator Overloading\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Operator Overloading\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa makna constraint generik `where T : class, new()` pada definisi kelas C#?",
       "options": [
@@ -404,7 +404,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Inheritance dan Virtual Dispatch\n\n### Materi Inti:\n- Base/derived relationship dan is-a semantics.\n- Virtual function, override, dan dynamic dispatch.\n- Virtual destructor pada base polymorphic.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Inheritance dan Virtual Dispatch\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Inheritance dan Virtual Dispatch\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Inheritance dan Virtual Dispatch\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Koleksi konkuren manakah yang paling tepat digunakan untuk skenario antrean multi-thread Producer-Consumer berkecepatan tinggi?",
       "options": [
@@ -426,7 +426,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Interface Abstrak dan Polymorphic Design\n\n### Materi Inti:\n- Pure virtual function dan abstract class.\n- Interface sebagai kontrak, bukan implementasi yang bocor.\n- Polymorphic destruction dan prinsip substitusi.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Interface Abstrak dan Polymorphic Design\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Interface Abstrak dan Polymorphic Design\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Interface Abstrak dan Polymorphic Design\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Dalam Generics, apa peran keyword `in` (Contravariance) pada interface `IReceiver<in T>`?",
       "options": [
@@ -448,7 +448,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Composition, Policy, dan CRTP\n\n### Materi Inti:\n- Composition over inheritance dan dependency injection.\n- Policy-based design untuk memilih perilaku compile-time.\n- CRTP sebagai static polymorphism.",
-    "code": "// C# C#11/C#14\n#include <iostream>\n\nint main() {\n    std::cout << \"Composition, Policy, dan CRTP\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Composition, Policy, dan CRTP\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Composition, Policy, dan CRTP\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Mengapa `Dictionary<TKey, TValue>` membutuhkan implementasi `GetHashCode()` dan `Equals()` yang konsisten pada key kustom?",
       "options": [
@@ -470,7 +470,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Function Templates dan Template Deduction\n\n### Materi Inti:\n- Template parameter, deduction, dan explicit template arguments.\n- Overload resolution antara template dan non-template.\n- Pembatasan interface melalui requiremen operasi.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Function Templates dan Template Deduction\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Function Templates dan Template Deduction\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Function Templates dan Template Deduction\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa yang dimaksud dengan *Deferred Execution* (eksekusi tertunda) pada query LINQ?",
       "options": [
@@ -492,7 +492,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Class Templates dan Instantiation\n\n### Materi Inti:\n- Class template, member definition, dan header placement.\n- Explicit instantiation versus implicit instantiation.\n- Contoh `Box<T>`, `Stack<T>`, dan `Optional<T>`.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Class Templates dan Instantiation\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Class Templates dan Instantiation\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Class Templates dan Instantiation\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa bahaya laten dari *Multiple Enumeration* pada variabel `IEnumerable<T>` hasil query LINQ?",
       "options": [
@@ -514,7 +514,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Partial Specialization, Full Specialization, dan Traits\n\n### Materi Inti:\n- Partial specialization untuk keluarga tipe.\n- Full specialization untuk kasus sangat khusus.\n- Trait pattern dan `std::enable_if`.",
-    "code": "// C# C#11/C#14\n#include <iostream>\n\nint main() {\n    std::cout << \"Partial Specialization, Full Specialization, dan Traits\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Partial Specialization, Full Specialization, dan Traits\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Partial Specialization, Full Specialization, dan Traits\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa perbedaan arsitektur mendasar antara `IEnumerable<T>` dan `IQueryable<T>` dalam eksekusi LINQ?",
       "options": [
@@ -536,7 +536,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Variadic Templates dan Fold Expression\n\n### Materi Inti:\n- Parameter pack, pack expansion, dan recursion.\n- Fold expression untuk sum, product, dan logical operations.\n- Penggunaan `std::tuple` dan argument forwarding.",
-    "code": "// C# C#11/C#17\n#include <iostream>\n\nint main() {\n    std::cout << \"Variadic Templates dan Fold Expression\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Variadic Templates dan Fold Expression\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Variadic Templates dan Fold Expression\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Kapan metode agregasi `.SelectMany()` digunakan dalam query LINQ?",
       "options": [
@@ -558,7 +558,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk强制 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
-    "code": "// C# C#14/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Compile-Time Programming dengan `constexpr` dan `consteval`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Compile-Time Programming dengan `constexpr` dan `consteval`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Compile-Time Programming dengan `constexpr` dan `consteval`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Manakah metode LINQ yang paling efisien untuk mengecek apakah setidaknya ada satu elemen yang memenuhi syarat tanpa menghitung seluruh total data?",
       "options": [
@@ -580,7 +580,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# SFINAE, `requires`, dan Early Constraint\n\n### Materi Inti:\n- Substitution failure dan SFINAE.\n- `requires` expression dan constrained template.\n- Overload resolution serta diagnostic yang lebih jelas.",
-    "code": "// C# C#11/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"SFINAE, `requires`, dan Early Constraint\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: SFINAE, `requires`, dan Early Constraint\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"SFINAE, `requires`, dan Early Constraint\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana cara membedakan operasi `.First()` dan `.FirstOrDefault()` saat elemen yang dicari tidak ditemukan?",
       "options": [
@@ -602,7 +602,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Ownership Model dan Raw Memory\n\n### Materi Inti:\n- Stack ownership versus heap ownership.\n- `new`, `new[]`, `delete`, dan `delete[]`.\n- Double free, leak, mismatched deallocation, dan undefined behavior.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Ownership Model dan Raw Memory\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Ownership Model dan Raw Memory\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Ownership Model dan Raw Memory\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa yang sebenarnya terjadi di balik layar saat thread mencapai keyword `await` pada async method di C#?",
       "options": [
@@ -624,7 +624,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::unique_ptr` dan Exclusive Ownership\n\n### Materi Inti:\n- Exclusive ownership dan move-only semantics.\n- Factory function seperti `std::make_unique`.\n- Custom deleter, array support, `reset`, dan `release`.",
-    "code": "// C# C#11/C#14\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::unique_ptr` dan Exclusive Ownership\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: `std::unique_ptr` dan Exclusive Ownership\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"`std::unique_ptr` dan Exclusive Ownership\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Kapan penggunaan `ValueTask<T>` lebih dianjurkan daripada `Task<T>` standar?",
       "options": [
@@ -646,7 +646,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::shared_ptr` dan `std::weak_ptr`\n\n### Materi Inti:\n- Shared ownership, control block, dan reference count.\n- `weak_ptr` untuk optional non-owning reference.\n- Cycle ownership dan penggunaan `lock()`.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::shared_ptr` dan `std::weak_ptr`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: `std::shared_ptr` dan `std::weak_ptr`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"`std::shared_ptr` dan `std::weak_ptr`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa bahaya memanggil properti `.Result` atau method `.Wait()` pada `Task` di lingkungan sinkron?",
       "options": [
@@ -668,7 +668,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Allocator-Aware Container dan `pmr`\n\n### Materi Inti:\n- Allocator-aware container dan custom allocator.\n- `std::pmr::monotonic_buffer_resource` serta pool lifetime.\n- Allocation failure, pool boundary, dan cache locality.",
-    "code": "// C# C#17\n#include <iostream>\n\nint main() {\n    std::cout << \"Allocator-Aware Container dan `pmr`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Allocator-Aware Container dan `pmr`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Allocator-Aware Container dan `pmr`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana cara mengimplementasikan pembatalan operasi asinkron yang benar menggunakan `CancellationToken`?",
       "options": [
@@ -690,7 +690,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# RAII Wrapper dan Safe Resource Patterns\n\n### Materi Inti:\n- Wrapper untuk file, socket, mutex, dan heap resource.\n- `lock_guard` versus `unique_lock`.\n- Scope guard untuk cleanup lintas jalur exception.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII Wrapper dan Safe Resource Patterns\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: RAII Wrapper dan Safe Resource Patterns\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"RAII Wrapper dan Safe Resource Patterns\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa keuntungan menggunakan `IAsyncEnumerable<T>` yang diperkenalkan di C# 8 / .NET Core 3?",
       "options": [
@@ -712,7 +712,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mendeteksi Memory Bug dengan Sanitizer\n\n### Materi Inti:\n- AddressSanitizer, UndefinedBehaviorSanitizer, dan Valgrind.\n- Dangling reference, use-after-free, overflow, dan out-of-bounds.\n- Menjalankan sanitizer di native dan WebAssembly.",
-    "code": "// C# C#11/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Mendeteksi Memory Bug dengan Sanitizer\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Mendeteksi Memory Bug dengan Sanitizer\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Mendeteksi Memory Bug dengan Sanitizer\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa tujuan menyematkan `.ConfigureAwait(false)` pada pemanggilan Task di library atau backend code?",
       "options": [
@@ -734,7 +734,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Value Category: Lvalue, Xvalue, dan Prvalue\n\n### Materi Inti:\n- Lvalue, xvalue, prvalue, dan named rvalue reference.\n- `std::move` sebagai cast eksplisit.\n- Decay type dan array-to-pointer decay.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Value Category: Lvalue, Xvalue, dan Prvalue\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Value Category: Lvalue, Xvalue, dan Prvalue\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Value Category: Lvalue, Xvalue, dan Prvalue\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana siklus Generasi (Gen 0, Gen 1, Gen 2) pada .NET Garbage Collector bekerja?",
       "options": [
@@ -756,7 +756,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Move Constructor dan Move Assignment\n\n### Materi Inti:\n- Move operation untuk mengambil resource.\n- Source harus berada dalam valid tetapi unspecified state.\n- Move constructor idealnya `noexcept` agar container dapat memindahkan.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Move Constructor dan Move Assignment\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Move Constructor dan Move Assignment\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Move Constructor dan Move Assignment\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa kriteria sebuah objek dialokasikan di *Large Object Heap (LOH)* di .NET?",
       "options": [
@@ -778,7 +778,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Perfect Forwarding\n\n### Materi Inti:\n- Forwarding reference dan `auto&&`.\n- `std::forward<T>` untuk mempertahankan value category.\n- Argument unwrapping dengan `std::unwrap_reference`.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Perfect Forwarding\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Perfect Forwarding\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Perfect Forwarding\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Mengapa mengimplementasikan interface `IDisposable` dengan statement `using` sangat esensial untuk resource unmanaged?",
       "options": [
@@ -800,7 +800,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Copy Elision, NRVO, dan Guaranteed Move\n\n### Materi Inti:\n- Copy elision dan Named Return Value Optimization.\n- Prvalue construction langsung ke result object.\n- `std::move` yang tidak perlu dapat menghambat copy elision.",
-    "code": "// C# C#17\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Elision, NRVO, dan Guaranteed Move\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Copy Elision, NRVO, dan Guaranteed Move\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Copy Elision, NRVO, dan Guaranteed Move\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa fungsi dari `ArrayPool<T>.Shared` dalam aplikasi berkinerja tinggi?",
       "options": [
@@ -822,7 +822,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# STL Container dan Allocation Strategy\n\n### Materi Inti:\n- Tradeoff vector, deque, list, map, set, dan unordered_map.\n- Iterator invalidation, reserve, resize, dan shrink-to-fit.\n- Copy versus move behavior pada container.",
-    "code": "// C# C#11/C#17\n#include <iostream>\n\nint main() {\n    std::cout << \"STL Container dan Allocation Strategy\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: STL Container dan Allocation Strategy\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"STL Container dan Allocation Strategy\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Mengapa pustaka *BenchmarkDotNet* menjadi standar de facto untuk micro-benchmarking kode C#?",
       "options": [
@@ -844,7 +844,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# In-Place Construction dengan `emplace`, `optional`, dan `variant`\n\n### Materi Inti:\n- `emplace_back` dan konstruksi langsung di dalam container.\n- `std::optional<T>::emplace` untuk optional move-only value.\n- `std::variant` dan pemilihan alternative secara eksplisit.",
-    "code": "// C# C#17/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: In-Place Construction dengan `emplace`, `optional`, dan `variant`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Kapan modifier `unsafe` dan manipulasi pointer langsung diperbolehkan di C#?",
       "options": [
@@ -866,7 +866,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Iterator dan Standard Algorithms\n\n### Materi Inti:\n- Iterator categories dan range begin/end.\n- `find`, `sort`, `count`, `transform`, dan algorithm contracts.\n- Lambda expression untuk operasi lokal.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Iterator dan Standard Algorithms\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Iterator dan Standard Algorithms\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Iterator dan Standard Algorithms\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa keunggulan arsitektur *Minimal APIs* dibanding arsitektur Controller klasik di ASP.NET Core 8?",
       "options": [
@@ -888,7 +888,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Ranges Views: Lazy dan Non-Owning\n\n### Materi Inti:\n- `views::filter`, `transform`, `take`, dan `drop`.\n- View versus owning range.\n- Lazy evaluation dan lifetime adaptor.",
-    "code": "// C# C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Ranges Views: Lazy dan Non-Owning\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Ranges Views: Lazy dan Non-Owning\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Ranges Views: Lazy dan Non-Owning\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana perbedaan masa hidup (lifetime) service *Scoped* dan *Transient* di container Dependency Injection ASP.NET Core?",
       "options": [
@@ -910,7 +910,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Range Algorithms dan Range Concepts\n\n### Materi Inti:\n- `std::ranges::sort`, `find`, dan `for_each`.\n- Input, output, forward, sortable, dan mutable range requirements.\n- Mengurangi manual iterator arithmetic.",
-    "code": "// C# C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Range Algorithms dan Range Concepts\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Range Algorithms dan Range Concepts\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Range Algorithms dan Range Concepts\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa risiko fatal dari anti-pattern *Captive Dependency* pada konfigurasi DI container?",
       "options": [
@@ -932,7 +932,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\n\n### Materi Inti:\n- `views::zip` untuk beberapa range paralel.\n- `views::chunk`, `slide`, dan `enumerate`.\n- Tuple-like elements, overflow behavior, dan lifetime.",
-    "code": "// C# C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana alur eksekusi *Middleware Pipeline* di ASP.NET Core?",
       "options": [
@@ -954,7 +954,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Error Value dengan `std::expected` dan `std::optional`\n\n### Materi Inti:\n- `optional<T>` untuk absence tanpa error detail.\n- `expected<T,E>` untuk success atau error terstruktur.\n- Composing operations dengan `and_then`, `transform`, dan `or_else`.",
-    "code": "// C# C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Error Value dengan `std::expected` dan `std::optional`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Error Value dengan `std::expected` dan `std::optional`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Error Value dengan `std::expected` dan `std::optional`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana cara memvalidasi request DTO secara elegan menggunakan library *FluentValidation* di ASP.NET Core?",
       "options": [
@@ -976,7 +976,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# API Modern C#20/23: Format, Print, Numbers, dan `mdspan`\n\n### Materi Inti:\n- `std::format`, `std::print`, dan feature-test macros.\n- `std::numbers` untuk konstanta numerik standar.\n- `std::mdspan` untuk multidimensional view tanpa ownership.",
-    "code": "// C# C#20/C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"API Modern C#20/23: Format, Print, Numbers, dan `mdspan`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: API Modern C#20/23: Format, Print, Numbers, dan `mdspan`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"API Modern C#20/23: Format, Print, Numbers, dan `mdspan`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Status HTTP apa yang direkomendasikan RFC 7807 / 9457 untuk response error API terstruktur di ASP.NET Core 8?",
       "options": [
@@ -998,7 +998,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Thread Dasar, Join, dan Detach\n\n### Materi Inti:\n- Membuat, menjalankan, `join`, dan `detach` thread.\n- Lifetime thread dan bahaya detach tanpa koordinasi.\n- Data race versus race condition.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Dasar, Join, dan Detach\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Thread Dasar, Join, dan Detach\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Thread Dasar, Join, dan Detach\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa tujuan menggunakan opsi query `.AsNoTracking()` pada query pembacaan data di EF Core?",
       "options": [
@@ -1020,7 +1020,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mutex, `lock_guard`, dan Condition Variable\n\n### Materi Inti:\n- Critical section dan mutual exclusion.\n- RAII locking dengan `lock_guard` dan `unique_lock`.\n- Condition variable, predicate loop, notify-one/all.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"Mutex, `lock_guard`, dan Condition Variable\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Mutex, `lock_guard`, dan Condition Variable\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Mutex, `lock_guard`, dan Condition Variable\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa perbedaan mekanisme loading antara *Eager Loading* (`.Include()`) dan *Lazy Loading* di EF Core?",
       "options": [
@@ -1042,7 +1042,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Atomic dan Memory Ordering\n\n### Materi Inti:\n- Atomic load/store, fetch-add, compare-exchange.\n- Relaxed, acquire, release, dan sequential consistency.\n- Lock-free atomic dan tradeoff performance.",
-    "code": "// C# C#11/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Atomic dan Memory Ordering\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Atomic dan Memory Ordering\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Atomic dan Memory Ordering\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana cara menangani *Concurrency Conflicts* berbasis Optimistic Concurrency di EF Core?",
       "options": [
@@ -1064,7 +1064,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::async`, Future, dan Task\n\n### Materi Inti:\n- Launch policy dan asynchronous execution.\n- Future/get, exception propagation, dan timeout.\n- Lifetime task dan bahaya menunggu terlalu lama.",
-    "code": "// C# C#11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::async`, Future, dan Task\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: `std::async`, Future, dan Task\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"`std::async`, Future, dan Task\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa keunggulan metode eksekusi massal `.ExecuteUpdateAsync()` dan `.ExecuteDeleteAsync()` di EF Core 7/8?",
       "options": [
@@ -1086,7 +1086,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Thread Pool, Deadlock, dan Concurrency Pitfalls\n\n### Materi Inti:\n- Work queue, worker lifetime, dan task scheduling.\n- Deadlock, starvation, ABA, false sharing, dan lock ordering.\n- Desain bounded concurrency dan backpressure.",
-    "code": "// C# C#11/C#17\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Pool, Deadlock, dan Concurrency Pitfalls\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Thread Pool, Deadlock, dan Concurrency Pitfalls\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Thread Pool, Deadlock, dan Concurrency Pitfalls\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa fungsi fitur *Shadow Properties* pada model Entity Framework Core?",
       "options": [
@@ -1108,7 +1108,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Pengantar Coroutine: Suspension dan Resumption\n\n### Materi Inti:\n- Coroutine frame, promise object, dan awaiter.\n- `co_await`, `co_yield`, dan `co_return`.\n- Perbedaan blocking thread dengan cooperative suspension.",
-    "code": "// C# C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Pengantar Coroutine: Suspension dan Resumption\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Pengantar Coroutine: Suspension dan Resumption\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Pengantar Coroutine: Suspension dan Resumption\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Kapan perintah `dotnet ef migrations add` dan `dotnet ef database update` digunakan?",
       "options": [
@@ -1130,7 +1130,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Membangun Coroutine dari Komponen Dasar\n\n### Materi Inti:\n- Promise methods: `return_value`, `yield_value`, `initial_suspend`, dan `final_suspend`.\n- Coroutine return object dan exception propagation.\n- Mengapa coroutine bukan thread.",
-    "code": "// C# C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Membangun Coroutine dari Komponen Dasar\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Membangun Coroutine dari Komponen Dasar\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Membangun Coroutine dari Komponen Dasar\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Dalam prinsip SOLID, apa inti dari *Dependency Inversion Principle (DIP)*?",
       "options": [
@@ -1152,7 +1152,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Async/Await dengan Executor dan Cancellation\n\n### Materi Inti:\n- Custom awaiter dan executor policy.\n- Exception propagation, timeout, dan cancellation token.\n- Composing async operations tanpa nested blocking.",
-    "code": "// C# C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Async/Await dengan Executor dan Cancellation\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Async/Await dengan Executor dan Cancellation\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Async/Await dengan Executor dan Cancellation\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa tujuan utama pemisahan perintah dan query dalam pola arsitektur *CQRS* (Command Query Responsibility Segregation)?",
       "options": [
@@ -1174,7 +1174,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Generator dengan `std::generator` C#23\n\n### Materi Inti:\n- `co_yield` sebagai lazy producer.\n- Backpressure, range protocol, dan lifetime iterator.\n- Menggabungkan generator dengan ranges.",
-    "code": "// C# C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Generator dengan `std::generator` C#23\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Generator dengan `std::generator` C#23\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Generator dengan `std::generator` C#23\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Dalam Domain-Driven Design (DDD), apa perbedaan antara *Entity* dan *Value Object*?",
       "options": [
@@ -1196,7 +1196,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Concepts dan Constrained Overload\n\n### Materi Inti:\n- `requires` expression dan named concept.\n- Constraint satisfaction dan overload resolution.\n- Mengganti SFINAE noise dengan diagnostic yang jelas.",
-    "code": "// C# C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Concepts dan Constrained Overload\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Concepts dan Constrained Overload\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Concepts dan Constrained Overload\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana library *MediatR* memfasilitasi implementasi pola Mediator di aplikasi .NET?",
       "options": [
@@ -1218,7 +1218,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Custom Range, `view`, dan `borrowed_range`\n\n### Materi Inti:\n- Range requirements dan `range_reference_t`.\n- View, borrowed range, dan adaptor customization.\n- `views::as_const`, `cache_latest`, `chunk`, `slide`, dan `enumerate`.",
-    "code": "// C# C#20/C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Custom Range, `view`, dan `borrowed_range`\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Custom Range, `view`, dan `borrowed_range`\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Custom Range, `view`, dan `borrowed_range`\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Dalam Event-Driven Architecture, apa peran *Outbox Pattern* dalam menjamin keandalan pengiriman pesan?",
       "options": [
@@ -1240,7 +1240,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Modern Generic Design: Templates + Concepts + Ranges\n\n### Materi Inti:\n- Menggabungkan constrained template, range algorithms, dan move-only values.\n- API generik dengan error type dan no unnecessary copy.\n- Menulis benchmark serta test matrix untuk beberapa tipe.",
-    "code": "// C# C#20/C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Modern Generic Design: Templates + Concepts + Ranges\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Modern Generic Design: Templates + Concepts + Ranges\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Modern Generic Design: Templates + Concepts + Ranges\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Mengapa *Repository Pattern* sering dikombinasikan dengan *Unit of Work Pattern*?",
       "options": [
@@ -1262,7 +1262,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Migrasi ke C#23 Library\n\n### Materi Inti:\n- `std::expected`, `std::print`, `std::source_location`, dan string `contains`.\n- `std::ranges::to`, `std::mdspan`, dan `std::generator`.\n- Feature-test macros dan strategi fallback compiler.",
-    "code": "// C# C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Migrasi ke C#23 Library\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Migrasi ke C#23 Library\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Migrasi ke C#23 Library\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa keunggulan class `WebApplicationFactory<TEntryPoint>` dalam integration testing ASP.NET Core?",
       "options": [
@@ -1284,7 +1284,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Performance, Profiling, dan Optimization yang Terukur\n\n### Materi Inti:\n- Big-O, cache locality, branch prediction, dan allocation cost.\n- Move semantics, emplace, reserve, dan avoiding unnecessary copy.\n- Benchmark, profiler, dan reproducibility.",
-    "code": "// C# C#17/C#20\n#include <iostream>\n\nint main() {\n    std::cout << \"Performance, Profiling, dan Optimization yang Terukur\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Performance, Profiling, dan Optimization yang Terukur\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Performance, Profiling, dan Optimization yang Terukur\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa keuntungan utama menggunakan *Native AOT (Ahead-of-Time) Compilation* di .NET 8?",
       "options": [
@@ -1306,7 +1306,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Reliabilitas, Security, dan Test Matrix\n\n### Materi Inti:\n- Sanitizer, invariant test, property test, dan fuzzing ringan.\n- Input validation, ownership contract, dan secure defaults.\n- Testing pada edge case, malformed input, dan concurrent path.",
-    "code": "// C# C#11–C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Reliabilitas, Security, dan Test Matrix\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Reliabilitas, Security, dan Test Matrix\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Dalam standar OpenTelemetry, apa perbedaan antara *Traces*, *Metrics*, dan *Logs* (tiga pilar observability)?",
       "options": [
@@ -1328,7 +1328,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Arsitektur, C#20 Modules, Build, dan CI\n\n### Materi Inti:\n- Layering, interface boundary, dependency inversion, dan module boundary.\n- CMake/compiler flags, WebAssembly build, dan browser execution.\n- CI untuk build, test, sanitizer, dan format/lint.",
-    "code": "// C# C#20/C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Arsitektur, C#20 Modules, Build, dan CI\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Arsitektur, C#20 Modules, Build, dan CI\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Arsitektur, C#20 Modules, Build, dan CI\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa manfaat menggunakan image container *Chiseled Ubuntu* untuk aplikasi .NET di Docker?",
       "options": [
@@ -1350,7 +1350,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Capstone Design: Modern Data Pipeline\n\n### Materi Inti:\n- Merancang domain type, ownership, error handling, dan API.\n- Memilih templates, concepts, ranges, smart pointer, dan coroutine secara tepat.\n- Menentukan acceptance criteria, benchmark, dan test cases.",
-    "code": "// C# C#20/C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Design: Modern Data Pipeline\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Capstone Design: Modern Data Pipeline\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Capstone Design: Modern Data Pipeline\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Apa fungsi pustaka *NSubstitute* atau *Moq* saat menulis unit test class service di C#?",
       "options": [
@@ -1372,7 +1372,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Capstone Implementation, Demo, dan Refleksi\n\n### Materi Inti:\n- Implementasi end-to-end di JupyterLite/WebAssembly.\n- Menjalankan unit test, sanitizer, dan benchmark.\n- Menjelaskan tradeoff, hasil, keterbatasan, dan langkah pengembangan.",
-    "code": "// C# C#20/C#23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Implementation, Demo, dan Refleksi\" << std::endl;\n    return 0;\n}",
+    "code": "using System;\n\n// C# 12 / .NET: Capstone Implementation, Demo, dan Refleksi\nnamespace LearningPathDemo\n{\n    class Program\n    {\n        static void Main()\n        {\n            string topik = \"Capstone Implementation, Demo, dan Refleksi\";\n            Console.WriteLine(\"Menjalankan studi kasus: \" + topik);\n            Console.WriteLine(\"Status: Siap belajar C# dengan Judge0 CE.\");\n        }\n    }\n}\n",
     "quiz": {
       "question": "Bagaimana endpoint `/health` (ASP.NET Core Health Checks) dimanfaatkan oleh Kubernetes orchestrator?",
       "options": [
@@ -1697,8 +1697,7 @@ async function runCode() {
     
     // Attempt Judge0 or playground execution if applicable
     try {
-        const langIds = { csharp: 54, rust: 73, go: 60 };
-        const langId = langIds['csharp'] || 73;
+        const langId = 51; // CSHARP Judge0 CE language_id
         const res = await fetch('https://ce.judge0.com/submissions?base64_encoded=false&wait=true', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

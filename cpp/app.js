@@ -1697,8 +1697,7 @@ async function runCode() {
     
     // Attempt Judge0 or playground execution if applicable
     try {
-        const langIds = { cpp: 54, rust: 73, go: 60 };
-        const langId = langIds['cpp'] || 73;
+        const langId = 105; // CPP Judge0 CE language_id
         const res = await fetch('https://ce.judge0.com/submissions?base64_encoded=false&wait=true', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

@@ -74,7 +74,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Program Pertama dengan PHP20 dan PHP23\n\n### Materi Inti:\n- Alur compile, link, dan run program PHP.\n- Peran header, namespace std, dan flag -std=c++20 atau -std=c++23.\n- Menjalankan kode PHP melalui JupyterLite/Xeus-Cling.",
-    "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Program Pertama dengan PHP20 dan PHP23\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Program Pertama dengan PHP20 dan PHP23\ndeclare(strict_types=1);\n\n$topik = 'Program Pertama dengan PHP20 dan PHP23';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa yang membedakan mode `declare(strict_types=1);` dengan default type coercion di PHP 8.3?",
       "options": [
@@ -96,7 +96,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Tipe Data, Literal, `auto`, dan `constexpr`\n\n### Materi Inti:\n- Tipe fundamental integer, floating-point, char, bool, dan pointer dasar.\n- Signedness, ukuran tipe, suffix literal, dan konversi angka.\n- `auto` untuk deduksi tipe dan `constexpr` untuk nilai compile-time.",
-    "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Tipe Data, Literal, `auto`, dan `constexpr`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Tipe Data, Literal, `auto`, dan `constexpr`\ndeclare(strict_types=1);\n\n$topik = 'Tipe Data, Literal, `auto`, dan `constexpr`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Perhatikan kode: `echo 0 == '0a' ? 'true' : 'false';`. Apa output di PHP 8.0+ dan mengapa?",
       "options": [
@@ -118,7 +118,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Operator, Precedence, dan Short-Circuit\n\n### Materi Inti:\n- Operator arithmetic, comparison, logical, conditional, dan assignment.\n- Precedence, associativity, dan pentingnya parentheses.\n- Short-circuit evaluation pada `&&` dan `||`.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator, Precedence, dan Short-Circuit\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Operator, Precedence, dan Short-Circuit\ndeclare(strict_types=1);\n\n$topik = 'Operator, Precedence, dan Short-Circuit';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa keunggulan ekspresi `match` dibandingkan dengan pernyataan `switch` tradisional di PHP 8?",
       "options": [
@@ -140,7 +140,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Kontrol Alur dan Loop\n\n### Materi Inti:\n- `if`, `else`, `switch`, dan equality/comparison.\n- For loop, range-based for, break, continue, dan early return.\n- Menulis kondisi yang mudah diuji dan tidak ambigu.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Kontrol Alur dan Loop\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Kontrol Alur dan Loop\ndeclare(strict_types=1);\n\n$topik = 'Kontrol Alur dan Loop';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa yang terjadi jika variabel bernilai `null` dipanggil dengan nullsafe operator `$user?->profile?->getAddress()`?",
       "options": [
@@ -162,7 +162,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Fungsi, Parameter, Overload, dan `constexpr`\n\n### Materi Inti:\n- Declaration, definition, return type, dan parameter passing.\n- Pass by value, pass by reference, default arguments, dan overload resolution.\n- Fungsi `constexpr` untuk kalkulasi compile-time.",
-    "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Fungsi, Parameter, Overload, dan `constexpr`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Fungsi, Parameter, Overload, dan `constexpr`\ndeclare(strict_types=1);\n\n$topik = 'Fungsi, Parameter, Overload, dan `constexpr`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana sintaks *named arguments* memengaruhi pemanggilan fungsi di PHP 8?",
       "options": [
@@ -184,7 +184,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Header, Namespace, Debugging, dan Unit Test Mini\n\n### Materi Inti:\n- Pemisahan `.h` dan `.php`, include guard, dan `#pragma once`.\n- Namespace untuk menghindari nama global yang tabrakan.\n- Assertion, breakpoint, dan unit test sederhana.",
-    "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Header, Namespace, Debugging, dan Unit Test Mini\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Header, Namespace, Debugging, dan Unit Test Mini\ndeclare(strict_types=1);\n\n$topik = 'Header, Namespace, Debugging, dan Unit Test Mini';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa hasil dari array unpacking pada array dengan key string di PHP 8.1+ `[...$arr1, ...$arr2]`?",
       "options": [
@@ -206,7 +206,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Initialization dan Object Lifetime\n\n### Materi Inti:\n- Automatic, static, thread-local, dan local lifetime.\n- Value initialization, aggregate initialization, dan initializer list.\n- Urutan destruction ketika nested scope berakhir.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Initialization dan Object Lifetime\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Initialization dan Object Lifetime\ndeclare(strict_types=1);\n\n$topik = 'Initialization dan Object Lifetime';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana cara kerja *Constructor Property Promotion* di PHP 8?",
       "options": [
@@ -228,7 +228,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Pointer, Reference, dan Address\n\n### Materi Inti:\n- Pointer nullable, reference wajib terinisialisasi, dan pointer arithmetic.\n- Lvalue reference versus rvalue reference.\n- Perbedaan address-of, pointer, dan lifetime.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Pointer, Reference, dan Address\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Pointer, Reference, dan Address\ndeclare(strict_types=1);\n\n$topik = 'Pointer, Reference, dan Address';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Manakah pernyataan yang benar mengenai *Readonly Classes* di PHP 8.2+?",
       "options": [
@@ -250,7 +250,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Struct, Class, dan Invariant\n\n### Materi Inti:\n- Data members, member functions, access control, dan encapsulation.\n- Membangun invariant seperti `balance >= 0`.\n- Memisahkan interface publik dari implementasi internal.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Struct, Class, dan Invariant\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Struct, Class, dan Invariant\ndeclare(strict_types=1);\n\n$topik = 'Struct, Class, dan Invariant';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa perbedaan mendasar antara *Pure Enum* dan *Backed Enum* di PHP 8.1+?",
       "options": [
@@ -272,7 +272,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Const Correctness dan Value Semantics\n\n### Materi Inti:\n- Const object, const member function, dan pass-by-const-reference.\n- Value semantics versus reference semantics.\n- Kapan `mutable` boleh digunakan dan mengapa harus hati-hati.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Const Correctness dan Value Semantics\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Const Correctness dan Value Semantics\ndeclare(strict_types=1);\n\n$topik = 'Const Correctness dan Value Semantics';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana cara mengatasi konflik nama metode yang sama dari dua Trait yang digunakan dalam satu class?",
       "options": [
@@ -294,7 +294,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::string`, `std::string_view`, dan `std::span`\n\n### Materi Inti:\n- `std::string` memiliki data; `string_view` adalah view non-owning.\n- `std::span` menyediakan view atas contiguous storage.\n- Lifetime hazard, dangling view, dan pemilihan interface yang benar.",
-    "code": "// PHP PHP17/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::string`, `std::string_view`, dan `std::span`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: `std::string`, `std::string_view`, dan `std::span`\ndeclare(strict_types=1);\n\n$topik = '`std::string`, `std::string_view`, dan `std::span`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa fungsi dari metode `__invoke()` pada sebuah Class PHP?",
       "options": [
@@ -316,7 +316,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# RAII dan Penanganan Exception\n\n### Materi Inti:\n- Resource Acquisition Is Initialization sebagai pola utama ownership.\n- Stack unwinding dan destruction saat exception dilempar.\n- Menulis destructor yang tidak me-lempar exception.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII dan Penanganan Exception\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: RAII dan Penanganan Exception\ndeclare(strict_types=1);\n\n$topik = 'RAII dan Penanganan Exception';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Mengapa interface segregation principle (ISP) menyarankan interface kecil dan spesifik?",
       "options": [
@@ -338,7 +338,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Constructor, Destructor, dan Initializer List\n\n### Materi Inti:\n- Default, parameterized, copy, dan destructor.\n- Initializer list untuk konstruk anggota.\n- Urutan construction dan destruction.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Constructor, Destructor, dan Initializer List\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Constructor, Destructor, dan Initializer List\ndeclare(strict_types=1);\n\n$topik = 'Constructor, Destructor, dan Initializer List';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa keunggulan utama PHP *Attributes* dibanding PHPDoc annotations tradisional?",
       "options": [
@@ -360,7 +360,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Copy Semantics dan Rule of Three/Five\n\n### Materi Inti:\n- Copy constructor, copy assignment, dan self-assignment.\n- Shallow copy versus deep copy.\n- Copy-and-swap serta kapan menerapkan rule of five.",
-    "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Semantics dan Rule of Three/Five\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Copy Semantics dan Rule of Three/Five\ndeclare(strict_types=1);\n\n$topik = 'Copy Semantics dan Rule of Three/Five';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa yang dimaksud dengan *Fibers* yang diperkenalkan di PHP 8.1?",
       "options": [
@@ -382,7 +382,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Operator Overloading\n\n### Materi Inti:\n- Operator arithmetic, comparison, assignment, dan stream.\n- Member operator versus non-member/friend operator.\n- Implicit conversion dan bahaya operator yang mengejutkan.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Operator Overloading\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Operator Overloading\ndeclare(strict_types=1);\n\n$topik = 'Operator Overloading';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana *Generators* (`yield`) membantu efisiensi penggunaan memori saat memproses dataset besar?",
       "options": [
@@ -404,7 +404,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Inheritance dan Virtual Dispatch\n\n### Materi Inti:\n- Base/derived relationship dan is-a semantics.\n- Virtual function, override, dan dynamic dispatch.\n- Virtual destructor pada base polymorphic.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Inheritance dan Virtual Dispatch\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Inheritance dan Virtual Dispatch\ndeclare(strict_types=1);\n\n$topik = 'Inheritance dan Virtual Dispatch';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa hasil dari First-Class Callable Syntax `strlen(...)` di PHP 8.1?",
       "options": [
@@ -426,7 +426,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Interface Abstrak dan Polymorphic Design\n\n### Materi Inti:\n- Pure virtual function dan abstract class.\n- Interface sebagai kontrak, bukan implementasi yang bocor.\n- Polymorphic destruction dan prinsip substitusi.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Interface Abstrak dan Polymorphic Design\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Interface Abstrak dan Polymorphic Design\ndeclare(strict_types=1);\n\n$topik = 'Interface Abstrak dan Polymorphic Design';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa fungsi dari koleksi `WeakMap` di PHP 8.0?",
       "options": [
@@ -448,7 +448,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Composition, Policy, dan CRTP\n\n### Materi Inti:\n- Composition over inheritance dan dependency injection.\n- Policy-based design untuk memilih perilaku compile-time.\n- CRTP sebagai static polymorphism.",
-    "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Composition, Policy, dan CRTP\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Composition, Policy, dan CRTP\ndeclare(strict_types=1);\n\n$topik = 'Composition, Policy, dan CRTP';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Kapan sebuah Class Constant Type `public const string API_URL = '...';` diperiksa oleh PHP 8.3?",
       "options": [
@@ -470,7 +470,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Function Templates dan Template Deduction\n\n### Materi Inti:\n- Template parameter, deduction, dan explicit template arguments.\n- Overload resolution antara template dan non-template.\n- Pembatasan interface melalui requiremen operasi.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Function Templates dan Template Deduction\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Function Templates dan Template Deduction\ndeclare(strict_types=1);\n\n$topik = 'Function Templates dan Template Deduction';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Manakah hierarki yang benar untuk penanganan error/exception fatal di PHP 7 dan PHP 8?",
       "options": [
@@ -492,7 +492,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Class Templates dan Instantiation\n\n### Materi Inti:\n- Class template, member definition, dan header placement.\n- Explicit instantiation versus implicit instantiation.\n- Contoh `Box<T>`, `Stack<T>`, dan `Optional<T>`.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Class Templates dan Instantiation\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Class Templates dan Instantiation\ndeclare(strict_types=1);\n\n$topik = 'Class Templates dan Instantiation';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Kapan blok `finally` dieksekusi dalam struktur `try - catch - finally`?",
       "options": [
@@ -514,7 +514,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Partial Specialization, Full Specialization, dan Traits\n\n### Materi Inti:\n- Partial specialization untuk keluarga tipe.\n- Full specialization untuk kasus sangat khusus.\n- Trait pattern dan `std::enable_if`.",
-    "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"Partial Specialization, Full Specialization, dan Traits\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Partial Specialization, Full Specialization, dan Traits\ndeclare(strict_types=1);\n\n$topik = 'Partial Specialization, Full Specialization, dan Traits';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa keuntungan menggunakan *Exception Chaining* (`new CustomException('Gagal', 0, $previousException)`)?",
       "options": [
@@ -536,7 +536,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Variadic Templates dan Fold Expression\n\n### Materi Inti:\n- Parameter pack, pack expansion, dan recursion.\n- Fold expression untuk sum, product, dan logical operations.\n- Penggunaan `std::tuple` dan argument forwarding.",
-    "code": "// PHP PHP11/PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Variadic Templates dan Fold Expression\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Variadic Templates dan Fold Expression\ndeclare(strict_types=1);\n\n$topik = 'Variadic Templates dan Fold Expression';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa tingkatan log terendah (paling detail) menurut standar PSR-3 Logging Standard?",
       "options": [
@@ -558,7 +558,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Compile-Time Programming dengan `constexpr` dan `consteval`\n\n### Materi Inti:\n- `constexpr` function, literal type, dan compile-time evaluation.\n- `consteval` untuk强制 calculated at compile-time.\n- `if constexpr` untuk memilih code berdasarkan tipe.",
-    "code": "// PHP PHP14/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Compile-Time Programming dengan `constexpr` dan `consteval`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Compile-Time Programming dengan `constexpr` dan `consteval`\ndeclare(strict_types=1);\n\n$topik = 'Compile-Time Programming dengan `constexpr` dan `consteval`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa risiko membiarkan `display_errors = On` di lingkungan produksi (production)?",
       "options": [
@@ -580,7 +580,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# SFINAE, `requires`, dan Early Constraint\n\n### Materi Inti:\n- Substitution failure dan SFINAE.\n- `requires` expression dan constrained template.\n- Overload resolution serta diagnostic yang lebih jelas.",
-    "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"SFINAE, `requires`, dan Early Constraint\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: SFINAE, `requires`, dan Early Constraint\ndeclare(strict_types=1);\n\n$topik = 'SFINAE, `requires`, dan Early Constraint';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana cara menangani E_DEPRECATED warning di PHP 8.3 agar tidak merusak response JSON API?",
       "options": [
@@ -602,7 +602,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Ownership Model dan Raw Memory\n\n### Materi Inti:\n- Stack ownership versus heap ownership.\n- `new`, `new[]`, `delete`, dan `delete[]`.\n- Double free, leak, mismatched deallocation, dan undefined behavior.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Ownership Model dan Raw Memory\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Ownership Model dan Raw Memory\ndeclare(strict_types=1);\n\n$topik = 'Ownership Model dan Raw Memory';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Mengapa *Prepared Statements* pada PDO sangat efektif mencegah SQL Injection?",
       "options": [
@@ -624,7 +624,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::unique_ptr` dan Exclusive Ownership\n\n### Materi Inti:\n- Exclusive ownership dan move-only semantics.\n- Factory function seperti `std::make_unique`.\n- Custom deleter, array support, `reset`, dan `release`.",
-    "code": "// PHP PHP11/PHP14\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::unique_ptr` dan Exclusive Ownership\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: `std::unique_ptr` dan Exclusive Ownership\ndeclare(strict_types=1);\n\n$topik = '`std::unique_ptr` dan Exclusive Ownership';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Opsi konfigurasi PDO apa yang wajib dipasang agar query error melempar exception alih-alih silent fail?",
       "options": [
@@ -646,7 +646,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::shared_ptr` dan `std::weak_ptr`\n\n### Materi Inti:\n- Shared ownership, control block, dan reference count.\n- `weak_ptr` untuk optional non-owning reference.\n- Cycle ownership dan penggunaan `lock()`.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::shared_ptr` dan `std::weak_ptr`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: `std::shared_ptr` dan `std::weak_ptr`\ndeclare(strict_types=1);\n\n$topik = '`std::shared_ptr` dan `std::weak_ptr`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Mengapa opsi `PDO::ATTR_EMULATE_PREPARES => false` sangat direkomendasikan?",
       "options": [
@@ -668,7 +668,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Allocator-Aware Container dan `pmr`\n\n### Materi Inti:\n- Allocator-aware container dan custom allocator.\n- `std::pmr::monotonic_buffer_resource` serta pool lifetime.\n- Allocation failure, pool boundary, dan cache locality.",
-    "code": "// PHP PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Allocator-Aware Container dan `pmr`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Allocator-Aware Container dan `pmr`\ndeclare(strict_types=1);\n\n$topik = 'Allocator-Aware Container dan `pmr`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Dalam pola transaksi database ACID, apa tujuan pemanggilan `$pdo->rollBack()`?",
       "options": [
@@ -690,7 +690,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# RAII Wrapper dan Safe Resource Patterns\n\n### Materi Inti:\n- Wrapper untuk file, socket, mutex, dan heap resource.\n- `lock_guard` versus `unique_lock`.\n- Scope guard untuk cleanup lintas jalur exception.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"RAII Wrapper dan Safe Resource Patterns\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: RAII Wrapper dan Safe Resource Patterns\ndeclare(strict_types=1);\n\n$topik = 'RAII Wrapper dan Safe Resource Patterns';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa peran arsitektur *Repository Pattern* dalam pengelolaan data di PHP?",
       "options": [
@@ -712,7 +712,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mendeteksi Memory Bug dengan Sanitizer\n\n### Materi Inti:\n- AddressSanitizer, UndefinedBehaviorSanitizer, dan Valgrind.\n- Dangling reference, use-after-free, overflow, dan out-of-bounds.\n- Menjalankan sanitizer di native dan WebAssembly.",
-    "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Mendeteksi Memory Bug dengan Sanitizer\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Mendeteksi Memory Bug dengan Sanitizer\ndeclare(strict_types=1);\n\n$topik = 'Mendeteksi Memory Bug dengan Sanitizer';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana cara mencegah race condition saat mengupdate saldo user di database relational?",
       "options": [
@@ -734,7 +734,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Value Category: Lvalue, Xvalue, dan Prvalue\n\n### Materi Inti:\n- Lvalue, xvalue, prvalue, dan named rvalue reference.\n- `std::move` sebagai cast eksplisit.\n- Decay type dan array-to-pointer decay.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Value Category: Lvalue, Xvalue, dan Prvalue\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Value Category: Lvalue, Xvalue, dan Prvalue\ndeclare(strict_types=1);\n\n$topik = 'Value Category: Lvalue, Xvalue, dan Prvalue';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Algoritma hashing password apa yang menjadi standar rekomendasi tertinggi di PHP saat ini?",
       "options": [
@@ -756,7 +756,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Move Constructor dan Move Assignment\n\n### Materi Inti:\n- Move operation untuk mengambil resource.\n- Source harus berada dalam valid tetapi unspecified state.\n- Move constructor idealnya `noexcept` agar container dapat memindahkan.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Move Constructor dan Move Assignment\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Move Constructor dan Move Assignment\ndeclare(strict_types=1);\n\n$topik = 'Move Constructor dan Move Assignment';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana cara kerja serangan *Cross-Site Request Forgery (CSRF)* dan bagaimana pencegahannya di PHP?",
       "options": [
@@ -778,7 +778,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Perfect Forwarding\n\n### Materi Inti:\n- Forwarding reference dan `auto&&`.\n- `std::forward<T>` untuk mempertahankan value category.\n- Argument unwrapping dengan `std::unwrap_reference`.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Perfect Forwarding\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Perfect Forwarding\ndeclare(strict_types=1);\n\n$topik = 'Perfect Forwarding';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa fungsi atribut cookie `HttpOnly` dan `SameSite=Lax/Strict` pada session PHP?",
       "options": [
@@ -800,7 +800,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Copy Elision, NRVO, dan Guaranteed Move\n\n### Materi Inti:\n- Copy elision dan Named Return Value Optimization.\n- Prvalue construction langsung ke result object.\n- `std::move` yang tidak perlu dapat menghambat copy elision.",
-    "code": "// PHP PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Copy Elision, NRVO, dan Guaranteed Move\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Copy Elision, NRVO, dan Guaranteed Move\ndeclare(strict_types=1);\n\n$topik = 'Copy Elision, NRVO, dan Guaranteed Move';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Fungsi sanitasi output apa yang tepat digunakan untuk mencegah celah *Cross-Site Scripting (XSS)* saat mencetak string ke template HTML?",
       "options": [
@@ -822,7 +822,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# STL Container dan Allocation Strategy\n\n### Materi Inti:\n- Tradeoff vector, deque, list, map, set, dan unordered_map.\n- Iterator invalidation, reserve, resize, dan shrink-to-fit.\n- Copy versus move behavior pada container.",
-    "code": "// PHP PHP11/PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"STL Container dan Allocation Strategy\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: STL Container dan Allocation Strategy\ndeclare(strict_types=1);\n\n$topik = 'STL Container dan Allocation Strategy';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Mengapa hanya memeriksa ekstensi nama file (misal `.jpg`) tidak cukup untuk keamanan file upload di PHP?",
       "options": [
@@ -844,7 +844,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# In-Place Construction dengan `emplace`, `optional`, dan `variant`\n\n### Materi Inti:\n- `emplace_back` dan konstruksi langsung di dalam container.\n- `std::optional<T>::emplace` untuk optional move-only value.\n- `std::variant` dan pemilihan alternative secara eksplisit.",
-    "code": "// PHP PHP17/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"In-Place Construction dengan `emplace`, `optional`, dan `variant`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: In-Place Construction dengan `emplace`, `optional`, dan `variant`\ndeclare(strict_types=1);\n\n$topik = 'In-Place Construction dengan `emplace`, `optional`, dan `variant`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa fungsi header keamanan HTTP `Content-Security-Policy (CSP)`?",
       "options": [
@@ -866,7 +866,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Iterator dan Standard Algorithms\n\n### Materi Inti:\n- Iterator categories dan range begin/end.\n- `find`, `sort`, `count`, `transform`, dan algorithm contracts.\n- Lambda expression untuk operasi lokal.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Iterator dan Standard Algorithms\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Iterator dan Standard Algorithms\ndeclare(strict_types=1);\n\n$topik = 'Iterator dan Standard Algorithms';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa perbedaan mendasar antara file `composer.json` dan `composer.lock`?",
       "options": [
@@ -888,7 +888,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Ranges Views: Lazy dan Non-Owning\n\n### Materi Inti:\n- `views::filter`, `transform`, `take`, dan `drop`.\n- View versus owning range.\n- Lazy evaluation dan lifetime adaptor.",
-    "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Ranges Views: Lazy dan Non-Owning\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Ranges Views: Lazy dan Non-Owning\ndeclare(strict_types=1);\n\n$topik = 'Ranges Views: Lazy dan Non-Owning';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Kapan sebaiknya perintah `composer update` dijalankan dibandingkan `composer install`?",
       "options": [
@@ -910,7 +910,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Range Algorithms dan Range Concepts\n\n### Materi Inti:\n- `std::ranges::sort`, `find`, dan `for_each`.\n- Input, output, forward, sortable, dan mutable range requirements.\n- Mengurangi manual iterator arithmetic.",
-    "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Range Algorithms dan Range Concepts\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Range Algorithms dan Range Concepts\ndeclare(strict_types=1);\n\n$topik = 'Range Algorithms dan Range Concepts';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana standar autoloading PSR-4 memetakan namespace ke struktur direktori?",
       "options": [
@@ -932,7 +932,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\n\n### Materi Inti:\n- `views::zip` untuk beberapa range paralel.\n- `views::chunk`, `slide`, dan `enumerate`.\n- Tuple-like elements, overflow behavior, dan lifetime.",
-    "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`\ndeclare(strict_types=1);\n\n$topik = 'Mengomposisikan Ranges: `zip`, `chunk`, `slide`, dan `enumerate`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa tujuan menjalankan perintah `composer dump-autoload -o` (optimize autoloader)?",
       "options": [
@@ -954,7 +954,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Error Value dengan `std::expected` dan `std::optional`\n\n### Materi Inti:\n- `optional<T>` untuk absence tanpa error detail.\n- `expected<T,E>` untuk success atau error terstruktur.\n- Composing operations dengan `and_then`, `transform`, dan `or_else`.",
-    "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Error Value dengan `std::expected` dan `std::optional`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Error Value dengan `std::expected` dan `std::optional`\ndeclare(strict_types=1);\n\n$topik = 'Error Value dengan `std::expected` dan `std::optional`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa kegunaan alat static analysis seperti *PHPStan* atau *Psalm* dalam siklus pengembangan modern?",
       "options": [
@@ -976,7 +976,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# API Modern PHP20/23: Format, Print, Numbers, dan `mdspan`\n\n### Materi Inti:\n- `std::format`, `std::print`, dan feature-test macros.\n- `std::numbers` untuk konstanta numerik standar.\n- `std::mdspan` untuk multidimensional view tanpa ownership.",
-    "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"API Modern PHP20/23: Format, Print, Numbers, dan `mdspan`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: API Modern PHP20/23: Format, Print, Numbers, dan `mdspan`\ndeclare(strict_types=1);\n\n$topik = 'API Modern PHP20/23: Format, Print, Numbers, dan `mdspan`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Arti dari constraint versi `^8.3.0` pada composer.json adalah?",
       "options": [
@@ -998,7 +998,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Thread Dasar, Join, dan Detach\n\n### Materi Inti:\n- Membuat, menjalankan, `join`, dan `detach` thread.\n- Lifetime thread dan bahaya detach tanpa koordinasi.\n- Data race versus race condition.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Dasar, Join, dan Detach\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Thread Dasar, Join, dan Detach\ndeclare(strict_types=1);\n\n$topik = 'Thread Dasar, Join, dan Detach';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa perbedaan mendasar antara *Unit Testing* dan *Integration Testing*?",
       "options": [
@@ -1020,7 +1020,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Mutex, `lock_guard`, dan Condition Variable\n\n### Materi Inti:\n- Critical section dan mutual exclusion.\n- RAII locking dengan `lock_guard` dan `unique_lock`.\n- Condition variable, predicate loop, notify-one/all.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"Mutex, `lock_guard`, dan Condition Variable\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Mutex, `lock_guard`, dan Condition Variable\ndeclare(strict_types=1);\n\n$topik = 'Mutex, `lock_guard`, dan Condition Variable';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa peran *Mock Object* dalam pengujian kode yang memanggil external payment gateway API?",
       "options": [
@@ -1042,7 +1042,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Atomic dan Memory Ordering\n\n### Materi Inti:\n- Atomic load/store, fetch-add, compare-exchange.\n- Relaxed, acquire, release, dan sequential consistency.\n- Lock-free atomic dan tradeoff performance.",
-    "code": "// PHP PHP11/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Atomic dan Memory Ordering\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Atomic dan Memory Ordering\ndeclare(strict_types=1);\n\n$topik = 'Atomic dan Memory Ordering';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa keunggulan framework testing *Pest PHP* dibanding PHPUnit standar?",
       "options": [
@@ -1064,7 +1064,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# `std::async`, Future, dan Task\n\n### Materi Inti:\n- Launch policy dan asynchronous execution.\n- Future/get, exception propagation, dan timeout.\n- Lifetime task dan bahaya menunggu terlalu lama.",
-    "code": "// PHP PHP11\n#include <iostream>\n\nint main() {\n    std::cout << \"`std::async`, Future, dan Task\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: `std::async`, Future, dan Task\ndeclare(strict_types=1);\n\n$topik = '`std::async`, Future, dan Task';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa konsep dasar siklus *Test-Driven Development (TDD)*?",
       "options": [
@@ -1086,7 +1086,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Thread Pool, Deadlock, dan Concurrency Pitfalls\n\n### Materi Inti:\n- Work queue, worker lifetime, dan task scheduling.\n- Deadlock, starvation, ABA, false sharing, dan lock ordering.\n- Desain bounded concurrency dan backpressure.",
-    "code": "// PHP PHP11/PHP17\n#include <iostream>\n\nint main() {\n    std::cout << \"Thread Pool, Deadlock, dan Concurrency Pitfalls\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Thread Pool, Deadlock, dan Concurrency Pitfalls\ndeclare(strict_types=1);\n\n$topik = 'Thread Pool, Deadlock, dan Concurrency Pitfalls';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa yang diukur oleh metrik *Code Coverage* dalam testing suite?",
       "options": [
@@ -1108,7 +1108,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Pengantar Coroutine: Suspension dan Resumption\n\n### Materi Inti:\n- Coroutine frame, promise object, dan awaiter.\n- `co_await`, `co_yield`, dan `co_return`.\n- Perbedaan blocking thread dengan cooperative suspension.",
-    "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Pengantar Coroutine: Suspension dan Resumption\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Pengantar Coroutine: Suspension dan Resumption\ndeclare(strict_types=1);\n\n$topik = 'Pengantar Coroutine: Suspension dan Resumption';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa tujuan dari *Mutation Testing* (misalnya menggunakan tool Infection PHP)?",
       "options": [
@@ -1130,7 +1130,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Membangun Coroutine dari Komponen Dasar\n\n### Materi Inti:\n- Promise methods: `return_value`, `yield_value`, `initial_suspend`, dan `final_suspend`.\n- Coroutine return object dan exception propagation.\n- Mengapa coroutine bukan thread.",
-    "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Membangun Coroutine dari Komponen Dasar\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Membangun Coroutine dari Komponen Dasar\ndeclare(strict_types=1);\n\n$topik = 'Membangun Coroutine dari Komponen Dasar';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Mengapa standar PSR-7 memodelkan HTTP Request dan Response sebagai objek yang *Immutable*?",
       "options": [
@@ -1152,7 +1152,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Async/Await dengan Executor dan Cancellation\n\n### Materi Inti:\n- Custom awaiter dan executor policy.\n- Exception propagation, timeout, dan cancellation token.\n- Composing async operations tanpa nested blocking.",
-    "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Async/Await dengan Executor dan Cancellation\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Async/Await dengan Executor dan Cancellation\ndeclare(strict_types=1);\n\n$topik = 'Async/Await dengan Executor dan Cancellation';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana alur kerja *Pipeline Middleware* berbasis standar PSR-15?",
       "options": [
@@ -1174,7 +1174,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Generator dengan `std::generator` PHP23\n\n### Materi Inti:\n- `co_yield` sebagai lazy producer.\n- Backpressure, range protocol, dan lifetime iterator.\n- Menggabungkan generator dengan ranges.",
-    "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Generator dengan `std::generator` PHP23\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Generator dengan `std::generator` PHP23\ndeclare(strict_types=1);\n\n$topik = 'Generator dengan `std::generator` PHP23';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa keuntungan menggunakan *JSON Web Token (JWT)* untuk autentikasi stateless API?",
       "options": [
@@ -1196,7 +1196,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Concepts dan Constrained Overload\n\n### Materi Inti:\n- `requires` expression dan named concept.\n- Constraint satisfaction dan overload resolution.\n- Mengganti SFINAE noise dengan diagnostic yang jelas.",
-    "code": "// PHP PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Concepts dan Constrained Overload\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Concepts dan Constrained Overload\ndeclare(strict_types=1);\n\n$topik = 'Concepts dan Constrained Overload';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa status code HTTP yang paling tepat dikembalikan saat klien berhasil membuat data resource baru di server REST API?",
       "options": [
@@ -1218,7 +1218,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Custom Range, `view`, dan `borrowed_range`\n\n### Materi Inti:\n- Range requirements dan `range_reference_t`.\n- View, borrowed range, dan adaptor customization.\n- `views::as_const`, `cache_latest`, `chunk`, `slide`, dan `enumerate`.",
-    "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Custom Range, `view`, dan `borrowed_range`\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Custom Range, `view`, dan `borrowed_range`\ndeclare(strict_types=1);\n\n$topik = 'Custom Range, `view`, dan `borrowed_range`';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana cara mengimplementasikan *Rate Limiting* berbasis algoritma Token Bucket menggunakan Redis di PHP?",
       "options": [
@@ -1240,7 +1240,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Modern Generic Design: Templates + Concepts + Ranges\n\n### Materi Inti:\n- Menggabungkan constrained template, range algorithms, dan move-only values.\n- API generik dengan error type dan no unnecessary copy.\n- Menulis benchmark serta test matrix untuk beberapa tipe.",
-    "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Modern Generic Design: Templates + Concepts + Ranges\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Modern Generic Design: Templates + Concepts + Ranges\ndeclare(strict_types=1);\n\n$topik = 'Modern Generic Design: Templates + Concepts + Ranges';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa perbedaan mendasar antara representasi API *RESTful* dan *GraphQL*?",
       "options": [
@@ -1262,7 +1262,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Migrasi ke PHP23 Library\n\n### Materi Inti:\n- `std::expected`, `std::print`, `std::source_location`, dan string `contains`.\n- `std::ranges::to`, `std::mdspan`, dan `std::generator`.\n- Feature-test macros dan strategi fallback compiler.",
-    "code": "// PHP PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Migrasi ke PHP23 Library\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Migrasi ke PHP23 Library\ndeclare(strict_types=1);\n\n$topik = 'Migrasi ke PHP23 Library';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa peran prinsip *Dependency Inversion* dalam arsitektur Clean Architecture / Hexagonal Architecture?",
       "options": [
@@ -1284,7 +1284,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Performance, Profiling, dan Optimization yang Terukur\n\n### Materi Inti:\n- Big-O, cache locality, branch prediction, dan allocation cost.\n- Move semantics, emplace, reserve, dan avoiding unnecessary copy.\n- Benchmark, profiler, dan reproducibility.",
-    "code": "// PHP PHP17/PHP20\n#include <iostream>\n\nint main() {\n    std::cout << \"Performance, Profiling, dan Optimization yang Terukur\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Performance, Profiling, dan Optimization yang Terukur\ndeclare(strict_types=1);\n\n$topik = 'Performance, Profiling, dan Optimization yang Terukur';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Mengapa server runtime seperti *FrankenPHP* atau *RoadRunner* jauh lebih cepat dibandingkan arsitektur tradisional PHP-FPM?",
       "options": [
@@ -1306,7 +1306,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Reliabilitas, Security, dan Test Matrix\n\n### Materi Inti:\n- Sanitizer, invariant test, property test, dan fuzzing ringan.\n- Input validation, ownership contract, dan secure defaults.\n- Testing pada edge case, malformed input, dan concurrent path.",
-    "code": "// PHP PHP11–PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Reliabilitas, Security, dan Test Matrix\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Reliabilitas, Security, dan Test Matrix\ndeclare(strict_types=1);\n\n$topik = 'Reliabilitas, Security, dan Test Matrix';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa fungsi dari ekstensi *OPcache* dan bagaimana JIT (Just-In-Time) compiler meningkatkan performa di PHP 8?",
       "options": [
@@ -1328,7 +1328,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Arsitektur, PHP20 Modules, Build, dan CI\n\n### Materi Inti:\n- Layering, interface boundary, dependency inversion, dan module boundary.\n- CMake/compiler flags, WebAssembly build, dan browser execution.\n- CI untuk build, test, sanitizer, dan format/lint.",
-    "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Arsitektur, PHP20 Modules, Build, dan CI\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Arsitektur, PHP20 Modules, Build, dan CI\ndeclare(strict_types=1);\n\n$topik = 'Arsitektur, PHP20 Modules, Build, dan CI';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Dalam arsitektur microservices berbasis pesan (Message Queue), apa tujuan memisahkan task berat (seperti kirim email atau render video) ke background worker?",
       "options": [
@@ -1350,7 +1350,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Capstone Design: Modern Data Pipeline\n\n### Materi Inti:\n- Merancang domain type, ownership, error handling, dan API.\n- Memilih templates, concepts, ranges, smart pointer, dan coroutine secara tepat.\n- Menentukan acceptance criteria, benchmark, dan test cases.",
-    "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Design: Modern Data Pipeline\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Capstone Design: Modern Data Pipeline\ndeclare(strict_types=1);\n\n$topik = 'Capstone Design: Modern Data Pipeline';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Apa keuntungan menggunakan *Multi-Stage Build* pada Dockerfile untuk aplikasi PHP production?",
       "options": [
@@ -1372,7 +1372,7 @@ const lessons = [
     "duration": "15 m",
     "level": "Semua",
     "content": "# Capstone Implementation, Demo, dan Refleksi\n\n### Materi Inti:\n- Implementasi end-to-end di JupyterLite/WebAssembly.\n- Menjalankan unit test, sanitizer, dan benchmark.\n- Menjelaskan tradeoff, hasil, keterbatasan, dan langkah pengembangan.",
-    "code": "// PHP PHP20/PHP23\n#include <iostream>\n\nint main() {\n    std::cout << \"Capstone Implementation, Demo, dan Refleksi\" << std::endl;\n    return 0;\n}",
+    "code": "<?php\n// PHP 8.3 Modern: Capstone Implementation, Demo, dan Refleksi\ndeclare(strict_types=1);\n\n$topik = 'Capstone Implementation, Demo, dan Refleksi';\necho 'Menjalankan studi kasus: ' . $topik . PHP_EOL;\n\nfunction jalankanDemo(string $nama): string {\n    return 'Hasil eksekusi sukses untuk: ' . $nama;\n}\n\necho jalankanDemo($topik) . PHP_EOL;\n",
     "quiz": {
       "question": "Bagaimana strategi *Blue-Green Deployment* atau *Canary Release* menjamin ketersediaan tinggi (Zero-Downtime Deployment)?",
       "options": [
@@ -1697,8 +1697,7 @@ async function runCode() {
     
     // Attempt Judge0 or playground execution if applicable
     try {
-        const langIds = { php: 54, rust: 73, go: 60 };
-        const langId = langIds['php'] || 73;
+        const langId = 98; // PHP Judge0 CE language_id
         const res = await fetch('https://ce.judge0.com/submissions?base64_encoded=false&wait=true', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
