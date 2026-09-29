@@ -179,7 +179,7 @@
       <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 mb-12">
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
           <i class="fa-solid fa-code text-sky-400"></i>
-          <span><b>486</b> Pelajaran Interaktif</span>
+          <span><b>759</b> Pelajaran Interaktif</span>
         </div>
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
           <i class="fa-solid fa-terminal text-emerald-400"></i>
@@ -215,24 +215,30 @@
       <div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
           <span>Daftar Jalur Pembelajaran</span>
-          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">8 Track Aktif</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">12 Track Aktif</span>
         </h2>
         <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Pilih salah satu bahasa untuk membuka kurikulum interaktif di browser Anda.</p>
       </div>
 
       <!-- Category Filter Pills -->
       <div class="flex flex-wrap items-center gap-2" id="filter-container">
-        <button onclick="filterCourses('all')" class="filter-btn active text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 transition">
-          Semua (8)
+        <button onclick="filterCourses('all', this)" class="filter-btn active text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 transition">
+          Semua (12)
         </button>
-        <button onclick="filterCourses('systems')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
-          Systems & Low-Level
+        <button onclick="filterCourses('systems', this)" class="filter-btn text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Systems & Low-Level (3)
         </button>
-        <button onclick="filterCourses('backend')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
-          Backend & Cloud
+        <button onclick="filterCourses('backend', this)" class="filter-btn text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Backend & Cloud (4)
         </button>
-        <button onclick="filterCourses('frontend')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
-          Frontend & Fullstack
+        <button onclick="filterCourses('frontend', this)" class="filter-btn text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Frontend & Web (2)
+        </button>
+        <button onclick="filterCourses('mobile', this)" class="filter-btn text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Mobile & Multiplatform (2)
+        </button>
+        <button onclick="filterCourses('enterprise', this)" class="filter-btn text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Enterprise .NET (1)
         </button>
       </div>
     </div>
@@ -277,7 +283,7 @@
               GO
             </div>
             <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-              60 Materi
+              93 Materi
             </div>
           </div>
           <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-cyan-400 transition-colors">
@@ -375,33 +381,24 @@
       
       <!-- Track: PHP -->
       <a href="/php/" class="course-card group" data-category="backend" style="--hover-glow: rgba(99, 102, 241, 0.25);">
-        <div class="h-1.5 w-full bg-gradient-to-r from-indigo-600 to-violet-700"></div>
+        <div class="h-1.5 w-full bg-gradient-to-r from-indigo-500 to-violet-600"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all duration-300">
-              <i class="fa-brands fa-php"></i>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-brands fa-php text-2xl"></i>
             </div>
-            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-              Backend & Web
-            </span>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+              60 Materi
+            </div>
           </div>
-          
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors flex items-center gap-2">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-indigo-400 transition-colors">
             PHP 8.3+ Modern
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
           </h3>
-          
-          <p class="text-slate-400 text-sm mb-6 flex-1 line-clamp-2 leading-relaxed">
+          <p class="text-xs font-mono text-indigo-400/80 mb-3">10 Modul • Enterprise Web</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Kuasai ekosistem PHP modern: OOP ketat, typed properties, attributes, fibers, Composer, hingga arsitektur backend framework.
           </p>
-
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 mb-5">
-            <span class="flex items-center gap-1.5"><i class="fa-regular fa-folder-open text-slate-500"></i> 10 Modul</span>
-            <span class="flex items-center gap-1.5"><i class="fa-solid fa-list-check text-slate-500"></i> 60 Materi</span>
-            <span class="flex items-center gap-1.5 text-emerald-400 font-medium"><i class="fa-solid fa-certificate"></i> Sertifikat</span>
-          </div>
-
-          <div class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-indigo-500 text-white hover:text-white font-medium text-sm transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-indigo-500/20">
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-indigo-500 dark:text-indigo-400">
             <span>Mulai Belajar</span>
             <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
@@ -410,33 +407,24 @@
 
       <!-- Track: Kotlin -->
       <a href="/kotlin/" class="course-card group" data-category="mobile" style="--hover-glow: rgba(168, 85, 247, 0.25);">
-        <div class="h-1.5 w-full bg-gradient-to-r from-purple-600 to-pink-600"></div>
+        <div class="h-1.5 w-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl group-hover:scale-110 group-hover:bg-purple-500/20 transition-all duration-300">
-              <i class="fa-brands fa-android"></i>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-brands fa-android text-2xl"></i>
             </div>
-            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20">
-              Mobile & Multiplatform
-            </span>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              60 Materi
+            </div>
           </div>
-          
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors flex items-center gap-2">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-purple-400 transition-colors">
             Kotlin 2.0 Multiplatform
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
           </h3>
-          
-          <p class="text-slate-400 text-sm mb-6 flex-1 line-clamp-2 leading-relaxed">
+          <p class="text-xs font-mono text-purple-400/80 mb-3">10 Modul • K2 & Mobile KMP</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Pelajari Kotlin modern: K2 Compiler, Coroutines, Null-safety, Functional Programming, hingga Kotlin Multiplatform (KMP).
           </p>
-
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 mb-5">
-            <span class="flex items-center gap-1.5"><i class="fa-regular fa-folder-open text-slate-500"></i> 10 Modul</span>
-            <span class="flex items-center gap-1.5"><i class="fa-solid fa-list-check text-slate-500"></i> 60 Materi</span>
-            <span class="flex items-center gap-1.5 text-emerald-400 font-medium"><i class="fa-solid fa-certificate"></i> Sertifikat</span>
-          </div>
-
-          <div class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-purple-500 text-white hover:text-white font-medium text-sm transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-purple-500/20">
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-purple-500 dark:text-purple-400">
             <span>Mulai Belajar</span>
             <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
@@ -445,33 +433,24 @@
 
       <!-- Track: C# -->
       <a href="/csharp/" class="course-card group" data-category="enterprise" style="--hover-glow: rgba(16, 185, 129, 0.25);">
-        <div class="h-1.5 w-full bg-gradient-to-r from-emerald-600 to-teal-700"></div>
+        <div class="h-1.5 w-full bg-gradient-to-r from-emerald-500 to-teal-600"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300">
-              <i class="fa-solid fa-code"></i>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              C#
             </div>
-            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
-              Enterprise & Backend
-            </span>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              60 Materi
+            </div>
           </div>
-          
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors flex items-center gap-2">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-emerald-400 transition-colors">
             C# 12 & .NET 8+
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
           </h3>
-          
-          <p class="text-slate-400 text-sm mb-6 flex-1 line-clamp-2 leading-relaxed">
+          <p class="text-xs font-mono text-emerald-400/80 mb-3">10 Modul • ASP.NET Core & EF Core</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Kuasai ekosistem C# enterprise: Modern C# 12 features, LINQ, Async/Await, ASP.NET Core Web API, EF Core, dan Clean Architecture.
           </p>
-
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 mb-5">
-            <span class="flex items-center gap-1.5"><i class="fa-regular fa-folder-open text-slate-500"></i> 10 Modul</span>
-            <span class="flex items-center gap-1.5"><i class="fa-solid fa-list-check text-slate-500"></i> 60 Materi</span>
-            <span class="flex items-center gap-1.5 text-emerald-400 font-medium"><i class="fa-solid fa-certificate"></i> Sertifikat</span>
-          </div>
-
-          <div class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500 text-white hover:text-white font-medium text-sm transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-emerald-500/20">
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-emerald-500 dark:text-emerald-400">
             <span>Mulai Belajar</span>
             <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
@@ -480,33 +459,24 @@
 
       <!-- Track: Dart -->
       <a href="/dart/" class="course-card group" data-category="mobile" style="--hover-glow: rgba(14, 165, 233, 0.25);">
-        <div class="h-1.5 w-full bg-gradient-to-r from-sky-500 to-blue-600"></div>
+        <div class="h-1.5 w-full bg-gradient-to-r from-sky-400 to-blue-500"></div>
         <div class="p-6 flex-1 flex flex-col">
           <div class="flex items-start justify-between mb-5">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-xl group-hover:scale-110 group-hover:bg-sky-500/20 transition-all duration-300">
-              <i class="fa-solid fa-feather-pointed"></i>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center font-mono font-black text-xl group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-feather-pointed text-2xl"></i>
             </div>
-            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-sky-500/10 text-sky-300 border border-sky-500/20">
-              Mobile, Web & Multiplatform
-            </span>
+            <div class="text-[11px] font-bold font-mono px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              60 Materi
+            </div>
           </div>
-          
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors flex items-center gap-2">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-sky-400 transition-colors">
             Dart 3.x & Flutter Engine
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
           </h3>
-          
-          <p class="text-slate-400 text-sm mb-6 flex-1 line-clamp-2 leading-relaxed">
+          <p class="text-xs font-mono text-sky-400/80 mb-3">10 Modul • Sound Null Safety & VM</p>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-1">
             Kuasai fondasi Dart 3 modern: Sound Null Safety, Records & Patterns, Class Modifiers, Streams, hingga arsitektur mobile & web Flutter.
           </p>
-
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 mb-5">
-            <span class="flex items-center gap-1.5"><i class="fa-regular fa-folder-open text-slate-500"></i> 10 Modul</span>
-            <span class="flex items-center gap-1.5"><i class="fa-solid fa-list-check text-slate-500"></i> 60 Materi</span>
-            <span class="flex items-center gap-1.5 text-emerald-400 font-medium"><i class="fa-solid fa-certificate"></i> Sertifikat</span>
-          </div>
-
-          <div class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-sky-500 text-white hover:text-white font-medium text-sm transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-sky-500/20">
+          <div class="mt-auto border-t border-slate-200 dark:border-white/5 pt-4 flex items-center justify-between text-xs font-bold text-sky-500 dark:text-sky-400">
             <span>Mulai Belajar</span>
             <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
           </div>
@@ -686,12 +656,20 @@
     });
 
     // Category Filter
-    function filterCourses(category) {
+    function filterCourses(category, btnElement) {
       const cards = document.querySelectorAll('.course-card');
       const buttons = document.querySelectorAll('.filter-btn');
       
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-slate-600', 'dark:text-slate-400');
+      });
+
+      const activeBtn = btnElement || event?.currentTarget || event?.target;
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.classList.remove('text-slate-600', 'dark:text-slate-400');
+      }
 
       cards.forEach(card => {
         if (category === 'all' || card.getAttribute('data-category') === category) {
