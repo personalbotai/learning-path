@@ -1,0 +1,73 @@
+{
+  "module": 9,
+  "title": "Virtual Environments & Dependencies Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 9",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What command creates a virtual environment?",
+      "options": [
+        "pip install venv",
+        "python -m venv venv",
+        "virtualenv create",
+        "conda create"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Standard library: 'python -m venv venv'. virtualenv is third-party, conda is Anaconda."
+    },
+    {
+      "id": 2,
+      "question": "How do you activate a virtual environment on Linux/macOS?",
+      "options": [
+        "activate",
+        "venv activate",
+        "source venv/bin/activate",
+        "start venv"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "On POSIX systems: 'source venv/bin/activate'. On Windows: 'venv\\Scripts\\activate'."
+    },
+    {
+      "id": 3,
+      "question": "What command installs packages from requirements.txt?",
+      "options": [
+        "pip install requirements.txt",
+        "pip install -r requirements.txt",
+        "pip install all",
+        "pip install ."
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "'pip install -r requirements.txt' installs all listed dependencies."
+    },
+    {
+      "id": 4,
+      "question": "What does 'pip freeze' do?",
+      "options": [
+        "Shows outdated packages",
+        "Lists all installed packages with versions",
+        "Uninstalls packages",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "'pip freeze' outputs installed packages in requirements format."
+    },
+    {
+      "id": 5,
+      "question": "What is the purpose of a virtual environment?",
+      "options": [
+        "Speed up Python",
+        "Isolate project dependencies",
+        "Create new Python version",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Virtual environments isolate dependencies per project, avoiding conflicts."
+    }
+  ]
+}

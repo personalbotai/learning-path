@@ -1,0 +1,73 @@
+{
+  "module": 3,
+  "title": "Data Structures Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 3",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which data structure is mutable?",
+      "options": [
+        "tuple",
+        "list",
+        "str",
+        "frozenset"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Lists are mutable; tuples, strings, and frozensets are immutable."
+    },
+    {
+      "id": 2,
+      "question": "How do you access the last element of a list 'arr'?",
+      "options": [
+        "arr[-1]",
+        "arr.last()",
+        "arr[0]",
+        "arr[end]"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "Negative indices count from the end: -1 is last element."
+    },
+    {
+      "id": 3,
+      "question": "What does a set do?",
+      "options": [
+        "Stores ordered elements",
+        "Stores unique elements",
+        "Stores key-value pairs",
+        "Stores immutable sequence"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Sets store unique, unordered elements."
+    },
+    {
+      "id": 4,
+      "question": "Which method removes and returns the last element of a list?",
+      "options": [
+        "remove()",
+        "pop()",
+        "del",
+        "discard"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "pop() removes and returns the last (or specified) element."
+    },
+    {
+      "id": 5,
+      "question": "What is the output of: dict([('a',1),('b',2)])?",
+      "options": [
+        "[('a',1),('b',2)]",
+        "{'a':1, 'b':2}",
+        "('a',1,'b',2)",
+        "Error"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "dict() constructor creates a dictionary from an iterable of key-value pairs."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "module": 8,
+  "title": "Modules & Packages Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 8",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What file marks a directory as a Python package?",
+      "options": [
+        "package.py",
+        "main.py",
+        "__init__.py",
+        "setup.py"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "__init__.py (can be empty) marks a directory as a package."
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between 'import module' and 'from module import *'?",
+      "options": [
+        "No difference",
+        "First imports all, second imports specific",
+        "First keeps namespace, second pollutes",
+        "Second is faster"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "from module import * brings all names into current namespace, which can cause conflicts."
+    },
+    {
+      "id": 3,
+      "question": "How do you import a module from a parent package?",
+      "options": [
+        "import parent.module",
+        "from .. import module",
+        "import ..module",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Relative imports use dots: 'from .. import module' goes up one level."
+    },
+    {
+      "id": 4,
+      "question": "What does sys.path control?",
+      "options": [
+        "System path",
+        "Module search paths",
+        "Executable path",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "sys.path is a list of directories Python searches for modules."
+    },
+    {
+      "id": 5,
+      "question": "What is __all__ used for?",
+      "options": [
+        "Define all modules",
+        "Control 'from module import *' exports",
+        "List all functions",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "__all__ in a module defines which names are exported with 'import *'."
+    }
+  ]
+}

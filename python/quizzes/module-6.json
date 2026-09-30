@@ -1,0 +1,73 @@
+{
+  "module": 6,
+  "title": "Error Handling & Exceptions Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 6",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which keyword is used to catch exceptions?",
+      "options": [
+        "catch",
+        "except",
+        "handle",
+        "try"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "'except' is used to catch and handle exceptions."
+    },
+    {
+      "id": 2,
+      "question": "What does 'finally' do in a try-except block?",
+      "options": [
+        "Runs only if no exception",
+        "Runs only if exception occurs",
+        "Always runs regardless",
+        "None"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "'finally' executes whether an exception occurs or not, typically for cleanup."
+    },
+    {
+      "id": 3,
+      "question": "How do you raise a custom exception?",
+      "options": [
+        "throw Exception()",
+        "raise Exception()",
+        "error Exception()",
+        "except Exception()"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Use 'raise' followed by an exception instance or class."
+    },
+    {
+      "id": 4,
+      "question": "What is the base class for all built-in exceptions?",
+      "options": [
+        "BaseException",
+        "Exception",
+        "Error",
+        "RuntimeError"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Most built-in exceptions inherit from 'Exception' (BaseException is the absolute root)."
+    },
+    {
+      "id": 5,
+      "question": "What does 'else' in a try-except block do?",
+      "options": [
+        "Handles else clause",
+        "Runs if no exception was raised",
+        "Runs if exception raised",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "'else' runs only if the try block completed without raising an exception."
+    }
+  ]
+}

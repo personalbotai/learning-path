@@ -1,0 +1,73 @@
+{
+  "module": 10,
+  "title": "Next Steps & Resources Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 10",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which style guide is the official Python convention?",
+      "options": [
+        "Google Style",
+        "PEP 8",
+        "Airbnb Style",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "PEP 8 is the official Python style guide."
+    },
+    {
+      "id": 2,
+      "question": "What is a good practice for managing project dependencies?",
+      "options": [
+        "Use system Python packages",
+        "Use virtual environments and requirements.txt",
+        "Install globally",
+        "Avoid dependencies"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Isolate dependencies with venv and pin versions in requirements.txt."
+    },
+    {
+      "id": 3,
+      "question": "Which tool is commonly used for Python package publishing?",
+      "options": [
+        "npm",
+        "pip",
+        "twine",
+        "conda"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "twine is used to upload packages to PyPI."
+    },
+    {
+      "id": 4,
+      "question": "What is the recommended way to share a Python script with others?",
+      "options": [
+        "Send .py file",
+        "Create a package with setup.py/pyproject.toml",
+        "Send via email",
+        "Use Google Drive"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Proper packaging with pyproject.toml or setup.py makes sharing and installation easy."
+    },
+    {
+      "id": 5,
+      "question": "Which community resource is best for Python documentation?",
+      "options": [
+        "Wikipedia",
+        "docs.python.org",
+        "Stack Overflow",
+        "GitHub Issues"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "docs.python.org is the official Python documentation."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "module": 4,
+  "title": "Functions & Modular Programming Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 4",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What keyword defines a function?",
+      "options": [
+        "func",
+        "def",
+        "function",
+        "define"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Python uses 'def' to define functions."
+    },
+    {
+      "id": 2,
+      "question": "What does *args allow?",
+      "options": [
+        "Keyword arguments",
+        "Variable positional arguments",
+        "Variable keyword arguments",
+        "Arbitrary expressions"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "*args collects extra positional arguments as a tuple."
+    },
+    {
+      "id": 3,
+      "question": "What is the purpose of __name__ == '__main__'?",
+      "options": [
+        "Import module",
+        "Define main function",
+        "Check if script is run directly",
+        "None"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "It allows code to run only when the file is executed as a script, not when imported."
+    },
+    {
+      "id": 4,
+      "question": "Which statement imports a specific function from a module?",
+      "options": [
+        "import module",
+        "from module import function",
+        "include module",
+        "use module.function"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "'from module import function' imports just that function."
+    },
+    {
+      "id": 5,
+      "question": "What is a docstring?",
+      "options": [
+        "String literal as first statement in function/class/module",
+        "Comment",
+        "Type hint",
+        "None"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "A docstring is a string literal that appears as the first statement in a function, class, or module."
+    }
+  ]
+}

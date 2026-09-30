@@ -29,18 +29,22 @@
 
 ---
 
-## 🌐 Daftar Jalur Belajar (8 Bahasa & Teknologi)
+## 🌐 Daftar Jalur Belajar (12 Bahasa & Teknologi)
 
 | Track | Bahasa | Materi & Cakupan | Runtime Engine | Link Akses |
 |---|---|---|---|---|
 | 🐍 | **Python** | 55 Materi Lengkap | Pyodide WASM (Lazy-Loaded) | [Mulai Belajar Python](/python/) |
-| ⚡ | **JavaScript** | 10 Modul Interaktif | In-Browser JS Sandbox | [Mulai Belajar JavaScript](/javascript/) |
+| ⚡ | **JavaScript** | 54 Modul Interaktif | In-Browser JS Sandbox | [Mulai Belajar JavaScript](/javascript/) |
 | 📘 | **TypeScript** | 77 Type-Level Lessons | In-Browser TS Compiler & Transpiler | [Mulai Belajar TypeScript](/typescript/) |
-| 🐹 | **Go (Golang)** | 53 Materi Idiomatik | Go Playground API & Sandbox | [Mulai Belajar Go](/go/) |
-| ☕ | **Java** | 30 Materi Modern Java 21 | Judge0 CE JDK 17 Compiler | [Mulai Belajar Java](/java/) |
-| 🦀 | **Rust** | 15 Materi Systems Programming | Rust Playground API & Sandbox | [Mulai Belajar Rust](/rust/) |
-| 🚀 | **C++** | 20 Materi Modern C++20 | Wandbox GCC 13 C++20 Runner | [Mulai Belajar C++](/cpp/) |
-| 🗄️ | **SQL** | 20 Materi Relational Database | SQLite 3.44+ WASM Engine | [Mulai Belajar SQL](/sql/) |
+| 🐹 | **Go (Golang)** | 93 Materi Idiomatik | Go Playground API & Sandbox | [Mulai Belajar Go](/go/) |
+| ☕ | **Java** | 60 Materi Modern Java 21 | Judge0 CE JDK 17 Compiler | [Mulai Belajar Java](/java/) |
+| 🐘 | **PHP** | 60 Materi Modern PHP 8.3 | In-Browser PHP Engine | [Mulai Belajar PHP](/php/) |
+| 📱 | **Kotlin** | 60 Materi K2 Multiplatform | Kotlin Compiler Sandbox | [Mulai Belajar Kotlin](/kotlin/) |
+| 🎯 | **C#** | 60 Materi .NET 8+ Enterprise | .NET Core Web API Sandbox | [Mulai Belajar C#](/csharp/) |
+| 🪶 | **Dart** | 60 Materi Dart 3 / Flutter | Dart VM & Sound Null Safety | [Mulai Belajar Dart](/dart/) |
+| 🦀 | **Rust** | 60 Materi Systems Programming | Rust Playground API & Sandbox | [Mulai Belajar Rust](/rust/) |
+| 🚀 | **C++** | 60 Materi Modern C++20/23 | Wandbox GCC 13 C++20 Runner | [Mulai Belajar C++](/cpp/) |
+| 🗄️ | **SQL** | 60 Materi Relational Database | SQLite 3.44+ WASM Engine | [Mulai Belajar SQL](/sql/) |
 
 ---
 

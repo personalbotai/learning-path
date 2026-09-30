@@ -1,0 +1,73 @@
+{
+  "module": 1,
+  "title": "Python Fundamentals Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 1",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the correct file extension for Python scripts?",
+      "options": [
+        ".py",
+        ".python",
+        ".pyt",
+        ".pt"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "Python scripts use the .py file extension."
+    },
+    {
+      "id": 2,
+      "question": "Which command creates a virtual environment in Python?",
+      "options": [
+        "python -m venv venv",
+        "pip install venv",
+        "python create venv",
+        "virtualenv create"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "The standard way is 'python -m venv venv' (or 'python3 -m venv venv')."
+    },
+    {
+      "id": 3,
+      "question": "What is the output of: print('Hello' + 'World')?",
+      "options": [
+        "HelloWorld",
+        "Hello World",
+        "Hello+World",
+        "Error"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "String concatenation with + joins without spaces."
+    },
+    {
+      "id": 4,
+      "question": "Which of these is a valid variable name in Python?",
+      "options": [
+        "1var",
+        "var-name",
+        "_var",
+        "var name"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "Underscore-starting names are valid; others have syntax errors."
+    },
+    {
+      "id": 5,
+      "question": "What does the 'type()' function do?",
+      "options": [
+        "Returns variable type",
+        "Converts type",
+        "Checks syntax",
+        "Prints type"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "type() returns the data type of an object."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "module": 2,
+  "title": "Control Flow Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 2",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does 'elif' stand for?",
+      "options": [
+        "Else If",
+        "Else In",
+        "Elastic If",
+        "None"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "'elif' is short for 'else if'."
+    },
+    {
+      "id": 2,
+      "question": "Which loop executes at least once?",
+      "options": [
+        "for",
+        "while",
+        "do-while",
+        "None (Python has no do-while)"
+      ],
+      "correct": 3,
+      "correct_answer": 3,
+      "explanation": "Python has no built-in do-while; while/for may execute zero times."
+    },
+    {
+      "id": 3,
+      "question": "What does 'break' do?",
+      "options": [
+        "Skips to next iteration",
+        "Exits loop",
+        "Pauses loop",
+        "Restarts loop"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "'break' immediately exits the nearest enclosing loop."
+    },
+    {
+      "id": 4,
+      "question": "What is the result of: True and False?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "Logical AND returns False if any operand is False."
+    },
+    {
+      "id": 5,
+      "question": "Which operator is used for identity comparison?",
+      "options": [
+        "==",
+        "=",
+        "is",
+        "in"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "'is' checks if two references point to the same object."
+    }
+  ]
+}

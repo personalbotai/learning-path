@@ -1,0 +1,73 @@
+{
+  "module": 7,
+  "title": "File I/O & Data Handling Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 7",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which mode opens a file for reading text?",
+      "options": [
+        "'r'",
+        "'w'",
+        "'a'",
+        "'x'"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "'r' is read mode (default). 'w' write, 'a' append, 'x' exclusive creation."
+    },
+    {
+      "id": 2,
+      "question": "What is the safest way to open a file?",
+      "options": [
+        "open(); close()",
+        "with open() as f:",
+        "try: open(); finally: close()",
+        "Using os.open()"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "'with' statement ensures proper cleanup even if exceptions occur."
+    },
+    {
+      "id": 3,
+      "question": "Which module is used for JSON serialization?",
+      "options": [
+        "csv",
+        "json",
+        "pickle",
+        "yaml"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "The 'json' module provides json.load() and json.dump()."
+    },
+    {
+      "id": 4,
+      "question": "How do you read all lines of a file into a list?",
+      "options": [
+        "f.read()",
+        "f.readlines()",
+        "f.read().splitlines()",
+        "Both B and C"
+      ],
+      "correct": 3,
+      "correct_answer": 3,
+      "explanation": "readlines() returns list with newlines; read().splitlines() removes newlines. Both are valid."
+    },
+    {
+      "id": 5,
+      "question": "What does 'rb' mode do?",
+      "options": [
+        "Read binary",
+        "Read both",
+        "Read with backup",
+        "None"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "'rb' opens file in binary read mode (for images, etc.)."
+    }
+  ]
+}

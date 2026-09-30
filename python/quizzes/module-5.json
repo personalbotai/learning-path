@@ -1,0 +1,73 @@
+{
+  "module": 5,
+  "title": "Object-Oriented Programming Quiz",
+  "description": "Evaluasi pemahaman konsep Modul 5",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the first parameter of instance methods by convention?",
+      "options": [
+        "self",
+        "this",
+        "obj",
+        "instance"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "Python uses 'self' as the first parameter of instance methods."
+    },
+    {
+      "id": 2,
+      "question": "What does super() do?",
+      "options": [
+        "Calls parent method",
+        "Creates subclass",
+        "Checks inheritance",
+        "None"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "super() returns a temporary object of the parent class to allow method calls."
+    },
+    {
+      "id": 3,
+      "question": "Which method is called when an object is converted to string with str()?",
+      "options": [
+        "__str__",
+        "__repr__",
+        "__toString__",
+        "__string__"
+      ],
+      "correct": 0,
+      "correct_answer": 0,
+      "explanation": "__str__ is called by str() and print() for user-friendly string representation."
+    },
+    {
+      "id": 4,
+      "question": "What does a property decorator do?",
+      "options": [
+        "Makes method static",
+        "Creates getter/setter for attribute",
+        "Hides attribute",
+        "None"
+      ],
+      "correct": 1,
+      "correct_answer": 1,
+      "explanation": "@property turns a method into a read-only attribute; can pair with setter."
+    },
+    {
+      "id": 5,
+      "question": "What is duck typing?",
+      "options": [
+        "Type checking at compile time",
+        "Type checking at runtime",
+        "'If it walks like a duck...'",
+        "None"
+      ],
+      "correct": 2,
+      "correct_answer": 2,
+      "explanation": "Duck typing means object suitability is determined by presence of methods/attributes, not explicit type."
+    }
+  ]
+}
